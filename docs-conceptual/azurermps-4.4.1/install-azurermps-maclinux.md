@@ -11,10 +11,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/12/2018
 ms.openlocfilehash: 64a86dfd4af7f3f0a91501e9a096ff190f7100cb
-ms.sourcegitcommit: 15bf69bf95eceb936b3a429e741add95c308826a
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="install-and-configure-azure-powershell-on-macos-and-linux"></a>Az Azure PowerShell telepítése és konfigurálása macOS és Linux rendszeren
 
@@ -78,7 +78,7 @@ A .NET Standardhoz elérhető Azure PowerShell-modulok még fejlesztés alatt á
   - Virtuális gép
   - App Service (webhelyek)
   - SQL Database
-  - Tárolás
+  - Storage
   - Network (Hálózat)
 
 ## <a name="next-steps"></a>További lépések

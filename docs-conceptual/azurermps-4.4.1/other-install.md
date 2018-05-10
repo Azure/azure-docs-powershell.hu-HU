@@ -1,6 +1,6 @@
 ---
-title: "Az Azure PowerShell telepítésének egyéb módjai | Microsoft Docs"
-description: "Az Azure PowerShell telepítése az MSI-csomag vagy a Webplatform-telepítő használatával."
+title: Az Azure PowerShell telepítésének egyéb módjai | Microsoft Docs
+description: Az Azure PowerShell telepítése az MSI-csomag vagy a Webplatform-telepítő használatával.
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -11,10 +11,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
 ms.openlocfilehash: 73c099375cecc8abdd5d6179109513946e7e793b
-ms.sourcegitcommit: c42c7176276ec4e1cc3360a93e6b15d32083bf9f
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="other-installation-methods"></a>Egyéb telepítési módszerek
 
@@ -56,7 +56,7 @@ At line:1 char:1
     + FullyQualifiedErrorId : CommandNotFoundException
 ```
 
-Ez a hiba a gép újraindításával vagy a modul teljes útvonallal való importálásával javítható. Példa:
+Ez a hiba a gép újraindításával vagy a modul teljes útvonallal való importálásával javítható. Például:
 
 ```powershell
 Import-Module "$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\AzureRM.psd1"

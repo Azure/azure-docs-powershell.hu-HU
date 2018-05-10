@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
 ms.openlocfilehash: 2e80d314991539cb630a0f2a96048bb2e70a05b6
-ms.sourcegitcommit: 5f0013981fcea1d689649b9a2b2ffe84ae842e56
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="release-notes"></a>Kibocsátási megjegyzések
 
@@ -616,12 +616,12 @@ Változások a legutóbbi kiadás óta: https://github.com/Azure/azure-powershel
 ## <a name="2017128-version-511"></a>2017.12.8. – 5.1.1-es verzió
 * AnalysisServices
   - Az érvényesítés helykészletének dinamikus keresésre való módosítása, hogy az összes felhőt támogassa.
-* Automatizálás
+* Automation
   - Frissítés a következőre: Import-AzureRMAutomationRunbook
     - Mostantól támogatás érhető el a Python2-runbookokhoz
 * Batch
   - Ki lett javítva az a hiba, amely miatt az erőforráscsoport nélküli fiókműveletek nem tudták automatikusan észlelni az erőforráscsoportot
-* Számítás
+* Compute
   - A Get-AzureRmComputeResourceSku parancsmag megjeleníti az időzónával kapcsolatos információkat.
   - A Disable-AzureRmVmssDiskEncryption parancsmag frissült az alábbi hiba javítása érdekében: https://github.com/Azure/azure-powershell/issues/5038
   - -AsJob támogatás hozzáadva a sokáig futó Compute parancsmagok számára. Lehetővé teszi, hogy a kiválasztott parancsmagok a háttérben fussanak, és visszaad egy feladatot, amely nyomon követi és szabályozza az előrehaladást.
@@ -784,7 +784,7 @@ Változások a legutóbbi kiadás óta: https://github.com/Azure/azure-powershel
   * Támogatás hozzáadva az Azure Active Directory-alapú hitelesítéshez.
     - Az Azure Active Directory-hitelesítés használatához kérjen le egy `BatchAccountContext` objektumot a `Get-AzureRmBatchAccount` parancsmag használatával, majd adja meg a `BatchAccountContext` paramétert egy Batch szolgáltatás parancsmagjának `-BatchContext` paraméteréhez. Az Azure Active Directory-hitelesítés kötelező a `PoolAllocationMode = UserSubscription` lefoglalási móddal rendelkező fiókok esetében.
     - A meglévő vagy a `PoolAllocationMode = BatchService` használatával létrehozott új fiókok esetében továbbra is használhat megosztott kulcsos hitelesítést, ha lekér egy `BatchAccountContext` objektumot a `Get-AzureRmBatchAccoutKeys` parancsmag segítségével.
-* Számítás
+* Compute
   * Az Azure Disk Encryption bővítmény parancsai
     - A 'Set-AzureRmVmDiskEncryptionExtension’ parancs új paramétere, az '-EncryptFormatAll’ titkosított módon formázza az adatlemezeket
     - A 'Set-AzureRmVmDiskEncryptionExtension' parancs új paraméterei, az '-ExtensionPublisherName' és '-ExtensionType’ lehetővé teszik a bővítmény másik verziójára történő váltást

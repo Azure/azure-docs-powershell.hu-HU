@@ -1,6 +1,6 @@
 ---
-title: "Az Azure PowerShell változásnaplója | Microsoft Docs"
-description: "Az alábbiakban az Azure PowerShell legutóbbi kiadásában végrehajtott módosítások előzményei olvashatók."
+title: Az Azure PowerShell változásnaplója | Microsoft Docs
+description: Az alábbiakban az Azure PowerShell legutóbbi kiadásában végrehajtott módosítások előzményei olvashatók.
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -9,20 +9,20 @@ ms.service: azure-powershell
 ms.product: azure
 ms.devlang: powershell
 ms.topic: conceptual
-ms.workload: 
+ms.workload: ''
 ms.date: 05/18/2017
 ms.openlocfilehash: 143d92384fd270711378f6741ba59e88c12833d1
-ms.sourcegitcommit: 226527be7cb647acfe2ea9ab151185053ab3c6db
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="release-notes"></a>Kibocsátási megjegyzések
 
 Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítások listája olvasható.
 
 ## <a name="version-220"></a>2.2.0-ás verzió
-* Számítás
+* Compute
   - A titkosítás állapotának az AzureDiskEncryptionForLinux bővítményből történő lekérésének támogatása
 * DataFactory
   - Új parancsmag hozzáadása a tevékenységablakok felsorolásához
@@ -62,7 +62,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
     + Remove-AzureRmVirtualNetworkGatewayIpConfig
   - Új parancsmag hozzáadása
     + Test-AzureRmPrivateIpAddressAvailability
-* Erőforrások
+* További források
   - Zónák támogatása szolgáltatói és erőforrás-parancsmagok esetében
     + Get-AzureRmProvider
     + New-AzureRmResource

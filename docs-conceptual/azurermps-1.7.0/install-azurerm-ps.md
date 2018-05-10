@@ -1,6 +1,6 @@
 ---
-title: "Az Azure PowerShell telepítése és konfigurálása | Microsoft Docs"
-description: "Az Azure PowerShell telepítése és konfigurálása az első használathoz."
+title: Az Azure PowerShell telepítése és konfigurálása | Microsoft Docs
+description: Az Azure PowerShell telepítése és konfigurálása az első használathoz.
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -11,10 +11,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/17/2017
 ms.openlocfilehash: 0c1500a8748a3aa4546c6ce1e8d16a635b056edb
-ms.sourcegitcommit: b256bf48e15ee98865de0fae50e7b81878b03a54
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="install-and-configure-azure-powershell"></a>Az Azure PowerShell telepítése és konfigurálása
 
@@ -78,7 +78,7 @@ A modul telepítése után be kell tölteni a azt a PowerShell-munkamenetbe. Ezt
 Import-Module AzureRM
 ```
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
 Az Azure PowerShell használatával kapcsolatos további információkat az alábbi cikkekben olvashat:
 
