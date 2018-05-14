@@ -1,22 +1,22 @@
-# <a name="breaking-changes-for-microsoft-azure-powershell-500"></a><span data-ttu-id="b535d-101">A Microsoft Azure PowerShell 5.0.0 használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="b535d-101">Breaking changes for Microsoft Azure PowerShell 5.0.0</span></span>
+# <a name="breaking-changes-for-microsoft-azure-powershell-500"></a>A Microsoft Azure PowerShell 5.0.0 használhatatlanná tévő változásai
 
-<span data-ttu-id="b535d-102">Ez a dokumentum egyrészt értesítőül szolgál a használhatatlanná tévő változtatásokról, másrészt egy migrálási útmutató az Azure PowerShell-parancsmagok felhasználóinak.</span><span class="sxs-lookup"><span data-stu-id="b535d-102">This document serves as both a breaking change notification and migration guide for consumers of the Microsoft Azure PowerShell cmdlets.</span></span> <span data-ttu-id="b535d-103">Minden szakasz tárgyalja a használhatatlanná tévő változások okát, valamint a legkisebb ellenállással járó migrálási módot is.</span><span class="sxs-lookup"><span data-stu-id="b535d-103">Each section describes both the impetus for the breaking change and the migration path of least resistance.</span></span> <span data-ttu-id="b535d-104">A körülmények részletesebb leírásáért tekintse meg az egyes változásokhoz tartozó lekérési kérelmeket.</span><span class="sxs-lookup"><span data-stu-id="b535d-104">For in-depth context, please refer to the pull request associated with each change.</span></span>
+Ez a dokumentum egyrészt értesítőül szolgál a használhatatlanná tévő változtatásokról, másrészt egy migrálási útmutató az Azure PowerShell-parancsmagok felhasználóinak. Minden szakasz tárgyalja a használhatatlanná tévő változások okát, valamint a legkisebb ellenállással járó migrálási módot is. A körülmények részletesebb leírásáért tekintse meg az egyes változásokhoz tartozó lekérési kérelmeket.
 
-## <a name="table-of-contents"></a><span data-ttu-id="b535d-105">Tartalomjegyzék</span><span class="sxs-lookup"><span data-stu-id="b535d-105">Table of Contents</span></span>
+## <a name="table-of-contents"></a>Tartalomjegyzék
 
-- [<span data-ttu-id="b535d-106">Az ApiManagement-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="b535d-106">Breaking changes to ApiManagement cmdlets</span></span>](#breaking-changes-to-apimanagement-cmdlets)
-- [<span data-ttu-id="b535d-107">A Batch-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="b535d-107">Breaking changes to Batch cmdlets</span></span>](#breaking-changes-to-batch-cmdlets)
-- [<span data-ttu-id="b535d-108">A Compute-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="b535d-108">Breaking changes to Compute cmdlets</span></span>](#breaking-changes-to-compute-cmdlets)
-- [<span data-ttu-id="b535d-109">Az EventHub-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="b535d-109">Breaking changes to EventHub cmdlets</span></span>](#breaking-changes-to-eventhub-cmdlets)
-- [<span data-ttu-id="b535d-110">Az Insights-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="b535d-110">Breaking changes to Insights cmdlets</span></span>](#breaking-changes-to-insights-cmdlets)
-- [<span data-ttu-id="b535d-111">A Network-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="b535d-111">Breaking changes to Network cmdlets</span></span>](#breaking-changes-to-network-cmdlets)
-- [<span data-ttu-id="b535d-112">A Resources-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="b535d-112">Breaking changes to Resources cmdlets</span></span>](#breaking-changes-to-resources-cmdlets)
-- [<span data-ttu-id="b535d-113">A ServiceBus-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="b535d-113">Breaking Changes to ServiceBus Cmdlets</span></span>](#breaking-changes-to-servicebus-cmdlets)
+- [Az ApiManagement-parancsmagok használhatatlanná tévő változásai](#breaking-changes-to-apimanagement-cmdlets)
+- [A Batch-parancsmagok használhatatlanná tévő változásai](#breaking-changes-to-batch-cmdlets)
+- [A Compute-parancsmagok használhatatlanná tévő változásai](#breaking-changes-to-compute-cmdlets)
+- [Az EventHub-parancsmagok használhatatlanná tévő változásai](#breaking-changes-to-eventhub-cmdlets)
+- [Az Insights-parancsmagok használhatatlanná tévő változásai](#breaking-changes-to-insights-cmdlets)
+- [A Network-parancsmagok használhatatlanná tévő változásai](#breaking-changes-to-network-cmdlets)
+- [A Resources-parancsmagok használhatatlanná tévő változásai](#breaking-changes-to-resources-cmdlets)
+- [A ServiceBus-parancsmagok használhatatlanná tévő változásai](#breaking-changes-to-servicebus-cmdlets)
 
-## <a name="breaking-changes-to-apimanagement-cmdlets"></a><span data-ttu-id="b535d-114">Az ApiManagement-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="b535d-114">Breaking changes to ApiManagement cmdlets</span></span>
+## <a name="breaking-changes-to-apimanagement-cmdlets"></a>Az ApiManagement-parancsmagok használhatatlanná tévő változásai
 
-### <a name="new-azurermapimanagementbackendproxy"></a><span data-ttu-id="b535d-115">**New-AzureRmApiManagementBackendProxy**</span><span class="sxs-lookup"><span data-stu-id="b535d-115">**New-AzureRmApiManagementBackendProxy**</span></span>
-- <span data-ttu-id="b535d-116">A „UserName” és a „Password” paraméter értéke PSCredential lett</span><span class="sxs-lookup"><span data-stu-id="b535d-116">Parameters "UserName" and "Password" are being replaced in favor of a PSCredential</span></span>
+### <a name="new-azurermapimanagementbackendproxy"></a>**New-AzureRmApiManagementBackendProxy**
+- A „UserName” és a „Password” paraméter értéke PSCredential lett
 
 ```powershell
 # Old
@@ -26,8 +26,8 @@ New-AzureRmApiManagementBackendProxy [other required parameters] -UserName "plai
 New-AzureRmApiManagementBackendProxy [other required parameters] -Credential $PSCredentialVariable
 ```
 
-### <a name="new-azurermapimanagementuser"></a><span data-ttu-id="b535d-117">**New-AzureRmApiManagementUser**</span><span class="sxs-lookup"><span data-stu-id="b535d-117">**New-AzureRmApiManagementUser**</span></span>
-- <span data-ttu-id="b535d-118">A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett</span><span class="sxs-lookup"><span data-stu-id="b535d-118">Parameter "Password" being replaced in favor of a SecureString</span></span>
+### <a name="new-azurermapimanagementuser"></a>**New-AzureRmApiManagementUser**
+- A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett
 
 ```powershell
 # Old
@@ -37,8 +37,8 @@ New-AzureRmApiManagementUser [other required parameters] -Password "plain-text s
 New-AzureRmApiManagementUser [other required parameters] -Password $SecureStringVariable
 ```
 
-### <a name="set-azurermapimanagementuser"></a><span data-ttu-id="b535d-119">**Set-AzureRmApiManagementUser**</span><span class="sxs-lookup"><span data-stu-id="b535d-119">**Set-AzureRmApiManagementUser**</span></span>
-- <span data-ttu-id="b535d-120">A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett</span><span class="sxs-lookup"><span data-stu-id="b535d-120">Parameter "Password" being replaced in favor of a SecureString</span></span>
+### <a name="set-azurermapimanagementuser"></a>**Set-AzureRmApiManagementUser**
+- A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett
 
 ```powershell
 # Old
@@ -48,10 +48,10 @@ Set-AzureRmApiManagementUser [other required parameters] -Password "plain-text s
 Set-AzureRmApiManagementUser [other required parameters] -Password $SecureStringVariable
 ```
 
-## <a name="breaking-changes-to-batch-cmdlets"></a><span data-ttu-id="b535d-121">A Batch-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="b535d-121">Breaking changes to Batch cmdlets</span></span>
+## <a name="breaking-changes-to-batch-cmdlets"></a>A Batch-parancsmagok használhatatlanná tévő változásai
 
-### <a name="new-azurebatchcertificate"></a><span data-ttu-id="b535d-122">**New-AzureBatchCertificate**</span><span class="sxs-lookup"><span data-stu-id="b535d-122">**New-AzureBatchCertificate**</span></span>
-- <span data-ttu-id="b535d-123">A `Password` paraméter értéke SecureString (biztonságos karakterlánc) lett</span><span class="sxs-lookup"><span data-stu-id="b535d-123">Parameter `Password` being replaced in favor of a Secure string</span></span>
+### <a name="new-azurebatchcertificate"></a>**New-AzureBatchCertificate**
+- A `Password` paraméter értéke SecureString (biztonságos karakterlánc) lett
 
 ```powershell
 # Old
@@ -61,8 +61,8 @@ New-AzureBatchCertificate [other required parameters] -Password "plain-text stri
 New-AzureBatchCertificate [other required parameters] -Password $SecureStringVariable
 ```
 
-### <a name="new-azurebatchcomputenodeuser"></a><span data-ttu-id="b535d-124">**New-AzureBatchComputeNodeUser**</span><span class="sxs-lookup"><span data-stu-id="b535d-124">**New-AzureBatchComputeNodeUser**</span></span>
-- <span data-ttu-id="b535d-125">A `Password` paraméter értéke SecureString (biztonságos karakterlánc) lett</span><span class="sxs-lookup"><span data-stu-id="b535d-125">Parameter `Password` being replaced in favor of a Secure string</span></span>
+### <a name="new-azurebatchcomputenodeuser"></a>**New-AzureBatchComputeNodeUser**
+- A `Password` paraméter értéke SecureString (biztonságos karakterlánc) lett
 
 ```powershell
 # Old
@@ -72,8 +72,8 @@ New-AzureBatchComputeNodeUser [other required parameters] -Password "plain-text 
 New-AzureBatchComputeNodeUser [other required parameters] -Password $SecureStringVariable
 ```
 
-### <a name="set-azurermbatchcomputenodeuser"></a><span data-ttu-id="b535d-126">**Set-AzureRmBatchComputeNodeUser**</span><span class="sxs-lookup"><span data-stu-id="b535d-126">**Set-AzureRmBatchComputeNodeUser**</span></span>
-- <span data-ttu-id="b535d-127">A `Password` paraméter értéke SecureString (biztonságos karakterlánc) lett</span><span class="sxs-lookup"><span data-stu-id="b535d-127">Parameter `Password` being replaced in favor of a Secure string</span></span>
+### <a name="set-azurermbatchcomputenodeuser"></a>**Set-AzureRmBatchComputeNodeUser**
+- A `Password` paraméter értéke SecureString (biztonságos karakterlánc) lett
 
 ```powershell
 # Old
@@ -83,8 +83,8 @@ Set-AzureRmBatchComputeNodeUser [other required parameters] -Password "plain-tex
 Set-AzureRmBatchComputeNodeUser [other required parameters] -Password $SecureStringVariable
 ```
 
-### <a name="new-azurebatchtask"></a><span data-ttu-id="b535d-128">**New-AzureBatchTask**</span><span class="sxs-lookup"><span data-stu-id="b535d-128">**New-AzureBatchTask**</span></span>
- - <span data-ttu-id="b535d-129">A `RunElevated` kapcsoló el lett távolítva, és a `UserIdentity` lépett a helyébe.</span><span class="sxs-lookup"><span data-stu-id="b535d-129">Removed the `RunElevated` switch and replaced it with `UserIdentity`.</span></span>
+### <a name="new-azurebatchtask"></a>**New-AzureBatchTask**
+ - A `RunElevated` kapcsoló el lett távolítva, és a `UserIdentity` lépett a helyébe.
 
 ```powershell
 # Old
@@ -96,11 +96,11 @@ $userIdentity = New-Object Microsoft.Azure.Commands.Batch.Models.PSUserIdentity 
 New-AzureBatchTask -Id $taskId1 -JobId $jobId -CommandLine "cmd /c echo hello" -UserIdentity $userIdentity
 ```
 
-<span data-ttu-id="b535d-130">Ez befolyásolja a `RunElevated` tulajdonságot a következők esetében: `PSCloudTask`, `PSStartTask`, `PSJobManagerTask`, `PSJobPreparationTask` és `PSJobReleaseTask`.</span><span class="sxs-lookup"><span data-stu-id="b535d-130">This additionally impacts the `RunElevated` property on `PSCloudTask`, `PSStartTask`, `PSJobManagerTask`, `PSJobPreparationTask`, and `PSJobReleaseTask`.</span></span>
+Ez befolyásolja a `RunElevated` tulajdonságot a következők esetében: `PSCloudTask`, `PSStartTask`, `PSJobManagerTask`, `PSJobPreparationTask` és `PSJobReleaseTask`.
 
-### <a name="psmultiinstancesettings"></a><span data-ttu-id="b535d-131">**PSMultiInstanceSettings**</span><span class="sxs-lookup"><span data-stu-id="b535d-131">**PSMultiInstanceSettings**</span></span>
+### <a name="psmultiinstancesettings"></a>**PSMultiInstanceSettings**
 
-- <span data-ttu-id="b535d-132">A `PSMultiInstanceSettings` konstruktor ezentúl nem egy kötelezően megadandó `numberOfInstances`, hanem egy kötelezően megadandó `coordinationCommandLine` paramétert vesz fel.</span><span class="sxs-lookup"><span data-stu-id="b535d-132">`PSMultiInstanceSettings` constructor no longer takes a required `numberOfInstances` parameter, instead it takes a required `coordinationCommandLine` parameter.</span></span>
+- A `PSMultiInstanceSettings` konstruktor ezentúl nem egy kötelezően megadandó `numberOfInstances`, hanem egy kötelezően megadandó `coordinationCommandLine` paramétert vesz fel.
 
 ```powershell
 # Old
@@ -113,8 +113,8 @@ $settings = New-Object Microsoft.Azure.Commands.Batch.Models.PSMultiInstanceSett
 New-AzureBatchTask [other parameters] -MultiInstanceSettings $settings
 ```
 
-### <a name="get-azurebatchtask"></a><span data-ttu-id="b535d-133">**Get-AzureBatchTask**</span><span class="sxs-lookup"><span data-stu-id="b535d-133">**Get-AzureBatchTask**</span></span>
- - <span data-ttu-id="b535d-134">A `PSCloudTask` `RunElevated` tulajdonsága el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-134">Removed the `RunElevated` property on `PSCloudTask`.</span></span> <span data-ttu-id="b535d-135">A `UserIdentity` tulajdonság lépett a `RunElevated` helyébe.</span><span class="sxs-lookup"><span data-stu-id="b535d-135">The `UserIdentity` property has been added to replace `RunElevated`.</span></span>
+### <a name="get-azurebatchtask"></a>**Get-AzureBatchTask**
+ - A `PSCloudTask` `RunElevated` tulajdonsága el lett távolítva. A `UserIdentity` tulajdonság lépett a `RunElevated` helyébe.
 
 ```powershell
 # Old
@@ -126,11 +126,11 @@ $task = Get-AzureBatchTask [parameters]
 $task.UserIdentity.AutoUser.ElevationLevel
 ```
 
-<span data-ttu-id="b535d-136">Ez befolyásolja a `RunElevated` tulajdonságot a következők esetében: `PSCloudTask`, `PSStartTask`, `PSJobManagerTask`, `PSJobPreparationTask` és `PSJobReleaseTask`.</span><span class="sxs-lookup"><span data-stu-id="b535d-136">This additionally impacts the `RunElevated` property on `PSCloudTask`, `PSStartTask`, `PSJobManagerTask`, `PSJobPreparationTask`, and `PSJobReleaseTask`.</span></span>
+Ez befolyásolja a `RunElevated` tulajdonságot a következők esetében: `PSCloudTask`, `PSStartTask`, `PSJobManagerTask`, `PSJobPreparationTask` és `PSJobReleaseTask`.
 
-### <a name="multiple-types"></a><span data-ttu-id="b535d-137">**Többféle típus**</span><span class="sxs-lookup"><span data-stu-id="b535d-137">**Multiple types**</span></span>
+### <a name="multiple-types"></a>**Többféle típus**
 
-- <span data-ttu-id="b535d-138">A `PSExitConditions` `SchedulingError` tulajdonsága új nevet kapott: `PreProcessingError`.</span><span class="sxs-lookup"><span data-stu-id="b535d-138">Renamed the `SchedulingError` property on `PSExitConditions` to `PreProcessingError`.</span></span>
+- A `PSExitConditions` `SchedulingError` tulajdonsága új nevet kapott: `PreProcessingError`.
 
 ```powershell
 # Old
@@ -142,11 +142,11 @@ $task = Get-AzureBatchTask [parameters]
 $task.ExitConditions.PreProcessingError
 ```
 
-### <a name="multiple-types"></a><span data-ttu-id="b535d-139">**Többféle típus**</span><span class="sxs-lookup"><span data-stu-id="b535d-139">**Multiple types**</span></span>
+### <a name="multiple-types"></a>**Többféle típus**
 
-- <span data-ttu-id="b535d-140">A `PSJobPreparationTaskExecutionInformation`, `PSJobReleaseTaskExecutionInformation`, `PSStartTaskInformation`, `PSSubtaskInformation` és `PSTaskExecutionInformation` `SchedulingError` tulajdonsága új nevet kapott: `FailureInformation`.</span><span class="sxs-lookup"><span data-stu-id="b535d-140">Renamed the `SchedulingError` property on `PSJobPreparationTaskExecutionInformation`, `PSJobReleaseTaskExecutionInformation`, `PSStartTaskInformation`, `PSSubtaskInformation`, and `PSTaskExecutionInformation` to `FailureInformation`.</span></span>
-  - <span data-ttu-id="b535d-141">A rendszer a `FailureInformation` tulajdonságot adja vissza minden tevékenységhiba esetén,</span><span class="sxs-lookup"><span data-stu-id="b535d-141">`FailureInformation` is returned any time there is a task failure.</span></span> <span data-ttu-id="b535d-142">beleértve a korábbi ütemezési hibákat, a tevékenységek nullától eltérő kilépési kódjait, és az új kimeneti fájlok szolgáltatásának sikertelen fájlfeltöltéseit.</span><span class="sxs-lookup"><span data-stu-id="b535d-142">This includes all previous scheduling error cases, as well as nonzero task exit codes, and file upload failures from the new output files feature.</span></span>
-  - <span data-ttu-id="b535d-143">A szerkezet nem változott, tehát a típus használatakor nincs szükség a kód megváltoztatására.</span><span class="sxs-lookup"><span data-stu-id="b535d-143">This is structured the same as before, so no code change is needed when using this type.</span></span>
+- A `PSJobPreparationTaskExecutionInformation`, `PSJobReleaseTaskExecutionInformation`, `PSStartTaskInformation`, `PSSubtaskInformation` és `PSTaskExecutionInformation` `SchedulingError` tulajdonsága új nevet kapott: `FailureInformation`.
+  - A rendszer a `FailureInformation` tulajdonságot adja vissza minden tevékenységhiba esetén, beleértve a korábbi ütemezési hibákat, a tevékenységek nullától eltérő kilépési kódjait, és az új kimeneti fájlok szolgáltatásának sikertelen fájlfeltöltéseit.
+  - A szerkezet nem változott, tehát a típus használatakor nincs szükség a kód megváltoztatására.
 
 ```powershell
 # Old
@@ -158,11 +158,11 @@ $task = Get-AzureBatchTask [parameters]
 $task.ExecutionInformation.FailureInformation
 ```
 
-<span data-ttu-id="b535d-144">A változás a következőket is érinti: Get-AzureBatchPool, Get-AzureBatchSubtask és Get-AzureBatchJobPreparationAndReleaseTaskStatus</span><span class="sxs-lookup"><span data-stu-id="b535d-144">This additionally impacts: Get-AzureBatchPool, Get-AzureBatchSubtask, and Get-AzureBatchJobPreparationAndReleaseTaskStatus</span></span>
+A változás a következőket is érinti: Get-AzureBatchPool, Get-AzureBatchSubtask és Get-AzureBatchJobPreparationAndReleaseTaskStatus
 
-### <a name="new-azurebatchpool"></a><span data-ttu-id="b535d-145">**New-AzureBatchPool**</span><span class="sxs-lookup"><span data-stu-id="b535d-145">**New-AzureBatchPool**</span></span>
- - <span data-ttu-id="b535d-146">A `TargetDedicated` el lett távolítva, és a `TargetDedicatedComputeNodes` és `TargetLowPriorityComputeNodes` léptek a helyébe.</span><span class="sxs-lookup"><span data-stu-id="b535d-146">Removed `TargetDedicated` and replaced it with `TargetDedicatedComputeNodes` and `TargetLowPriorityComputeNodes`.</span></span>
- - <span data-ttu-id="b535d-147">A `TargetDedicatedComputeNodes` kapott egy `TargetDedicated` aliast.</span><span class="sxs-lookup"><span data-stu-id="b535d-147">`TargetDedicatedComputeNodes` has an alias `TargetDedicated`.</span></span>
+### <a name="new-azurebatchpool"></a>**New-AzureBatchPool**
+ - A `TargetDedicated` el lett távolítva, és a `TargetDedicatedComputeNodes` és `TargetLowPriorityComputeNodes` léptek a helyébe.
+ - A `TargetDedicatedComputeNodes` kapott egy `TargetDedicated` aliast.
 
 ```powershell
 # Old
@@ -172,10 +172,10 @@ New-AzureBatchPool [other parameters] [-TargetDedicated <Int32>]
 New-AzureBatchPool [other parameters] [-TargetDedicatedComputeNodes <Int32>] [-TargetLowPriorityComputeNodes <Int32>]
 ```
 
-<span data-ttu-id="b535d-148">Szintén érintett: Start-AzureBatchPoolResize</span><span class="sxs-lookup"><span data-stu-id="b535d-148">This also impacts: Start-AzureBatchPoolResize</span></span>
+Szintén érintett: Start-AzureBatchPoolResize
 
-### <a name="get-azurebatchpool"></a><span data-ttu-id="b535d-149">**Get-AzureBatchPool**</span><span class="sxs-lookup"><span data-stu-id="b535d-149">**Get-AzureBatchPool**</span></span>
- - <span data-ttu-id="b535d-150">A `PSCloudPool` `TargetDedicated` és `CurrentDedicated` tulajdonságai új nevet kaptak: `TargetDedicatedComputeNodes` és `CurrentDedicatedComputeNodes`.</span><span class="sxs-lookup"><span data-stu-id="b535d-150">Renamed the `TargetDedicated` and `CurrentDedicated` properties on `PSCloudPool` to `TargetDedicatedComputeNodes` and `CurrentDedicatedComputeNodes`.</span></span>
+### <a name="get-azurebatchpool"></a>**Get-AzureBatchPool**
+ - A `PSCloudPool` `TargetDedicated` és `CurrentDedicated` tulajdonságai új nevet kaptak: `TargetDedicatedComputeNodes` és `CurrentDedicatedComputeNodes`.
 
 ```powershell
 # Old
@@ -189,9 +189,9 @@ $pool.TargetDedicatedComputeNodes
 $pool.CurrentDedicatedComputeNodes
 ```
 
-### <a name="type-pscloudpool"></a><span data-ttu-id="b535d-151">**Type PSCloudPool**</span><span class="sxs-lookup"><span data-stu-id="b535d-151">**Type PSCloudPool**</span></span>
+### <a name="type-pscloudpool"></a>**Type PSCloudPool**
 
-- <span data-ttu-id="b535d-152">A `PSCloudPool` `ResizeError` tulajdonsága új nevet kapott: `ResizeErrors`. Ez mostantól egy gyűjtemény.</span><span class="sxs-lookup"><span data-stu-id="b535d-152">Renamed `ResizeError` to `ResizeErrors` on `PSCloudPool`, and it is now a collection.</span></span>
+- A `PSCloudPool` `ResizeError` tulajdonsága új nevet kapott: `ResizeErrors`. Ez mostantól egy gyűjtemény.
 
 ```powershell
 # Old
@@ -203,8 +203,8 @@ $pool = Get-AzureBatchPool [parameters]
 $pool.ResizeErrors[0]
 ```
 
-### <a name="new-azurebatchjob"></a><span data-ttu-id="b535d-153">**New-AzureBatchJob**</span><span class="sxs-lookup"><span data-stu-id="b535d-153">**New-AzureBatchJob**</span></span>
-- <span data-ttu-id="b535d-154">A `PSPoolSpecification` `TargetDedicated` tulajdonsága új nevet kapott: `TargetDedicatedComputeNodes`.</span><span class="sxs-lookup"><span data-stu-id="b535d-154">Renamed the `TargetDedicated` property on `PSPoolSpecification` to `TargetDedicatedComputeNodes`.</span></span>
+### <a name="new-azurebatchjob"></a>**New-AzureBatchJob**
+- A `PSPoolSpecification` `TargetDedicated` tulajdonsága új nevet kapott: `TargetDedicatedComputeNodes`.
 
 ```powershell
 # Old
@@ -222,9 +222,9 @@ $poolInfo.AutoPoolSpecification.PoolSpecification.TargetDedicatedComputeNodes = 
 New-AzureBatchJob [other parameters] -PoolInformation $poolInfo
 ```
 
-### <a name="get-azurebatchnodefile"></a><span data-ttu-id="b535d-155">**Get-AzureBatchNodeFile**</span><span class="sxs-lookup"><span data-stu-id="b535d-155">**Get-AzureBatchNodeFile**</span></span>
- - <span data-ttu-id="b535d-156">A `Name` el lett távolítva, és a `Path` lépett a helyébe.</span><span class="sxs-lookup"><span data-stu-id="b535d-156">Removed `Name` and replaced it with `Path`.</span></span>
- - <span data-ttu-id="b535d-157">A `Path` kapott egy `Name` aliast.</span><span class="sxs-lookup"><span data-stu-id="b535d-157">`Path` has an alias `Name`.</span></span>
+### <a name="get-azurebatchnodefile"></a>**Get-AzureBatchNodeFile**
+ - A `Name` el lett távolítva, és a `Path` lépett a helyébe.
+ - A `Path` kapott egy `Name` aliast.
 
 ```powershell
 # Old
@@ -234,11 +234,11 @@ Get-AzureBatchNodeFile [other parameters] [[-Name] <String>]
 Get-AzureBatchNodeFile [other parameters] [[-Path] <String>]
 ```
 
-<span data-ttu-id="b535d-158">Szintén érintett: Get-AzureBatchNodeFileContent, Remove-AzureBatchNodeFile</span><span class="sxs-lookup"><span data-stu-id="b535d-158">This also impacts: Get-AzureBatchNodeFileContent, Remove-AzureBatchNodeFile</span></span>
+Szintén érintett: Get-AzureBatchNodeFileContent, Remove-AzureBatchNodeFile
 
-### <a name="type-psnodefile"></a><span data-ttu-id="b535d-159">**PSNodeFile** típus</span><span class="sxs-lookup"><span data-stu-id="b535d-159">Type **PSNodeFile**</span></span>
+### <a name="type-psnodefile"></a>**PSNodeFile** típus
 
- - <span data-ttu-id="b535d-160">A `PSNodeFile` `Name` tulajdonsága új nevet kapott: `Path`.</span><span class="sxs-lookup"><span data-stu-id="b535d-160">Renamed the `Name` property on `PSNodeFile` to `Path`.</span></span>
+ - A `PSNodeFile` `Name` tulajdonsága új nevet kapott: `Path`.
 
 ```powershell
 # Old
@@ -250,9 +250,9 @@ $file = Get-AzureBatchNodeFile [parameters]
 $file.Path
 ```
 
-### <a name="get-azurebatchsubtask"></a><span data-ttu-id="b535d-161">**Get-AzureBatchSubtask**</span><span class="sxs-lookup"><span data-stu-id="b535d-161">**Get-AzureBatchSubtask**</span></span>
-- <span data-ttu-id="b535d-162">A `PSSubtaskInformation` `PreviousState` és `State` tulajdonságai mostantól nem `TaskState`, hanem `SubtaskState` típusúak.</span><span class="sxs-lookup"><span data-stu-id="b535d-162">The `PreviousState` and `State` properties of `PSSubtaskInformation` are no longer of type `TaskState`, instead they are of type `SubtaskState`.</span></span>
-  - <span data-ttu-id="b535d-163">A `TaskState` tulajdonsággal ellentétben a `SubtaskState` tulajdonságnak nincs `Active` értéke, mivel az alfeladatok nem lehetnek `Active` állapotban.</span><span class="sxs-lookup"><span data-stu-id="b535d-163">Unlike `TaskState`, `SubtaskState` has no `Active` value, since it is not possible for subtasks to be in an `Active` state.</span></span>
+### <a name="get-azurebatchsubtask"></a>**Get-AzureBatchSubtask**
+- A `PSSubtaskInformation` `PreviousState` és `State` tulajdonságai mostantól nem `TaskState`, hanem `SubtaskState` típusúak.
+  - A `TaskState` tulajdonsággal ellentétben a `SubtaskState` tulajdonságnak nincs `Active` értéke, mivel az alfeladatok nem lehetnek `Active` állapotban.
 
 ```powershell
 # Old
@@ -264,10 +264,10 @@ $subtask = Get-AzureBatchSubtask [parameters]
 if ($subtask.State -eq Microsoft.Azure.Batch.Common.SubtaskState.Running) { }
 ```
 
-## <a name="breaking-changes-to-compute-cmdlets"></a><span data-ttu-id="b535d-164">A Compute-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="b535d-164">Breaking changes to Compute cmdlets</span></span>
+## <a name="breaking-changes-to-compute-cmdlets"></a>A Compute-parancsmagok használhatatlanná tévő változásai
 
-### <a name="set-azurermvmaccessextension"></a><span data-ttu-id="b535d-165">**Set-AzureRmVMAccessExtension**</span><span class="sxs-lookup"><span data-stu-id="b535d-165">**Set-AzureRmVMAccessExtension**</span></span>
-- <span data-ttu-id="b535d-166">A „UserName” és a „Password” paraméter értéke PSCredential lett</span><span class="sxs-lookup"><span data-stu-id="b535d-166">Parameters "UserName" and "Password" are being replaced in favor of a PSCredential</span></span>
+### <a name="set-azurermvmaccessextension"></a>**Set-AzureRmVMAccessExtension**
+- A „UserName” és a „Password” paraméter értéke PSCredential lett
 
 ```powershell
 # Old
@@ -277,28 +277,28 @@ Set-AzureRmVMAccessExtension [other required parameters] -UserName "plain-text s
 Set-AzureRmVMAccessExtension [other required parameters] -Credential $PSCredential
 ```
 
-## <a name="breaking-changes-to-eventhub-cmdlets"></a><span data-ttu-id="b535d-167">Az EventHub-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="b535d-167">Breaking changes to EventHub cmdlets</span></span>
+## <a name="breaking-changes-to-eventhub-cmdlets"></a>Az EventHub-parancsmagok használhatatlanná tévő változásai
 
-### <a name="new-azurermeventhubnamespaceauthorizationrule"></a><span data-ttu-id="b535d-168">**New-AzureRmEventHubNamespaceAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="b535d-168">**New-AzureRmEventHubNamespaceAuthorizationRule**</span></span>
-- <span data-ttu-id="b535d-169">A „New-AzureRmEventHubNamespaceAuthorizationRule” parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-169">The 'New-AzureRmEventHubNamespaceAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="b535d-170">Használja a következőt: „New-AzureRmEventHubAuthorizationRule”</span><span class="sxs-lookup"><span data-stu-id="b535d-170">Please use the 'New-AzureRmEventHubAuthorizationRule' cmdlet</span></span>
+### <a name="new-azurermeventhubnamespaceauthorizationrule"></a>**New-AzureRmEventHubNamespaceAuthorizationRule**
+- A „New-AzureRmEventHubNamespaceAuthorizationRule” parancsmag el lett távolítva. Használja a következőt: „New-AzureRmEventHubAuthorizationRule”
     
-### <a name="get-azurermeventhubnamespaceauthorizationrule"></a><span data-ttu-id="b535d-171">**Get-AzureRmEventHubNamespaceAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="b535d-171">**Get-AzureRmEventHubNamespaceAuthorizationRule**</span></span>
-- <span data-ttu-id="b535d-172">A „Get-AzureRmEventHubNamespaceAuthorizationRule” parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-172">The 'Get-AzureRmEventHubNamespaceAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="b535d-173">Használja a következőt: „Get-AzureRmEventHubAuthorizationRule”</span><span class="sxs-lookup"><span data-stu-id="b535d-173">Please use the 'Get-AzureRmEventHubAuthorizationRule' cmdlet</span></span>
+### <a name="get-azurermeventhubnamespaceauthorizationrule"></a>**Get-AzureRmEventHubNamespaceAuthorizationRule**
+- A „Get-AzureRmEventHubNamespaceAuthorizationRule” parancsmag el lett távolítva. Használja a következőt: „Get-AzureRmEventHubAuthorizationRule”
     
-### <a name="set-azurermeventhubnamespaceauthorizationrule"></a><span data-ttu-id="b535d-174">**Set-AzureRmEventHubNamespaceAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="b535d-174">**Set-AzureRmEventHubNamespaceAuthorizationRule**</span></span>
-- <span data-ttu-id="b535d-175">A „Set-AzureRmEventHubNamespaceAuthorizationRule” parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-175">The 'Set-AzureRmEventHubNamespaceAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="b535d-176">Használja a következőt: „Set-AzureRmEventHubAuthorizationRule”</span><span class="sxs-lookup"><span data-stu-id="b535d-176">Please use the 'Set-AzureRmEventHubAuthorizationRule' cmdlet</span></span>
+### <a name="set-azurermeventhubnamespaceauthorizationrule"></a>**Set-AzureRmEventHubNamespaceAuthorizationRule**
+- A „Set-AzureRmEventHubNamespaceAuthorizationRule” parancsmag el lett távolítva. Használja a következőt: „Set-AzureRmEventHubAuthorizationRule”
     
-### <a name="remove-azurermeventhubnamespaceauthorizationrule"></a><span data-ttu-id="b535d-177">**Remove-AzureRmEventHubNamespaceAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="b535d-177">**Remove-AzureRmEventHubNamespaceAuthorizationRule**</span></span>
-- <span data-ttu-id="b535d-178">A „Remove-AzureRmEventHubNamespaceAuthorizationRule” parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-178">The 'Remove-AzureRmEventHubNamespaceAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="b535d-179">Használja a következőt: „Remove-AzureRmEventHubAuthorizationRule”</span><span class="sxs-lookup"><span data-stu-id="b535d-179">Please use the 'Remove-AzureRmEventHubAuthorizationRule' cmdlet</span></span>
+### <a name="remove-azurermeventhubnamespaceauthorizationrule"></a>**Remove-AzureRmEventHubNamespaceAuthorizationRule**
+- A „Remove-AzureRmEventHubNamespaceAuthorizationRule” parancsmag el lett távolítva. Használja a következőt: „Remove-AzureRmEventHubAuthorizationRule”
     
-### <a name="new-azurermeventhubnamespacekey"></a><span data-ttu-id="b535d-180">**New-AzureRmEventHubNamespaceKey**</span><span class="sxs-lookup"><span data-stu-id="b535d-180">**New-AzureRmEventHubNamespaceKey**</span></span>
-- <span data-ttu-id="b535d-181">A „New-AzureRmEventHubNamespaceKey” parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-181">The 'New-AzureRmEventHubNamespaceKey' cmdlet has been removed.</span></span> <span data-ttu-id="b535d-182">Használja a következőt: „New-AzureRmEventHubKey”</span><span class="sxs-lookup"><span data-stu-id="b535d-182">Please use the 'New-AzureRmEventHubKey' cmdlet</span></span>
+### <a name="new-azurermeventhubnamespacekey"></a>**New-AzureRmEventHubNamespaceKey**
+- A „New-AzureRmEventHubNamespaceKey” parancsmag el lett távolítva. Használja a következőt: „New-AzureRmEventHubKey”
     
-### <a name="get-azurermeventhubnamespacekey"></a><span data-ttu-id="b535d-183">**Get-AzureRmEventHubNamespaceKey**</span><span class="sxs-lookup"><span data-stu-id="b535d-183">**Get-AzureRmEventHubNamespaceKey**</span></span>
-- <span data-ttu-id="b535d-184">A „Get-AzureRmEventHubNamespaceKey” parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-184">The 'Get-AzureRmEventHubNamespaceKey' cmdlet has been removed.</span></span> <span data-ttu-id="b535d-185">Használja a következőt: „Get-AzureRmEventHubKey”</span><span class="sxs-lookup"><span data-stu-id="b535d-185">Please use the 'Get-AzureRmEventHubKey' cmdlet</span></span>
+### <a name="get-azurermeventhubnamespacekey"></a>**Get-AzureRmEventHubNamespaceKey**
+- A „Get-AzureRmEventHubNamespaceKey” parancsmag el lett távolítva. Használja a következőt: „Get-AzureRmEventHubKey”
     
-### <a name="new-azurermeventhubnamespace"></a><span data-ttu-id="b535d-186">**New-AzureRmEventHubNamespace**</span><span class="sxs-lookup"><span data-stu-id="b535d-186">**New-AzureRmEventHubNamespace**</span></span>
-- <span data-ttu-id="b535d-187">A NamespceAttributes „Status” és „Enabled” tulajdonságai el lesznek távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-187">The property 'Status' and 'Enabled' from the NamespceAttributes will be removed.</span></span> 
+### <a name="new-azurermeventhubnamespace"></a>**New-AzureRmEventHubNamespace**
+- A NamespceAttributes „Status” és „Enabled” tulajdonságai el lesznek távolítva. 
 
 ```powershell
 # Old
@@ -312,8 +312,8 @@ $namespace.Enabled
 $namespace = Get-AzureRmEventHubNamespace <parameters>
 ```
     
-### <a name="get-azurermeventhubnamespace"></a><span data-ttu-id="b535d-188">**Get-AzureRmEventHubNamespace**</span><span class="sxs-lookup"><span data-stu-id="b535d-188">**Get-AzureRmEventHubNamespace**</span></span>
-- <span data-ttu-id="b535d-189">A NamespceAttributes „Status” és „Enabled” tulajdonságai el lesznek távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-189">The property 'Status' and 'Enabled' from the NamespceAttributes will be removed.</span></span> 
+### <a name="get-azurermeventhubnamespace"></a>**Get-AzureRmEventHubNamespace**
+- A NamespceAttributes „Status” és „Enabled” tulajdonságai el lesznek távolítva. 
 
 ```powershell
 # Old
@@ -327,8 +327,8 @@ $namespace.Enabled
 $namespace = Get-AzureRmEventHubNamespace <parameters>
 ```
     
-### <a name="set-azurermeventhubnamespace"></a><span data-ttu-id="b535d-190">**Set-AzureRmEventHubNamespace**</span><span class="sxs-lookup"><span data-stu-id="b535d-190">**Set-AzureRmEventHubNamespace**</span></span>
-- <span data-ttu-id="b535d-191">A NamespceAttributes „Status” és „Enabled” tulajdonságai el lesznek távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-191">The property 'Status' and 'Enabled' from the NamespceAttributes will be removed.</span></span> 
+### <a name="set-azurermeventhubnamespace"></a>**Set-AzureRmEventHubNamespace**
+- A NamespceAttributes „Status” és „Enabled” tulajdonságai el lesznek távolítva. 
 
 ```powershell
 # Old
@@ -342,8 +342,8 @@ $namespace.Enabled
 $namespace = Set-AzureRmEventHubNamespace <parameters>
 ``` 
   
-### <a name="new-azurermeventhubconsumergroup"></a><span data-ttu-id="b535d-192">**New-AzureRmEventHubConsumerGroup**</span><span class="sxs-lookup"><span data-stu-id="b535d-192">**New-AzureRmEventHubConsumerGroup**</span></span>
-- <span data-ttu-id="b535d-193">A ConsumerGroupAttributes „EventHubPath” tulajdonsága el lesz távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-193">The property 'EventHubPath' from the ConsumerGroupAttributes will be removed.</span></span>
+### <a name="new-azurermeventhubconsumergroup"></a>**New-AzureRmEventHubConsumerGroup**
+- A ConsumerGroupAttributes „EventHubPath” tulajdonsága el lesz távolítva.
 
 ```powershell
 # Old
@@ -356,8 +356,8 @@ $consumergroup.EventHubPath
 $consumergroup = New-AzureRmEventHubConsumerGroup <parameters>
 ```
     
-### <a name="set-azurermeventhubconsumergroup"></a><span data-ttu-id="b535d-194">**Set-AzureRmEventHubConsumerGroup**</span><span class="sxs-lookup"><span data-stu-id="b535d-194">**Set-AzureRmEventHubConsumerGroup**</span></span>
-- <span data-ttu-id="b535d-195">A ConsumerGroupAttributes „EventHubPath” tulajdonsága el lesz távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-195">The property 'EventHubPath' from the ConsumerGroupAttributes will be removed.</span></span>
+### <a name="set-azurermeventhubconsumergroup"></a>**Set-AzureRmEventHubConsumerGroup**
+- A ConsumerGroupAttributes „EventHubPath” tulajdonsága el lesz távolítva.
 
 ```powershell
 # Old
@@ -370,8 +370,8 @@ $consumergroup.EventHubPath
 $consumergroup = Set-AzureRmEventHubConsumerGroup <parameters>
 ```
     
-### <a name="get-azurermeventhubconsumergroup"></a><span data-ttu-id="b535d-196">**Get-AzureRmEventHubConsumerGroup**</span><span class="sxs-lookup"><span data-stu-id="b535d-196">**Get-AzureRmEventHubConsumerGroup**</span></span>
-- <span data-ttu-id="b535d-197">A ConsumerGroupAttributes „EventHubPath” tulajdonsága el lesz távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-197">The property 'EventHubPath' from the ConsumerGroupAttributes will be removed.</span></span>
+### <a name="get-azurermeventhubconsumergroup"></a>**Get-AzureRmEventHubConsumerGroup**
+- A ConsumerGroupAttributes „EventHubPath” tulajdonsága el lesz távolítva.
 
 ```powershell
 # Old
@@ -384,20 +384,20 @@ $consumergroup.EventHubPath
 $consumergroup = Get-AzureRmEventHubConsumerGroup <parameters>
 ```
 
-## <a name="breaking-changes-to-insights-cmdlets"></a><span data-ttu-id="b535d-198">Az Insights-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="b535d-198">Breaking changes to Insights cmdlets</span></span>
+## <a name="breaking-changes-to-insights-cmdlets"></a>Az Insights-parancsmagok használhatatlanná tévő változásai
 
-### <a name="add-azurermlogalertrule"></a><span data-ttu-id="b535d-199">**Add-AzureRMLogAlertRule**</span><span class="sxs-lookup"><span data-stu-id="b535d-199">**Add-AzureRMLogAlertRule**</span></span>
-- <span data-ttu-id="b535d-200">Az **Add-AzureRMLogAlertRule** parancsmag elavult.</span><span class="sxs-lookup"><span data-stu-id="b535d-200">The **Add-AzureRMLogAlertRule** cmdlet has been deprecated</span></span>
-- <span data-ttu-id="b535d-201">A parancsmag használatának október 1-jétől kezdve nem lesz hatása, mivel a funkció tevékenyégnapló-riasztásokra vált át.</span><span class="sxs-lookup"><span data-stu-id="b535d-201">After October 1st using this cmdlet will no longer have any effect as this functionality is being transitioned to Activity Log Alerts.</span></span> <span data-ttu-id="b535d-202">További információ: https://aka.ms/migratemealerts.</span><span class="sxs-lookup"><span data-stu-id="b535d-202">Please see https://aka.ms/migratemealerts for more information.</span></span>
+### <a name="add-azurermlogalertrule"></a>**Add-AzureRMLogAlertRule**
+- Az **Add-AzureRMLogAlertRule** parancsmag elavult.
+- A parancsmag használatának október 1-jétől kezdve nem lesz hatása, mivel a funkció tevékenyégnapló-riasztásokra vált át. További információ: https://aka.ms/migratemealerts.
 
-### <a name="get-azurermusage"></a><span data-ttu-id="b535d-203">**Get-AzureRMUsage**</span><span class="sxs-lookup"><span data-stu-id="b535d-203">**Get-AzureRMUsage**</span></span>
-- <span data-ttu-id="b535d-204">A **Get-AzureRMUsage** parancsmag elavult.</span><span class="sxs-lookup"><span data-stu-id="b535d-204">The **Get-AzureRMUsage** cmdlet has been deprecated</span></span>
+### <a name="get-azurermusage"></a>**Get-AzureRMUsage**
+- A **Get-AzureRMUsage** parancsmag elavult.
 
-### <a name="get-azurermalerthistory--get-azurermautoscalehistory--get-azurermlogs"></a><span data-ttu-id="b535d-205">**Get-AzureRmAlertHistory** / **Get-AzureRmAutoscaleHistory** / **Get-AzureRmLogs**</span><span class="sxs-lookup"><span data-stu-id="b535d-205">**Get-AzureRmAlertHistory** / **Get-AzureRmAutoscaleHistory** / **Get-AzureRmLogs**</span></span>
-- <span data-ttu-id="b535d-206">Kimeneti változás: az EventData objektum EventChannels mezője (amelyet a fenti parancsmagok adnak vissza) elavult, mivel mostantól egy állandó értéket ad vissza (Admin,Operation).</span><span class="sxs-lookup"><span data-stu-id="b535d-206">Output change: The field EventChannels from the EventData object (returned by these cmdlets) is being deprecated since it now returns a constant value (Admin,Operation.)</span></span>
+### <a name="get-azurermalerthistory--get-azurermautoscalehistory--get-azurermlogs"></a>**Get-AzureRmAlertHistory** / **Get-AzureRmAutoscaleHistory** / **Get-AzureRmLogs**
+- Kimeneti változás: az EventData objektum EventChannels mezője (amelyet a fenti parancsmagok adnak vissza) elavult, mivel mostantól egy állandó értéket ad vissza (Admin,Operation).
 
-### <a name="get-azurermalertrule"></a><span data-ttu-id="b535d-207">**Get-AzureRmAlertRule**</span><span class="sxs-lookup"><span data-stu-id="b535d-207">**Get-AzureRmAlertRule**</span></span>
-- <span data-ttu-id="b535d-208">Kimeneti változás: a parancsmag kimenete egybesimított lesz (a tulajdonságok mező kiiktatásával) a felhasználói élmény javítása érdekében.</span><span class="sxs-lookup"><span data-stu-id="b535d-208">Output change: The output of this cmdlet will be flattened, i.e. elimination of the properties field, to improve the user experience.</span></span>
+### <a name="get-azurermalertrule"></a>**Get-AzureRmAlertRule**
+- Kimeneti változás: a parancsmag kimenete egybesimított lesz (a tulajdonságok mező kiiktatásával) a felhasználói élmény javítása érdekében.
 
 ```powershell
 # Old
@@ -426,8 +426,8 @@ if ($rules -and $rules.count -ge 1)
 }
 ```
 
-### <a name="get-azurermautoscalesetting"></a><span data-ttu-id="b535d-209">**Get-AzureRmAutoscaleSetting**</span><span class="sxs-lookup"><span data-stu-id="b535d-209">**Get-AzureRmAutoscaleSetting**</span></span>
-- <span data-ttu-id="b535d-210">Kimeneti változás: az AutoscaleSettingResourceName mező elavult, mivel mindig a Name mezővel egyenlő.</span><span class="sxs-lookup"><span data-stu-id="b535d-210">Output change: The AutoscaleSettingResourceName field will be deprecated since it always equals the Name field.</span></span>
+### <a name="get-azurermautoscalesetting"></a>**Get-AzureRmAutoscaleSetting**
+- Kimeneti változás: az AutoscaleSettingResourceName mező elavult, mivel mindig a Name mezővel egyenlő.
 
 ```powershell
 # Old
@@ -444,8 +444,8 @@ $s1 = Get-AzureRmAutoscaleSetting -ResourceGroup $resourceGroup -Name MySetting
 Write-Host $s1.Name    
 ```
 
-### <a name="remove-azurermalertrule--remove-azurermlogprofile"></a><span data-ttu-id="b535d-211">**Remove-AzureRmAlertRule** / **Remove-AzureRmLogProfile**</span><span class="sxs-lookup"><span data-stu-id="b535d-211">**Remove-AzureRmAlertRule** / **Remove-AzureRmLogProfile**</span></span>
-- <span data-ttu-id="b535d-212">Kimeneti változás: módosult a kimenet típusa, mostantól egyetlen objektumot ad vissza, amely tartalmazza a kérés azonosítóját és az állapotkódot.</span><span class="sxs-lookup"><span data-stu-id="b535d-212">Output change: The type of the output will change to return a single object containing the request Id and the status code.</span></span>
+### <a name="remove-azurermalertrule--remove-azurermlogprofile"></a>**Remove-AzureRmAlertRule** / **Remove-AzureRmLogProfile**
+- Kimeneti változás: módosult a kimenet típusa, mostantól egyetlen objektumot ad vissza, amely tartalmazza a kérés azonosítóját és az állapotkódot.
 
 ```powershell
 # Old
@@ -462,10 +462,10 @@ $r = $s1.RequestId
 $s = $s1.StatusCode
 ```
 
-## <a name="breaking-changes-to-network-cmdlets"></a><span data-ttu-id="b535d-213">A Network-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="b535d-213">Breaking changes to Network cmdlets</span></span>
+## <a name="breaking-changes-to-network-cmdlets"></a>A Network-parancsmagok használhatatlanná tévő változásai
 
-### <a name="add-azurermapplicationgatewaysslcertificate"></a><span data-ttu-id="b535d-214">**Add-AzureRmApplicationGatewaySslCertificate**</span><span class="sxs-lookup"><span data-stu-id="b535d-214">**Add-AzureRmApplicationGatewaySslCertificate**</span></span>
-- <span data-ttu-id="b535d-215">A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett</span><span class="sxs-lookup"><span data-stu-id="b535d-215">Parameter "Password" being replaced in favor of a SecureString</span></span>
+### <a name="add-azurermapplicationgatewaysslcertificate"></a>**Add-AzureRmApplicationGatewaySslCertificate**
+- A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett
 
 ```powershell
 # Old
@@ -475,8 +475,8 @@ Add-AzureRmApplicationGatewaySslCertificate [other required parameters] -Passwor
 Add-AzureRmApplicationGatewaySslCertificate [other required parameters] -Password $SecureStringVariable
 ```
 
-### <a name="new-azurermapplicationgatewaysslcertificate"></a><span data-ttu-id="b535d-216">**New-AzureRmApplicationGatewaySslCertificate**</span><span class="sxs-lookup"><span data-stu-id="b535d-216">**New-AzureRmApplicationGatewaySslCertificate**</span></span>
-- <span data-ttu-id="b535d-217">A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett</span><span class="sxs-lookup"><span data-stu-id="b535d-217">Parameter "Password" being replaced in favor of a SecureString</span></span>
+### <a name="new-azurermapplicationgatewaysslcertificate"></a>**New-AzureRmApplicationGatewaySslCertificate**
+- A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett
 
 ```powershell
 # Old
@@ -486,8 +486,8 @@ New-AzureRmApplicationGatewaySslCertificate [other required parameters] -Passwor
 New-AzureRmApplicationGatewaySslCertificate [other required parameters] -Password $SecureStringVariable
 ```
 
-### <a name="set-azurermapplicationgatewaysslcertificate"></a><span data-ttu-id="b535d-218">**Set-AzureRmApplicationGatewaySslCertificate**</span><span class="sxs-lookup"><span data-stu-id="b535d-218">**Set-AzureRmApplicationGatewaySslCertificate**</span></span>
-- <span data-ttu-id="b535d-219">A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett</span><span class="sxs-lookup"><span data-stu-id="b535d-219">Parameter "Password" being replaced in favor of a SecureString</span></span>
+### <a name="set-azurermapplicationgatewaysslcertificate"></a>**Set-AzureRmApplicationGatewaySslCertificate**
+- A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett
 
 ```powershell
 # Old
@@ -497,10 +497,10 @@ Set-AzureRmApplicationGatewaySslCertificate [other required parameters] -Passwor
 Set-AzureRmApplicationGatewaySslCertificate [other required parameters] -Password $SecureStringVariable
 ```
 
-## <a name="breaking-changes-to-resources-cmdlets"></a><span data-ttu-id="b535d-220">A Resources-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="b535d-220">Breaking changes to Resources cmdlets</span></span>
+## <a name="breaking-changes-to-resources-cmdlets"></a>A Resources-parancsmagok használhatatlanná tévő változásai
 
-### <a name="new-azurermadappcredential"></a><span data-ttu-id="b535d-221">**New-AzureRmADAppCredential**</span><span class="sxs-lookup"><span data-stu-id="b535d-221">**New-AzureRmADAppCredential**</span></span>
-- <span data-ttu-id="b535d-222">A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett</span><span class="sxs-lookup"><span data-stu-id="b535d-222">Parameter "Password" being replaced in favor of a SecureString</span></span>
+### <a name="new-azurermadappcredential"></a>**New-AzureRmADAppCredential**
+- A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett
 
 ```powershell
 # Old
@@ -510,8 +510,8 @@ New-AzureRmADAppCredential [other required parameters] -Password "plain-text str
 New-AzureRmADAppCredential [other required parameters] -Password $SecureStringVariable
 ```
 
-### <a name="new-azurermadapplication"></a><span data-ttu-id="b535d-223">**New-AzureRmADApplication**</span><span class="sxs-lookup"><span data-stu-id="b535d-223">**New-AzureRmADApplication**</span></span>
-- <span data-ttu-id="b535d-224">A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett</span><span class="sxs-lookup"><span data-stu-id="b535d-224">Parameter "Password" being replaced in favor of a SecureString</span></span>
+### <a name="new-azurermadapplication"></a>**New-AzureRmADApplication**
+- A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett
 
 ```powershell
 # Old
@@ -521,8 +521,8 @@ New-AzureRmADApplication [other required parameters] -Password "plain-text strin
 New-AzureRmADApplication [other required parameters] -Password $SecureStringVariable
 ```
 
-### <a name="new-azurermadserviceprincipal"></a><span data-ttu-id="b535d-225">**New-AzureRmADServicePrincipal**</span><span class="sxs-lookup"><span data-stu-id="b535d-225">**New-AzureRmADServicePrincipal**</span></span>
-- <span data-ttu-id="b535d-226">A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett</span><span class="sxs-lookup"><span data-stu-id="b535d-226">Parameter "Password" being replaced in favor of a SecureString</span></span>
+### <a name="new-azurermadserviceprincipal"></a>**New-AzureRmADServicePrincipal**
+- A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett
 
 ```powershell
 # Old
@@ -532,8 +532,8 @@ New-AzureRmADServicePrincipal [other required parameters] -Password "plain-text 
 New-AzureRmADServicePrincipal [other required parameters] -Password $SecureStringVariable
 ```
 
-### <a name="new-azurermadspcredential"></a><span data-ttu-id="b535d-227">**New-AzureRmADSpCredential**</span><span class="sxs-lookup"><span data-stu-id="b535d-227">**New-AzureRmADSpCredential**</span></span>
-- <span data-ttu-id="b535d-228">A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett</span><span class="sxs-lookup"><span data-stu-id="b535d-228">Parameter "Password" being replaced in favor of a SecureString</span></span>
+### <a name="new-azurermadspcredential"></a>**New-AzureRmADSpCredential**
+- A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett
 
 ```powershell
 # Old
@@ -543,8 +543,8 @@ New-AzureRmADSpCredential [other required parameters] -Password "plain-text stri
 New-AzureRmADSpCredential [other required parameters] -Password $SecureStringVariable
 ```
 
-### <a name="new-azurermaduser"></a><span data-ttu-id="b535d-229">**New-AzureRmADUser**</span><span class="sxs-lookup"><span data-stu-id="b535d-229">**New-AzureRmADUser**</span></span>
-- <span data-ttu-id="b535d-230">A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett</span><span class="sxs-lookup"><span data-stu-id="b535d-230">Parameter "Password" being replaced in favor of a SecureString</span></span>
+### <a name="new-azurermaduser"></a>**New-AzureRmADUser**
+- A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett
 
 ```powershell
 # Old
@@ -554,8 +554,8 @@ New-AzureRmADUser [other required parameters] -Password "plain-text string"
 New-AzureRmADUser [other required parameters] -Password $SecureStringVariable
 ```
 
-### <a name="set-azurermaduser"></a><span data-ttu-id="b535d-231">**Set-AzureRmADUser**</span><span class="sxs-lookup"><span data-stu-id="b535d-231">**Set-AzureRmADUser**</span></span>
-- <span data-ttu-id="b535d-232">A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett</span><span class="sxs-lookup"><span data-stu-id="b535d-232">Parameter "Password" being replaced in favor of a SecureString</span></span>
+### <a name="set-azurermaduser"></a>**Set-AzureRmADUser**
+- A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett
 
 ```powershell
 # Old
@@ -565,66 +565,66 @@ Set-AzureRmADUser [other required parameters] -Password "plain-text string"
 Set-AzureRmADUser [other required parameters] -Password $SecureStringVariable
 ```
 
-## <a name="breaking-changes-to-servicebus-cmdlets"></a><span data-ttu-id="b535d-233">A ServiceBus-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="b535d-233">Breaking changes to ServiceBus cmdlets</span></span>
+## <a name="breaking-changes-to-servicebus-cmdlets"></a>A ServiceBus-parancsmagok használhatatlanná tévő változásai
 
-### <a name="get-azurermservicebustopicauthorizationrule"></a><span data-ttu-id="b535d-234">**Get-AzureRmServiceBusTopicAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="b535d-234">**Get-AzureRmServiceBusTopicAuthorizationRule**</span></span>
-- <span data-ttu-id="b535d-235">A „Get-AzureRmServiceBusTopicAuthorizationRule” parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-235">The 'Get-AzureRmServiceBusTopicAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="b535d-236">Használja a következőt: „Get-AzureRmServiceBusAuthorizationRule”.</span><span class="sxs-lookup"><span data-stu-id="b535d-236">Please use the 'Get-AzureRmServiceBusAuthorizationRule' cmdlet.</span></span>    
+### <a name="get-azurermservicebustopicauthorizationrule"></a>**Get-AzureRmServiceBusTopicAuthorizationRule**
+- A „Get-AzureRmServiceBusTopicAuthorizationRule” parancsmag el lett távolítva. Használja a következőt: „Get-AzureRmServiceBusAuthorizationRule”.    
 
-### <a name="get-azurermservicebustopickey"></a><span data-ttu-id="b535d-237">**Get-AzureRmServiceBusTopicKey**</span><span class="sxs-lookup"><span data-stu-id="b535d-237">**Get-AzureRmServiceBusTopicKey**</span></span>
-- <span data-ttu-id="b535d-238">A „Get-AzureRmServiceBusTopicKey” parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-238">The 'Get-AzureRmServiceBusTopicKey' cmdlet has been removed.</span></span> <span data-ttu-id="b535d-239">Használja a következőt: „Get-AzureRmServiceBusKey”.</span><span class="sxs-lookup"><span data-stu-id="b535d-239">Please use the 'Get-AzureRmServiceBusKey' cmdlet.</span></span>
+### <a name="get-azurermservicebustopickey"></a>**Get-AzureRmServiceBusTopicKey**
+- A „Get-AzureRmServiceBusTopicKey” parancsmag el lett távolítva. Használja a következőt: „Get-AzureRmServiceBusKey”.
 
-### <a name="new-azurermservicebustopicauthorizationrule"></a><span data-ttu-id="b535d-240">**New-AzureRmServiceBusTopicAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="b535d-240">**New-AzureRmServiceBusTopicAuthorizationRule**</span></span>
-- <span data-ttu-id="b535d-241">A „New-AzureRmServiceBusTopicAuthorizationRule” parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-241">The 'New-AzureRmServiceBusTopicAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="b535d-242">Használja a következőt: „New-AzureRmServiceBusAuthorizationRule”.</span><span class="sxs-lookup"><span data-stu-id="b535d-242">Please use the 'New-AzureRmServiceBusAuthorizationRule' cmdlet.</span></span>
+### <a name="new-azurermservicebustopicauthorizationrule"></a>**New-AzureRmServiceBusTopicAuthorizationRule**
+- A „New-AzureRmServiceBusTopicAuthorizationRule” parancsmag el lett távolítva. Használja a következőt: „New-AzureRmServiceBusAuthorizationRule”.
 
-### <a name="new-azurermservicebustopickey"></a><span data-ttu-id="b535d-243">**New-AzureRmServiceBusTopicKey**</span><span class="sxs-lookup"><span data-stu-id="b535d-243">**New-AzureRmServiceBusTopicKey**</span></span>
-- <span data-ttu-id="b535d-244">A „New-AzureRmServiceBusTopicKey” parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-244">The 'New-AzureRmServiceBusTopicKey' cmdlet has been removed.</span></span> <span data-ttu-id="b535d-245">Használja a következőt: „New-AzureRmServiceBusKey”.</span><span class="sxs-lookup"><span data-stu-id="b535d-245">Please use the 'New-AzureRmServiceBusKey' cmdlet.</span></span>
+### <a name="new-azurermservicebustopickey"></a>**New-AzureRmServiceBusTopicKey**
+- A „New-AzureRmServiceBusTopicKey” parancsmag el lett távolítva. Használja a következőt: „New-AzureRmServiceBusKey”.
 
-### <a name="remove-azurermservicebustopicauthorizationrule"></a><span data-ttu-id="b535d-246">**Remove-AzureRmServiceBusTopicAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="b535d-246">**Remove-AzureRmServiceBusTopicAuthorizationRule**</span></span>
-- <span data-ttu-id="b535d-247">A „Remove-AzureRmServiceBusTopicAuthorizationRule” parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-247">The 'Remove-AzureRmServiceBusTopicAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="b535d-248">Használja a következőt: „Remove-AzureRmServiceBusAuthorizationRule”.</span><span class="sxs-lookup"><span data-stu-id="b535d-248">Please use the 'Remove-AzureRmServiceBusAuthorizationRule' cmdlet.</span></span>
+### <a name="remove-azurermservicebustopicauthorizationrule"></a>**Remove-AzureRmServiceBusTopicAuthorizationRule**
+- A „Remove-AzureRmServiceBusTopicAuthorizationRule” parancsmag el lett távolítva. Használja a következőt: „Remove-AzureRmServiceBusAuthorizationRule”.
 
-### <a name="set-azurermservicebustopicauthorizationrule"></a><span data-ttu-id="b535d-249">**Set-AzureRmServiceBusTopicAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="b535d-249">**Set-AzureRmServiceBusTopicAuthorizationRule**</span></span>
-- <span data-ttu-id="b535d-250">A „Set-AzureRmServiceBusTopicAuthorizationRule” parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-250">The 'Set-AzureRmServiceBusTopicAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="b535d-251">Használja a következőt: „Set-AzureRmServiceBusAuthorizationRule”.</span><span class="sxs-lookup"><span data-stu-id="b535d-251">Please use the 'Set-AzureRmServiceBusAuthorizationRule'cmdlet.</span></span>
+### <a name="set-azurermservicebustopicauthorizationrule"></a>**Set-AzureRmServiceBusTopicAuthorizationRule**
+- A „Set-AzureRmServiceBusTopicAuthorizationRule” parancsmag el lett távolítva. Használja a következőt: „Set-AzureRmServiceBusAuthorizationRule”.
 
-### <a name="new-azurermservicebusnamespacekey"></a><span data-ttu-id="b535d-252">**New-AzureRmServiceBusNamespaceKey**</span><span class="sxs-lookup"><span data-stu-id="b535d-252">**New-AzureRmServiceBusNamespaceKey**</span></span>
-- <span data-ttu-id="b535d-253">A „New-AzureRmServiceBusNamespaceKey” parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-253">The 'New-AzureRmServiceBusNamespaceKey' cmdlet has been removed.</span></span> <span data-ttu-id="b535d-254">Használja a következőt: „New-AzureRmServiceBusKey”.</span><span class="sxs-lookup"><span data-stu-id="b535d-254">Please use the 'New-AzureRmServiceBusKey' cmdlet.</span></span>
+### <a name="new-azurermservicebusnamespacekey"></a>**New-AzureRmServiceBusNamespaceKey**
+- A „New-AzureRmServiceBusNamespaceKey” parancsmag el lett távolítva. Használja a következőt: „New-AzureRmServiceBusKey”.
 
-### <a name="get-azurermservicebusqueueauthorizationrule"></a><span data-ttu-id="b535d-255">**Get-AzureRmServiceBusQueueAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="b535d-255">**Get-AzureRmServiceBusQueueAuthorizationRule**</span></span>
-- <span data-ttu-id="b535d-256">A „Get-AzureRmServiceBusQueueAuthorizationRule” parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-256">The 'Get-AzureRmServiceBusQueueAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="b535d-257">Használja a következőt: „Get-AzureRmServiceBusAuthorizationRule”.</span><span class="sxs-lookup"><span data-stu-id="b535d-257">Please use the 'Get-AzureRmServiceBusAuthorizationRule' cmdlet.</span></span>
+### <a name="get-azurermservicebusqueueauthorizationrule"></a>**Get-AzureRmServiceBusQueueAuthorizationRule**
+- A „Get-AzureRmServiceBusQueueAuthorizationRule” parancsmag el lett távolítva. Használja a következőt: „Get-AzureRmServiceBusAuthorizationRule”.
 
-### <a name="get-azurermservicebusqueuekey"></a><span data-ttu-id="b535d-258">**Get-AzureRmServiceBusQueueKey**</span><span class="sxs-lookup"><span data-stu-id="b535d-258">**Get-AzureRmServiceBusQueueKey**</span></span>
-- <span data-ttu-id="b535d-259">A „Get-AzureRmServiceBusQueueKey” parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-259">The 'Get-AzureRmServiceBusQueueKey' cmdlet has been removed.</span></span> <span data-ttu-id="b535d-260">Használja a következőt: „Get-AzureRmServiceBusKey”.</span><span class="sxs-lookup"><span data-stu-id="b535d-260">Please use the 'Get-AzureRmServiceBusKey' cmdlet.</span></span>
+### <a name="get-azurermservicebusqueuekey"></a>**Get-AzureRmServiceBusQueueKey**
+- A „Get-AzureRmServiceBusQueueKey” parancsmag el lett távolítva. Használja a következőt: „Get-AzureRmServiceBusKey”.
 
-### <a name="new-azurermservicebusqueueauthorizationrule"></a><span data-ttu-id="b535d-261">**New-AzureRmServiceBusQueueAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="b535d-261">**New-AzureRmServiceBusQueueAuthorizationRule**</span></span>
-- <span data-ttu-id="b535d-262">A „New-AzureRmServiceBusQueueAuthorizationRule” parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-262">The 'New-AzureRmServiceBusQueueAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="b535d-263">Használja a következőt: „New-AzureRmServiceBusAuthorizationRule”.</span><span class="sxs-lookup"><span data-stu-id="b535d-263">Please use the 'New-AzureRmServiceBusAuthorizationRule' cmdlet.</span></span>
+### <a name="new-azurermservicebusqueueauthorizationrule"></a>**New-AzureRmServiceBusQueueAuthorizationRule**
+- A „New-AzureRmServiceBusQueueAuthorizationRule” parancsmag el lett távolítva. Használja a következőt: „New-AzureRmServiceBusAuthorizationRule”.
 
-### <a name="new-azurermservicebusqueuekey"></a><span data-ttu-id="b535d-264">**New-AzureRmServiceBusQueueKey**</span><span class="sxs-lookup"><span data-stu-id="b535d-264">**New-AzureRmServiceBusQueueKey**</span></span>
-- <span data-ttu-id="b535d-265">A „New-AzureRmServiceBusQueueKey” parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-265">The 'New-AzureRmServiceBusQueueKey' cmdlet has been removed.</span></span> <span data-ttu-id="b535d-266">Használja a következőt: „New-AzureRmServiceBusKey”.</span><span class="sxs-lookup"><span data-stu-id="b535d-266">Please use the 'New-AzureRmServiceBusKey' cmdlet.</span></span>
+### <a name="new-azurermservicebusqueuekey"></a>**New-AzureRmServiceBusQueueKey**
+- A „New-AzureRmServiceBusQueueKey” parancsmag el lett távolítva. Használja a következőt: „New-AzureRmServiceBusKey”.
 
-### <a name="remove-azurermservicebusqueueauthorizationrule"></a><span data-ttu-id="b535d-267">**Remove-AzureRmServiceBusQueueAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="b535d-267">**Remove-AzureRmServiceBusQueueAuthorizationRule**</span></span>
-- <span data-ttu-id="b535d-268">A „Remove-AzureRmServiceBusQueueAuthorizationRule” parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-268">The 'Remove-AzureRmServiceBusQueueAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="b535d-269">Használja a következőt: „GRemove-AzureRmServiceBusAuthorizationRule”.</span><span class="sxs-lookup"><span data-stu-id="b535d-269">Please use the 'GRemove-AzureRmServiceBusAuthorizationRule' cmdlet.</span></span>
+### <a name="remove-azurermservicebusqueueauthorizationrule"></a>**Remove-AzureRmServiceBusQueueAuthorizationRule**
+- A „Remove-AzureRmServiceBusQueueAuthorizationRule” parancsmag el lett távolítva. Használja a következőt: „GRemove-AzureRmServiceBusAuthorizationRule”.
 
-### <a name="set-azurermservicebusqueueauthorizationrule"></a><span data-ttu-id="b535d-270">**Set-AzureRmServiceBusQueueAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="b535d-270">**Set-AzureRmServiceBusQueueAuthorizationRule**</span></span>
-- <span data-ttu-id="b535d-271">A „Set-AzureRmServiceBusQueueAuthorizationRule” parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-271">The 'Set-AzureRmServiceBusQueueAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="b535d-272">Használja a következőt: „Set-AzureRmServiceBusAuthorizationRule”.</span><span class="sxs-lookup"><span data-stu-id="b535d-272">Please use the 'Set-AzureRmServiceBusAuthorizationRule' cmdlet.</span></span>
+### <a name="set-azurermservicebusqueueauthorizationrule"></a>**Set-AzureRmServiceBusQueueAuthorizationRule**
+- A „Set-AzureRmServiceBusQueueAuthorizationRule” parancsmag el lett távolítva. Használja a következőt: „Set-AzureRmServiceBusAuthorizationRule”.
 
-### <a name="get-azurermservicebusnamespaceauthorizationrule"></a><span data-ttu-id="b535d-273">**Get-AzureRmServiceBusNamespaceAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="b535d-273">**Get-AzureRmServiceBusNamespaceAuthorizationRule**</span></span>
-- <span data-ttu-id="b535d-274">A „Get-AzureRmServiceBusNamespaceAuthorizationRule” parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-274">The 'Get-AzureRmServiceBusNamespaceAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="b535d-275">Használja a következőt: „Get-AzureRmServiceBusAuthorizationRule”.</span><span class="sxs-lookup"><span data-stu-id="b535d-275">Please use the 'Get-AzureRmServiceBusAuthorizationRule' cmdlet.</span></span>
+### <a name="get-azurermservicebusnamespaceauthorizationrule"></a>**Get-AzureRmServiceBusNamespaceAuthorizationRule**
+- A „Get-AzureRmServiceBusNamespaceAuthorizationRule” parancsmag el lett távolítva. Használja a következőt: „Get-AzureRmServiceBusAuthorizationRule”.
 
-### <a name="get-azurermservicebusnamespacekey"></a><span data-ttu-id="b535d-276">**Get-AzureRmServiceBusNamespaceKey**</span><span class="sxs-lookup"><span data-stu-id="b535d-276">**Get-AzureRmServiceBusNamespaceKey**</span></span>
-- <span data-ttu-id="b535d-277">A „Get-AzureRmServiceBusNamespaceKey” parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-277">The 'Get-AzureRmServiceBusNamespaceKey' cmdlet has been removed.</span></span> <span data-ttu-id="b535d-278">Használja a következőt: „Get-AzureRmServiceBusKey”.</span><span class="sxs-lookup"><span data-stu-id="b535d-278">Please use the 'Get-AzureRmServiceBusKey' cmdlet.</span></span>
+### <a name="get-azurermservicebusnamespacekey"></a>**Get-AzureRmServiceBusNamespaceKey**
+- A „Get-AzureRmServiceBusNamespaceKey” parancsmag el lett távolítva. Használja a következőt: „Get-AzureRmServiceBusKey”.
 
-### <a name="new-azurermservicebusnamespaceauthorizationrule"></a><span data-ttu-id="b535d-279">**New-AzureRmServiceBusNamespaceAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="b535d-279">**New-AzureRmServiceBusNamespaceAuthorizationRule**</span></span>
-- <span data-ttu-id="b535d-280">A „New-AzureRmServiceBusNamespaceAuthorizationRule” parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-280">The 'New-AzureRmServiceBusNamespaceAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="b535d-281">Használja a következőt: „New-AzureRmServiceBusAuthorizationRule”.</span><span class="sxs-lookup"><span data-stu-id="b535d-281">Please use the 'New-AzureRmServiceBusAuthorizationRule' cmdlet.</span></span>
+### <a name="new-azurermservicebusnamespaceauthorizationrule"></a>**New-AzureRmServiceBusNamespaceAuthorizationRule**
+- A „New-AzureRmServiceBusNamespaceAuthorizationRule” parancsmag el lett távolítva. Használja a következőt: „New-AzureRmServiceBusAuthorizationRule”.
 
-### <a name="remove-azurermservicebusnamespaceauthorizationrule"></a><span data-ttu-id="b535d-282">**Remove-AzureRmServiceBusNamespaceAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="b535d-282">**Remove-AzureRmServiceBusNamespaceAuthorizationRule**</span></span>
-- <span data-ttu-id="b535d-283">A „Remove-AzureRmServiceBusNamespaceAuthorizationRule” parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-283">The 'Remove-AzureRmServiceBusNamespaceAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="b535d-284">Használja a következőt: „Remove-AzureRmServiceBusAuthorizationRule”.</span><span class="sxs-lookup"><span data-stu-id="b535d-284">Please use the 'Remove-AzureRmServiceBusAuthorizationRule' cmdlet.</span></span>
+### <a name="remove-azurermservicebusnamespaceauthorizationrule"></a>**Remove-AzureRmServiceBusNamespaceAuthorizationRule**
+- A „Remove-AzureRmServiceBusNamespaceAuthorizationRule” parancsmag el lett távolítva. Használja a következőt: „Remove-AzureRmServiceBusAuthorizationRule”.
 
-### <a name="set-azurermservicebusnamespaceauthorizationrule"></a><span data-ttu-id="b535d-285">**Set-AzureRmServiceBusNamespaceAuthorizationRule**</span><span class="sxs-lookup"><span data-stu-id="b535d-285">**Set-AzureRmServiceBusNamespaceAuthorizationRule**</span></span>
-- <span data-ttu-id="b535d-286">A „Set-AzureRmServiceBusNamespaceAuthorizationRule” parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b535d-286">The 'Set-AzureRmServiceBusNamespaceAuthorizationRule' cmdlet has been removed.</span></span> <span data-ttu-id="b535d-287">Használja a következőt: „Set-AzureRmServiceBusAuthorizationRule”.</span><span class="sxs-lookup"><span data-stu-id="b535d-287">Please use the 'Set-AzureRmServiceBusAuthorizationRule' cmdlet.</span></span>
+### <a name="set-azurermservicebusnamespaceauthorizationrule"></a>**Set-AzureRmServiceBusNamespaceAuthorizationRule**
+- A „Set-AzureRmServiceBusNamespaceAuthorizationRule” parancsmag el lett távolítva. Használja a következőt: „Set-AzureRmServiceBusAuthorizationRule”.
 
-### <a name="type-namespaceattributes"></a><span data-ttu-id="b535d-288">**NamespaceAttributes típus**</span><span class="sxs-lookup"><span data-stu-id="b535d-288">**Type NamespaceAttributes**</span></span>
-- <span data-ttu-id="b535d-289">Az alábbi tulajdonságok lettek eltávolítva:</span><span class="sxs-lookup"><span data-stu-id="b535d-289">The following properties have been removed</span></span>
-    - <span data-ttu-id="b535d-290">Engedélyezve</span><span class="sxs-lookup"><span data-stu-id="b535d-290">Enabled</span></span>
-    - <span data-ttu-id="b535d-291">status</span><span class="sxs-lookup"><span data-stu-id="b535d-291">Status</span></span>
+### <a name="type-namespaceattributes"></a>**NamespaceAttributes típus**
+- Az alábbi tulajdonságok lettek eltávolítva:
+    - Engedélyezve
+    - status
    
 ```powershell
 # Old
@@ -638,12 +638,12 @@ $namespace.Enabled
 $namespace = Get-AzureRmServiceBusNamespace <parameters>
 ```
 
-### <a name="type-queueattribute"></a><span data-ttu-id="b535d-292">**QueueAttribute típus**</span><span class="sxs-lookup"><span data-stu-id="b535d-292">**Type QueueAttribute**</span></span>
-- <span data-ttu-id="b535d-293">Az alábbi tulajdonságok lettek megjelölve elavultként:</span><span class="sxs-lookup"><span data-stu-id="b535d-293">The following properties are marked as obsolete:</span></span>
-    - <span data-ttu-id="b535d-294">EnableBatchedOperations</span><span class="sxs-lookup"><span data-stu-id="b535d-294">EnableBatchedOperations</span></span>
-    - <span data-ttu-id="b535d-295">EntityAvailabilityStatus</span><span class="sxs-lookup"><span data-stu-id="b535d-295">EntityAvailabilityStatus</span></span>
-    - <span data-ttu-id="b535d-296">IsAnonymousAccessible</span><span class="sxs-lookup"><span data-stu-id="b535d-296">IsAnonymousAccessible</span></span>
-    - <span data-ttu-id="b535d-297">SupportOrdering</span><span class="sxs-lookup"><span data-stu-id="b535d-297">SupportOrdering</span></span>
+### <a name="type-queueattribute"></a>**QueueAttribute típus**
+- Az alábbi tulajdonságok lettek megjelölve elavultként:
+    - EnableBatchedOperations
+    - EntityAvailabilityStatus
+    - IsAnonymousAccessible
+    - SupportOrdering
 
 ```powershell
 # Old
@@ -659,14 +659,14 @@ $queue.SupportOrdering
 $queue = Get-AzureRmServiceBusQueue <parameters>
 ```
    
-### <a name="type-topicattribute"></a><span data-ttu-id="b535d-298">**TopicAttribute típus**</span><span class="sxs-lookup"><span data-stu-id="b535d-298">**Type TopicAttribute**</span></span>
-- <span data-ttu-id="b535d-299">Az alábbi tulajdonságok lettek megjelölve elavultként:</span><span class="sxs-lookup"><span data-stu-id="b535d-299">The following properties are marked as obsolete:</span></span>
-    - <span data-ttu-id="b535d-300">Hely</span><span class="sxs-lookup"><span data-stu-id="b535d-300">Location</span></span>
-    - <span data-ttu-id="b535d-301">IsExpress</span><span class="sxs-lookup"><span data-stu-id="b535d-301">IsExpress</span></span>
-    - <span data-ttu-id="b535d-302">IsAnonymousAccessible</span><span class="sxs-lookup"><span data-stu-id="b535d-302">IsAnonymousAccessible</span></span>
-    - <span data-ttu-id="b535d-303">FilteringMessagesBeforePublishing</span><span class="sxs-lookup"><span data-stu-id="b535d-303">FilteringMessagesBeforePublishing</span></span>
-    - <span data-ttu-id="b535d-304">EnableSubscriptionPartitioning</span><span class="sxs-lookup"><span data-stu-id="b535d-304">EnableSubscriptionPartitioning</span></span>
-    - <span data-ttu-id="b535d-305">EntityAvailabilityStatus</span><span class="sxs-lookup"><span data-stu-id="b535d-305">EntityAvailabilityStatus</span></span>
+### <a name="type-topicattribute"></a>**TopicAttribute típus**
+- Az alábbi tulajdonságok lettek megjelölve elavultként:
+    - Hely
+    - IsExpress
+    - IsAnonymousAccessible
+    - FilteringMessagesBeforePublishing
+    - EnableSubscriptionPartitioning
+    - EntityAvailabilityStatus
 
 ```powershell
 # Old
@@ -684,12 +684,12 @@ $topic.Location
 $topic = Get-AzureRmServiceBusTopic <parameters>
 ```
    
-### <a name="type-subscriptionattribute"></a><span data-ttu-id="b535d-306">**SubscriptionAttribute típus**</span><span class="sxs-lookup"><span data-stu-id="b535d-306">**Type SubscriptionAttribute**</span></span>
-- <span data-ttu-id="b535d-307">Az alábbi tulajdonságok lettek megjelölve elavultként:</span><span class="sxs-lookup"><span data-stu-id="b535d-307">The following properties are marked as obsolete</span></span>
-    - <span data-ttu-id="b535d-308">DeadLetteringOnFilterEvaluationExceptions</span><span class="sxs-lookup"><span data-stu-id="b535d-308">DeadLetteringOnFilterEvaluationExceptions</span></span>
-    - <span data-ttu-id="b535d-309">EntityAvailabilityStatus</span><span class="sxs-lookup"><span data-stu-id="b535d-309">EntityAvailabilityStatus</span></span>
-    - <span data-ttu-id="b535d-310">IsReadOnly</span><span class="sxs-lookup"><span data-stu-id="b535d-310">IsReadOnly</span></span>
-    - <span data-ttu-id="b535d-311">Hely</span><span class="sxs-lookup"><span data-stu-id="b535d-311">Location</span></span>
+### <a name="type-subscriptionattribute"></a>**SubscriptionAttribute típus**
+- Az alábbi tulajdonságok lettek megjelölve elavultként:
+    - DeadLetteringOnFilterEvaluationExceptions
+    - EntityAvailabilityStatus
+    - IsReadOnly
+    - Hely
    
 ```powershell
 # Old

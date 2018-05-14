@@ -1,24 +1,24 @@
-# <a name="breaking-changes-for-microsoft-azure-powershell-400"></a><span data-ttu-id="f3709-101">A Microsoft Azure PowerShell 4.0.0 használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="f3709-101">Breaking changes for Microsoft Azure PowerShell 4.0.0</span></span>
+# <a name="breaking-changes-for-microsoft-azure-powershell-400"></a>A Microsoft Azure PowerShell 4.0.0 használhatatlanná tévő változásai
 
-<span data-ttu-id="f3709-102">Ez a dokumentum egyrészt értesítőül szolgál a használhatatlanná tévő változtatásokról, másrészt egy migrálási útmutató az Azure PowerShell-parancsmagok felhasználóinak.</span><span class="sxs-lookup"><span data-stu-id="f3709-102">This document serves as both a breaking change notification and migration guide for consumers of the Microsoft Azure PowerShell cmdlets.</span></span> <span data-ttu-id="f3709-103">Minden szakasz tárgyalja a használhatatlanná tévő változások okát, valamint a legkisebb ellenállással járó migrálási módot is.</span><span class="sxs-lookup"><span data-stu-id="f3709-103">Each section describes both the impetus for the breaking change and the migration path of least resistance.</span></span> <span data-ttu-id="f3709-104">A körülmények részletesebb leírásáért tekintse meg az egyes változásokhoz tartozó lekérési kérelmeket.</span><span class="sxs-lookup"><span data-stu-id="f3709-104">For in-depth context, please refer to the pull request associated with each change.</span></span>
+Ez a dokumentum egyrészt értesítőül szolgál a használhatatlanná tévő változtatásokról, másrészt egy migrálási útmutató az Azure PowerShell-parancsmagok felhasználóinak. Minden szakasz tárgyalja a használhatatlanná tévő változások okát, valamint a legkisebb ellenállással járó migrálási módot is. A körülmények részletesebb leírásáért tekintse meg az egyes változásokhoz tartozó lekérési kérelmeket.
 
-## <a name="table-of-contents"></a><span data-ttu-id="f3709-105">Tartalomjegyzék</span><span class="sxs-lookup"><span data-stu-id="f3709-105">Table of Contents</span></span>
+## <a name="table-of-contents"></a>Tartalomjegyzék
 
-- [<span data-ttu-id="f3709-106">A Compute-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="f3709-106">Breaking changes to Compute cmdlets</span></span>](#breaking-changes-to-compute-cmdlets)
-- [<span data-ttu-id="f3709-107">Az EventHub-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="f3709-107">Breaking changes to EventHub cmdlets</span></span>](#breaking-changes-to-eventhub-cmdlets)
-- [<span data-ttu-id="f3709-108">Az Insights-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="f3709-108">Breaking changes to Insights cmdlets</span></span>](#breaking-changes-to-insights-cmdlets)
-- [<span data-ttu-id="f3709-109">A Network-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="f3709-109">Breaking changes to Network cmdlets</span></span>](#breaking-changes-to-network-cmdlets)
-- [<span data-ttu-id="f3709-110">A ServiceBus-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="f3709-110">Breaking changes to ServiceBus cmdlets</span></span>](#breaking-changes-to-servicebus-cmdlets)
-- [<span data-ttu-id="f3709-111">Az SQL-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="f3709-111">Breaking changes to Sql cmdlets</span></span>](#breaking-changes-to-sql-cmdlets)
-- [<span data-ttu-id="f3709-112">A Storage-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="f3709-112">Breaking changes to Storage cmdlets</span></span>](#breaking-changes-to-storage-cmdlets)
-- [<span data-ttu-id="f3709-113">A Profile-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="f3709-113">Breaking Changes to Profile Cmdlets</span></span>](#breaking-changes-to-profile-cmdlets)
-## <a name="breaking-changes-to-compute-cmdlets"></a><span data-ttu-id="f3709-114">A Compute-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="f3709-114">Breaking changes to Compute cmdlets</span></span>
+- [A Compute-parancsmagok használhatatlanná tévő változásai](#breaking-changes-to-compute-cmdlets)
+- [Az EventHub-parancsmagok használhatatlanná tévő változásai](#breaking-changes-to-eventhub-cmdlets)
+- [Az Insights-parancsmagok használhatatlanná tévő változásai](#breaking-changes-to-insights-cmdlets)
+- [A Network-parancsmagok használhatatlanná tévő változásai](#breaking-changes-to-network-cmdlets)
+- [A ServiceBus-parancsmagok használhatatlanná tévő változásai](#breaking-changes-to-servicebus-cmdlets)
+- [Az SQL-parancsmagok használhatatlanná tévő változásai](#breaking-changes-to-sql-cmdlets)
+- [A Storage-parancsmagok használhatatlanná tévő változásai](#breaking-changes-to-storage-cmdlets)
+- [A Profile-parancsmagok használhatatlanná tévő változásai](#breaking-changes-to-profile-cmdlets)
+## <a name="breaking-changes-to-compute-cmdlets"></a>A Compute-parancsmagok használhatatlanná tévő változásai
 
-<span data-ttu-id="f3709-115">A kiadás a következő kimeneti típusokat érinti:</span><span class="sxs-lookup"><span data-stu-id="f3709-115">The following output types were affected this release:</span></span>
+A kiadás a következő kimeneti típusokat érinti:
 
-### <a name="psvirtualmachine"></a><span data-ttu-id="f3709-116">PSVirtualMachine</span><span class="sxs-lookup"><span data-stu-id="f3709-116">PSVirtualMachine</span></span>
-- <span data-ttu-id="f3709-117">A `PSVirtualMachine` objektum `DataDiskNames` és `NetworkInterfaceIDs` legfelsőbb szintű tulajdonságai el lettek távolítva a kimenettípusból.</span><span class="sxs-lookup"><span data-stu-id="f3709-117">Top level properties `DataDiskNames` and `NetworkInterfaceIDs` of nthe `PSVirtualMachine` object have been removed from the output type.</span></span> <span data-ttu-id="f3709-118">Ezek a tulajdonságok eddig is elérhetőek voltak a `PSVirtualMachine` objektum `StorageProfile` és `NetworkProfile` tulajdonságaiban, és ezentúl csak innen lehet hozzájuk férni.</span><span class="sxs-lookup"><span data-stu-id="f3709-118">These properties have always been available in the `StorageProfile` and `NetworkProfile` properties of the `PSVirtualMachine` object and will be the way they will need to be accessed going forward.</span></span>
-- <span data-ttu-id="f3709-119">A módosítás a következő parancsmagokat érinti:</span><span class="sxs-lookup"><span data-stu-id="f3709-119">This change affects the following cmdlets:</span></span>
+### <a name="psvirtualmachine"></a>PSVirtualMachine
+- A `PSVirtualMachine` objektum `DataDiskNames` és `NetworkInterfaceIDs` legfelsőbb szintű tulajdonságai el lettek távolítva a kimenettípusból. Ezek a tulajdonságok eddig is elérhetőek voltak a `PSVirtualMachine` objektum `StorageProfile` és `NetworkProfile` tulajdonságaiban, és ezentúl csak innen lehet hozzájuk férni.
+- A módosítás a következő parancsmagokat érinti:
     - `Add-AzureRmVMDataDisk`
     - `Add-AzureRmVMNetworkInterface`
     - `Get-AzureRmVM`
@@ -36,25 +36,25 @@ $vm.StorageProfile.DataDisks | Select -Property Name
 $vm.NetworkProfile.NetworkInterfaces | Select -Property Id
 ```
 
-## <a name="breaking-changes-to-eventhub-cmdlets"></a><span data-ttu-id="f3709-120">Az EventHub-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="f3709-120">Breaking changes to EventHub cmdlets</span></span>
+## <a name="breaking-changes-to-eventhub-cmdlets"></a>Az EventHub-parancsmagok használhatatlanná tévő változásai
 
-<span data-ttu-id="f3709-121">A kiadás a következő parancsmagokat érinti:</span><span class="sxs-lookup"><span data-stu-id="f3709-121">The following cmdlets were affected this release:</span></span>
+A kiadás a következő parancsmagokat érinti:
 
-### <a name="get-azurermeventhubnamespace"></a><span data-ttu-id="f3709-122">Get-AzureRmEventHubNamespace</span><span class="sxs-lookup"><span data-stu-id="f3709-122">Get-AzureRmEventHubNamespace</span></span>
-- <span data-ttu-id="f3709-123">A `ResourceGroupName` tulajdonság el lett távolítva a `NamespaceAttributes` kimenettípusból.</span><span class="sxs-lookup"><span data-stu-id="f3709-123">The property `ResourceGroupName` has been removed from the output type `NamespaceAttributes`</span></span>
+### <a name="get-azurermeventhubnamespace"></a>Get-AzureRmEventHubNamespace
+- A `ResourceGroupName` tulajdonság el lett távolítva a `NamespaceAttributes` kimenettípusból.
 
-### <a name="new-azurermeventhubnamespace"></a><span data-ttu-id="f3709-124">New-AzureRmEventHubNamespace</span><span class="sxs-lookup"><span data-stu-id="f3709-124">New-AzureRmEventHubNamespace</span></span>
-- <span data-ttu-id="f3709-125">A `ResourceGroupName` tulajdonság el lett távolítva a `NamespaceAttributes` kimenettípusból.</span><span class="sxs-lookup"><span data-stu-id="f3709-125">The property `ResourceGroupName` has been removed from the output type `NamespaceAttributes`</span></span>
+### <a name="new-azurermeventhubnamespace"></a>New-AzureRmEventHubNamespace
+- A `ResourceGroupName` tulajdonság el lett távolítva a `NamespaceAttributes` kimenettípusból.
 
-## <a name="breaking-changes-to-insights-cmdlets"></a><span data-ttu-id="f3709-126">Az Insights-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="f3709-126">Breaking changes to Insights cmdlets</span></span>
+## <a name="breaking-changes-to-insights-cmdlets"></a>Az Insights-parancsmagok használhatatlanná tévő változásai
 
-<span data-ttu-id="f3709-127">A kiadás a következő parancsmagokat érinti:</span><span class="sxs-lookup"><span data-stu-id="f3709-127">The following cmdlets were affected this release:</span></span>
+A kiadás a következő parancsmagokat érinti:
     
-### <a name="get-azurermusage"></a><span data-ttu-id="f3709-128">Get-AzureRmUsage</span><span class="sxs-lookup"><span data-stu-id="f3709-128">Get-AzureRmUsage</span></span>
-- <span data-ttu-id="f3709-129">Ez a parancsmag elavult.</span><span class="sxs-lookup"><span data-stu-id="f3709-129">This cmdlet has been deprecated.</span></span>
+### <a name="get-azurermusage"></a>Get-AzureRmUsage
+- Ez a parancsmag elavult.
 
-### <a name="remove-azurermalertrule"></a><span data-ttu-id="f3709-130">Remove-AzureRmAlertRule</span><span class="sxs-lookup"><span data-stu-id="f3709-130">Remove-AzureRmAlertRule</span></span>
-- <span data-ttu-id="f3709-131">A parancsmag kimenete (korábban egy egyetlen objektumból álló lista) egy objektumra módosult; ez az objektum tartalmazza a kérés azonosítóját és az állapotkódot.</span><span class="sxs-lookup"><span data-stu-id="f3709-131">The output of this cmdlet has changed from a list with a single object to a single object; this object includes the requestId, and status code.</span></span>
+### <a name="remove-azurermalertrule"></a>Remove-AzureRmAlertRule
+- A parancsmag kimenete (korábban egy egyetlen objektumból álló lista) egy objektumra módosult; ez az objektum tartalmazza a kérés azonosítóját és az állapotkódot.
     
 ```powershell
 # Old  
@@ -71,11 +71,11 @@ $r = $s1.RequestId
 $s = $s1.StatusCode
 ```
     
-### <a name="add-azurermlogalertrule"></a><span data-ttu-id="f3709-132">Add-AzureRmLogAlertRule</span><span class="sxs-lookup"><span data-stu-id="f3709-132">Add-AzureRmLogAlertRule</span></span>
-- <span data-ttu-id="f3709-133">Ez a parancsmag elavult.</span><span class="sxs-lookup"><span data-stu-id="f3709-133">This cmdlet has been deprecated.</span></span>
+### <a name="add-azurermlogalertrule"></a>Add-AzureRmLogAlertRule
+- Ez a parancsmag elavult.
     
-### <a name="get-azurermalertrule"></a><span data-ttu-id="f3709-134">Get-AzureRmAlertRule</span><span class="sxs-lookup"><span data-stu-id="f3709-134">Get-AzureRmAlertRule</span></span>
-- <span data-ttu-id="f3709-135">A parancsmag kimenetének (egy objektumlistának) az összes eleme egybe lett simítva, azaz a rendszer az objektumokat az `{ Id, Location, Name, Tags, Properties }` struktúra helyett az `{ Id, Location, Name, Tags, Type, Description, IsEnabled, Condition, Actions, LastUpdatedTime, ...}` struktúrával adja vissza, amely magában foglalja egy Azure-erőforrás, valamint egy AlertRuleResource összes legfelsőbb szintű tulajdonságát.</span><span class="sxs-lookup"><span data-stu-id="f3709-135">Each element of the the output (a list of objects) of this cmdlet is flattened, i.e. instead of returning objects with the structure `{ Id, Location, Name, Tags, Properties }` it will return objects with the structure `{ Id, Location, Name, Tags, Type, Description, IsEnabled, Condition, Actions, LastUpdatedTime, ...}`, which is all of the attributes of an Azure Resource plus all of the attributes of an AlertRuleResource at the top level.</span></span>
+### <a name="get-azurermalertrule"></a>Get-AzureRmAlertRule
+- A parancsmag kimenetének (egy objektumlistának) az összes eleme egybe lett simítva, azaz a rendszer az objektumokat az `{ Id, Location, Name, Tags, Properties }` struktúra helyett az `{ Id, Location, Name, Tags, Type, Description, IsEnabled, Condition, Actions, LastUpdatedTime, ...}` struktúrával adja vissza, amely magában foglalja egy Azure-erőforrás, valamint egy AlertRuleResource összes legfelsőbb szintű tulajdonságát.
     
 ```powershell
 # Old
@@ -106,8 +106,8 @@ if ($rules -and $rules.count -ge 1)
 }
 ```
     
-### <a name="get-azurermautoscalesetting"></a><span data-ttu-id="f3709-136">Get-AzureRmAutoscaleSetting</span><span class="sxs-lookup"><span data-stu-id="f3709-136">Get-AzureRmAutoscaleSetting</span></span>
-- <span data-ttu-id="f3709-137">Az `AutoscaleSettingResourceName` mező elavult, mivel az értéke mindig megegyezik a `Name` mező értékével.</span><span class="sxs-lookup"><span data-stu-id="f3709-137">The `AutoscaleSettingResourceName` field is deprecated since it always has the same value as the `Name` field.</span></span>
+### <a name="get-azurermautoscalesetting"></a>Get-AzureRmAutoscaleSetting
+- Az `AutoscaleSettingResourceName` mező elavult, mivel az értéke mindig megegyezik a `Name` mező értékével.
 
 ```powershell
 # Old  
@@ -124,8 +124,8 @@ $s1 = Get-AzureRmAutoscaleSetting -ResourceGroup $resourceGroup -Name MySetting
 Write-Host $s1.Name
 ```
     
-### <a name="remove-azurermlogprofile"></a><span data-ttu-id="f3709-138">Remove-AzureRmLogProfile</span><span class="sxs-lookup"><span data-stu-id="f3709-138">Remove-AzureRmLogProfile</span></span>
-- <span data-ttu-id="f3709-139">A parancsmag kimenete `Boolean` értékről egy `RequestId` és `StatusCode` tulajdonságot tartalmazó objektumra módosul.</span><span class="sxs-lookup"><span data-stu-id="f3709-139">The output of this cmdlet will change from `Boolean` to and object containing `RequestId` and `StatusCode`</span></span>
+### <a name="remove-azurermlogprofile"></a>Remove-AzureRmLogProfile
+- A parancsmag kimenete `Boolean` értékről egy `RequestId` és `StatusCode` tulajdonságot tartalmazó objektumra módosul.
 
 ```powershell
 # Old  
@@ -145,8 +145,8 @@ $r = $s1.RequestId
 $s = $s1.StatusCode
 ```
     
-### <a name="add-azurermlogprofile"></a><span data-ttu-id="f3709-140">Add-AzureRmLogProfile</span><span class="sxs-lookup"><span data-stu-id="f3709-140">Add-AzureRmLogProfile</span></span>
-- <span data-ttu-id="f3709-141">A parancsmag kimenete egy olyan objektumra módosul, amely tartalmazza a kérés azonosítóját és az állapotkódot, valamint a frissített vagy újonnan létrehozott erőforrást.</span><span class="sxs-lookup"><span data-stu-id="f3709-141">The output of this cmdlet will change from an object that includes the requestId, status code, and the updated or newly created resource</span></span>
+### <a name="add-azurermlogprofile"></a>Add-AzureRmLogProfile
+- A parancsmag kimenete egy olyan objektumra módosul, amely tartalmazza a kérés azonosítóját és az állapotkódot, valamint a frissített vagy újonnan létrehozott erőforrást.
     
 ```powershell
 # Old  
@@ -161,8 +161,8 @@ $a = $s1.NewResource.ServiceBusRuleId
     
 ```
     
-### <a name="set-azurermdiagnosticsettings"></a><span data-ttu-id="f3709-142">Set-AzureRmDiagnosticSettings</span><span class="sxs-lookup"><span data-stu-id="f3709-142">Set-AzureRmDiagnosticSettings</span></span>
-- <span data-ttu-id="f3709-143">A parancs új nevet kap: `Update-AzureRmDiagnsoticSettings`</span><span class="sxs-lookup"><span data-stu-id="f3709-143">The command is going to be renamed to `Update-AzureRmDiagnsoticSettings`</span></span>
+### <a name="set-azurermdiagnosticsettings"></a>Set-AzureRmDiagnosticSettings
+- A parancs új nevet kap: `Update-AzureRmDiagnsoticSettings`
 
 ```powershell
 # Old
@@ -172,12 +172,12 @@ Set-AzureRmDiagnosticSettings
 Update-AzureRmDiagnosticSettings
 ```
 
-## <a name="breaking-changes-to-network-cmdlets"></a><span data-ttu-id="f3709-144">A Network-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="f3709-144">Breaking changes to Network cmdlets</span></span>
+## <a name="breaking-changes-to-network-cmdlets"></a>A Network-parancsmagok használhatatlanná tévő változásai
 
-<span data-ttu-id="f3709-145">A kiadás a következő parancsmagokat érinti:</span><span class="sxs-lookup"><span data-stu-id="f3709-145">The following cmdlets were affected this release:</span></span>
+A kiadás a következő parancsmagokat érinti:
 
-### <a name="new-azurermvirtualnetworkgatewayconnection"></a><span data-ttu-id="f3709-146">New-AzureRmVirtualNetworkGatewayConnection</span><span class="sxs-lookup"><span data-stu-id="f3709-146">New-AzureRmVirtualNetworkGatewayConnection</span></span>
-- <span data-ttu-id="f3709-147">Az `EnableBgp` paraméter értéke `boolean` helyett `string` lett</span><span class="sxs-lookup"><span data-stu-id="f3709-147">`EnableBgp` parameter has been changed to take a `boolean` instead of a `string`</span></span>
+### <a name="new-azurermvirtualnetworkgatewayconnection"></a>New-AzureRmVirtualNetworkGatewayConnection
+- Az `EnableBgp` paraméter értéke `boolean` helyett `string` lett
 
 ```powershell
 # Old
@@ -187,24 +187,24 @@ New-AzureRmVirtualNetworkGatewayConnection -ResourceGroupName "RG" -name "conn1"
 New-AzureRmVirtualNetworkGatewayConnection -ResourceGroupName "RG" -name "conn1" -VirtualNetworkGateway1 $vnetGateway -LocalNetworkGateway2 $localnetGateway -ConnectionType IPsec -SharedKey "key" -EnableBgp $true
 ```
 
-## <a name="breaking-changes-to-servicebus-cmdlets"></a><span data-ttu-id="f3709-148">A ServiceBus-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="f3709-148">Breaking changes to ServiceBus cmdlets</span></span>
+## <a name="breaking-changes-to-servicebus-cmdlets"></a>A ServiceBus-parancsmagok használhatatlanná tévő változásai
 
-<span data-ttu-id="f3709-149">A kiadás a következő parancsmagokat érinti:</span><span class="sxs-lookup"><span data-stu-id="f3709-149">The following cmdlets were affected this release:</span></span>
+A kiadás a következő parancsmagokat érinti:
 
-### <a name="get-azurermservicebusnamespace"></a><span data-ttu-id="f3709-150">Get-AzureRmServiceBusNamespace</span><span class="sxs-lookup"><span data-stu-id="f3709-150">Get-AzureRmServiceBusNamespace</span></span>
-- <span data-ttu-id="f3709-151">A `ResourceGroupName` tulajdonság el lett távolítva a `NamespaceAttributes` kimenettípusból.</span><span class="sxs-lookup"><span data-stu-id="f3709-151">The property `ResourceGroupName` has been removed from the output type `NamespaceAttributes`</span></span>
+### <a name="get-azurermservicebusnamespace"></a>Get-AzureRmServiceBusNamespace
+- A `ResourceGroupName` tulajdonság el lett távolítva a `NamespaceAttributes` kimenettípusból.
 
-### <a name="new-azurermservicebusnamespace"></a><span data-ttu-id="f3709-152">New-AzureRmServiceBusNamespace</span><span class="sxs-lookup"><span data-stu-id="f3709-152">New-AzureRmServiceBusNamespace</span></span>
+### <a name="new-azurermservicebusnamespace"></a>New-AzureRmServiceBusNamespace
 
-- <span data-ttu-id="f3709-153">A `ResourceGroupName` tulajdonság el lett távolítva a `NamespaceAttributes` kimenettípusból.</span><span class="sxs-lookup"><span data-stu-id="f3709-153">The property `ResourceGroupName` has been removed from the output type `NamespaceAttributes`</span></span>
+- A `ResourceGroupName` tulajdonság el lett távolítva a `NamespaceAttributes` kimenettípusból.
 
-## <a name="breaking-changes-to-sql-cmdlets"></a><span data-ttu-id="f3709-154">Az SQL-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="f3709-154">Breaking changes to Sql cmdlets</span></span>
+## <a name="breaking-changes-to-sql-cmdlets"></a>Az SQL-parancsmagok használhatatlanná tévő változásai
 
-<span data-ttu-id="f3709-155">A kiadás a következő parancsmagokat érinti:</span><span class="sxs-lookup"><span data-stu-id="f3709-155">The following cmdlets were affected this release:</span></span>
+A kiadás a következő parancsmagokat érinti:
 
-### <a name="new-azurermsqldatabasefailovergroup"></a><span data-ttu-id="f3709-156">New-AzureRmSqlDatabaseFailoverGroup</span><span class="sxs-lookup"><span data-stu-id="f3709-156">New-AzureRmSqlDatabaseFailoverGroup</span></span>
-- <span data-ttu-id="f3709-157">A `Tag` paraméter el lett távolítva</span><span class="sxs-lookup"><span data-stu-id="f3709-157">`Tag` parameter has been removed</span></span>
-- <span data-ttu-id="f3709-158">A `GracePeriodWithDataLossHour` paraméter új nevet kapott: `GracePeriodWithDataLossHours`</span><span class="sxs-lookup"><span data-stu-id="f3709-158">`GracePeriodWithDataLossHour` parameter has been renamed to `GracePeriodWithDataLossHours`</span></span>
+### <a name="new-azurermsqldatabasefailovergroup"></a>New-AzureRmSqlDatabaseFailoverGroup
+- A `Tag` paraméter el lett távolítva
+- A `GracePeriodWithDataLossHour` paraméter új nevet kapott: `GracePeriodWithDataLossHours`
 
 ```powershell
 # Old
@@ -214,9 +214,9 @@ New-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1 -F
 New-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1 -FailoverGroupName fg -PartnerServerName server2 -FailoverPolicy Automatic -GracePeriodWithDataLossHours 1
 ```
 
-### <a name="set-azurermsqldatabasefailovergroup"></a><span data-ttu-id="f3709-159">Set-AzureRmSqlDatabaseFailoverGroup</span><span class="sxs-lookup"><span data-stu-id="f3709-159">Set-AzureRmSqlDatabaseFailoverGroup</span></span>
-- <span data-ttu-id="f3709-160">A `Tag` paraméter el lett távolítva</span><span class="sxs-lookup"><span data-stu-id="f3709-160">`Tag` parameter has been removed</span></span>
-- <span data-ttu-id="f3709-161">A `GracePeriodWithDataLossHour` paraméter új nevet kapott: `GracePeriodWithDataLossHours`</span><span class="sxs-lookup"><span data-stu-id="f3709-161">`GracePeriodWithDataLossHour` parameter has been renamed to `GracePeriodWithDataLossHours`</span></span>
+### <a name="set-azurermsqldatabasefailovergroup"></a>Set-AzureRmSqlDatabaseFailoverGroup
+- A `Tag` paraméter el lett távolítva
+- A `GracePeriodWithDataLossHour` paraméter új nevet kapott: `GracePeriodWithDataLossHours`
 
 ```powershell
 # Old
@@ -226,8 +226,8 @@ Set-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1 -F
 Set-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1 -FailoverGroupName fg -FailoverPolicy Automatic -GracePeriodWithDataLossHours 1
 ```
 
-### <a name="add-azurermsqldatabasetofailovergroup"></a><span data-ttu-id="f3709-162">Add-AzureRmSqlDatabaseToFailoverGroup</span><span class="sxs-lookup"><span data-stu-id="f3709-162">Add-AzureRmSqlDatabaseToFailoverGroup</span></span>
-- <span data-ttu-id="f3709-163">A `Tag` paraméter el lett távolítva</span><span class="sxs-lookup"><span data-stu-id="f3709-163">`Tag` parameter has been removed</span></span>
+### <a name="add-azurermsqldatabasetofailovergroup"></a>Add-AzureRmSqlDatabaseToFailoverGroup
+- A `Tag` paraméter el lett távolítva
 
 ```powershell
 # Old
@@ -237,8 +237,8 @@ Add-AzureRmSqlDatabaseToFailoverGroup -ResourceGroupName rg -ServerName server1 
 Add-AzureRmSqlDatabaseToFailoverGroup -ResourceGroupName rg -ServerName server1 -FailoverGroupName fg -Database $db1
 ```
 
-###  <a name="remove-azurermsqldatabasefromfailovergroup"></a><span data-ttu-id="f3709-164">Remove-AzureRmSqlDatabaseFromFailoverGroup</span><span class="sxs-lookup"><span data-stu-id="f3709-164">Remove-AzureRmSqlDatabaseFromFailoverGroup</span></span>
-- <span data-ttu-id="f3709-165">A `Tag` paraméter el lett távolítva</span><span class="sxs-lookup"><span data-stu-id="f3709-165">`Tag` parameter has been removed</span></span>
+###  <a name="remove-azurermsqldatabasefromfailovergroup"></a>Remove-AzureRmSqlDatabaseFromFailoverGroup
+- A `Tag` paraméter el lett távolítva
 
 ```powershell
 # Old
@@ -248,9 +248,9 @@ Remove-AzureRmSqlDatabaseFromFailoverGroup -ResourceGroupName rg -ServerName ser
 Remove-AzureRmSqlDatabaseFromFailoverGroup -ResourceGroupName rg -ServerName server1 -FailoverGroupName fg -Database $db1
 ```
 
-### <a name="remove-azurermsqldatabasefailovergroup"></a><span data-ttu-id="f3709-166">Remove-AzureRmSqlDatabaseFailoverGroup</span><span class="sxs-lookup"><span data-stu-id="f3709-166">Remove-AzureRmSqlDatabaseFailoverGroup</span></span>
-- <span data-ttu-id="f3709-167">A `PartnerResourceGroupName` paraméter el lett távolítva</span><span class="sxs-lookup"><span data-stu-id="f3709-167">`PartnerResourceGroupName` parameter has been removed</span></span>
-- <span data-ttu-id="f3709-168">A `PartnerServerName` paraméter el lett távolítva</span><span class="sxs-lookup"><span data-stu-id="f3709-168">`PartnerServerName` parameter has been removed</span></span>
+### <a name="remove-azurermsqldatabasefailovergroup"></a>Remove-AzureRmSqlDatabaseFailoverGroup
+- A `PartnerResourceGroupName` paraméter el lett távolítva
+- A `PartnerServerName` paraméter el lett távolítva
 
 ```powershell
 # Old
@@ -260,24 +260,24 @@ Remove-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1
 Remove-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1 -FailoverGroupName fg
 ```
 
-### <a name="set-azurermsqldatabasethreatdetectionpolicy"></a><span data-ttu-id="f3709-169">Set-AzureRmSqlDatabaseThreatDetectionPolicy</span><span class="sxs-lookup"><span data-stu-id="f3709-169">Set-AzureRmSqlDatabaseThreatDetectionPolicy</span></span>
-- <span data-ttu-id="f3709-170">A `Usage_Anomaly` érték már nem érvényes az `ExcludedDetectionType` paraméterhez</span><span class="sxs-lookup"><span data-stu-id="f3709-170">The value `Usage_Anomaly` is no longer valid for the parameter `ExcludedDetectionType`</span></span>
+### <a name="set-azurermsqldatabasethreatdetectionpolicy"></a>Set-AzureRmSqlDatabaseThreatDetectionPolicy
+- A `Usage_Anomaly` érték már nem érvényes az `ExcludedDetectionType` paraméterhez
 
-### <a name="set-azurermsqlserverthreatdetectionpolicy"></a><span data-ttu-id="f3709-171">Set-AzureRmSqlServerThreatDetectionPolicy</span><span class="sxs-lookup"><span data-stu-id="f3709-171">Set-AzureRmSqlServerThreatDetectionPolicy</span></span>
-- <span data-ttu-id="f3709-172">A `Usage_Anomaly` érték már nem érvényes az `ExcludedDetectionType` paraméterhez</span><span class="sxs-lookup"><span data-stu-id="f3709-172">The value `Usage_Anomaly` is no longer valid for the parameter `ExcludedDetectionType`</span></span>
+### <a name="set-azurermsqlserverthreatdetectionpolicy"></a>Set-AzureRmSqlServerThreatDetectionPolicy
+- A `Usage_Anomaly` érték már nem érvényes az `ExcludedDetectionType` paraméterhez
 
-## <a name="breaking-changes-to-storage-cmdlets"></a><span data-ttu-id="f3709-173">A Storage-parancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="f3709-173">Breaking changes to Storage cmdlets</span></span>
+## <a name="breaking-changes-to-storage-cmdlets"></a>A Storage-parancsmagok használhatatlanná tévő változásai
 
-<span data-ttu-id="f3709-174">A kiadás a következő kimenettípus-tulajdonságokat érinti:</span><span class="sxs-lookup"><span data-stu-id="f3709-174">The following output type properties were affected this release:</span></span>
+A kiadás a következő kimenettípus-tulajdonságokat érinti:
 
-### <a name="azurestorageblobicloudblobserviceclient"></a><span data-ttu-id="f3709-175">AzureStorageBlob.ICloudBlob.ServiceClient</span><span class="sxs-lookup"><span data-stu-id="f3709-175">AzureStorageBlob.ICloudBlob.ServiceClient</span></span>
-- <span data-ttu-id="f3709-176">A következő tulajdonságok lettek eltávolítva a típusból (_megjegyzés_: ezek továbbra is megtalálhatók a `DefaultRequestOptions` tulajdonság alatt):</span><span class="sxs-lookup"><span data-stu-id="f3709-176">The following properties were removed from this type (_note_: they can still be found in `DefaultRequestOptions` property):</span></span>
+### <a name="azurestorageblobicloudblobserviceclient"></a>AzureStorageBlob.ICloudBlob.ServiceClient
+- A következő tulajdonságok lettek eltávolítva a típusból (_megjegyzés_: ezek továbbra is megtalálhatók a `DefaultRequestOptions` tulajdonság alatt):
     - `LocationMode`
     - `MaximumExecutionTime`
     - `ServerTimeout`
     - `ParallelOperationThreadCount`
     - `SingleBlobUploadThresholdInBytes`
-- <span data-ttu-id="f3709-177">A módosítás a következő parancsmagokat érinti:</span><span class="sxs-lookup"><span data-stu-id="f3709-177">This change affects the following cmdlets:</span></span>
+- A módosítás a következő parancsmagokat érinti:
     - `Get-AzureStorageBlob`
     - `Get-AzureStorageBlobContent`
     - `Get-AzureStorageBlobCopyState`
@@ -285,36 +285,36 @@ Remove-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1
     - `Start-AzureStorageBlobCopy`
     - `Stop-AzureStorageBlobCopy`
     
-### <a name="azurestoragecontainercloudblobcontainerserviceclient"></a><span data-ttu-id="f3709-178">AzureStorageContainer.CloudBlobContainer.ServiceClient</span><span class="sxs-lookup"><span data-stu-id="f3709-178">AzureStorageContainer.CloudBlobContainer.ServiceClient</span></span>
-- <span data-ttu-id="f3709-179">A következő tulajdonságok lettek eltávolítva a típusból (_megjegyzés_: ezek továbbra is megtalálhatók a `DefaultRequestOptions` tulajdonság alatt):</span><span class="sxs-lookup"><span data-stu-id="f3709-179">The following properties were removed from this type (_note_: they can still be found in the `DefaultRequestOptions` property):</span></span>
+### <a name="azurestoragecontainercloudblobcontainerserviceclient"></a>AzureStorageContainer.CloudBlobContainer.ServiceClient
+- A következő tulajdonságok lettek eltávolítva a típusból (_megjegyzés_: ezek továbbra is megtalálhatók a `DefaultRequestOptions` tulajdonság alatt):
     - `LocationMode`
     - `MaximumExecutionTime`
     - `ServerTimeout`
     - `ParallelOperationThreadCount`
     - `SingleBlobUploadThresholdInBytes`
-- <span data-ttu-id="f3709-180">A módosítás a következő parancsmagokat érinti:</span><span class="sxs-lookup"><span data-stu-id="f3709-180">This change affects the following cmdlets:</span></span>
+- A módosítás a következő parancsmagokat érinti:
     - `Get-AzureStorageContainer`
     - `New-AzureStorageContainer`
     - `Set-AzureStorageContainerAcl`
     
-### <a name="azurestoragequeuecloudqueueserviceclient"></a><span data-ttu-id="f3709-181">AzureStorageQueue.CloudQueue.ServiceClient</span><span class="sxs-lookup"><span data-stu-id="f3709-181">AzureStorageQueue.CloudQueue.ServiceClient</span></span>
-- <span data-ttu-id="f3709-182">A következő tulajdonságok lettek eltávolítva a típusból (_megjegyzés_: ezek továbbra is megtalálhatók a `DefaultRequestOptions` tulajdonság alatt):</span><span class="sxs-lookup"><span data-stu-id="f3709-182">The following properties were removed from this type (_note_: they can still be found in the `DefaultRequestOptions` property):</span></span>
+### <a name="azurestoragequeuecloudqueueserviceclient"></a>AzureStorageQueue.CloudQueue.ServiceClient
+- A következő tulajdonságok lettek eltávolítva a típusból (_megjegyzés_: ezek továbbra is megtalálhatók a `DefaultRequestOptions` tulajdonság alatt):
     - `LocationMode`
     - `MaximumExecutionTime`
     - `RetryPolicy`
     - `ServerTimeout`
-- <span data-ttu-id="f3709-183">A módosítás a következő parancsmagokat érinti:</span><span class="sxs-lookup"><span data-stu-id="f3709-183">This change affects the following cmdlets:</span></span>
+- A módosítás a következő parancsmagokat érinti:
     - `Get-AzureStorageQueue`
     - `New-AzureStorageQueue`
     
-### <a name="azurestoragetablecloudtableserviceclient"></a><span data-ttu-id="f3709-184">AzureStorageTable.CloudTable.ServiceClient</span><span class="sxs-lookup"><span data-stu-id="f3709-184">AzureStorageTable.CloudTable.ServiceClient</span></span>
-- <span data-ttu-id="f3709-185">A következő tulajdonságok lettek eltávolítva a típusból (_megjegyzés_: ezek továbbra is megtalálhatók a `DefaultRequestOptions` tulajdonság alatt):</span><span class="sxs-lookup"><span data-stu-id="f3709-185">The following properties were removed from this type (_note_: they can still be found in the `DefaultRequestOptions` property):</span></span>
+### <a name="azurestoragetablecloudtableserviceclient"></a>AzureStorageTable.CloudTable.ServiceClient
+- A következő tulajdonságok lettek eltávolítva a típusból (_megjegyzés_: ezek továbbra is megtalálhatók a `DefaultRequestOptions` tulajdonság alatt):
     - `LocationMode`
     - `MaximumExecutionTime`
     - `PayloadFormat`
     - `RetryPolicy`
     - `ServerTimeout`
-- <span data-ttu-id="f3709-186">A módosítás a következő parancsmagokat érinti:</span><span class="sxs-lookup"><span data-stu-id="f3709-186">This change affects the following cmdlets:</span></span>
+- A módosítás a következő parancsmagokat érinti:
     - `Get-AzureStorageTable`
     - `New-AzureStorageTable`
     
@@ -332,13 +332,13 @@ $PayloadFormat = (Get-AzureStorageTable -Name $tablename).CloudTable.ServiceClie
 $RetryPolicy = (Get-AzureStorageQueue -Name $queuename).CloudQueue.ServiceClient.DefaultRequestOptions.RetryPolicy
 ```
 
-## <a name="breaking-changes-to-profile-cmdlets"></a><span data-ttu-id="f3709-187">A profilparancsmagok használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="f3709-187">Breaking Changes to Profile Cmdlets</span></span>
+## <a name="breaking-changes-to-profile-cmdlets"></a>A profilparancsmagok használhatatlanná tévő változásai
 
-<span data-ttu-id="f3709-188">A kiadás a következő parancsmagokat és a parancsmagok következő kimeneti típusait érintette:</span><span class="sxs-lookup"><span data-stu-id="f3709-188">The following cmdlets and cmdlet output types were changed in this release.</span></span>
+A kiadás a következő parancsmagokat és a parancsmagok következő kimeneti típusait érintette:
 
-### <a name="add-azurermaccount-breaking-changes"></a><span data-ttu-id="f3709-189">Az Add-AzureRmAccount használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="f3709-189">Add-AzureRmAccount breaking changes</span></span>
+### <a name="add-azurermaccount-breaking-changes"></a>Az Add-AzureRmAccount használhatatlanná tévő változásai
 
-- <span data-ttu-id="f3709-190">Az ```EnvironmentName``` paraméter el lett távolítva, és az ```Environment``` lépett a helyébe. Az ```Environment``` most már egy karakterláncot vesz fel egy ```AzureEnvironment``` objektum helyett.</span><span class="sxs-lookup"><span data-stu-id="f3709-190">```EnvironmentName``` parameter has been removed and replaced with ```Environment```, the ```Environment``` now takes a string and not an ```AzureEnvironment``` object</span></span>
+- Az ```EnvironmentName``` paraméter el lett távolítva, és az ```Environment``` lépett a helyébe. Az ```Environment``` most már egy karakterláncot vesz fel egy ```AzureEnvironment``` objektum helyett.
 
 ```powershell
 # Old
@@ -348,9 +348,9 @@ Add-AzureRmAccount -EnvironmentName AzureChinaCloud
 Add-AzureRmAccount -Environment AzureChinaCloud
 ```
 
-### <a name="select-azurermprofile-was-renamed-to-import-azurermcontext"></a><span data-ttu-id="f3709-191">A Select-AzureRmProfile új nevet kapott: Import-AzureRmContext</span><span class="sxs-lookup"><span data-stu-id="f3709-191">Select-AzureRmProfile was renamed to Import-AzureRmContext</span></span>
+### <a name="select-azurermprofile-was-renamed-to-import-azurermcontext"></a>A Select-AzureRmProfile új nevet kapott: Import-AzureRmContext
 
-<span data-ttu-id="f3709-192">A ```Select-AzureRmProfile``` új nevet kapott: ```Import-AzureRmContext```</span><span class="sxs-lookup"><span data-stu-id="f3709-192">```Select-AzureRmProfile``` was renamed to ```Import-AzureRmContext```</span></span>
+A ```Select-AzureRmProfile``` új nevet kapott: ```Import-AzureRmContext```
 
 ```powershell
 # Old
@@ -360,9 +360,9 @@ Select-AzureRmProfile -Path c:\mydir\myprofile.json
 Import-AzureRmContext -Path c:\mydir\myprofile.json
 ```
 
-### <a name="save-azurermprofile-was-renamed-to-save-azurermcontext"></a><span data-ttu-id="f3709-193">A Save-AzureRmProfile új nevet kapott: Save-AzureRmContext</span><span class="sxs-lookup"><span data-stu-id="f3709-193">Save-AzureRmProfile was renamed to Save-AzureRmContext</span></span>
+### <a name="save-azurermprofile-was-renamed-to-save-azurermcontext"></a>A Save-AzureRmProfile új nevet kapott: Save-AzureRmContext
 
-<span data-ttu-id="f3709-194">A ```Save-AzureRmProfile``` új nevet kapott: ```Save-AzureRmContext```</span><span class="sxs-lookup"><span data-stu-id="f3709-194">```Save-AzureRmProfile``` was renamed to ```Save-AzureRmContext```</span></span>
+A ```Save-AzureRmProfile``` új nevet kapott: ```Save-AzureRmContext```
 
 ```powershell
 # Old
@@ -371,9 +371,9 @@ Save-AzureRmProfile -Path c:\mydir\myprofile.json
 # New
 Save-AzureRmContext -Path c:\mydir\myprofile.json
 ```
-### <a name="breaking-changes-to-output-psazurecontext-type"></a><span data-ttu-id="f3709-195">A PSAzureContext típusú kimenet használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="f3709-195">Breaking Changes to output PSAzureContext Type</span></span>
+### <a name="breaking-changes-to-output-psazurecontext-type"></a>A PSAzureContext típusú kimenet használhatatlanná tévő változásai
 
-- <span data-ttu-id="f3709-196">A ```TokenCache``` tulajdonság olyan típusra módosult, amely ```IAzureTokenCache``` elemet implementál ```byte[]``` helyett</span><span class="sxs-lookup"><span data-stu-id="f3709-196">The ```TokenCache``` property changed to a type that implements ```IAzureTokenCache``` instead of a ```byte[]```</span></span>
+- A ```TokenCache``` tulajdonság olyan típusra módosult, amely ```IAzureTokenCache``` elemet implementál ```byte[]``` helyett
 
 ```powershell
 # Old
@@ -387,9 +387,9 @@ $bytes = (Set-AzureRmContext -SubscriptionId xxx-xxx-xxx-xxx).TokenCache.CacheDa
 $bytes = (Add-AzureRmAccount).Context.TokenCache.CacheData
 ```
 
-### <a name="breaking-changes-to-the-output-psazureaccount-type"></a><span data-ttu-id="f3709-197">A PSAzureAccount típusú kimenet használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="f3709-197">Breaking Changes to the output PSAzureAccount Type</span></span>
+### <a name="breaking-changes-to-the-output-psazureaccount-type"></a>A PSAzureAccount típusú kimenet használhatatlanná tévő változásai
 
-- <span data-ttu-id="f3709-198">Az ```AccountType``` tulajdonság a következőre módosult: ```Type```</span><span class="sxs-lookup"><span data-stu-id="f3709-198">The ```AccountType``` property was changed to ```Type```</span></span>
+- Az ```AccountType``` tulajdonság a következőre módosult: ```Type```
 
 ```powershell
 # Old
@@ -403,8 +403,8 @@ $type = (Set-AzureRmContext -SubscriptionId xxx-xxx-xxx-xxx).Account.Type
 $type = (Add-AzureRmAccount).Context.Account.Type
 ```
 
-### <a name="breaking-changes-to-the-output-psazuresubscription-type"></a><span data-ttu-id="f3709-199">A PSAzureSubscription típusú kimenet használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="f3709-199">Breaking Changes to the output PSAzureSubscription Type</span></span>
-- <span data-ttu-id="f3709-200">A ```SubscriptionId``` tulajdonság a következőre módosult: ```Id```</span><span class="sxs-lookup"><span data-stu-id="f3709-200">The ```SubscriptionId``` property was changed to ```Id```</span></span>
+### <a name="breaking-changes-to-the-output-psazuresubscription-type"></a>A PSAzureSubscription típusú kimenet használhatatlanná tévő változásai
+- A ```SubscriptionId``` tulajdonság a következőre módosult: ```Id```
 
 ```powershell
 # Old
@@ -420,7 +420,7 @@ $id =(Get-AzureRmContext -SubscriptionId xxxx-xxxx-xxxx-xxxx).Subscription.Id
 $id =(Set-AzureRmContext -SubscriptionId xxxx-xxxx-xxxx-xxxx).Subscription.Id
 ```
 
-- <span data-ttu-id="f3709-201">A ```SubscriptionName``` tulajdonság a következőre módosult: ```Name```</span><span class="sxs-lookup"><span data-stu-id="f3709-201">The ```SubscriptionName``` property was changed to ```Name```</span></span>
+- A ```SubscriptionName``` tulajdonság a következőre módosult: ```Name```
 
 ```powershell
 # Old
@@ -436,9 +436,9 @@ $name =(Get-AzureRmContext -SubscriptionId xxxx-xxxx-xxxx-xxxx).Subscription.Nam
 $name =(Set-AzureRmContext -SubscriptionId xxxx-xxxx-xxxx-xxxx).Subscription.Name
 ```
 
-### <a name="breaking-changes-to-the-output-psazuretenant-type"></a><span data-ttu-id="f3709-202">A PSAzureTenant típusú kimenet használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="f3709-202">Breaking Changes to the output PSAzureTenant Type</span></span>
+### <a name="breaking-changes-to-the-output-psazuretenant-type"></a>A PSAzureTenant típusú kimenet használhatatlanná tévő változásai
 
-- <span data-ttu-id="f3709-203">A ```TenantId``` tulajdonság a következőre módosult: ```Id```</span><span class="sxs-lookup"><span data-stu-id="f3709-203">The ```TenantId``` property was changed to ```Id```</span></span>
+- A ```TenantId``` tulajdonság a következőre módosult: ```Id```
 
 ```powershell
 # Old
@@ -454,7 +454,7 @@ $id =(Get-AzureRmContext -SubscriptionId xxxx-xxxx-xxxx-xxxx).Tenant.Id
 $id =(Set-AzureRmContext -SubscriptionId xxxx-xxxx-xxxx-xxxx).Tenant.Id
 ```
 
-- <span data-ttu-id="f3709-204">A ```Domain``` tulajdonság a következőre módosult: ```Directory```</span><span class="sxs-lookup"><span data-stu-id="f3709-204">The ```Domain``` property was changed to ```Directory```</span></span>
+- A ```Domain``` tulajdonság a következőre módosult: ```Directory```
 
 ```powershell
 # Old
