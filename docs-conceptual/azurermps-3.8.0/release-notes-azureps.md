@@ -1,6 +1,6 @@
 ---
-title: "Az Azure PowerShell változásnaplója | Microsoft Docs"
-description: "Az alábbiakban az Azure PowerShell legutóbbi kiadásában végrehajtott módosítások előzményei olvashatók."
+title: Az Azure PowerShell változásnaplója | Microsoft Docs
+description: Az alábbiakban az Azure PowerShell legutóbbi kiadásában végrehajtott módosítások előzményei olvashatók.
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -9,20 +9,20 @@ ms.service: azure-powershell
 ms.product: azure
 ms.devlang: powershell
 ms.topic: conceptual
-ms.workload: 
+ms.workload: ''
 ms.date: 05/18/2017
 ms.openlocfilehash: 04f89e8d47d0825d46cb1b8817efbcc0cafa0acd
-ms.sourcegitcommit: b256bf48e15ee98865de0fae50e7b81878b03a54
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="release-notes"></a>Kibocsátási megjegyzések
 
 Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítások listája olvasható.
 
 ## <a name="version-380"></a>3.8.0-ás verzió
-* Számítás
+* Compute
   - A Get-* parancsmagok hibájának javítása több oldalnyi adat (több, mint 120 elem) lekérésének lehetővé tétele érdekében
 * DataLakeAnalytics
   - Egyes parancsok súgójának javítása a megfelelő megfogalmazás és példák érdekében.

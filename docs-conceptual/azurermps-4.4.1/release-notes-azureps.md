@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
 ms.openlocfilehash: d8a891673df343551cbd805016c2d25ee4e31c8c
-ms.sourcegitcommit: b256bf48e15ee98865de0fae50e7b81878b03a54
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="release-notes"></a>Kibocsátási megjegyzések
 
@@ -27,7 +27,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
     - Mellékelt súgófájl a parancsmaghoz
     - Hozzáadott memóriabeli tesztek és forgatókönyvteszt (csak élő)
   * Az Add-AzureAsAccount parancsmag hibáinak javítása
-* Automatizálás
+* Automation
   * A korábbi kiadásokban javított parancsmagok súgódokumentumainak javítása.
   * 4 új parancsmag lett hozzáadva a DSC csomópont-konfigurációk előkészített kibocsátásának támogatásához.
     - Start-AzureRmAutomationDscNodeConfigurationDeployment
@@ -37,7 +37,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
 * CognitiveServices
   * Integráció a Cognitive Services Management SDK 2.0.0-s verziójával.
   * A Get-AzureRmCognitiveServicesAccount most már megfelelően támogatja a lapozást.
-* Számítás
+* Compute
   * A futtatási parancs funkciója:
     - Az új Invoke-AzureRmVMRunCommand parancsmag futtatás parancsot indít egy virtuális gépen
     - Az új Get-AzureRmVMRunCommandDocument parancsmag megjeleníti a futtatás paranccsal kapcsolatos elérhető dokumentumokat
@@ -163,7 +163,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
   * Környezeti információk kezelése, parancsmag módosításai:
     - Hozzáadott hatókör = (Folyamat | AktuálisFelhasználó) a hitelesítő adatokat módosító összes parancsmaghoz
     - Get-AzureRmContext – Új ListAvailable paraméter az összes mentett környezet listájához
-* Erőforrások
+* További források
   * PolicySetDefinition parancsmagok hozzáadása
     - New-AzureRmPolicySetDefinition parancsmag szabályzatkészlet-definíciók létrehozásához
     - Get-AzureRmPolicySetDefinition parancsmag az összes szabályzatkészlet-definíció listázásához vagy adott szabályzatkészlet-definíció lekéréséhez
@@ -215,12 +215,12 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
   * A termékváltozat-keresés frissítése a New-AzureRmAnalysisServicesServer és a Set-AzureRmAnalysisServicesServer parancsmagban
     - Módosítva lett a dinamikus keresés nem változtatható termékváltozata.
   * Az Add-AzureAnalysisServicesAccount parancsmag most már támogatja a szolgáltatásnévvel való bejelentkezést
-* Automatizálás
+* Automation
   * Módosítva lettek az Automation DSC* parancsmagok, hogy 100-nál több rekordot kérjenek le
   * Meg lett oldva a probléma, amely miatt a részletes streamek néhány Automation-parancsmag (például a Get-AzureRmAutomationVariable és a Get-AzureRmAutomationJob) meghívása után nem működnek tovább.
   * Most már támogatott a csomópont-konfiguráció buildjeinek verziószámozása a StartAzureAutomationDscCompilationJob és az ImportAzureAutomationDscNodeConfiguration parancsmagban
   * Meglévő problémák hibajavításai – az aliasokkal kapcsolatos, 3775-ös számú probléma, valamint a runOn aliasok és a hibrid feldolgozók támogatásának javítása.
-* Számítás
+* Compute
   * Set-AzureRmVMAEMExtension: Mostantól támogatottak az új prémium szintű lemezméretek
   * Set-AzureRmVMAEMExtension: Mostantól támogatott az M-sorozat
   * Megjelent a ForceUpdateTag paraméter az Add-AzureRmVmssExtension parancsmagban
@@ -230,7 +230,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
   * A MaintenanceRedeployStatus paraméter megjelenítése a Get-AzureRmVM parancsmag kimenetében
   * A korlátozások és a képességek megjelenítése a Get-AzureRmComputeResourceSku parancsmag táblázatformátumában
 * DataLakeStore
-  * A probléma javítása: https://github.com/Azure/azure-powershell/issues/4323
+  * A probléma megoldása: https://github.com/Azure/azure-powershell/issues/4323
 * EventHub
   * Megjelent a ResourceGroup tulajdonság a névtérattribútumok között
     - A ResourceGroup tulajdonság azon erőforráscsoport nevét olvassa be, melyben a névtér található
@@ -254,7 +254,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
     * Az adatgyűjtés most már alapértelmezés szerint engedélyezve van. A Microsoft a felhasználói élmény javítása érdekében gyűjti a használati adatokat. Az adatok névtelenek, és nem tartalmazzák a parancssori argumentumok értékeit.
       - A funkció a Disable-AzureRmDataCollection parancsmaggal kapcsolható ki
       - A funkció az Enable-AzureRmDataCollection parancsmaggal kapcsolható be
-* Erőforrások
+* További források
     * Mostantól támogatott a hatókörök érvényesítése az ARM-nek küldött kérelem küldése előtt az alábbi szerepkör-definíciós és szerepkör-hozzárendelési parancsmagok esetében
       - Get-AzureRMRoleAssignment
       - New-AzureRMRoleAssignment
@@ -298,8 +298,8 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
       - Remove-AzureRmStorageAccountNetworkRule
 
 ## <a name="20170717---version-421"></a>2017.07.17. – 4.2.1-es verzió
-* Számítás
-    - Kijavítottuk a virtuálisgép-lemez és virtuálisgép-lemez pillanatfelvételének létrehozásához és frissítéséhez használt parancsmagok hibáit (hivatkozás)[https://github.com/azure/azure-powershell/issues/4309]
+* Compute
+    - Kijavítottuk a virtuálisgép-lemez és a virtuálisgép-lemez pillanatfelvételének létrehozásához és frissítéséhez használt parancsmagok hibáit (hivatkozás)[https://github.com/azure/azure-powershell/issues/4309]
       - New-AzureRmDisk
       - New-AzureRmSnapshot
       - Update-AzureRmDisk
@@ -381,12 +381,12 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
         - SparkDefaults és SparkThriftConf paraméter a Spark 1.6-os verziójához
         - Spark2Defaults és Spark2ThriftConf paraméter a Spark 2.0-ás verziójához
 * Insights
-    * 4215 hiba (módosítási kérés): eltávolítottuk a 15 napos korlátot a Get-AzureRmLog parancsmag időtartományából. Kisebb módosítások az egység tesztneveiben.
-    * Kijavítottuk a 3957 hibát a Get-AzureRmLog parancsmag esetében
-        - 1 probléma: A háttérrendszer a rekordokat 200 rekordot tartalmazó oldalakon adja vissza, és az oldalakat a folytatási token kapcsolja össze. A felhasználók azt tapasztalták, hogy a parancsmag csak 200 rekordot adott vissza, pedig több volt ennél. Ez a MaxEvents esetében megadott értéktől függetlenül bekövetkezett, kivéve, ha az érték kisebb volt, mint 200.
-        - 2 probléma: A dokumentáció helytelen adatokat tartalmazott erről a parancsmagról. Például a timewindow alapértelmezett értéke 1 óra volt.
-        - 1 javítás: A parancsmag mostantól a háttérrendszer által visszaadott folytatási tokent követi, amíg el nem éri a MaxEvents tulajdonságot vagy a készlet végét.<br>A MaxEvents alapértelmezett értéke 1000, az maximális értéke pedig 100000. A MaxEvents 1-nél kisebb értékei figyelmen kívül lesznek hagyva, és az alapértelmezett érték lesz használva. Ezek az értékek és viselkedések nem módosultak, és már helyesen vannak dokumentálva.<br>Egy alias (MaxRecords) hozzá lett adva a MaxEvents-hez, mivel a parancsmag neve már nem jelzi az eseményeket, csak a naplókat.
-        - 2 javítás: A dokumentáció helyes és részletesebb információkat tartalmaz: új alias, helyes időtartomány, helyes alapértelmezett, minimális és maximális értékek.
+    * 4215. hiba (módosítási kérés): eltávolítottuk a 15 napos korlátot a Get-AzureRmLog parancsmag időtartományából. Kisebb módosítások az egység tesztneveiben.
+    * Kijavítottuk a 3957. hibát a Get-AzureRmLog parancsmag esetében
+        - 1. probléma: A háttérrendszer a rekordokat 200 rekordot tartalmazó oldalakon adja vissza, és az oldalakat a folytatási token kapcsolja össze. A felhasználók azt tapasztalták, hogy a parancsmag csak 200 rekordot adott vissza, pedig több volt ennél. Ez a MaxEvents esetében megadott értéktől függetlenül bekövetkezett, kivéve, ha az érték kisebb volt, mint 200.
+        - 2. probléma: A dokumentáció helytelen adatokat tartalmazott erről a parancsmagról. Például a timewindow alapértelmezett értéke 1 óra volt.
+        - 1. javítás: A parancsmag mostantól a háttérrendszer által visszaadott folytatási tokent követi, amíg el nem éri a MaxEvents tulajdonságot vagy a készlet végét.<br>A MaxEvents alapértelmezett értéke 1000, az maximális értéke pedig 100000. A MaxEvents 1-nél kisebb értékei figyelmen kívül lesznek hagyva, és az alapértelmezett érték lesz használva. Ezek az értékek és viselkedések nem módosultak, és már helyesen vannak dokumentálva.<br>Egy alias (MaxRecords) hozzá lett adva a MaxEvents-hez, mivel a parancsmag neve már nem jelzi az eseményeket, csak a naplókat.
+        - 2. javítás: A dokumentáció helyes és részletesebb információkat tartalmaz: új alias, helyes időtartomány, helyes alapértelmezett, minimális és maximális értékek.
 * KeyVault
     * E-mail-cím eltávolítása a címtárlekérdezésből, amikor a -UserPrincipalName meg van adva a Set-AzureRMKeyVaultAccessPolicy és a Remove-AzureRMKeyVaultAccessPolicy parancsmaghoz.
       - Mostantól mindkét parancsmag rendelkezik -EmailAddress paraméterrel, amely a -UserPrincipalName paraméter helyett használható, ha az e-mail-cím lekérdezése megfelelő.  Ha egynél több egyező e-mail-cím található a címtárban, a parancsmag futtatása sikertelen lesz.
@@ -554,7 +554,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
   - A duplikált DataDiskNames és NetworkInterfaceIDs tulajdonságok el lettek távolítva a PS VM-objektumából.
   - A DataDiskNames és a NetworkInterfaceIDs paraméterek mostantól nem kötelezőek a Remove-AzureRmVMDataDisk és a Remove-AzureRmVMNetworkInterface parancsmagban.
   - Kijavítottuk a Get parancsmagok átirányítását listaobjektum visszaadásakor.
-  - Az RDFE-parancsmagokkal ütköző parancsmagok új nevet kaptak. További részletek: https://github.com/Azure/azure-powershell/issues/2917
+  - Az RDFE-parancsmagokkal ütköző parancsmagok új nevet kaptak. További részletek az alábbi problémánál találhatók: https://github.com/Azure/azure-powershell/issues/2917
     + A `New-AzureVMSqlServerAutoBackupConfig` új nevet kapott: `New-AzureRmVMSqlServerAutoBackupConfig`
     + A `New-AzureVMSqlServerAutoPatchingConfig` új nevet kapott: `New-AzureRmVMSqlServerAutoPatchingConfig`
     + A `New-AzureVMSqlServerKeyVaultCredentialConfig` új nevet kapott: `New-AzureRmVMSqlServerKeyVaultCredentialConfig`
