@@ -2,19 +2,19 @@
 title: Azure-előfizetések kezelése az Azure PowerShell-lel | Microsoft Docs
 description: Azure-előfizetések kezelése az Azure PowerShell-lel
 keywords: Azure PowerShell, előfizetés
-author: sdwheeler
-ms.author: sewhee
+author: sptramer
+ms.author: sttramer
 manager: carmonm
 ms.product: azure
 ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 68d03ec8d1a86fb3b270d02a4697bbf9af847f2d
-ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
+ms.openlocfilehash: 2f5f614fadc85e96d102a28101956ae6054d01a5
+ms.sourcegitcommit: 5971c92cb023bdd1d71fa2ad0a3b378abfbd092a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Több Azure-előfizetés kezelése
 
