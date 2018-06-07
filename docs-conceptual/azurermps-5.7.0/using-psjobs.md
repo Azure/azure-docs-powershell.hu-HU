@@ -5,32 +5,31 @@ services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.product: azure
-ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/11/2017
-ms.openlocfilehash: cf5e9d6e461ee7fde1e307db885c37e31decb510
-ms.sourcegitcommit: 5971c92cb023bdd1d71fa2ad0a3b378abfbd092a
+ms.openlocfilehash: df64fabe95b927551c10196d7b6b26a8f400335d
+ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34820272"
 ---
-# <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a><span data-ttu-id="00cbf-103">Parancsmagok párhuzamos futtatása PowerShell-feladatok használatával</span><span class="sxs-lookup"><span data-stu-id="00cbf-103">Running cmdlets in parallel using PowerShell jobs</span></span>
+# <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a><span data-ttu-id="636d3-103">Parancsmagok párhuzamos futtatása PowerShell-feladatok használatával</span><span class="sxs-lookup"><span data-stu-id="636d3-103">Running cmdlets in parallel using PowerShell jobs</span></span>
 
-<span data-ttu-id="00cbf-104">A PowerShell a [PowerShell-feladatok](/powershell/module/microsoft.powershell.core/about/about_jobs) révén támogatja az aszinkron műveleteket.</span><span class="sxs-lookup"><span data-stu-id="00cbf-104">PowerShell supports asynchronous action with [PowerShell Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs).</span></span>
-<span data-ttu-id="00cbf-105">Az Azure PowerShell működése nagymértékben függ az Azure-hoz intézett hálózati hívások létrehozásától és a rájuk való várakozástól.</span><span class="sxs-lookup"><span data-stu-id="00cbf-105">Azure PowerShell is heavily dependent on making, and waiting for, network calls to Azure.</span></span> <span data-ttu-id="00cbf-106">A fejlesztők munkája során gyakran előfordul, hogy több, nem blokkoló hívást szeretnének intézni az Azure-hoz egy szkripten belül, vagy az aktuális munkamenet blokkolása nélkül szeretnének Azure-erőforrásokat létrehozni az REPL-ben.</span><span class="sxs-lookup"><span data-stu-id="00cbf-106">As a developer, you may often find yourself looking to make multiple non-blocking calls to Azure in a script, or you may find that you want to create Azure resources in the REPL without blocking the current session.</span></span> <span data-ttu-id="00cbf-107">Az Azure PowerShell első osztályú [PS-feladattámogatást](/powershell/module/microsoft.powershell.core/about/about_jobs) biztosít ezen igények kielégítése céljából.</span><span class="sxs-lookup"><span data-stu-id="00cbf-107">To address these needs, Azure PowerShell provides first-class [PSJob](/powershell/module/microsoft.powershell.core/about/about_jobs) support.</span></span>
+<span data-ttu-id="636d3-104">A PowerShell a [PowerShell-feladatok](/powershell/module/microsoft.powershell.core/about/about_jobs) révén támogatja az aszinkron műveleteket.</span><span class="sxs-lookup"><span data-stu-id="636d3-104">PowerShell supports asynchronous action with [PowerShell Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs).</span></span>
+<span data-ttu-id="636d3-105">Az Azure PowerShell működése nagymértékben függ az Azure-hoz intézett hálózati hívások létrehozásától és a rájuk való várakozástól.</span><span class="sxs-lookup"><span data-stu-id="636d3-105">Azure PowerShell is heavily dependent on making, and waiting for, network calls to Azure.</span></span> <span data-ttu-id="636d3-106">A fejlesztők munkája során gyakran előfordul, hogy több, nem blokkoló hívást szeretnének intézni az Azure-hoz egy szkripten belül, vagy az aktuális munkamenet blokkolása nélkül szeretnének Azure-erőforrásokat létrehozni az REPL-ben.</span><span class="sxs-lookup"><span data-stu-id="636d3-106">As a developer, you may often find yourself looking to make multiple non-blocking calls to Azure in a script, or you may find that you want to create Azure resources in the REPL without blocking the current session.</span></span> <span data-ttu-id="636d3-107">Az Azure PowerShell első osztályú [PS-feladattámogatást](/powershell/module/microsoft.powershell.core/about/about_jobs) biztosít ezen igények kielégítése céljából.</span><span class="sxs-lookup"><span data-stu-id="636d3-107">To address these needs, Azure PowerShell provides first-class [PSJob](/powershell/module/microsoft.powershell.core/about/about_jobs) support.</span></span>
 
-## <a name="context-persistence-and-psjobs"></a><span data-ttu-id="00cbf-108">Környezetmegőrzés és PS-feladatok</span><span class="sxs-lookup"><span data-stu-id="00cbf-108">Context Persistence and PSJobs</span></span>
+## <a name="context-persistence-and-psjobs"></a><span data-ttu-id="636d3-108">Környezetmegőrzés és PS-feladatok</span><span class="sxs-lookup"><span data-stu-id="636d3-108">Context Persistence and PSJobs</span></span>
 
-<span data-ttu-id="00cbf-109">A PS-feladatok külön folyamatokban futnak, ezért az Azure-kapcsolatára vonatkozó információkat megfelelően meg kell osztani a létrehozott feladatokkal.</span><span class="sxs-lookup"><span data-stu-id="00cbf-109">PSJobs are run in separate processes, which means that information about your Azure connection must be properly shared with the jobs you create.</span></span> <span data-ttu-id="00cbf-110">Amikor az Azure-fiókját csatlakoztatja a PowerShell-munkamenetéhez a `Connect-AzureRmAccount` használatával, a környezetet átadhatja egy feladatnak.</span><span class="sxs-lookup"><span data-stu-id="00cbf-110">Upon connecting your Azure account to your PowerShell session with `Connect-AzureRmAccount`, you can pass the context to a job.</span></span>
+<span data-ttu-id="636d3-109">A PS-feladatok külön folyamatokban futnak, ezért az Azure-kapcsolatára vonatkozó információkat megfelelően meg kell osztani a létrehozott feladatokkal.</span><span class="sxs-lookup"><span data-stu-id="636d3-109">PSJobs are run in separate processes, which means that information about your Azure connection must be properly shared with the jobs you create.</span></span> <span data-ttu-id="636d3-110">Amikor az Azure-fiókját csatlakoztatja a PowerShell-munkamenetéhez a `Connect-AzureRmAccount` használatával, a környezetet átadhatja egy feladatnak.</span><span class="sxs-lookup"><span data-stu-id="636d3-110">Upon connecting your Azure account to your PowerShell session with `Connect-AzureRmAccount`, you can pass the context to a job.</span></span>
 
 ```powershell
 $creds = Get-Credential
 $job = Start-Job { param($context,$vmadmin) New-AzureRmVM -Name MyVm -AzureRmContext $context -Credential $vmadmin} -Arguments (Get-AzureRmContext),$creds
 ```
 
-<span data-ttu-id="00cbf-111">Ha azonban a környezet az `Enable-AzureRmContextAutosave` használatával történő automatikus mentését választotta, a környezet minden létrehozott feladattal automatikusan meg lesz osztva.</span><span class="sxs-lookup"><span data-stu-id="00cbf-111">However, if you have chosen to have your context automatically saved with `Enable-AzureRmContextAutosave`, the context is automatically shared with any jobs you create.</span></span>
+<span data-ttu-id="636d3-111">Ha azonban a környezet az `Enable-AzureRmContextAutosave` használatával történő automatikus mentését választotta, a környezet minden létrehozott feladattal automatikusan meg lesz osztva.</span><span class="sxs-lookup"><span data-stu-id="636d3-111">However, if you have chosen to have your context automatically saved with `Enable-AzureRmContextAutosave`, the context is automatically shared with any jobs you create.</span></span>
 
 ```powershell
 Enable-AzureRmContextAutosave
@@ -38,17 +37,17 @@ $creds = Get-Credential
 $job = Start-Job { param($vmadmin) New-AzureRmVM -Name MyVm -Credential $vmadmin} -Arguments $creds
 ```
 
-## <a name="automatic-jobs-with--asjob"></a><span data-ttu-id="00cbf-112">Automatikus feladatok az `-AsJob` kapcsolóval</span><span class="sxs-lookup"><span data-stu-id="00cbf-112">Automatic Jobs with `-AsJob`</span></span>
+## <a name="automatic-jobs-with--asjob"></a><span data-ttu-id="636d3-112">Automatikus feladatok az `-AsJob` kapcsolóval</span><span class="sxs-lookup"><span data-stu-id="636d3-112">Automatic Jobs with `-AsJob`</span></span>
 
-<span data-ttu-id="00cbf-113">Az Azure PowerShell a kényelem érdekében egyes hosszan futó parancsmagokhoz `-AsJob` kapcsolót is biztosít.</span><span class="sxs-lookup"><span data-stu-id="00cbf-113">As a convenience, Azure PowerShell also provides an `-AsJob` switch on some long-running cmdlets.</span></span>
-<span data-ttu-id="00cbf-114">Az `-AsJob` kapcsoló még inkább megkönnyíti a PS-feladatok létrehozását.</span><span class="sxs-lookup"><span data-stu-id="00cbf-114">The `-AsJob` switch makes creating PSJobs even easier.</span></span>
+<span data-ttu-id="636d3-113">Az Azure PowerShell a kényelem érdekében egyes hosszan futó parancsmagokhoz `-AsJob` kapcsolót is biztosít.</span><span class="sxs-lookup"><span data-stu-id="636d3-113">As a convenience, Azure PowerShell also provides an `-AsJob` switch on some long-running cmdlets.</span></span>
+<span data-ttu-id="636d3-114">Az `-AsJob` kapcsoló még inkább megkönnyíti a PS-feladatok létrehozását.</span><span class="sxs-lookup"><span data-stu-id="636d3-114">The `-AsJob` switch makes creating PSJobs even easier.</span></span>
 
 ```powershell
 $creds = Get-Credential
 $job = New-AzureRmVM -Name MyVm -Credential $creds -AsJob
 ```
 
-<span data-ttu-id="00cbf-115">A `Get-Job` és a `Get-AzureRmVM` segítségével bármikor ellenőrizheti a feladatot és annak állapotát.</span><span class="sxs-lookup"><span data-stu-id="00cbf-115">You can inspect the job and progress at any time with `Get-Job` and `Get-AzureRmVM`.</span></span>
+<span data-ttu-id="636d3-115">A `Get-Job` és a `Get-AzureRmVM` segítségével bármikor ellenőrizheti a feladatot és annak állapotát.</span><span class="sxs-lookup"><span data-stu-id="636d3-115">You can inspect the job and progress at any time with `Get-Job` and `Get-AzureRmVM`.</span></span>
 
 ```powershell
 Get-Job $job
@@ -65,11 +64,11 @@ ResourceGroupName    Name Location          VmSize  OsType     NIC ProvisioningS
 MyVm                 MyVm   eastus Standard_DS1_v2 Windows    MyVm          Creating
 ```
 
-<span data-ttu-id="00cbf-116">Ezt követően, ha a feladat befejeződött, a `Receive-Job` használatával lekérheti a feladat eredményét.</span><span class="sxs-lookup"><span data-stu-id="00cbf-116">Subsequently, upon completion, you can obtain the result of the job with `Receive-Job`.</span></span>
+<span data-ttu-id="636d3-116">Ezt követően, ha a feladat befejeződött, a `Receive-Job` használatával lekérheti a feladat eredményét.</span><span class="sxs-lookup"><span data-stu-id="636d3-116">Subsequently, upon completion, you can obtain the result of the job with `Receive-Job`.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="00cbf-117">A `Receive-Job` úgy adja vissza a parancsmag eredményét, mintha az `-AsJob` jelző nem lenne jelen.</span><span class="sxs-lookup"><span data-stu-id="00cbf-117">`Receive-Job` returns the result from the cmdlet as if the `-AsJob` flag were not present.</span></span>
-> <span data-ttu-id="00cbf-118">Például a `Do-Action -AsJob` `Receive-Job`-eredménye ugyanaz a típus, mint a `Do-Action` eredménye.</span><span class="sxs-lookup"><span data-stu-id="00cbf-118">For example, the `Receive-Job` result of `Do-Action -AsJob` is of the same type as the result of `Do-Action`.</span></span>
+> <span data-ttu-id="636d3-117">A `Receive-Job` úgy adja vissza a parancsmag eredményét, mintha az `-AsJob` jelző nem lenne jelen.</span><span class="sxs-lookup"><span data-stu-id="636d3-117">`Receive-Job` returns the result from the cmdlet as if the `-AsJob` flag were not present.</span></span>
+> <span data-ttu-id="636d3-118">Például a `Do-Action -AsJob` `Receive-Job`-eredménye ugyanaz a típus, mint a `Do-Action` eredménye.</span><span class="sxs-lookup"><span data-stu-id="636d3-118">For example, the `Receive-Job` result of `Do-Action -AsJob` is of the same type as the result of `Do-Action`.</span></span>
 
 ```powershell
 $vm = Receive-Job $job
@@ -92,9 +91,9 @@ StorageProfile           : {ImageReference, OsDisk, DataDisks}
 FullyQualifiedDomainName : myvmmyvm.eastus.cloudapp.azure.com
 ```
 
-## <a name="example-scenarios"></a><span data-ttu-id="00cbf-119">Példaforgatókönyvek</span><span class="sxs-lookup"><span data-stu-id="00cbf-119">Example Scenarios</span></span>
+## <a name="example-scenarios"></a><span data-ttu-id="636d3-119">Példaforgatókönyvek</span><span class="sxs-lookup"><span data-stu-id="636d3-119">Example Scenarios</span></span>
 
-<span data-ttu-id="00cbf-120">Több virtuális gép egyszerre történő létrehozása.</span><span class="sxs-lookup"><span data-stu-id="00cbf-120">Create multiple VMs at once.</span></span>
+<span data-ttu-id="636d3-120">Több virtuális gép egyszerre történő létrehozása.</span><span class="sxs-lookup"><span data-stu-id="636d3-120">Create multiple VMs at once.</span></span>
 
 ```powershell
 $creds = Get-Credential
@@ -109,7 +108,7 @@ Get-Job | Wait-Job
 Get-AzureRmVM
 ```
 
-<span data-ttu-id="00cbf-121">Ebben a példában a `Wait-Job` parancsmag felfüggeszti a szkriptet, amíg a feladatok futnak.</span><span class="sxs-lookup"><span data-stu-id="00cbf-121">In this example, the `Wait-Job` cmdlet causes the script to pause while jobs run.</span></span> <span data-ttu-id="00cbf-122">A szkript végrehajtása folytatódik, amint az összes feladat befejeződött.</span><span class="sxs-lookup"><span data-stu-id="00cbf-122">The script continues executing once all of the jobs have completed.</span></span> <span data-ttu-id="00cbf-123">Ez lehetővé teszi, hogy több, párhuzamosan futó feladatot hozzon létre, majd megvárja azok befejezését a továbblépés előtt.</span><span class="sxs-lookup"><span data-stu-id="00cbf-123">This allows you to create several jobs running in parallel then wait for completion before continuing.</span></span>
+<span data-ttu-id="636d3-121">Ebben a példában a `Wait-Job` parancsmag felfüggeszti a szkriptet, amíg a feladatok futnak.</span><span class="sxs-lookup"><span data-stu-id="636d3-121">In this example, the `Wait-Job` cmdlet causes the script to pause while jobs run.</span></span> <span data-ttu-id="636d3-122">A szkript végrehajtása folytatódik, amint az összes feladat befejeződött.</span><span class="sxs-lookup"><span data-stu-id="636d3-122">The script continues executing once all of the jobs have completed.</span></span> <span data-ttu-id="636d3-123">Ez lehetővé teszi, hogy több, párhuzamosan futó feladatot hozzon létre, majd megvárja azok befejezését a továbblépés előtt.</span><span class="sxs-lookup"><span data-stu-id="636d3-123">This allows you to create several jobs running in parallel then wait for completion before continuing.</span></span>
 
 ```Output
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
