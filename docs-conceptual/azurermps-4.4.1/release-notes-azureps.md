@@ -5,17 +5,16 @@ services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.service: azure-powershell
-ms.product: azure
 ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
-ms.openlocfilehash: bf53fd9f3a4417fb8cdefbdcce57aa6da270edbf
-ms.sourcegitcommit: 5971c92cb023bdd1d71fa2ad0a3b378abfbd092a
+ms.openlocfilehash: 9237fe7ec75fd796a79714b6e098fa5546537cad
+ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34821989"
 ---
 # <a name="release-notes"></a>Kibocsátási megjegyzések
 
@@ -119,13 +118,13 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
     - Frissített New-AzureRmVirtualNetworkGateway: Új választható -VpnClientProtocol paraméter; az alapértelmezett értéke [SSTP, IkeV2]
     - Frissített Set-AzureRmVirtualNetworkGateway: Új választható -VpnClientProtocol paraméter
   * A MultiValued szabályok támogatása a hálózati biztonsági szabályokban és a hatályos hálózati biztonsági szabályokban
-    - Frissített Add-AzureRmNetworkSecurityRuleConfig: A SourcePortRange, DestinationPortRange, SourceAddressPrefix paraméterek frissültek a karakterláncok listájának elfogadása érdekében
-    - Frissített New-AzureRmNetworkSecurityRuleConfig: A SourcePortRange, DestinationPortRange, SourceAddressPrefix paraméterek frissültek a karakterláncok listájának elfogadása érdekében
-    - Frissített Set-AzureRmNetworkSecurityRuleConfig: A SourcePortRange, DestinationPortRange, SourceAddressPrefix paraméterek frissültek a karakterláncok listájának elfogadása érdekében
-    - Frissített Add-AzureRmNetworkSecurityRuleConfig: A SourcePortRange, DestinationPortRange, SourceAddressPrefix paraméterek frissültek a karakterláncok listájának elfogadása érdekében
-    - Frissített New-AzureRmNetworkSecurityGroup : A SecurityRules paraméter frissült a SourcePortRange, DestinationPortRange, SourceAddressPrefix paraméterek elfogadásához, amelyek karakterláncok listái egy PSSecurityRule objektumban
+    - Frissített Add-AzureRmNetworkSecurityRuleConfig: A SourcePortRange, DestinationPortRange, SourceAddressPrefix paraméterek frissültek a sztringek listájának elfogadása érdekében
+    - Frissített New-AzureRmNetworkSecurityRuleConfig: A SourcePortRange, DestinationPortRange, SourceAddressPrefix paraméterek frissültek a sztringek listájának elfogadása érdekében
+    - Frissített Set-AzureRmNetworkSecurityRuleConfig: A SourcePortRange, DestinationPortRange, SourceAddressPrefix paraméterek frissültek a sztringek listájának elfogadása érdekében
+    - Frissített Add-AzureRmNetworkSecurityRuleConfig: A SourcePortRange, DestinationPortRange, SourceAddressPrefix paraméterek frissültek a sztringek listájának elfogadása érdekében
+    - Frissített New-AzureRmNetworkSecurityGroup : A SecurityRules paraméter frissült a SourcePortRange, DestinationPortRange, SourceAddressPrefix paraméterek elfogadásához, amelyek sztringek listái egy PSSecurityRule objektumban
     - Frissített Get-AzureRmEffectiveNetworkSecurityGroup: Hozzáadott TagMap paraméter
-    - Frissített Get-AzureRmEffectiveNetworkSecurityGroup: A visszaadott PSEffectiveSecurityRule objektum a SourcePortRange, DestinationPortRange, SourceAddressPrefix paraméterekkel frissült, amelyek karakterláncok listái.
+    - Frissített Get-AzureRmEffectiveNetworkSecurityGroup: A visszaadott PSEffectiveSecurityRule objektum a SourcePortRange, DestinationPortRange, SourceAddressPrefix paraméterekkel frissült, amelyek sztringek listái.
   * A DDoS-védelem támogatása virtuális hálózatokhoz
     - Frissített New-AzureRmVirtualNetwork: Új EnableDDoSProtection és EnableVmProtection kapcsolóparaméterek
     - Új EnableDDoSProtection és EnableVmProtection tulajdonságok PSVirtualNetwork objektumban

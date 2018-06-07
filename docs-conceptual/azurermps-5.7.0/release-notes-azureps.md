@@ -5,17 +5,16 @@ services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.service: azure-powershell
-ms.product: azure
 ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
-ms.openlocfilehash: 8d96cae28a582f7c2dd74bae858f98a836c89cd2
-ms.sourcegitcommit: 5971c92cb023bdd1d71fa2ad0a3b378abfbd092a
+ms.openlocfilehash: 7eacc351bcccf7001e61244212b726cd868bb11d
+ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34821734"
 ---
 # <a name="release-notes"></a>Kibocsátási megjegyzések
 
@@ -181,7 +180,7 @@ Változások a legutóbbi kiadás óta: https://github.com/Azure/azure-powershel
 * A notice.txt és az értesítő üzenet frissítve.
 
 #### <a name="azurermcompute"></a>AzureRM.Compute
-* A „New-AzureRmVMSS” a kapcsolati karakterláncokat részletes módban jeleníti meg.
+* A „New-AzureRmVMSS” a kapcsolati sztringekat részletes módban jeleníti meg.
 * A „New-AzureRmVmss” támogatja a nyilvános IP-címeket, a terheléselosztási szabályokat és a bejövő NAT-szabályokat.
 * WriteAccelerator funkció
     - WriteAccelerator kapcsolóparaméter hozzáadva a következő parancsmagokhoz: Set-AzureRmVMOSDisk Set-AzureRmVMDataDisk Add-AzureRmVMDataDisk Add-AzureRmVmssDataDisk
@@ -296,7 +295,7 @@ Változások a legutóbbi kiadás óta: https://github.com/Azure/azure-powershel
 * Elavulással kapcsolatos figyelmeztetés hozzáadva a PowerShell 3-hoz és 4-hez
 * Az `Add-AzureRmAccount` új neve `Connect-AzureRmAccount`; a régi parancsmag nevéhez egy új alias lett hozzáadva, és más aliasok (a `Login-AzAccount` és a `Login-AzureRmAccount`) át lettek irányítva az új parancsmag nevéhez.
 * Az `Remove-AzureRmAccount` új neve `Disconnect-AzureRmAccount`; a régi parancsmag nevéhez egy új alias lett hozzáadva, és más aliasok (a `Logout-AzAccount` és a `Logout-AzureRmAccount`) át lettek irányítva az új parancsmag nevéhez.
-* Az erőforrás-karakterláncok mostantól a `Login-AzureRmAccount` helyett a `Connect-AzureRmAccount` aliast használják
+* Az erőforrás-sztringek mostantól a `Login-AzureRmAccount` helyett a `Connect-AzureRmAccount` aliast használják
 * `Add-AzureRmEnvironment` és `Set-AzureRmEnvironment`
   - `-AzureOperationalInsightsEndpoint` és `-AzureOperationalInsightsEndpointResourceId` paraméterek hozzáadva, amelyek az OperationalInsights adatsík RP-vel használhatók.
 
