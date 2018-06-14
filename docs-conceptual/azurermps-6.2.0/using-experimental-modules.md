@@ -1,19 +1,18 @@
 ---
 title: Kísérleti Azure PowerShell-modulok használata
 description: A kísérleti Azure PowerShell-modulok filozófiájának és használatának ismertetése.
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
-ms.openlocfilehash: dea3bb24cd7416a3c459fc6e86dbe8c792a68348
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: ac571363d79c83b268b5c25f65b14f16d4b86e71
+ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821054"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "34853049"
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>Kísérleti Azure PowerShell-modulok használata
 

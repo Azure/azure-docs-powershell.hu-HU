@@ -1,19 +1,18 @@
 ---
 title: Az Azure PowerShell használatának első lépései | Microsoft Docs
 description: ''
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: cd242ad4a5bd6fb27982c4fb7d475aff0f566918
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: 2f37df114b620566a663eb12c7e739975bc1f8bf
+ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34822023"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "34854579"
 ---
 # <a name="getting-started-with-azure-powershell"></a>Ismerkedés az Azure PowerShell-lel
 

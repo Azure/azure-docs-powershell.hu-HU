@@ -1,19 +1,18 @@
 ---
 title: Felhasználói bejelentkezések megőrzése a PowerShell-munkamenetek között
 description: A cikk az Azure PowerShell új funkcióit ismerteti, amellyel újra felhasználhatók a felhasználók hitelesítési és egyéb adatai az egymást követő PowerShell-munkamenetek során.
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 678d08c24cf254cd904850071872eea18c6bf6cf
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: 5ae4f03207b74df06a2cb81ea1cd0516a4abd2dd
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821598"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323118"
 ---
 # <a name="persisting-user-logins-across-powershell-sessions"></a>Felhasználói bejelentkezések megőrzése a PowerShell-munkamenetek között
 
@@ -76,7 +75,7 @@ Környezetek létrehozásához be kell jelentkeznie az Azure-ba. Az `Connect-Azu
 
 A bejelentkezés után új környezet hozzáadásához használja a `Set-AzureRmContext` parancsmagot (vagy az aliasát, a `Select-AzureRmSubscription` parancsmagot).
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Set-AzureRMContext -Subscription "Contoso Subscription 1" -Name "Contoso1"
 ```
 
@@ -84,7 +83,7 @@ Az előző példa hozzáad egy új környezetet, amely a „Contoso Subscription
 
 Meglévő környezetek átnevezéséhez használja a `Rename-AzureRmContext` parancsmagot. Például:
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Contoso2'
 ```
 
@@ -92,7 +91,7 @@ A példa az automatikusan elnevezett `[user1@contoso.org; 123456-7890-1234-56432
 
 A környezet a `Remove-AzureRmContext` parancsmaggal távolítható el.  Például:
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Remove-AzureRmContext Contoso2
 ```
 
@@ -102,7 +101,7 @@ Elfelejti a „Contoso2” nevű környezetet. A környezet ezután a `Set-Azure
 
 Egy adott felhasználó vagy szolgáltatásnév összes hitelesítő adatát és társított környezetét a `Disconnect-AzureRmAccount` (vagy más néven `Logout-AzureRmAccount`) parancsmaggal távolíthatja el. Paraméterek nélkül a `Disconnect-AzureRmAccount` parancsmag az aktuális környezetben bejelentkezett felhasználó vagy szolgáltatásnév összes társított hitelesítő adatát és környezetét eltávolítja. A parancsmagnak átadható egy felhasználónév, egyszerű szolgáltatásnév vagy egy környezet is, ha egy adott szolgáltatást kíván megcélozni.
 
-```powershell
+```azurepowershell-interactive
 Disconnect-AzureRmAccount user1@contoso.org
 ```
 
@@ -112,7 +111,7 @@ Előfordulhat, hogy úgy szeretné kiválasztani, módosítani vagy eltávolíta
 
 Ha például anélkül szeretné módosítani az aktuális PowerShell-munkamenet alapértelmezett környezetét, hogy a módosítás a többi ablakot vagy a munkamenet következő megnyitásakor használt környezetet is érintené, használja a következő parancsmagot:
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Select-AzureRmContext Contoso1 -Scope Process
 ```
 
@@ -120,7 +119,7 @@ PS C:\> Select-AzureRmContext Contoso1 -Scope Process
 
 A rendszer a felhasználó Azure PowerShell-könyvtárába (`%AppData%\Roaming\Windows Azure PowerShell`) menti a környezet automatikus mentési beállításait. Előfordulhat, hogy egyes számítógépfiókok nem rendelkeznek hozzáféréshez ehhez a könyvtárhoz. Ilyen esetekben használhatja a következő környezeti változót:
 
-```powershell
+```azurepowershell-interactive
 $env:AzureRmContextAutoSave="true" | "false"
 ```
 

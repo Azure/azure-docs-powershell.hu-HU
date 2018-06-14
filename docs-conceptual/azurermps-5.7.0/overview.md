@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 08/31/2017
-ms.openlocfilehash: d36952b38a36a5196ee5b38ed048366da5416f0b
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: a3481f17bd87e271a107e1373c86c60c62dfadb2
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34822142"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323407"
 ---
 # <a name="overview-of-azure-powershell"></a>Az Azure PowerShell áttekintése
 
@@ -30,7 +30,6 @@ A következő példák segítenek megismerkedni az Azure PowerShell általános 
 
 > [!NOTE]
 > Ha van olyan üzemelő példánya, amely a klasszikus telepítési modellt használja, és nem alakítható át, akkor az Azure PowerShell Service Management verzióját telepítheti. További információ: [Az Azure PowerShell Service Management moduljának telepítése](/powershell/azure/servicemanagement/install-azure-ps).
-
 
 ### <a name="need-help-with-powershell"></a>Segítségre van szüksége a PowerShell-lel kapcsolatban?
 

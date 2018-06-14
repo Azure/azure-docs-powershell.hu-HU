@@ -1,19 +1,18 @@
 ---
 title: Az Azure PowerShell telepítése és konfigurálása | Microsoft Docs
 description: Az Azure PowerShell telepítése és konfigurálása az első használathoz.
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: a3db97a2c0a8e4c62c32018dcad15cf09eb41440
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: 8819a0ba2dfb6bc3f88e80581257180aa1558ba4
+ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34822074"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "34853814"
 ---
 # <a name="install-and-configure-azure-powershell"></a>Az Azure PowerShell telepítése és konfigurálása
 

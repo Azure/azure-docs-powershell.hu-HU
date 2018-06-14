@@ -1,19 +1,18 @@
 ---
 title: Parancsmagok párhuzamos futtatása PowerShell-feladatok használatával
 description: Parancsok párhuzamos futtatása az -AsJob paraméter segítségével.
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/11/2017
-ms.openlocfilehash: df64fabe95b927551c10196d7b6b26a8f400335d
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: a986824d952ccf6cd52dc86418899f3805a38973
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34820272"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323492"
 ---
 # <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>Parancsmagok párhuzamos futtatása PowerShell-feladatok használatával
 
@@ -24,14 +23,14 @@ Az Azure PowerShell működése nagymértékben függ az Azure-hoz intézett há
 
 A PS-feladatok külön folyamatokban futnak, ezért az Azure-kapcsolatára vonatkozó információkat megfelelően meg kell osztani a létrehozott feladatokkal. Amikor az Azure-fiókját csatlakoztatja a PowerShell-munkamenetéhez a `Connect-AzureRmAccount` használatával, a környezetet átadhatja egy feladatnak.
 
-```powershell
+```azurepowershell-interactive
 $creds = Get-Credential
 $job = Start-Job { param($context,$vmadmin) New-AzureRmVM -Name MyVm -AzureRmContext $context -Credential $vmadmin} -Arguments (Get-AzureRmContext),$creds
 ```
 
 Ha azonban a környezet az `Enable-AzureRmContextAutosave` használatával történő automatikus mentését választotta, a környezet minden létrehozott feladattal automatikusan meg lesz osztva.
 
-```powershell
+```azurepowershell-interactive
 Enable-AzureRmContextAutosave
 $creds = Get-Credential
 $job = Start-Job { param($vmadmin) New-AzureRmVM -Name MyVm -Credential $vmadmin} -Arguments $creds
@@ -42,19 +41,19 @@ $job = Start-Job { param($vmadmin) New-AzureRmVM -Name MyVm -Credential $vmadmin
 Az Azure PowerShell a kényelem érdekében egyes hosszan futó parancsmagokhoz `-AsJob` kapcsolót is biztosít.
 Az `-AsJob` kapcsoló még inkább megkönnyíti a PS-feladatok létrehozását.
 
-```powershell
+```azurepowershell-interactive
 $creds = Get-Credential
 $job = New-AzureRmVM -Name MyVm -Credential $creds -AsJob
 ```
 
 A `Get-Job` és a `Get-AzureRmVM` segítségével bármikor ellenőrizheti a feladatot és annak állapotát.
 
-```powershell
+```azurepowershell-interactive
 Get-Job $job
 Get-AzureRmVM MyVm
 ```
 
-```Output
+```output
 Id Name                                       PSJobTypeName         State   HasMoreData Location  Command
 -- ----                                       -------------         -----   ----------- --------  -------
 1  Long Running Operation for 'New-AzureRmVM' AzureLongRunningJob`1 Running True        localhost New-AzureRmVM
@@ -70,12 +69,12 @@ Ezt követően, ha a feladat befejeződött, a `Receive-Job` használatával lek
 > A `Receive-Job` úgy adja vissza a parancsmag eredményét, mintha az `-AsJob` jelző nem lenne jelen.
 > Például a `Do-Action -AsJob` `Receive-Job`-eredménye ugyanaz a típus, mint a `Do-Action` eredménye.
 
-```powershell
+```azurepowershell-interactive
 $vm = Receive-Job $job
 $vm
 ```
 
-```Output
+```output
 ResourceGroupName        : MyVm
 Id                       : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/MyVm/providers/Microsoft.Compute/virtualMachines/MyVm
 VmId                     : dff1f79e-a8f7-4664-ab72-0ec28b9fbb5b
@@ -95,7 +94,7 @@ FullyQualifiedDomainName : myvmmyvm.eastus.cloudapp.azure.com
 
 Több virtuális gép egyszerre történő létrehozása.
 
-```powershell
+```azurepowershell-interactive
 $creds = Get-Credential
 # Create 10 jobs.
 for($k = 0; $k -lt 10; $k++) {
@@ -110,7 +109,7 @@ Get-AzureRmVM
 
 Ebben a példában a `Wait-Job` parancsmag felfüggeszti a szkriptet, amíg a feladatok futnak. A szkript végrehajtása folytatódik, amint az összes feladat befejeződött. Ez lehetővé teszi, hogy több, párhuzamosan futó feladatot hozzon létre, majd megvárja azok befejezését a továbblépés előtt.
 
-```Output
+```output
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
 2      Long Running... AzureLongRun... Running       True            localhost            New-AzureRmVM
