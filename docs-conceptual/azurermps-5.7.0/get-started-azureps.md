@@ -1,85 +1,84 @@
 ---
-title: Az Azure PowerShell használatának első lépései | Microsoft Docs
+title: Ismerkedés az Azure PowerShell-lel
 description: ''
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: d43323ca696ed115a86e7502a3bac829118028e4
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: cfb7ff30b442bb345931728dab131e1b80e58989
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821037"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323373"
 ---
-# <a name="getting-started-with-azure-powershell"></a><span data-ttu-id="33db2-102">Ismerkedés az Azure PowerShell-lel</span><span class="sxs-lookup"><span data-stu-id="33db2-102">Getting started with Azure PowerShell</span></span>
+# <a name="get-started-with-azure-powershell"></a><span data-ttu-id="ab7b3-102">Ismerkedés az Azure PowerShell-lel</span><span class="sxs-lookup"><span data-stu-id="ab7b3-102">Get started with Azure PowerShell</span></span>
 
-<span data-ttu-id="33db2-103">Az Azure PowerShell az Azure-erőforrások parancssori kezelésére és adminisztrálására, valamint az Azure Resource Manageren futtatható automatizálási szkriptek létrehozására készült.</span><span class="sxs-lookup"><span data-stu-id="33db2-103">Azure PowerShell is designed for managing and administering Azure resources from the command line, and for building automation scripts that work against the Azure Resource Manager.</span></span> <span data-ttu-id="33db2-104">Használhatja a böngészőjében az [Azure Cloud Shell-lel](/azure/cloud-shell/overview), vagy telepítheti a helyi gépen, és használhatja bármely PowerShell-munkamenetben.</span><span class="sxs-lookup"><span data-stu-id="33db2-104">You can use it in your browser with [Azure Cloud Shell](/azure/cloud-shell/overview), or you can install it on your local machine and use it in any PowerShell session.</span></span> <span data-ttu-id="33db2-105">A cikk segítséget nyújt a használatának megkezdésében, és ismerteti az alapvető fogalmakat.</span><span class="sxs-lookup"><span data-stu-id="33db2-105">This article helps get you started using it, and teaches you the core concepts behind it.</span></span>
+<span data-ttu-id="ab7b3-103">Az Azure PowerShell az Azure-erőforrások parancssori kezelésére és adminisztrálására, valamint az Azure Resource Manageren futtatható automatizálási szkriptek létrehozására készült.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-103">Azure PowerShell is designed for managing and administering Azure resources from the command line, and for building automation scripts that work against the Azure Resource Manager.</span></span> <span data-ttu-id="ab7b3-104">Használhatja a böngészőjében az [Azure Cloud Shell-lel](/azure/cloud-shell/overview), vagy telepítheti a helyi gépen.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-104">You can use it in your browser with [Azure Cloud Shell](/azure/cloud-shell/overview) or you install it on your local machine.</span></span> <span data-ttu-id="ab7b3-105">A cikk segítséget nyújt az Azure PowerShell használatának megkezdésében, és ismerteti az alapvető fogalmakat.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-105">This article helps get you started with Azure PowerShell and teaches the core concepts behind it.</span></span>
 
-## <a name="connect"></a><span data-ttu-id="33db2-106">Kapcsolódás</span><span class="sxs-lookup"><span data-stu-id="33db2-106">Connect</span></span>
+## <a name="install-azure-powershell"></a><span data-ttu-id="ab7b3-106">Az Azure PowerShell telepítése</span><span class="sxs-lookup"><span data-stu-id="ab7b3-106">Install Azure PowerShell</span></span>
 
-<span data-ttu-id="33db2-107">Első lépésként a legegyszerűbb módszer, ha [elindítja a Cloud Shellt](/azure/cloud-shell/quickstart).</span><span class="sxs-lookup"><span data-stu-id="33db2-107">The simplest way to get started is to [launch Cloud Shell](/azure/cloud-shell/quickstart).</span></span>
+<span data-ttu-id="ab7b3-107">Első lépésként győződjön meg róla, hogy az Azure PowerShell legújabb verziója van telepítve.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-107">The first step is to make sure you have the latest version of the Azure PowerShell installed.</span></span> <span data-ttu-id="ab7b3-108">A legújabb kiadással kapcsolatos információkért lásd a [kibocsátási megjegyzéseket](./release-notes-azureps.md).</span><span class="sxs-lookup"><span data-stu-id="ab7b3-108">For information about the latest release, see the [release notes](./release-notes-azureps.md).</span></span>
 
-1. <span data-ttu-id="33db2-108">Indítsa el a Cloud Shellt az Azure Portal felső navigációs szakaszából.</span><span class="sxs-lookup"><span data-stu-id="33db2-108">Launch Cloud Shell from the top navigation of the Azure portal.</span></span>
+1. <span data-ttu-id="ab7b3-109">[Telepítse az Azure PowerShellt](install-azurerm-ps.md).</span><span class="sxs-lookup"><span data-stu-id="ab7b3-109">[Install Azure PowerShell](install-azurerm-ps.md).</span></span>
+
+2. <span data-ttu-id="ab7b3-110">A telepítés sikerességének ellenőrzéséhez futtassa a `Get-Module AzureRM -ListAvailable` parancsot a parancssorról.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-110">To verify the installation was successful, run `Get-Module AzureRM -ListAvailable` from your command line.</span></span>
+
+## <a name="azure-cloud-shell"></a><span data-ttu-id="ab7b3-111">Azure Cloud Shell</span><span class="sxs-lookup"><span data-stu-id="ab7b3-111">Azure Cloud Shell</span></span> 
+
+<span data-ttu-id="ab7b3-112">Első lépésként a legegyszerűbb módszer, ha [elindítja a Cloud Shellt](/azure/cloud-shell/quickstart).</span><span class="sxs-lookup"><span data-stu-id="ab7b3-112">The simplest way to get started is to [launch Cloud Shell](/azure/cloud-shell/quickstart).</span></span>
+
+1. <span data-ttu-id="ab7b3-113">Indítsa el a Cloud Shellt az Azure Portal felső navigációs szakaszából.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-113">Launch Cloud Shell from the top navigation of the Azure portal.</span></span>
 
    ![Shell ikon](~/media/get-started-azureps/shell-icon.png)
 
-2. <span data-ttu-id="33db2-110">Válassza ki a használni kívánt előfizetést, és hozzon létre egy tárfiókot.</span><span class="sxs-lookup"><span data-stu-id="33db2-110">Choose the subscription you want to use and create a storage account.</span></span>
+2. <span data-ttu-id="ab7b3-115">Válassza ki a használni kívánt előfizetést, és hozzon létre egy tárfiókot.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-115">Choose the subscription you want to use and create a storage account.</span></span>
 
    ![Create a storage account](~/media/get-started-azureps/storage-prompt.png)
 
-<span data-ttu-id="33db2-112">A tároló létrehozása után a Cloud Shell megnyit egy PowerShell-munkamenetet a böngészőben.</span><span class="sxs-lookup"><span data-stu-id="33db2-112">Once your storage has been created, the Cloud Shell will open a PowerShell session in the browser.</span></span>
+<span data-ttu-id="ab7b3-117">A tároló létrehozása után a Cloud Shell megnyit egy PowerShell-munkamenetet a böngészőben.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-117">Once your storage has been created, the Cloud Shell will open a PowerShell session in the browser.</span></span>
 
 ![Cloud Shell a PowerShellhez](~/media/get-started-azureps/cloud-powershell.png)
 
-<span data-ttu-id="33db2-114">Telepítheti az Azure PowerShellt, és helyileg is használhatja PowerShell-munkamenetben.</span><span class="sxs-lookup"><span data-stu-id="33db2-114">You can also install Azure PowerShell and use it locally in a PowerShell session.</span></span>
+<span data-ttu-id="ab7b3-119">Telepítheti az Azure PowerShellt, és helyileg is használhatja PowerShell-munkamenetben.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-119">You can also install Azure PowerShell and use it locally in a PowerShell session.</span></span>
 
-## <a name="install-azure-powershell"></a><span data-ttu-id="33db2-115">Az Azure PowerShell telepítése</span><span class="sxs-lookup"><span data-stu-id="33db2-115">Install Azure PowerShell</span></span>
+## <a name="sign-in-to-azure"></a><span data-ttu-id="ab7b3-120">Bejelentkezés az Azure-ba</span><span class="sxs-lookup"><span data-stu-id="ab7b3-120">Sign in to Azure</span></span>
 
-<span data-ttu-id="33db2-116">Első lépésként győződjön meg róla, hogy az Azure PowerShell legújabb verziója van telepítve.</span><span class="sxs-lookup"><span data-stu-id="33db2-116">The first step is to make sure you have the latest version of the Azure PowerShell installed.</span></span> <span data-ttu-id="33db2-117">A legújabb kiadással kapcsolatos információkért lásd a [kibocsátási megjegyzéseket](./release-notes-azureps.md).</span><span class="sxs-lookup"><span data-stu-id="33db2-117">For information about the latest release, see the [release notes](./release-notes-azureps.md).</span></span>
+<span data-ttu-id="ab7b3-121">Interaktív bejelentkezés:</span><span class="sxs-lookup"><span data-stu-id="ab7b3-121">Sign on interactively:</span></span>
 
-1. <span data-ttu-id="33db2-118">[Telepítse az Azure PowerShellt](install-azurerm-ps.md).</span><span class="sxs-lookup"><span data-stu-id="33db2-118">[Install Azure PowerShell](install-azurerm-ps.md).</span></span>
+1. <span data-ttu-id="ab7b3-122">Gépelje be: `Connect-AzureRmAccount`.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-122">Type `Connect-AzureRmAccount`.</span></span> <span data-ttu-id="ab7b3-123">Egy párbeszédpanel jelenik meg, amelyen meg kell adnia Azure-beli hitelesítő adatait.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-123">You will get dialog box asking for your Azure credentials.</span></span> <span data-ttu-id="ab7b3-124">Az -Environment kapcsoló lehetővé teszi a bejelentkezést az Azure China vagy az Azure Germany szolgáltatásba.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-124">Option '-Environment' can let you login in Azure China or Azure Germany.</span></span>
 
-2. <span data-ttu-id="33db2-119">A telepítés sikerességének ellenőrzéséhez futtassa a `Get-Module AzureRM -ListAvailable` parancsot a parancssorról.</span><span class="sxs-lookup"><span data-stu-id="33db2-119">To verify the installation was successful, run `Get-Module AzureRM -ListAvailable` from your command line.</span></span>
+   <span data-ttu-id="ab7b3-125">például: Connect-AzureRmAccount -Environment AzureChinaCloud</span><span class="sxs-lookup"><span data-stu-id="ab7b3-125">e.g. Connect-AzureRmAccount -Environment AzureChinaCloud</span></span>
 
-## <a name="log-in-to-azure"></a><span data-ttu-id="33db2-120">Jelentkezzen be az Azure-ba</span><span class="sxs-lookup"><span data-stu-id="33db2-120">Log in to Azure</span></span>
+2. <span data-ttu-id="ab7b3-126">Írja be a fiókjához tartozó e-mail-címet és jelszót.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-126">Type the email address and password associated with your account.</span></span> <span data-ttu-id="ab7b3-127">Az Azure hitelesíti és menti a hitelesítő adatokat, majd bezárja az ablakot.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-127">Azure authenticates and saves the credential information, and then closes the window.</span></span>
 
-<span data-ttu-id="33db2-121">Interaktív bejelentkezés:</span><span class="sxs-lookup"><span data-stu-id="33db2-121">Sign on interactively:</span></span>
+<span data-ttu-id="ab7b3-128">Miután bejelentkezett egy Azure-fiókba, az Azure PowerShell parancsmagjaival elérheti és kezelheti az előfizetésben lévő erőforrásokat.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-128">Once you have signed in to an Azure account, you can use the Azure PowerShell cmdlets to access and manager the resources in your subscription.</span></span>
 
-1. <span data-ttu-id="33db2-122">Gépelje be: `Connect-AzureRmAccount`.</span><span class="sxs-lookup"><span data-stu-id="33db2-122">Type `Connect-AzureRmAccount`.</span></span> <span data-ttu-id="33db2-123">Egy párbeszédpanel jelenik meg, amelyen meg kell adnia Azure-beli hitelesítő adatait.</span><span class="sxs-lookup"><span data-stu-id="33db2-123">You will get dialog box asking for your Azure credentials.</span></span> <span data-ttu-id="33db2-124">Az -Environment kapcsoló lehetővé teszi a bejelentkezést az Azure China vagy az Azure Germany szolgáltatásba.</span><span class="sxs-lookup"><span data-stu-id="33db2-124">Option '-Environment' can let you login in Azure China or Azure Germany.</span></span>
+## <a name="create-a-windows-virtual-machine-using-simple-defaults"></a><span data-ttu-id="ab7b3-129">Windows rendszerű virtuális gép létrehozása egyszerű alapértelmezett beállítások használatával</span><span class="sxs-lookup"><span data-stu-id="ab7b3-129">Create a Windows virtual machine using simple defaults</span></span>
 
-   <span data-ttu-id="33db2-125">például: Connect-AzureRmAccount -Environment AzureChinaCloud</span><span class="sxs-lookup"><span data-stu-id="33db2-125">e.g. Connect-AzureRmAccount -Environment AzureChinaCloud</span></span>
+<span data-ttu-id="ab7b3-130">A `New-AzureRmVM` parancsmag egy leegyszerűsített szintaxist biztosít, amely megkönnyíti az új virtuális gépek létrehozását.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-130">The `New-AzureRmVM` cmdlet provides a simplified syntax making it easy to create a new virtual machine.</span></span> <span data-ttu-id="ab7b3-131">Mindössze két paraméterértéket kell megadnia: a virtuális gép nevét, valamint a virtuális gép helyi rendszergazdai fiókjához tartozó hitelesítő adatok egy készletét.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-131">There are only two parameter values you must provide: the name of the VM and a set of credentials for the local administrator account on the VM.</span></span>
 
-2. <span data-ttu-id="33db2-126">Írja be a fiókjához tartozó e-mail-címet és jelszót.</span><span class="sxs-lookup"><span data-stu-id="33db2-126">Type the email address and password associated with your account.</span></span> <span data-ttu-id="33db2-127">Az Azure hitelesíti és menti a hitelesítő adatokat, majd bezárja az ablakot.</span><span class="sxs-lookup"><span data-stu-id="33db2-127">Azure authenticates and saves the credential information, and then closes the window.</span></span>
+<span data-ttu-id="ab7b3-132">Először hozza létre a hitelesítő objektumot.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-132">First, create the credential object.</span></span>
 
-<span data-ttu-id="33db2-128">Miután bejelentkezett egy Azure-fiókba, az Azure PowerShell parancsmagjaival elérheti és kezelheti az előfizetésben lévő erőforrásokat.</span><span class="sxs-lookup"><span data-stu-id="33db2-128">Once you have signed in to an Azure account, you can use the Azure PowerShell cmdlets to access and manager the resources in your subscription.</span></span>
-
-## <a name="create-a-windows-virtual-machine-using-simple-defaults"></a><span data-ttu-id="33db2-129">Windows rendszerű virtuális gép létrehozása egyszerű alapértelmezett beállítások használatával</span><span class="sxs-lookup"><span data-stu-id="33db2-129">Create a Windows virtual machine using simple defaults</span></span>
-
-<span data-ttu-id="33db2-130">A `New-AzureRmVM` parancsmag egy leegyszerűsített szintaxist biztosít, amely megkönnyíti az új virtuális gépek létrehozását.</span><span class="sxs-lookup"><span data-stu-id="33db2-130">The `New-AzureRmVM` cmdlet provides a simplified syntax making it easy to create a new virtual machine.</span></span> <span data-ttu-id="33db2-131">Mindössze két paraméterértéket kell megadnia: a virtuális gép nevét, valamint a virtuális gép helyi rendszergazdai fiókjához tartozó hitelesítő adatok egy készletét.</span><span class="sxs-lookup"><span data-stu-id="33db2-131">There are only two parameter values you must provide: the name of the VM and a set of credentials for the local administrator account on the VM.</span></span>
-
-<span data-ttu-id="33db2-132">Először hozza létre a hitelesítő objektumot.</span><span class="sxs-lookup"><span data-stu-id="33db2-132">First, create the credential object.</span></span>
-
-```powershell
+```azurepowershell-interactive
 $cred = Get-Credential -Message "Enter a username and password for the virtual machine."
 ```
 
-```Output
+```output
 Windows PowerShell credential request.
 Enter a username and password for the virtual machine.
 User: localAdmin
 Password for user localAdmin: *********
 ```
-<span data-ttu-id="33db2-133">Ezt követően hozza létre a virtuális gépet.</span><span class="sxs-lookup"><span data-stu-id="33db2-133">Next, create the VM.</span></span>
+<span data-ttu-id="ab7b3-133">Ezt követően hozza létre a virtuális gépet.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-133">Next, create the VM.</span></span>
 
-```powershell
+```azurepowershell-interactive
 New-AzureRmVM -Name SampleVM -Credential $cred
 ```
 
-```Output
+```output
 ResourceGroupName        : SampleVM
 Id                       : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/SampleVM/providers/Microsoft.Compute/virtualMachines/SampleVM
 VmId                     : 43f6275d-ce50-49c8-a831-5d5974006e63
@@ -95,30 +94,30 @@ StorageProfile           : {ImageReference, OsDisk, DataDisks}
 FullyQualifiedDomainName : samplevm-2c0867.eastus.cloudapp.azure.com
 ```
 
-<span data-ttu-id="33db2-134">Ez eddig nem volt bonyolult.</span><span class="sxs-lookup"><span data-stu-id="33db2-134">That was easy.</span></span> <span data-ttu-id="33db2-135">Felmerülhet azonban a kérdés, hogy milyen más elemek jönnek még létre, illetve hogy milyen lesz a virtuális gép konfigurációja.</span><span class="sxs-lookup"><span data-stu-id="33db2-135">But, you may wonder what else is created and how is the VM configured.</span></span> <span data-ttu-id="33db2-136">Először is lássuk az erőforráscsoportokat.</span><span class="sxs-lookup"><span data-stu-id="33db2-136">First, let's look at our resource groups.</span></span>
+<span data-ttu-id="ab7b3-134">Ez eddig nem volt bonyolult.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-134">That was easy.</span></span> <span data-ttu-id="ab7b3-135">Felmerülhet azonban a kérdés, hogy milyen más elemek jönnek még létre, illetve hogy milyen lesz a virtuális gép konfigurációja.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-135">But, you may wonder what else is created and how is the VM configured.</span></span> <span data-ttu-id="ab7b3-136">Először is lássuk az erőforráscsoportokat.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-136">First, let's look at our resource groups.</span></span>
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmResourceGroup | Select-Object ResourceGroupName,Location
 ```
 
-```Output
+```output
 ResourceGroupName          Location
 -----------------          --------
 cloud-shell-storage-westus westus
 SampleVM                   eastus
 ```
 
-<span data-ttu-id="33db2-137">A **cloud-shell-storage-westus** erőforráscsoport a Cloud Shell első használatakor jön létre.</span><span class="sxs-lookup"><span data-stu-id="33db2-137">The **cloud-shell-storage-westus** resource group is created the first time you use the Cloud Shell.</span></span> <span data-ttu-id="33db2-138">A **SampleVM** erőforráscsoportot a `New-AzureRmVM` parancsmag hozta létre.</span><span class="sxs-lookup"><span data-stu-id="33db2-138">The **SampleVM** resource group was created by the `New-AzureRmVM` cmdlet.</span></span>
+<span data-ttu-id="ab7b3-137">A **cloud-shell-storage-westus** erőforráscsoport a Cloud Shell első használatakor jön létre.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-137">The **cloud-shell-storage-westus** resource group is created the first time you use the Cloud Shell.</span></span> <span data-ttu-id="ab7b3-138">A **SampleVM** erőforráscsoportot a `New-AzureRmVM` parancsmag hozta létre.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-138">The **SampleVM** resource group was created by the `New-AzureRmVM` cmdlet.</span></span>
 
-<span data-ttu-id="33db2-139">Milyen egyéb erőforráscsoportok jöttek létre az új erőforráscsoportban?</span><span class="sxs-lookup"><span data-stu-id="33db2-139">Now, what other resources were created in this new resource group?</span></span>
+<span data-ttu-id="ab7b3-139">Milyen egyéb erőforráscsoportok jöttek létre az új erőforráscsoportban?</span><span class="sxs-lookup"><span data-stu-id="ab7b3-139">Now, what other resources were created in this new resource group?</span></span>
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmResource |
   Where ResourceGroupName -eq SampleVM |
     Select-Object ResourceGroupName,Location,ResourceType,Name
 ```
 
-```Output
+```output
 ResourceGroupName          Location ResourceType                            Name
 -----------------          -------- ------------                            ----
 SAMPLEVM                   eastus   Microsoft.Compute/disks                 SampleVM_OsDisk_1_9b286c54b168457fa1f8c47...
@@ -129,15 +128,15 @@ SampleVM                   eastus   Microsoft.Network/publicIPAddresses     Samp
 SampleVM                   eastus   Microsoft.Network/virtualNetworks       SampleVM
 ```
 
-<span data-ttu-id="33db2-140">További részleteket is lekérhet a virtuális géppel kapcsolatban.</span><span class="sxs-lookup"><span data-stu-id="33db2-140">Let's get some more details about the VM.</span></span> <span data-ttu-id="33db2-141">Ez a példa bemutatja, hogyan kérhet le információt a virtuális gép létrehozásához használt rendszerképről.</span><span class="sxs-lookup"><span data-stu-id="33db2-141">This examples shows how to retrieve information about the OS Image used to create the VM.</span></span>
+<span data-ttu-id="ab7b3-140">További részleteket is lekérhet a virtuális géppel kapcsolatban.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-140">Let's get some more details about the VM.</span></span> <span data-ttu-id="ab7b3-141">Ez a példa bemutatja, hogyan kérhet le információt a virtuális gép létrehozásához használt rendszerképről.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-141">This examples shows how to retrieve information about the OS Image used to create the VM.</span></span>
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmVM -Name SampleVM -ResourceGroupName SampleVM |
   Select-Object -ExpandProperty StorageProfile |
     Select-Object -ExpandProperty ImageReference
 ```
 
-```Output
+```output
 Publisher : MicrosoftWindowsServer
 Offer     : WindowsServer
 Sku       : 2016-Datacenter
@@ -145,21 +144,21 @@ Version   : latest
 Id        :
 ```
 
-## <a name="create-a-fully-configured-linux-virtual-machine"></a><span data-ttu-id="33db2-142">Linux rendszerű, teljes konfigurációjú virtuális gép létrehozása</span><span class="sxs-lookup"><span data-stu-id="33db2-142">Create a fully configured Linux Virtual Machine</span></span>
+## <a name="create-a-fully-configured-linux-virtual-machine"></a><span data-ttu-id="ab7b3-142">Linux rendszerű, teljes konfigurációjú virtuális gép létrehozása</span><span class="sxs-lookup"><span data-stu-id="ab7b3-142">Create a fully configured Linux Virtual Machine</span></span>
 
-<span data-ttu-id="33db2-143">Az előző példában egy egyszerűsített szintaxis és az alapértelmezett paraméterértékek használatával hozott létre egy Windows rendszerű virtuális gépet.</span><span class="sxs-lookup"><span data-stu-id="33db2-143">The previous example used the simplified syntax and default parameter values to create a Windows virtual machine.</span></span> <span data-ttu-id="33db2-144">Ebben a példában a virtuális gép összes beállításának Ön fogja megadni az értékét.</span><span class="sxs-lookup"><span data-stu-id="33db2-144">In this example, we provide values for all options of the virtual machine.</span></span>
+<span data-ttu-id="ab7b3-143">Az előző példában egy egyszerűsített szintaxis és az alapértelmezett paraméterértékek használatával hozott létre egy Windows rendszerű virtuális gépet.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-143">The previous example used the simplified syntax and default parameter values to create a Windows virtual machine.</span></span> <span data-ttu-id="ab7b3-144">Ebben a példában a virtuális gép összes beállításának Ön fogja megadni az értékét.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-144">In this example, we provide values for all options of the virtual machine.</span></span>
 
-### <a name="create-a-resource-group"></a><span data-ttu-id="33db2-145">Hozzon létre egy erőforráscsoportot</span><span class="sxs-lookup"><span data-stu-id="33db2-145">Create a resource group</span></span>
+### <a name="create-a-resource-group"></a><span data-ttu-id="ab7b3-145">Hozzon létre egy erőforráscsoportot</span><span class="sxs-lookup"><span data-stu-id="ab7b3-145">Create a resource group</span></span>
 
-<span data-ttu-id="33db2-146">Ebben a példában egy erőforráscsoportot szeretnénk létrehozni.</span><span class="sxs-lookup"><span data-stu-id="33db2-146">For this example we want to create a Resource Group.</span></span> <span data-ttu-id="33db2-147">Az Azure erőforráscsoportjaiban együtt kezelhet több olyan erőforrást, amelyeket logikailag egy csoportba kíván foglalni.</span><span class="sxs-lookup"><span data-stu-id="33db2-147">Resource Groups in Azure provide a way to manage multiple resources that you want to logically group together.</span></span> <span data-ttu-id="33db2-148">Például létrehozhat egy erőforráscsoportot egy alkalmazáshoz vagy projekthez, majd hozzáadhat egy virtuális gépet, egy adatbázist és egy CDN-szolgáltatást.</span><span class="sxs-lookup"><span data-stu-id="33db2-148">For example, you might create a Resource Group for an application or project and add a virtual machine, a database and a CDN service within it.</span></span>
+<span data-ttu-id="ab7b3-146">Ebben a példában egy erőforráscsoportot szeretnénk létrehozni.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-146">For this example we want to create a Resource Group.</span></span> <span data-ttu-id="ab7b3-147">Az Azure erőforráscsoportjaiban együtt kezelhet több olyan erőforrást, amelyeket logikailag egy csoportba kíván foglalni.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-147">Resource Groups in Azure provide a way to manage multiple resources that you want to logically group together.</span></span> <span data-ttu-id="ab7b3-148">Például létrehozhat egy erőforráscsoportot egy alkalmazáshoz vagy projekthez, majd hozzáadhat egy virtuális gépet, egy adatbázist és egy CDN-szolgáltatást.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-148">For example, you might create a Resource Group for an application or project and add a virtual machine, a database and a CDN service within it.</span></span>
 
-<span data-ttu-id="33db2-149">Hozzunk létre egy erőforráscsoportot „MyResourceGroup” néven az Azure westeurope (Nyugat--Európa) régiójában.</span><span class="sxs-lookup"><span data-stu-id="33db2-149">Let's create a resource group named "MyResourceGroup" in the westeurope region of Azure.</span></span> <span data-ttu-id="33db2-150">Ehhez írja be a következő parancsot:</span><span class="sxs-lookup"><span data-stu-id="33db2-150">To do so type the following command:</span></span>
+<span data-ttu-id="ab7b3-149">Hozzunk létre egy erőforráscsoportot „MyResourceGroup” néven az Azure westeurope (Nyugat--Európa) régiójában.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-149">Let's create a resource group named "MyResourceGroup" in the westeurope region of Azure.</span></span> <span data-ttu-id="ab7b3-150">Ehhez írja be a következő parancsot:</span><span class="sxs-lookup"><span data-stu-id="ab7b3-150">To do so type the following command:</span></span>
 
-```powershell
+```azurepowershell-interactive
 New-AzureRmResourceGroup -Name 'myResourceGroup' -Location 'westeurope'
 ```
 
-```Output
+```output
 ResourceGroupName : myResourceGroup
 Location          : westeurope
 ProvisioningState : Succeeded
@@ -167,13 +166,13 @@ Tags              :
 ResourceId        : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/myResourceGroup
 ```
 
-<span data-ttu-id="33db2-151">Ez az új erőforráscsoport fogja tartalmazni a létrehozni kívánt új virtuális géphez szükséges összes erőforrást.</span><span class="sxs-lookup"><span data-stu-id="33db2-151">This new resource group will be used to contain all of the resources needed for the new VM we create.</span></span> <span data-ttu-id="33db2-152">Az új linuxos virtuális gép létrehozásához előbb létre kell hoznunk a többi szükséges erőforrást, és egy konfigurációt kell hozzájuk rendelnünk.</span><span class="sxs-lookup"><span data-stu-id="33db2-152">To create a new Linux VM we must first create the other required resources and assign them to a configuration.</span></span> <span data-ttu-id="33db2-153">Ezután ezzel a konfigurációval létrehozhatjuk a virtuális gépet.</span><span class="sxs-lookup"><span data-stu-id="33db2-153">Then we can use that configuration to create the VM.</span></span> <span data-ttu-id="33db2-154">Emellett szüksége lesz egy `id_rsa.pub` nevű nyilvános SSH-kulcsra a felhasználói profilja .ssh könyvtárában.</span><span class="sxs-lookup"><span data-stu-id="33db2-154">Also, you will need to have an SSH public key named `id_rsa.pub` in the .ssh directory of your user profile.</span></span>
+<span data-ttu-id="ab7b3-151">Ez az új erőforráscsoport fogja tartalmazni a létrehozni kívánt új virtuális géphez szükséges összes erőforrást.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-151">This new resource group will be used to contain all of the resources needed for the new VM we create.</span></span> <span data-ttu-id="ab7b3-152">Az új linuxos virtuális gép létrehozásához előbb létre kell hoznunk a többi szükséges erőforrást, és egy konfigurációt kell hozzájuk rendelnünk.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-152">To create a new Linux VM we must first create the other required resources and assign them to a configuration.</span></span> <span data-ttu-id="ab7b3-153">Ezután ezzel a konfigurációval létrehozhatjuk a virtuális gépet.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-153">Then we can use that configuration to create the VM.</span></span> <span data-ttu-id="ab7b3-154">Emellett szüksége lesz egy `id_rsa.pub` nevű nyilvános SSH-kulcsra a felhasználói profilja .ssh könyvtárában.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-154">Also, you will need to have an SSH public key named `id_rsa.pub` in the .ssh directory of your user profile.</span></span>
 
-#### <a name="create-the-required-network-resources"></a><span data-ttu-id="33db2-155">A szükséges hálózati erőforrások létrehozása</span><span class="sxs-lookup"><span data-stu-id="33db2-155">Create the required network resources</span></span>
+#### <a name="create-the-required-network-resources"></a><span data-ttu-id="ab7b3-155">A szükséges hálózati erőforrások létrehozása</span><span class="sxs-lookup"><span data-stu-id="ab7b3-155">Create the required network resources</span></span>
 
-<span data-ttu-id="33db2-156">Először létre kell hoznunk egy alhálózati konfigurációt a virtuális hálózat létrehozásához.</span><span class="sxs-lookup"><span data-stu-id="33db2-156">First we need to create a subnet configuration to be used with the virtual network creation process.</span></span> <span data-ttu-id="33db2-157">Létrehozunk egy nyilvános IP-címet is, hogy csatlakozhassunk a virtuális géphez.</span><span class="sxs-lookup"><span data-stu-id="33db2-157">We also create a public IP address so that we can connect to this VM.</span></span> <span data-ttu-id="33db2-158">Létrehozunk egy hálózati biztonsági csoportot, hogy biztonságossá tehessük a nyilvános cím elérését.</span><span class="sxs-lookup"><span data-stu-id="33db2-158">We create a network security group to secure access to the public address.</span></span> <span data-ttu-id="33db2-159">Végül létrehozzuk a virtuális NIC-t az összes előbbi erőforrás használatával.</span><span class="sxs-lookup"><span data-stu-id="33db2-159">Finally we create the virtual NIC using all of the previous resources.</span></span>
+<span data-ttu-id="ab7b3-156">Először létre kell hoznunk egy alhálózati konfigurációt a virtuális hálózat létrehozásához.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-156">First we need to create a subnet configuration to be used with the virtual network creation process.</span></span> <span data-ttu-id="ab7b3-157">Létrehozunk egy nyilvános IP-címet is, hogy csatlakozhassunk a virtuális géphez.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-157">We also create a public IP address so that we can connect to this VM.</span></span> <span data-ttu-id="ab7b3-158">Létrehozunk egy hálózati biztonsági csoportot, hogy biztonságossá tehessük a nyilvános cím elérését.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-158">We create a network security group to secure access to the public address.</span></span> <span data-ttu-id="ab7b3-159">Végül létrehozzuk a virtuális NIC-t az összes előbbi erőforrás használatával.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-159">Finally we create the virtual NIC using all of the previous resources.</span></span>
 
-```powershell
+```azurepowershell-interactive
 # Variables for common values
 $resourceGroup = "myResourceGroup"
 $location = "westeurope"
@@ -209,11 +208,11 @@ $nic = New-AzureRmNetworkInterface -Name myNic2 -ResourceGroupName $resourceGrou
   -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $publicIp.Id -NetworkSecurityGroupId $nsg.Id
 ```
 
-### <a name="create-the-vm-configuration"></a><span data-ttu-id="33db2-160">A virtuális gép konfigurációjának létrehozása</span><span class="sxs-lookup"><span data-stu-id="33db2-160">Create the VM configuration</span></span>
+### <a name="create-the-vm-configuration"></a><span data-ttu-id="ab7b3-160">A virtuális gép konfigurációjának létrehozása</span><span class="sxs-lookup"><span data-stu-id="ab7b3-160">Create the VM configuration</span></span>
 
-<span data-ttu-id="33db2-161">Most, hogy rendelkezünk a szükséges erőforrásokkal, létrehozhatjuk a virtuális gép konfigurációs objektumát.</span><span class="sxs-lookup"><span data-stu-id="33db2-161">Now that we have the required resources we can create the VM configuration object.</span></span>
+<span data-ttu-id="ab7b3-161">Most, hogy rendelkezünk a szükséges erőforrásokkal, létrehozhatjuk a virtuális gép konfigurációs objektumát.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-161">Now that we have the required resources we can create the VM configuration object.</span></span>
 
-```powershell
+```azurepowershell-interactive
 # Create a virtual machine configuration
 $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 |
   Set-AzureRmVMOperatingSystem -Linux -ComputerName $vmName -Credential $cred -DisablePasswordAuthentication |
@@ -221,25 +220,25 @@ $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 |
   Add-AzureRmVMNetworkInterface -Id $nic.Id
 
 # Configure SSH Keys
-$sshPublicKey = Get-Content "$env:USERPROFILE\.ssh\id_rsa.pub"
+$sshPublicKey = Get-Content -Raw "$env:USERPROFILE\.ssh\id_rsa.pub"
 Add-AzureRmVMSshPublicKey -VM $vmConfig -KeyData $sshPublicKey -Path "/home/azureuser/.ssh/authorized_keys"
 ```
 
-### <a name="create-the-virtual-machine"></a><span data-ttu-id="33db2-162">A virtuális gép létrehozása</span><span class="sxs-lookup"><span data-stu-id="33db2-162">Create the virtual machine</span></span>
+### <a name="create-the-virtual-machine"></a><span data-ttu-id="ab7b3-162">A virtuális gép létrehozása</span><span class="sxs-lookup"><span data-stu-id="ab7b3-162">Create the virtual machine</span></span>
 
-<span data-ttu-id="33db2-163">A virtuális gép konfigurációs objektumával létrehozhatjuk a virtuális gépet.</span><span class="sxs-lookup"><span data-stu-id="33db2-163">Now we can create the VM using the VM configuration object.</span></span>
+<span data-ttu-id="ab7b3-163">A virtuális gép konfigurációs objektumával létrehozhatjuk a virtuális gépet.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-163">Now we can create the VM using the VM configuration object.</span></span>
 
-```powershell
+```azurepowershell-interactive
 New-AzureRmVM -ResourceGroupName $resourceGroup -Location $location -VM $vmConfig
 ```
 
-<span data-ttu-id="33db2-164">Most, hogy a virtuális gép létrejött, bejelentkezhet az új Linux rendszerű virtuális gépre SSH használatával a létrehozott virtuális gép nyilvános IP-címével:</span><span class="sxs-lookup"><span data-stu-id="33db2-164">Now that the VM has been created, you can log on to your new Linux VM using SSH with the public IP address of the VM you created:</span></span>
+<span data-ttu-id="ab7b3-164">Most, hogy a virtuális gép létrejött, bejelentkezhet az új Linux rendszerű virtuális gépre SSH használatával a létrehozott virtuális gép nyilvános IP-címével:</span><span class="sxs-lookup"><span data-stu-id="ab7b3-164">Now that the VM has been created, you can log on to your new Linux VM using SSH with the public IP address of the VM you created:</span></span>
 
 ```bash
 ssh xx.xxx.xxx.xxx
 ```
 
-```Output
+```output
 Welcome to Ubuntu 14.04.4 LTS (GNU/Linux 3.19.0-65-generic x86_64)
 
  * Documentation:  https://help.ubuntu.com/
@@ -270,29 +269,29 @@ applicable law.
 my-login@MyLinuxVM:../../..$
 ```
 
-## <a name="creating-other-resources-in-azure"></a><span data-ttu-id="33db2-165">Egyéb erőforrások létrehozása az Azure-ban</span><span class="sxs-lookup"><span data-stu-id="33db2-165">Creating other resources in Azure</span></span>
+## <a name="creating-other-resources-in-azure"></a><span data-ttu-id="ab7b3-165">Egyéb erőforrások létrehozása az Azure-ban</span><span class="sxs-lookup"><span data-stu-id="ab7b3-165">Creating other resources in Azure</span></span>
 
-<span data-ttu-id="33db2-166">Bemutattuk, hogyan hozhat létre erőforráscsoportot, valamint Linux és Windows Server rendszerű virtuális gépet.</span><span class="sxs-lookup"><span data-stu-id="33db2-166">We've now walked through how to create a Resource Group, a Linux VM, and a Windows Server VM.</span></span> <span data-ttu-id="33db2-167">Számos más típusú Azure-erőforrást is létrehozhat.</span><span class="sxs-lookup"><span data-stu-id="33db2-167">You can create many other types of Azure resources as well.</span></span>
+<span data-ttu-id="ab7b3-166">Bemutattuk, hogyan hozhat létre erőforráscsoportot, valamint Linux és Windows Server rendszerű virtuális gépet.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-166">We've now walked through how to create a Resource Group, a Linux VM, and a Windows Server VM.</span></span> <span data-ttu-id="ab7b3-167">Számos más típusú Azure-erőforrást is létrehozhat.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-167">You can create many other types of Azure resources as well.</span></span>
 
-<span data-ttu-id="33db2-168">Például a következő parancs használatával létrehozhat egy Azure-beli hálózati terheléselosztót, amelyet aztán társíthat az újonnan létrehozott virtuális gépekkel:</span><span class="sxs-lookup"><span data-stu-id="33db2-168">For example, to create an Azure Network Load Balancer that we could then associate with our newly created VMs, we can use the following create command:</span></span>
+<span data-ttu-id="ab7b3-168">Például a következő parancs használatával létrehozhat egy Azure-beli hálózati terheléselosztót, amelyet aztán társíthat az újonnan létrehozott virtuális gépekkel:</span><span class="sxs-lookup"><span data-stu-id="ab7b3-168">For example, to create an Azure Network Load Balancer that we could then associate with our newly created VMs, we can use the following create command:</span></span>
 
-```powershell
+```azurepowershell-interactive
 New-AzureRmLoadBalancer -Name MyLoadBalancer -ResourceGroupName myResourceGroup -Location westeurope
 ```
 
-<span data-ttu-id="33db2-169">Vagy létrehozhat egy új privát virtuális hálózatot (vagy az Azure-ban gyakran használt nevén „VNetet”) az infrastruktúránkhoz a következő paranccsal:</span><span class="sxs-lookup"><span data-stu-id="33db2-169">We could also create a new private Virtual Network (commonly referred to as a "VNet" within Azure) for our infrastructure using the following command:</span></span>
+<span data-ttu-id="ab7b3-169">Vagy létrehozhat egy új privát virtuális hálózatot (vagy az Azure-ban gyakran használt nevén „VNetet”) az infrastruktúránkhoz a következő paranccsal:</span><span class="sxs-lookup"><span data-stu-id="ab7b3-169">We could also create a new private Virtual Network (commonly referred to as a "VNet" within Azure) for our infrastructure using the following command:</span></span>
 
-```powershell
+```azurepowershell-interactive
 $subnetConfig = New-AzureRmVirtualNetworkSubnetConfig -Name mySubnet2 -AddressPrefix 10.0.0.0/16
 $vnet = New-AzureRmVirtualNetwork -ResourceGroupName myResourceGroup -Location westeurope `
   -Name MYvNET3 -AddressPrefix 10.0.0.0/16 -Subnet $subnetConfig
 ```
 
-<span data-ttu-id="33db2-170">Az Azure és az Azure PowerShell attól igazán sokoldalúak, hogy nemcsak a felhőalapú infrastruktúrához használhatók, hanem felügyelt platformszolgáltatások kialakításához is.</span><span class="sxs-lookup"><span data-stu-id="33db2-170">What makes Azure and the Azure PowerShell powerful is that we can use it not just to get cloud-based infrastructure but also to create managed platform services.</span></span> <span data-ttu-id="33db2-171">A felügyelt platformszolgáltatásokat az infrastruktúrával kombinálva még nagyobb teljesítményű megoldások építhetők ki.</span><span class="sxs-lookup"><span data-stu-id="33db2-171">The managed platform services can also be combined with infrastructure to build even more powerful solutions.</span></span>
+<span data-ttu-id="ab7b3-170">Az Azure és az Azure PowerShell attól igazán sokoldalúak, hogy nemcsak a felhőalapú infrastruktúrához használhatók, hanem felügyelt platformszolgáltatások kialakításához is.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-170">What makes Azure and the Azure PowerShell powerful is that we can use it not just to get cloud-based infrastructure but also to create managed platform services.</span></span> <span data-ttu-id="ab7b3-171">A felügyelt platformszolgáltatásokat az infrastruktúrával kombinálva még nagyobb teljesítményű megoldások építhetők ki.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-171">The managed platform services can also be combined with infrastructure to build even more powerful solutions.</span></span>
 
-<span data-ttu-id="33db2-172">Például az Azure PowerShell használatával létrehozhat egy Azure AppService-t.</span><span class="sxs-lookup"><span data-stu-id="33db2-172">For example, you can use the Azure PowerShell to create an Azure AppService.</span></span> <span data-ttu-id="33db2-173">Az Azure AppService egy felügyelt platformszolgáltatás, amely nagyszerű megoldás a webappok üzemeltetésére anélkül, hogy aggódnia kellene az infrastruktúra miatt.</span><span class="sxs-lookup"><span data-stu-id="33db2-173">Azure AppService is a managed platform service that provides a great way to host web apps without having to worry about infrastructure.</span></span> <span data-ttu-id="33db2-174">Az Azure AppService létrehozása után két új Azure webappot hozhat létre az AppService-ben a következő parancsokkal:</span><span class="sxs-lookup"><span data-stu-id="33db2-174">After creating the Azure AppService, you can create two new Azure Web Apps within the AppService using the following commands:</span></span>
+<span data-ttu-id="ab7b3-172">Például az Azure PowerShell használatával létrehozhat egy Azure AppService-t.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-172">For example, you can use the Azure PowerShell to create an Azure AppService.</span></span> <span data-ttu-id="ab7b3-173">Az Azure AppService egy felügyelt platformszolgáltatás, amely nagyszerű megoldás a webappok üzemeltetésére anélkül, hogy aggódnia kellene az infrastruktúra miatt.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-173">Azure AppService is a managed platform service that provides a great way to host web apps without having to worry about infrastructure.</span></span> <span data-ttu-id="ab7b3-174">Az Azure AppService létrehozása után két új Azure webappot hozhat létre az AppService-ben a következő parancsokkal:</span><span class="sxs-lookup"><span data-stu-id="ab7b3-174">After creating the Azure AppService, you can create two new Azure Web Apps within the AppService using the following commands:</span></span>
 
-```powershell
+```azurepowershell-interactive
 # Create an Azure AppService that we can host any number of web apps within
 New-AzureRmAppServicePlan -Name MyAppServicePlan -Tier Basic -NumberofWorkers 2 -WorkerSize Small -ResourceGroupName myResourceGroup -Location westeurope
 
@@ -301,17 +300,17 @@ New-AzureRmWebApp -Name MyWebApp43432 -AppServicePlan MyAppServicePlan -Resource
 New-AzureRmWebApp -Name MyWebApp43433 -AppServicePlan MyAppServicePlan -ResourceGroupName myResourceGroup -Location westeurope
 ```
 
-## <a name="listing-deployed-resources"></a><span data-ttu-id="33db2-175">Üzembe helyezett erőforrások listázása</span><span class="sxs-lookup"><span data-stu-id="33db2-175">Listing deployed resources</span></span>
+## <a name="listing-deployed-resources"></a><span data-ttu-id="ab7b3-175">Üzembe helyezett erőforrások listázása</span><span class="sxs-lookup"><span data-stu-id="ab7b3-175">Listing deployed resources</span></span>
 
-<span data-ttu-id="33db2-176">A `Get-AzureRmResource` parancsmag használatával listázhatja az Azure-ban futó erőforrásokat.</span><span class="sxs-lookup"><span data-stu-id="33db2-176">You can use the `Get-AzureRmResource` cmdlet to list the resources running in Azure.</span></span> <span data-ttu-id="33db2-177">Az alábbi példa az új erőforráscsoportban létrehozott erőforrásokat mutatja be.</span><span class="sxs-lookup"><span data-stu-id="33db2-177">The following example shows the resources we just created in the new resource group.</span></span>
+<span data-ttu-id="ab7b3-176">A `Get-AzureRmResource` parancsmag használatával listázhatja az Azure-ban futó erőforrásokat.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-176">You can use the `Get-AzureRmResource` cmdlet to list the resources running in Azure.</span></span> <span data-ttu-id="ab7b3-177">Az alábbi példa az új erőforráscsoportban létrehozott erőforrásokat mutatja be.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-177">The following example shows the resources we just created in the new resource group.</span></span>
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmResource |
   Where-Object ResourceGroupName -eq myResourceGroup |
     Select-Object Name,Location,ResourceType
 ```
 
-```Output
+```output
 Name                                                  Location   ResourceType
 ----                                                  --------   ------------
 myLinuxVM_OsDisk_1_36ca038791f642ba91270879088c249a   westeurope Microsoft.Compute/disks
@@ -330,46 +329,46 @@ MYvNET2                                               westeurope Microsoft.Netwo
 micromyresomywi032907510                              westeurope Microsoft.Storage/storageAccounts
 ```
 
-## <a name="deleting-resources"></a><span data-ttu-id="33db2-178">Erőforrások törlése</span><span class="sxs-lookup"><span data-stu-id="33db2-178">Deleting resources</span></span>
+## <a name="deleting-resources"></a><span data-ttu-id="ab7b3-178">Erőforrások törlése</span><span class="sxs-lookup"><span data-stu-id="ab7b3-178">Deleting resources</span></span>
 
-<span data-ttu-id="33db2-179">Az Azure-fiók tisztítása érdekében érdemes lehet törölnie a példában létrehozott erőforrásokat.</span><span class="sxs-lookup"><span data-stu-id="33db2-179">To clean up your Azure account, you want to remove the resources we created in this example.</span></span> <span data-ttu-id="33db2-180">A `Remove-AzureRm*` parancsmagokkal törölheti a már nem szükséges erőforrásokat.</span><span class="sxs-lookup"><span data-stu-id="33db2-180">You can use the `Remove-AzureRm*` cmdlets to delete the resources you no longer need.</span></span> <span data-ttu-id="33db2-181">A létrehozott Windows rendszerű virtuális gép eltávolításához futtassa az alábbi parancsot:</span><span class="sxs-lookup"><span data-stu-id="33db2-181">To remove the Windows VM we created, using the following command:</span></span>
+<span data-ttu-id="ab7b3-179">Az Azure-fiók tisztítása érdekében érdemes lehet törölnie a példában létrehozott erőforrásokat.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-179">To clean up your Azure account, you want to remove the resources we created in this example.</span></span> <span data-ttu-id="ab7b3-180">A `Remove-AzureRm*` parancsmagokkal törölheti a már nem szükséges erőforrásokat.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-180">You can use the `Remove-AzureRm*` cmdlets to delete the resources you no longer need.</span></span> <span data-ttu-id="ab7b3-181">A létrehozott Windows rendszerű virtuális gép eltávolításához futtassa az alábbi parancsot:</span><span class="sxs-lookup"><span data-stu-id="ab7b3-181">To remove the Windows VM we created, using the following command:</span></span>
 
-```powershell
+```azurepowershell-interactive
 Remove-AzureRmVM -Name myWindowsVM -ResourceGroupName myResourceGroup
 ```
 
-<span data-ttu-id="33db2-182">A rendszer rákérdez az erőforrás törlésének jóváhagyására.</span><span class="sxs-lookup"><span data-stu-id="33db2-182">You will be prompted to confirm that you want to remove the resource.</span></span>
+<span data-ttu-id="ab7b3-182">A rendszer rákérdez az erőforrás törlésének jóváhagyására.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-182">You will be prompted to confirm that you want to remove the resource.</span></span>
 
-```Output
+```output
 Confirm
 Are you sure you want to remove resource group 'myResourceGroup'
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 ```
 
-<span data-ttu-id="33db2-183">Egyszerre több erőforrást is törölhet.</span><span class="sxs-lookup"><span data-stu-id="33db2-183">You can also use the delete many resources at one time.</span></span> <span data-ttu-id="33db2-184">A következő parancs például törli a teljes „MyResourceGroup” erőforráscsoportot, amelyet ebben a bevezető oktatóanyagban az összes mintához használtunk.</span><span class="sxs-lookup"><span data-stu-id="33db2-184">For example, the following command deletes all the resource group "MyResourceGroup" that we've used for all the samples in this Get Started tutorial.</span></span> <span data-ttu-id="33db2-185">Törli az erőforráscsoportot, és minden benne lévő erőforrást is.</span><span class="sxs-lookup"><span data-stu-id="33db2-185">This removes the resource group and all of the resources in it.</span></span>
+<span data-ttu-id="ab7b3-183">Egyszerre több erőforrást is törölhet.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-183">You can also use the delete many resources at one time.</span></span> <span data-ttu-id="ab7b3-184">A következő parancs például törli a teljes „MyResourceGroup” erőforráscsoportot, amelyet ebben a bevezető oktatóanyagban az összes mintához használtunk.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-184">For example, the following command deletes all the resource group "MyResourceGroup" that we've used for all the samples in this Get Started tutorial.</span></span> <span data-ttu-id="ab7b3-185">Törli az erőforráscsoportot, és minden benne lévő erőforrást is.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-185">This removes the resource group and all of the resources in it.</span></span>
 
-```powershell
+```azurepowershell-interactive
 Remove-AzureRmResourceGroup -Name myResourceGroup
 ```
 
-```Output
+```output
 Confirm
 Are you sure you want to remove resource group 'myResourceGroup'
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 ```
 
-<span data-ttu-id="33db2-186">Ez több percig is eltarthat.</span><span class="sxs-lookup"><span data-stu-id="33db2-186">This can take several minutes to complete.</span></span>
+<span data-ttu-id="ab7b3-186">Ez több percig is eltarthat.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-186">This can take several minutes to complete.</span></span>
 
-## <a name="get-samples"></a><span data-ttu-id="33db2-187">Minták letöltése</span><span class="sxs-lookup"><span data-stu-id="33db2-187">Get samples</span></span>
+## <a name="get-samples"></a><span data-ttu-id="ab7b3-187">Minták letöltése</span><span class="sxs-lookup"><span data-stu-id="ab7b3-187">Get samples</span></span>
 
-<span data-ttu-id="33db2-188">Az Azure PowerShell használatával kapcsolatos további tudnivalókért tekintse át a [Linux rendszerű virtuális gépek](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), a [Windows rendszerű virtuális gépek](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), a [Web Apps-alkalmazások](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json) és az [SQL Database-adatbázisok](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json) leggyakoribb szkriptjeit.</span><span class="sxs-lookup"><span data-stu-id="33db2-188">To learn more about ways to use the Azure PowerShell, check out our most common scripts for [Linux VMs](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), [Windows VMs](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), and [SQL Databases](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json).</span></span>
+<span data-ttu-id="ab7b3-188">Az Azure PowerShell használatával kapcsolatos további tudnivalókért tekintse át a [Linux rendszerű virtuális gépek](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), a [Windows rendszerű virtuális gépek](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), a [Web Apps-alkalmazások](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json) és az [SQL Database-adatbázisok](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json) leggyakoribb szkriptjeit.</span><span class="sxs-lookup"><span data-stu-id="ab7b3-188">To learn more about ways to use the Azure PowerShell, check out our most common scripts for [Linux VMs](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), [Windows VMs](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), and [SQL Databases](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json).</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="33db2-189">További lépések</span><span class="sxs-lookup"><span data-stu-id="33db2-189">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="ab7b3-189">További lépések</span><span class="sxs-lookup"><span data-stu-id="ab7b3-189">Next steps</span></span>
 
-* [<span data-ttu-id="33db2-190">Bejelentkezés az Azure PowerShell-lel</span><span class="sxs-lookup"><span data-stu-id="33db2-190">Login with Azure PowerShell</span></span>](authenticate-azureps.md)
-* [<span data-ttu-id="33db2-191">Azure-előfizetések kezelése az Azure PowerShell-lel</span><span class="sxs-lookup"><span data-stu-id="33db2-191">Manage Azure subscriptions with Azure PowerShell</span></span>](manage-subscriptions-azureps.md)
-* [<span data-ttu-id="33db2-192">Szolgáltatásnevek létrehozása az Azure PowerShell használatával</span><span class="sxs-lookup"><span data-stu-id="33db2-192">Create service principals in Azure using Azure PowerShell</span></span>](create-azure-service-principal-azureps.md)
-* <span data-ttu-id="33db2-193">A régi kiadásokról való áttéréssel kapcsolatban olvassa át a kibocsátási megjegyzéseket: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).</span><span class="sxs-lookup"><span data-stu-id="33db2-193">Read the Release notes about migrating from an older release: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).</span></span>
-* <span data-ttu-id="33db2-194">Segítség kérése a közösségtől:</span><span class="sxs-lookup"><span data-stu-id="33db2-194">Get help from the community:</span></span>
-  * [<span data-ttu-id="33db2-195">Azure-fórum az MSDN-en</span><span class="sxs-lookup"><span data-stu-id="33db2-195">Azure forum on MSDN</span></span>](http://go.microsoft.com/fwlink/p/?LinkId=320212)
-  * [<span data-ttu-id="33db2-196">stackoverflow</span><span class="sxs-lookup"><span data-stu-id="33db2-196">stackoverflow</span></span>](http://go.microsoft.com/fwlink/?LinkId=320213)
+* [<span data-ttu-id="ab7b3-190">Bejelentkezés az Azure PowerShell-lel</span><span class="sxs-lookup"><span data-stu-id="ab7b3-190">Login with Azure PowerShell</span></span>](authenticate-azureps.md)
+* [<span data-ttu-id="ab7b3-191">Azure-előfizetések kezelése az Azure PowerShell-lel</span><span class="sxs-lookup"><span data-stu-id="ab7b3-191">Manage Azure subscriptions with Azure PowerShell</span></span>](manage-subscriptions-azureps.md)
+* [<span data-ttu-id="ab7b3-192">Szolgáltatásnevek létrehozása az Azure PowerShell használatával</span><span class="sxs-lookup"><span data-stu-id="ab7b3-192">Create service principals in Azure using Azure PowerShell</span></span>](create-azure-service-principal-azureps.md)
+* <span data-ttu-id="ab7b3-193">A régi kiadásokról való áttéréssel kapcsolatban olvassa át a kibocsátási megjegyzéseket: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).</span><span class="sxs-lookup"><span data-stu-id="ab7b3-193">Read the Release notes about migrating from an older release: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).</span></span>
+* <span data-ttu-id="ab7b3-194">Segítség kérése a közösségtől:</span><span class="sxs-lookup"><span data-stu-id="ab7b3-194">Get help from the community:</span></span>
+  * [<span data-ttu-id="ab7b3-195">Azure-fórum az MSDN-en</span><span class="sxs-lookup"><span data-stu-id="ab7b3-195">Azure forum on MSDN</span></span>](http://go.microsoft.com/fwlink/p/?LinkId=320212)
+  * [<span data-ttu-id="ab7b3-196">stackoverflow</span><span class="sxs-lookup"><span data-stu-id="ab7b3-196">stackoverflow</span></span>](http://go.microsoft.com/fwlink/?LinkId=320213)

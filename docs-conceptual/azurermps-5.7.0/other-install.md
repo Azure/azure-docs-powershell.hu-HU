@@ -1,37 +1,38 @@
 ---
-title: Az Azure PowerShell telepítésének egyéb módjai | Microsoft Docs
+title: Az Azure PowerShell telepítésének egyéb módjai
 description: Az Azure PowerShell telepítése az MSI-csomag vagy a Webplatform-telepítő használatával.
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/06/2017
-ms.openlocfilehash: cb4ced3b72b69546594d75e7eb7db822b549a664
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.date: 06/06/2018
+ms.openlocfilehash: 0919583d9cb05a75fae3b812eed84109be8b28aa
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821445"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323271"
 ---
-# <a name="other-installation-methods"></a><span data-ttu-id="6a419-103">Egyéb telepítési módszerek</span><span class="sxs-lookup"><span data-stu-id="6a419-103">Other installation methods</span></span>
+# <a name="other-installation-methods"></a><span data-ttu-id="88c18-103">Egyéb telepítési módszerek</span><span class="sxs-lookup"><span data-stu-id="88c18-103">Other installation methods</span></span>
 
-<span data-ttu-id="6a419-104">Az Azure PowerShell többféle módszerrel telepíthető.</span><span class="sxs-lookup"><span data-stu-id="6a419-104">Azure PowerShell has multiple installation methods.</span></span> <span data-ttu-id="6a419-105">Az előnyben részesített módszer a PowerShellGet használata a PowerShell-galériával.</span><span class="sxs-lookup"><span data-stu-id="6a419-105">Using PowerShellGet with the PowerShell Gallery is the preferred method.</span></span> <span data-ttu-id="6a419-106">Az Azure PowerShell a Windows rendszeren a Webplatform-telepítő (WebPI) vagy a GitHubról elérhető MSI-fájl használatával telepíthető.</span><span class="sxs-lookup"><span data-stu-id="6a419-106">Azure PowerShell can be installed on Windows using the Web Platform Installer (WebPI) or by using the MSI file available from GitHub.</span></span> <span data-ttu-id="6a419-107">Az Azure PowerShell Docker-tárolóban is telepíthető.</span><span class="sxs-lookup"><span data-stu-id="6a419-107">Azure PowerShell can also be installed in a Docker container.</span></span>
+<span data-ttu-id="88c18-104">Ez a cikk az Azure PowerShell MSI-vel vagy Webplatform-telepítővel (WebPI) való telepítését ismerteti.</span><span class="sxs-lookup"><span data-stu-id="88c18-104">This article explains how to install Azure PowerShell using an MSI or Web Platform Installer (WebPI).</span></span> <span data-ttu-id="88c18-105">Az Azure PowerShell futtatható egy Docker-tárolóból is.</span><span class="sxs-lookup"><span data-stu-id="88c18-105">You can also run Azure PowerShell from inside of a Docker container.</span></span> <span data-ttu-id="88c18-106">Csak akkor alkalmazza ezeket a telepítési módszereket, ha a rendszer számára szükséges.</span><span class="sxs-lookup"><span data-stu-id="88c18-106">Use these installation methods only if they're necessary for your system.</span></span> <span data-ttu-id="88c18-107">Az Azure PowerShell telepítésének szokványos módszere a PowerShellGet segítségével való telepítés.</span><span class="sxs-lookup"><span data-stu-id="88c18-107">The canonical way to install Azure PowerShell is through PowerShellGet.</span></span> <span data-ttu-id="88c18-108">Útmutatás az Azure PowerShell PowerShellGet segítségével való telepítéséhez: [Az Azure PowerShell telepítése a PowerShellGet segítségével](install-azurerm-ps.md).</span><span class="sxs-lookup"><span data-stu-id="88c18-108">For instructions on using PowerShellGet to install Azure PowerShell, see [Install Azure PowerShell with PowerShellGet](install-azurerm-ps.md).</span></span>
 
-## <a name="install-on-windows-using-the-web-platform-installer"></a><span data-ttu-id="6a419-108">Telepítés Windows rendszeren a Webplatform-telepítővel</span><span class="sxs-lookup"><span data-stu-id="6a419-108">Install on Windows using the Web Platform Installer</span></span>
+<span data-ttu-id="88c18-109">Ha Linux- vagy macOS-környezetben végzi a telepítést, tekintse meg [Az Azure PowerShell telepítése macOS vagy Linux rendszeren](install-azurermps-maclinux.md) szakaszt.</span><span class="sxs-lookup"><span data-stu-id="88c18-109">To install on Linux or macOS environments, see [Install Azure PowerShell on macOS or Linux](install-azurermps-maclinux.md).</span></span>
 
-<span data-ttu-id="6a419-109">A legújabb Azure PowerShell ugyanúgy telepíthető a WebPI-ről, ahogy a korábbi verziók.</span><span class="sxs-lookup"><span data-stu-id="6a419-109">Installing the latest Azure PowerShell from WebPI is the same as it was for previous versions.</span></span>
-<span data-ttu-id="6a419-110">Töltse le az [Azure PowerShell WebPI csomagot](http://aka.ms/webpi-azps), és indítsa el a telepítést.</span><span class="sxs-lookup"><span data-stu-id="6a419-110">Download the [Azure PowerShell WebPI package](http://aka.ms/webpi-azps) and start the install.</span></span>
+## <a name="install-or-update-on-windows-using-the-web-platform-installer"></a><span data-ttu-id="88c18-110">Telepítés vagy frissítés Windows rendszeren a Webplatform-telepítővel</span><span class="sxs-lookup"><span data-stu-id="88c18-110">Install or update on Windows using the Web Platform Installer</span></span>
+
+<span data-ttu-id="88c18-111">A legújabb Azure PowerShell ugyanúgy telepíthető a WebPI-ről, ahogy a korábbi verziók.</span><span class="sxs-lookup"><span data-stu-id="88c18-111">Installing the latest Azure PowerShell from WebPI is the same as it was for previous versions.</span></span>
+<span data-ttu-id="88c18-112">Töltse le az [Azure PowerShell WebPI csomagot](http://aka.ms/webpi-azps), és indítsa el a telepítést.</span><span class="sxs-lookup"><span data-stu-id="88c18-112">Download the [Azure PowerShell WebPI package](http://aka.ms/webpi-azps) and start the install.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="6a419-111">Ha korábban már telepített Azure-modulokat a PowerShell-galériából, a telepítő automatikusan eltávolítja őket.</span><span class="sxs-lookup"><span data-stu-id="6a419-111">If you have previously installed Azure modules from the PowerShell Gallery, the installer automatically removes them.</span></span> <span data-ttu-id="6a419-112">Ez egyszerűbbé teszi a környezetet, mivel így biztosítható, hogy csak egy Azure PowerShell-verzió lesz telepítve.</span><span class="sxs-lookup"><span data-stu-id="6a419-112">This simplifies your environment by ensuring that only one version of Azure PowerShell is installed.</span></span> <span data-ttu-id="6a419-113">Léteznek azonban olyan forgatókönyvek, amikor több telepített verzióra lehet szüksége egy időben.</span><span class="sxs-lookup"><span data-stu-id="6a419-113">However, there are scenarios where you may need multiple versions installed at the same time.</span></span>
+> <span data-ttu-id="88c18-113">Ha korábban már telepített Azure-modulokat a PowerShell-galériából, a telepítő automatikusan eltávolítja őket.</span><span class="sxs-lookup"><span data-stu-id="88c18-113">If you have previously installed Azure modules from the PowerShell Gallery, the installer automatically removes them.</span></span> <span data-ttu-id="88c18-114">Ez egyszerűbbé teszi a környezetet, mivel így biztosítható, hogy csak egy Azure PowerShell-verzió lesz telepítve.</span><span class="sxs-lookup"><span data-stu-id="88c18-114">This simplifies your environment by ensuring that only one version of Azure PowerShell is installed.</span></span> <span data-ttu-id="88c18-115">Léteznek azonban olyan forgatókönyvek, amikor több telepített verzióra lehet szüksége egy időben.</span><span class="sxs-lookup"><span data-stu-id="88c18-115">However, there are scenarios where you may need multiple versions installed at the same time.</span></span>
 >
-> <span data-ttu-id="6a419-114">A PowerShell-galéria moduljai a következő helyen települnek: `$env:ProgramFiles\WindowsPowerShell\Modules`.</span><span class="sxs-lookup"><span data-stu-id="6a419-114">PowerShell Gallery modules install modules in `$env:ProgramFiles\WindowsPowerShell\Modules`.</span></span> <span data-ttu-id="6a419-115">A WebPI telepítője ezzel szemben a következő helyen telepíti az Azure-modulokat: `$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\`.</span><span class="sxs-lookup"><span data-stu-id="6a419-115">In contrast, the WebPI installer installs the Azure modules in `$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\`.</span></span>
+> <span data-ttu-id="88c18-116">A PowerShell-galéria moduljai a következő helyen települnek: `$env:ProgramFiles\WindowsPowerShell\Modules`.</span><span class="sxs-lookup"><span data-stu-id="88c18-116">PowerShell Gallery modules install modules in `$env:ProgramFiles\WindowsPowerShell\Modules`.</span></span> <span data-ttu-id="88c18-117">A WebPI telepítője ezzel szemben a következő helyen telepíti az Azure-modulokat: `$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\`.</span><span class="sxs-lookup"><span data-stu-id="88c18-117">In contrast, the WebPI installer installs the Azure modules in `$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\`.</span></span>
 >
-> <span data-ttu-id="6a419-116">Ha hiba merül fel a telepítés során, törölje manuálisan az Azure\* mappákat a `$env:ProgramFiles\WindowsPowerShell\Modules` mappából, és próbálkozzon újra a telepítéssel.</span><span class="sxs-lookup"><span data-stu-id="6a419-116">If an error occurs during install, you can manually remove the Azure\* folders in your `$env:ProgramFiles\WindowsPowerShell\Modules` folder, and try the installation again.</span></span>
+> <span data-ttu-id="88c18-118">Ha hiba merül fel a telepítés során, törölje manuálisan az `Azure*` mappákat a `$env:ProgramFiles\WindowsPowerShell\Modules` mappából, és próbálkozzon újra a telepítéssel.</span><span class="sxs-lookup"><span data-stu-id="88c18-118">If an error occurs during install, you can manually remove the `Azure*` folders in your `$env:ProgramFiles\WindowsPowerShell\Modules` folder, and try the installation again.</span></span>
 
-<span data-ttu-id="6a419-117">A telepítés befejeztével a `$env:PSModulePath` beállításnak tartalmaznia kell az Azure PowerShell-parancsmagokat tartalmazó könyvtárakat.</span><span class="sxs-lookup"><span data-stu-id="6a419-117">Once the installation completes, your `$env:PSModulePath` setting should include the directories containing the Azure PowerShell cmdlets.</span></span> <span data-ttu-id="6a419-118">A következő paranccsal ellenőrizheti, hogy az Azure PowerShell megfelelően van-e telepítve.</span><span class="sxs-lookup"><span data-stu-id="6a419-118">The following command can be used to verify that the Azure PowerShell is installed properly.</span></span>
+<span data-ttu-id="88c18-119">A telepítés befejeztével a `$env:PSModulePath` beállításnak tartalmaznia kell az Azure PowerShell-parancsmagokat tartalmazó könyvtárakat.</span><span class="sxs-lookup"><span data-stu-id="88c18-119">Once the installation completes, your `$env:PSModulePath` setting should include the directories containing the Azure PowerShell cmdlets.</span></span> <span data-ttu-id="88c18-120">A következő paranccsal ellenőrizheti, hogy az Azure PowerShell megfelelően van-e telepítve:</span><span class="sxs-lookup"><span data-stu-id="88c18-120">The following command can be used to verify that the Azure PowerShell is installed properly:</span></span>
 
 ```powershell
 # To make sure the Azure PowerShell module is available after you install
@@ -39,9 +40,9 @@ Get-Module -ListAvailable Azure* | Select-Object Name, Version, Path
 ```
 
 > [!NOTE]
-> <span data-ttu-id="6a419-119">Létezik egy ismert hiba, amely a WebPI telepítésekor léphet fel.</span><span class="sxs-lookup"><span data-stu-id="6a419-119">There is a known issue that can occur when installing from WebPI.</span></span> <span data-ttu-id="6a419-120">Ha a számítógépet a rendszerfrissítések és egyéb telepítések miatt újra kell indítani, előfordulhat, hogy az `$env:PSModulePath` frissítései nem tartalmazzák az Azure PowerShell telepítési útvonalát.</span><span class="sxs-lookup"><span data-stu-id="6a419-120">If your computer requires a restart due to system updates or other installations, it may cause updates to `$env:PSModulePath` to fail to include the path where Azure PowerShell is installed.</span></span>
+> <span data-ttu-id="88c18-121">Létezik egy ismert hiba, amely a WebPI telepítésekor léphet fel.</span><span class="sxs-lookup"><span data-stu-id="88c18-121">There is a known issue that can occur when installing from WebPI.</span></span> <span data-ttu-id="88c18-122">Ha a számítógépet a rendszerfrissítések és egyéb telepítések miatt újra kell indítani, előfordulhat, hogy az `$env:PSModulePath` frissítései nem tartalmazzák az Azure PowerShell telepítési útvonalát.</span><span class="sxs-lookup"><span data-stu-id="88c18-122">If your computer requires a restart due to system updates or other installations, it may cause updates to `$env:PSModulePath` to fail to include the path where Azure PowerShell is installed.</span></span>
 
-<span data-ttu-id="6a419-121">A parancsmagok telepítés utáni betöltése vagy végrehajtása során a következő hibaüzenet jelenhet meg:</span><span class="sxs-lookup"><span data-stu-id="6a419-121">When attempting to load or execute cmdlets after installation, you can receive the following error message:</span></span>
+<span data-ttu-id="88c18-123">A parancsmagok telepítés utáni betöltése vagy végrehajtása során a következő hibaüzenet jelenhet meg:</span><span class="sxs-lookup"><span data-stu-id="88c18-123">When attempting to load or execute cmdlets after installation, you can receive the following error message:</span></span>
 
 ```
 PS C:\> Connect-AzureRmAccount
@@ -55,38 +56,31 @@ At line:1 char:1
     + FullyQualifiedErrorId : CommandNotFoundException
 ```
 
-<span data-ttu-id="6a419-122">Ez a hiba a gép újraindításával vagy a modul teljes útvonallal való importálásával javítható.</span><span class="sxs-lookup"><span data-stu-id="6a419-122">This error can be corrected by restarting the machine or importing the module using the fully qualified path.</span></span> <span data-ttu-id="6a419-123">Például:</span><span class="sxs-lookup"><span data-stu-id="6a419-123">For example:</span></span>
+<span data-ttu-id="88c18-124">Ez a hiba a gép újraindításával vagy a modul teljes útvonallal való importálásával javítható.</span><span class="sxs-lookup"><span data-stu-id="88c18-124">This error can be corrected by restarting the machine or importing the module using the fully qualified path.</span></span>
 
 ```powershell
 Import-Module "$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\AzureRM.psd1"
 ```
 
-## <a name="install-on-windows-using-the-msi-package"></a><span data-ttu-id="6a419-124">Telepítés Windows rendszeren az MSI-csomaggal</span><span class="sxs-lookup"><span data-stu-id="6a419-124">Install on Windows using the MSI Package</span></span>
+## <a name="install-or-update-on-windows-using-the-msi-package"></a><span data-ttu-id="88c18-125">Telepítés vagy frissítés Windows rendszeren az MSI-csomaggal</span><span class="sxs-lookup"><span data-stu-id="88c18-125">Install or update on Windows using the MSI Package</span></span>
 
-<span data-ttu-id="6a419-125">Az Azure PowerShell telepíthető a [GitHubról](https://aka.ms/azps-release) elérhető MSI-fájllal is.</span><span class="sxs-lookup"><span data-stu-id="6a419-125">Azure PowerShell can be installed using the MSI file available from [GitHub](https://aka.ms/azps-release).</span></span> <span data-ttu-id="6a419-126">Ha az Azure-modulok korábbi verziói már telepítve vannak, a telepítő automatikusan eltávolítja őket.</span><span class="sxs-lookup"><span data-stu-id="6a419-126">If you have installed previous versions of Azure modules, the installer automatically removes them.</span></span> <span data-ttu-id="6a419-127">Az MSI-csomag a(z) `$env:ProgramFiles\WindowsPowerShell\Modules` helyre telepíti a modulokat, azonban nem hoz létre verzióspecifikus mappákat.</span><span class="sxs-lookup"><span data-stu-id="6a419-127">The MSI package installs modules in `$env:ProgramFiles\WindowsPowerShell\Modules` but does not create version-specific folders.</span></span>
+<span data-ttu-id="88c18-126">Az Azure PowerShell telepíthető a [GitHubról](https://aka.ms/azps-release) elérhető MSI-fájllal is.</span><span class="sxs-lookup"><span data-stu-id="88c18-126">Azure PowerShell can be installed using the MSI file available from [GitHub](https://aka.ms/azps-release).</span></span> <span data-ttu-id="88c18-127">Ha az Azure-modulok korábbi verziói már telepítve vannak, a telepítő automatikusan eltávolítja őket.</span><span class="sxs-lookup"><span data-stu-id="88c18-127">If you have installed previous versions of Azure modules, the installer automatically removes them.</span></span> <span data-ttu-id="88c18-128">Az MSI-csomag a(z) `$env:ProgramFiles\WindowsPowerShell\Modules` helyre telepíti a modulokat, azonban nem hoz létre verzióspecifikus mappákat.</span><span class="sxs-lookup"><span data-stu-id="88c18-128">The MSI package installs modules in `$env:ProgramFiles\WindowsPowerShell\Modules` but does not create version-specific folders.</span></span>
 
-## <a name="install-in-a-docker-container"></a><span data-ttu-id="6a419-128">Telepítés Docker-tárolóban</span><span class="sxs-lookup"><span data-stu-id="6a419-128">Install in a Docker container</span></span>
+## <a name="run-in-a-docker-container"></a><span data-ttu-id="88c18-129">Futtatás Docker-tárolóban</span><span class="sxs-lookup"><span data-stu-id="88c18-129">Run in a Docker container</span></span>
 
-<span data-ttu-id="6a419-129">Elérhető az Azure PowerShell-hez előre konfigurált Docker-rendszerkép.</span><span class="sxs-lookup"><span data-stu-id="6a419-129">We maintain a Docker image preconfigured with Azure PowerShell.</span></span>
+<span data-ttu-id="88c18-130">Elérhetők az Azure PowerShellhez előre konfigurált Docker-rendszerképek.</span><span class="sxs-lookup"><span data-stu-id="88c18-130">We maintain a set of Docker images preconfigured with Azure PowerShell.</span></span> <span data-ttu-id="88c18-131">Kétféle tároló érhető el: azok, amelyek a hagyományos PowerShellt futtatják Windows rendszeren, és egy olyan, amely a PowerShell Core-t futtatja Windows vagy Linux rendszeren.</span><span class="sxs-lookup"><span data-stu-id="88c18-131">There are two types of containers available: Those running traditional PowerShell on Windows, and a container running PowerShell Core on either Windows or Linux.</span></span>
 
-<span data-ttu-id="6a419-130">A tárolót a következő paranccsal futtathatja: `docker run`.</span><span class="sxs-lookup"><span data-stu-id="6a419-130">Run the container with `docker run`.</span></span>
+| <span data-ttu-id="88c18-132">Környezet</span><span class="sxs-lookup"><span data-stu-id="88c18-132">Environment</span></span> | <span data-ttu-id="88c18-133">Docker-rendszerkép</span><span class="sxs-lookup"><span data-stu-id="88c18-133">Docker image</span></span> |
+|-------------|--------------|
+| <span data-ttu-id="88c18-134">PowerShell Windows rendszeren</span><span class="sxs-lookup"><span data-stu-id="88c18-134">PowerShell on Windows</span></span> | [<span data-ttu-id="88c18-135">azuresdk/azure-powershell</span><span class="sxs-lookup"><span data-stu-id="88c18-135">azuresdk/azure-powershell</span></span>](https://hub.docker.com/r/azuresdk/azure-powershell/) |
+| <span data-ttu-id="88c18-136">PowerShell Core Windows rendszeren</span><span class="sxs-lookup"><span data-stu-id="88c18-136">PowerShell Core on Windows</span></span> | [<span data-ttu-id="88c18-137">azuresdk/azure-powershell-core:nanoserver</span><span class="sxs-lookup"><span data-stu-id="88c18-137">azuresdk/azure-powershell-core:nanoserver</span></span>](https://hub.docker.com/r/azuresdk/azure-powershell-core/) |
+| <span data-ttu-id="88c18-138">PowerShell Core Linux rendszeren</span><span class="sxs-lookup"><span data-stu-id="88c18-138">PowerShell Core on Linux</span></span> | [<span data-ttu-id="88c18-139">azuresdk/azure-powershell-core:latest</span><span class="sxs-lookup"><span data-stu-id="88c18-139">azuresdk/azure-powershell-core:latest</span></span>](https://hub.docker.com/r/azuresdk/azure-powershell-core/) |
 
-```powershell
-docker run azuresdk/azure-powershell
-```
-
-<span data-ttu-id="6a419-131">Emellett elérhető a parancsmagok egy részhalmaza PowerShell Core-tároló formájában.</span><span class="sxs-lookup"><span data-stu-id="6a419-131">In addition, we maintain a subset of cmdlets as a PowerShell Core container.</span></span>
-
-<span data-ttu-id="6a419-132">Mac és Linux rendszereken a `latest` rendszerképet használhatja.</span><span class="sxs-lookup"><span data-stu-id="6a419-132">For Mac/Linux, use the `latest` image.</span></span>
-
-```bash
-docker run azuresdk/azure-powershell-core:latest
-```
-
-<span data-ttu-id="6a419-133">Windowson a `nanoserver` rendszerképet használhatja.</span><span class="sxs-lookup"><span data-stu-id="6a419-133">For Windows, use the `nanoserver` image.</span></span>
+<span data-ttu-id="88c18-140">Ezen tárolók futtatásához a `docker run -it $ImageName` parancs segítségével kap egy interaktív terminált.</span><span class="sxs-lookup"><span data-stu-id="88c18-140">To run any of these containers, you use `docker run -it $ImageName` to get an interactive terminal.</span></span> <span data-ttu-id="88c18-141">A PowerShell Core Linux-tárolón történő futtatásához például használja a következőt:</span><span class="sxs-lookup"><span data-stu-id="88c18-141">For example, to run the PowerShell Core on Linux container, use:</span></span>
 
 ```powershell
-docker run azuresdk/azure-powershell-core:nanoserver
+docker run -it azuresdk/azure-powershell-core:latest
 ```
 
-<span data-ttu-id="6a419-134">Az Azure PowerShell az `Install-Module` parancsmaggal van telepítve a [PowerShell-galériából](https://www.powershellgallery.com/).</span><span class="sxs-lookup"><span data-stu-id="6a419-134">Azure PowerShell is installed on the image via `Install-Module` from the [PowerShell Gallery](https://www.powershellgallery.com/).</span></span>
+> [!NOTE]
+> <span data-ttu-id="88c18-142">Ha Windows-tárolót szeretne futtatni a Dockerben, a gazdagép operációs rendszerének Windowsnak kell lennie, és a Dockert úgy kell beállítani, hogy Windows-tárolókat futtasson.</span><span class="sxs-lookup"><span data-stu-id="88c18-142">To run a Windows container in Docker, your host OS must be Windows and Docker must be set to run Windows containers.</span></span> <span data-ttu-id="88c18-143">További információk a Windows- és Linux-környezet közötti váltáshoz a Dockerben: [Váltás Windows- és Linux-tárolók között](https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers).</span><span class="sxs-lookup"><span data-stu-id="88c18-143">To learn about switching between Windows and Linux environments in Docker, see the Docker documentation [Switch between Windows and Linux containers](https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers).</span></span>

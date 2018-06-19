@@ -17,25 +17,25 @@
       items:
         - name: Egyszerű szolgáltatás létrehozása
           href: create-azure-service-principal-azureps.md
-        - name: Állandó hitelesítő adatok használata
+        - name: Állandó hitelesítő adatok
           href: context-persistence.md
     - name: Lekérdezések
       href: queries-azureps.md
-    - name: Formátum
+    - name: Kimenet formátuma
       href: formatting-output.md
-    - name: Előfizetések
+    - name: Előfizetések kezelése
       href: manage-subscriptions-azureps.md
     - name: Üzembe helyezés
       items:
-        - name: Üzembe helyezés Resource Manager-sablonokkal
+        - name: Resource Manager-sablonok üzembe helyezése
           href: /azure/azure-resource-manager/resource-group-template-deploy
         - name: Resource Manager-sablonok exportálása
           href: /azure/azure-resource-manager/resource-manager-export-template-powershell
-        - name: Saját Resource Manager-sablon üzembe helyezése SAS-jogkivonat használatával
+        - name: Saját Resource Manager-sablonok üzembe helyezése
           href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
     - name: Alapelvek
       items:
-        - name: Kísérleti modulok használata
+        - name: Kísérleti modulok
           href: using-experimental-modules.md
     - name: Kibocsátási megjegyzések
       href: release-notes-azureps.md
