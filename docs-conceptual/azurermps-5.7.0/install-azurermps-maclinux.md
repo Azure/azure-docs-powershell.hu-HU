@@ -1,44 +1,39 @@
 ---
-title: Az Azure PowerShell telepítése és konfigurálása macOS és Linux rendszeren | Microsoft Docs
-description: Az Azure PowerShell telepítése és konfigurálása az első használathoz macOS és Linux rendszeren.
-services: azure
+title: Az Azure PowerShell telepítése macOS vagy Linux rendszeren
+description: Az Azure PowerShell telepítése macOS vagy Linux rendszeren.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 01/12/2018
-ms.openlocfilehash: 4dae78779758f240668db5a809b4c1bc1cfc34c7
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.date: 06/06/2018
+ms.openlocfilehash: 17912c155255b6fdfd3cfb9242163b67d405dc03
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34819915"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323254"
 ---
-# <a name="install-and-configure-azure-powershell-on-macos-and-linux"></a>Az Azure PowerShell telepítése és konfigurálása macOS és Linux rendszeren
+# <a name="install-azure-powershell-on-macos-or-linux"></a>Az Azure PowerShell telepítése macOS vagy Linux rendszeren
 
-A PowerShell Core 6-os verziója és az Azure PowerShell most már nem Windows rendszerű platformokra is telepíthető.
-Az Azure PowerShell macOS és Linux rendszeren való telepítése nem sokban tér el a Windows rendszeren való telepítéstől, először azonban telepítenie kell a PowerShell Core 6-os verzióját is.
+Nem Windows rendszerű platformokon az Azure PowerShell futtatható a PowerShell Core 6-os verzióján. A Windowshoz készült .NET-keretrendszerre épülő standard Azure PowerShelltől eltérően ez a termék a .NET Core-ra épül, és bármely, a .Net Core futtatókörnyezetet támogató platformon futtatható.
 
 > [!NOTE]
-
 > Jelenleg a PowerShell Core 6-os verziója és a .NET Core-hoz készült Azure PowerShell csak bétaverzióban érhető el.
-> A termékek korlátozott támogatással rendelkeznek. Ha problémákba ütközik vagy hibákat észlel, kérjük, a GitHubon keresztül jelentse.
+> A termékek korlátozott támogatással rendelkeznek. Ha problémákba ütközik vagy hibát észlel, jelentse be a problémát a GitHubon.
 >
 > * [A PowerShell Core 6-os verziójának problémái](https://github.com/PowerShell/PowerShell/issues)
 > * [Az Azure PowerShell problémái](https://github.com/azure/azure-docs-powershell/issues)
 
-## <a name="step-1-install-powershell-core-v6"></a>1. lépés: A PowerShell Core 6-os verziójának telepítése
+## <a name="install-powershell-core-v6"></a>A PowerShell Core 6-os verziójának telepítése
 
-A PowerShell Core 6-os verziójának telepítési folyamata attól függően változik, hogy milyen operációs rendszerre telepíti.
-Bár a PowerShell Core 6-os verziója a Windows rendszeren is telepíthető, ez a cikk a macOS és a Linux rendszerre összpontosít. Ha Windows rendszeren szeretné használni az Azure PowerShellt, tekintse meg a Windowsra vonatkozó [telepítési](./install-azurerm-ps.md) cikket.
+A PowerShell Core 6-os verziójának telepítése Linux vagy macOS rendszeren a Linux-disztribúciótól és az operációs rendszer verziójától függően változik.
+Részletes útmutatásokat a következő cikkekben talál:
 
-A **PowerShell Core 6-os verziójának** telepítése Linux vagy macOS rendszeren a Linux-disztribúciótól és az operációs rendszer verziójától függően változik.
-Részletes útmutatásokat a következő cikkben talál:
+- [A PowerShell Core telepítése macOS rendszeren](/powershell/scripting/setup/installing-powershell-core-on-macos)
+- [A PowerShell Core telepítése Linux rendszeren](/powershell/scripting/setup/installing-powershell-core-on-linux)
 
-- [A PowerShell Core telepítése macOS és Linux rendszeren](/powershell/scripting/setup/installing-powershell-core-on-macos-and-linux)
-
-## <a name="step-2-install-azure-powershell-for-net-core"></a>2. lépés: A .NET Core-hoz készült Azure PowerShell telepítése
+## <a name="install-azure-powershell-for-net-core"></a>A .NET Core-hoz készült Azure PowerShell telepítése
 
 A PowerShell Core 6-os verziója tartalmazza az előre telepített PowerShellGet modult. Ez megkönnyíti a PowerShell-galériában közzétett modulok telepítését. Az Azure PowerShell telepítéséhez nyisson meg egy új PowerShell-munkamenetet, majd futtassa az alábbi parancsot:
 
@@ -46,7 +41,7 @@ A PowerShell Core 6-os verziója tartalmazza az előre telepített PowerShellGet
 Install-Module AzureRM.NetCore
 ```
 
-## <a name="step-3-load-the-azurermnetcore-module"></a>3. lépés: Az AzureRM.Netcore modul betöltése
+## <a name="load-the-azurermnetcore-module"></a>Az AzureRM.Netcore-modul betöltése
 
 A modul telepítése után be kell tölteni a azt a PowerShell-munkamenetbe. A modulok az `Import-Module` parancsmaggal, az alábbi módon tölthetők be:
 

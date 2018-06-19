@@ -1,25 +1,32 @@
 ---
-title: Az Azure PowerShell használatának első lépései | Microsoft Docs
+title: Ismerkedés az Azure PowerShell-lel
 description: ''
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: d43323ca696ed115a86e7502a3bac829118028e4
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: cfb7ff30b442bb345931728dab131e1b80e58989
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821037"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323373"
 ---
-# <a name="getting-started-with-azure-powershell"></a>Ismerkedés az Azure PowerShell-lel
+# <a name="get-started-with-azure-powershell"></a>Ismerkedés az Azure PowerShell-lel
 
-Az Azure PowerShell az Azure-erőforrások parancssori kezelésére és adminisztrálására, valamint az Azure Resource Manageren futtatható automatizálási szkriptek létrehozására készült. Használhatja a böngészőjében az [Azure Cloud Shell-lel](/azure/cloud-shell/overview), vagy telepítheti a helyi gépen, és használhatja bármely PowerShell-munkamenetben. A cikk segítséget nyújt a használatának megkezdésében, és ismerteti az alapvető fogalmakat.
+Az Azure PowerShell az Azure-erőforrások parancssori kezelésére és adminisztrálására, valamint az Azure Resource Manageren futtatható automatizálási szkriptek létrehozására készült. Használhatja a böngészőjében az [Azure Cloud Shell-lel](/azure/cloud-shell/overview), vagy telepítheti a helyi gépen. A cikk segítséget nyújt az Azure PowerShell használatának megkezdésében, és ismerteti az alapvető fogalmakat.
 
-## <a name="connect"></a>Kapcsolódás
+## <a name="install-azure-powershell"></a>Az Azure PowerShell telepítése
+
+Első lépésként győződjön meg róla, hogy az Azure PowerShell legújabb verziója van telepítve. A legújabb kiadással kapcsolatos információkért lásd a [kibocsátási megjegyzéseket](./release-notes-azureps.md).
+
+1. [Telepítse az Azure PowerShellt](install-azurerm-ps.md).
+
+2. A telepítés sikerességének ellenőrzéséhez futtassa a `Get-Module AzureRM -ListAvailable` parancsot a parancssorról.
+
+## <a name="azure-cloud-shell"></a>Azure Cloud Shell 
 
 Első lépésként a legegyszerűbb módszer, ha [elindítja a Cloud Shellt](/azure/cloud-shell/quickstart).
 
@@ -37,15 +44,7 @@ A tároló létrehozása után a Cloud Shell megnyit egy PowerShell-munkamenetet
 
 Telepítheti az Azure PowerShellt, és helyileg is használhatja PowerShell-munkamenetben.
 
-## <a name="install-azure-powershell"></a>Az Azure PowerShell telepítése
-
-Első lépésként győződjön meg róla, hogy az Azure PowerShell legújabb verziója van telepítve. A legújabb kiadással kapcsolatos információkért lásd a [kibocsátási megjegyzéseket](./release-notes-azureps.md).
-
-1. [Telepítse az Azure PowerShellt](install-azurerm-ps.md).
-
-2. A telepítés sikerességének ellenőrzéséhez futtassa a `Get-Module AzureRM -ListAvailable` parancsot a parancssorról.
-
-## <a name="log-in-to-azure"></a>Jelentkezzen be az Azure-ba
+## <a name="sign-in-to-azure"></a>Bejelentkezés az Azure-ba
 
 Interaktív bejelentkezés:
 
@@ -63,11 +62,11 @@ A `New-AzureRmVM` parancsmag egy leegyszerűsített szintaxist biztosít, amely 
 
 Először hozza létre a hitelesítő objektumot.
 
-```powershell
+```azurepowershell-interactive
 $cred = Get-Credential -Message "Enter a username and password for the virtual machine."
 ```
 
-```Output
+```output
 Windows PowerShell credential request.
 Enter a username and password for the virtual machine.
 User: localAdmin
@@ -75,11 +74,11 @@ Password for user localAdmin: *********
 ```
 Ezt követően hozza létre a virtuális gépet.
 
-```powershell
+```azurepowershell-interactive
 New-AzureRmVM -Name SampleVM -Credential $cred
 ```
 
-```Output
+```output
 ResourceGroupName        : SampleVM
 Id                       : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/SampleVM/providers/Microsoft.Compute/virtualMachines/SampleVM
 VmId                     : 43f6275d-ce50-49c8-a831-5d5974006e63
@@ -97,11 +96,11 @@ FullyQualifiedDomainName : samplevm-2c0867.eastus.cloudapp.azure.com
 
 Ez eddig nem volt bonyolult. Felmerülhet azonban a kérdés, hogy milyen más elemek jönnek még létre, illetve hogy milyen lesz a virtuális gép konfigurációja. Először is lássuk az erőforráscsoportokat.
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmResourceGroup | Select-Object ResourceGroupName,Location
 ```
 
-```Output
+```output
 ResourceGroupName          Location
 -----------------          --------
 cloud-shell-storage-westus westus
@@ -112,13 +111,13 @@ A **cloud-shell-storage-westus** erőforráscsoport a Cloud Shell első használ
 
 Milyen egyéb erőforráscsoportok jöttek létre az új erőforráscsoportban?
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmResource |
   Where ResourceGroupName -eq SampleVM |
     Select-Object ResourceGroupName,Location,ResourceType,Name
 ```
 
-```Output
+```output
 ResourceGroupName          Location ResourceType                            Name
 -----------------          -------- ------------                            ----
 SAMPLEVM                   eastus   Microsoft.Compute/disks                 SampleVM_OsDisk_1_9b286c54b168457fa1f8c47...
@@ -131,13 +130,13 @@ SampleVM                   eastus   Microsoft.Network/virtualNetworks       Samp
 
 További részleteket is lekérhet a virtuális géppel kapcsolatban. Ez a példa bemutatja, hogyan kérhet le információt a virtuális gép létrehozásához használt rendszerképről.
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmVM -Name SampleVM -ResourceGroupName SampleVM |
   Select-Object -ExpandProperty StorageProfile |
     Select-Object -ExpandProperty ImageReference
 ```
 
-```Output
+```output
 Publisher : MicrosoftWindowsServer
 Offer     : WindowsServer
 Sku       : 2016-Datacenter
@@ -155,11 +154,11 @@ Ebben a példában egy erőforráscsoportot szeretnénk létrehozni. Az Azure er
 
 Hozzunk létre egy erőforráscsoportot „MyResourceGroup” néven az Azure westeurope (Nyugat--Európa) régiójában. Ehhez írja be a következő parancsot:
 
-```powershell
+```azurepowershell-interactive
 New-AzureRmResourceGroup -Name 'myResourceGroup' -Location 'westeurope'
 ```
 
-```Output
+```output
 ResourceGroupName : myResourceGroup
 Location          : westeurope
 ProvisioningState : Succeeded
@@ -173,7 +172,7 @@ Ez az új erőforráscsoport fogja tartalmazni a létrehozni kívánt új virtu�
 
 Először létre kell hoznunk egy alhálózati konfigurációt a virtuális hálózat létrehozásához. Létrehozunk egy nyilvános IP-címet is, hogy csatlakozhassunk a virtuális géphez. Létrehozunk egy hálózati biztonsági csoportot, hogy biztonságossá tehessük a nyilvános cím elérését. Végül létrehozzuk a virtuális NIC-t az összes előbbi erőforrás használatával.
 
-```powershell
+```azurepowershell-interactive
 # Variables for common values
 $resourceGroup = "myResourceGroup"
 $location = "westeurope"
@@ -213,7 +212,7 @@ $nic = New-AzureRmNetworkInterface -Name myNic2 -ResourceGroupName $resourceGrou
 
 Most, hogy rendelkezünk a szükséges erőforrásokkal, létrehozhatjuk a virtuális gép konfigurációs objektumát.
 
-```powershell
+```azurepowershell-interactive
 # Create a virtual machine configuration
 $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 |
   Set-AzureRmVMOperatingSystem -Linux -ComputerName $vmName -Credential $cred -DisablePasswordAuthentication |
@@ -221,7 +220,7 @@ $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 |
   Add-AzureRmVMNetworkInterface -Id $nic.Id
 
 # Configure SSH Keys
-$sshPublicKey = Get-Content "$env:USERPROFILE\.ssh\id_rsa.pub"
+$sshPublicKey = Get-Content -Raw "$env:USERPROFILE\.ssh\id_rsa.pub"
 Add-AzureRmVMSshPublicKey -VM $vmConfig -KeyData $sshPublicKey -Path "/home/azureuser/.ssh/authorized_keys"
 ```
 
@@ -229,7 +228,7 @@ Add-AzureRmVMSshPublicKey -VM $vmConfig -KeyData $sshPublicKey -Path "/home/azur
 
 A virtuális gép konfigurációs objektumával létrehozhatjuk a virtuális gépet.
 
-```powershell
+```azurepowershell-interactive
 New-AzureRmVM -ResourceGroupName $resourceGroup -Location $location -VM $vmConfig
 ```
 
@@ -239,7 +238,7 @@ Most, hogy a virtuális gép létrejött, bejelentkezhet az új Linux rendszerű
 ssh xx.xxx.xxx.xxx
 ```
 
-```Output
+```output
 Welcome to Ubuntu 14.04.4 LTS (GNU/Linux 3.19.0-65-generic x86_64)
 
  * Documentation:  https://help.ubuntu.com/
@@ -276,13 +275,13 @@ Bemutattuk, hogyan hozhat létre erőforráscsoportot, valamint Linux és Window
 
 Például a következő parancs használatával létrehozhat egy Azure-beli hálózati terheléselosztót, amelyet aztán társíthat az újonnan létrehozott virtuális gépekkel:
 
-```powershell
+```azurepowershell-interactive
 New-AzureRmLoadBalancer -Name MyLoadBalancer -ResourceGroupName myResourceGroup -Location westeurope
 ```
 
 Vagy létrehozhat egy új privát virtuális hálózatot (vagy az Azure-ban gyakran használt nevén „VNetet”) az infrastruktúránkhoz a következő paranccsal:
 
-```powershell
+```azurepowershell-interactive
 $subnetConfig = New-AzureRmVirtualNetworkSubnetConfig -Name mySubnet2 -AddressPrefix 10.0.0.0/16
 $vnet = New-AzureRmVirtualNetwork -ResourceGroupName myResourceGroup -Location westeurope `
   -Name MYvNET3 -AddressPrefix 10.0.0.0/16 -Subnet $subnetConfig
@@ -292,7 +291,7 @@ Az Azure és az Azure PowerShell attól igazán sokoldalúak, hogy nemcsak a fel
 
 Például az Azure PowerShell használatával létrehozhat egy Azure AppService-t. Az Azure AppService egy felügyelt platformszolgáltatás, amely nagyszerű megoldás a webappok üzemeltetésére anélkül, hogy aggódnia kellene az infrastruktúra miatt. Az Azure AppService létrehozása után két új Azure webappot hozhat létre az AppService-ben a következő parancsokkal:
 
-```powershell
+```azurepowershell-interactive
 # Create an Azure AppService that we can host any number of web apps within
 New-AzureRmAppServicePlan -Name MyAppServicePlan -Tier Basic -NumberofWorkers 2 -WorkerSize Small -ResourceGroupName myResourceGroup -Location westeurope
 
@@ -305,13 +304,13 @@ New-AzureRmWebApp -Name MyWebApp43433 -AppServicePlan MyAppServicePlan -Resource
 
 A `Get-AzureRmResource` parancsmag használatával listázhatja az Azure-ban futó erőforrásokat. Az alábbi példa az új erőforráscsoportban létrehozott erőforrásokat mutatja be.
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmResource |
   Where-Object ResourceGroupName -eq myResourceGroup |
     Select-Object Name,Location,ResourceType
 ```
 
-```Output
+```output
 Name                                                  Location   ResourceType
 ----                                                  --------   ------------
 myLinuxVM_OsDisk_1_36ca038791f642ba91270879088c249a   westeurope Microsoft.Compute/disks
@@ -334,13 +333,13 @@ micromyresomywi032907510                              westeurope Microsoft.Stora
 
 Az Azure-fiók tisztítása érdekében érdemes lehet törölnie a példában létrehozott erőforrásokat. A `Remove-AzureRm*` parancsmagokkal törölheti a már nem szükséges erőforrásokat. A létrehozott Windows rendszerű virtuális gép eltávolításához futtassa az alábbi parancsot:
 
-```powershell
+```azurepowershell-interactive
 Remove-AzureRmVM -Name myWindowsVM -ResourceGroupName myResourceGroup
 ```
 
 A rendszer rákérdez az erőforrás törlésének jóváhagyására.
 
-```Output
+```output
 Confirm
 Are you sure you want to remove resource group 'myResourceGroup'
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
@@ -348,11 +347,11 @@ Are you sure you want to remove resource group 'myResourceGroup'
 
 Egyszerre több erőforrást is törölhet. A következő parancs például törli a teljes „MyResourceGroup” erőforráscsoportot, amelyet ebben a bevezető oktatóanyagban az összes mintához használtunk. Törli az erőforráscsoportot, és minden benne lévő erőforrást is.
 
-```powershell
+```azurepowershell-interactive
 Remove-AzureRmResourceGroup -Name myResourceGroup
 ```
 
-```Output
+```output
 Confirm
 Are you sure you want to remove resource group 'myResourceGroup'
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y

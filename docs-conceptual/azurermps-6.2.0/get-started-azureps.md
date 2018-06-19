@@ -1,25 +1,32 @@
 ---
-title: Az Azure PowerShell használatának első lépései | Microsoft Docs
+title: Ismerkedés az Azure PowerShell-lel
 description: ''
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: fa9be1722b8260c4737c180eec79ae836235654c
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: cfb7ff30b442bb345931728dab131e1b80e58989
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821887"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323135"
 ---
-# <a name="getting-started-with-azure-powershell"></a>Ismerkedés az Azure PowerShell-lel
+# <a name="get-started-with-azure-powershell"></a>Ismerkedés az Azure PowerShell-lel
 
-Az Azure PowerShell az Azure-erőforrások parancssori kezelésére és adminisztrálására, valamint az Azure Resource Manageren futtatható automatizálási szkriptek létrehozására készült. Használhatja a böngészőjében az [Azure Cloud Shell-lel](/azure/cloud-shell/overview), vagy telepítheti a helyi gépen, és használhatja bármely PowerShell-munkamenetben. A cikk segítséget nyújt a használatának megkezdésében, és ismerteti az alapvető fogalmakat.
+Az Azure PowerShell az Azure-erőforrások parancssori kezelésére és adminisztrálására, valamint az Azure Resource Manageren futtatható automatizálási szkriptek létrehozására készült. Használhatja a böngészőjében az [Azure Cloud Shell-lel](/azure/cloud-shell/overview), vagy telepítheti a helyi gépen. A cikk segítséget nyújt az Azure PowerShell használatának megkezdésében, és ismerteti az alapvető fogalmakat.
 
-## <a name="connect"></a>Kapcsolódás
+## <a name="install-azure-powershell"></a>Az Azure PowerShell telepítése
+
+Első lépésként győződjön meg róla, hogy az Azure PowerShell legújabb verziója van telepítve. A legújabb kiadással kapcsolatos információkért lásd a [kibocsátási megjegyzéseket](./release-notes-azureps.md).
+
+1. [Telepítse az Azure PowerShellt](install-azurerm-ps.md).
+
+2. A telepítés sikerességének ellenőrzéséhez futtassa a `Get-Module AzureRM -ListAvailable` parancsot a parancssorról.
+
+## <a name="azure-cloud-shell"></a>Azure Cloud Shell 
 
 Első lépésként a legegyszerűbb módszer, ha [elindítja a Cloud Shellt](/azure/cloud-shell/quickstart).
 
@@ -37,15 +44,7 @@ A tároló létrehozása után a Cloud Shell megnyit egy PowerShell-munkamenetet
 
 Telepítheti az Azure PowerShellt, és helyileg is használhatja PowerShell-munkamenetben.
 
-## <a name="install-azure-powershell"></a>Az Azure PowerShell telepítése
-
-Első lépésként győződjön meg róla, hogy az Azure PowerShell legújabb verziója van telepítve. A legújabb kiadással kapcsolatos információkért lásd a [kibocsátási megjegyzéseket](./release-notes-azureps.md).
-
-1. [Telepítse az Azure PowerShellt](install-azurerm-ps.md).
-
-2. A telepítés sikerességének ellenőrzéséhez futtassa a `Get-Module AzureRM -ListAvailable` parancsot a parancssorról.
-
-## <a name="log-in-to-azure"></a>Jelentkezzen be az Azure-ba
+## <a name="sign-in-to-azure"></a>Bejelentkezés az Azure-ba
 
 Interaktív bejelentkezés:
 

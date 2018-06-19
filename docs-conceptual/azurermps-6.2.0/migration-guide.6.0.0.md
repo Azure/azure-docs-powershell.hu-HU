@@ -1,20 +1,18 @@
 ---
 title: A Microsoft Azure PowerShell 6.0.0 kompatibilitástörő változásai
 description: Ebben a migrálási útmutatóban megtalálja az Azure PowerShell 6-os verziójában található kompatibilitástörő változások listáját.
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.workload: ''
 ms.date: 5/1/2018
-ms.openlocfilehash: 2fd51f9e0217da4af7322c4776de49d916a8822c
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: 830afb067ea22999c09c1b894b72097bb8ebfa3b
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34822091"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323509"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>A Microsoft Azure PowerShell 6.0.0 kompatibilitástörő változásai
 
