@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: dc5a1c59d23e37acf11aa7831ddc6e1edbd7f73e
+ms.openlocfilehash: 0d8019a7acaf2ba3baaa0772a76285ec497c991c
 ms.sourcegitcommit: 4c775721461210431bd913f28d1f1e6f1976880a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 06/28/2018
-ms.locfileid: "37091418"
+ms.locfileid: "37091469"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Az Azure PowerShell telepítése Windows rendszeren a PowerShellGet használatával
 
@@ -24,39 +24,13 @@ Az Azure PowerShell ezen verziója nem támogatja a klasszikus Azure üzemi mode
 
 ## <a name="requirements"></a>Követelmények
 
-Az Azure PowerShell telepítéséhez a PowerShellGet 1.1.2.0-s vagy újabb verziója szükséges. Annak ellenőrzéséhez, hogy ez elérhető-e a rendszerén, futtassa a következő parancsot:
+A 6.0-s verziótól kezdve az Azure PowerShellhez a PowerShell 5.0-s vagy újabb verziójának kell futnia a Windows rendszeren. Annak ellenőrzéséhez, hogy a PowerShell melyik verziója fut a számítógépén, futtassa a következő parancsot:
 
 ```powershell
-Get-Module -Name PowerShellGet -ListAvailable | Select-Object -Property Name,Version,Path
+$PSVersionTable.PSVersion
 ```
 
-Az alábbihoz hasonló kimenetnek kell megjelennie:
-
-```output
-Name          Version Path
-----          ------- ----
-Name          Version Path
-----          ------- ----
-PowerShellGet 1.6.0   C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.6.0\PowerShellGet.psd1
-PowerShellGet 1.0.0.1 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PowerShellGet.psd1
-```
-
-Ha frissítenie kell a PowerShellGet-telepítést, futtassa a következő parancsot:
-
-```powershell
-Install-Module PowerShellGet -Force
-```
-
-Ha nincs telepítve a PowerShellGet, kövesse alább, az operációs rendszerének megfelelő táblázatban található utasításokat.
-
-|Forgatókönyv|Telepítési utasítások|
-|---|---|
-|Windows 10<br/>Windows Server 2016|Az operációs rendszer részét képező Windows Management Framework (WMF) 5.0 beépített eleme|
-|Frissítés a PowerShell 5-ös verziójára| <ol><li>[A WMF legújabb verziójának telepítése](https://www.microsoft.com/en-us/download/details.aspx?id=54616)</li><li>Futtassa az alábbi parancsot:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
-|A PowerShell 3-as vagy 4-es verziójával rendelkező Windows|<ol><il>[A PackageManagement-modulok beszerzése](http://go.microsoft.com/fwlink/?LinkID=746217)</il><li>Futtassa az alábbi parancsot:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
-
-> [!NOTE]
-> A PowerShellGet használatához olyan végrehajtási szabályzatra van szükség, amely lehetővé teszi a szkriptek futtatását. A PowerShell végrehajtási házirendjével kapcsolatos további információk: [A végrehajtási házirendek áttekintése](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
+Ha elavult verzióval rendelkezik, tekintse meg a [meglévő Windows PowerShell frissítését](/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell) ismertető témakört.
 
 ## <a name="install-the-azure-powershell-module"></a>Az Azure PowerShell-modul telepítése
 
