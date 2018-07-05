@@ -6,7 +6,7 @@
       items:
         - name: Telepítés macOS vagy Linux rendszeren
           href: install-azurermps-maclinux.md
-        - name: Telepítés MSI-vel vagy WebPI-vel
+        - name: Telepítés MSI-vel
           href: other-install.md
         - name: Futtatás a Dockerben
           href: azurerm-ps-in-docker.md
@@ -46,8 +46,8 @@
     - name: Kibocsátási megjegyzések
       href: release-notes-azureps.md
       items:
-        - name: Az Azure PowerShell 5.x használhatatlanná tévő változásai
-          href: migration-guide.5.0.0.md
+        - name: Az Azure PowerShell 6.x kompatibilitástörő változásai
+          href: migration-guide.6.0.0.md
 - name: Oktatóanyagok
   items:
     - name: Virtuális gépek létrehozása
