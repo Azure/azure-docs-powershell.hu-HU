@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
 ms.openlocfilehash: 3a0d3d1d970f4458e66167fb55c840598ce59e13
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854698"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100409"
 ---
 # <a name="getting-started-with-azure-powershell"></a>Ismerkedés az Azure PowerShell-lel
 
@@ -28,7 +28,7 @@ Első lépésként a legegyszerűbb módszer, ha [elindítja a Cloud Shellt](/az
 
 2. Válassza ki a használni kívánt előfizetést, és hozzon létre egy tárfiókot.
 
-   ![Create a storage account](~/media/get-started-azureps/storage-prompt.png)
+   ![Tárfiók létrehozása](~/media/get-started-azureps/storage-prompt.png)
 
 A tároló létrehozása után a Cloud Shell megnyit egy PowerShell-munkamenetet a böngészőben.
 

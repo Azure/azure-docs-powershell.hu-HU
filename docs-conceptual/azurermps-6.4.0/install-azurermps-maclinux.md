@@ -7,16 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/06/2018
-ms.openlocfilehash: a779f402fb2b3fccc8269aa30a6fe98a949251d6
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: a54af4b28642fe7b8623550fb05dff33e5c4a7f6
+ms.sourcegitcommit: de0e60800df1add9f3400166faacca202ef567d9
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100103"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37406495"
 ---
 # <a name="install-azure-powershell-on-macos-or-linux"></a>Az Azure PowerShell telepítése macOS vagy Linux rendszeren
 
-Nem Windows rendszerű platformokon az Azure PowerShell futtatható a PowerShell Core 6-os verziójában. A PowerShell ezen verziója bármely, .NET Core-t támogató platformon történő használatra készült. Ezen platformokon történő használatra elérhető az Azure PowerShell egy speciális .NET Core-verziója.
+Nem Windows rendszerű platformokon az Azure PowerShell futtatható a PowerShell Core 6-os verziójában. A PowerShell e verziója bármely, .NET Core-t támogató platformon történő használatra készült. Az ilyen platformokon történő használathoz elérhető az Azure PowerShell egy speciális .NET Core-verziója.
 
 > [!NOTE]
 > Jelenleg a PowerShell Core 6-os verziója és a .NET Core-hoz készült Azure PowerShell csak bétaverzióban érhető el.
@@ -35,7 +35,7 @@ Részletes útmutatásokat a következő cikkekben talál:
 
 ## <a name="install-azure-powershell-for-net-core"></a>A .NET Core-hoz készült Azure PowerShell telepítése
 
-A PowerShell Core tartalmazza az előre telepített PowerShellGet modult. Modulok telepítéséhez a PowerShellben megemelt jogosultsági szint szükséges, ezért a munkamenetet superuser felhasználóként kell elindítani:
+A PowerShell Core tartalmazza az előre telepített PowerShellGet modult. Modulok a PowerShellben történő telepítéséhez megemelt jogosultsági szint szükséges, ezért a munkamenetet superuser felhasználóként kell elindítani:
 
 ```bash
 sudo pwsh
@@ -48,7 +48,7 @@ Install-Module AzureRM.NetCore
 ```
 
 > [!IMPORTANT]
-> A más cikkekben ismertetett `AzureRM` modul nem a .NET Core-hoz készült, és nem fog működni a PowerShell Core-ral. Az `AzureRM` és az `AzureRM.NetCore` is ugyanazokat a parancsmagneveket használja, csak az összesített modul neve tér el, és az, hogy a .NET melyik verzióján lettek létrehozva.
+> A más cikkekben ismertetett `AzureRM` modul nem a .NET Core-hoz készült, és nem fog működni a PowerShell Core-ral. Az `AzureRM` és az `AzureRM.NetCore` is ugyanazokat a parancsmagneveket használja, csak az összesített modul neve tér el, valamint az, hogy a .NET melyik verzióján lettek létrehozva.
 
 Alapértelmezés szerint a PowerShell-galéria nincs konfigurálva a PowerShellGet megbízható adattáraként. A PSGallery első használatakor a következő üzenet jelenik meg:
 
@@ -59,10 +59,10 @@ You are installing the modules from an untrusted repository. If you trust this r
 its InstallationPolicy value by running the Set-PSRepository cmdlet.
 
 Are you sure you want to install the modules from 'PSGallery'?
-[Y] Yes� [A] Yes to All� [N] No� [L] No to All� [S] Suspend� [?] Help (default is "N"):
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-A telepítés folytatásához válassza az `Yes` vagy az `Yes to All` lehetőséget.
+A telepítés folytatásához válassza a `Yes` vagy a `Yes to All` lehetőséget.
 
 ## <a name="sign-in"></a>Bejelentkezés
 
@@ -76,7 +76,7 @@ Connect-AzureRmAccount
 ```
 
 Ezeket a lépéseket minden új PowerShell-munkamenet esetében meg kell ismételni. Az `AzureRM` modul automatikus importálásához be kell állítani egy PowerShell-profilt, amelyről a [profilokat ismertető](/powershell/module/microsoft.powershell.core/about/about_profiles) részben tudhat meg többet.
-macOS és Linux rendszeren a `$Profile` környezeti változó segítségével használja a profilját. Ha szeretné megtudni, hogyan őrizheti meg az Azure-bejelentkezést a munkamenetek között, tekintse meg a [Felhasználói hitelesítő adatok megőrzése a PowerShell-munkamenetek között](context-persistence.md) című részt.
+macOS és Linux rendszeren a `$Profile` környezeti változó segítségével használja a profilját. Ha szeretné megtudni, hogyan őrizheti meg az Azure-bejelentkezést a munkamenetek között, tekintse meg a [felhasználói hitelesítő adatok a PowerShell-munkamenetek között történő megőrzését](context-persistence.md) ismertető részt.
 
 ## <a name="available-cmdlets"></a>Elérhető parancsmagok
 
