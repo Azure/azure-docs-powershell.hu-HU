@@ -1,5 +1,0 @@
-- name: Áttekintés
-  href: overview.md
-  items:
-    - name: Telepítés
-      href: install-azure-ps.md
