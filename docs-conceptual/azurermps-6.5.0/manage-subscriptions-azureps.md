@@ -1,19 +1,18 @@
 ---
-title: Azure-előfizetések kezelése az Azure PowerShell-lel | Microsoft Docs
+title: Azure-előfizetések kezelése az Azure PowerShell-lel
 description: Azure-előfizetések kezelése az Azure PowerShell-lel
-keywords: Azure PowerShell, előfizetés
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 00f346c2e90fb6615dd9eac96e13f4cfc243d204
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: fbd2fe315efbdfb2147218229d51e983e2b61361
+ms.sourcegitcommit: 8b882d1c27d9e323447ff85f56d11bbf5e244d7f
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024477"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39110568"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Több Azure-előfizetés kezelése
 
@@ -21,7 +20,7 @@ Ha még csak most kezd ismerkedni az Azure-ral, valószínűleg egyetlen előfiz
 
 1. Kérje le a fiókban lévő összes előfizetés listáját.
 
-    ```powershell
+    ```azurepowershell-interactive
     Get-AzureRmSubscription
     ```
 
@@ -50,13 +49,13 @@ Ha még csak most kezd ismerkedni az Azure-ral, valószínűleg egyetlen előfiz
 
 2. Adja meg az alapértelmezett fiókot.
 
-    ```powershell
+    ```azurepowershell-interactive
     Select-AzureRmSubscription -SubscriptionName "My Demos"
     ```
 
 3. Ellenőrizze a módosítást a `Get-AzureRmContext` parancsmag futtatásával.
 
-    ```powershell
+    ```azurepowershell-interactive
     Get-AzureRmContext
     ```
 

@@ -12,7 +12,7 @@ ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024613"
+ms.locfileid: "39024936"
 ---
 # <a name="run-azure-powershell-in-a-docker-container"></a>Az Azure PowerShell futtatása Docker-tárolóban
 

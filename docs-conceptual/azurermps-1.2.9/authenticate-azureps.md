@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: f2a9247d442229b7323e5a9195c7257e45d58e56
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: caacf32af78b98e8d9d455a8c4dd0bbb698d355f
+ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34853134"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39024579"
 ---
 # <a name="log-in-with-azure-powershell"></a>Bejelentkezés az Azure PowerShell-lel
 
@@ -42,7 +42,7 @@ A szolgáltatásnevek használatával nem interaktív fiókokat hozhat létre az
     Get-AzureRmSubscription
     ```
 
-    ```
+    ```output
     Environment           : AzureCloud
     Account               : username@contoso.com
     TenantId              : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
@@ -71,7 +71,7 @@ Az alábbi paranccsal olvashatja be a rendelkezésre álló környezetek listáj
 Get-AzureRmEnvironment | Select-Object Name
 ```
 
-```
+```output
 Name
 ----
 AzureCloud

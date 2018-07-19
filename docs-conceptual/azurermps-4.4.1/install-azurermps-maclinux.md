@@ -7,16 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/06/2018
-ms.openlocfilehash: a779f402fb2b3fccc8269aa30a6fe98a949251d6
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 6e7d447ea9672c174e3f1d103bc56c11a7f37192
+ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100103"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39024834"
 ---
 # <a name="install-azure-powershell-on-macos-or-linux"></a>Az Azure PowerShell telepítése macOS vagy Linux rendszeren
 
-Nem Windows rendszerű platformokon az Azure PowerShell futtatható a PowerShell Core 6-os verziójában. A PowerShell ezen verziója bármely, .NET Core-t támogató platformon történő használatra készült. Ezen platformokon történő használatra elérhető az Azure PowerShell egy speciális .NET Core-verziója.
+Nem Windows rendszerű platformokon az Azure PowerShell futtatható a PowerShell Core 6-os verziójában. A PowerShell e verziója bármely, .NET Core-t támogató platformon történő használatra készült. Az ilyen platformokon történő használathoz elérhető az Azure PowerShell egy speciális .NET Core-verziója.
 
 > [!NOTE]
 > Jelenleg a PowerShell Core 6-os verziója és a .NET Core-hoz készült Azure PowerShell csak bétaverzióban érhető el.
@@ -30,12 +30,12 @@ Nem Windows rendszerű platformokon az Azure PowerShell futtatható a PowerShell
 A PowerShell Core telepítési útmutatása eltér a macOS- és a Linux-disztribúciók esetében.
 Részletes útmutatásokat a következő cikkekben talál:
 
-- [A PowerShell Core telepítése macOS rendszeren](/powershell/scripting/setup/installing-powershell-core-on-macos)
-- [A PowerShell Core telepítése Linux rendszeren](/powershell/scripting/setup/installing-powershell-core-on-linux)
+* [A PowerShell Core telepítése macOS rendszeren](/powershell/scripting/setup/installing-powershell-core-on-macos)
+* [A PowerShell Core telepítése Linux rendszeren](/powershell/scripting/setup/installing-powershell-core-on-linux)
 
 ## <a name="install-azure-powershell-for-net-core"></a>A .NET Core-hoz készült Azure PowerShell telepítése
 
-A PowerShell Core tartalmazza az előre telepített PowerShellGet modult. Modulok telepítéséhez a PowerShellben megemelt jogosultsági szint szükséges, ezért a munkamenetet superuser felhasználóként kell elindítani:
+A PowerShell Core tartalmazza az előre telepített PowerShellGet modult. Modulok a PowerShellben történő telepítéséhez megemelt jogosultsági szint szükséges, ezért a munkamenetet superuser felhasználóként kell elindítani:
 
 ```bash
 sudo pwsh
@@ -48,7 +48,7 @@ Install-Module AzureRM.NetCore
 ```
 
 > [!IMPORTANT]
-> A más cikkekben ismertetett `AzureRM` modul nem a .NET Core-hoz készült, és nem fog működni a PowerShell Core-ral. Az `AzureRM` és az `AzureRM.NetCore` is ugyanazokat a parancsmagneveket használja, csak az összesített modul neve tér el, és az, hogy a .NET melyik verzióján lettek létrehozva.
+> A más cikkekben ismertetett `AzureRM` modul nem a .NET Core-hoz készült, és nem fog működni a PowerShell Core-ral. Az `AzureRM` és az `AzureRM.NetCore` is ugyanazokat a parancsmagneveket használja, csak az összesített modul neve tér el, valamint az, hogy a .NET melyik verzióján lettek létrehozva.
 
 Alapértelmezés szerint a PowerShell-galéria nincs konfigurálva a PowerShellGet megbízható adattáraként. A PSGallery első használatakor a következő üzenet jelenik meg:
 
@@ -59,10 +59,10 @@ You are installing the modules from an untrusted repository. If you trust this r
 its InstallationPolicy value by running the Set-PSRepository cmdlet.
 
 Are you sure you want to install the modules from 'PSGallery'?
-[Y] Yes� [A] Yes to All� [N] No� [L] No to All� [S] Suspend� [?] Help (default is "N"):
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-A telepítés folytatásához válassza az `Yes` vagy az `Yes to All` lehetőséget.
+A telepítés folytatásához válassza a `Yes` vagy a `Yes to All` lehetőséget.
 
 ## <a name="sign-in"></a>Bejelentkezés
 
@@ -76,24 +76,24 @@ Connect-AzureRmAccount
 ```
 
 Ezeket a lépéseket minden új PowerShell-munkamenet esetében meg kell ismételni. Az `AzureRM` modul automatikus importálásához be kell állítani egy PowerShell-profilt, amelyről a [profilokat ismertető](/powershell/module/microsoft.powershell.core/about/about_profiles) részben tudhat meg többet.
-macOS és Linux rendszeren a `$Profile` környezeti változó segítségével használja a profilját. Ha szeretné megtudni, hogyan őrizheti meg az Azure-bejelentkezést a munkamenetek között, tekintse meg a [Felhasználói hitelesítő adatok megőrzése a PowerShell-munkamenetek között](context-persistence.md) című részt.
+macOS és Linux rendszeren a `$Profile` környezeti változó segítségével használja a profilját. Ha szeretné megtudni, hogyan őrizheti meg az Azure-bejelentkezést a munkamenetek között, tekintse meg a [felhasználói hitelesítő adatok a PowerShell-munkamenetek között történő megőrzését](context-persistence.md) ismertető részt.
 
 ## <a name="available-cmdlets"></a>Elérhető parancsmagok
 
 A .NET Core-hoz elérhető Azure PowerShell-modulok még fejlesztés alatt állnak. Ezek a modulok nem tartalmazzák a modulok Windows verziójához elérhető teljes parancsmagkészletét. Az AzureRM.Netcore-modulokban az alábbi funkciók érhetők el:
 
 * Fiókkezelés
-  - Bejelentkezés Microsoft-fiókkal, vállalati fiókkal vagy szolgáltatásnévvel a Microsoft Azure Active Directoryn keresztül
-  - Hitelesítő adatokat mentése lemezre a Save-AzureRmContext parancsmaggal és a mentett hitelesítő adatok betöltése az Import-AzureRmContext parancsmaggal
+  * Bejelentkezés Microsoft-fiókkal, vállalati fiókkal vagy szolgáltatásnévvel a Microsoft Azure Active Directoryn keresztül
+  * Hitelesítő adatokat mentése lemezre a Save-AzureRmContext parancsmaggal és a mentett hitelesítő adatok betöltése az Import-AzureRmContext parancsmaggal
 * Környezet
-  - Különböző nem beépített Microsoft Azure-környezetek beszerzése
-  - Testre szabott környezetek (például az Azure Stack- vagy a Windows Azure Pack-környezetek) hozzáadása/beállítása/eltávolítása
+  * Különböző nem beépített Microsoft Azure-környezetek beszerzése
+  * Testre szabott környezetek (például az Azure Stack- vagy a Windows Azure Pack-környezetek) hozzáadása/beállítása/eltávolítása
 * Felügyeletisík-parancsmagok az Azure-szolgáltatásokhoz a Resource Manager és a Service Manager felületeinek használatával.
-  - Virtuális gép
-  - App Service (webhelyek)
-  - SQL Database
-  - Storage
-  - Network (Hálózat)
+  * Virtuális gép
+  * App Service (webhelyek)
+  * SQL Database
+  * Storage
+  * Network (Hálózat)
 
 ## <a name="next-steps"></a>További lépések
 

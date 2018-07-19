@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: fbd2fe315efbdfb2147218229d51e983e2b61361
-ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
+ms.openlocfilehash: 40cc520dd5a4af12cd3930a7f8117f99cf0e999f
+ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35323356"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39024749"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Több Azure-előfizetés kezelése
 

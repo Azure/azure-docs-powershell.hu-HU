@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: 5aa3b3fdeff20ea4c6f830f834e61f37d81da07d
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 5354a75e969e084d6457d0566a516705f365476f
+ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100375"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39025412"
 ---
 # <a name="get-started-with-azure-powershell"></a>Ismerkedés az Azure PowerShell-lel
 
@@ -26,7 +26,7 @@ Első lépésként győződjön meg róla, hogy az Azure PowerShell legújabb ve
 
 2. A telepítés sikerességének ellenőrzéséhez futtassa a `Get-Module AzureRM -ListAvailable` parancsot a parancssorról.
 
-## <a name="azure-cloud-shell"></a>Azure Cloud Shell 
+## <a name="azure-cloud-shell"></a>Azure Cloud Shell
 
 Első lépésként a legegyszerűbb módszer, ha [elindítja a Cloud Shellt](/azure/cloud-shell/quickstart).
 
@@ -72,6 +72,7 @@ Enter a username and password for the virtual machine.
 User: localAdmin
 Password for user localAdmin: *********
 ```
+
 Ezt követően hozza létre a virtuális gépet.
 
 ```azurepowershell-interactive
