@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: 2f37df114b620566a663eb12c7e739975bc1f8bf
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 0897e8fc3a50a58ac8945bd95722736526f63e19
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854579"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100154"
 ---
 # <a name="getting-started-with-azure-powershell"></a>Ismerkedés az Azure PowerShell-lel
 
@@ -28,7 +28,7 @@ Első lépésként a legegyszerűbb módszer, ha [elindítja a Cloud Shellt](/az
 
 2. Válassza ki a használni kívánt előfizetést, és hozzon létre egy tárfiókot.
 
-   ![Create a storage account](~/media/get-started-azureps/storage-prompt.png)
+   ![Tárfiók létrehozása](~/media/get-started-azureps/storage-prompt.png)
 
 A tároló létrehozása után a Cloud Shell megnyit egy PowerShell-munkamenetet a böngészőben.
 
@@ -44,11 +44,11 @@ Első lépésként győződjön meg róla, hogy az Azure PowerShell legújabb ve
 
 2. A telepítés sikerességének ellenőrzéséhez futtassa a `Get-Module AzureRM -ListAvailable` parancsot a parancssorról.
 
-## <a name="log-in-to-azure"></a>Jelentkezzen be az Azure-ba
+## <a name="sign-in-to-azure"></a>Bejelentkezés az Azure-ba
 
 Interaktív bejelentkezés:
 
-1. Gépelje be: `Login-AzureRmAccount`. Egy párbeszédpanel jelenik meg, amelyen meg kell adnia Azure-beli hitelesítő adatait. Az '-EnvironmentName' kapcsoló lehetővé teszi a bejelentkezést az Azure China vagy az Azure Germany szolgáltatásba.
+1. Gépelje be: `Login-AzureRmAccount`. Egy párbeszédpanel jelenik meg, amelyen meg kell adnia Azure-beli hitelesítő adatait. Az -EnvironmentName kapcsoló lehetővé teszi az Azure China vagy az Azure Germany szolgáltatással való hitelesítést.
 
    például: Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
@@ -146,7 +146,7 @@ RequestId IsSuccessStatusCode StatusCode ReasonPhrase
                          True         OK OK
 ```
 
-Most jelentkezzen be az újonnan létrehozott Windows Server-alapú virtuális gépre a Távoli asztal szolgáltatással és a virtuális gép nyilvános IP-címével. A következő parancs az előző szkriptben létrehozott nyilvános IP-címet jeleníti meg.
+Most jelentkezzen be az újonnan létrehozott, Windows Server-alapú virtuális gépre a Távoli asztal szolgáltatással és a virtuális gép nyilvános IP-címével. A következő parancs az előző szkriptben létrehozott nyilvános IP-címet jeleníti meg.
 
 ```powershell
 $publicIp | Select-Object Name,IpAddress

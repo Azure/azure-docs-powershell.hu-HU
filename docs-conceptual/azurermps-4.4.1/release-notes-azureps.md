@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
-ms.openlocfilehash: 5c8d9fd2e79dd18ee26493343e038c2a5ed24b26
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 6f0e304c499fc8bf4909e2825d52cd63b1fcbf5d
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854426"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100491"
 ---
 # <a name="release-notes"></a>Kibocsátási megjegyzések
 
@@ -151,8 +151,8 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
       - Környezetmegőrzéssel rendelkező feladatok általános mintája LETILTVA: `Start-Job {param ($context) New-AzureRmVM -AzureRmContext $context [... other parameters]} -ArgumentList (Get-AzureRmContext)`
       - Környezetmegőrzéssel rendelkező feladatok általános mintája ENGEDÉLYEZVE: `Start-Job {New-AzureRmVM [... other parameters]}`
   * Bejelentkezési információk megőrzése a munkamenetek között, új parancsmagok:
-    - Enable-AzureRmContextAutosave – Bejelentkezés megőrzésének engedélyezése a munkamenetek között.
-    - Disable-AzureRmContextAutosave – Bejelentkezés megőrzésének letiltása a munkamenetek között.
+    - Enable-AzureRmContextAutosave – Hitelesítő adatok munkamenetek közötti megőrzésének engedélyezése.
+    - Disable-AzureRmContextAutosave – Hitelesítő adatok munkamenetek közötti megőrzésének letiltása.
   * Környezeti információk kezelése, új parancsmagok
     - Select-AzureRmContext – Az aktív elnevezett környezet kiválasztása.
     - Rename-AzureRmContext – A meglévő környezet átnevezése a könnyű hivatkozás érdekében.

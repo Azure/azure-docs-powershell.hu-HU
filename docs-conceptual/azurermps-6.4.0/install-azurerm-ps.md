@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: c0bb020fc8cc77b96dc7fe6839911a4d80974d9e
+ms.openlocfilehash: 99c102340e430dbca94538f3bd0e810c79266cd9
 ms.sourcegitcommit: f08f501b75a97ceef59c21f42158bf135a354eaa
 ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/09/2018
-ms.locfileid: "37926246"
+ms.locfileid: "37926161"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Az Azure PowerShell telepítése Windows rendszeren a PowerShellGet használatával
 
@@ -20,43 +20,17 @@ Ez a cikk az Azure PowerShell-modulok PowerShellGet segítségével való telep�
 
 Az Azure PowerShell más platformokon való telepítéséhez tekintse meg [az Azure PowerShell macOS és Linux rendszeren való telepítését és konfigurálását](install-azurermps-maclinux.md) ismertető témakört.
 
-Az Azure PowerShell ezen verziója nem támogatja a klasszikus Azure üzemi modellt. A klasszikus üzemi modell támogatásához kövesse az [Azure PowerShell Service Management moduljának telepítésével](/powershell/azure/servicemanagement/install-azure-ps) kapcsolatos szakaszban található utasításokat.
+Az Azure PowerShell e verziója nem támogatja a klasszikus Azure üzemi modellt. A klasszikus üzemi modell támogatásához kövesse az [Azure PowerShell Service Management moduljának telepítésével](/powershell/azure/servicemanagement/install-azure-ps) kapcsolatos szakaszban található utasításokat.
 
 ## <a name="requirements"></a>Követelmények
 
-Az Azure PowerShell telepítéséhez a PowerShellGet 1.1.2.0-s vagy újabb verziója szükséges. Annak ellenőrzéséhez, hogy ez elérhető-e a rendszerén, futtassa a következő parancsot:
+A 6.0-s verziótól kezdve az Azure PowerShellhez a PowerShell 5.0-s vagy újabb verziója szükséges. Annak ellenőrzéséhez, hogy a PowerShell melyik verziója fut a számítógépén, futtassa a következő parancsot:
 
 ```powershell
-Get-Module -Name PowerShellGet -ListAvailable | Select-Object -Property Name,Version,Path
+$PSVersionTable.PSVersion
 ```
 
-Az alábbihoz hasonló kimenetnek kell megjelennie:
-
-```output
-Name          Version Path
-----          ------- ----
-Name          Version Path
-----          ------- ----
-PowerShellGet 1.6.0   C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.6.0\PowerShellGet.psd1
-PowerShellGet 1.0.0.1 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PowerShellGet.psd1
-```
-
-Ha frissítenie kell a PowerShellGet-telepítést, futtassa a következő parancsot:
-
-```powershell
-Install-Module PowerShellGet -Force
-```
-
-Ha nincs telepítve a PowerShellGet, kövesse alább, az operációs rendszerének megfelelő táblázatban található utasításokat.
-
-|Forgatókönyv|Telepítési utasítások|
-|---|---|
-|Windows 10<br/>Windows Server 2016|Az operációs rendszer részét képező Windows Management Framework (WMF) 5.0 beépített eleme|
-|Frissítés a PowerShell 5-ös verziójára| <ol><li>[A WMF legújabb verziójának telepítése](https://www.microsoft.com/en-us/download/details.aspx?id=54616)</li><li>Futtassa az alábbi parancsot:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
-|A PowerShell 3-as vagy 4-es verziójával rendelkező Windows|<ol><il>[A PackageManagement-modulok beszerzése](http://go.microsoft.com/fwlink/?LinkID=746217)</il><li>Futtassa az alábbi parancsot:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
-
-> [!NOTE]
-> A PowerShellGet használatához olyan végrehajtási szabályzatra van szükség, amely lehetővé teszi a szkriptek futtatását. A PowerShell végrehajtási házirendjével kapcsolatos további információk: [A végrehajtási házirendek áttekintése](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
+Ha elavult verzióval rendelkezik, tekintse meg a [meglévő Windows PowerShell frissítését](/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell) ismertető témakört.
 
 > [!IMPORTANT]
 > Az ebben a dokumentumban bemutatott AzureRM modul .NET-keretrendszert használ. Ennek következtében nem kompatibilis a PowerShell 6.0-s verziójával, amely a .NET Core-t használja. Ha 6.0-s PowerShell verziót használ, kövesse a [macOS és Linux rendszerekre vonatkozó telepítési utasításokat](install-azurermps-maclinux.md). 
@@ -84,9 +58,9 @@ Are you sure you want to install the modules from 'PSGallery'?
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-A telepítés folytatásához válassza az `Yes` vagy az `Yes to All` lehetőséget.
+A telepítés folytatásához válassza a `Yes` vagy a `Yes to All` lehetőséget.
 
-Az `AzureRM` modul az Azure PowerShell-parancsmagok összesített modulja. A modul telepítése letölti az összes elérhető Azure Resource Manager-modult, és elérhetővé teszi a parancsmagjaikat használatra.
+Az `AzureRM` modul az Azure PowerShell-parancsmagok összesített modulja. A modul telepítésével letölti az összes elérhető Azure Resource Manager-modult, és használatra elérhetővé teszi a parancsmagjaikat.
 
 ## <a name="sign-in"></a>Bejelentkezés
 
@@ -100,11 +74,11 @@ Connect-AzureRmAccount
 ```
 
 Ezeket a lépéseket minden új PowerShell-munkamenet esetében meg kell ismételni. Az `AzureRM` modul automatikus importálásához be kell állítani egy PowerShell-profilt, amelyről a [profilokat ismertető](/powershell/module/microsoft.powershell.core/about/about_profiles) részben tudhat meg többet.
-Ha szeretné megtudni, hogyan őrizheti meg az Azure-bejelentkezést a munkamenetek között, tekintse meg a [Felhasználói hitelesítő adatok megőrzése a PowerShell-munkamenetek között](context-persistence.md) című részt.
+Ha szeretné megtudni, hogyan őrizheti meg az Azure-bejelentkezést a munkamenetek között, tekintse meg a [felhasználói hitelesítő adatok a PowerShell-munkamenetek között történő megőrzését](context-persistence.md) ismertető részt.
 
 ## <a name="update-the-azure-powershell-module"></a>Az Azure PowerShell-modul frissítése
 
-Frissítheti az Azure PowerShell-telepítést az [Update-Module](/powershell/module/powershellget/update-module) futtatásával. Ez a parancs __nem__ távolítja el a korábbi verziókat.
+Frissítheti az Azure PowerShell-környezetet az [Update-Module](/powershell/module/powershellget/update-module) futtatásával. Ez a parancs __nem__ távolítja el a korábbi verziókat.
 
 ```powershell
 Update-Module -Name AzureRM
@@ -135,4 +109,4 @@ A parancssorból a [Send-Feedback](/powershell/module/azurerm.profile/send-feedb
 
 ## <a name="next-steps"></a>További lépések
 
-Az Azure PowerShell használatának megkezdéséhez tekintse meg az [Azure PowerShell használatának első lépéseit](get-started-azureps.md) ismertető szakaszt, amelyből többet tudhat meg a modulról és annak szolgáltatásairól.
+Az Azure PowerShell használatának megkezdéséhez tekintse meg az [Azure PowerShell használatának első lépéseit](get-started-azureps.md) ismertető szakaszt, amelyből többet tudhat meg a modulról és annak funkcióiról.

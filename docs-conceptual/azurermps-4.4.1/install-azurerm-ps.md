@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: 05dd023b407a46ea9133493a000ad9ff75b08dee
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 2444abc6f6f2280645c77c3effcd02db74f4f997
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854443"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100239"
 ---
 # <a name="install-and-configure-azure-powershell"></a>Az Azure PowerShell telepítése és konfigurálása
 
@@ -50,6 +50,9 @@ Ha a PowerShellGet nincs telepítve, akkor tekintse meg a jelen cikk [A PowerShe
 
 > [!NOTE]
 > A PowerShellGet használatához olyan végrehajtási szabályzatra van szükség, amely lehetővé teszi a szkriptek futtatását. A PowerShell végrehajtási házirendjével kapcsolatos további információk: [A végrehajtási házirendek áttekintése](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
+
+> [!IMPORTANT]
+> Az ebben a dokumentumban bemutatott AzureRM modul .NET-keretrendszert használ. Ennek következtében nem kompatibilis a PowerShell 6.0-s verziójával, amely a .NET Core-t használja. Ha 6.0-s PowerShell verziót használ, kövesse a [macOS és Linux rendszerekre vonatkozó telepítési utasításokat](install-azurermps-maclinux.md). 
 
 ## <a name="step-2-install-azure-powershell"></a>2. lépés: Az Azure PowerShell telepítése
 

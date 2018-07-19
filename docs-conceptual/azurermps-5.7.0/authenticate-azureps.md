@@ -7,16 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: e2eb6767d16dd15529b35b7a4134f4dcdd257d60
-ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
+ms.openlocfilehash: af39fec226492c9ccf251c996b57e274de783178
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35323339"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100273"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Bejelentkezés az Azure PowerShell-lel
 
-Az Azure PowerShell többféle bejelentkezési módszert támogat. Első lépésként a legegyszerűbb módszer, ha interaktívan bejelentkezik a parancssoron.
+Az Azure PowerShell többféle hitelesítési módszert támogat. Első lépésként a legegyszerűbb módszer, ha interaktívan bejelentkezik a parancssoron.
 
 ## <a name="sign-in-interactively"></a>Interaktív bejelentkezés
 
@@ -29,7 +29,7 @@ Connect-AzureRmAccount
 A parancsmag futtatásakor megnyílik egy párbeszédablak, amely az Azure-fiókhoz tartozó e-mail-cím és jelszó megadását kéri. A hitelesítéskor a rendszer menti ezt az információt az aktuális PowerShell-munkamenethez, a párbeszédablak bezáródik, és Ön hozzáférhet az összes Azure PowerShell-parancsmaghoz.
 
 > [!IMPORTANT]
-> Ez a bejelentkezés _csak_ az aktuális PowerShell-munkamenetre vonatkozik. A több munkamenetre megőrzött bejelentkezésről az [állandó hitelesítő adatokkal](context-persistence.md) kapcsolatos cikkből tájékozódhat.
+> Ez a bejelentkezés _csak_ az aktuális PowerShell-munkamenetre vonatkozik. A több munkamenetre megőrzött hitelesítésről az [állandó hitelesítő adatokkal](context-persistence.md) kapcsolatos cikkből tájékozódhat.
 
 ## <a name="sign-in-with-a-service-principal"></a>Bejelentkezés szolgáltatásnévvel
 

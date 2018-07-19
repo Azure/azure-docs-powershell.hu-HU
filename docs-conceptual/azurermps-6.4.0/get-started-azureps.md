@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: a036bb78ddb084dceb3668ab5751951dedd85e15
+ms.openlocfilehash: 5aa3b3fdeff20ea4c6f830f834e61f37d81da07d
 ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100470"
+ms.locfileid: "38100375"
 ---
 # <a name="get-started-with-azure-powershell"></a>Ismerkedés az Azure PowerShell-lel
 

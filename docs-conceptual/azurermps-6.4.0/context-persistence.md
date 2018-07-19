@@ -1,18 +1,18 @@
 ---
 title: Felhasználói hitelesítő adatok megőrzése a PowerShell-munkamenetek között
-description: Megismerheti, hogyan használhatók fel újra az Azure-beli hitelesítő és egyéb adatok több PowerShell-munkamenet során.
+description: A cikkből megismerheti, hogyan használhatók fel újra az Azure-beli hitelesítő és egyéb adatok több PowerShell-munkamenet során.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 3107f77987745faa7ec57ea4811c62a38a7b2aa2
+ms.openlocfilehash: 76e08c462bb34bd2b16a11f70f14c4584b72795a
 ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100256"
+ms.locfileid: "38100358"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Felhasználói hitelesítő adatok megőrzése a PowerShell-munkamenetek között
 
@@ -38,12 +38,10 @@ A korábbi kiadásokban az új PowerShell-munkamenetek megnyitásakor minden egy
 
 ## <a name="automatically-saving-the-context-for-the-next-sign-in"></a>A környezet automatikus mentése a következő bejelentkezéshez
 
-Az Azure PowerShell alapértelmezés szerint a munkamenetek bezárásakor elveti a környezet adatait.
+Az Azure PowerShell a 6.3.0-s verziótól kezdve automatikusan megőrzi a környezet adatait a munkamenetek között. Ha szeretné beállítani, hogy a PowerShell elfelejtse a környezetet és a hitelesítő adatokat, használja a `Disable-AzureRmContextAutoSave` parancsmagot. Ekkor minden alkalommal újra be kell majd jelentkeznie az Azure-ba, amikor megnyit egy PowerShell-munkamenetet.
 
 Ha szeretné engedélyezni, hogy az Azure PowerShell megjegyezze a környezet adatait a PowerShell-munkamenetek bezárásakor, használja az `Enable-AzureRmContextAutosave` parancsmagot. A rendszer automatikusan menti a környezet adatait és a hitelesítő adatokat egy speciális rejtett mappába a felhasználó könyvtárában (`%AppData%\Roaming\Windows Azure PowerShell`).
 Ezután minden egyes új PowerShell-munkamenet az utolsó munkamenet során használt környezetre irányul majd.
-
-Ha szeretné beállítani, hogy a PowerShell elfelejtse a környezetet és a hitelesítő adatokat, használja a `Disable-AzureRmContextAutoSave` parancsmagot. Ekkor minden alkalommal újra be kell majd jelentkeznie az Azure-ba, amikor megnyit egy PowerShell-munkamenetet.
 
 Az Azure-környezetek kezeléséhez használt parancsmagokkal pontosan szabályozható a működés. Például megadhatja, hogy a módosítások csak az aktuális PowerShell-munkamenetre (`Process` hatókör) vagy minden PowerShell-munkamenetre (`CurrentUser` hatókör) érvényesek legyenek. Ezeket a beállításokat a részletesebben a [Környezeti hatókörök használata](#Using-Context-Scopes) című szakasz tárgyalja.
 
