@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 08/31/2017
-ms.openlocfilehash: fd7d291683269ac9647abe67663a08fc7e0b4881
+ms.openlocfilehash: ef4f9b416454471f8c9476f0bbccbcca20a22000
 ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 07/13/2018
-ms.locfileid: "39025361"
+ms.locfileid: "39025123"
 ---
 # <a name="overview-of-azure-powershell"></a>Az Azure PowerShell áttekintése
 
