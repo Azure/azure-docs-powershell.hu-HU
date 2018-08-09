@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/07/2018
 ms.openlocfilehash: 833c82903305f99be5ad43f707e22644bb568abe
-ms.sourcegitcommit: fd11600079ee3844986552bccc4e274a231332b6
+ms.sourcegitcommit: afae9f2f091b21ed07d5aec1c249cf859a8b89a4
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39367837"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "39653423"
 ---
 # <a name="format-azurepowershell-cmdlet-output"></a>Azure PowerShell-parancsmag kimenetének formázása
 
