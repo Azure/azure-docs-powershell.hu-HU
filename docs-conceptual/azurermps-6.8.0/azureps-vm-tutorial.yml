@@ -1,0 +1,376 @@
+### YamlMime:Tutorial
+title: <span data-ttu-id="da18f-101">Virtuális gépek létrehozása az Azure PowerShell-lel</span><span class="sxs-lookup"><span data-stu-id="da18f-101">Create virtual machines with the Azure PowerShell</span></span>
+metadata:
+  title: Virtuális gépek létrehozása az Azure PowerShell-lel
+  description: Bevezetés az Azure PowerShell használatába virtuális gépek létrehozásán keresztül.
+  audience: Developer
+  level: Beginner
+  displayType: two-column
+  interactive: azurepowershell
+  ms.date: 02/08/2018
+  ms.author: sewhee
+  author: sdwheeler
+  manager: carmonm
+  ms.devlang: azure-powershell
+  ms.prod: powershell
+  ms.technology: azure-powershell
+  ms.service: virtual-machines
+  clicktale: true
+  ms.openlocfilehash: e6d585d76f507a7959e6e6227aff1effad8fa336
+  ms.sourcegitcommit: 9cb98f055a0525c2061f65149965d5e7c3e03ddc
+  ms.translationtype: HT
+  ms.contentlocale: hu-HU
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43117656"
+items:
+- durationInMinutes: 1
+  content: >-
+    <span data-ttu-id="da18f-104">Ebben az oktatóanyagban elsajátíthatja a virtuális gépek Azure PowerShell használatával történő beállításához szükséges lépéseket.</span><span class="sxs-lookup"><span data-stu-id="da18f-104">In this tutorial, you learn all of the steps involved in setting up a virtual machine with Azure PowerShell.</span></span> <span data-ttu-id="da18f-105">Az oktatóanyag ezen kívül a kimeneti lekérdezésekre, az Azure-erőforrások újbóli felhasználására és az erőforrások felesleges tartalmainak törlésére is kitér.</span><span class="sxs-lookup"><span data-stu-id="da18f-105">The tutorial also covers output queries, Azure resource reuse, and resource cleanup.</span></span>
+
+
+    <span data-ttu-id="da18f-106">Az oktatóanyagot az Azure Cloud Shell által nyújtott interaktív felületen keresztül vagy az [Azure PowerShell helyi telepítésével](install-azurerm-ps.md) teljesítheti.</span><span class="sxs-lookup"><span data-stu-id="da18f-106">This tutorial can be completed with the interactive experience offered through Azure Cloud Shell, or you may [install Azure PowerShell](install-azurerm-ps.md) locally.</span></span>
+
+
+    <span data-ttu-id="da18f-107">A __ctrl-shift-v__ (macOS rendszeresen__cmd-shift-v__) billentyűkombináció segítségével illesztheti be az oktatóanyag szövegét az Azure Cloud Shellbe.</span><span class="sxs-lookup"><span data-stu-id="da18f-107">Use __ctrl-shift-v__ (__cmd-shift-v__ on macOS) to paste tutorial text into Azure Cloud Shell.</span></span>
+- durationInMinutes: 1
+  title: <span data-ttu-id="da18f-108">Bejelentkezés</span><span class="sxs-lookup"><span data-stu-id="da18f-108">Sign in</span></span>
+  content: >-
+    <span data-ttu-id="da18f-109">Ha az Azure PowerShell helyi telepítését választotta, akkor a további lépések végrehajtása előtt jelentkezzen be.</span><span class="sxs-lookup"><span data-stu-id="da18f-109">If you're using a local install of the Azure PowerShell, you need to sign in before performing any other steps.</span></span>
+
+
+    ```powershell
+
+    Connect-AzureRmAccount
+
+    ```
+
+
+    <span data-ttu-id="da18f-110">A terminálon megjelenő utasítások alapján végezze el a bejelentkezési folyamatot.</span><span class="sxs-lookup"><span data-stu-id="da18f-110">Complete the sign in process by following the steps displayed in your terminal.</span></span>
+- durationInMinutes: 1
+  title: <span data-ttu-id="da18f-111">Hozzon létre egy erőforráscsoportot</span><span class="sxs-lookup"><span data-stu-id="da18f-111">Create a resource group</span></span>
+  content: >-
+    <span data-ttu-id="da18f-112">Az Azure-ban minden erőforrás erőforrás-kezelési csoportokban van lefoglalva.</span><span class="sxs-lookup"><span data-stu-id="da18f-112">In Azure, all resources are allocated in a resource management group.</span></span> <span data-ttu-id="da18f-113">Az erőforráscsoportok segítségével az erőforrások követhető logika szerint csoportosíthatók, és lehetővé válik gyűjteményként való kezelésük.</span><span class="sxs-lookup"><span data-stu-id="da18f-113">Resource groups provide logical groupings of resources that make them easier to work with as a collection.</span></span>
+
+    <span data-ttu-id="da18f-114">Ebben az oktatóanyagban létrehozott minden erőforrás egy `TutorialResources` nevű csoportba kerül.</span><span class="sxs-lookup"><span data-stu-id="da18f-114">For this tutorial, all of the created resources go into a single group named `TutorialResources`.</span></span>
+
+
+    ```powershell
+
+    New-AzureRmResourceGroup -Name TutorialResources -Location eastus
+
+    ```
+
+
+    ```Output
+
+    ResourceGroupName : TutorialResources
+
+    Location          : eastus
+
+    ProvisioningState : Succeeded
+
+    Tags              :
+
+    ResourceId        : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/TutorialResources
+
+    ```
+- durationInMinutes: 1
+  title: <span data-ttu-id="da18f-115">Rendszergazdai hitelesítő adatok létrehozása a virtuális géphez</span><span class="sxs-lookup"><span data-stu-id="da18f-115">Create admin credentials for the VM</span></span>
+  content: >-
+    <span data-ttu-id="da18f-116">Új virtuális gép létrehozása előtt létre kell hoznia egy hitelesítő objektumot, amely tartalmazza a Windows rendszerű virtuális gép rendszergazdai fiókjának felhasználónevét és jelszavát.</span><span class="sxs-lookup"><span data-stu-id="da18f-116">Before you can create a new virtual machine, you must create a credential object containing the username and password for the administrator account of the Windows VM.</span></span>
+
+
+    ```powershell
+
+    $cred = Get-Credential -Message "Enter a username and password for the virtual machine."
+
+    ```
+
+
+    <span data-ttu-id="da18f-117">Amikor a rendszer kéri, adja meg a felhasználónevet és a jelszót.</span><span class="sxs-lookup"><span data-stu-id="da18f-117">Enter the username and password when prompted.</span></span> <span data-ttu-id="da18f-118">Az eredményül kapott hitelesítő objektumot a rendszer a következő lépésben paraméterként adja tovább.</span><span class="sxs-lookup"><span data-stu-id="da18f-118">The resulting credential object is passed as a parameter in the next step.</span></span>
+
+
+    ```Output
+
+    Windows PowerShell credential request.
+
+    Enter a username and password for the virtual machine.
+
+    User: tutorAdmin
+
+    Password for user tutorAdmin: *********
+
+    ```
+- durationInMinutes: 4
+  title: <span data-ttu-id="da18f-119">Virtuális gép létrehozása</span><span class="sxs-lookup"><span data-stu-id="da18f-119">Create a virtual machine</span></span>
+  content: >-
+    <span data-ttu-id="da18f-120">Az Azure-beli virtuális gépek nagy számú függőséggel rendelkeznek.</span><span class="sxs-lookup"><span data-stu-id="da18f-120">Virtual machines in Azure have a large number of dependencies.</span></span> <span data-ttu-id="da18f-121">Az Azure PowerShell ezeket az erőforrásokat az Ön által megadott parancssori argumentumok alapján hozza létre.</span><span class="sxs-lookup"><span data-stu-id="da18f-121">The Azure PowerShell creates these resources for you based on the command-line arguments you specify.</span></span> <span data-ttu-id="da18f-122">Az olvashatóság érdekében [PowerShell-paramétercsomagolást](/powershell/module/microsoft.powershell.core/about/about_splatting) használunk a paraméterek Azure PowerShell-parancsmagokba történő továbbításához.</span><span class="sxs-lookup"><span data-stu-id="da18f-122">For readability, we are using [PowerShell splatting](/powershell/module/microsoft.powershell.core/about/about_splatting) to pass parameters to the Azure PowerShell cmdlets.</span></span>
+
+
+    <span data-ttu-id="da18f-123">Hozzon létre egy Windows rendszerű új virtuális gépet.</span><span class="sxs-lookup"><span data-stu-id="da18f-123">Create a new virtual machine running Windows.</span></span>
+
+
+    ```powershell
+
+    $vmParams = @{
+      ResourceGroupName = 'TutorialResources'
+      Name = 'TutorialVM1'
+      Location = 'eastus'
+      ImageName = 'Win2016Datacenter'
+      PublicIpAddressName = 'tutorialPublicIp'
+      Credential = $cred
+      OpenPorts = 3389
+    }
+
+    $newVM1 = New-AzureRmVM @vmParams
+
+    ```
+
+    <span data-ttu-id="da18f-124">A virtuális gép létrehozása során megjelennek a felhasznált paraméterértékek és a létrehozandó Azure-erőforrások.</span><span class="sxs-lookup"><span data-stu-id="da18f-124">As the VM is created, you see the parameter values used and Azure resources being created.</span></span>
+
+    <span data-ttu-id="da18f-125">A PowerShell az alább látható módon megjelenít egy folyamatjelzőt.</span><span class="sxs-lookup"><span data-stu-id="da18f-125">PowerShell will displace a progress bar as shown below.</span></span>
+
+
+    ```Output
+     Creating Azure resources
+      39% \
+      [ooooooooooooooooooooooooooooooooooo                                                                 ]
+
+      Creating TutorialVM1 virtual machine.
+    ```
+
+
+    <span data-ttu-id="da18f-126">Ha a virtuális gép létrejött, az eredmények megtekinthetők az Azure Portalon vagy a \$newVM1 változó vizsgálatával.</span><span class="sxs-lookup"><span data-stu-id="da18f-126">Once the VM is ready, we can view the results in the Azure Portal or by inspecting the \$newVM1 variable.</span></span>
+
+
+    ```powershell
+
+    $newVM1
+
+    ```
+
+
+    ```Output
+
+    ResourceGroupName : TutorialResources
+
+    Id                : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/TutorialResources/providers/Microsoft.Compute/virtualMachines/TutorialVM1
+
+    VmId              : 12345678-9abc-def0-1234-56789abcedf0
+
+    Name              : TutorialVM1
+
+    Type              : Microsoft.Compute/virtualMachines
+
+    Location          : eastus
+
+    Tags              : {}
+
+    HardwareProfile   : {VmSize}
+
+    NetworkProfile    : {NetworkInterfaces}
+
+    OSProfile         : {ComputerName, AdminUsername, WindowsConfiguration, Secrets}
+
+    ProvisioningState : Succeeded
+
+    StorageProfile    : {ImageReference, OsDisk, DataDisks}
+
+    ```
+
+
+    <span data-ttu-id="da18f-127">A kapcsos zárójelben szereplő tulajdonságértékek beágyazott objektumok.</span><span class="sxs-lookup"><span data-stu-id="da18f-127">Property values listed inside of braces are nested objects.</span></span> <span data-ttu-id="da18f-128">A következő lépésekből megtudhatja, hogyan tekintheti meg a beágyazott objektumok egyes értékeit.</span><span class="sxs-lookup"><span data-stu-id="da18f-128">In the next step we will show you how to view specific values in these nested objects.</span></span>
+- durationInMinutes: 5
+  title: <span data-ttu-id="da18f-129">Virtuális gépre vonatkozó adatok lekérdezése</span><span class="sxs-lookup"><span data-stu-id="da18f-129">Get VM information with queries</span></span>
+  content: >-
+    <span data-ttu-id="da18f-130">Az imént létrehozott virtuális gépről további részletes információkat is beszerezhet.</span><span class="sxs-lookup"><span data-stu-id="da18f-130">Let's get some more detailed information from the VM we just created.</span></span> <span data-ttu-id="da18f-131">Ebben a példában ellenőrizni fogja a létrehozott virtuális gép és rendszergazdai fiók nevét.</span><span class="sxs-lookup"><span data-stu-id="da18f-131">In this example, we verify the Name of the VM and the admin account we created.</span></span>
+
+
+    ```powershell
+
+    $newVM1.OSProfile | Select-Object ComputerName,AdminUserName
+
+    ```
+
+
+    ```Output
+
+    ComputerName AdminUsername
+
+    ------------ -------------
+
+    TutorialVM1  tutorialAdmin
+
+    ```
+
+
+    <span data-ttu-id="da18f-132">Egyéb Azure PowerShell-parancsokkal a hálózati konfigurációval kapcsolatos információkat lehet lekérni.</span><span class="sxs-lookup"><span data-stu-id="da18f-132">We can use other Azure PowerShell commands to get specific information about the network configuration.</span></span>
+
+
+    ```powershell
+
+    $newVM1 | Get-AzureRmNetworkInterface |
+      Select-Object -ExpandProperty IpConfigurations |
+        Select-Object Name,PrivateIpAddress
+    ```
+
+
+    <span data-ttu-id="da18f-133">Ebben a példában a PowerShell-folyamattal küldjük el a \$newVM1 objektumot a `Get-AzureRmNetworkInterface` parancsmagnak.</span><span class="sxs-lookup"><span data-stu-id="da18f-133">In this example we are using the PowerShell pipeline to send the \$newVM1 object to the `Get-AzureRmNetworkInterface` cmdlet.</span></span> <span data-ttu-id="da18f-134">Az eredményül kapott hálózatiadapter-objektumban kiválasztjuk a beágyazott IpConfigurations objektumot.</span><span class="sxs-lookup"><span data-stu-id="da18f-134">From the resulting network interface object we are selecting the nested IpConfigurations object.</span></span> <span data-ttu-id="da18f-135">Az IpConfigurations objektumban kiválasztjuk a Name és a PrivateIpAddress tulajdonságot.</span><span class="sxs-lookup"><span data-stu-id="da18f-135">From the IpConfigurations object we are selecting the Name and PrivateIpAddress properties.</span></span>
+
+
+    ```Output
+
+    Name        PrivateIpAddress
+
+    ----        ----------------
+
+    TutorialVM1 192.168.1.4
+
+    ```
+
+
+    <span data-ttu-id="da18f-136">Ha ellenőrizni szeretné, hogy a virtuális gép fut-e, csatlakoznia kell hozzá távoli asztali kapcsolaton keresztül.</span><span class="sxs-lookup"><span data-stu-id="da18f-136">To confirm that the VM is running, we need to connect via Remote Desktop.</span></span> <span data-ttu-id="da18f-137">Ehhez szükség van a nyilvános IP-címre.</span><span class="sxs-lookup"><span data-stu-id="da18f-137">For that, we need to know the Public IP address.</span></span>
+
+
+    ```powershell
+
+    $publicIp = Get-AzureRmPublicIpAddress -Name tutorialPublicIp -ResourceGroupName TutorialResources
+
+
+    $publicIp | Select-Object Name,IpAddress,@{label='FQDN';expression={$_.DnsSettings.Fqdn}}
+
+    ```
+
+
+    <span data-ttu-id="da18f-138">Ebben a példában a `Get-AzureRmPublicIpAddress` parancsmagot használjuk, az eredményeket pedig a \$publicIp változóban tároljuk.</span><span class="sxs-lookup"><span data-stu-id="da18f-138">In this example, we use the `Get-AzureRmPublicIpAddress` and store the results in the \$publicIp variable.</span></span> <span data-ttu-id="da18f-139">Ebben a változóban tulajdonságokat választunk ki, és egy kifejezés használatával lekérjük a beágyazott Fqdn tulajdonságot.</span><span class="sxs-lookup"><span data-stu-id="da18f-139">From this variable we are selecting properties and using an expression to retrieve the nested Fqdn property.</span></span>
+
+
+    ```Output
+
+    Name             IpAddress           FQDN
+
+    ----             ---------           ----
+
+    tutorialPublicIp <PUBLIC_IP_ADDRESS> tutorialvm1-8a0999.eastus.cloudapp.azure.com
+
+    ```
+
+
+    <span data-ttu-id="da18f-140">A virtuális gép távoli asztali eléréséhez futtassa a következő parancsot a helyi gépen.</span><span class="sxs-lookup"><span data-stu-id="da18f-140">From your local machine you can run the following command to connect to the VM over Remote Desktop.</span></span>
+
+
+    ```powershell
+
+    mstsc.exe /v <PUBLIC_IP_ADDRESS>
+
+    ```
+
+
+    <span data-ttu-id="da18f-141">Az objektumtulajdonságok lekérdezésével kapcsolatos bővebb információt az [Azure-erőforrások lekérdezése](./queries-azureps.md) című cikkben talál.</span><span class="sxs-lookup"><span data-stu-id="da18f-141">For more information about querying for object properties, see [Querying for Azure resources](./queries-azureps.md).</span></span>
+- durationInMinutes: 4
+  title: <span data-ttu-id="da18f-142">Új virtuális gép létrehozása meglévő alhálózaton</span><span class="sxs-lookup"><span data-stu-id="da18f-142">Creating a new VM on the existing subnet</span></span>
+  content: >-
+    <span data-ttu-id="da18f-143">A második virtuális gép a meglévő alhálózatot használja.</span><span class="sxs-lookup"><span data-stu-id="da18f-143">The second VM uses the existing subnet.</span></span>
+
+
+    ```powershell
+
+    $vm2Params = @{
+      ResourceGroupName = 'TutorialResources'
+      Name = 'TutorialVM2'
+      ImageName = 'Win2016Datacenter'
+      VirtualNetworkName = 'TutorialVM1'
+      SubnetName = 'TutorialVM1'
+      PublicIpAddressName = 'tutorialPublicIp2'
+      Credential = $cred
+      OpenPorts = 3389
+    }
+
+    $newVM2 = New-AzureRmVM @vm2Params
+
+
+    $newVM2
+
+    ```
+
+
+    ```Output
+
+    ResourceGroupName        : TutorialResources
+
+    Id                       : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/TutorialResources/providers/Microsoft.Compute/virtualMachines/TutorialVM2
+
+    VmId                     : 12345678-9abc-def0-1234-56789abcedf1
+
+    Name                     : TutorialVM2
+
+    Type                     : Microsoft.Compute/virtualMachines
+
+    Location                 : eastus
+
+    Tags                     : {}
+
+    HardwareProfile          : {VmSize}
+
+    NetworkProfile           : {NetworkInterfaces}
+
+    OSProfile                : {ComputerName, AdminUsername, WindowsConfiguration, Secrets}
+
+    ProvisioningState        : Succeeded
+
+    StorageProfile           : {ImageReference, OsDisk, DataDisks}
+
+    FullyQualifiedDomainName : tutorialvm2-dfa5af.eastus.cloudapp.azure.com
+
+    ```
+
+
+    <span data-ttu-id="da18f-144">Kihagyhatja azt a pár lépést, amellyel az új virtuális gép nyilvános IP-címét kérné le, mivel azt a rendszer a \$newVM2 objektum FullyQualifiedDomainName tulajdonságában visszaadja.</span><span class="sxs-lookup"><span data-stu-id="da18f-144">You can skip a few steps to get the public IP address of the new VM since it's returned in the FullyQualifiedDomainName property of the \$newVM2 object.</span></span> <span data-ttu-id="da18f-145">Az alábbi parancs használatával csatlakozhat távoli asztali kapcsolaton keresztül.</span><span class="sxs-lookup"><span data-stu-id="da18f-145">Use the following command to connect using Remote Desktop.</span></span>
+
+
+    ```powershell
+
+    mstsc.exe /v $newVM2.FullyQualifiedDomainName
+
+    ```
+- durationInMinutes: 4
+  title: <span data-ttu-id="da18f-146">Felesleges tartalmak törlése</span><span class="sxs-lookup"><span data-stu-id="da18f-146">Cleanup</span></span>
+  content: >-
+    <span data-ttu-id="da18f-147">Most, hogy végzett az oktatóanyaggal, ideje törölni a létrehozott erőforrásokat.</span><span class="sxs-lookup"><span data-stu-id="da18f-147">Now that the tutorial is complete, it's time to clean up the created resources.</span></span> <span data-ttu-id="da18f-148">Az egyes erőforrásokat a `Remove-AzureRmResource` paranccsal törölheti, de az erőforráscsoportban szereplő összes erőforrás eltávolításának legbiztosabb módja, ha a `Remove-AzureRmResourceGroup` paranccsal törli az egész csoportot.</span><span class="sxs-lookup"><span data-stu-id="da18f-148">You can delete individual resources with the `Remove-AzureRmResource` command, but the safest way to remove all resources in a resource group is delete the group using the `Remove-AzureRmResourceGroup` command.</span></span>
+
+
+    ```powershell
+
+    $job = Remove-AzureRmResourceGroup -Name TutorialResources -Force -AsJob
+
+
+    $job
+
+    ```
+
+
+    ```Output
+
+    Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
+
+    --     ----            -------------   -----         -----------     --------             -------
+
+    1      Long Running... AzureLongRun... Running       True            localhost            Remove-AzureRmResource...
+
+    ```
+
+
+    <span data-ttu-id="da18f-149">Ez a parancs törli az oktatóanyag használata közben létrehozott erőforrásokat, és garantáltan a megfelelő sorrendben szabadítja fel őket.</span><span class="sxs-lookup"><span data-stu-id="da18f-149">This command deletes the resources created during the tutorial, and is guaranteed to deallocate them in the correct order.</span></span> <span data-ttu-id="da18f-150">Az `-AsJob` paraméter megakadályozza, hogy a PowerShell blokkoljon a törlés végrehajtása közben.</span><span class="sxs-lookup"><span data-stu-id="da18f-150">The `-AsJob` parameter keeps PowerShell from blocking while the deletion takes place.</span></span> <span data-ttu-id="da18f-151">Ha várni szeretne, amíg a törlés befejeződik, használja a következő parancsot:</span><span class="sxs-lookup"><span data-stu-id="da18f-151">To wait until the deletion is complete, use the following command:</span></span>
+
+
+    ```powershell
+
+    Wait-Job -Id $job.Id
+
+    ```
+
+
+    <span data-ttu-id="da18f-152">A tartalmak törlésével az oktatóanyag végére ért.</span><span class="sxs-lookup"><span data-stu-id="da18f-152">With cleanup completed, the tutorial is finished.</span></span> <span data-ttu-id="da18f-153">Tekintse át az eddig tanultak összegzését, illetve a következő lépések végrehajtásában segítségére lévő erőforrásokra mutató hivatkozásokat.</span><span class="sxs-lookup"><span data-stu-id="da18f-153">Continue on for a summary of everything you learned and links to resources that will help you with your next steps.</span></span>
+- durationInMinutes: 1
+  title: <span data-ttu-id="da18f-154">Összegzés</span><span class="sxs-lookup"><span data-stu-id="da18f-154">Summary</span></span>
+  content: "\n<span data-ttu-id=\"da18f-155\">Gratulálunk!</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-155\">Congratulations!</span></span> <span data-ttu-id=\"da18f-156\">Megismerte, hogyan hozhat létre virtuális gépeket új vagy meglévő erőforrásokkal, kifejezések és egyéb Azure PowerShell-parancsok segítségével felületváltozókon tárolandó adatokat rögzített, és áttekintett néhány, az Azure-beli virtuális gépek számára létrehozott erőforrást.</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-156\">You learned how to create VMs with new or existing resources, used expressions and other Azure PowerShell commands to to capture data to be stored in shell variables, and looked at some of the resources that get created for Azure VMs.</span></span>\n\n<span data-ttu-id=\"da18f-157\">A következő lépést az határozza meg, hogy mire szeretné használni az Azure PowerShellt.</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-157\">Where you go from here depends on how you plan to use Azure PowerShell.</span></span> <span data-ttu-id=\"da18f-158\">Számos forrásanyag érhető el a jelen oktatóanyagban tárgyalt funkciók alaposabb megismeréséhez.</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-158\">There are a variety of materials that go further in depth on the features covered in this tutorial.</span></span>\n\n### <a name=\"in-depth-azure-powershell-documentation\"></a><span data-ttu-id=\"da18f-159\">Részletes Azure PowerShell-dokumentáció</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-159\">In-depth Azure PowerShell documentation</span></span>\n\n<span data-ttu-id=\"da18f-160\">Érdemes időt szánni a teljes [Azure PowerShell-dokumentáció](overview.md) megismerésére.</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-160\">You might want to take time to explore the complete [Azure PowerShell documentation](overview.md) set.</span></span>\n\n<span data-ttu-id=\"da18f-161\">Az oktatóanyagban szereplő parancsokkal kapcsolatos további információkért tekintse meg az alábbi cikkeket.</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-161\">For more information about the commands used in this tutorial, see the following articles.</span></span>\n\n- [<span data-ttu-id=\"da18f-162\">New-AzureRmResourceGroup</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-162\">New-AzureRmResourceGroup</span></span>](/powershell/module/azurerm.resources/new-azurermresourcegroup)\n- [<span data-ttu-id=\"da18f-163\">Get-Credential</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-163\">Get-Credential</span></span>](/powershell/module/microsoft.powershell.security/get-credential)\n- [<span data-ttu-id=\"da18f-164\">New-AzureRmVM</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-164\">New-AzureRmVM</span></span>](/powershell/module/azurerm.compute/new-azurermvm)\n- [<span data-ttu-id=\"da18f-165\">Select-Object</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-165\">Select-Object</span></span>](/powershell/module/microsoft.powershell.utility/select-object)\n- [<span data-ttu-id=\"da18f-166\">Get-AzureRmPublicIpAddress</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-166\">Get-AzureRmPublicIpAddress</span></span>](/powershell/module/azurerm.network/get-AzureRmPublicIpAddress)\n- [<span data-ttu-id=\"da18f-167\">Remove-AzureRmResourceGroup</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-167\">Remove-AzureRmResourceGroup</span></span>](/powershell/module/azurerm.resources/Remove-AzureRmResourceGroup)\n- [<span data-ttu-id=\"da18f-168\">Wait-Job</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-168\">Wait-Job</span></span>](/powershell/module/microsoft.powershell.core/wait-job)\n\n<span data-ttu-id=\"da18f-169\">Olyan cikkek is rendelkezésre állnak, amelyek részletesebben tárgyalják a jelen oktatóanyagban ismertetett funkciókat.</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-169\">There are also articles that go deeper into the features that were shown in the tutorial.</span></span>\n\n- [<span data-ttu-id=\"da18f-170\">PowerShell-paramétercsomagolás</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-170\">PowerShell splatting</span></span>](/powershell/module/microsoft.powershell.core/about/about_splatting)\n- [<span data-ttu-id=\"da18f-171\">Lekérdezések</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-171\">Queries</span></span>](queries-azureps.md)\n- [<span data-ttu-id=\"da18f-172\">Formázás</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-172\">Formatting</span></span>](formatting-output.md)\n- [<span data-ttu-id=\"da18f-173\">A PowerShell-feladatok használata</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-173\">Using PowerShell jobs</span></span>](using-psjobs.md)\n\n### <a name=\"sample-scripts\"></a><span data-ttu-id=\"da18f-174\">Mintaszkriptek</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-174\">Sample scripts</span></span>\n\n<span data-ttu-id=\"da18f-175\">Ha máris hozzá szeretne fogni konkrét feladatokhoz, tekintsen át néhány mintául szolgáló szkriptet.</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-175\">If you want to get started right away with specific tasks, look at some sample scripts.</span></span>\n\n- [<span data-ttu-id=\"da18f-176\">Linux rendszerű virtuális gépek</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-176\">Linux Virtual Machines</span></span>](/azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [<span data-ttu-id=\"da18f-177\">Windows rendszerű virtuális gépek</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-177\">Windows Virtual Machines</span></span>](/azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [<span data-ttu-id=\"da18f-178\">Web Apps</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-178\">Web Apps</span></span>](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [<span data-ttu-id=\"da18f-179\">SQL Database-adatbázisok</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-179\">SQL Databases</span></span>](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [<span data-ttu-id=\"da18f-180\">Cosmos DB</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-180\">Cosmos DB</span></span>](/azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json)\n\n### <a name=\"feedback\"></a><span data-ttu-id=\"da18f-181\">Visszajelzés</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-181\">Feedback</span></span>\n\n<span data-ttu-id=\"da18f-182\">Ha visszajelzést szeretne küldeni, illetve javaslatai vagy kérdései vannak, akkor több módon is felveheti velünk a kapcsolatot.</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-182\">If you'd like to give feedback, suggestions, or ask questions, there are a number of ways for you to get in touch.</span></span>\n\n* <span data-ttu-id=\"da18f-183\">A `Send-Feedback` az Azure PowerShell egy beépített parancsa, amellyel szabad formátumú visszajelzést küldhet a csapatnak.</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-183\">`Send-Feedback` is a built-in command for Azure PowerShell that allows you to provide free-form feedback to the team.</span></span>\n* <span data-ttu-id=\"da18f-184\">A szolgáltatással kapcsolatos kéréseit és hibajelentéseit az [Azure PowerShell-adattáron](https://github.com/Azure/azure-powershell/issues) keresztül küldheti be.</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-184\">File a feature request or a bug report in the [Azure PowerShell repository](https://github.com/Azure/azure-powershell/issues).</span></span>\n* <span data-ttu-id=\"da18f-185\">Kérdéseit és pontosításra vonatkozó megkereséseit az [Azure PowerShell dokumentációs adattárján](https://github.com/Azure/azure-docs-powershell/issues) keresztül teheti fel és küldheti be.</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-185\">Ask a question or get clarification by filing an issue in the [Azure PowerShell documentation repository](https://github.com/Azure/azure-docs-powershell/issues).</span></span>\n\n<span data-ttu-id=\"da18f-186\">Reméljük, hogy örömét leli az Azure PowerShell használatában!</span><span class=\"sxs-lookup\"><span data-stu-id=\"da18f-186\">We hope that you enjoy using the Azure PowerShell!</span></span>"
