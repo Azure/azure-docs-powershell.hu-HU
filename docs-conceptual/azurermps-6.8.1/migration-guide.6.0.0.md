@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 5/1/2018
-ms.openlocfilehash: 4f9c99152fd6ddc23aec005c8e8957e545e65246
-ms.sourcegitcommit: dca906e73e943aac207cee23b79915773419c673
+ms.date: 05/01/2018
+ms.openlocfilehash: 72a0e9ca8562dc06a1fe2718658172ce9ee20f0e
+ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43250325"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43383940"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>A Microsoft Azure PowerShell 6.0.0 kompatibilitástörő változásai
 
@@ -22,7 +22,7 @@ Ez a dokumentum egyrészt értesítőül szolgál a használhatatlanná tévő v
 
 - [Általános kompatibilitástörő változások](#general-breaking-changes)
     - [PowerShell minimálisan szükséges verziója: 5.0](#minimum-powershell-version-required-bumped-to-50)
-    - [Környezet automatikus mentése alapértelmezés szerint engedélyezve](#context-autosaved-enabled-by-default)
+    - [Környezet automatikus mentése alapértelmezés szerint engedélyezve](#context-autosave-enabled-by-default)
     - [A Tags alias eltávolítása](#removal-of-tags-alias)
 - [Az AzureRM.Compute-parancsmagok kompatibilitástörő változásai](#breaking-changes-to-azurermcompute-cmdlets)
 - [Az AzureRM.DataLakeStore-parancsmagok kompatibilitástörő változásai](#breaking-changes-to-azurermdatalakestore-cmdlets)
