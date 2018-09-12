@@ -7,19 +7,68 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
-ms.date: 5/1/2018
-ms.openlocfilehash: 6043d17df1b5e91521bad31e65372c10ee6a5c6a
-ms.sourcegitcommit: dca906e73e943aac207cee23b79915773419c673
+ms.date: 08/28/2018
+ms.openlocfilehash: f4f3141998be14f0b5b223aed1af283534bf061d
+ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43250426"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43383838"
 ---
 # <a name="release-notes"></a>Kibocsátási megjegyzések
 
 Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítások listája olvasható.
 
 ---
+## <a name="681---august-2018"></a>6.8.1 – 2018. augusztus
+#### <a name="general"></a>Általános kérdések
+* Ki lett javítva az alapértelmezett erőforráscsoportok beállításának hiányával kapcsolatos hiba.
+* Frissített közös futtatókörnyezeti szerelvények
+
+#### <a name="azurermapimanagement"></a>AzureRM.ApiManagement
+* Ki lett javítva az alapértelmezett erőforráscsoportok beállításának hiányával kapcsolatos hiba.
+* Hiba kijavítva: https://github.com/Azure/azure-powershell/issues/6603
+    - Az Import-AzureRmApiManagementApi és az *-AzureRmApiManagementCertificate parancsmagok már tudják kezelni a relatív elérési utakat
+* Hiba kijavítva: https://github.com/Azure/azure-powershell/issues/6879
+    - A CertificateInformation egy beállítható tulajdonság, amely a Set-AzureRmApiManagement parancsmag megfelelő működését biztosítja. Javítva a nuget 4.0.4-es előzetes verziójára való frissítéssel
+* Hiba kijavítva: https://github.com/Azure/azure-powershell/issues/6853
+    - A termékben való név szerinti kereséshez tartozó Odata-szűrő kijavítva
+* Hiba kijavítva: https://github.com/Azure/azure-powershell/issues/6814
+    - Az API-ban való név szerinti kereséshez tartozó Odata-szűrő kijavítva
+* Az AzureMonitor támogatása hozzáadva
+
+
+#### <a name="azurermcompute"></a>AzureRM.Compute
+* Ki lett javítva a hibakimenetből hiányzó céllal kapcsolatos hiba.
+* Ki lett javítva a felügyelt lemezekkel rendelkező virtuális gépek tárfióktípusával kapcsolatos hiba
+* Ki lett javítva az alapértelmezett erőforráscsoportok beállításának hiányával kapcsolatos hiba.
+* Ki lettek javítva az AEM Extension-parancsmagok az egyéb környezetekben (pl. Azure China)
+
+#### <a name="azurermnetwork"></a>AzureRM.Network
+* A parancsmagkimenetek alapértelmezett ábrázolása táblanézetre módosítva
+
+#### <a name="azurermpowerbiembedded"></a>AzureRM.PowerBIEmbedded
+* Ki lett javítva az a hiba, amely az Update-AzureRmPowerBIEmbeddedCapacity kapcsán jelentkezett a felfüggesztett kapacitás méretezésére tett kísérlet során
+
+
+#### <a name="azurermresources"></a>AzureRM.Resources
+* Ki lett javítva a felügyelt alkalmazások Marketplace-ről való létrehozásával kapcsolatos hiba.
+
+#### <a name="azurermservicebus"></a>AzureRM.ServiceBus
+* Hibák kijavítva:
+    - https://github.com/Azure/azure-powershell/issues/5058
+    - https://github.com/Azure/azure-powershell/issues/5055
+    - https://github.com/Azure/azure-powershell/issues/6891
+
+#### <a name="azurermtrafficmanager"></a>AzureRM.TrafficManager
+* A MultiValue útválasztási módszer támogatása hozzáadva
+    - Új paraméter A MultiValue-útválasztáshoz: MaxReturn
+* Az alhálózati útválasztási módszer támogatása hozzáadva
+    - IP-címtartományok (alhálózatok) támogatása a végpontokon
+* Egyéni fejlécek profilokban való támogatása hozzáadva
+* Várt állapotkód-tartományok profilokban való támogatása hozzáadva
+* Egyéni fejlécek végpontokon való támogatása hozzáadva
+
 ## <a name="680---august-2018"></a>6.8.0 – 2018. augusztus
 #### <a name="general"></a>Általános kérdések
 * Ki lett javítva az alapértelmezett erőforráscsoportok beállításának hiányával kapcsolatos hiba.
