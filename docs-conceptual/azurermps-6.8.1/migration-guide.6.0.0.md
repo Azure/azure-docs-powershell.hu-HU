@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 72a0e9ca8562dc06a1fe2718658172ce9ee20f0e
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.openlocfilehash: 227bec0f7eb24b0941e9e21d37524b290c4b83a5
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43383940"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46304165"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>A Microsoft Azure PowerShell 6.0.0 kompatibilitástörő változásai
 
@@ -41,11 +41,11 @@ Ez a dokumentum egyrészt értesítőül szolgál a használhatatlanná tévő v
 
 ### <a name="minimum-powershell-version-required-bumped-to-50"></a>PowerShell minimálisan szükséges verziója: 5.0
 
-Korábban az Azure PowerShellnek _legalább_ a PowerShell 3.0-s verziójára volt szüksége bármely parancsmag futtatásához. A továbbiakban ez a követelmény a PowerShell 5.0-s verziójára változik. A PowerShell 5.0-s verziójára történő frissítéssel kapcsolatos információkért lásd [ezt a táblázatot](https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
+Korábban az Azure PowerShellnek _legalább_ a PowerShell 3.0-s verziójára volt szüksége bármely parancsmag futtatásához. A továbbiakban ez a követelmény a PowerShell 5.0-s verziójára változik. A PowerShell 5.0-s verziójára történő frissítéssel kapcsolatos információkért lásd [ezt a táblázatot](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
 
 ### <a name="context-autosave-enabled-by-default"></a>Környezet alapértelmezés szerinti automatikus mentése
 
-A környezet automatikus mentése azon Azure-beli bejelentkezési adatok tárolását jelenti, amelyek a PowerShell új és eltérő munkamenetei között használhatók. A környezet automatikus mentéséről további információt [ebben a dokumentumban](https://docs.microsoft.com/en-us/powershell/azure/context-persistence) talál.
+A környezet automatikus mentése azon Azure-beli bejelentkezési adatok tárolását jelenti, amelyek a PowerShell új és eltérő munkamenetei között használhatók. A környezet automatikus mentéséről további információt [ebben a dokumentumban](https://docs.microsoft.com/powershell/azure/context-persistence) talál.
 
 A környezet automatikus mentése le volt tiltva korábban alapértelmezés szerint le volt tiltva, ami azt jelentette, hogy a felhasználó Azure-beli hitelesítési adatait nem tárolta a rendszer a munkamenetek között, amíg a környezetmegőrzést engedélyező `Enable-AzureRmContextAutosave` parancsmag nem lett futtatva. Ezután a környezet automatikus mentése alapértelmezés szerint engedélyezve lesz, ami azt jelenti, hogy a _környezet automatikus mentésére vonatkozó beállításokkal nem rendelkező felhasználók_ esetén a környezet a következő bejelentkezéstől kezdve lesz tárolva. Ezt a funkciót a `Disable-AzureRmContextAutosave` parancsmag használatával lehet felülbírálni.
 
@@ -255,8 +255,8 @@ Remove-AzureRmDataLakeStoreItem -Account "ContosoADL" -path /myFolder -Recurse
 - A parancsmag többé már nem fogad olyan paramétereket, amelyek a hozzáférési jogkivonatot határozzák meg. Ehelyett a parancsmag lecseréli az olyan kifejezett jogkivonat-paramétereket, mint a `Service` és a `Permissions` egy általános `TemplateUri` paraméterre, amely egy máshol (valószínűleg Storage PowerShell-parancsmagokkal vagy a Storage-dokumentáció alapján manuálisan) meghatározott hozzáférési mintajogkivonatnak feleltethető meg. A parancsmag megőrzi a `ValidityPeriod` paramétert.
 
 Az Azure Storage megosztott hozzáférési jogkivonatok létrehozásával kapcsolatos további információiért tekintse meg az alábbi dokumentációs oldalakat:
-- [SAS-szolgáltatás létrehozása] (https://docs.microsoft.com/en-us/rest/api/storageservices/Constructing-a-Service-SAS)
-- [SAS-fiók létrehozása] (https://docs.microsoft.com/en-us/rest/api/storageservices/constructing-an-account-sas)
+- [SAS-szolgáltatás létrehozása] (https://docs.microsoft.com/rest/api/storageservices/Constructing-a-Service-SAS)
+- [SAS-fiók létrehozása] (https://docs.microsoft.com/rest/api/storageservices/constructing-an-account-sas)
 
 ```powershell
 # Old
