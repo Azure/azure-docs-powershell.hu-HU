@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: caacf32af78b98e8d9d455a8c4dd0bbb698d355f
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 71a2554052f5a25ea86fe44b6dcf5d9343c81f3e
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024579"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46301105"
 ---
 # <a name="log-in-with-azure-powershell"></a>Bejelentkezés az Azure PowerShell-lel
 
@@ -51,11 +51,11 @@ A szolgáltatásnevek használatával nem interaktív fiókokat hozhat létre az
     CurrentStorageAccount :
     ```
 
-### <a name="log-in-using-an-azure-vm-managed-service-identity"></a>Bejelentkezés Azure-beli virtuális gépek felügyeltszolgáltatás-identitásaival
+### <a name="log-in-using-managed-identities-for-azure-resources"></a>Bejelentkezés Azure-erőforrások felügyelt identitásaival
 
-A Felügyeltszolgáltatás-identitás (MSI) az Azure Active Directory előzetes verzióként elérhető funkciója. Az MSI szolgáltatásnevekkel bejelentkezhet, és beszerezhet egy csak alkalmazásra érvényes hozzáférési jogkivonatot az egyéb erőforrások eléréséhez.
+A Azure-erőforrások felügyelt identitása az Azure Active Directory egy funkciója. A felügyelt identitás szolgáltatásnevével bejelentkezhet, és beszerezhet egy csak alkalmazásra érvényes hozzáférési jogkivonatot az egyéb erőforrások eléréséhez.
 
-További információ az MSI-ről: [Az Azure-beli virtuális gépek felügyeltszolgáltatás-identitásának (MSI) használata bejelentkezéshez és jogkivonat beszerzéséhez](/azure/active-directory/msi-how-to-get-access-token-using-msi).
+Az Azure-erőforrások felügyelt identitásairól [a hozzáférési jogkivonatok egy Azure-beli virtuális gép Azure-erőforrásainak felügyelt identitásaival való beszerzését ismertető részben](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token) talál.
 
 ## <a name="log-in-to-another-cloud"></a>Bejelentkezés egy másik felhőbe
 

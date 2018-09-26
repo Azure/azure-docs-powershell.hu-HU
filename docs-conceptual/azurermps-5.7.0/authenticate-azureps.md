@@ -1,18 +1,18 @@
 ---
 title: Bejelentkezés az Azure PowerShell-lel
-description: Hogyan lehet bejelentkezni az Azure PowerShellbe felhasználóként, szolgáltatásnévként vagy MSI-ként.
+description: Hogyan lehet bejelentkezni az Azure PowerShellbe felhasználóként, szolgáltatásnévként vagy az Azure-erőforrások felügyelt identitásaival.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: af39fec226492c9ccf251c996b57e274de783178
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 530eafcd0d14dbfd790a22d80c5922f304f4e0b2
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100273"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46300697"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Bejelentkezés az Azure PowerShell-lel
 
@@ -44,11 +44,11 @@ $pscredential = Get-Credential
 Connect-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
 ```
 
-## <a name="sign-in-using-an-azure-vm-managed-service-identity"></a>Bejelentkezés Azure-beli virtuális gépek Managed Service Identityjével
+## <a name="sign-in-using-managed-identities-for-azure-resources"></a>Bejelentkezés az Azure-erőforrások felügyelt identitásaival
 
-A Felügyeltszolgáltatás-identitás (MSI) az Azure Active Directory előzetes verzióként elérhető funkciója. Az MSI szolgáltatásnevekkel bejelentkezhet, és beszerezhet egy csak alkalmazásra érvényes hozzáférési jogkivonatot az egyéb erőforrások eléréséhez. Az MSI csak az Azure-felhőben futó virtuális gépeken érhető el.
+A Azure-erőforrások felügyelt identitása az Azure Active Directory egy funkciója. A felügyelt identitás szolgáltatásnevével bejelentkezhet, és beszerezhet egy csak alkalmazásra érvényes hozzáférési jogkivonatot az egyéb erőforrások eléréséhez. A felügyelt identitások csak az Azure-felhőben futó virtuális gépeken érhetők el.
 
-További információ az MSI-ről: [Az Azure-beli virtuális gépek felügyeltszolgáltatás-identitásának (MSI) használata bejelentkezéshez és jogkivonat beszerzéséhez](/azure/active-directory/msi-how-to-get-access-token-using-msi).
+Az Azure-erőforrások felügyelt identitásairól [a hozzáférési jogkivonatok egy Azure-beli virtuális gép Azure-erőforrásainak felügyelt identitásaival való beszerzését ismertető részben](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token) talál.
 
 ## <a name="sign-in-to-another-cloud"></a>Bejelentkezés egy másik felhőbe
 
