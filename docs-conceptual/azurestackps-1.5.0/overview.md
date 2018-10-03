@@ -8,28 +8,24 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: 72d147f5bc9c882083dda6b33b1c89663fd2eb34
+ms.openlocfilehash: 18861f0e5232e0b505767aa9609099afe88f9477
 ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
 ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 09/27/2018
-ms.locfileid: "47178799"
+ms.locfileid: "47178629"
 ---
-# <a name="azure-stack-module-140"></a>Azure Stack modul 1.4.0
+# <a name="azure-stack-module-150"></a>Azure Stack 1.5.0-s modul
 
 ## <a name="requirements"></a>Követelmények:
-A minimális támogatott Azure Stack-verzió a 1804-es.
+A minimális támogatott Azure Stack-verzió az 1808-as.
 
-Megjegyzés: korábbi verzió használata esetén az 1.2.11-es verziót telepítse
+Megjegyzés: Korábbi verzió használata esetén telepítse az 1.4.0-s verziót
 
 ## <a name="known-issues"></a>Ismert problémák:
 
-- A Riasztás bezárása művelethez az Azure Stack 1803-as verziója szükséges
 - A New-AzsOffer nem teszi lehetővé nyilvános állapotú ajánlatok létrehozását. Utána meg kell hívni a Set-AzsOffer parancsmagot az állapot módosítására.
 - Az IP-készleteket nem lehet eltávolítani újratelepítés nélkül
-
-## <a name="breaking-changes"></a>Kompatibilitástörő változások
-Nincsenek kompatibilitástörő változások az 1.3.0-s verzióhoz képest. A 1.2.11-es verzióból migrált összes kompatibilitástörő változást itt találja: https://aka.ms/azspowershellmigration
 
 ## <a name="install"></a>Telepítés
 ```
@@ -44,39 +40,30 @@ Get-Module Azs.* -ListAvailable | Uninstall-Module -Force
 Install-Module -Name AzureRm.BootStrapper
 
 # Install and import the API Version Profile required by Azure Stack into the current PowerShell session.
-Use-AzureRmProfile -Profile 2017-03-09-profile -Force
+Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 
 # Install Azure Stack Admin Module
-Install-Module -Name AzureStack -RequiredVersion 1.4.0
+Install-Module -Name AzureStack -RequiredVersion 1.5.0
 ```
-## <a name="release-notes"></a>Kibocsátási megjegyzések
-    * Az Azurestack 1.4.0-s verzióban nincsenek kompatibilitástörő változások a korábbi, 1.3.0-s kiadáshoz képest.
-    * Azs.AzureBridge.Admin
-        - Ki lett javítva az a hiba, amely miatt többlapos eredmények esetén a rendszer csak egyetlen lapot jelenített meg eredményként.
-    * Azs.Backup.Admin
-        - A Set-AzsBackupShare parancsmagban a következő új paraméterek érhetőek el: BackupFrequencyInHours, IsBackupSchedulerEnabled és BackupRetentionPeriodInDays.
-        - Az új New-EncyptionKeyBase64 parancsmag megkönnyíti titkosítási kulcsok készítését.
-        - Ki lett javítva az a hiba, amely miatt többlapos eredmények esetén a rendszer csak egyetlen lapot jelenített meg eredményként.
-    * Azs.Commerce.Admin
-        - Ki lett javítva az a hiba, amely miatt többlapos eredmények esetén a rendszer csak egyetlen lapot jelenített meg eredményként.
-    * Azs.Fabric.Admin
-        - Ki lett javítva az a hiba, amely miatt többlapos eredmények esetén a rendszer csak egyetlen lapot jelenített meg eredményként.
-        - Az új Add-AzsScaleUnitNode parancsmaggal az adminisztrátorok új skálázásiegység-csomópontokat adhatnak az azurestack bélyegzőhöz.
-        - Az új parancsmag és a New-AzsScaleUnitNodeObject segítségével egyszerűbb létrehozni skálázásiegység-paraméter objektumokat.
-    * Azs.Gallery.Admin
-        - Ki lett javítva az a hiba, amely miatt többlapos eredmények esetén a rendszer csak egyetlen lapot jelenített meg eredményként.
-    * Azs.InfrastructureInsights.Admin
-        - Ki lett javítva az a hiba, amely miatt többlapos eredmények esetén a rendszer csak egyetlen lapot jelenített meg eredményként.
-    * Azs.Network.Admin
-        - Ki lett javítva az a hiba, amely miatt többlapos eredmények esetén a rendszer csak egyetlen lapot jelenített meg eredményként.
-    * Azs.Update.Admin
-        - Ki lett javítva az a hiba, amely miatt többlapos eredmények esetén a rendszer csak egyetlen lapot jelenített meg eredményként.
-    * Azs.Subscriptions
-        - Ki lett javítva az a hiba, amely miatt többlapos eredmények esetén a rendszer csak egyetlen lapot jelenített meg eredményként.
-    * Azs.Subscriptions.Admin
-        - Az új Move-AzsSubscription parancsmaggal az előfizetések áthelyezhetőek a delegált szolgáltatói ajánlatok között.
-        - Az új Test-AzsMoveSubscription parancsmaggal ellenőrizhető, hogy a felhasználói előfizetések áthelyezhetőek-e a delegált szolgáltatói ajánlatok között.
-        - Ki lett javítva az a hiba, amely miatt többlapos eredmények esetén a rendszer csak egyetlen lapot jelenített meg eredményként.
+
+##<a name="release-notes"></a>Kibocsátási megjegyzések
+* Minden Azure Stack Admin-modul függősége nagyobb vagy egyenlő lett az AzureRM.Profile-modulhoz viszonyítva
+* Beágyazotterőforrás-nevek támogatása minden modulban
+* Hibajavítás minden olyan modulban, amelyben az ErrorActionPreference felül lett bírálva Stopként
+* Azs.Compute.Admin modul
+    * Új kvótatulajdonságok hozzáadva a felügyelt lemez támogatásához
+    * Lemezmigráláshoz kapcsolódó parancsmagok hozzáadva
+    * További tulajdonságok a platformrendszerkép- és a VM-bővítmény-objektumokban
+* Azs.Fabric.Admin 
+    * Új parancsmag skálázásiegység-csomópontok hozzáadásához
+* Azs.Backup.Admin
+    * A Set-AzsBackupShare most már egy alias a Set-AzsBackupConfiguration parancsmagra
+    * A Get-AzsBackupLocation most már egy alias a Get-AzsBackupConfiguration parancsmagra
+    * A Set-AzsBackupConfiguration, a BackupShare paraméter most már egy alias a paraméter-útvonalra
+* Azs.Subscriptions
+    * A Get-AzsDelegatedProviderOffer, az OfferName paraméter most már egy alias az Offerre
+* Azs.Subscriptions.Admin
+    * A Get-AzsDelegatedProviderOffer, az OfferName paraméter most már egy alias az Offerre
 
 ## <a name="content"></a>Tartalom:
 ### <a name="azure-bridge"></a>Azure Bridge
@@ -92,7 +79,7 @@ A Backup felügyeleti modul előzetes kiadása, amelynek segítségével a rends
 Az Azure Stack Commerce felügyeleti modul előzetes kiadása, amely lehetővé teszi az összesített adathasználat megtekintését a teljes Azure Stack rendszerben.
 
 ### <a name="compute"></a>Compute
-Az Azure Stack Compute felügyeleti modul előzetes kiadása, amely a számítási kvóták, platform-rendszerképek és virtuálisgép-bővítmények felügyeletéhez szükséges funkciókat biztosít.
+Az Azure Stack Compute felügyeleti modul előzetes kiadása, amely a számítási kvóták, platformrendszerképek, felügyelt lemezek és virtuálisgép-bővítmények felügyeletéhez szükséges funkciókat biztosít.
 
 ### <a name="fabric"></a>Fabric
 Az Azure Stack Fabric felügyeleti modul előzetes kiadása, amelynek segítségével a rendszergazda megtekintheti és felügyelheti az infrastruktúra-összetevőket:
@@ -102,6 +89,7 @@ Az Azure Stack Fabric felügyeleti modul előzetes kiadása, amelynek segítség
 - Infrastruktúra-szerepkör újraindítása
 - Infrastruktúra-szerepkörpéldányok leállítása, indítása és lekapcsolása
 - Új IP-készletek létrehozása
+
 
 ### <a name="gallery"></a>Katalógus
 Az Azure Stack Gallery felügyeleti modul előzetes kiadása, amely a katalóguselemek az Azure Stack-piactéren való felügyeletéhez szükséges funkciókat biztosít.

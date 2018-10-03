@@ -1,6 +1,6 @@
 ---
-title: Az Azure Stack Admin PowerShell áttekintése | Microsoft Docs
-description: Az Azure Stack Admin PowerShell áttekintése telepítési és konfigurációs utasításokkal.
+title: Az Azure Stack PowerShell áttekintése | Microsoft Docs
+description: Az Azure Stack PowerShell áttekintése telepítési és konfigurációs utasításokkal.
 author: bganapa
 ms.author: bganapa
 manager: knithinc
@@ -8,75 +8,52 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: 72d147f5bc9c882083dda6b33b1c89663fd2eb34
+ms.openlocfilehash: d514e43d82bcb51f65831dc506e58e8747db0381
 ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
 ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 09/27/2018
-ms.locfileid: "47178799"
+ms.locfileid: "47178459"
 ---
-# <a name="azure-stack-module-140"></a>Azure Stack modul 1.4.0
+# <a name="azurerm-module-230"></a>AzureRM 2.3.0-s modul
 
 ## <a name="requirements"></a>Követelmények:
-A minimális támogatott Azure Stack-verzió a 1804-es.
+A minimális támogatott Azure Stack-verzió az 1808-as.
 
 Megjegyzés: korábbi verzió használata esetén az 1.2.11-es verziót telepítse
 
-## <a name="known-issues"></a>Ismert problémák:
-
-- A Riasztás bezárása művelethez az Azure Stack 1803-as verziója szükséges
-- A New-AzsOffer nem teszi lehetővé nyilvános állapotú ajánlatok létrehozását. Utána meg kell hívni a Set-AzsOffer parancsmagot az állapot módosítására.
-- Az IP-készleteket nem lehet eltávolítani újratelepítés nélkül
-
-## <a name="breaking-changes"></a>Kompatibilitástörő változások
-Nincsenek kompatibilitástörő változások az 1.3.0-s verzióhoz képest. A 1.2.11-es verzióból migrált összes kompatibilitástörő változást itt találja: https://aka.ms/azspowershellmigration
 
 ## <a name="install"></a>Telepítés
-```
+```powershell
 # Remove previous versions of AzureStack modules
 Uninstall-Module -Name AzureStack -Force 
-Uninstall-Module AzureRM.AzureStackAdmin -Force
-Uninstall-Module AzureRM.AzureStackStorage -Force
+Uninstall-Module -Name AzureRM -Force 
+Uninstall-Module AzureRM.AzureStackAdmin -Force -ErrorAction Continue
+Uninstall-Module AzureRM.AzureStackStorage -Force -ErrorAction Continue
 Get-Module Azs.* -ListAvailable | Uninstall-Module -Force
+Get-Module Azure.* -ListAvailable | Uninstall-Module -Force
 
 
 # Install the AzureRM.Bootstrapper module. Select Yes when prompted to install NuGet
 Install-Module -Name AzureRm.BootStrapper
 
 # Install and import the API Version Profile required by Azure Stack into the current PowerShell session.
-Use-AzureRmProfile -Profile 2017-03-09-profile -Force
+Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 
-# Install Azure Stack Admin Module
-Install-Module -Name AzureStack -RequiredVersion 1.4.0
 ```
-## <a name="release-notes"></a>Kibocsátási megjegyzések
-    * Az Azurestack 1.4.0-s verzióban nincsenek kompatibilitástörő változások a korábbi, 1.3.0-s kiadáshoz képest.
-    * Azs.AzureBridge.Admin
-        - Ki lett javítva az a hiba, amely miatt többlapos eredmények esetén a rendszer csak egyetlen lapot jelenített meg eredményként.
-    * Azs.Backup.Admin
-        - A Set-AzsBackupShare parancsmagban a következő új paraméterek érhetőek el: BackupFrequencyInHours, IsBackupSchedulerEnabled és BackupRetentionPeriodInDays.
-        - Az új New-EncyptionKeyBase64 parancsmag megkönnyíti titkosítási kulcsok készítését.
-        - Ki lett javítva az a hiba, amely miatt többlapos eredmények esetén a rendszer csak egyetlen lapot jelenített meg eredményként.
-    * Azs.Commerce.Admin
-        - Ki lett javítva az a hiba, amely miatt többlapos eredmények esetén a rendszer csak egyetlen lapot jelenített meg eredményként.
-    * Azs.Fabric.Admin
-        - Ki lett javítva az a hiba, amely miatt többlapos eredmények esetén a rendszer csak egyetlen lapot jelenített meg eredményként.
-        - Az új Add-AzsScaleUnitNode parancsmaggal az adminisztrátorok új skálázásiegység-csomópontokat adhatnak az azurestack bélyegzőhöz.
-        - Az új parancsmag és a New-AzsScaleUnitNodeObject segítségével egyszerűbb létrehozni skálázásiegység-paraméter objektumokat.
-    * Azs.Gallery.Admin
-        - Ki lett javítva az a hiba, amely miatt többlapos eredmények esetén a rendszer csak egyetlen lapot jelenített meg eredményként.
-    * Azs.InfrastructureInsights.Admin
-        - Ki lett javítva az a hiba, amely miatt többlapos eredmények esetén a rendszer csak egyetlen lapot jelenített meg eredményként.
-    * Azs.Network.Admin
-        - Ki lett javítva az a hiba, amely miatt többlapos eredmények esetén a rendszer csak egyetlen lapot jelenített meg eredményként.
-    * Azs.Update.Admin
-        - Ki lett javítva az a hiba, amely miatt többlapos eredmények esetén a rendszer csak egyetlen lapot jelenített meg eredményként.
-    * Azs.Subscriptions
-        - Ki lett javítva az a hiba, amely miatt többlapos eredmények esetén a rendszer csak egyetlen lapot jelenített meg eredményként.
-    * Azs.Subscriptions.Admin
-        - Az új Move-AzsSubscription parancsmaggal az előfizetések áthelyezhetőek a delegált szolgáltatói ajánlatok között.
-        - Az új Test-AzsMoveSubscription parancsmaggal ellenőrizhető, hogy a felhasználói előfizetések áthelyezhetőek-e a delegált szolgáltatói ajánlatok között.
-        - Ki lett javítva az a hiba, amely miatt többlapos eredmények esetén a rendszer csak egyetlen lapot jelenített meg eredményként.
+
+##<a name="release-notes"></a>Kibocsátási megjegyzések
+* A 2.3.0-s kiadás tartalmaz egy listát a kompatibilitástörő változásokról. Az 1.2.11-es verzióról történő frissítéshez készítettünk egy migrálási útmutatót a következő helyen: https://aka.ms/azspowershellmigration
+* Ez a kiadás megegyezik a 2018-03-01-hybrid Azure Stack-specifikus API profillal.
+* Minden modul függősége nagyobb vagy egyenlő lett az AzureRM.Profile-modulhoz viszonyítva.
+* A modulok által támogatott API-verziók frissítve lettek. 
+    * Számítás – 2017-03-30
+    * Hálózat – 2017-10-01
+    * Tárolás – 2016-01-01
+    * Erőforrások – 2018-02-01
+    * Kulcstartó – 2016-10-01
+    * DNS – 2016-04-01
+* A teljes API-verziótérkép az egyes erőforrástípusokhoz megtalálható a következő helyen: https://github.com/Azure/azure-rest-api-specs/blob/master/profile/2018-03-01-hybrid.json.
 
 ## <a name="content"></a>Tartalom:
 ### <a name="azure-bridge"></a>Azure Bridge
@@ -92,7 +69,7 @@ A Backup felügyeleti modul előzetes kiadása, amelynek segítségével a rends
 Az Azure Stack Commerce felügyeleti modul előzetes kiadása, amely lehetővé teszi az összesített adathasználat megtekintését a teljes Azure Stack rendszerben.
 
 ### <a name="compute"></a>Compute
-Az Azure Stack Compute felügyeleti modul előzetes kiadása, amely a számítási kvóták, platform-rendszerképek és virtuálisgép-bővítmények felügyeletéhez szükséges funkciókat biztosít.
+Az Azure Stack Compute felügyeleti modul előzetes kiadása, amely a számítási kvóták, platformrendszerképek, felügyelt lemezek és virtuálisgép-bővítmények felügyeletéhez szükséges funkciókat biztosít.
 
 ### <a name="fabric"></a>Fabric
 Az Azure Stack Fabric felügyeleti modul előzetes kiadása, amelynek segítségével a rendszergazda megtekintheti és felügyelheti az infrastruktúra-összetevőket:
@@ -102,6 +79,7 @@ Az Azure Stack Fabric felügyeleti modul előzetes kiadása, amelynek segítség
 - Infrastruktúra-szerepkör újraindítása
 - Infrastruktúra-szerepkörpéldányok leállítása, indítása és lekapcsolása
 - Új IP-készletek létrehozása
+
 
 ### <a name="gallery"></a>Katalógus
 Az Azure Stack Gallery felügyeleti modul előzetes kiadása, amely a katalóguselemek az Azure Stack-piactéren való felügyeletéhez szükséges funkciókat biztosít.
