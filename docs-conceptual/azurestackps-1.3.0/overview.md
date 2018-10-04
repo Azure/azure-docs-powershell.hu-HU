@@ -9,30 +9,30 @@ ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
 ms.openlocfilehash: fb892daeafb1365ea62324392ac806cf9f3d39cf
-ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
+ms.sourcegitcommit: 6c38e86e16da99f65cd183c63e34f7176b121ab8
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47179139"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "47424547"
 ---
-# <a name="azure-stack-module-130"></a><span data-ttu-id="c7bad-103">Azure Stack modul 1.3.0</span><span class="sxs-lookup"><span data-stu-id="c7bad-103">Azure Stack Module 1.3.0</span></span>
+# <a name="azure-stack-module-130"></a><span data-ttu-id="fe003-103">Azure Stack modul 1.3.0</span><span class="sxs-lookup"><span data-stu-id="fe003-103">Azure Stack Module 1.3.0</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="c7bad-104">Követelmények:</span><span class="sxs-lookup"><span data-stu-id="c7bad-104">Requirements:</span></span>
-<span data-ttu-id="c7bad-105">A minimális támogatott Azure Stack-verzió a 1804-es.</span><span class="sxs-lookup"><span data-stu-id="c7bad-105">Minimum supported Azure Stack version is 1804.</span></span>
+## <a name="requirements"></a><span data-ttu-id="fe003-104">Követelmények:</span><span class="sxs-lookup"><span data-stu-id="fe003-104">Requirements:</span></span>
+<span data-ttu-id="fe003-105">A minimális támogatott Azure Stack-verzió a 1804-es.</span><span class="sxs-lookup"><span data-stu-id="fe003-105">Minimum supported Azure Stack version is 1804.</span></span>
 
-<span data-ttu-id="c7bad-106">Megjegyzés: korábbi verzió használata esetén az 1.2.11-es verziót telepítse</span><span class="sxs-lookup"><span data-stu-id="c7bad-106">Note: If you are using an earlier version install version 1.2.11</span></span>
+<span data-ttu-id="fe003-106">Megjegyzés: korábbi verzió használata esetén az 1.2.11-es verziót telepítse</span><span class="sxs-lookup"><span data-stu-id="fe003-106">Note: If you are using an earlier version install version 1.2.11</span></span>
 
-## <a name="known-issues"></a><span data-ttu-id="c7bad-107">Ismert problémák:</span><span class="sxs-lookup"><span data-stu-id="c7bad-107">Known issues:</span></span>
+## <a name="known-issues"></a><span data-ttu-id="fe003-107">Ismert problémák:</span><span class="sxs-lookup"><span data-stu-id="fe003-107">Known issues:</span></span>
 
-- <span data-ttu-id="c7bad-108">A Riasztás bezárása művelethez az Azure Stack 1803-as verziója szükséges</span><span class="sxs-lookup"><span data-stu-id="c7bad-108">Close Alert requires Azure Stack version 1803</span></span>
-- <span data-ttu-id="c7bad-109">Bizonyos Storage-parancsmagokhoz az Azure Stack 1804-es verziója szükséges</span><span class="sxs-lookup"><span data-stu-id="c7bad-109">Some Storage cmdlets do require Azure Stack version 1804</span></span>
-- <span data-ttu-id="c7bad-110">A New-AzsOffer nem teszi lehetővé nyilvános állapotú ajánlatok létrehozását.</span><span class="sxs-lookup"><span data-stu-id="c7bad-110">New-AzsOffer does not allow to create an offer with state public.</span></span> <span data-ttu-id="c7bad-111">Utána meg kell hívni a Set-AzsOffer parancsmagot az állapot módosítására.</span><span class="sxs-lookup"><span data-stu-id="c7bad-111">The Set-AzsOffer cmdlet needs to be called afterwards to change the state.</span></span>
-- <span data-ttu-id="c7bad-112">Az IP-készleteket nem lehet eltávolítani újratelepítés nélkül</span><span class="sxs-lookup"><span data-stu-id="c7bad-112">An IP Pool cannot be removed without a redeployment</span></span>
+- <span data-ttu-id="fe003-108">A Riasztás bezárása művelethez az Azure Stack 1803-as verziója szükséges</span><span class="sxs-lookup"><span data-stu-id="fe003-108">Close Alert requires Azure Stack version 1803</span></span>
+- <span data-ttu-id="fe003-109">Bizonyos Storage-parancsmagokhoz az Azure Stack 1804-es verziója szükséges</span><span class="sxs-lookup"><span data-stu-id="fe003-109">Some Storage cmdlets do require Azure Stack version 1804</span></span>
+- <span data-ttu-id="fe003-110">A New-AzsOffer nem teszi lehetővé nyilvános állapotú ajánlatok létrehozását.</span><span class="sxs-lookup"><span data-stu-id="fe003-110">New-AzsOffer does not allow to create an offer with state public.</span></span> <span data-ttu-id="fe003-111">Utána meg kell hívni a Set-AzsOffer parancsmagot az állapot módosítására.</span><span class="sxs-lookup"><span data-stu-id="fe003-111">The Set-AzsOffer cmdlet needs to be called afterwards to change the state.</span></span>
+- <span data-ttu-id="fe003-112">Az IP-készleteket nem lehet eltávolítani újratelepítés nélkül</span><span class="sxs-lookup"><span data-stu-id="fe003-112">An IP Pool cannot be removed without a redeployment</span></span>
 
-## <a name="breaking-changes"></a><span data-ttu-id="c7bad-113">Kompatibilitástörő változások</span><span class="sxs-lookup"><span data-stu-id="c7bad-113">Breaking Changes</span></span>
-<span data-ttu-id="c7bad-114">A 1.2.11-es verzióból migrált összes kompatibilitástörő változást itt találja: https://aka.ms/azspowershellmigration</span><span class="sxs-lookup"><span data-stu-id="c7bad-114">All breaking changes migrating from 1.2.11 are documented here https://aka.ms/azspowershellmigration</span></span>
+## <a name="breaking-changes"></a><span data-ttu-id="fe003-113">Kompatibilitástörő változások</span><span class="sxs-lookup"><span data-stu-id="fe003-113">Breaking Changes</span></span>
+<span data-ttu-id="fe003-114">A 1.2.11-es verzióból migrált összes kompatibilitástörő változást itt találja: https://aka.ms/azspowershellmigration</span><span class="sxs-lookup"><span data-stu-id="fe003-114">All breaking changes migrating from 1.2.11 are documented here https://aka.ms/azspowershellmigration</span></span>
 
-## <a name="install"></a><span data-ttu-id="c7bad-115">Telepítés</span><span class="sxs-lookup"><span data-stu-id="c7bad-115">Install</span></span>
+## <a name="install"></a><span data-ttu-id="fe003-115">Telepítés</span><span class="sxs-lookup"><span data-stu-id="fe003-115">Install</span></span>
 ```
 # Remove previous Versions
 Uninstall-Module AzureRM.AzureStackAdmin -Force
@@ -49,70 +49,70 @@ Use-AzureRmProfile -Profile 2017-03-09-profile -Force
 # Install Azure Stack Admin Module
 Install-Module -Name AzureStack -RequiredVersion 1.3.0
 ```
-## <a name="content"></a><span data-ttu-id="c7bad-116">Tartalom:</span><span class="sxs-lookup"><span data-stu-id="c7bad-116">Content:</span></span>
-### <a name="azure-bridge"></a><span data-ttu-id="c7bad-117">Azure Bridge</span><span class="sxs-lookup"><span data-stu-id="c7bad-117">Azure Bridge</span></span>
-<span data-ttu-id="c7bad-118">Az Azure Stack AzureBridge felügyeleti moduljának előzetes kiadása, amelynek segítségével rendszerképeket tehet közzé az Azure-ból.</span><span class="sxs-lookup"><span data-stu-id="c7bad-118">Preview release of the Azure Stack AzureBridge administrator module which allows you to syndicate images from Azure.</span></span>
+## <a name="content"></a><span data-ttu-id="fe003-116">Tartalom:</span><span class="sxs-lookup"><span data-stu-id="fe003-116">Content:</span></span>
+### <a name="azure-bridge"></a><span data-ttu-id="fe003-117">Azure Bridge</span><span class="sxs-lookup"><span data-stu-id="fe003-117">Azure Bridge</span></span>
+<span data-ttu-id="fe003-118">Az Azure Stack AzureBridge felügyeleti moduljának előzetes kiadása, amelynek segítségével rendszerképeket tehet közzé az Azure-ból.</span><span class="sxs-lookup"><span data-stu-id="fe003-118">Preview release of the Azure Stack AzureBridge administrator module which allows you to syndicate images from Azure.</span></span>
 
-### <a name="backup"></a><span data-ttu-id="c7bad-119">Backup</span><span class="sxs-lookup"><span data-stu-id="c7bad-119">Backup</span></span>
-<span data-ttu-id="c7bad-120">A Backup felügyeleti modul előzetes kiadása, amelynek segítségével a rendszergazda:</span><span class="sxs-lookup"><span data-stu-id="c7bad-120">Preview release of the Backup administrator module that allows administrators to:</span></span>
-- <span data-ttu-id="c7bad-121">Konfigurálhatja a biztonsági másolatok tárolási helyét</span><span class="sxs-lookup"><span data-stu-id="c7bad-121">Configure where backups are stored</span></span>
-- <span data-ttu-id="c7bad-122">Biztonsági mentéseket hajthat végre</span><span class="sxs-lookup"><span data-stu-id="c7bad-122">Perform backups</span></span>
-- <span data-ttu-id="c7bad-123">Listázhatja és visszaállíthatja az elkészült biztonsági másolatokat</span><span class="sxs-lookup"><span data-stu-id="c7bad-123">List and restore completed backup</span></span>
+### <a name="backup"></a><span data-ttu-id="fe003-119">Backup</span><span class="sxs-lookup"><span data-stu-id="fe003-119">Backup</span></span>
+<span data-ttu-id="fe003-120">A Backup felügyeleti modul előzetes kiadása, amelynek segítségével a rendszergazda:</span><span class="sxs-lookup"><span data-stu-id="fe003-120">Preview release of the Backup administrator module that allows administrators to:</span></span>
+- <span data-ttu-id="fe003-121">Konfigurálhatja a biztonsági másolatok tárolási helyét</span><span class="sxs-lookup"><span data-stu-id="fe003-121">Configure where backups are stored</span></span>
+- <span data-ttu-id="fe003-122">Biztonsági mentéseket hajthat végre</span><span class="sxs-lookup"><span data-stu-id="fe003-122">Perform backups</span></span>
+- <span data-ttu-id="fe003-123">Listázhatja és visszaállíthatja az elkészült biztonsági másolatokat</span><span class="sxs-lookup"><span data-stu-id="fe003-123">List and restore completed backup</span></span>
 
-### <a name="commerce"></a><span data-ttu-id="c7bad-124">Commerce</span><span class="sxs-lookup"><span data-stu-id="c7bad-124">Commerce</span></span>
-<span data-ttu-id="c7bad-125">Az Azure Stack Commerce felügyeleti modul előzetes kiadása, amely lehetővé teszi az összesített adathasználat megtekintését a teljes Azure Stack rendszerben.</span><span class="sxs-lookup"><span data-stu-id="c7bad-125">Preview release of the Azure Stack Commerce administrator module which provides a way to view aggregate data usage across your Azure Stack system.</span></span>
+### <a name="commerce"></a><span data-ttu-id="fe003-124">Commerce</span><span class="sxs-lookup"><span data-stu-id="fe003-124">Commerce</span></span>
+<span data-ttu-id="fe003-125">Az Azure Stack Commerce felügyeleti modul előzetes kiadása, amely lehetővé teszi az összesített adathasználat megtekintését a teljes Azure Stack rendszerben.</span><span class="sxs-lookup"><span data-stu-id="fe003-125">Preview release of the Azure Stack Commerce administrator module which provides a way to view aggregate data usage across your Azure Stack system.</span></span>
 
-### <a name="compute"></a><span data-ttu-id="c7bad-126">Compute</span><span class="sxs-lookup"><span data-stu-id="c7bad-126">Compute</span></span>
-<span data-ttu-id="c7bad-127">Az Azure Stack Compute felügyeleti modul előzetes kiadása, amely a számítási kvóták, platform-rendszerképek és virtuálisgép-bővítmények felügyeletéhez szükséges funkciókat biztosít.</span><span class="sxs-lookup"><span data-stu-id="c7bad-127">Preview release of the Azure Stack Compute administrator module which provides functionality to manage compute quotas, platform images, and virtual machine extensions.</span></span>
+### <a name="compute"></a><span data-ttu-id="fe003-126">Compute</span><span class="sxs-lookup"><span data-stu-id="fe003-126">Compute</span></span>
+<span data-ttu-id="fe003-127">Az Azure Stack Compute felügyeleti modul előzetes kiadása, amely a számítási kvóták, platform-rendszerképek és virtuálisgép-bővítmények felügyeletéhez szükséges funkciókat biztosít.</span><span class="sxs-lookup"><span data-stu-id="fe003-127">Preview release of the Azure Stack Compute administrator module which provides functionality to manage compute quotas, platform images, and virtual machine extensions.</span></span>
 
-### <a name="fabric"></a><span data-ttu-id="c7bad-128">Fabric</span><span class="sxs-lookup"><span data-stu-id="c7bad-128">Fabric</span></span>
-<span data-ttu-id="c7bad-129">Az Azure Stack Fabric felügyeleti modul előzetes kiadása, amelynek segítségével a rendszergazda megtekintheti és felügyelheti az infrastruktúra-összetevőket:</span><span class="sxs-lookup"><span data-stu-id="c7bad-129">Preview release of the Azure Stack Fabric administrator module which allows administrators to view and manage infrastructure components:</span></span>
-- <span data-ttu-id="c7bad-130">Skálázásiegység-csomópontok leállítása, indítása és lekapcsolása</span><span class="sxs-lookup"><span data-stu-id="c7bad-130">Stop, Start and Shutdown of scale unit nodes</span></span>
-- <span data-ttu-id="c7bad-131">Skálázásiegység-csomópontok kiürítése és folytatása az FRU-val kapcsolatos tevékenységekhez</span><span class="sxs-lookup"><span data-stu-id="c7bad-131">Drain and Resume of scale unit nodes for FRU related activities</span></span>
-- <span data-ttu-id="c7bad-132">Skálázásiegység-csomópontok javítása</span><span class="sxs-lookup"><span data-stu-id="c7bad-132">Repair of scale unit nodes</span></span>
-- <span data-ttu-id="c7bad-133">Infrastruktúra-szerepkör újraindítása</span><span class="sxs-lookup"><span data-stu-id="c7bad-133">Restart of Infrastructure role</span></span>
-- <span data-ttu-id="c7bad-134">Infrastruktúra-szerepkörpéldányok leállítása, indítása és lekapcsolása</span><span class="sxs-lookup"><span data-stu-id="c7bad-134">Stop, Start and Shutdown of Infrastructure role instances</span></span>
-- <span data-ttu-id="c7bad-135">Új IP-készletek létrehozása</span><span class="sxs-lookup"><span data-stu-id="c7bad-135">Create new IP Pools</span></span>
+### <a name="fabric"></a><span data-ttu-id="fe003-128">Fabric</span><span class="sxs-lookup"><span data-stu-id="fe003-128">Fabric</span></span>
+<span data-ttu-id="fe003-129">Az Azure Stack Fabric felügyeleti modul előzetes kiadása, amelynek segítségével a rendszergazda megtekintheti és felügyelheti az infrastruktúra-összetevőket:</span><span class="sxs-lookup"><span data-stu-id="fe003-129">Preview release of the Azure Stack Fabric administrator module which allows administrators to view and manage infrastructure components:</span></span>
+- <span data-ttu-id="fe003-130">Skálázásiegység-csomópontok leállítása, indítása és lekapcsolása</span><span class="sxs-lookup"><span data-stu-id="fe003-130">Stop, Start and Shutdown of scale unit nodes</span></span>
+- <span data-ttu-id="fe003-131">Skálázásiegység-csomópontok kiürítése és folytatása az FRU-val kapcsolatos tevékenységekhez</span><span class="sxs-lookup"><span data-stu-id="fe003-131">Drain and Resume of scale unit nodes for FRU related activities</span></span>
+- <span data-ttu-id="fe003-132">Skálázásiegység-csomópontok javítása</span><span class="sxs-lookup"><span data-stu-id="fe003-132">Repair of scale unit nodes</span></span>
+- <span data-ttu-id="fe003-133">Infrastruktúra-szerepkör újraindítása</span><span class="sxs-lookup"><span data-stu-id="fe003-133">Restart of Infrastructure role</span></span>
+- <span data-ttu-id="fe003-134">Infrastruktúra-szerepkörpéldányok leállítása, indítása és lekapcsolása</span><span class="sxs-lookup"><span data-stu-id="fe003-134">Stop, Start and Shutdown of Infrastructure role instances</span></span>
+- <span data-ttu-id="fe003-135">Új IP-készletek létrehozása</span><span class="sxs-lookup"><span data-stu-id="fe003-135">Create new IP Pools</span></span>
 
 
-### <a name="gallery"></a><span data-ttu-id="c7bad-136">Katalógus</span><span class="sxs-lookup"><span data-stu-id="c7bad-136">Gallery</span></span>
-<span data-ttu-id="c7bad-137">Az Azure Stack Gallery felügyeleti modul előzetes kiadása, amely a katalóguselemek az Azure Stack-piactéren való felügyeletéhez szükséges funkciókat biztosít.</span><span class="sxs-lookup"><span data-stu-id="c7bad-137">Preview release of the Azure Stack Gallery administrator module which provides functionality to manage gallery items in the Azure Stack marketplace.</span></span>
+### <a name="gallery"></a><span data-ttu-id="fe003-136">Katalógus</span><span class="sxs-lookup"><span data-stu-id="fe003-136">Gallery</span></span>
+<span data-ttu-id="fe003-137">Az Azure Stack Gallery felügyeleti modul előzetes kiadása, amely a katalóguselemek az Azure Stack-piactéren való felügyeletéhez szükséges funkciókat biztosít.</span><span class="sxs-lookup"><span data-stu-id="fe003-137">Preview release of the Azure Stack Gallery administrator module which provides functionality to manage gallery items in the Azure Stack marketplace.</span></span>
 
-### <a name="infrastructure-insights"></a><span data-ttu-id="c7bad-138">Infrastructure Insights</span><span class="sxs-lookup"><span data-stu-id="c7bad-138">Infrastructure Insights</span></span>
-<span data-ttu-id="c7bad-139">Az Infrastructure Insights felügyeleti modul előzetes kiadása, amelynek segítségével a rendszergazda:</span><span class="sxs-lookup"><span data-stu-id="c7bad-139">Preview release of the Infrastructure Insights administrator module which allows administrators:</span></span>
-- <span data-ttu-id="c7bad-140">Megtekintheti az Azure Stack bélyegző erőforrások állapotát</span><span class="sxs-lookup"><span data-stu-id="c7bad-140">View the health of their Azure Stack stamp resources</span></span>
-- <span data-ttu-id="c7bad-141">Megtekintheti és kezelheti a riasztásokat</span><span class="sxs-lookup"><span data-stu-id="c7bad-141">View and manage alerts</span></span>
+### <a name="infrastructure-insights"></a><span data-ttu-id="fe003-138">Infrastructure Insights</span><span class="sxs-lookup"><span data-stu-id="fe003-138">Infrastructure Insights</span></span>
+<span data-ttu-id="fe003-139">Az Infrastructure Insights felügyeleti modul előzetes kiadása, amelynek segítségével a rendszergazda:</span><span class="sxs-lookup"><span data-stu-id="fe003-139">Preview release of the Infrastructure Insights administrator module which allows administrators:</span></span>
+- <span data-ttu-id="fe003-140">Megtekintheti az Azure Stack bélyegző erőforrások állapotát</span><span class="sxs-lookup"><span data-stu-id="fe003-140">View the health of their Azure Stack stamp resources</span></span>
+- <span data-ttu-id="fe003-141">Megtekintheti és kezelheti a riasztásokat</span><span class="sxs-lookup"><span data-stu-id="fe003-141">View and manage alerts</span></span>
 
-### <a name="keyvault"></a><span data-ttu-id="c7bad-142">KeyVault</span><span class="sxs-lookup"><span data-stu-id="c7bad-142">KeyVault</span></span>
-<span data-ttu-id="c7bad-143">Az Azure Stack KeyVault felügyeleti modul előzetes kiadása, amelynek segítségével a rendszergazda megtekintheti a KeyVault-kvótákat.</span><span class="sxs-lookup"><span data-stu-id="c7bad-143">Preview release of the Azure Stack KeyVault administrator module which allows administrator to view KeyVault quotas.</span></span>
+### <a name="keyvault"></a><span data-ttu-id="fe003-142">KeyVault</span><span class="sxs-lookup"><span data-stu-id="fe003-142">KeyVault</span></span>
+<span data-ttu-id="fe003-143">Az Azure Stack KeyVault felügyeleti modul előzetes kiadása, amelynek segítségével a rendszergazda megtekintheti a KeyVault-kvótákat.</span><span class="sxs-lookup"><span data-stu-id="fe003-143">Preview release of the Azure Stack KeyVault administrator module which allows administrator to view KeyVault quotas.</span></span>
 
-### <a name="network"></a><span data-ttu-id="c7bad-144">Network (Hálózat)</span><span class="sxs-lookup"><span data-stu-id="c7bad-144">Network</span></span>
-<span data-ttu-id="c7bad-145">A Network felügyeleti modul előzetes kiadása, amely:</span><span class="sxs-lookup"><span data-stu-id="c7bad-145">Preview release of the Network administrator module which allows:</span></span>
-- <span data-ttu-id="c7bad-146">Lehetővé teszi a hálózati kvóták felügyeletét</span><span class="sxs-lookup"><span data-stu-id="c7bad-146">Management of network quotas</span></span>
-- <span data-ttu-id="c7bad-147">Lehetővé teszi a hálózati erőforrások (például nyilvános IP-címek, virtuális hálózatok és terheléselosztók) megtekintését</span><span class="sxs-lookup"><span data-stu-id="c7bad-147">View allocated network resources such as public IP addresses, virtual networks, load balancers</span></span>
-- <span data-ttu-id="c7bad-148">Egy parancsmagot biztosít a felügyelet áttekintő megjelenítéséhez</span><span class="sxs-lookup"><span data-stu-id="c7bad-148">Provides a cmdlet which displays an administrator overview</span></span>
+### <a name="network"></a><span data-ttu-id="fe003-144">Network (Hálózat)</span><span class="sxs-lookup"><span data-stu-id="fe003-144">Network</span></span>
+<span data-ttu-id="fe003-145">A Network felügyeleti modul előzetes kiadása, amely:</span><span class="sxs-lookup"><span data-stu-id="fe003-145">Preview release of the Network administrator module which allows:</span></span>
+- <span data-ttu-id="fe003-146">Lehetővé teszi a hálózati kvóták felügyeletét</span><span class="sxs-lookup"><span data-stu-id="fe003-146">Management of network quotas</span></span>
+- <span data-ttu-id="fe003-147">Lehetővé teszi a hálózati erőforrások (például nyilvános IP-címek, virtuális hálózatok és terheléselosztók) megtekintését</span><span class="sxs-lookup"><span data-stu-id="fe003-147">View allocated network resources such as public IP addresses, virtual networks, load balancers</span></span>
+- <span data-ttu-id="fe003-148">Egy parancsmagot biztosít a felügyelet áttekintő megjelenítéséhez</span><span class="sxs-lookup"><span data-stu-id="fe003-148">Provides a cmdlet which displays an administrator overview</span></span>
 
-### <a name="storage"></a><span data-ttu-id="c7bad-149">Storage</span><span class="sxs-lookup"><span data-stu-id="c7bad-149">Storage</span></span>
-<span data-ttu-id="c7bad-150">Az Azure Stack Storage felügyeleti modul előzetes kiadása.</span><span class="sxs-lookup"><span data-stu-id="c7bad-150">Preview release of the Azure Stack Storage administrator module.</span></span>  <span data-ttu-id="c7bad-151">Ebben a kiadásban a következő funkcionalitást biztosítjuk:</span><span class="sxs-lookup"><span data-stu-id="c7bad-151">In this release we provide the functionality to:</span></span>
-- <span data-ttu-id="c7bad-152">Tárhelykvóták kezelése</span><span class="sxs-lookup"><span data-stu-id="c7bad-152">Manage storage quotas</span></span>
-- <span data-ttu-id="c7bad-153">Törölt tárolási erőforrások szemétgyűjtése</span><span class="sxs-lookup"><span data-stu-id="c7bad-153">Garbage collect deleted storage resources</span></span>
-- <span data-ttu-id="c7bad-154">Törölt tárfiókok visszaállítása</span><span class="sxs-lookup"><span data-stu-id="c7bad-154">Restore deleted storage accounts</span></span>
-- <span data-ttu-id="c7bad-155">Tárolók migrálása megosztások közt</span><span class="sxs-lookup"><span data-stu-id="c7bad-155">Migrate containers from one share to another</span></span>
-- <span data-ttu-id="c7bad-156">Az egyéni tároló-összetevőkkel kapcsolatos összetevők megjelenítése</span><span class="sxs-lookup"><span data-stu-id="c7bad-156">View information about the individual storage components</span></span>
-- <span data-ttu-id="c7bad-157">Használati és teljesítményadatok megtekintése</span><span class="sxs-lookup"><span data-stu-id="c7bad-157">View usage and performance information</span></span>
+### <a name="storage"></a><span data-ttu-id="fe003-149">Storage</span><span class="sxs-lookup"><span data-stu-id="fe003-149">Storage</span></span>
+<span data-ttu-id="fe003-150">Az Azure Stack Storage felügyeleti modul előzetes kiadása.</span><span class="sxs-lookup"><span data-stu-id="fe003-150">Preview release of the Azure Stack Storage administrator module.</span></span>  <span data-ttu-id="fe003-151">Ebben a kiadásban a következő funkcionalitást biztosítjuk:</span><span class="sxs-lookup"><span data-stu-id="fe003-151">In this release we provide the functionality to:</span></span>
+- <span data-ttu-id="fe003-152">Tárhelykvóták kezelése</span><span class="sxs-lookup"><span data-stu-id="fe003-152">Manage storage quotas</span></span>
+- <span data-ttu-id="fe003-153">Törölt tárolási erőforrások szemétgyűjtése</span><span class="sxs-lookup"><span data-stu-id="fe003-153">Garbage collect deleted storage resources</span></span>
+- <span data-ttu-id="fe003-154">Törölt tárfiókok visszaállítása</span><span class="sxs-lookup"><span data-stu-id="fe003-154">Restore deleted storage accounts</span></span>
+- <span data-ttu-id="fe003-155">Tárolók migrálása megosztások közt</span><span class="sxs-lookup"><span data-stu-id="fe003-155">Migrate containers from one share to another</span></span>
+- <span data-ttu-id="fe003-156">Az egyéni tároló-összetevőkkel kapcsolatos összetevők megjelenítése</span><span class="sxs-lookup"><span data-stu-id="fe003-156">View information about the individual storage components</span></span>
+- <span data-ttu-id="fe003-157">Használati és teljesítményadatok megtekintése</span><span class="sxs-lookup"><span data-stu-id="fe003-157">View usage and performance information</span></span>
 
-### <a name="subscription-admin"></a><span data-ttu-id="c7bad-158">Subscription Admin</span><span class="sxs-lookup"><span data-stu-id="c7bad-158">Subscription Admin</span></span>
-<span data-ttu-id="c7bad-159">Az Azure Stack Subscription adminisztrációs modul előzetes kiadása.</span><span class="sxs-lookup"><span data-stu-id="c7bad-159">Preview release of the Azure Stack Subscription administrator module.</span></span>  <span data-ttu-id="c7bad-160">A modul a következő funkciókat biztosítja a rendszergazdák számára:</span><span class="sxs-lookup"><span data-stu-id="c7bad-160">This module provides functionality for administrators to:</span></span>
-- <span data-ttu-id="c7bad-161">Csomagok és ajánlatok kezelése</span><span class="sxs-lookup"><span data-stu-id="c7bad-161">Manage plans and offers</span></span>
-- <span data-ttu-id="c7bad-162">Használati és teljesítményadatok megtekintése</span><span class="sxs-lookup"><span data-stu-id="c7bad-162">View usage and performance information</span></span>
-- <span data-ttu-id="c7bad-163">Az RBAC kezelése</span><span class="sxs-lookup"><span data-stu-id="c7bad-163">Manage RBAC</span></span>
+### <a name="subscription-admin"></a><span data-ttu-id="fe003-158">Subscription Admin</span><span class="sxs-lookup"><span data-stu-id="fe003-158">Subscription Admin</span></span>
+<span data-ttu-id="fe003-159">Az Azure Stack Subscription adminisztrációs modul előzetes kiadása.</span><span class="sxs-lookup"><span data-stu-id="fe003-159">Preview release of the Azure Stack Subscription administrator module.</span></span>  <span data-ttu-id="fe003-160">A modul a következő funkciókat biztosítja a rendszergazdák számára:</span><span class="sxs-lookup"><span data-stu-id="fe003-160">This module provides functionality for administrators to:</span></span>
+- <span data-ttu-id="fe003-161">Csomagok és ajánlatok kezelése</span><span class="sxs-lookup"><span data-stu-id="fe003-161">Manage plans and offers</span></span>
+- <span data-ttu-id="fe003-162">Használati és teljesítményadatok megtekintése</span><span class="sxs-lookup"><span data-stu-id="fe003-162">View usage and performance information</span></span>
+- <span data-ttu-id="fe003-163">Az RBAC kezelése</span><span class="sxs-lookup"><span data-stu-id="fe003-163">Manage RBAC</span></span>
 
-### <a name="subscription"></a><span data-ttu-id="c7bad-164">Előfizetés</span><span class="sxs-lookup"><span data-stu-id="c7bad-164">Subscription</span></span>
-<span data-ttu-id="c7bad-165">Az Azure Stack Subscription modul előzetes kiadása.</span><span class="sxs-lookup"><span data-stu-id="c7bad-165">Preview release of the Azure Stack Subscription module.</span></span>  <span data-ttu-id="c7bad-166">A modul a következő funkciókat biztosítja a felhasználók számára:</span><span class="sxs-lookup"><span data-stu-id="c7bad-166">This module provides functionality for Users to:</span></span>
-- <span data-ttu-id="c7bad-167">Előfizetések létrehozása, törlése és frissítése</span><span class="sxs-lookup"><span data-stu-id="c7bad-167">Create, Delete and Update Subscriptions</span></span>
+### <a name="subscription"></a><span data-ttu-id="fe003-164">Előfizetés</span><span class="sxs-lookup"><span data-stu-id="fe003-164">Subscription</span></span>
+<span data-ttu-id="fe003-165">Az Azure Stack Subscription modul előzetes kiadása.</span><span class="sxs-lookup"><span data-stu-id="fe003-165">Preview release of the Azure Stack Subscription module.</span></span>  <span data-ttu-id="fe003-166">A modul a következő funkciókat biztosítja a felhasználók számára:</span><span class="sxs-lookup"><span data-stu-id="fe003-166">This module provides functionality for Users to:</span></span>
+- <span data-ttu-id="fe003-167">Előfizetések létrehozása, törlése és frissítése</span><span class="sxs-lookup"><span data-stu-id="fe003-167">Create, Delete and Update Subscriptions</span></span>
 
-### <a name="update"></a><span data-ttu-id="c7bad-168">Frissítés</span><span class="sxs-lookup"><span data-stu-id="c7bad-168">Update</span></span>
-<span data-ttu-id="c7bad-169">Az Azure Stack Update adminisztrációs modul előzetes kiadása.</span><span class="sxs-lookup"><span data-stu-id="c7bad-169">Preview release of the Azure Stack Update administrator module.</span></span>  <span data-ttu-id="c7bad-170">A modul használatával a rendszergazda:</span><span class="sxs-lookup"><span data-stu-id="c7bad-170">In this module administrators can:</span></span>
-- <span data-ttu-id="c7bad-171">Listázhatja és telepítheti az elérhető frissítéseket</span><span class="sxs-lookup"><span data-stu-id="c7bad-171">List and install available updates</span></span>
-- <span data-ttu-id="c7bad-172">Folytathatja a megszakított frissítéseket</span><span class="sxs-lookup"><span data-stu-id="c7bad-172">Resume interrupted updates</span></span>
-- <span data-ttu-id="c7bad-173">Megtekintheti a telepített frissítéseket</span><span class="sxs-lookup"><span data-stu-id="c7bad-173">View installed updates</span></span>
+### <a name="update"></a><span data-ttu-id="fe003-168">Frissítés</span><span class="sxs-lookup"><span data-stu-id="fe003-168">Update</span></span>
+<span data-ttu-id="fe003-169">Az Azure Stack Update adminisztrációs modul előzetes kiadása.</span><span class="sxs-lookup"><span data-stu-id="fe003-169">Preview release of the Azure Stack Update administrator module.</span></span>  <span data-ttu-id="fe003-170">A modul használatával a rendszergazda:</span><span class="sxs-lookup"><span data-stu-id="fe003-170">In this module administrators can:</span></span>
+- <span data-ttu-id="fe003-171">Listázhatja és telepítheti az elérhető frissítéseket</span><span class="sxs-lookup"><span data-stu-id="fe003-171">List and install available updates</span></span>
+- <span data-ttu-id="fe003-172">Folytathatja a megszakított frissítéseket</span><span class="sxs-lookup"><span data-stu-id="fe003-172">Resume interrupted updates</span></span>
+- <span data-ttu-id="fe003-173">Megtekintheti a telepített frissítéseket</span><span class="sxs-lookup"><span data-stu-id="fe003-173">View installed updates</span></span>

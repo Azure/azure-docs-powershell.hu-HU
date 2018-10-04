@@ -9,39 +9,39 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
 ms.openlocfilehash: 4c1bf93d69e186699f434bb979af56fcb1d20e8a
-ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
+ms.sourcegitcommit: 6c38e86e16da99f65cd183c63e34f7176b121ab8
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47178918"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "47425125"
 ---
-# <a name="create-an-azure-service-principal-with-azure-powershell"></a><span data-ttu-id="cc9a9-104">Azure-beli szolgáltatásnév létrehozása az Azure PowerShell használatával</span><span class="sxs-lookup"><span data-stu-id="cc9a9-104">Create an Azure service principal with Azure PowerShell</span></span>
+# <a name="create-an-azure-service-principal-with-azure-powershell"></a><span data-ttu-id="c7706-104">Azure-beli szolgáltatásnév létrehozása az Azure PowerShell használatával</span><span class="sxs-lookup"><span data-stu-id="c7706-104">Create an Azure service principal with Azure PowerShell</span></span>
 
-<span data-ttu-id="cc9a9-105">Ha az appját vagy szolgáltatását az Azure PowerShell-lel szeretné kezelni, egy Azure Active Directory (AAD) szolgáltatásnév alatt, és nem a saját hitelesítő adataival érdemes futtatnia.</span><span class="sxs-lookup"><span data-stu-id="cc9a9-105">If you plan to manage your app or service with Azure PowerShell, you should run it under an Azure Active Directory (AAD) service principal, rather than your own credentials.</span></span> <span data-ttu-id="cc9a9-106">Ez a cikk végigvezeti a szolgáltatásnevek Azure PowerShell-lel való létrehozásának folyamatán.</span><span class="sxs-lookup"><span data-stu-id="cc9a9-106">This article steps you through creating a security principal with Azure PowerShell.</span></span>
+<span data-ttu-id="c7706-105">Ha az appját vagy szolgáltatását az Azure PowerShell-lel szeretné kezelni, egy Azure Active Directory (AAD) szolgáltatásnév alatt, és nem a saját hitelesítő adataival érdemes futtatnia.</span><span class="sxs-lookup"><span data-stu-id="c7706-105">If you plan to manage your app or service with Azure PowerShell, you should run it under an Azure Active Directory (AAD) service principal, rather than your own credentials.</span></span> <span data-ttu-id="c7706-106">Ez a cikk végigvezeti a szolgáltatásnevek Azure PowerShell-lel való létrehozásának folyamatán.</span><span class="sxs-lookup"><span data-stu-id="c7706-106">This article steps you through creating a security principal with Azure PowerShell.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="cc9a9-107">Az Azure Portalon is létrehozhat szolgáltatásneveket.</span><span class="sxs-lookup"><span data-stu-id="cc9a9-107">You can also create a service principal through the Azure portal.</span></span> <span data-ttu-id="cc9a9-108">További részletekért lásd: [Active Directory-alkalmazás és -szolgáltatásnév létrehozása a portálon erőforrások eléréséhez](/azure/azure-resource-manager/resource-group-create-service-principal-portal).</span><span class="sxs-lookup"><span data-stu-id="cc9a9-108">Read [Use portal to create Active Directory application and service principal that can access resources](/azure/azure-resource-manager/resource-group-create-service-principal-portal) for more details.</span></span>
+> <span data-ttu-id="c7706-107">Az Azure Portalon is létrehozhat szolgáltatásneveket.</span><span class="sxs-lookup"><span data-stu-id="c7706-107">You can also create a service principal through the Azure portal.</span></span> <span data-ttu-id="c7706-108">További részletekért lásd: [Active Directory-alkalmazás és -szolgáltatásnév létrehozása a portálon erőforrások eléréséhez](/azure/azure-resource-manager/resource-group-create-service-principal-portal).</span><span class="sxs-lookup"><span data-stu-id="c7706-108">Read [Use portal to create Active Directory application and service principal that can access resources](/azure/azure-resource-manager/resource-group-create-service-principal-portal) for more details.</span></span>
 
-## <a name="what-is-a-service-principal"></a><span data-ttu-id="cc9a9-109">Mi az a szolgáltatásnév?</span><span class="sxs-lookup"><span data-stu-id="cc9a9-109">What is a 'service principal'?</span></span>
+## <a name="what-is-a-service-principal"></a><span data-ttu-id="c7706-109">Mi az a szolgáltatásnév?</span><span class="sxs-lookup"><span data-stu-id="c7706-109">What is a 'service principal'?</span></span>
 
-<span data-ttu-id="cc9a9-110">Az Azure-beli szolgáltatásnév egy biztonsági identitás, amellyel a felhasználó által létrehozott appok, szolgáltatások és automatizálási eszközök elérnek adott Azure-erőforrásokat.</span><span class="sxs-lookup"><span data-stu-id="cc9a9-110">An Azure service principal is a security identity used by user-created apps, services, and automation tools to access specific Azure resources.</span></span> <span data-ttu-id="cc9a9-111">Képzelje el úgy, mint egy „felhasználói identitást” (felhasználónév és jelszó vagy tanúsítvány) egy adott szerepkörrel és szigorúan szabályozott engedélyekkel.</span><span class="sxs-lookup"><span data-stu-id="cc9a9-111">Think of it as a 'user identity' (username and password or certificate) with a specific role, and tightly controlled permissions.</span></span> <span data-ttu-id="cc9a9-112">Az általános identitásoktól eltérően a szolgáltatásnév csak konkrét feladatok végrehajtására szolgál.</span><span class="sxs-lookup"><span data-stu-id="cc9a9-112">A service principal should only need to do specific things, unlike a general user identity.</span></span> <span data-ttu-id="cc9a9-113">Csak akkor javítja a biztonságot, ha csak a felügyeleti feladataihoz szükséges minimális engedélyeket osztja ki neki.</span><span class="sxs-lookup"><span data-stu-id="cc9a9-113">It improves security if you only grant it the minimum permissions level needed to perform its management tasks.</span></span>
+<span data-ttu-id="c7706-110">Az Azure-beli szolgáltatásnév egy biztonsági identitás, amellyel a felhasználó által létrehozott appok, szolgáltatások és automatizálási eszközök elérnek adott Azure-erőforrásokat.</span><span class="sxs-lookup"><span data-stu-id="c7706-110">An Azure service principal is a security identity used by user-created apps, services, and automation tools to access specific Azure resources.</span></span> <span data-ttu-id="c7706-111">Képzelje el úgy, mint egy „felhasználói identitást” (felhasználónév és jelszó vagy tanúsítvány) egy adott szerepkörrel és szigorúan szabályozott engedélyekkel.</span><span class="sxs-lookup"><span data-stu-id="c7706-111">Think of it as a 'user identity' (username and password or certificate) with a specific role, and tightly controlled permissions.</span></span> <span data-ttu-id="c7706-112">Az általános identitásoktól eltérően a szolgáltatásnév csak konkrét feladatok végrehajtására szolgál.</span><span class="sxs-lookup"><span data-stu-id="c7706-112">A service principal should only need to do specific things, unlike a general user identity.</span></span> <span data-ttu-id="c7706-113">Csak akkor javítja a biztonságot, ha csak a felügyeleti feladataihoz szükséges minimális engedélyeket osztja ki neki.</span><span class="sxs-lookup"><span data-stu-id="c7706-113">It improves security if you only grant it the minimum permissions level needed to perform its management tasks.</span></span>
 
-## <a name="verify-your-own-permission-level"></a><span data-ttu-id="cc9a9-114">Saját jogosultsági szint ellenőrzése</span><span class="sxs-lookup"><span data-stu-id="cc9a9-114">Verify your own permission level</span></span>
+## <a name="verify-your-own-permission-level"></a><span data-ttu-id="c7706-114">Saját jogosultsági szint ellenőrzése</span><span class="sxs-lookup"><span data-stu-id="c7706-114">Verify your own permission level</span></span>
 
-<span data-ttu-id="cc9a9-115">Először is megfelelő jogosultságokkal kell rendelkeznie mind az Azure Active Directoryban, mind az Azure-előfizetésén.</span><span class="sxs-lookup"><span data-stu-id="cc9a9-115">First, you must have sufficient permissions in both your Azure Active Directory and your Azure subscription.</span></span> <span data-ttu-id="cc9a9-116">Létre kell tudnia hozni alkalmazást az Active Directoryban, és ki kell tudnia osztani szerepköröket a szolgáltatásnévnek.</span><span class="sxs-lookup"><span data-stu-id="cc9a9-116">You must be able to create an app in the Active Directory and assign a role to the service principal.</span></span>
+<span data-ttu-id="c7706-115">Először is megfelelő jogosultságokkal kell rendelkeznie mind az Azure Active Directoryban, mind az Azure-előfizetésén.</span><span class="sxs-lookup"><span data-stu-id="c7706-115">First, you must have sufficient permissions in both your Azure Active Directory and your Azure subscription.</span></span> <span data-ttu-id="c7706-116">Létre kell tudnia hozni alkalmazást az Active Directoryban, és ki kell tudnia osztani szerepköröket a szolgáltatásnévnek.</span><span class="sxs-lookup"><span data-stu-id="c7706-116">You must be able to create an app in the Active Directory and assign a role to the service principal.</span></span>
 
-<span data-ttu-id="cc9a9-117">A legegyszerűbben a portálon ellenőrizheti, hogy rendelkezik-e megfelelő jogosultságokkal.</span><span class="sxs-lookup"><span data-stu-id="cc9a9-117">The easiest way to check whether your account has the right permissions is through the portal.</span></span> <span data-ttu-id="cc9a9-118">Lásd [Szükséges jogosultságok ellenőrzése a portálon](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions).</span><span class="sxs-lookup"><span data-stu-id="cc9a9-118">See [Check required permission in portal](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions).</span></span>
+<span data-ttu-id="c7706-117">A legegyszerűbben a portálon ellenőrizheti, hogy rendelkezik-e megfelelő jogosultságokkal.</span><span class="sxs-lookup"><span data-stu-id="c7706-117">The easiest way to check whether your account has the right permissions is through the portal.</span></span> <span data-ttu-id="c7706-118">Lásd [Szükséges jogosultságok ellenőrzése a portálon](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions).</span><span class="sxs-lookup"><span data-stu-id="c7706-118">See [Check required permission in portal](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions).</span></span>
 
-## <a name="create-a-service-principal-for-your-app"></a><span data-ttu-id="cc9a9-119">Szolgáltatásnév létrehozása az app számára</span><span class="sxs-lookup"><span data-stu-id="cc9a9-119">Create a service principal for your app</span></span>
+## <a name="create-a-service-principal-for-your-app"></a><span data-ttu-id="c7706-119">Szolgáltatásnév létrehozása az app számára</span><span class="sxs-lookup"><span data-stu-id="c7706-119">Create a service principal for your app</span></span>
 
-<span data-ttu-id="cc9a9-120">Miután bejelentkezett Azure-fiókjába, létrehozhatja a szolgáltatásnevet.</span><span class="sxs-lookup"><span data-stu-id="cc9a9-120">Once signed in to your Azure account, you can create the service principal.</span></span> <span data-ttu-id="cc9a9-121">A következő módszerek egyikének rendelkezésre kell állnia az üzembe helyezett app azonosításához:</span><span class="sxs-lookup"><span data-stu-id="cc9a9-121">You must have one of the following ways to identify your deployed app:</span></span>
+<span data-ttu-id="c7706-120">Miután bejelentkezett Azure-fiókjába, létrehozhatja a szolgáltatásnevet.</span><span class="sxs-lookup"><span data-stu-id="c7706-120">Once signed in to your Azure account, you can create the service principal.</span></span> <span data-ttu-id="c7706-121">A következő módszerek egyikének rendelkezésre kell állnia az üzembe helyezett app azonosításához:</span><span class="sxs-lookup"><span data-stu-id="c7706-121">You must have one of the following ways to identify your deployed app:</span></span>
 
-* <span data-ttu-id="cc9a9-122">Az üzembe helyezett app egyedi neve (a következő példákban ez a „MyDemoWebApp”), vagy</span><span class="sxs-lookup"><span data-stu-id="cc9a9-122">The unique name of your deployed app, such as "MyDemoWebApp" in the following examples, or</span></span>
-* <span data-ttu-id="cc9a9-123">az alkalmazásazonosító, az üzembe helyezett alkalmazással, szolgáltatással vagy objektummal társított egyedi GUID</span><span class="sxs-lookup"><span data-stu-id="cc9a9-123">the Application ID, the unique GUID associated with your deployed app, service, or object</span></span>
+* <span data-ttu-id="c7706-122">Az üzembe helyezett app egyedi neve (a következő példákban ez a „MyDemoWebApp”), vagy</span><span class="sxs-lookup"><span data-stu-id="c7706-122">The unique name of your deployed app, such as "MyDemoWebApp" in the following examples, or</span></span>
+* <span data-ttu-id="c7706-123">az alkalmazásazonosító, az üzembe helyezett alkalmazással, szolgáltatással vagy objektummal társított egyedi GUID</span><span class="sxs-lookup"><span data-stu-id="c7706-123">the Application ID, the unique GUID associated with your deployed app, service, or object</span></span>
 
-### <a name="get-information-about-your-application"></a><span data-ttu-id="cc9a9-124">Az alkalmazás adatainak lekérése</span><span class="sxs-lookup"><span data-stu-id="cc9a9-124">Get information about your application</span></span>
+### <a name="get-information-about-your-application"></a><span data-ttu-id="c7706-124">Az alkalmazás adatainak lekérése</span><span class="sxs-lookup"><span data-stu-id="c7706-124">Get information about your application</span></span>
 
-<span data-ttu-id="cc9a9-125">Az alkalmazással kapcsolatos információkat a `Get-AzureRmADApplication` parancsmaggal kérheti le.</span><span class="sxs-lookup"><span data-stu-id="cc9a9-125">The `Get-AzureRmADApplication` cmdlet can be used to get information about your application.</span></span>
+<span data-ttu-id="c7706-125">Az alkalmazással kapcsolatos információkat a `Get-AzureRmADApplication` parancsmaggal kérheti le.</span><span class="sxs-lookup"><span data-stu-id="c7706-125">The `Get-AzureRmADApplication` cmdlet can be used to get information about your application.</span></span>
 
 ```azurepowershell-interactive
 Get-AzureRmADApplication -DisplayNameStartWith MyDemoWebApp
@@ -59,9 +59,9 @@ AppPermissions          :
 ReplyUrls               : {}
 ```
 
-### <a name="create-a-service-principal-for-your-application"></a><span data-ttu-id="cc9a9-126">Szolgáltatásnév létrehozása az alkalmazás számára</span><span class="sxs-lookup"><span data-stu-id="cc9a9-126">Create a service principal for your application</span></span>
+### <a name="create-a-service-principal-for-your-application"></a><span data-ttu-id="c7706-126">Szolgáltatásnév létrehozása az alkalmazás számára</span><span class="sxs-lookup"><span data-stu-id="c7706-126">Create a service principal for your application</span></span>
 
-<span data-ttu-id="cc9a9-127">A szolgáltatásnév a `New-AzureRmADServicePrincipal` parancsmaggal hozható létre.</span><span class="sxs-lookup"><span data-stu-id="cc9a9-127">The `New-AzureRmADServicePrincipal` cmdlet is used to create the service principal.</span></span>
+<span data-ttu-id="c7706-127">A szolgáltatásnév a `New-AzureRmADServicePrincipal` parancsmaggal hozható létre.</span><span class="sxs-lookup"><span data-stu-id="c7706-127">The `New-AzureRmADServicePrincipal` cmdlet is used to create the service principal.</span></span>
 
 ```azurepowershell-interactive
 Add-Type -Assembly System.Web
@@ -76,7 +76,7 @@ DisplayName                    Type                           ObjectId
 MyDemoWebApp                   ServicePrincipal               698138e7-d7b6-4738-a866-b4e3081a69e4
 ```
 
-### <a name="get-information-about-the-service-principal"></a><span data-ttu-id="cc9a9-128">A szolgáltatásnév adatainak lekérése</span><span class="sxs-lookup"><span data-stu-id="cc9a9-128">Get information about the service principal</span></span>
+### <a name="get-information-about-the-service-principal"></a><span data-ttu-id="c7706-128">A szolgáltatásnév adatainak lekérése</span><span class="sxs-lookup"><span data-stu-id="c7706-128">Get information about the service principal</span></span>
 
 ```azurepowershell-interactive
 $svcprincipal = Get-AzureRmADServicePrincipal -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
@@ -91,16 +91,16 @@ Id                    : 698138e7-d7b6-4738-a866-b4e3081a69e4
 Type                  : ServicePrincipal
 ```
 
-### <a name="sign-in-using-the-service-principal"></a><span data-ttu-id="cc9a9-129">Bejelentkezés a szolgáltatásnévvel</span><span class="sxs-lookup"><span data-stu-id="cc9a9-129">Sign in using the service principal</span></span>
+### <a name="sign-in-using-the-service-principal"></a><span data-ttu-id="c7706-129">Bejelentkezés a szolgáltatásnévvel</span><span class="sxs-lookup"><span data-stu-id="c7706-129">Sign in using the service principal</span></span>
 
-<span data-ttu-id="cc9a9-130">Most már bejelentkezhet az app új szolgáltatásnevével a megadott *appId* és *jelszó* használatával.</span><span class="sxs-lookup"><span data-stu-id="cc9a9-130">You can now sign in as the new service principal for your app using the *appId* and *password* you provided.</span></span> <span data-ttu-id="cc9a9-131">Szüksége lesz a szolgáltatásnévhez tartozó bérlőazonosítóra is.</span><span class="sxs-lookup"><span data-stu-id="cc9a9-131">You also need the Tenant ID for the service principal.</span></span> <span data-ttu-id="cc9a9-132">A bérlőazonosító akkor jelenik meg, ha a saját hitelesítő adataival bejelentkezik az Azure-ba.</span><span class="sxs-lookup"><span data-stu-id="cc9a9-132">Your Tenant ID is displayed when you sign into Azure with your personal credentials.</span></span> <span data-ttu-id="cc9a9-133">Szolgáltatásnévvel való bejelentkezéshez használja a következő parancsokat:</span><span class="sxs-lookup"><span data-stu-id="cc9a9-133">To sign in with a service principal, use the following commands:</span></span>
+<span data-ttu-id="c7706-130">Most már bejelentkezhet az app új szolgáltatásnevével a megadott *appId* és *jelszó* használatával.</span><span class="sxs-lookup"><span data-stu-id="c7706-130">You can now sign in as the new service principal for your app using the *appId* and *password* you provided.</span></span> <span data-ttu-id="c7706-131">Szüksége lesz a szolgáltatásnévhez tartozó bérlőazonosítóra is.</span><span class="sxs-lookup"><span data-stu-id="c7706-131">You also need the Tenant ID for the service principal.</span></span> <span data-ttu-id="c7706-132">A bérlőazonosító akkor jelenik meg, ha a saját hitelesítő adataival bejelentkezik az Azure-ba.</span><span class="sxs-lookup"><span data-stu-id="c7706-132">Your Tenant ID is displayed when you sign into Azure with your personal credentials.</span></span> <span data-ttu-id="c7706-133">Szolgáltatásnévvel való bejelentkezéshez használja a következő parancsokat:</span><span class="sxs-lookup"><span data-stu-id="c7706-133">To sign in with a service principal, use the following commands:</span></span>
 
 ```azurepowershell-interactive
 $cred = Get-Credential -UserName $svcprincipal.ApplicationId -Message "Enter Password"
 Connect-AzureRmAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 ```
 
-<span data-ttu-id="cc9a9-134">Sikeres bejelentkezés után az alábbihoz hasonló kimenet jelenik meg:</span><span class="sxs-lookup"><span data-stu-id="cc9a9-134">After a successful sign-in you see output like:</span></span>
+<span data-ttu-id="c7706-134">Sikeres bejelentkezés után az alábbihoz hasonló kimenet jelenik meg:</span><span class="sxs-lookup"><span data-stu-id="c7706-134">After a successful sign-in you see output like:</span></span>
 
 ```output
 Environment           : AzureCloud
@@ -111,23 +111,23 @@ SubscriptionName      :
 CurrentStorageAccount :
 ```
 
-<span data-ttu-id="cc9a9-135">Gratulálunk!</span><span class="sxs-lookup"><span data-stu-id="cc9a9-135">Congratulations!</span></span> <span data-ttu-id="cc9a9-136">Ezekkel a hitelesítő adatokkal futtathatja az appját.</span><span class="sxs-lookup"><span data-stu-id="cc9a9-136">You can use these credentials to run your app.</span></span> <span data-ttu-id="cc9a9-137">Ezután be kell állítania a szolgáltatásnév jogosultságait.</span><span class="sxs-lookup"><span data-stu-id="cc9a9-137">Next, you need to adjust the permissions of the service principal.</span></span>
+<span data-ttu-id="c7706-135">Gratulálunk!</span><span class="sxs-lookup"><span data-stu-id="c7706-135">Congratulations!</span></span> <span data-ttu-id="c7706-136">Ezekkel a hitelesítő adatokkal futtathatja az appját.</span><span class="sxs-lookup"><span data-stu-id="c7706-136">You can use these credentials to run your app.</span></span> <span data-ttu-id="c7706-137">Ezután be kell állítania a szolgáltatásnév jogosultságait.</span><span class="sxs-lookup"><span data-stu-id="c7706-137">Next, you need to adjust the permissions of the service principal.</span></span>
 
-## <a name="managing-roles"></a><span data-ttu-id="cc9a9-138">Szerepkörök kezelése</span><span class="sxs-lookup"><span data-stu-id="cc9a9-138">Managing roles</span></span>
+## <a name="managing-roles"></a><span data-ttu-id="c7706-138">Szerepkörök kezelése</span><span class="sxs-lookup"><span data-stu-id="c7706-138">Managing roles</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="cc9a9-139">Az Azure szerepköralapú hozzáférés-vezérlése (RBAC) a felhasználói nevek és szolgáltatásnevek szerepköreinek meghatározására és kezelésére szolgáló modell.</span><span class="sxs-lookup"><span data-stu-id="cc9a9-139">Azure Role-Based Access Control (RBAC) is a model for defining and managing roles for user and service principals.</span></span> <span data-ttu-id="cc9a9-140">A szerepkörökhöz jogosultságkészletek vannak társítva, amelyek meghatározzák az egyszerű entitás által olvasható, elérhető, írható és kezelhető erőforrásokat.</span><span class="sxs-lookup"><span data-stu-id="cc9a9-140">Roles have sets of permissions associated with them, which determine the resources a principal can read, access, write, or manage.</span></span> <span data-ttu-id="cc9a9-141">További információkért az RBAC-ról és a szerepkörökről: [RBAC: Beépített szerepkörök](/azure/active-directory/role-based-access-built-in-roles).</span><span class="sxs-lookup"><span data-stu-id="cc9a9-141">For more information on RBAC and roles, see [RBAC: Built-in roles](/azure/active-directory/role-based-access-built-in-roles).</span></span>
+> <span data-ttu-id="c7706-139">Az Azure szerepköralapú hozzáférés-vezérlése (RBAC) a felhasználói nevek és szolgáltatásnevek szerepköreinek meghatározására és kezelésére szolgáló modell.</span><span class="sxs-lookup"><span data-stu-id="c7706-139">Azure Role-Based Access Control (RBAC) is a model for defining and managing roles for user and service principals.</span></span> <span data-ttu-id="c7706-140">A szerepkörökhöz jogosultságkészletek vannak társítva, amelyek meghatározzák az egyszerű entitás által olvasható, elérhető, írható és kezelhető erőforrásokat.</span><span class="sxs-lookup"><span data-stu-id="c7706-140">Roles have sets of permissions associated with them, which determine the resources a principal can read, access, write, or manage.</span></span> <span data-ttu-id="c7706-141">További információkért az RBAC-ról és a szerepkörökről: [RBAC: Beépített szerepkörök](/azure/active-directory/role-based-access-built-in-roles).</span><span class="sxs-lookup"><span data-stu-id="c7706-141">For more information on RBAC and roles, see [RBAC: Built-in roles](/azure/active-directory/role-based-access-built-in-roles).</span></span>
 
-<span data-ttu-id="cc9a9-142">Az Azure PowerShell a következő parancsmagokat kínálja a szerepkör-hozzárendelések kezeléséhez:</span><span class="sxs-lookup"><span data-stu-id="cc9a9-142">Azure PowerShell provides the following cmdlets to manage role assignments:</span></span>
+<span data-ttu-id="c7706-142">Az Azure PowerShell a következő parancsmagokat kínálja a szerepkör-hozzárendelések kezeléséhez:</span><span class="sxs-lookup"><span data-stu-id="c7706-142">Azure PowerShell provides the following cmdlets to manage role assignments:</span></span>
 
-* [<span data-ttu-id="cc9a9-143">Get-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="cc9a9-143">Get-AzureRmRoleAssignment</span></span>](/powershell/module/azurerm.resources/get-azurermroleassignment)
-* [<span data-ttu-id="cc9a9-144">New-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="cc9a9-144">New-AzureRmRoleAssignment</span></span>](/powershell/module/azurerm.resources/new-azurermroleassignment)
-* [<span data-ttu-id="cc9a9-145">Remove-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="cc9a9-145">Remove-AzureRmRoleAssignment</span></span>](/powershell/module/azurerm.resources/remove-azurermroleassignment)
+* [<span data-ttu-id="c7706-143">Get-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="c7706-143">Get-AzureRmRoleAssignment</span></span>](/powershell/module/azurerm.resources/get-azurermroleassignment)
+* [<span data-ttu-id="c7706-144">New-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="c7706-144">New-AzureRmRoleAssignment</span></span>](/powershell/module/azurerm.resources/new-azurermroleassignment)
+* [<span data-ttu-id="c7706-145">Remove-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="c7706-145">Remove-AzureRmRoleAssignment</span></span>](/powershell/module/azurerm.resources/remove-azurermroleassignment)
 
-<span data-ttu-id="cc9a9-146">A szolgáltatásnevek alapértelmezett szerepköre a **Közreműködő**.</span><span class="sxs-lookup"><span data-stu-id="cc9a9-146">The default role for a service principal is **Contributor**.</span></span> <span data-ttu-id="cc9a9-147">Mivel azonban ez széles körű engedélyekkel rendelkezik, nem feltétlenül ez a legjobb választás, attól függően, hogy az app milyen mértékben használja az Azure-szolgáltatásokat.</span><span class="sxs-lookup"><span data-stu-id="cc9a9-147">It may not be the best choice depending on the scope of your app's interactions with Azure services, given its broad permissions.</span></span>
-<span data-ttu-id="cc9a9-148">Az **Olvasó** szerepkör sokkal korlátozóbb, és jó választás lehet a csak olvasó appokhoz.</span><span class="sxs-lookup"><span data-stu-id="cc9a9-148">The **Reader** role is more restrictive and can be a good choice for read-only apps.</span></span> <span data-ttu-id="cc9a9-149">A szerepkör-specifikus engedélyek részleteit megtekintheti az Azure Portalon, és létrehozhat saját szerepköröket is.</span><span class="sxs-lookup"><span data-stu-id="cc9a9-149">You can view details on role-specific permissions or create custom ones through the Azure portal.</span></span>
+<span data-ttu-id="c7706-146">A szolgáltatásnevek alapértelmezett szerepköre a **Közreműködő**.</span><span class="sxs-lookup"><span data-stu-id="c7706-146">The default role for a service principal is **Contributor**.</span></span> <span data-ttu-id="c7706-147">Mivel azonban ez széles körű engedélyekkel rendelkezik, nem feltétlenül ez a legjobb választás, attól függően, hogy az app milyen mértékben használja az Azure-szolgáltatásokat.</span><span class="sxs-lookup"><span data-stu-id="c7706-147">It may not be the best choice depending on the scope of your app's interactions with Azure services, given its broad permissions.</span></span>
+<span data-ttu-id="c7706-148">Az **Olvasó** szerepkör sokkal korlátozóbb, és jó választás lehet a csak olvasó appokhoz.</span><span class="sxs-lookup"><span data-stu-id="c7706-148">The **Reader** role is more restrictive and can be a good choice for read-only apps.</span></span> <span data-ttu-id="c7706-149">A szerepkör-specifikus engedélyek részleteit megtekintheti az Azure Portalon, és létrehozhat saját szerepköröket is.</span><span class="sxs-lookup"><span data-stu-id="c7706-149">You can view details on role-specific permissions or create custom ones through the Azure portal.</span></span>
 
-<span data-ttu-id="cc9a9-150">Esetünkben az **Olvasó** szerepkört adjuk hozzá a példához, és töröljük a **Közreműködő** szerepkört:</span><span class="sxs-lookup"><span data-stu-id="cc9a9-150">In this example, we add the **Reader** role to our prior example, and delete the **Contributor** one:</span></span>
+<span data-ttu-id="c7706-150">Esetünkben az **Olvasó** szerepkört adjuk hozzá a példához, és töröljük a **Közreműködő** szerepkört:</span><span class="sxs-lookup"><span data-stu-id="c7706-150">In this example, we add the **Reader** role to our prior example, and delete the **Contributor** one:</span></span>
 
 ```azurepowershell-interactive
 New-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Reader
@@ -148,7 +148,7 @@ ObjectType         : ServicePrincipal
 Remove-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Contributor
 ```
 
-<span data-ttu-id="cc9a9-151">Az aktuálisan hozzárendelt szerepkörök megtekintése:</span><span class="sxs-lookup"><span data-stu-id="cc9a9-151">To view the current roles assigned:</span></span>
+<span data-ttu-id="c7706-151">Az aktuálisan hozzárendelt szerepkörök megtekintése:</span><span class="sxs-lookup"><span data-stu-id="c7706-151">To view the current roles assigned:</span></span>
 
 ```azurepowershell-interactive
 Get-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
@@ -165,18 +165,18 @@ ObjectId           : 698138e7-d7b6-4738-a866-b4e3081a69e4
 ObjectType         : ServicePrincipal
 ```
 
-<span data-ttu-id="cc9a9-152">Egyéb Azure PowerShell-parancsmagok a szerepkörök kezeléséhez:</span><span class="sxs-lookup"><span data-stu-id="cc9a9-152">Other Azure PowerShell cmdlets for role management:</span></span>
+<span data-ttu-id="c7706-152">Egyéb Azure PowerShell-parancsmagok a szerepkörök kezeléséhez:</span><span class="sxs-lookup"><span data-stu-id="c7706-152">Other Azure PowerShell cmdlets for role management:</span></span>
 
-* [<span data-ttu-id="cc9a9-153">Get-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="cc9a9-153">Get-AzureRmRoleDefinition</span></span>](/powershell/module/azurerm.resources/Get-AzureRmRoleDefinition)
-* [<span data-ttu-id="cc9a9-154">New-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="cc9a9-154">New-AzureRmRoleDefinition</span></span>](/powershell/module/azurerm.resources/New-AzureRmRoleDefinition)
-* [<span data-ttu-id="cc9a9-155">Remove-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="cc9a9-155">Remove-AzureRmRoleDefinition</span></span>](/powershell/module/azurerm.resources/Remove-AzureRmRoleDefinition)
-* [<span data-ttu-id="cc9a9-156">Set-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="cc9a9-156">Set-AzureRmRoleDefinition</span></span>](/powershell/module/azurerm.resources/Set-AzureRmRoleDefinition)
+* [<span data-ttu-id="c7706-153">Get-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="c7706-153">Get-AzureRmRoleDefinition</span></span>](/powershell/module/azurerm.resources/Get-AzureRmRoleDefinition)
+* [<span data-ttu-id="c7706-154">New-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="c7706-154">New-AzureRmRoleDefinition</span></span>](/powershell/module/azurerm.resources/New-AzureRmRoleDefinition)
+* [<span data-ttu-id="c7706-155">Remove-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="c7706-155">Remove-AzureRmRoleDefinition</span></span>](/powershell/module/azurerm.resources/Remove-AzureRmRoleDefinition)
+* [<span data-ttu-id="c7706-156">Set-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="c7706-156">Set-AzureRmRoleDefinition</span></span>](/powershell/module/azurerm.resources/Set-AzureRmRoleDefinition)
 
-## <a name="change-the-credentials-of-the-security-principal"></a><span data-ttu-id="cc9a9-157">Szolgáltatásnév hitelesítő adatainak módosítása</span><span class="sxs-lookup"><span data-stu-id="cc9a9-157">Change the credentials of the security principal</span></span>
+## <a name="change-the-credentials-of-the-security-principal"></a><span data-ttu-id="c7706-157">Szolgáltatásnév hitelesítő adatainak módosítása</span><span class="sxs-lookup"><span data-stu-id="c7706-157">Change the credentials of the security principal</span></span>
 
-<span data-ttu-id="cc9a9-158">A jogosultságok rendszeres áttekintése és a jelszavak cseréje ajánlott biztonsági eljárás.</span><span class="sxs-lookup"><span data-stu-id="cc9a9-158">It's a good security practice to review the permissions and update the password regularly.</span></span> <span data-ttu-id="cc9a9-159">Az app változása esetén is érdemes lehet módosítani a hitelesítő adatokat.</span><span class="sxs-lookup"><span data-stu-id="cc9a9-159">You may also want to manage and modify the security credentials as your app changes.</span></span> <span data-ttu-id="cc9a9-160">A szolgáltatásnév jelszava például módosítható egy új jelszó létrehozásával és a korábbi törlésével.</span><span class="sxs-lookup"><span data-stu-id="cc9a9-160">For example, we can change the password of the service principal by creating a new password and removing the old one.</span></span>
+<span data-ttu-id="c7706-158">A jogosultságok rendszeres áttekintése és a jelszavak cseréje ajánlott biztonsági eljárás.</span><span class="sxs-lookup"><span data-stu-id="c7706-158">It's a good security practice to review the permissions and update the password regularly.</span></span> <span data-ttu-id="c7706-159">Az app változása esetén is érdemes lehet módosítani a hitelesítő adatokat.</span><span class="sxs-lookup"><span data-stu-id="c7706-159">You may also want to manage and modify the security credentials as your app changes.</span></span> <span data-ttu-id="c7706-160">A szolgáltatásnév jelszava például módosítható egy új jelszó létrehozásával és a korábbi törlésével.</span><span class="sxs-lookup"><span data-stu-id="c7706-160">For example, we can change the password of the service principal by creating a new password and removing the old one.</span></span>
 
-### <a name="add-a-new-password-for-the-service-principal"></a><span data-ttu-id="cc9a9-161">Új jelszó hozzáadása a szolgáltatásnévhez</span><span class="sxs-lookup"><span data-stu-id="cc9a9-161">Add a new password for the service principal</span></span>
+### <a name="add-a-new-password-for-the-service-principal"></a><span data-ttu-id="c7706-161">Új jelszó hozzáadása a szolgáltatásnévhez</span><span class="sxs-lookup"><span data-stu-id="c7706-161">Add a new password for the service principal</span></span>
 
 ```azurepowershell-interactive
 $password = [System.Web.Security.Membership]::GeneratePassword(16,3)
@@ -189,7 +189,7 @@ StartDate           EndDate             KeyId                                Typ
 3/8/2017 5:58:24 PM 3/8/2018 5:58:24 PM 6f801c3e-6fcd-42b9-be8e-320b17ba1d36 Password
 ```
 
-### <a name="get-a-list-of-credentials-for-the-service-principal"></a><span data-ttu-id="cc9a9-162">A szolgáltatásnév hitelesítő adatainak listázása</span><span class="sxs-lookup"><span data-stu-id="cc9a9-162">Get a list of credentials for the service principal</span></span>
+### <a name="get-a-list-of-credentials-for-the-service-principal"></a><span data-ttu-id="c7706-162">A szolgáltatásnév hitelesítő adatainak listázása</span><span class="sxs-lookup"><span data-stu-id="c7706-162">Get a list of credentials for the service principal</span></span>
 
 ```azurepowershell-interactive
 Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
@@ -202,7 +202,7 @@ StartDate           EndDate             KeyId                                Typ
 5/5/2016 4:55:27 PM 5/5/2017 4:55:27 PM ca9d4846-4972-4c70-b6f5-a4effa60b9bc Password
 ```
 
-### <a name="remove-the-old-password-from-the-service-principal"></a><span data-ttu-id="cc9a9-163">A régi jelszó törlése a szolgáltatásnévből</span><span class="sxs-lookup"><span data-stu-id="cc9a9-163">Remove the old password from the service principal</span></span>
+### <a name="remove-the-old-password-from-the-service-principal"></a><span data-ttu-id="c7706-163">A régi jelszó törlése a szolgáltatásnévből</span><span class="sxs-lookup"><span data-stu-id="c7706-163">Remove the old password from the service principal</span></span>
 
 ```azurepowershell-interactive
 Remove-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp -KeyId ca9d4846-4972-4c70-b6f5-a4effa60b9bc
@@ -215,7 +215,7 @@ service principal objectId '698138e7-d7b6-4738-a866-b4e3081a69e4'.
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 ```
 
-### <a name="verify-the-list-of-credentials-for-the-service-principal"></a><span data-ttu-id="cc9a9-164">A szolgáltatásnév hitelesítőadat-listájának ellenőrzése</span><span class="sxs-lookup"><span data-stu-id="cc9a9-164">Verify the list of credentials for the service principal</span></span>
+### <a name="verify-the-list-of-credentials-for-the-service-principal"></a><span data-ttu-id="c7706-164">A szolgáltatásnév hitelesítőadat-listájának ellenőrzése</span><span class="sxs-lookup"><span data-stu-id="c7706-164">Verify the list of credentials for the service principal</span></span>
 
 ```azurepowershell-interactive
 Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
