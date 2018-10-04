@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
 ms.openlocfilehash: d514e43d82bcb51f65831dc506e58e8747db0381
-ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
+ms.sourcegitcommit: 6c38e86e16da99f65cd183c63e34f7176b121ab8
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47178459"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "47425465"
 ---
 # <a name="azurerm-module-230"></a>AzureRM 2.3.0-s modul
 
