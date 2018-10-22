@@ -7,17 +7,17 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
-ms.openlocfilehash: abf6aad6a04ffcf15b8fc38b47477caa1a04e015
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 0d6129fae45d16c414668be68ed377c9241f5330
+ms.sourcegitcommit: f6f5e256143aa6c097de3e57e930d8badea49f30
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39025225"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49398821"
 ---
 # <a name="other-installation-methods"></a>Egyéb telepítési módszerek
 
-Az Azure PowerShell többféle módszerrel telepíthető. Az előnyben részesített módszer a PowerShellGet használata a PowerShell-galériával. Az Azure PowerShell a Windows rendszeren a Webplatform-telepítő (WebPI) vagy a GitHubról elérhető MSI-fájl használatával telepíthető. Az Azure PowerShell Docker-tárolóban is telepíthető.
-
+Az Azure PowerShell többféle módszerrel telepíthető. Az előnyben részesített módszer a PowerShellGet használata a PowerShell-galériával. Az Azure PowerShell a Windows rendszeren a Webplatform-telepítő (WebPI) vagy a GitHubról elérhető MSI-fájl használatával telepíthető.
+ 
 ## <a name="install-on-windows-using-the-web-platform-installer"></a>Telepítés Windows rendszeren a Webplatform-telepítővel
 
 A legújabb Azure PowerShell ugyanúgy telepíthető a WebPI-ről, ahogy a korábbi verziók.
@@ -28,7 +28,7 @@ Töltse le az [Azure PowerShell WebPI csomagot](http://aka.ms/webpi-azps), és i
 >
 > A PowerShell-galéria moduljai a következő helyen települnek: `$env:ProgramFiles\WindowsPowerShell\Modules`. A WebPI telepítője ezzel szemben a következő helyen telepíti az Azure-modulokat: `$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\`.
 >
-> Ha hiba merül fel a telepítés során, törölje manuálisan az Azure* mappákat a `$env:ProgramFiles\WindowsPowerShell\Modules` mappából, és próbálkozzon újra a telepítéssel.
+> Ha hiba merül fel a telepítés során, törölje manuálisan az Azure\* mappákat a `$env:ProgramFiles\WindowsPowerShell\Modules` mappából, és próbálkozzon újra a telepítéssel.
 
 A telepítés befejeztével a `$env:PSModulePath` beállításnak tartalmaznia kell az Azure PowerShell-parancsmagokat tartalmazó könyvtárakat. A következő paranccsal ellenőrizheti, hogy az Azure PowerShell megfelelően van-e telepítve.
 
@@ -64,28 +64,3 @@ Import-Module "$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\AzureRM.ps
 
 Az Azure PowerShell telepíthető a [GitHubról](https://github.com/Azure/azure-powershell/releases/latest) elérhető MSI-fájllal is. Ha az Azure-modulok korábbi verziói már telepítve vannak, a telepítő automatikusan eltávolítja őket. Az MSI-csomag a(z) `$env:ProgramFiles\WindowsPowerShell\Modules` helyre telepíti a modulokat, azonban nem hoz létre verzióspecifikus mappákat.
 
-## <a name="install-in-a-docker-container"></a>Telepítés Docker-tárolóban
-
-Elérhető az Azure PowerShell-hez előre konfigurált Docker-rendszerkép.
-
-A tárolót a következő paranccsal futtathatja: `docker run`.
-
-```powershell
-docker run azuresdk/azure-powershell
-```
-
-Emellett elérhető a parancsmagok egy részhalmaza PowerShell Core-tároló formájában.
-
-Mac és Linux rendszereken a `latest` rendszerképet használhatja.
-
-```bash
-docker run azuresdk/azure-powershell-core:latest
-```
-
-Windowson a `nanoserver` rendszerképet használhatja.
-
-```powershell
-docker run azuresdk/azure-powershell-core:nanoserver
-```
-
-Az Azure PowerShell az `Install-Module` parancsmaggal van telepítve a [PowerShell-galériából](https://www.powershellgallery.com/).
