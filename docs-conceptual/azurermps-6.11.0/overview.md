@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 09/11/2018
 ms.openlocfilehash: 32decf653a956d0b0b202b38a238f42fa831ecae
-ms.sourcegitcommit: 5f946a535eccca0b3ddf3db8f617b32564a88938
+ms.sourcegitcommit: ff44dec6418a449757bded3c6ebe0a7d4c05ee6e
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50001201"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50737815"
 ---
 # <a name="overview-of-azure-powershell"></a>Az Azure PowerShell áttekintése
 

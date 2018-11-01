@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/05/2018
 ms.openlocfilehash: e7d27c6f6d980c54e45620b179cf2e26ffed17f0
-ms.sourcegitcommit: 5f946a535eccca0b3ddf3db8f617b32564a88938
+ms.sourcegitcommit: ff44dec6418a449757bded3c6ebe0a7d4c05ee6e
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50001660"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50738376"
 ---
 # <a name="install-azure-powershell-on-macos-or-linux"></a>Az Azure PowerShell telepítése macOS vagy Linux rendszeren
 
