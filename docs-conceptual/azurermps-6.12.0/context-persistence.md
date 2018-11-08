@@ -6,15 +6,15 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 08/31/2017
-ms.openlocfilehash: 164444b7bacbef202513bfafe2f75bdcd6d027c4
+ms.date: 09/09/2018
+ms.openlocfilehash: a07b5fe8cd532f99038d7f0ce10b3b891c896da1
 ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 11/07/2018
-ms.locfileid: "51211298"
+ms.locfileid: "51212829"
 ---
-# <a name="persisting-user-credentials-across-powershell-sessions"></a>Felhasználói hitelesítő adatok megőrzése a PowerShell-munkamenetek között
+# <a name="persist-user-credentials-across-powershell-sessions"></a>Felhasználói hitelesítő adatok megőrzése a PowerShell-munkamenetek között
 
 Az Azure PowerShell új, **Azure-környezet automatikus mentése** nevű funkciója a következő szolgáltatásokat nyújtja:
 
@@ -34,16 +34,14 @@ Az *Azure-környezet* az Azure PowerShell-parancsmagok célját meghatározó ad
   A környezetbeállításban azonban megadhat országos, kormányzati és helyszíni (Azure Stack) felhőket is.
 - A *hitelesítő adatok* – Az Azure által az identitás és az Azure-erőforrások hozzáférési jogosultságának ellenőrzéséhez használt adatok.
 
-A korábbi kiadásokban az új PowerShell-munkamenetek megnyitásakor minden egyes alkalommal létre kellett hozni az Azure-környezetet. Az Azure PowerShell 4.4.0-s verziójától azonban engedélyezheti az Azure-környezet automatikus mentését és egy új PowerShell-munkamenet megnyitásakor való újbóli használatát.
+A korábbi kiadásokban az új PowerShell-munkamenetek megnyitásakor minden egyes alkalommal létre kellett hozni egy Azure-környezetet. Az Azure PowerShell 4.4.0-s verziójától kezdve azonban új PowerShell-munkamenet megnyitásakor beállítható az Azure-környezet automatikus mentése.
 
-## <a name="automatically-saving-the-context-for-the-next-sign-in"></a>A környezet automatikus mentése a következő bejelentkezéshez
+## <a name="automatically-save-the-context-for-the-next-sign-in"></a>A környezet automatikus mentése a következő bejelentkezéshez
 
-Az Azure PowerShell alapértelmezés szerint a munkamenetek bezárásakor elveti a környezet adatait.
+Az Azure PowerShell a 6.3.0-s verziótól kezdve automatikusan megőrzi a környezet adatait a munkamenetek között. Ha szeretné beállítani, hogy a PowerShell elfelejtse a környezetet és a hitelesítő adatokat, használja a `Disable-AzureRmContextAutoSave` parancsmagot. Ekkor minden alkalommal újra be kell majd jelentkeznie az Azure-ba, amikor megnyit egy PowerShell-munkamenetet.
 
 Ha szeretné engedélyezni, hogy az Azure PowerShell megjegyezze a környezet adatait a PowerShell-munkamenetek bezárásakor, használja az `Enable-AzureRmContextAutosave` parancsmagot. A rendszer automatikusan menti a környezet adatait és a hitelesítő adatokat egy speciális rejtett mappába a felhasználó könyvtárában (`%AppData%\Roaming\Windows Azure PowerShell`).
-Ezután minden egyes új PowerShell-munkamenet az utolsó munkamenet során használt környezetre irányul majd.
-
-Ha szeretné beállítani, hogy a PowerShell elfelejtse a környezetet és a hitelesítő adatokat, használja a `Disable-AzureRmContextAutoSave` parancsmagot. Ekkor minden alkalommal újra be kell majd jelentkeznie az Azure-ba, amikor megnyit egy PowerShell-munkamenetet.
+Minden egyes új PowerShell-munkamenet az utolsó munkamenet során használt környezetre irányul.
 
 Az Azure-környezetek kezeléséhez használt parancsmagokkal pontosan szabályozható a működés. Például megadhatja, hogy a módosítások csak az aktuális PowerShell-munkamenetre (`Process` hatókör) vagy minden PowerShell-munkamenetre (`CurrentUser` hatókör) érvényesek legyenek. Ezeket a beállításokat a részletesebben a [Környezeti hatókörök használata](#Using-Context-Scopes) című szakasz tárgyalja.
 
@@ -71,7 +69,7 @@ Ha tájékozódni szeretne egy háttérfeladat kimeneteléről, a `Get-Job` para
 
 ## <a name="creating-selecting-renaming-and-removing-contexts"></a>Környezetek létrehozása, kiválasztása, átnevezése és eltávolítása
 
-Környezetek létrehozásához be kell jelentkeznie az Azure-ba. Az `Connect-AzureRmAccount` parancsmag (vagy az aliasa, a `Login-AzureRmAccount` parancsmag) beállítja a későbbiekben futtatott Azure PowerShell-parancsmagok által használt alapértelmezett környezetet, valamint lehetővé teszi a bejelentkezési hitelesítő adatai számára engedélyezett bérlők vagy előfizetések elérését.
+Környezetek létrehozásához be kell jelentkeznie az Azure-ba. Az `Connect-AzureRmAccount` parancsmag (vagy az aliasa, a `Login-AzureRmAccount` parancsmag) beállítja az Azure PowerShell-parancsmagok által használt alapértelmezett környezetet, valamint lehetővé teszi a bejelentkezési hitelesítő adatai számára engedélyezett bérlők vagy előfizetések elérését.
 
 A bejelentkezés után új környezet hozzáadásához használja a `Set-AzureRmContext` parancsmagot (vagy az aliasát, a `Select-AzureRmSubscription` parancsmagot).
 
@@ -95,7 +93,7 @@ A környezet a `Remove-AzureRmContext` parancsmaggal távolítható el.  Példá
 PS C:\> Remove-AzureRmContext Contoso2
 ```
 
-Elfelejti a „Contoso2” nevű környezetet. A környezet ezután a `Set-AzureRmContext` parancsmaggal hozható újra létre
+Elfelejti a „Contoso2” nevű környezetet. A környezet a `Set-AzureRmContext` parancsmaggal hozható újra létre
 
 ## <a name="removing-credentials"></a>Hitelesítő adatok eltávolítása
 
@@ -132,7 +130,7 @@ Ha a változó értéke „true”, a rendszer automatikusan menti a környezete
 - [Enable-AzureRmContextAutosave][enable] – A környezet mentésének engedélyezése a PowerShell-munkamenetek között.
   Minden változás módosítja a globális környezetet.
 - [Disable-AzureRmContextAutosave][disable] – A környezet automatikus mentésének letiltása. Minden egyes új PowerShell-munkamenetnek újra be kell jelentkeznie.
-- [Select-AzureRmContext][select] – Az alapértelmezett környezet kiválasztása. Az ezt követő parancsmagok ennek a környezetnek a hitelesítő adatait használják.
+- [Select-AzureRmContext][select] – Az alapértelmezett környezet kiválasztása. Az összes parancsmag ennek a környezetnek a hitelesítő adatait használja.
 - [Disconnect-AzureRmAccount][remove-cred] – Egy fiókhoz tartozó összes hitelesítő adat és környezet eltávolítása.
 - [Remove-AzureRmContext][remove-context] – A megnevezett környezet eltávolítása.
 - [Rename-AzureRmContext][rename] – Meglévő környezet eltávolítása.
@@ -154,5 +152,5 @@ Meglévő profilparancsmagok változásai
 
 <!-- Updated cmdlets -->
 [login]: /powershell/module/azurerm.profile/Connect-AzureRmAccount
-[import]: /powershell/module/azurerm.profile/Import-AzureRmAccount
-[set-context]: /powershell/module/azurerm.profile/Import-AzureRmContext
+[import]:  /powershell/module/azurerm.profile/Import-AzureRmContext
+[set-context]: /powershell/module/azurerm.profile/Set-AzureRmContext

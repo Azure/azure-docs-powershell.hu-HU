@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: 3a0d3d1d970f4458e66167fb55c840598ce59e13
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 3114f9e9b36dc374f9fb2d402c448cff7fef0aa3
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100426"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211451"
 ---
 # <a name="getting-started-with-azure-powershell"></a>Ismerkedés az Azure PowerShell-lel
 
@@ -64,7 +64,7 @@ Először is hozzon létre egy erőforráscsoportot. Az Azure erőforráscsoport
 
 Hozzunk létre egy erőforráscsoportot „MyResourceGroup” néven az Azure westeurope (Nyugat--Európa) régiójában. Ehhez írja be a következő parancsot:
 
-```powershell
+```powershell-interactive
 New-AzureRmResourceGroup -Name 'myResourceGroup' -Location 'westeurope'
 ```
 
@@ -84,7 +84,7 @@ Most, hogy létrehoztuk az erőforráscsoportot, hozzunk létre benne egy window
 
 Először létre kell hoznunk egy alhálózati konfigurációt a virtuális hálózat létrehozásához. Létrehozunk egy nyilvános IP-címet is, hogy csatlakozhassunk a virtuális géphez. Létrehozunk egy hálózati biztonsági csoportot, hogy biztonságossá tehessük a nyilvános cím elérését. Végül létrehozzuk a virtuális NIC-t az összes előbbi erőforrás használatával.
 
-```powershell
+```powershell-interactive
 # Variables for common values
 $resourceGroup = "myResourceGroup"
 $location = "westeurope"
@@ -120,14 +120,14 @@ $nic = New-AzureRmNetworkInterface -Name myNic1 -ResourceGroupName $resourceGrou
 
 Először is szükségünk lesz az operációs rendszerhez tartozó hitelesítő adatok egy készletére.
 
-```powershell
+```powershell-interactive
 # Create user object
 $cred = Get-Credential -Message "Enter a username and password for the virtual machine."
 ```
 
 Most, hogy rendelkezünk a szükséges erőforrásokkal, létrehozhatjuk a virtuális gépet. Ehhez a lépéshez létrehozunk egy VM-konfigurációs objektumot, majd ezzel a konfigurációval létrehozzuk a virtuális gépet.
 
-```powershell
+```powershell-interactive
 # Create a virtual machine configuration
 $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 |
   Set-AzureRmVMOperatingSystem -Windows -ComputerName $vmName -Credential $cred |
@@ -148,7 +148,7 @@ RequestId IsSuccessStatusCode StatusCode ReasonPhrase
 
 Most jelentkezzen be az újonnan létrehozott Windows Server-alapú virtuális gépre a Távoli asztal szolgáltatással és a virtuális gép nyilvános IP-címével. A következő parancs az előző szkriptben létrehozott nyilvános IP-címet jeleníti meg.
 
-```powershell
+```powershell-interactive
 $publicIp | Select-Object Name,IpAddress
 ```
 
@@ -160,7 +160,7 @@ mypublicdns1400512543 xx.xx.xx.xx
 
 Windows-alapú rendszer használata esetén ezt a parancssorból az mstsc parancs használatával teheti meg:
 
-```powershell
+```powershell-interactive
 mstsc /v:xx.xxx.xx.xxx
 ```
 
@@ -174,7 +174,7 @@ Az új linuxos virtuális gép létrehozásához előbb létre kell hoznunk a t�
 
 Először létre kell hoznunk egy alhálózati konfigurációt a virtuális hálózat létrehozásához. Létrehozunk egy nyilvános IP-címet is, hogy csatlakozhassunk a virtuális géphez. Létrehozunk egy hálózati biztonsági csoportot, hogy biztonságossá tehessük a nyilvános cím elérését. Végül létrehozzuk a virtuális NIC-t az összes előbbi erőforrás használatával.
 
-```powershell
+```powershell-interactive
 # Variables for common values
 $resourceGroup = "myResourceGroup"
 $location = "westeurope"
@@ -214,7 +214,7 @@ $nic = New-AzureRmNetworkInterface -Name myNic2 -ResourceGroupName $resourceGrou
 
 Most, hogy rendelkezünk a szükséges erőforrásokkal, létrehozhatjuk a virtuális gépet. Ehhez a lépéshez létrehozunk egy VM-konfigurációs objektumot, majd ezzel a konfigurációval létrehozzuk a virtuális gépet.
 
-```powershell
+```powershell-interactive
 # Create a virtual machine configuration
 $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 |
   Set-AzureRmVMOperatingSystem -Linux -ComputerName $vmName -Credential $cred -DisablePasswordAuthentication |
@@ -272,13 +272,13 @@ Bemutattuk, hogyan hozhat létre erőforráscsoportot, valamint Linux és Window
 
 Például a következő parancs használatával létrehozhat egy Azure-beli hálózati terheléselosztót, amelyet aztán társíthat az újonnan létrehozott virtuális gépekkel:
 
-```powershell
+```powershell-interactive
 New-AzureRmLoadBalancer -Name MyLoadBalancer -ResourceGroupName myResourceGroup -Location westeurope
 ```
 
 Vagy létrehozhat egy új privát virtuális hálózatot (vagy az Azure-ban gyakran használt nevén „VNetet”) az infrastruktúránkhoz a következő paranccsal:
 
-```powershell
+```powershell-interactive
 $subnetConfig = New-AzureRmVirtualNetworkSubnetConfig -Name mySubnet2 -AddressPrefix 10.0.0.0/16
 $vnet = New-AzureRmVirtualNetwork -ResourceGroupName myResourceGroup -Location westeurope `
   -Name MYvNET3 -AddressPrefix 10.0.0.0/16 -Subnet $subnetConfig
@@ -288,7 +288,7 @@ Az Azure és az Azure PowerShell attól igazán sokoldalúak, hogy nemcsak a fel
 
 Például az Azure PowerShell használatával létrehozhat egy Azure AppService-t. Az Azure AppService egy felügyelt platformszolgáltatás, amely nagyszerű megoldás a webappok üzemeltetésére anélkül, hogy aggódnia kellene az infrastruktúra miatt. Az Azure AppService létrehozása után két új Azure webappot hozhat létre az AppService-ben a következő parancsokkal:
 
-```powershell
+```powershell-interactive
 # Create an Azure AppService that we can host any number of web apps within
 New-AzureRmAppServicePlan -Name MyAppServicePlan -Tier Basic -NumberofWorkers 2 -WorkerSize Small -ResourceGroupName myResourceGroup -Location westeurope
 
@@ -301,7 +301,7 @@ New-AzureRmWebApp -Name MyWebApp43433 -AppServicePlan MyAppServicePlan -Resource
 
 A `Get-AzureRmResource` parancsmag használatával listázhatja az Azure-ban futó erőforrásokat. Az alábbi példa az új erőforráscsoportban létrehozott erőforrásokat mutatja be.
 
-```powershell
+```powershell-interactive
 Get-AzureRmResource |
   Where-Object ResourceGroupName -eq myResourceGroup |
     Select-Object Name,Location,ResourceType
@@ -330,7 +330,7 @@ micromyresomywi032907510                              westeurope Microsoft.Stora
 
 Az Azure-fiók tisztítása érdekében érdemes lehet törölnie a példában létrehozott erőforrásokat. A `Remove-AzureRm*` parancsmagokkal törölheti a már nem szükséges erőforrásokat. A létrehozott Windows rendszerű virtuális gép eltávolításához futtassa az alábbi parancsot:
 
-```powershell
+```powershell-interactive
 Remove-AzureRmVM -Name myWindowsVM -ResourceGroupName myResourceGroup
 ```
 
@@ -344,7 +344,7 @@ Are you sure you want to remove resource group 'myResourceGroup'
 
 Egyszerre több erőforrást is törölhet. A következő parancs például törli a teljes „MyResourceGroup” erőforráscsoportot, amelyet ebben a bevezető oktatóanyagban az összes mintához használtunk. Törli az erőforráscsoportot, és minden benne lévő erőforrást is.
 
-```powershell
+```powershell-interactive
 Remove-AzureRmResourceGroup -Name myResourceGroup
 ```
 

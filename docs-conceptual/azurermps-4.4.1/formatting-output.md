@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 73aa50b75366bc1e095c00c3d25429afdde21835
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 9ae0d661630bf4e080b3bbaa7f357c384ef68cc4
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024647"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211502"
 ---
 # <a name="formatting-query-results"></a>Lekérdezési eredmények formázása
 
@@ -29,7 +29,7 @@ Alapértelmezés szerint minden PowerShell-parancsmag kimenete előre meghatáro
 
 Ebben a példában lekérjük az Azure-beli virtuális gépek listáját az alapértelmezett előfizetésben.  A Get-AzureRmVM parancs kimenete alapértelmezés szerint táblázatos formában jelenik meg.
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM
 ```
 
@@ -42,7 +42,7 @@ MYWESTEURG          MyWin2016VM westeurope Standard_DS1_v2 Windows   mywin2016vm
 
 A táblázat visszaadott oszlopainak korlátozásához használja a `Format-Table` parancsmagot. A következő példában a virtuális gépek ugyanezen listáját kérjük le, de a kimenetet a virtuális gépek nevére, az erőforráscsoportra és a virtuális gép helyére korlátozzuk.  Az `-Autosize` paraméterrel az oszlopok mérete az adatok méretéhez igazítható.
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM | Format-Table Name,ResourceGroupName,Location -AutoSize
 ```
 
@@ -55,7 +55,7 @@ MyWin2016VM   MYWESTEURG        westeurope
 
 Az adatokat igény szerint lista formájában is megjelenítheti. Az alábbi példa ezt mutatja be a `Format-List` parancsmag használatával.
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM | Format-List Name,VmId,Location,ResourceGroupName
 ```
 
@@ -75,7 +75,7 @@ ResourceGroupName : MYWESTEURG
 
 A PowerShell többféle formátumot is biztosít, amelyekkel igényeire szabhatja a kimenetet.  A következő példában a `Select-Object` parancsmaggal lekérjük az előfizetésben lévő virtuális gépek attribútumait, majd átalakítjuk a kimenetet CSV formátumba, hogy könnyen importálható legyen adatbázisokba vagy táblázatokba.
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Csv -NoTypeInformation
 ```
 
@@ -87,7 +87,7 @@ Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,Provisioni
 
 A kimenet JSON formátumba is konvertálható.  A következő példában ugyanezt a listát hozzuk létre a virtuális gépekről, azonban a kimenetet JSON formátumba alakítjuk.
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Json
 ```
 

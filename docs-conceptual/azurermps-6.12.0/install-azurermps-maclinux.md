@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/05/2018
-ms.openlocfilehash: e7d27c6f6d980c54e45620b179cf2e26ffed17f0
-ms.sourcegitcommit: 1f699b72bf544d92459da9d888cc0091f9415b65
+ms.openlocfilehash: f60ea1c608be4b1c8319d53303713ba039276abc
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "50972655"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51212891"
 ---
 # <a name="install-azure-powershell-on-macos-or-linux"></a>Az Azure PowerShell telepítése macOS vagy Linux rendszeren
 
@@ -46,7 +46,7 @@ pwsh
 
 Az Azure PowerShell telepítéséhez futtassa az alábbi parancsot:
 
-```powershell
+```powershell-interactive
 Install-Module Az
 ```
 
@@ -75,7 +75,7 @@ A telepítés folytatásához válassza a `Yes` vagy a `Yes to All` lehetősége
 
 A meglévő `AzureRM` modullal való kompatibilitás érdekében az új `Az` modul képes visszamenőlegesen kompatibilis aliasokat létrehozni az `AzureRM` parancsmagokhoz. A modul első használata előtt állítsa be az aliasokat a következő paranccsal:
 
-```powershell
+```powershell-interactive
 # Import the module into the PowerShell session
 Import-Module Az
 # Enable AzureRM aliases for the user
@@ -95,7 +95,7 @@ Ez csak a jelenlegi felhasználó aliasait állítja be. A parancsmagsúgóból 
 
 Az Azure PowerShell használatának megkezdéséhez be kell tölteni az `Az` modult a PowerShell-munkamenetbe az [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) parancsmaggal, majd be kell jelentkezni az Azure-beli hitelesítő adatokkal. A modul importálásához __nincs__ szükség megemelt jogosultsági szintre.
 
-```powershell
+```powershell-interactive
 # Import the module into the PowerShell session
 Import-Module Az
 # Connect to Azure with an interactive dialog for sign-in

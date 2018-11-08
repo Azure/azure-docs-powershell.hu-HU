@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 05/15/2017
-ms.openlocfilehash: 9a93145f2abeea466a739775ca8ae7e337e78166
+ms.date: 09/09/2018
+ms.openlocfilehash: 6a42217c47c1e5101a708da87c15fc14004f2069
 ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 11/07/2018
-ms.locfileid: "51212114"
+ms.locfileid: "51212975"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Bejelentkezés az Azure PowerShell-lel
 
@@ -26,16 +26,16 @@ Az interaktív bejelentkezéshez használja a [Connect-AzureRmAccount](/powershe
 Connect-AzureRmAccount
 ```
 
-A parancsmag futtatásakor megnyílik egy párbeszédablak, amely az Azure-fiókhoz tartozó e-mail-cím és jelszó megadását kéri. A hitelesítéskor a rendszer menti ezt az információt az aktuális PowerShell-munkamenethez, a párbeszédablak bezáródik, és Ön hozzáférhet az összes Azure PowerShell-parancsmaghoz.
+A parancsmag futtatásakor megnyílik egy párbeszédablak, amely az Azure-fiókhoz tartozó e-mail-cím és jelszó megadását kéri. A hitelesítés csak az aktuális PowerShell-munkamenetre vonatkozik.
 
 > [!IMPORTANT]
-> Ez a bejelentkezés _csak_ az aktuális PowerShell-munkamenetre vonatkozik. A több munkamenetre megőrzött hitelesítésről az [állandó hitelesítő adatokkal](context-persistence.md) kapcsolatos cikkből tájékozódhat.
+> Az Azure PowerShell 6.3.0-s verziójától kezdve a hitelesítő adatok megoszlanak több PowerShell-munkamenet között, ha be van jelentkezve a Windowsba. További információért tekintse meg az [Állandó hitelesítő adatokat](context-persistence.md) ismertető cikket.
 
 ## <a name="sign-in-with-a-service-principal"></a>Bejelentkezés szolgáltatásnévvel
 
-A szolgáltatásnevek használatával nem interaktív fiókokat hozhat létre az erőforrások kezeléséhez. A szolgáltatásnevek olyan felhasználói fiókokhoz hasonlóak, amelyekre szabályokat alkalmazhat az Azure Active Directory használatával. Az automatizálási szkriptek biztonságának növelése érdekében csak a minimálisan szükséges engedélyeket adja meg a szolgáltatásneveknek.
+A szolgáltatásnevek nem interaktív Azure-fiókok. Más felhasználói fiókokhoz hasonlóan az ezekhez tartozó engedélyek kezelését is az Azure Active Directory végzi. Az automatizálási szkriptek biztonságát úgy garantálhatjuk, ha a szolgáltatásnevek számára csak a szükséges engedélyeket adjuk meg.
 
-Ha létre kíván hozni szolgáltatásnevet az Azure PowerShell-lel való használatra, tekintse meg az [Azure-beli szolgáltatásnév Azure PowerShell használatával történő létrehozásával](create-azure-service-principal-azureps.md) kapcsolatos szakaszt.
+Ha meg szeretné tudni, hogyan hozhat létre szolgáltatásnevet az Azure PowerShell-lel való használatra, tekintse meg az [Azure-beli szolgáltatásnév Azure PowerShell használatával történő létrehozásával](create-azure-service-principal-azureps.md) kapcsolatos szakaszt.
 
 Szolgáltatásnévvel való bejelentkezéshez használja a `-ServicePrincipal` argumentumot a `Connect-AzureRmAccount` parancsmaggal. Szüksége lesz a szolgáltatásnév alkalmazásazonosítójára, a bejelentkezési hitelesítő adatokra, és a szolgáltatásnévhez tartozó bérlőazonosítóra. Annak érdekében, hogy a szolgáltatásnév hitelesítő adatait a megfelelő objektumként kapja meg, használja a [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential) parancsmagot. Ez a parancsmag megjelenít egy párbeszédpanelt, amelyben megadható a szolgáltatásnév felhasználói azonosítója és jelszava.
 
@@ -44,15 +44,25 @@ $pscredential = Get-Credential
 Connect-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
 ```
 
-## <a name="sign-in-using-managed-identities-for-azure-resources"></a>Bejelentkezés az Azure-erőforrások felügyelt identitásaival
+## <a name="sign-in-using-an-azure-managed-service-identity"></a>Bejelentkezés Azure-beli Managed Service Identityvel
 
 A Azure-erőforrások felügyelt identitása az Azure Active Directory egy funkciója. A felügyelt identitás szolgáltatásnevével bejelentkezhet, és beszerezhet egy csak alkalmazásra érvényes hozzáférési jogkivonatot az egyéb erőforrások eléréséhez. A felügyelt identitások csak az Azure-felhőben futó virtuális gépeken érhetők el.
 
 Az Azure-erőforrások felügyelt identitásairól [a hozzáférési jogkivonatok egy Azure-beli virtuális gép Azure-erőforrásainak felügyelt identitásaival való beszerzését ismertető részben](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token) talál.
 
+## <a name="sign-in-as-a-cloud-solution-provider-csp"></a>Bejelentkezés felhőszolgáltatóként (CSP)
+
+A [felhőszolgáltatóként (CSP)](https://azure.microsoft.com/en-us/offers/ms-azr-0145p/) történő bejelentkezéshez `-TenantId` használatára van szükség. Ez a paraméter általában bérlőazonosítóként vagy tartománynévként is megadható, a felhőszolgáltatóként történő bejelentkezéshez azonban **bérlőazonosítót** kell megadni.
+
+```azurepowershell-interactive
+Connect-AzureRmAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'
+```
+
 ## <a name="sign-in-to-another-cloud"></a>Bejelentkezés egy másik felhőbe
 
-Az Azure Cloud Services különböző környezeteket biztosít, amelyek igazodnak az egyes régiók adatkezelési szabályzataihoz. Ha az Azure-fiókja az egyik ilyen régióhoz társított felhőben található, bejelentkezéskor meg kell adnia a környezetet. Például ha a fiók a kínai felhőszolgáltatásban található, a regisztrálás az alábbi paranccsal történik:
+Az Azure Cloud Services által biztosított környezetek megfelelnek a regionális adatkezelési előírásoknak.
+Regionális felhőszolgáltatásban található fiókok esetében a környezetet az `-Environment` argumentummal való bejelentkezéskor kell beállítania.
+Például ha a fiók a kínai felhőszolgáltatásban található:
 
 ```azurepowershell-interactive
 Connect-AzureRmAccount -Environment AzureChinaCloud
@@ -76,4 +86,4 @@ Azure PowerShell-parancsmagok a szerepkörök kezeléséhez:
 * [New-AzureRmRoleDefinition](/powershell/module/AzureRM.Resources/New-AzureRmRoleDefinition)
 * [Remove-AzureRmRoleAssignment](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleAssignment)
 * [Remove-AzureRmRoleDefinition](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleDefinition)
-* [Set-AzureRmRoleDefinition](/powershell/moduel/AzureRM.Resources/Set-AzureRmRoleDefinition)
+* [Set-AzureRmRoleDefinition](/powershell/module/AzureRM.Resources/Set-AzureRmRoleDefinition)

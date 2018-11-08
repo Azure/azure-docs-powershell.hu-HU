@@ -16,12 +16,12 @@ metadata:
   ms.technology: azure-powershell
   ms.service: virtual-machines
   clicktale: true
-  ms.openlocfilehash: e6d585d76f507a7959e6e6227aff1effad8fa336
-  ms.sourcegitcommit: f648ac92fafb16cc0e9ca6bc85d00fa327baf396
+  ms.openlocfilehash: 6bf5fdd20d0f9831fc5e7eae9158343c995034b4
+  ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
   ms.translationtype: HT
   ms.contentlocale: hu-HU
-  ms.lasthandoff: 08/24/2018
-  ms.locfileid: "38100069"
+  ms.lasthandoff: 11/07/2018
+  ms.locfileid: "51211706"
 items:
 - durationInMinutes: 1
   content: >-
@@ -38,7 +38,7 @@ items:
     Ha az Azure PowerShell helyi telepítését választotta, akkor a további lépések végrehajtása előtt jelentkezzen be.
 
 
-    ```powershell
+    ```powershell-interactive
 
     Connect-AzureRmAccount
 
@@ -54,7 +54,7 @@ items:
     Ebben az oktatóanyagban létrehozott minden erőforrás egy `TutorialResources` nevű csoportba kerül.
 
 
-    ```powershell
+    ```powershell-interactive
 
     New-AzureRmResourceGroup -Name TutorialResources -Location eastus
 
@@ -80,7 +80,7 @@ items:
     Új virtuális gép létrehozása előtt létre kell hoznia egy hitelesítő objektumot, amely tartalmazza a Windows rendszerű virtuális gép rendszergazdai fiókjának felhasználónevét és jelszavát.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $cred = Get-Credential -Message "Enter a username and password for the virtual machine."
 
@@ -110,7 +110,7 @@ items:
     Hozzon létre egy Windows rendszerű új virtuális gépet.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $vmParams = @{
       ResourceGroupName = 'TutorialResources'
@@ -143,7 +143,7 @@ items:
     Ha a virtuális gép létrejött, az eredmények megtekinthetők az Azure Portalon vagy a \$newVM1 változó vizsgálatával.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $newVM1
 
@@ -186,7 +186,7 @@ items:
     Az imént létrehozott virtuális gépről további részletes információkat is beszerezhet. Ebben a példában ellenőrizni fogja a létrehozott virtuális gép és rendszergazdai fiók nevét.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $newVM1.OSProfile | Select-Object ComputerName,AdminUserName
 
@@ -207,7 +207,7 @@ items:
     Egyéb Azure PowerShell-parancsokkal a hálózati konfigurációval kapcsolatos információkat lehet lekérni.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $newVM1 | Get-AzureRmNetworkInterface |
       Select-Object -ExpandProperty IpConfigurations |
@@ -232,7 +232,7 @@ items:
     Ha ellenőrizni szeretné, hogy a virtuális gép fut-e, csatlakoznia kell hozzá távoli asztali kapcsolaton keresztül. Ehhez szükség van a nyilvános IP-címre.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $publicIp = Get-AzureRmPublicIpAddress -Name tutorialPublicIp -ResourceGroupName TutorialResources
 
@@ -259,7 +259,7 @@ items:
     A virtuális gép távoli asztali eléréséhez futtassa a következő parancsot a helyi gépen.
 
 
-    ```powershell
+    ```powershell-interactive
 
     mstsc.exe /v <PUBLIC_IP_ADDRESS>
 
@@ -273,7 +273,7 @@ items:
     A második virtuális gép a meglévő alhálózatot használja.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $vm2Params = @{
       ResourceGroupName = 'TutorialResources'
@@ -328,7 +328,7 @@ items:
     Kihagyhatja azt a pár lépést, amellyel az új virtuális gép nyilvános IP-címét kérné le, mivel azt a rendszer a \$newVM2 objektum FullyQualifiedDomainName tulajdonságában visszaadja. Az alábbi parancs használatával csatlakozhat távoli asztali kapcsolaton keresztül.
 
 
-    ```powershell
+    ```powershell-interactive
 
     mstsc.exe /v $newVM2.FullyQualifiedDomainName
 
@@ -339,7 +339,7 @@ items:
     Most, hogy végzett az oktatóanyaggal, ideje törölni a létrehozott erőforrásokat. Az egyes erőforrásokat a `Remove-AzureRmResource` paranccsal törölheti, de az erőforráscsoportban szereplő összes erőforrás eltávolításának legbiztosabb módja, ha a `Remove-AzureRmResourceGroup` paranccsal törli az egész csoportot.
 
 
-    ```powershell
+    ```powershell-interactive
 
     $job = Remove-AzureRmResourceGroup -Name TutorialResources -Force -AsJob
 
@@ -363,7 +363,7 @@ items:
     Ez a parancs törli az oktatóanyag használata közben létrehozott erőforrásokat, és garantáltan a megfelelő sorrendben szabadítja fel őket. Az `-AsJob` paraméter megakadályozza, hogy a PowerShell blokkoljon a törlés végrehajtása közben. Ha várni szeretne, amíg a törlés befejeződik, használja a következő parancsot:
 
 
-    ```powershell
+    ```powershell-interactive
 
     Wait-Job -Id $job.Id
 

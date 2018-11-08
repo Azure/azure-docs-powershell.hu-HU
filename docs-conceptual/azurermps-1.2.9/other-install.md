@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
-ms.openlocfilehash: 0d6129fae45d16c414668be68ed377c9241f5330
-ms.sourcegitcommit: ff44dec6418a449757bded3c6ebe0a7d4c05ee6e
+ms.openlocfilehash: 7e59a5188dee3801a1305a693b2df8af63425eb5
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50738308"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211638"
 ---
 # <a name="other-installation-methods"></a>Egyéb telepítési módszerek
 
@@ -32,7 +32,7 @@ Töltse le az [Azure PowerShell WebPI csomagot](http://aka.ms/webpi-azps), és i
 
 A telepítés befejeztével a `$env:PSModulePath` beállításnak tartalmaznia kell az Azure PowerShell-parancsmagokat tartalmazó könyvtárakat. A következő paranccsal ellenőrizheti, hogy az Azure PowerShell megfelelően van-e telepítve.
 
-```powershell
+```powershell-interactive
 # To make sure the Azure PowerShell module is available after you install
 Get-Module -ListAvailable Azure* | Select-Object Name, Version, Path
 ```
@@ -56,7 +56,7 @@ At line:1 char:1
 
 Ez a hiba a gép újraindításával vagy a modul teljes útvonallal való importálásával javítható. Például:
 
-```powershell
+```powershell-interactive
 Import-Module "$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\AzureRM.psd1"
 ```
 

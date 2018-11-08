@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: 71a2554052f5a25ea86fe44b6dcf5d9343c81f3e
-ms.sourcegitcommit: ff44dec6418a449757bded3c6ebe0a7d4c05ee6e
+ms.openlocfilehash: edbf17141cac4ea6e41282c8e1dd07c5b738351c
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50737934"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211604"
 ---
 # <a name="log-in-with-azure-powershell"></a>Bejelentkezés az Azure PowerShell-lel
 
@@ -32,13 +32,13 @@ A szolgáltatásnevek használatával nem interaktív fiókokat hozhat létre az
 
 2. Jelentkezzen be a szolgáltatásnévvel.
 
-    ```powershell
+    ```powershell-interactive
     Login-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
     ```
 
     A bérlőazonosító megismeréséhez jelentkezzen be interaktívan, és kérje le az előfizetésből.
 
-    ```powershell
+    ```powershell-interactive
     Get-AzureRmSubscription
     ```
 
@@ -61,13 +61,13 @@ Az Azure-erőforrások felügyelt identitásairól [a hozzáférési jogkivonato
 
 Az Azure-beli felhőszolgáltatások különböző környezeteket biztosítanak, amelyek igazodnak az egyes kormányzatok adatkezelési szabályzataihoz. Ha az Azure-fiók valamelyik kormányzati felhőben található, bejelentkezéskor meg kell adnia a környezetet. Például ha a fiók a kínai felhőszolgáltatásban található, a regisztrálás az alábbi paranccsal történik:
 
-```powershell
+```powershell-interactive
 Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 ```
 
 Az alábbi paranccsal olvashatja be a rendelkezésre álló környezetek listáját:
 
-```powershell
+```powershell-interactive
 Get-AzureRmEnvironment | Select-Object Name
 ```
 
