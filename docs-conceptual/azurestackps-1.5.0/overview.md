@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: afa83a6258e57e961576b328e67fad634704dddf
-ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
+ms.openlocfilehash: 18861f0e5232e0b505767aa9609099afe88f9477
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51275316"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211162"
 ---
 # <a name="azure-stack-module-150"></a>Azure Stack 1.5.0-s modul
 
@@ -46,7 +46,7 @@ Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 Install-Module -Name AzureStack -RequiredVersion 1.5.0
 ```
 
-## <a name="release-notes"></a>Kibocsátási megjegyzések
+##<a name="release-notes"></a>Kibocsátási megjegyzések
 * Minden Azure Stack Admin-modul függősége nagyobb vagy egyenlő lett az AzureRM.Profile-modulhoz viszonyítva
 * Beágyazotterőforrás-nevek támogatása minden modulban
 * Hibajavítás minden olyan modulban, amelyben az ErrorActionPreference felül lett bírálva Stopként
