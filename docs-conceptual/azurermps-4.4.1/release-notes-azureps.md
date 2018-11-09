@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
-ms.openlocfilehash: 6f0e304c499fc8bf4909e2825d52cd63b1fcbf5d
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 563f84c3af98de066611dd80102e552b31f12883
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100491"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274925"
 ---
 # <a name="release-notes"></a>Kibocsátási megjegyzések
 
@@ -262,14 +262,15 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
       - Remove-AzureRMRoleDefinition
       - Set-AzureRMRoleDefinition
 * ServiceBus
-    * Az alábbi új engedélyezési szabályokkal, névterekkel, üzenetsorokkal és témakörökkel kapcsolatos parancsmagok jelentek meg. a rendszer a paraméterkészlet alapján elvégzi az engedélyezési szabályokra vonatkozó műveleteket.
-     - New-AzureRmServiceBusAuthorizationRule – Új engedélyezési szabályt ad hozzá egy meglévő ServiceBus-névtérhez, -üzenetsorhoz vagy -témakörhöz.
-     - Get-AzureRmServiceBusAuthorizationRule – Beolvas egy engedélyezési szabályt vagy az engedélyezési szabályok listáját egy meglévő ServiceBus-névtérből, -üzenetsorból vagy -témakörből.
-     - Set-AzureRmServiceBusAuthorizationRule – Frissíti egy meglévő ServiceBus-névtér, -üzenetsor vagy -témakör tulajdonságait.
-     - New-AzureRmServiceBusKey – Új elsődleges és másodlagos kulcsot generál egy meglévő ServiceBus-névtér, -üzenetsor vagy -témakör egy engedélyezési szabályához.
-     - Get-AzureRmServiceBusKey – Beolvassa egy meglévő ServiceBus-névtér, -üzenetsor vagy -témakör egy engedélyezési szabályának elsődleges és másodlagos kulcsát.
-     - Remove-AzureRmServiceBusNamespaceAuthorizationRule – Törli egy meglévő ServiceBus-névtér, -üzenetsor vagy -témakör egy meglévő engedélyezési szabályát.
-    * Megjelent a ResourceGroup tulajdonság a névtérattribútumok között
+  * Az alábbi új engedélyezési szabályokkal, névterekkel, üzenetsorokkal és témakörökkel kapcsolatos parancsmagok jelentek meg. a rendszer a paraméterkészlet alapján elvégzi az engedélyezési szabályokra vonatkozó műveleteket.
+    - New-AzureRmServiceBusAuthorizationRule – Új engedélyezési szabályt ad hozzá egy meglévő ServiceBus-névtérhez, -üzenetsorhoz vagy -témakörhöz.
+    - Get-AzureRmServiceBusAuthorizationRule – Beolvas egy engedélyezési szabályt vagy az engedélyezési szabályok listáját egy meglévő ServiceBus-névtérből, -üzenetsorból vagy -témakörből.
+    - Set-AzureRmServiceBusAuthorizationRule – Frissíti egy meglévő ServiceBus-névtér, -üzenetsor vagy -témakör tulajdonságait.
+    - New-AzureRmServiceBusKey – Új elsődleges és másodlagos kulcsot generál egy meglévő ServiceBus-névtér, -üzenetsor vagy -témakör egy engedélyezési szabályához.
+    - Get-AzureRmServiceBusKey – Beolvassa egy meglévő ServiceBus-névtér, -üzenetsor vagy -témakör egy engedélyezési szabályának elsődleges és másodlagos kulcsát.
+    - Remove-AzureRmServiceBusNamespaceAuthorizationRule – Törli egy meglévő ServiceBus-névtér, -üzenetsor vagy -témakör egy meglévő engedélyezési szabályát.
+  * Megjelent a ResourceGroup tulajdonság a névtérattribútumok között
+
 * SQL
     * A Set-AzureRmSqlServerTransparentDataEncryptionProtector parancsmag frissítése, hogy figyelmeztetést jelenítsen meg és megerősítést kérjen, ha a titkosítási védelem típusa az AzureKeyVault értékre van állítva
     * Új, frissített naplózási beállításokra vonatkozó parancsmagok jelentek meg
@@ -297,15 +298,16 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
 
 ## <a name="20170717---version-421"></a>2017.07.17. – 4.2.1-es verzió
 * Compute
-    - Kijavítottuk a virtuálisgép-lemez és a virtuálisgép-lemez pillanatfelvételének létrehozásához és frissítéséhez használt parancsmagok hibáit (hivatkozás)[https://github.com/azure/azure-powershell/issues/4309]
-      - New-AzureRmDisk
-      - New-AzureRmSnapshot
-      - Update-AzureRmDisk
-      - Update-AzureRmSnapshot
+  - Kijavítottuk a virtuálisgép-lemez és a virtuálisgép-lemez pillanatfelvételének létrehozásához és frissítéséhez használt parancsmagok hibáit (hivatkozás)[<https://github.com/azure/azure-powershell/issues/4309>]
+    - New-AzureRmDisk
+    - New-AzureRmSnapshot
+    - Update-AzureRmDisk
+    - Update-AzureRmSnapshot
 * Profil
-    - Kijavítottuk a nem interaktív felhasználói hitelesítéssel kapcsolatos hibát az RDFE-ben (hivatkozás)[https://github.com/Azure/azure-powershell/issues/4299]
+  - Kijavítottuk a nem interaktív felhasználói hitelesítéssel kapcsolatos hibát az RDFE-ben (hivatkozás)[<https://github.com/Azure/azure-powershell/issues/4299>]
+
 * ServiceManagement
-    - Kijavítottuk a nem interaktív felhasználói hitelesítéssel kapcsolatos hibát (hivatkozás)[https://github.com/Azure/azure-powershell/issues/4299]
+  - Kijavítottuk a nem interaktív felhasználói hitelesítéssel kapcsolatos hibát (hivatkozás)[<https://github.com/Azure/azure-powershell/issues/4299>]
 
 ## <a name="2017711---version-420"></a>2017.07.11. – 4.2.0-ás verzió
 * AnalysisServices
@@ -660,7 +662,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
 * ServiceBus
 
   - Hibajavítás: A ServiceBus Queue objektumának tulajdonságai null értékre lettek állítva, és az objektum bemeneti paraméterként szolgál a Set-AzureRmServiceBusQueue parancsmagban az üzenetsor frissítésekor.
-   - Az érintett tulajdonságok a következők: LockDuration, EntityAvailabilityStatus, DuplicateDetectionHistoryTimeWindow, MaxDeliveryCount és MessageCount
+    - Az érintett tulajdonságok a következők: LockDuration, EntityAvailabilityStatus, DuplicateDetectionHistoryTimeWindow, MaxDeliveryCount és MessageCount
 * ServiceFabric
 
   - Új Service Fabric-parancsmagok

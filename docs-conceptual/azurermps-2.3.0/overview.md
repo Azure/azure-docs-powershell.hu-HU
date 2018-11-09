@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: 0cb2fe38ef43657fb02627f9b5bc728eacb3062a
-ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
+ms.openlocfilehash: cd415e862bfaa2b767cce108689ebaf34ef74305
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51211692"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274398"
 ---
 # <a name="azurerm-module-230"></a>AzureRM 2.3.0-s modul
 
@@ -42,7 +42,7 @@ Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 
 ```
 
-##<a name="release-notes"></a>Kibocsátási megjegyzések
+## <a name="release-notes"></a>Kibocsátási megjegyzések
 * A 2.3.0-s kiadás tartalmaz egy listát a kompatibilitástörő változásokról. Az 1.2.11-es verzióról történő frissítéshez készítettünk egy migrálási útmutatót a következő helyen: https://aka.ms/azspowershellmigration
 * Ez a kiadás megegyezik a 2018-03-01-hybrid Azure Stack-specifikus API profillal.
 * Minden modul függősége nagyobb vagy egyenlő lett az AzureRM.Profile-modulhoz viszonyítva.
