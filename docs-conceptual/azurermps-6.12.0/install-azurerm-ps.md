@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/08/2018
-ms.openlocfilehash: 49f1f0ef1051d8f1a72423d288d94d1ecae49fae
-ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
+ms.openlocfilehash: 44537686277810e9632b0916089043d26023e27a
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51274024"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51212816"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Az Azure PowerShell telepítése Windows rendszeren a PowerShellGet használatával
 
@@ -21,8 +21,6 @@ Ez a cikk az Azure PowerShell-modulok PowerShellGet segítségével való telep�
 Az Azure PowerShell más platformokon való telepítéséhez tekintse meg [az Azure PowerShell macOS és Linux rendszeren való telepítését és konfigurálását](install-azurermps-maclinux.md) ismertető témakört.
 
 Az Azure PowerShell e verziója nem támogatja a klasszikus Azure üzemi modellt. A klasszikus üzemi modell támogatásához kövesse az [Azure PowerShell Service Management moduljának telepítésével](/powershell/azure/servicemanagement/install-azure-ps) kapcsolatos szakaszban található utasításokat.
-
-[!INCLUDE[az-replacing-azurerm](../includes/az-replacing-azurerm.md)]
 
 ## <a name="requirements"></a>Követelmények
 
