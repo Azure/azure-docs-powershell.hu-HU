@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 08/28/2018
-ms.openlocfilehash: 8a7b184ed06eb078956229fa67d02840014e3aaf
-ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
+ms.openlocfilehash: c60bc9197266cc1da37cc9af7baf03e7ba8fb7ac
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51275520"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51212877"
 ---
 # <a name="release-notes"></a>Kibocsátási megjegyzések
 
@@ -164,7 +164,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
 #### <a name="azurermprofile"></a>AzureRM.Profile
 * Kisebb módosítások a tárolók általános kódjában
 * Teljes paramétertípusokkal frissült súgófájlok
-* A -ServicePrincipal módosítása nem kötelezőre a ServicePrincipalCertificateWithSubscriptionId paraméterkészletben 
+- A -ServicePrincipal módosítása nem kötelezőre a ServicePrincipalCertificateWithSubscriptionId paraméterkészletben 
 
 #### <a name="azurestorage"></a>Azure.Storage
 * Storage-környezet létrehozásának támogatása OAuth használatával. 
@@ -403,7 +403,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
 
 #### <a name="azurestorage"></a>Azure.Storage
 * Az 5 TB-os korlátozás feloldása Azure-fájlmegosztási kvóta esetén
-* Set-AzureStorageShareQuota
+- Set-AzureStorageShareQuota
 
 #### <a name="azurermanalysisservices"></a>AzureRM.AnalysisServices
 * Frissítve az Azure ClientRuntime legújabb verziójára.
@@ -680,8 +680,8 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
 
 #### <a name="azurestorage"></a>Azure.Storage
 * Blob vagy fájl feltöltésének támogatása csak írási SAS-jogkivonattal
-* Set-AzureStorageBlobContent
-* Set-AzureStorageFileContent
+- Set-AzureStorageBlobContent
+- Set-AzureStorageFileContent
 
 #### <a name="azurermanalysisservices"></a>AzureRM.AnalysisServices
 * A kötelező ResourceGroupName tulajdonság hozzáadása az AS-hez.
