@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
 ms.openlocfilehash: a07b5fe8cd532f99038d7f0ce10b3b891c896da1
-ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51212829"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51273939"
 ---
 # <a name="persist-user-credentials-across-powershell-sessions"></a>Felhasználói hitelesítő adatok megőrzése a PowerShell-munkamenetek között
 
