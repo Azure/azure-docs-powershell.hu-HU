@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: a9cd0667e098e6b2c8577d11218b842548bee9d3
-ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
+ms.openlocfilehash: 39d9fa6e354c3c3448053c9cdc98fdc7f55b068d
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51212841"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274568"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>A Microsoft Azure PowerShell 6.0.0 kompatibilitástörő változásai
 
@@ -255,8 +255,8 @@ Remove-AzureRmDataLakeStoreItem -Account "ContosoADL" -path /myFolder -Recurse
 - A parancsmag többé már nem fogad olyan paramétereket, amelyek a hozzáférési jogkivonatot határozzák meg. Ehelyett a parancsmag lecseréli az olyan kifejezett jogkivonat-paramétereket, mint a `Service` és a `Permissions` egy általános `TemplateUri` paraméterre, amely egy máshol (valószínűleg Storage PowerShell-parancsmagokkal vagy a Storage-dokumentáció alapján manuálisan) meghatározott hozzáférési mintajogkivonatnak feleltethető meg. A parancsmag megőrzi a `ValidityPeriod` paramétert.
 
 Az Azure Storage megosztott hozzáférési jogkivonatok létrehozásával kapcsolatos további információiért tekintse meg az alábbi dokumentációs oldalakat:
-- [SAS-szolgáltatás létrehozása] (https://docs.microsoft.com/rest/api/storageservices/Constructing-a-Service-SAS)
-- [SAS-fiók létrehozása] (https://docs.microsoft.com/rest/api/storageservices/constructing-an-account-sas)
+- [SAS-szolgáltatás létrehozása](https://docs.microsoft.com/rest/api/storageservices/Constructing-a-Service-SAS)
+- [SAS-fiók létrehozása](https://docs.microsoft.com/rest/api/storageservices/constructing-an-account-sas)
 
 ```powershell-interactive
 # Old

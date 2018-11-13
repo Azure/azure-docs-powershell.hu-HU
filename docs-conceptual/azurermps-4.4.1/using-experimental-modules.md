@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
-ms.openlocfilehash: 09858da9981c1136e2a39a079962c5b8fc39bde9
-ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
+ms.openlocfilehash: 30e57805dd59bd60d10c52422fcb68686563fadf
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51211910"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274670"
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>Kísérleti Azure PowerShell-modulok használata
 
@@ -63,7 +63,7 @@ Az Azure CLI 2.0 számos intelligens alapértelmezett értéket alkalmaz, amelye
 
 A központi fejlesztések a „józan megfontoláson” alapulnak, és az ilyen frissítések bevezetéséhez nem sok kísérletezés szükséges.
 
-- Forgatókönyv-alapú parancsmagok – **Minden* parancsmagot forgatókönyvek, és nem az Azure REST-szolgáltatás köré kell építeni.
+- Forgatókönyv-alapú parancsmagok – <em>*Minden</em> parancsmagot forgatókönyvek, és nem az Azure REST-szolgáltatás köré kell építeni.
 
 - Rövidebb nevek – Ez a parancsmagok (például: `New-AzureRmVM` => `New-AzVm`) és a paraméterek (például: `-ResourceGroupName` => `-Rg`) nevére is vonatkozik. A „régi” parancsmagokkal való kompatibilitás érdekében aliasok használhatók. Biztosítson _visszafelé kompatibilis_ paraméterkészleteket.
 
