@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
 ms.openlocfilehash: 77d0ce36ae3ab7c7bddd3febef4600fc9652850f
-ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
+ms.sourcegitcommit: 4afdba3cd7e1d348876ce59f3503fdcd258f79ab
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51274517"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51574430"
 ---
 # <a name="use-experimental-azure-powershell-modules"></a>Kísérleti Azure PowerShell-modulok használata
 
