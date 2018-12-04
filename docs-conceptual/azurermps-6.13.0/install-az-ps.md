@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 11/16/2018
-ms.openlocfilehash: 32e96c6459c9db0c4b9eda0cc170c85ba99a22ca
-ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
+ms.date: 11/26/2018
+ms.openlocfilehash: 3d52b18750341f220dc8e10d6bf89796457c5a10
+ms.sourcegitcommit: 558436c824d9b59731aa9b963cdc8df4dea932e7
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52259794"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52588179"
 ---
 # <a name="install-the-azure-powershell-az-module"></a>Az Azure PowerShell Az modul telepítése
 
@@ -32,7 +32,9 @@ Ha elavult verzióval rendelkezik, vagy nincs telepítve a PowerShell, tekintse 
 
 > [!IMPORTANT]
 >
-> Az `AzureRM` és az `Az` modul nem lehet egyszerre telepítve ugyanazon a rendszeren. Az `Az` modul telepítéséhez az `AzureRM` modult el kell távolítani. Az erre vonatkozó utasításokért lásd: [Az Azure PowerShell-modul (AzureRM) eltávolítása](uninstall-azurerm-ps.md).
+> Az `AzureRM` és az `Az` modul egyszerre is telepítve lehet ugyanazon a rendszeren. Ha mindkettő telepítve van, __ne engedélyezze az aliasokat__.
+> Az aliasok engedélyezése ütközéseket okozhat az `AzureRM` parancsmagok és az `Az` aliasok között, ami nem várt működéshez vezethet.
+> Az `Az` modul telepítése előtt ajánlott eltávolítani az `AzureRM`-et. Az `AzureRM`-et bármikor eltávolíthatja, illetve bármikor engedélyezheti az aliasokat. Az eltávolításra vonatkozó útmutatásért lásd a következő cikket: [Az Azure PowerShell module (AzureRM) eltávolítása](uninstall-azurerm-ps.md). 
 
 A modulok globális hatókörben való telepítéséhez megemelt jogosultsági szint szükséges a PowerShell-galériából való telepítés esetén. Az Azure PowerShell telepítéséhez futtassa a következő parancsot egy emelt szintű munkamenetben („Futtatás rendszergazdaként” a Windows, vagy felügyelői jogosultságok a macOS vagy a Linux alatt):
 

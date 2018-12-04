@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/07/2018
-ms.openlocfilehash: 0c73e7ac1d47a2a97b6136fa481d0adce8de33db
-ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
+ms.openlocfilehash: 720387ec1b23f10ddf2b153cf0705b2b6d1b7b82
+ms.sourcegitcommit: 558436c824d9b59731aa9b963cdc8df4dea932e7
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52259638"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52587703"
 ---
 # <a name="migrate-from-azurerm-to-azure-powershell-az"></a>Áttelepítés az AzureRM modulból az Azure PowerShell Az modulba
 
@@ -21,7 +21,7 @@ Az AzureRM-parancsmagokhoz írt szkriptek nem működnek automatikusan az új mo
 
 ## <a name="ensure-your-existing-scripts-work-with-the-latest-azurerm-release"></a>Gondoskodjon róla, hogy a meglévő szkriptek működjenek az AzureRM legfrissebb kiadásával.
 
-Ez az a legfontosabb lépés! Futtassa a meglévő szkriptjeit, és ellenőrizze, hogy működnek-e az AzureRM _legfrissebb_ kiadásával (__6.12.0__). Ha a szkriptek nem működnek, tekintse át [az AzureRM áttelepítési útmutatóját](migration-guide.6.0.0.md).
+Ez az a legfontosabb lépés! Futtassa a meglévő szkriptjeit, és ellenőrizze, hogy működnek-e az AzureRM _legfrissebb_ kiadásával (__6.13.0__). Ha a szkriptek nem működnek, tekintse át [az AzureRM áttelepítési útmutatóját](migration-guide.6.0.0.md).
 
 ## <a name="install-the-azure-powershell-az-module"></a>Az Azure PowerShell Az modul telepítése
 
