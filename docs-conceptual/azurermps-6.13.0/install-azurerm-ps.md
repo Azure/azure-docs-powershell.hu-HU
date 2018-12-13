@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/16/2018
-ms.openlocfilehash: 616a9e14c3944e3151676d89b8a22e35d8f9d406
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.openlocfilehash: 198c9476b06c818fd3f7cb5ac3ac465497cac9cf
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52828419"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53216585"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Az Azure PowerShell telepítése Windows rendszeren a PowerShellGet használatával
 
@@ -95,7 +95,7 @@ Ha szeretné a rendszerből eltávolítani az Azure PowerShell régebbi verziói
 Lehetőség van az Azure PowerShell több verziójának telepítésére. Ha szeretné ellenőrizni, hogy több Azure PowerShell-verzió is telepítve van-e, használja a következő parancsot:
 
 ```powershell-interactive
-Get-Module -Name AzureRM -List | select Name,Version
+Get-Module -Name AzureRM -ListAvailable | select Name,Version
 ```
 
 Ha el szeretné távolítani az Azure PowerShell egyik verzióját, tekintse meg az [Azure PowerShell-modul eltávolítását](uninstall-azurerm-ps.md) ismertető szakaszt.

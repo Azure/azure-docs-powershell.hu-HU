@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
 ms.openlocfilehash: a93461af1dafbf8f2c85ef127ecaefadf3be2f52
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52827003"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53217439"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Több Azure-előfizetés kezelése
 

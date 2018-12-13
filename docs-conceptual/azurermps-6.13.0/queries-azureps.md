@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
 ms.openlocfilehash: 6bd1bea43303e9f5a2b46d63a3ac51b4c4031b9f
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52828518"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53217983"
 ---
 # <a name="query-output-of-azure-powershell-cmdlets"></a>Azure PowerShell-parancsmagok lekérdezésének kimenete
 
