@@ -8,19 +8,19 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: fb892daeafb1365ea62324392ac806cf9f3d39cf
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.openlocfilehash: 3add10651334a9c8a1e4ebfd5c8b9cfbf0cc7981
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52828892"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53218017"
 ---
 # <a name="azure-stack-module-130"></a>Azure Stack modul 1.3.0
 
 ## <a name="requirements"></a>Követelmények:
 A minimális támogatott Azure Stack-verzió a 1804-es.
 
-Megjegyzés: korábbi verzió használata esetén az 1.2.11-es verziót telepítse
+Megjegyzés: Ha korábbi verziót használ, telepítse az 1.2.11-es verziót
 
 ## <a name="known-issues"></a>Ismert problémák:
 

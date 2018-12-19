@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
 ms.openlocfilehash: 1a9d38cd60ba596c085e5ee9f8d815e238362b1f
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52828076"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53218102"
 ---
 # <a name="release-notes"></a>Kibocsátási megjegyzések
 
@@ -182,9 +182,9 @@ Változások a legutóbbi kiadás óta: https://github.com/Azure/azure-powershel
 * A „New-AzureRmVMSS” a kapcsolati sztringekat részletes módban jeleníti meg.
 * A „New-AzureRmVmss” támogatja a nyilvános IP-címeket, a terheléselosztási szabályokat és a bejövő NAT-szabályokat.
 * WriteAccelerator funkció
-    - WriteAccelerator kapcsolóparaméter hozzáadva a következő parancsmagokhoz: Set-AzureRmVMOSDisk Set-AzureRmVMDataDisk Add-AzureRmVMDataDisk Add-AzureRmVmssDataDisk
-    - OsDiskWriteAccelerator kapcsolóparaméter hozzáadva az alábbi parancsmaghoz:     Set-AzureRmVmssStorageProfile.
-    - OsDiskWriteAccelerator logikai paraméter hozzáadva az alábbi parancsmagokhoz:     Update-AzureRmVM     Update-AzureRmVmss
+    - A WriteAccelerator kapcsolóparaméter hozzáadva az alábbi parancsmagokhoz: Set-AzureRmVMOSDisk Set-AzureRmVMDataDisk Add-AzureRmVMDataDisk Add-AzureRmVmssDataDisk
+    - Az OsDiskWriteAccelerator kapcsolóparaméter hozzáadva az alábbi parancsmaghoz:     Set-AzureRmVmssStorageProfile.
+    - Az OsDiskWriteAccelerator logikai paraméter hozzáadva az alábbi parancsmagokhoz:     Update-AzureRmVM     Update-AzureRmVmss
 
 #### <a name="azurermdatafactories"></a>AzureRM.DataFactories
 * Néhány titkosítási művelet során fellépő, nem értelmezhető hibát okozó, hitelesítő adatok titkosításával kapcsolatos hiba kijavítva
@@ -273,15 +273,15 @@ Változások a legutóbbi kiadás óta: https://github.com/Azure/azure-powershel
     - Remove-AzureRmNetworkWatcherConnectionMonitor
 * Frissült a Set-AzureRmApplicationGatewayBackendAddressPool dokumentáció, amelyből egy elavult példa el lett távolítva
 * Új EnableHttp2 jelölő az Application Gatewayben
-    - A New-AzureRmApplicationGateway frissült: Új választható -EnableHttp2 paraméter
+    - Frissített New-AzureRmApplicationGateway: Új választható -EnableHttp2 paraméter
 * IP-címkék hozzáadva a PublicIpAddress elemhez
-    - A New-AzureRmPublicIpAddress frissült: IP-címkék hozzáadva
+    - Frissített New-AzureRMPublicIpAddress: IP-címkék hozzáadva
     - New-AzureRmPublicIpTag IP-címkék hozzáadásához
 * A DisableBgpRoutePropagation tulajdonság hozzáadva itt: RouteTable és effectiveRoute.
 
 #### <a name="azurermresources"></a>AzureRM.Resources
-* Register-AzureRmProviderFeature: Hiányzó példa hozzáadva a dokumentumokhoz
-* Register-AzureRmResourceProvider: Hiányzó példa hozzáadva a dokumentumokhoz
+* Register-AzureRmProviderFeature: Hiányzó példa hozzáadva a dokumentációban
+* Register-AzureRmResourceProvider: Hiányzó példa hozzáadva a dokumentációban
 
 #### <a name="azurermstorage"></a>AzureRM.Storage
 * A következő paraméterek elavultak az új és beállított Storage-fiókok parancsmagjaiban: EnableEncryptionService és DisableEncryptionService, mivel a Titkosítás inaktív állapotban alapértelmezés szerint engedélyezve van, és nem tiltható le.
@@ -349,7 +349,7 @@ Változások a legutóbbi kiadás óta: https://github.com/Azure/azure-powershel
 * A V2 API-lekérdezések támogatása az `Invoke-AzureRmOperationalInsightsQuery` parancsmaggal. Az új API-val kapcsolatos további információért lásd: [https://dev.loganalytics.io/](https://dev.loganalytics.io/).
 
 ### <a name="azurermresources"></a>AzureRM.Resources
-* `Get-AzureRmADServicePrincipal`: `-ServicePrincipalName` eltávolítva az alapértelmezett üres paraméterkészletből, mert redundáns volt az SPN paraméterkészlettel
+* `Get-AzureRmADServicePrincipal`: `-ServicePrincipalName` eltávolítva az alapértelmezett üres paraméterkészletből, mert redundáns volt az SPN-paraméterkészlettel
 
 ### <a name="azurermservicebus"></a>AzureRM.ServiceBus
 
@@ -491,7 +491,7 @@ Változások a legutóbbi kiadás óta: https://github.com/Azure/azure-powershel
 * A -Location paraméterekhez hozzáadott Location Completer lehetővé teszi a parancssori kiegészítési funkció érvényes helyeken keresztül történő használatát
 * A -ResourceGroup paraméterekhez hozzáadott ResourceGroup Completer lehetővé teszi a parancssori kiegészítési funkció erőforráscsoportokon keresztül történő használatát az aktuális előfizetésben
 * -AsJob támogatás hozzáadva a sokáig futó KeyVault-parancsmagok számára. Lehetővé teszi, hogy a kiválasztott parancsmagok a háttérben fussanak, és visszaad egy feladatot, amely nyomon követi és szabályozza az előrehaladást.
-  * Érintett parancsmag: Remove-AzureRmKeyVault
+  * Az érintett parancsmag: Remove-AzureRmKeyVault
 * Kijavított hiba a Set-AzureRmKeyVaultAccessPolicy parancsmagban, amely akkor jelentkezett, amikor az AAD szűrő az UPN beállítása helyett az SPN számára adja meg az UPN értékét
   - További információért tekintse meg a következő problémaleírást: https://github.com/Azure/azure-powershell/issues/5201
 
@@ -623,7 +623,7 @@ Változások a legutóbbi kiadás óta: https://github.com/Azure/azure-powershel
   - A Get-AzureRmComputeResourceSku parancsmag megjeleníti az időzónával kapcsolatos információkat.
   - A Disable-AzureRmVmssDiskEncryption parancsmag frissült az alábbi hiba javítása érdekében: https://github.com/Azure/azure-powershell/issues/5038
   - -AsJob támogatás hozzáadva a sokáig futó Compute parancsmagok számára. Lehetővé teszi, hogy a kiválasztott parancsmagok a háttérben fussanak, és visszaad egy feladatot, amely nyomon követi és szabályozza az előrehaladást.
-    - Érintett parancsmagok: A virtuális gépek és virtuálisgép-méretezési csoportok New-, Update-, Set-, Remove-, Start-, Restart-, és Stop- parancsmagjai
+    - Az érintett parancsmagok: A virtuális gépek és virtuálisgép-méretezési csoportok New-, Update-, Set-, Remove-, Start-, Restart-, és Stop- parancsmagjai
     - Egyszerűsített paraméterkészlet hozzáadva a New-AzureRmVM parancsmaghoz, amely az intelligens alapértelmezett beállítások használatával létrehoz egy virtuális gépet és az összes szükséges erőforrást
 * ContainerInstance
   - Az Azure Container Instance SDK 2017-10-01 alkalmazása
@@ -721,7 +721,7 @@ Változások a legutóbbi kiadás óta: https://github.com/Azure/azure-powershel
   - AzureRM.StreamAnalytics
 
 ## <a name="2017118---version-500"></a>2017.11.8. – 5.0.0-s verzió
-* Megjegyzés: Ez egy használhatatlanná tévő változást tartalmazó kiadás. A bevezetett kompatibilitástörő változások teljes listájához tekintse meg a migrálási útmutatót (https://aka.ms/azps-migration-guide)).
+* MEGJEGYZÉS: Ez egy kompatibilitástörő változást tartalmazó kiadás. A bevezetett kompatibilitástörő változások teljes listájához tekintse meg a migrálási útmutatót (https://aka.ms/azps-migration-guide)).
 * Mostantól az AzureRM összes parancsmagja támogatja az online súgó használatát
   - Futtassa a Get-Help parancsmagot -Online paraméterrel az online súgónak az alapértelmezett böngészőben történő megnyitásához
 * AnalysisServices
@@ -750,7 +750,7 @@ Változások a legutóbbi kiadás óta: https://github.com/Azure/azure-powershel
     - Remove-AzureRmApplicationInsightsApiKey
 * AzureBatch
   * Új paraméterek hozzáadva a következőhöz: `New-AzureRmBatchAccount`.
-    - `PoolAllocationMode`: Készletek a Batch-fiókban történő létrehozásához használandó lefoglalási mód. Ha olyan Batch-fiókot szeretne létrehozni, amely lefoglalja a készletcsomópontokat a felhasználó előfizetésében, állítsa `UserSubscription` értékre.
+    - `PoolAllocationMode`: A Batch-fiókban történő készletlétrehozásához használandó lefoglalási mód. Ha olyan Batch-fiókot szeretne létrehozni, amely lefoglalja a készletcsomópontokat a felhasználó előfizetésében, állítsa `UserSubscription` értékre.
     - `KeyVaultId`: A Batch-fiókhoz társított Azure Key Vault erőforrás-azonosítója.
     - `KeyVaultUrl`: A Batch-fiókhoz társított Azure Key Vault URL-címe.
   * Paraméterek frissítve a következő esetében: `New-AzureBatchTask`.

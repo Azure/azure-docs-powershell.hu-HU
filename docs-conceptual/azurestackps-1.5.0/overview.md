@@ -9,18 +9,18 @@ ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
 ms.openlocfilehash: afa83a6258e57e961576b328e67fad634704dddf
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52827309"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53216619"
 ---
 # <a name="azure-stack-module-150"></a>Azure Stack 1.5.0-s modul
 
 ## <a name="requirements"></a>Követelmények:
 A minimális támogatott Azure Stack-verzió az 1808-as.
 
-Megjegyzés: Korábbi verzió használata esetén telepítse az 1.4.0-s verziót
+Megjegyzés: Ha korábbi verziót használ, telepítse az 1.4.0-s verziót
 
 ## <a name="known-issues"></a>Ismert problémák:
 

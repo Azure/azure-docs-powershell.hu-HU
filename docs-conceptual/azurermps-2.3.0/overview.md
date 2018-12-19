@@ -9,18 +9,18 @@ ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
 ms.openlocfilehash: cd415e862bfaa2b767cce108689ebaf34ef74305
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52826850"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53218153"
 ---
 # <a name="azurerm-module-230"></a>AzureRM 2.3.0-s modul
 
 ## <a name="requirements"></a>Követelmények:
 A minimális támogatott Azure Stack-verzió az 1808-as.
 
-Megjegyzés: korábbi verzió használata esetén az 1.2.11-es verziót telepítse
+Megjegyzés: Ha korábbi verziót használ, telepítse az 1.2.11-es verziót
 
 
 ## <a name="install"></a>Telepítés

@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
 ms.openlocfilehash: 563f84c3af98de066611dd80102e552b31f12883
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52827139"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53217303"
 ---
 # <a name="release-notes"></a>Kibocsátási megjegyzések
 
@@ -37,23 +37,23 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
   * A Get-AzureRmCognitiveServicesAccount most már megfelelően támogatja a lapozást.
 * Compute
   * A futtatási parancs funkciója:
-    - Az új Invoke-AzureRmVMRunCommand parancsmag futtatás parancsot indít egy virtuális gépen
-    - Az új Get-AzureRmVMRunCommandDocument parancsmag megjeleníti a futtatás paranccsal kapcsolatos elérhető dokumentumokat
+    - Új parancsmag: Az új Invoke-AzureRmVMRunCommand parancsmag egy futtatás parancsot hív meg egy virtuális gépen
+    - Új parancsmag: A Get-AzureRmVMRunCommandDocument parancsmag megjeleníti a futtatás paranccsal kapcsolatos elérhető dokumentumokat
   * A StorageAccountType paraméter hozzá lett adva a Set-AzureRmDataDisk parancsmaghoz
   * A rendelkezésre állási zóna támogatása a virtuális gépekhez, virtuálisgép-méretezési csoportokhoz és lemezekhez
-    - Új Zone paraméter a New-AzureRmVM, New-AzureRmVMConfig, New-AzureRmVmssConfig, New-AzureRmDiskConfig parancsmaghoz
+    - Új paraméter: Zone paraméter a New-AzureRmVM, New-AzureRmVMConfig, New-AzureRmVmssConfig, New-AzureRmDiskConfig parancsmaghoz
   * Virtuálisgép-méretezési csoportok működés közbeni frissítési szolgáltatása:
-    - Az új Start-AzureRmVmssRollingOSUpgrade parancsmag a virtuálisgép-méretezési csoport operációs rendszerének frissítését indítja el
-    - Az új Set-AzureRmVmssRollingUpgradePolicy parancsmag beállítja a virtuálisgép-méretezési csoport működés közbeni frissítésének frissítési szabályzatát.
-    - Az új Stop-AzureRmVmssRollingUpgrade parancsmag a virtuálisgép-méretezési csoport működés közbeni frissítését vonja vissza
-    - Az új Get-AzureRmVmssRollingUpgrade parancsmag a virtuálisgép-méretezési csoport működés közbeni frissítésének állapotát jeleníti meg.
+    - Új parancsmag: A Start-AzureRmVmssRollingOSUpgrade parancsmag a virtuálisgép-méretezési csoport operációs rendszerének frissítését indítja el
+    - Új parancsmag: A Set-AzureRmVmssRollingUpgradePolicy parancsmag beállítja a virtuálisgép-méretezési csoport működés közbeni frissítésének frissítési szabályzatát.
+    - Új parancsmag: A Stop-AzureRmVmssRollingUpgrade parancsmag a virtuálisgép-méretezési csoport működés közbeni frissítését vonja vissza
+    - Új parancsmag: A Get-AzureRmVmssRollingUpgrade parancsmag a virtuálisgép-méretezési csoport működés közbeni frissítésének állapotát jeleníti meg.
   * Az új AssignIdentity kapcsolóparaméter a rendszerhez rendelt identitáshoz használható.
-    - Új AssignIdentity paraméter a New-AzureRmVMConfig, New-AzureRmVmssConfig és Update-AzureRmVM parancsmaghoz
+    - Új paraméter: AssignIdentity paraméter a New-AzureRmVMConfig, New-AzureRmVmssConfig és Update-AzureRmVM parancsmaghoz
   * Vmss lemeztitkosítási szolgáltatás:
-    - Az új Set-AzureRmVmssDiskEncryptionExtension parancsmag engedélyezi a lemeztitkosítást a virtuálisgép-méretezési csoporton
-    - Az új Disable-AzureRmVmssDiskEncryption parancsmag letiltja a lemeztitkosítást a virtuálisgép-méretezési csoporton
-    - Az új Get-AzureRmVmssDiskEncryptionStatus parancsmag megjeleníti a virtuálisgép-méretezési csoportok lemeztitkosítási állapotát
-    - Az új Get-AzureRmVmssVMDiskEncryptionStatus parancsmag megjeleníti a virtuálisgép-méretezési csoportban lévő virtuális gépek lemeztitkosítási állapotát
+    - Új parancsmag: A Set-AzureRmVmssDiskEncryptionExtension parancsmag engedélyezi a lemeztitkosítást a virtuálisgép-méretezési csoporton
+    - Új parancsmag: A Disable-AzureRmVmssDiskEncryption parancsmag letiltja a lemeztitkosítást a virtuálisgép-méretezési csoporton
+    - Új parancsmag: A Get-AzureRmVmssDiskEncryptionStatus parancsmag megjeleníti a virtuálisgép-méretezési csoportok lemeztitkosítási állapotát
+    - Új parancsmag: A Get-AzureRmVmssVMDiskEncryptionStatus parancsmag megjeleníti a virtuálisgép-méretezési csoportban lévő virtuális gépek lemeztitkosítási állapotát
 * ContainerInstance
   * Új PowerShell-parancsmagok az Azure Container Instance-hez
     - New-AzureRmContainerGroup
@@ -128,9 +128,9 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
     - Frissített New-AzureRmVirtualNetwork: Új EnableDDoSProtection és EnableVmProtection kapcsolóparaméterek
     - Új EnableDDoSProtection és EnableVmProtection tulajdonságok PSVirtualNetwork objektumban
   * A magas rendelkezésre állású belső terheléselosztó támogatása
-    - Frissített Add-AzureRmLoadBalancerRuleConfig: Az All paraméter a protokoll-paraméterek elfogadható értéke lett
-    - Frissített AzureRmLoadBalancerRuleConfig: Az All paraméter a protokoll-paraméterek elfogadható értéke lett
-    - Frissített Set-AzureRmLoadBalancerRuleConfig: Az All paraméter a protokoll-paraméterek elfogadható értéke lett
+    - Frissített Add-AzureRmLoadBalancerRuleConfig: Az All a Protocol paraméter elfogadható értéke lett
+    - Frissített New-AzureRmLoadBalancerRuleConfig: Az All a Protocol paraméter elfogadható értéke lett
+    - Frissített Set-AzureRmLoadBalancerRuleConfig: Az All a Protocol paraméter elfogadható értéke lett
   * Alkalmazásbiztonsági csoportok támogatása
     - Új New-AzureRmApplicationSecurityGroup
     - Új Get-AzureRmApplicationSecurityGroup
@@ -220,7 +220,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
   * Meglévő problémák hibajavításai – az aliasokkal kapcsolatos, 3775-ös számú probléma, valamint a runOn aliasok és a hibrid feldolgozók támogatásának javítása.
 * Compute
   * Set-AzureRmVMAEMExtension: Mostantól támogatottak az új prémium szintű lemezméretek
-  * Set-AzureRmVMAEMExtension: Mostantól támogatott az M-sorozat
+  * Set-AzureRmVMAEMExtension: Mostantól támogatott az M sorozat
   * Megjelent a ForceUpdateTag paraméter az Add-AzureRmVmssExtension parancsmagban
   * Megjelent a Primary paraméter a New-AzureRmVmssIpConfig parancsmagban
   * Megjelent az EnableAcceleratedNetworking paraméter az Add-AzureRmVmssNetworkInterfaceConfig parancsmagban
@@ -382,7 +382,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
         - Spark2Defaults és Spark2ThriftConf paraméter a Spark 2.0-ás verziójához
 * Insights
     * 4215. hiba (módosítási kérés): eltávolítottuk a 15 napos korlátot a Get-AzureRmLog parancsmag időtartományából. Kisebb módosítások az egység tesztneveiben.
-    * Kijavítottuk a 3957. hibát a Get-AzureRmLog parancsmag esetében
+    * Kijavítottuk a 3957 hibát a Get-AzureRmLog parancsmag esetében
         - 1. probléma: A háttérrendszer a rekordokat 200 rekordot tartalmazó oldalakon adja vissza, és az oldalakat a folytatási token kapcsolja össze. A felhasználók azt tapasztalták, hogy a parancsmag csak 200 rekordot adott vissza, pedig több volt ennél. Ez a MaxEvents esetében megadott értéktől függetlenül bekövetkezett, kivéve, ha az érték kisebb volt, mint 200.
         - 2. probléma: A dokumentáció helytelen adatokat tartalmazott erről a parancsmagról. Például a timewindow alapértelmezett értéke 1 óra volt.
         - 1. javítás: A parancsmag mostantól a háttérrendszer által visszaadott folytatási tokent követi, amíg el nem éri a MaxEvents tulajdonságot vagy a készlet végét.<br>A MaxEvents alapértelmezett értéke 1000, az maximális értéke pedig 100000. A MaxEvents 1-nél kisebb értékei figyelmen kívül lesznek hagyva, és az alapértelmezett érték lesz használva. Ezek az értékek és viselkedések nem módosultak, és már helyesen vannak dokumentálva.<br>Egy alias (MaxRecords) hozzá lett adva a MaxEvents-hez, mivel a parancsmag neve már nem jelzi az eseményeket, csak a naplókat.
@@ -450,29 +450,29 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
         - További információt itt találhat: https://github.com/Azure/azure-powershell/issues/635
 * ServiceManagement ExpressRoute-hoz:
     * A frissített New-AzureBgpPeering parancsmag az alábbi új beállításokat tartalmazza:
-        - PeerAddressType: Az IPv4 vagy az IPv6 értékei megadhatók a megfelelő címcsalád-típus BGP társviszonyának létrehozásához
+        - PeerAddressType : Az IPv4 vagy az IPv6 érték megadásával létrehozható a megfelelő címcsaládtípus BGP-társviszonya
     * A frissített Set-AzureBgpPeering parancsmag az alábbi új beállításokat tartalmazza:
-        - PeerAddressType: Az IPv4 vagy az IPv6 értékei megadhatók a megfelelő címcsalád-típus BGP társviszonyának frissítéséhez
+        - PeerAddressType : Az IPv4 vagy az IPv6 érték megadásával frissíthető a megfelelő címcsaládtípus BGP-társviszonya
     * A frissített Remove-AzureBgpPeering parancsmag az alábbi új beállításokat tartalmazza:
-        - PeerAddressType: Az IPv4, IPv6 vagy mindegyik értékei megadhatók a megfelelő címcsalád-típus vagy mindegyik BGP társviszonyának eltávolításához
+        - PeerAddressType : Az IPv4, az IPv6 vagy az All érték megadásával frissíthető eltávolítható megfelelő vagy az összes címcsaládtípus BGP-társviszonya
 
 ## <a name="20170607---version-410"></a>2017.06.07. – 4.1.0-ás verzió
 * AnalysisServices
-    * Új termékváltozatok: B1, B2, S0
+    * Új hozzáadott termékváltozatok: B1, B2, S0
     * Vertikális felskálázás/leskálázás támogatásának hozzáadása
 * CognitiveServices
     * Frissült a licencszerződések részletes megjelenítése a Cognitive Services-erőforrások létrehozásakor
 * Számítás
     * Kijavítottuk a Test-AzureRmVMAEMExtension parancsmagot a több felügyelt lemezzel rendelkező virtuális gépekhez
-    * Frissült Set-AzureRmVMAEMExtension parancsmag: Gyorsítótárazási információ hozzáadása a prémium szintű felügyelt lemezekhez
+    * Frissített Set-AzureRmVMAEMExtension: Gyorsítótárazási információ hozzáadása a prémium szintű felügyelt lemezekhez
     * Add-AzureRmVhd: A virtuális merevlemezek méretkorlátja 4 TB-ra emelkedett.
-    * Stop-AzureRmVM: Dokumentáció tisztázása a STayProvisioned paraméter esetében
+    * Stop-AzureRmVM: A STayProvisioned paraméter dokumentációja tisztázva
     * New-AzureRmDiskUpdateConfig
       * Elavult paraméterek: CreateOption, StorageAccountId, ImageReference, SourceUri, SourceResourceId
     * Set-AzureRmDiskUpdateImageReference: Elavult parancsmag
     * New-AzureRmSnapshotUpdateConfig
       * Elavult paraméterek: CreateOption, StorageAccountId, ImageReference, SourceUri, SourceResourceId
-    * Set-AzureRmSnapshotUpdateImageReference Elavult parancsmag
+    * Set-AzureRmSnapshotUpdateImageReference: Elavult parancsmag
 * DataLakeStore
     * Enable-AzureRmDataLakeStoreKeyVault (Enable-AdlStoreKeyVault)
       * KeyVault által felügyelt titkosítás engedélyezése a DataLake Store-hoz
@@ -509,8 +509,8 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
     * Kijavítottuk a hibát, amely miatt a Get-AzureRMRoleAssignment Hibás kérést eredményezett, ha a szerepkörkiosztások száma nagyobb volt, mint 1000
         * A felhasználók mostantól akkor is használhatják a Get-AzureRMRoleAssignment parancsmagot, ha a visszaadandó szerepkörkiosztások száma nagyobb, mint 1000
 * SQL
-    * Restore-AzureRmSqlDatabase: Frissítettük a dokumentáció példáit
-* Tárolás
+    * Restore-AzureRmSqlDatabase: A dokumentáció példái frissültek
+* Storage
     * AssignIdentity beállítás támogatása az erőforrásmód-tárfiók parancsmagokhoz
         * New-AzureRmStorageAccount
         * Set-AzureRmStorageAccount
@@ -595,7 +595,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
     + Egyetlen objektumot ad vissza (nem pedig egy listát, mint korábban), amelyben szerepel az állapotkód, a kérés azonosítója és az újonnan létrehozott vagy módosított erőforrás.
     + A statusCode a kérelem által visszaadott állapotot követi – korábban mindig OK értékű volt.
   - New-AzureRmAutoscaleRule
-    + A ScaleActionType paraméter ki lett bővítve, mostantól megkapja a következő értékeket: ChangeCount, PercentChangeCount, ExactCount.
+    + A ScaleActionType paraméter ki lett bővítve, és mostantól a következő értékeket fogadja el: ChangeCount, PercentChangeCount, ExactCount.
   - Remove-AzureRmAutoscaleSetting
     + A kimenetben szereplő statusCode a kérelem által visszaadott statusCode értéket követi. Korábban mindig OK értékű volt.
   - Get-AzureRMLogProfile
@@ -607,7 +607,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
   - Get-AzureRmMetricDefinition
     + A kimenet továbbra is listának minősül, de a lista szerkezete megváltozott.
   - Get-AzureRmMetric
-    + A hívás megváltozott. Az új szintaxis: Get-AzureRmMetric ResourceId [MetricNames [TimeGrain] [AggregationType] [StartTime] [EndTime]] [DetailedOutput]
+    + A hívás megváltozott. Az új szintaxis a következő: Get-AzureRmMetric ResourceId [MetricNames [TimeGrain] [AggregationType] [StartTime] [EndTime]] [DetailedOutput]
     + A kimenet listának minősül, és az elemek szerkezete megváltozott.
 * KeyVault
   - A KeyVault titkos kódjai támogatják a biztonsági mentést/visszaállítást
