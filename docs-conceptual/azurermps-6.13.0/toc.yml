@@ -2,18 +2,11 @@ items:
 - name: Azure PowerShell
   href: overview.md
   items:
-  - name: Az új Az modul bemutatása
-    href: new-azureps-module-az.md
-    items:
-    - name: Az Az telepítése
-      href: install-az-ps.md
-    - name: Áttelepítés az Az modulba
-      href: migrate-from-azurerm-to-az.md
   - name: Telepítés
     href: install-azurerm-ps.md
     items:
     - name: Telepítés macOS vagy Linux rendszeren
-      href: install-az-ps.md
+      href: install-azurermps-maclinux.md
     - name: Telepítés MSI-vel
       href: other-install.md
   - name: Eltávolítás
@@ -70,9 +63,9 @@ items:
     href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
   - name: Cosmos DB
     href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
-ms.openlocfilehash: cc1c9743ff8af25ec458d16489d2d32331e63859
-ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
+ms.openlocfilehash: 44b6c7eaf75dfd1119ba6a0cc4888834a1fc698a
+ms.sourcegitcommit: 4acddc7026522c4fe39de2c4424917d88ee01b7e
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53217932"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53736426"

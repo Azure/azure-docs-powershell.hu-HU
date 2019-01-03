@@ -7,17 +7,29 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: a35814f4411dd9cab75fa36bd13ff087cdec8f9b
-ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
+ms.openlocfilehash: 7456e45fe9a94d3c1e809dfd075a090448001607
+ms.sourcegitcommit: 6685809f054203bd733c84f68acc69e53e5cca8c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53217065"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53982825"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Az Azure PowerShell-modul eltávolítása
 
 Ez a cikk bemutatja, hogyan távolítható el az Azure PowerShell egy régebbi verziója, illetve hogyan távolítható el az Azure PowerShell teljesen a rendszerből. Ha úgy döntött, hogy teljesen eltávolítja az Azure PowerShellt, ossza meg velünk visszajelzését a [Send-Feedback](/powershell/module/azurerm.profile/send-feedback) parancsmaggal.
 Ha hibát tapasztal, kérjük, [jelentse be a GitHubon](https://github.com/azure/azure-powershell/issues).
+
+
+## <a name="uninstall-msi"></a>Eltávolítás – MSI
+
+Ha az Azure PowerShellt az MSI-csomaggal telepítette, akkor a Windows rendszer segítségével kell eltávolítania, nem a PowerShell-lel.
+
+| Platform | Utasítások |
+|----------|--------------|
+| Windows 10 | Start menü > Gépház > Alkalmazások |
+| Windows 7 </br>Windows 8 | Start menü > Vezérlőpult > Programok > Program eltávolítása |
+
+Itt a programok listájában megjelenik az Azure PowerShell, és innen eltávolíthatja a programot.
 
 ## <a name="uninstall-from-powershell"></a>Eltávolítás PowerShellből
 
@@ -109,14 +121,3 @@ Futtassa ezt a parancsot minden olyan Azure PowerShell-verzió esetében, amelye
 $versions = (get-installedmodule AzureRM -AllVersions | Select-Object Version)
 $versions[1..($versions.Length-1)]  | foreach { Uninstall-AllModules -TargetModule AzureRM -Version ($_.Version) -Force }
 ```
-
-## <a name="uninstall-msi"></a>Eltávolítás – MSI
-
-Ha az Azure PowerShellt az MSI-csomaggal telepítette, akkor a Windows rendszer segítségével kell eltávolítania, nem a PowerShell-lel.
-
-| Platform | Utasítások |
-|----------|--------------|
-| Windows 10 | Start menü > Gépház > Alkalmazások |
-| Windows 7 </br>Windows 8 | Start menü > Vezérlőpult > Programok > Program eltávolítása |
-
-Itt a programok listájában megjelenik az Azure PowerShell, és innen eltávolíthatja a programot.
