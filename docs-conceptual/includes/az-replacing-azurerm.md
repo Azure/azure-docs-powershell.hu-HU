@@ -1,21 +1,20 @@
 ---
 author: sptramer
 ms.author: sttramer
-ms.date: 10/22/2018
+ms.date: 12/20/2018
 ms.topic: include
-ms.openlocfilehash: 02a7969c5a52f47de2024485e642ed03834fe8e9
-ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
+ms.openlocfilehash: a19417fcab60d92edc1867901fe8c4fffdaefd30
+ms.sourcegitcommit: 4acddc7026522c4fe39de2c4424917d88ee01b7e
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53218238"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53736800"
 ---
 > [!NOTE]
 > 
-> <span data-ttu-id="da1f3-101">2018 novembere után az `AzureRM` modul nem bővül majd újabb funkciókkal és parancsmagokkal.</span><span class="sxs-lookup"><span data-stu-id="da1f3-101">After November 2018, there will be no new features or cmdlets added to the `AzureRM` module.</span></span> <span data-ttu-id="da1f3-102">Az `AzureRM` támogatása és a hibák javítása továbbra is folytatódik majd.</span><span class="sxs-lookup"><span data-stu-id="da1f3-102">`AzureRM` will continue to be supported and receive bugfixes.</span></span> <span data-ttu-id="da1f3-103">Az új funkciók az `Az` modulban lesznek kiadva, amelynek ugyanekkor jelenik meg az 1.0-s kiadása.</span><span class="sxs-lookup"><span data-stu-id="da1f3-103">New features will be provided in the `Az` module, which will reach 1.0 at the same time.</span></span> <span data-ttu-id="da1f3-104">Az `Az` biztosít egy visszamenőleges kompatibilitási módot az `AzureRM` modulhoz, amely megkönnyíti az átállást.</span><span class="sxs-lookup"><span data-stu-id="da1f3-104">`Az` has a backwards compatibility mode with `AzureRM`, and is designed to be easy to switch to.</span></span> <span data-ttu-id="da1f3-105">További információ az új modullal és a frissítéssel kapcsolatban:</span><span class="sxs-lookup"><span data-stu-id="da1f3-105">To learn more about this new module and how to upgrade, see:</span></span>
+> <span data-ttu-id="0e442-101">2018 decemberétől kezdve az AzureRM modul nem bővül újabb funkciókkal.</span><span class="sxs-lookup"><span data-stu-id="0e442-101">Starting in December 2018, no new features will be added to the AzureRM module.</span></span> <span data-ttu-id="0e442-102">Az AzureRM támogatása és a hibák javítása továbbra is folytatódik majd.</span><span class="sxs-lookup"><span data-stu-id="0e442-102">AzureRM will continue to be supported and receive bugfixes.</span></span> <span data-ttu-id="0e442-103">Az új funkciók az Azure PowerShell Az modulban lesznek elérhetőek.</span><span class="sxs-lookup"><span data-stu-id="0e442-103">New features are in the Azure PowerShell Az module.</span></span> <span data-ttu-id="0e442-104">Az Az modullal kapcsolatos további információkat, beleértve az AzureRM-ről való frissítés módját [az Azure PowerShell fő dokumentációjában](/powershell/azure) találja.</span><span class="sxs-lookup"><span data-stu-id="0e442-104">To learn more about the Az module, including how to upgrade from AzureRM, see [the main Azure PowerShell documentation](/powershell/azure).</span></span>
 >
-> * [<span data-ttu-id="da1f3-106">Az Azure PowerShell Az modul bemutatása</span><span class="sxs-lookup"><span data-stu-id="da1f3-106">Introducing the Azure PowerShell Az module</span></span>](/powershell/azure/new-azureps-module-az)
-> * [<span data-ttu-id="da1f3-107">Az Azure PowerShell Az modul telepítése</span><span class="sxs-lookup"><span data-stu-id="da1f3-107">Install Azure PowerShell Az module</span></span>](/powershell/azure/install-az-ps)
-> * [<span data-ttu-id="da1f3-108">Áttelepítés az új Azure PowerShell Az modulba</span><span class="sxs-lookup"><span data-stu-id="da1f3-108">Migrate to the new Azure PowerShell Az module</span></span>](/powershell/azure/migrate-from-azurerm-to-az)
+> <span data-ttu-id="0e442-105">Az Azure Stack-felhasználók egyelőre továbbra is az AzureRM-et használhatják.</span><span class="sxs-lookup"><span data-stu-id="0e442-105">Azure Stack users should continue to use AzureRM for now.</span></span> <span data-ttu-id="0e442-106">Az Azure Stacket támogató legújabb AzureRM verzió az [AzureRM 2.3.0](/powershell/azure/azurerm?view=azurermps-2.3.0).</span><span class="sxs-lookup"><span data-stu-id="0e442-106">The latest version of AzureRM which supports Azure Stack is [AzureRM 2.3.0](/powershell/azure/azurerm?view=azurermps-2.3.0).</span></span>
 >
-> <span data-ttu-id="da1f3-109">Ha van olyan üzemelő példánya, amely a klasszikus telepítési modellt használja, és nem alakítható át, akkor az Azure PowerShell Service Management verzióját telepítheti.</span><span class="sxs-lookup"><span data-stu-id="da1f3-109">If you have deployments that use the classic deployment model that cannot be converted, you can install the Service Management version of Azure PowerShell.</span></span> <span data-ttu-id="da1f3-110">További információ: [Az Azure PowerShell Service Management modul áttekintése](/powershell/azure/servicemanagement/install-azure-ps).</span><span class="sxs-lookup"><span data-stu-id="da1f3-110">For more information, see [Install the Azure PowerShell Service Management module](/powershell/azure/servicemanagement/install-azure-ps).</span></span>
+> <span data-ttu-id="0e442-107">Ha a klasszikus üzemi modellt használja, akkor az Azure PowerShell Service Management verzióját telepítse.</span><span class="sxs-lookup"><span data-stu-id="0e442-107">If you use the classic deployment model, install the Service Management version of Azure PowerShell.</span></span>
+> <span data-ttu-id="0e442-108">További információ: [Az Azure PowerShell Service Management modul áttekintése](/powershell/azure/servicemanagement/install-azure-ps).</span><span class="sxs-lookup"><span data-stu-id="0e442-108">For more information, see [Install the Azure PowerShell Service Management module](/powershell/azure/servicemanagement/install-azure-ps).</span></span>
