@@ -3,16 +3,16 @@ author: sptramer
 ms.author: sttramer
 ms.date: 12/20/2018
 ms.topic: include
-ms.openlocfilehash: a19417fcab60d92edc1867901fe8c4fffdaefd30
-ms.sourcegitcommit: 4acddc7026522c4fe39de2c4424917d88ee01b7e
+ms.openlocfilehash: 0ed886744a95e9f5a9c251c1dfd40d537d31812d
+ms.sourcegitcommit: 007a733342f37894d4aaec7a859dc1ca93c00c92
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53736800"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54029299"
 ---
 > [!NOTE]
 > 
-> 2018 decemberétől kezdve az AzureRM modul nem bővül újabb funkciókkal. Az AzureRM támogatása és a hibák javítása továbbra is folytatódik majd. Az új funkciók az Azure PowerShell Az modulban lesznek elérhetőek. Az Az modullal kapcsolatos további információkat, beleértve az AzureRM-ről való frissítés módját [az Azure PowerShell fő dokumentációjában](/powershell/azure) találja.
+> 2018 decemberétől kezdve az AzureRM modul nem bővül újabb funkciókkal. Az AzureRM támogatása és a hibák javítása 2020 decemberéig továbbra is folytatódik majd. Az új funkciók az Azure PowerShell Az modulban lesznek elérhetőek. Az Az modullal kapcsolatos további információkat, beleértve az AzureRM-ről való frissítés módját [az Azure PowerShell fő dokumentációjában](/powershell/azure) találja.
 >
 > Az Azure Stack-felhasználók egyelőre továbbra is az AzureRM-et használhatják. Az Azure Stacket támogató legújabb AzureRM verzió az [AzureRM 2.3.0](/powershell/azure/azurerm?view=azurermps-2.3.0).
 >
