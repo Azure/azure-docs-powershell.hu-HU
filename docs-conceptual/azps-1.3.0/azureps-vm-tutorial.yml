@@ -7,28 +7,28 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: azurepowershell
-  ms.date: 02/08/2018
-  ms.author: sewhee
-  author: sdwheeler
+  ms.date: 12/13/2018
+  ms.author: sttramer
+  author: sptramer
   manager: carmonm
   ms.devlang: azure-powershell
   ms.prod: powershell
   ms.technology: azure-powershell
-  ms.service: virtual-machines
+  ms.topic: tutorial
   clicktale: true
-  ms.openlocfilehash: 34ee404e432562e4ebfda58e47235d4597ac5b5c
+  ms.openlocfilehash: 98fa4e7428104a4b2e61029e04655b8682743cca
   ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
   ms.translationtype: HT
   ms.contentlocale: hu-HU
   ms.lasthandoff: 02/12/2019
-  ms.locfileid: "56144844"
+  ms.locfileid: "56153884"
 items:
 - durationInMinutes: 1
   content: >-
     Ebben az oktatóanyagban elsajátíthatja a virtuális gépek Azure PowerShell használatával történő beállításához szükséges lépéseket. Az oktatóanyag ezen kívül a kimeneti lekérdezésekre, az Azure-erőforrások újbóli felhasználására és az erőforrások felesleges tartalmainak törlésére is kitér.
 
 
-    Az oktatóanyagot az Azure Cloud Shell által nyújtott interaktív felületen keresztül vagy az [Azure PowerShell helyi telepítésével](install-azurerm-ps.md) teljesítheti.
+    Az oktatóanyagot az Azure Cloud Shell által nyújtott interaktív felületen keresztül vagy az [Azure PowerShell helyi telepítésével](install-az-ps.md) teljesítheti.
 
 
     A __ctrl-shift-v__ (macOS rendszeresen__cmd-shift-v__) billentyűkombináció segítségével illesztheti be az oktatóanyag szövegét az Azure Cloud Shellbe.
@@ -40,7 +40,7 @@ items:
 
     ```powershell-interactive
 
-    Connect-AzureRmAccount
+    Connect-AzAccount
 
     ```
 
@@ -56,7 +56,7 @@ items:
 
     ```powershell-interactive
 
-    New-AzureRmResourceGroup -Name TutorialResources -Location eastus
+    New-AzResourceGroup -Name TutorialResources -Location eastus
 
     ```
 
@@ -122,7 +122,7 @@ items:
       OpenPorts = 3389
     }
 
-    $newVM1 = New-AzureRmVM @vmParams
+    $newVM1 = New-AzVM @vmParams
 
     ```
 
@@ -209,13 +209,13 @@ items:
 
     ```powershell-interactive
 
-    $newVM1 | Get-AzureRmNetworkInterface |
+    $newVM1 | Get-AzNetworkInterface |
       Select-Object -ExpandProperty IpConfigurations |
         Select-Object Name,PrivateIpAddress
     ```
 
 
-    Ebben a példában a PowerShell-folyamattal küldjük el a \$newVM1 objektumot a `Get-AzureRmNetworkInterface` parancsmagnak. Az eredményül kapott hálózatiadapter-objektumban kiválasztjuk a beágyazott IpConfigurations objektumot. Az IpConfigurations objektumban kiválasztjuk a Name és a PrivateIpAddress tulajdonságot.
+    Ebben a példában a PowerShell-folyamattal küldjük el a \$newVM1 objektumot a `Get-AzNetworkInterface` parancsmagnak. Az eredményül kapott hálózatiadapter-objektumban kiválasztjuk a beágyazott IpConfigurations objektumot. Az IpConfigurations objektumban kiválasztjuk a Name és a PrivateIpAddress tulajdonságot.
 
 
     ```Output
@@ -234,7 +234,7 @@ items:
 
     ```powershell-interactive
 
-    $publicIp = Get-AzureRmPublicIpAddress -Name tutorialPublicIp -ResourceGroupName TutorialResources
+    $publicIp = Get-AzPublicIpAddress -Name tutorialPublicIp -ResourceGroupName TutorialResources
 
 
     $publicIp | Select-Object Name,IpAddress,@{label='FQDN';expression={$_.DnsSettings.Fqdn}}
@@ -242,7 +242,7 @@ items:
     ```
 
 
-    Ebben a példában a `Get-AzureRmPublicIpAddress` parancsmagot használjuk, az eredményeket pedig a \$publicIp változóban tároljuk. Ebben a változóban tulajdonságokat választunk ki, és egy kifejezés használatával lekérjük a beágyazott Fqdn tulajdonságot.
+    Ebben a példában a `Get-AzPublicIpAddress` parancsmagot használjuk, az eredményeket pedig a \$publicIp változóban tároljuk. Ebben a változóban tulajdonságokat választunk ki, és egy kifejezés használatával lekérjük a beágyazott Fqdn tulajdonságot.
 
 
     ```Output
@@ -286,7 +286,7 @@ items:
       OpenPorts = 3389
     }
 
-    $newVM2 = New-AzureRmVM @vm2Params
+    $newVM2 = New-AzVM @vm2Params
 
 
     $newVM2
@@ -336,12 +336,12 @@ items:
 - durationInMinutes: 4
   title: Felesleges tartalmak törlése
   content: >-
-    Most, hogy végzett az oktatóanyaggal, ideje törölni a létrehozott erőforrásokat. Az egyes erőforrásokat a `Remove-AzureRmResource` paranccsal törölheti, de az erőforráscsoportban szereplő összes erőforrás eltávolításának legbiztosabb módja, ha a `Remove-AzureRmResourceGroup` paranccsal törli az egész csoportot.
+    Most, hogy végzett az oktatóanyaggal, ideje törölni a létrehozott erőforrásokat. Az egyes erőforrásokat a `Remove-AzResource` paranccsal törölheti, de az erőforráscsoportban szereplő összes erőforrás eltávolításának legbiztosabb módja, ha a `Remove-AzResourceGroup` paranccsal törli az egész csoportot.
 
 
     ```powershell-interactive
 
-    $job = Remove-AzureRmResourceGroup -Name TutorialResources -Force -AsJob
+    $job = Remove-AzResourceGroup -Name TutorialResources -Force -AsJob
 
 
     $job
@@ -355,7 +355,7 @@ items:
 
     --     ----            -------------   -----         -----------     --------             -------
 
-    1      Long Running... AzureLongRun... Running       True            localhost            Remove-AzureRmResource...
+    1      Long Running... AzureLongRun... Running       True            localhost            Remove-AzResource...
 
     ```
 
@@ -373,4 +373,4 @@ items:
     A tartalmak törlésével az oktatóanyag végére ért. Tekintse át az eddig tanultak összegzését, illetve a következő lépések végrehajtásában segítségére lévő erőforrásokra mutató hivatkozásokat.
 - durationInMinutes: 1
   title: Összegzés
-  content: "\nGratulálunk! Megismerte, hogyan hozhat létre virtuális gépeket új vagy meglévő erőforrásokkal, kifejezések és egyéb Azure PowerShell-parancsok segítségével felületváltozókon tárolandó adatokat rögzített, és áttekintett néhány, az Azure-beli virtuális gépek számára létrehozott erőforrást.\n\nA következő lépést az határozza meg, hogy mire szeretné használni az Azure PowerShellt. Számos forrásanyag érhető el a jelen oktatóanyagban tárgyalt funkciók alaposabb megismeréséhez.\n\n### <a name=\"in-depth-azure-powershell-documentation\"></a>Részletes Azure PowerShell-dokumentáció\n\nÉrdemes időt szánni a teljes [Azure PowerShell-dokumentáció](overview.md) megismerésére.\n\nAz oktatóanyagban szereplő parancsokkal kapcsolatos további információkért tekintse meg az alábbi cikkeket.\n\n- [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup)\n- [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential)\n- [New-AzureRmVM](/powershell/module/azurerm.compute/new-azurermvm)\n- [Select-Object](/powershell/module/microsoft.powershell.utility/select-object)\n- [Get-AzureRmPublicIpAddress](/powershell/module/azurerm.network/get-AzureRmPublicIpAddress)\n- [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/Remove-AzureRmResourceGroup)\n- [Wait-Job](/powershell/module/microsoft.powershell.core/wait-job)\n\nOlyan cikkek is rendelkezésre állnak, amelyek részletesebben tárgyalják a jelen oktatóanyagban ismertetett funkciókat.\n\n- [PowerShell-paramétercsomagolás](/powershell/module/microsoft.powershell.core/about/about_splatting)\n- [Lekérdezések](queries-azureps.md)\n- [Formázás](formatting-output.md)\n- [A PowerShell-feladatok használata](using-psjobs.md)\n\n### <a name=\"sample-scripts\"></a>Mintaszkriptek\n\nHa máris hozzá szeretne fogni konkrét feladatokhoz, tekintsen át néhány mintául szolgáló szkriptet.\n\n- [Linux rendszerű virtuális gépek](/azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Windows rendszerű virtuális gépek](/azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [SQL Database-adatbázisok](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Cosmos DB](/azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json)\n\n### <a name=\"feedback\"></a>Visszajelzés\n\nHa visszajelzést szeretne küldeni, illetve javaslatai vagy kérdései vannak, akkor több módon is felveheti velünk a kapcsolatot.\n\n* A `Send-Feedback` az Azure PowerShell egy beépített parancsa, amellyel szabad formátumú visszajelzést küldhet a csapatnak.\n* A szolgáltatással kapcsolatos kéréseit és hibajelentéseit az [Azure PowerShell-adattáron](https://github.com/Azure/azure-powershell/issues) keresztül küldheti be.\n* Kérdéseit és pontosításra vonatkozó megkereséseit az [Azure PowerShell dokumentációs adattárján](https://github.com/MicrosoftDocs/azure-docs-powershell/issues) keresztül teheti fel és küldheti be.\n\nReméljük, hogy örömét leli az Azure PowerShell használatában!"
+  content: "\nGratulálunk! Megismerte, hogyan hozhat létre virtuális gépeket új vagy meglévő erőforrásokkal, kifejezések és egyéb Azure PowerShell-parancsok segítségével felületváltozókon tárolandó adatokat rögzített, és áttekintett néhány, az Azure-beli virtuális gépek számára létrehozott erőforrást.\n\nA következő lépést az határozza meg, hogy mire szeretné használni az Azure PowerShellt. Számos forrásanyag érhető el a jelen oktatóanyagban tárgyalt funkciók alaposabb megismeréséhez.\n\n### <a name=\"in-depth-azure-powershell-documentation\"></a>Részletes Azure PowerShell-dokumentáció\n\nÉrdemes időt szánni a teljes [Azure PowerShell-dokumentáció](overview.md) megismerésére.\n\nAz oktatóanyagban szereplő parancsokkal kapcsolatos további információkért tekintse meg az alábbi cikkeket.\n\n- [New-AzResourceGroup](/powershell/module/Az.resources/new-Azresourcegroup)\n- [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential)\n- [New-AzVM](/powershell/module/Az.compute/new-Azvm)\n- [Select-Object](/powershell/module/microsoft.powershell.utility/select-object)\n- [Get-AzPublicIpAddress](/powershell/module/Az.network/get-AzPublicIpAddress)\n- [Remove-AzResourceGroup](/powershell/module/Az.resources/Remove-AzResourceGroup)\n- [Wait-Job](/powershell/module/microsoft.powershell.core/wait-job)\n\nOlyan cikkek is rendelkezésre állnak, amelyek részletesebben tárgyalják a jelen oktatóanyagban ismertetett funkciókat.\n\n- [PowerShell-paramétercsomagolás](/powershell/module/microsoft.powershell.core/about/about_splatting)\n- [Lekérdezések](queries-azureps.md)\n- [Formázás](formatting-output.md)\n- [A PowerShell-feladatok használata](using-psjobs.md)\n\n### <a name=\"sample-scripts\"></a>Mintaszkriptek\n\nHa máris hozzá szeretne fogni konkrét feladatokhoz, tekintsen át néhány mintául szolgáló szkriptet.\n\n- [Linux rendszerű virtuális gépek](/azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Windows rendszerű virtuális gépek](/azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [SQL Database-adatbázisok](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Cosmos DB](/azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json)\n\n### <a name=\"feedback\"></a>Visszajelzés\n\nHa visszajelzést szeretne küldeni, illetve javaslatai vagy kérdései vannak, akkor több módon is felveheti velünk a kapcsolatot.\n\n* A `Send-Feedback` az Azure PowerShell egy beépített parancsa, amellyel szabad formátumú visszajelzést küldhet a csapatnak.\n* A szolgáltatással kapcsolatos kéréseit és hibajelentéseit az [Azure PowerShell-adattáron](https://github.com/Azure/azure-powershell/issues) keresztül küldheti be.\n* Kérdéseit és pontosításra vonatkozó megkereséseit az [Azure PowerShell dokumentációs adattárján](https://github.com/MicrosoftDocs/azure-docs-powershell/issues) keresztül teheti fel és küldheti be.\n\nReméljük, hogy örömét leli az Azure PowerShell használatában!"

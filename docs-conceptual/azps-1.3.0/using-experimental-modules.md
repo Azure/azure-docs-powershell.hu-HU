@@ -6,17 +6,17 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/05/2017
-ms.openlocfilehash: ff58693c8ec21b7e50e37bd85975a9ae3980a5e7
+ms.date: 12/13/2018
+ms.openlocfilehash: ae2fecf73271a34a08ac66de03962a7a529e353b
 ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
 ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153605"
+ms.locfileid: "56144832"
 ---
-# <a name="using-experimental-azure-powershell-modules"></a>Kísérleti Azure PowerShell-modulok használata
+# <a name="use-experimental-azure-powershell-modules"></a>Kísérleti Azure PowerShell-modulok használata
 
-Mivel az Azure a fejlesztői eszközökre (különösen a parancssori felületekre) helyezi a hangsúlyt, az Azure PowerShell csapata az Azure PowerShell felhasználói felületének számos fejlesztésével kísérletezik.
+Mivel az Azure a fejlesztői eszközökre helyezi a hangsúlyt, az Azure PowerShell csapata az Azure PowerShell felhasználói felületének számos fejlesztésével kísérletezik. Ez a cikk leírja, hogyan iratkozhat fel az Azure PowerShell kísérleteire, és hogyan adhat visszajelzést a fejlesztői csapatnak.
 
 ## <a name="experimentation-methodology"></a>Kísérleti módszertan
 
@@ -24,29 +24,17 @@ A kísérletezés érdekében új Azure PowerShell-modulokat hozunk létre, amel
 
 Ezek a modulok a meglévő Azure PowerShell-modulok mellett telepíthetők. A parancsmagneveket lerövidítettük, hogy rövidebb neveket kelljen megadni, illetve hogy elkerüljük a névütközést a meglévő, nem kísérleti parancsmagokkal.
 
-A kísérleti modulok az alábbi elnevezési szabályt követik: `AzureRM.*.Experiments`. Ez a elnevezési szabály az előzetes verziójú modulok elnevezéséhez hasonló: `AzureRM.*.Preview`. Az előzetes verziójú modulok nem azonosak a kísérleti modulokkal. Az előzetes modulok az Azure-szolgáltatások olyan új funkcióit valósítják meg, amelyek csak előzetes ajánlatként érhetők el. Az előzetes verziójú modulok a meglévő Azure PowerShell-modulokat váltják fel, és ugyanazokat a parancsmag- és paraméterneveket használják.
+A kísérleti modulok az alábbi elnevezési szabályt követik: `Az.*.Experiments`. Ez a elnevezési szabály az előzetes verziójú modulok elnevezéséhez hasonló: `Az.*.Preview`. Az előzetes verziójú modulok nem azonosak a kísérleti modulokkal. Az előzetes modulok az Azure-szolgáltatások olyan új funkcióit valósítják meg, amelyek csak előzetes ajánlatként érhetők el. Az előzetes verziójú modulok a meglévő Azure PowerShell-modulokat váltják fel, és ugyanazokat a parancsmag- és paraméterneveket használják.
 
 ## <a name="how-to-install-an-experimental-module"></a>A kísérleti modulok telepítése
 
 A kísérleti modulok a meglévő Azure PowerShell-modulokhoz hasonlóan a PowerShell-galériában vannak közzétéve. A kísérleti modulok listájának megtekintéséhez futtassa a következő parancsot:
 
 ```azurepowershell-interactive
-Find-Module AzureRM.*.Experiments
+Find-Module Az.*.Experiments
 ```
 
-```output
-Version Name                         Repository Description
-------- ----                         ---------- -----------
-1.0.25  AzureRM.Compute.Experiments  PSGallery  Azure Compute experiments for VM creation
-1.0.0   AzureRM.Websites.Experiments PSGallery  Create and deploy web applications using Azure App Services.
-```
-
-A kísérleti modulok telepítéséhez használja a következő parancsokat egy emelt szintű PowerShell-munkamenetből:
-
-```azurepowershell-interactive
-Install-Module AzureRM.Compute.Experiments
-Install-Module AzureRM.Websites.Experiments
-```
+Kísérleti modul telepítéséhez használja az `Install-Module` parancsmagot.
 
 ### <a name="documentation-and-support"></a>Dokumentáció és támogatás
 
@@ -56,16 +44,17 @@ Javasoljuk, hogy tesztelje ezeket a modulokat. A visszajelzések segítenek nek�
 
 ## <a name="experiments-and-areas-of-improvement"></a>Kísérletek és fejlesztési területek
 
-Ezeket a fejlesztéseket a versenytársaink termékeinek főbb előnyei alapján választottuk ki. Például az Azure CLI 2.0 egyik fontos eleme, hogy a parancsok _forgatókönyveken_, és nem _API felületeken_ alapulnak.
-Az Azure CLI 2.0 számos intelligens alapértelmezett értéket alkalmaz, amelyekkel az „első lépések” forgatókönyvek könnyebben használhatók a végfelhasználók számára.
+Ezeket a fejlesztéseket a versenytársaink termékeinek főbb előnyei alapján választottuk ki. Például az Azure CLI egyik fontos eleme, hogy a parancsok _forgatókönyveken_, és nem _API felületeken_ alapulnak.
+Az Azure CLI számos intelligens alapértelmezett értéket alkalmaz, amelyek megkönnyítik az első lépéseket bemutató forgatókönyvek használatát a végfelhasználók számára.
 
 ### <a name="core-improvements"></a>Központi fejlesztések
 
 A központi fejlesztések a „józan megfontoláson” alapulnak, és az ilyen frissítések bevezetéséhez nem sok kísérletezés szükséges.
 
-- Forgatókönyv-alapú parancsmagok – <em>*Minden</em> parancsmagot forgatókönyvek, és nem az Azure REST-szolgáltatás köré kell építeni.
+- Forgatókönyv-alapú parancsmagok – **Minden* parancsmagot forgatókönyvek, és nem az Azure REST-szolgáltatás köré kell építeni.
 
-- Rövidebb nevek – Ez a parancsmagok (például: `New-AzureRmVM` => `New-AzVm`) és a paraméterek (például: `-ResourceGroupName` => `-Rg`) nevére is vonatkozik. A „régi” parancsmagokkal való kompatibilitás érdekében aliasok használhatók. Biztosítson _visszafelé kompatibilis_ paraméterkészleteket.
+- Rövidebb nevek – Ez a parancsmagok és a paraméterek nevére is vonatkozik.
+  A „régi” parancsmagokkal való kompatibilitás érdekében aliasok használhatók. Biztosítson _visszafelé kompatibilis_ paraméterkészleteket.
 
 - Intelligens alapértékek – Adja meg a „szükséges” információkat intelligens alapértelmezett értékekkel. Például:
   - Erőforráscsoport
@@ -89,7 +78,7 @@ A kísérleti fejlesztések segítségével a csoport kísérletezéssel tesztel
 
 A „Webalkalmazás létrehozása” forgatókönyv például egy `-Git` vagy `-AddRemote` kapcsolóval rendelkezhet, amely automatikusan egy távoli „azure” mappát ad hozzá egy meglévő Git-adattárhoz.
 
-- Beállítható alapértelmezett értékek – A felhasználóknak képesnek kell lenniük arra, hogy alaphelyzetbe állítsanak bizonyos mindenütt jelenlevő paramétert (például `-ResourceGroupName` és `-Location`).
+- Beállítható alapértelmezett értékek – A felhasználóknak képesnek kell lenniük arra, hogy alapértelmezett értékeket állítsanak be bizonyos általános paraméterekhez (például `-ResourceGroupName` és `-Location`).
 
 - Alapértelmezett méretek – Az erőforrások „méretei” megtéveszthetik a felhasználókat, mert sok erőforrás-szolgáltató különböző neveket használ (például „\_DS1\_v2 szabvány” vagy „S1”). A legtöbb felhasználót azonban jobban érdeklik a költségek. Ezért logikus „univerzális” méreteket meghatározni egy díjszabási ütemezés alapján. A felhasználók adott méretet választhatnak vagy hagyhatják, hogy az Azure PowerShell kiválassza a _legjobb lehetőséget_ az erőforrás és a költségvetés alapján.
 
