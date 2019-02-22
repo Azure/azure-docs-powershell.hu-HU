@@ -2,15 +2,12 @@ items:
 - name: Azure PowerShell
   href: overview.md
   items:
+  - name: Az új Az modul bemutatása
+    href: new-azureps-module-az.md
   - name: Telepítés
-    href: install-azurerm-ps.md
-    items:
-    - name: Telepítés macOS vagy Linux rendszeren
-      href: install-azurermps-maclinux.md
-    - name: Telepítés MSI-vel vagy WebPI-vel
-      href: other-install.md
+    href: install-az-ps.md
   - name: Eltávolítás
-    href: uninstall-azurerm-ps.md
+    href: uninstall-az-ps.md
   - name: Bevezetés
     href: get-started-azureps.md
   - name: Cloud Shell
@@ -22,6 +19,8 @@ items:
       href: create-azure-service-principal-azureps.md
     - name: Állandó hitelesítő adatok
       href: context-persistence.md
+  - name: Migrálás az AzureRM-ből
+    href: migrate-from-azurerm-to-az.md
   - name: Lekérdezések
     href: queries-azureps.md
   - name: Kimenet formátuma
@@ -45,8 +44,8 @@ items:
   - name: Kibocsátási megjegyzések
     href: release-notes-azureps.md
     items:
-    - name: Az Azure PowerShell 5.x használhatatlanná tévő változásai
-      href: migration-guide.5.0.0.md
+    - name: Az Az 1.0.0 kompatibilitástörő változásai
+      href: migrate-az-1.0.0.md
 - name: Oktatóanyagok
   items:
   - name: Virtuális gépek létrehozása
@@ -63,9 +62,9 @@ items:
     href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
   - name: Cosmos DB
     href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
-ms.openlocfilehash: d9dea81278a566ae4024aa1b5c7a4aa464cc96aa
+ms.openlocfilehash: 5954dc3821f68af8bba916fc4832038ca24b5ca5
 ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
 ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153632"
+ms.locfileid: "56144524"
