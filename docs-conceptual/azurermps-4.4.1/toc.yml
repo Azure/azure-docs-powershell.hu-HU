@@ -1,56 +1,63 @@
+items:
 - name: Azure PowerShell
   href: overview.md
   items:
-    - name: Telepítés
-      href: install-azurerm-ps.md
-      items:
-        - name: Telepítés macOS és Linux rendszeren
-          href: install-azurermps-maclinux.md
-        - name: Egyéb telepítési módszerek
-          href: other-install.md
-    - name: Bevezetés
-      href: get-started-azureps.md
-    - name: Cloud Shell
-      href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
-    - name: Bejelentkezés
-      href: authenticate-azureps.md
-      items:
-        - name: Egyszerű szolgáltatás létrehozása
-          href: create-azure-service-principal-azureps.md
-        - name: Állandó hitelesítő adatok
-          href: context-persistence.md
-    - name: Lekérdezések
-      href: queries-azureps.md
-    - name: Kimenet formátuma
-      href: formatting-output.md
-    - name: Előfizetések kezelése
-      href: manage-subscriptions-azureps.md
-    - name: Üzembe helyezés
-      items:
-        - name: Resource Manager-sablonok üzembe helyezése
-          href: /azure/azure-resource-manager/resource-group-template-deploy
-        - name: Resource Manager-sablonok exportálása
-          href: /azure/azure-resource-manager/resource-manager-export-template-powershell
-        - name: Saját Resource Manager-sablonok üzembe helyezése
-          href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
-    - name: Alapelvek
-      items:
-        - name: Kísérleti modulok
-          href: using-experimental-modules.md
-    - name: Kibocsátási megjegyzések
-      href: release-notes-azureps.md
-      items:
-        - name: Az Azure PowerShell 4.x használhatatlanná tévő változásai
-          href: migration-guide.4.0.0.md
+  - name: Telepítés
+    href: install-azurerm-ps.md
+    items:
+    - name: Telepítés macOS és Linux rendszeren
+      href: install-azurermps-maclinux.md
+    - name: Egyéb telepítési módszerek
+      href: other-install.md
+  - name: Bevezetés
+    href: get-started-azureps.md
+  - name: Cloud Shell
+    href: https://docs.microsoft.com/azure/cloud-shell/overview
+  - name: Bejelentkezés
+    href: authenticate-azureps.md
+    items:
+    - name: Egyszerű szolgáltatás létrehozása
+      href: create-azure-service-principal-azureps.md
+    - name: Állandó hitelesítő adatok
+      href: context-persistence.md
+  - name: Lekérdezések
+    href: queries-azureps.md
+  - name: Kimenet formátuma
+    href: formatting-output.md
+  - name: Előfizetések kezelése
+    href: manage-subscriptions-azureps.md
+  - name: Üzembe helyezés
+    items:
+    - name: Resource Manager-sablonok üzembe helyezése
+      href: /azure/azure-resource-manager/resource-group-template-deploy
+    - name: Resource Manager-sablonok exportálása
+      href: /azure/azure-resource-manager/resource-manager-export-template-powershell
+    - name: Saját Resource Manager-sablonok üzembe helyezése
+      href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
+  - name: Alapelvek
+    items:
+    - name: Kísérleti modulok
+      href: using-experimental-modules.md
+  - name: Kibocsátási megjegyzések
+    href: release-notes-azureps.md
+    items:
+    - name: Az Azure PowerShell 4.x használhatatlanná tévő változásai
+      href: migration-guide.4.0.0.md
 - name: Mintaszkriptek
   items:
-    - name: Linux rendszerű virtuális gépek
-      href: /azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
-    - name: Windows rendszerű virtuális gépek
-      href: /azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
-    - name: Web Apps
-      href: /azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
-    - name: SQL Database-adatbázisok
-      href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
-    - name: Cosmos DB
-      href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
+  - name: Linux rendszerű virtuális gépek
+    href: /azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+  - name: Windows rendszerű virtuális gépek
+    href: /azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+  - name: Web Apps
+    href: /azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+  - name: SQL Database-adatbázisok
+    href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+  - name: Cosmos DB
+    href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
+ms.openlocfilehash: a4e5e00066372f461b831e17c60aab32ce7f2b61
+ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.translationtype: HT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56153510"
