@@ -1,0 +1,70 @@
+items:
+- name: Azure PowerShell
+  href: overview.md
+  items:
+  - name: Az új Az modul bemutatása
+    href: new-azureps-module-az.md
+  - name: Telepítés
+    href: install-az-ps.md
+  - name: Eltávolítás
+    href: uninstall-az-ps.md
+  - name: Bevezetés
+    href: get-started-azureps.md
+  - name: Cloud Shell
+    href: https://docs.microsoft.com/azure/cloud-shell/overview
+  - name: Bejelentkezés
+    href: authenticate-azureps.md
+    items:
+    - name: Egyszerű szolgáltatás létrehozása
+      href: create-azure-service-principal-azureps.md
+    - name: Állandó hitelesítő adatok
+      href: context-persistence.md
+  - name: Migrálás az AzureRM-ből
+    href: migrate-from-azurerm-to-az.md
+  - name: Lekérdezések
+    href: queries-azureps.md
+  - name: Kimenet formátuma
+    href: formatting-output.md
+  - name: Előfizetések kezelése
+    href: manage-subscriptions-azureps.md
+  - name: Üzembe helyezés
+    items:
+    - name: Resource Manager-sablonok üzembe helyezése
+      href: /azure/azure-resource-manager/resource-group-template-deploy
+    - name: Resource Manager-sablonok exportálása
+      href: /azure/azure-resource-manager/resource-manager-export-template-powershell
+    - name: Saját Resource Manager-sablonok üzembe helyezése
+      href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
+  - name: Alapelvek
+    items:
+    - name: Kísérleti modulok
+      href: using-experimental-modules.md
+    - name: PowerShell-feladatok
+      href: using-psjobs.md
+  - name: Kibocsátási megjegyzések
+    href: release-notes-azureps.md
+    items:
+    - name: Az Az 1.0.0 kompatibilitástörő változásai
+      href: migrate-az-1.0.0.md
+- name: Oktatóanyagok
+  items:
+  - name: Virtuális gépek létrehozása
+    href: azureps-vm-tutorial.yml
+- name: Mintaszkriptek
+  items:
+  - name: Linux rendszerű virtuális gépek
+    href: /azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+  - name: Windows rendszerű virtuális gépek
+    href: /azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+  - name: Web Apps
+    href: /azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+  - name: SQL Database-adatbázisok
+    href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+  - name: Cosmos DB
+    href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
+ms.openlocfilehash: 5954dc3821f68af8bba916fc4832038ca24b5ca5
+ms.sourcegitcommit: 5630030c5cfa9828c3c024b69de59248263ef17f
+ms.translationtype: HT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56837741"
