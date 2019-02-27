@@ -1,3 +1,19 @@
+---
+title: A Microsoft Azure PowerShell 5.0.0 használhatatlanná tévő változásai
+description: Ebben a migrálási útmutatóban megtalálja az Azure PowerShell 5-ös verziójában található kompatibilitástörő változások listáját.
+author: sptramer
+ms.author: sttramer
+manager: carmonm
+ms.devlang: powershell
+ms.topic: conceptual
+ms.date: 05/01/2018
+ms.openlocfilehash: b4cbeb1b523664fb49c4640eaafd56e3b843ebaa
+ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.translationtype: HT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56144560"
+---
 # <a name="breaking-changes-for-microsoft-azure-powershell-500"></a>A Microsoft Azure PowerShell 5.0.0 használhatatlanná tévő változásai
 
 Ez a dokumentum egyrészt értesítőül szolgál a használhatatlanná tévő változtatásokról, másrészt egy migrálási útmutató az Azure PowerShell-parancsmagok felhasználóinak. Minden szakasz tárgyalja a használhatatlanná tévő változások okát, valamint a legkisebb ellenállással járó migrálási módot is. A körülmények részletesebb leírásáért tekintse meg az egyes változásokhoz tartozó lekérési kérelmeket.
@@ -18,7 +34,7 @@ Ez a dokumentum egyrészt értesítőül szolgál a használhatatlanná tévő v
 ### <a name="new-azurermapimanagementbackendproxy"></a>**New-AzureRmApiManagementBackendProxy**
 - A „UserName” és a „Password” paraméter értéke PSCredential lett
 
-```powershell
+```powershell-interactive
 # Old
 New-AzureRmApiManagementBackendProxy [other required parameters] -UserName "plain-text string" -Password "plain-text string"
 
@@ -29,7 +45,7 @@ New-AzureRmApiManagementBackendProxy [other required parameters] -Credential $PS
 ### <a name="new-azurermapimanagementuser"></a>**New-AzureRmApiManagementUser**
 - A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett
 
-```powershell
+```powershell-interactive
 # Old
 New-AzureRmApiManagementUser [other required parameters] -Password "plain-text string"
 
@@ -40,7 +56,7 @@ New-AzureRmApiManagementUser [other required parameters] -Password $SecureString
 ### <a name="set-azurermapimanagementuser"></a>**Set-AzureRmApiManagementUser**
 - A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett
 
-```powershell
+```powershell-interactive
 # Old
 Set-AzureRmApiManagementUser [other required parameters] -Password "plain-text string"
 
@@ -51,9 +67,9 @@ Set-AzureRmApiManagementUser [other required parameters] -Password $SecureString
 ## <a name="breaking-changes-to-batch-cmdlets"></a>A Batch-parancsmagok használhatatlanná tévő változásai
 
 ### <a name="new-azurebatchcertificate"></a>**New-AzureBatchCertificate**
-- A `Password` paraméter értéke SecureString (biztonságos karakterlánc) lett
+- A `Password` paraméter értéke SecureString (biztonságos sztring) lett
 
-```powershell
+```powershell-interactive
 # Old
 New-AzureBatchCertificate [other required parameters] -Password "plain-text string"
 
@@ -62,9 +78,9 @@ New-AzureBatchCertificate [other required parameters] -Password $SecureStringVar
 ```
 
 ### <a name="new-azurebatchcomputenodeuser"></a>**New-AzureBatchComputeNodeUser**
-- A `Password` paraméter értéke SecureString (biztonságos karakterlánc) lett
+- A `Password` paraméter értéke SecureString (biztonságos sztring) lett
 
-```powershell
+```powershell-interactive
 # Old
 New-AzureBatchComputeNodeUser [other required parameters] -Password "plain-text string"
 
@@ -73,9 +89,9 @@ New-AzureBatchComputeNodeUser [other required parameters] -Password $SecureStrin
 ```
 
 ### <a name="set-azurermbatchcomputenodeuser"></a>**Set-AzureRmBatchComputeNodeUser**
-- A `Password` paraméter értéke SecureString (biztonságos karakterlánc) lett
+- A `Password` paraméter értéke SecureString (biztonságos sztring) lett
 
-```powershell
+```powershell-interactive
 # Old
 Set-AzureRmBatchComputeNodeUser [other required parameters] -Password "plain-text string"
 
@@ -86,7 +102,7 @@ Set-AzureRmBatchComputeNodeUser [other required parameters] -Password $SecureStr
 ### <a name="new-azurebatchtask"></a>**New-AzureBatchTask**
  - A `RunElevated` kapcsoló el lett távolítva, és a `UserIdentity` lépett a helyébe.
 
-```powershell
+```powershell-interactive
 # Old
 New-AzureBatchTask -Id $taskId1 -JobId $jobId -CommandLine "cmd /c echo hello" -RunElevated $TRUE
 
@@ -102,7 +118,7 @@ Ez befolyásolja a `RunElevated` tulajdonságot a következők esetében: `PSClo
 
 - A `PSMultiInstanceSettings` konstruktor ezentúl nem egy kötelezően megadandó `numberOfInstances`, hanem egy kötelezően megadandó `coordinationCommandLine` paramétert vesz fel.
 
-```powershell
+```powershell-interactive
 # Old
 $settings = New-Object Microsoft.Azure.Commands.Batch.Models.PSMultiInstanceSettings -ArgumentList @(2)
 $settings.CoordinationCommandLine = "cmd /c echo hello"
@@ -116,7 +132,7 @@ New-AzureBatchTask [other parameters] -MultiInstanceSettings $settings
 ### <a name="get-azurebatchtask"></a>**Get-AzureBatchTask**
  - A `PSCloudTask` `RunElevated` tulajdonsága el lett távolítva. A `UserIdentity` tulajdonság lépett a `RunElevated` helyébe.
 
-```powershell
+```powershell-interactive
 # Old
 $task = Get-AzureBatchTask [parameters]
 $task.RunElevated
@@ -132,7 +148,7 @@ Ez befolyásolja a `RunElevated` tulajdonságot a következők esetében: `PSClo
 
 - A `PSExitConditions` `SchedulingError` tulajdonsága új nevet kapott: `PreProcessingError`.
 
-```powershell
+```powershell-interactive
 # Old
 $task = Get-AzureBatchTask [parameters]
 $task.ExitConditions.SchedulingError
@@ -148,7 +164,7 @@ $task.ExitConditions.PreProcessingError
   - A rendszer a `FailureInformation` tulajdonságot adja vissza minden tevékenységhiba esetén, beleértve a korábbi ütemezési hibákat, a tevékenységek nullától eltérő kilépési kódjait, és az új kimeneti fájlok szolgáltatásának sikertelen fájlfeltöltéseit.
   - A szerkezet nem változott, tehát a típus használatakor nincs szükség a kód megváltoztatására.
 
-```powershell
+```powershell-interactive
 # Old
 $task = Get-AzureBatchTask [parameters]
 $task.ExecutionInformation.SchedulingError
@@ -164,7 +180,7 @@ A változás a következőket is érinti: Get-AzureBatchPool, Get-AzureBatchSubt
  - A `TargetDedicated` el lett távolítva, és a `TargetDedicatedComputeNodes` és `TargetLowPriorityComputeNodes` léptek a helyébe.
  - A `TargetDedicatedComputeNodes` kapott egy `TargetDedicated` aliast.
 
-```powershell
+```powershell-interactive
 # Old
 New-AzureBatchPool [other parameters] [-TargetDedicated <Int32>]
 
@@ -172,12 +188,12 @@ New-AzureBatchPool [other parameters] [-TargetDedicated <Int32>]
 New-AzureBatchPool [other parameters] [-TargetDedicatedComputeNodes <Int32>] [-TargetLowPriorityComputeNodes <Int32>]
 ```
 
-Szintén érintett: Start-AzureBatchPoolResize
+Szintén érintettek az alábbiak: Start-AzureBatchPoolResize
 
 ### <a name="get-azurebatchpool"></a>**Get-AzureBatchPool**
  - A `PSCloudPool` `TargetDedicated` és `CurrentDedicated` tulajdonságai új nevet kaptak: `TargetDedicatedComputeNodes` és `CurrentDedicatedComputeNodes`.
 
-```powershell
+```powershell-interactive
 # Old
 $pool = Get-AzureBatchPool [parameters]
 $pool.TargetDedicated
@@ -193,7 +209,7 @@ $pool.CurrentDedicatedComputeNodes
 
 - A `PSCloudPool` `ResizeError` tulajdonsága új nevet kapott: `ResizeErrors`. Ez mostantól egy gyűjtemény.
 
-```powershell
+```powershell-interactive
 # Old
 $pool = Get-AzureBatchPool [parameters]
 $pool.ResizeError
@@ -206,7 +222,7 @@ $pool.ResizeErrors[0]
 ### <a name="new-azurebatchjob"></a>**New-AzureBatchJob**
 - A `PSPoolSpecification` `TargetDedicated` tulajdonsága új nevet kapott: `TargetDedicatedComputeNodes`.
 
-```powershell
+```powershell-interactive
 # Old
 $poolInfo = New-Object Microsoft.Azure.Commands.Batch.Models.PSPoolInformation
 $poolInfo.AutoPoolSpecification = New-Object Microsoft.Azure.Commands.Batch.Models.PSAutoPoolSpecification
@@ -226,7 +242,7 @@ New-AzureBatchJob [other parameters] -PoolInformation $poolInfo
  - A `Name` el lett távolítva, és a `Path` lépett a helyébe.
  - A `Path` kapott egy `Name` aliast.
 
-```powershell
+```powershell-interactive
 # Old
 Get-AzureBatchNodeFile [other parameters] [[-Name] <String>]
 
@@ -234,13 +250,13 @@ Get-AzureBatchNodeFile [other parameters] [[-Name] <String>]
 Get-AzureBatchNodeFile [other parameters] [[-Path] <String>]
 ```
 
-Szintén érintett: Get-AzureBatchNodeFileContent, Remove-AzureBatchNodeFile
+Szintén érintettek az alábbiak: Get-AzureBatchNodeFileContent, Remove-AzureBatchNodeFile
 
 ### <a name="type-psnodefile"></a>**PSNodeFile** típus
 
  - A `PSNodeFile` `Name` tulajdonsága új nevet kapott: `Path`.
 
-```powershell
+```powershell-interactive
 # Old
 $file = Get-AzureBatchNodeFile [parameters]
 $file.Name
@@ -254,7 +270,7 @@ $file.Path
 - A `PSSubtaskInformation` `PreviousState` és `State` tulajdonságai mostantól nem `TaskState`, hanem `SubtaskState` típusúak.
   - A `TaskState` tulajdonsággal ellentétben a `SubtaskState` tulajdonságnak nincs `Active` értéke, mivel az alfeladatok nem lehetnek `Active` állapotban.
 
-```powershell
+```powershell-interactive
 # Old
 $subtask = Get-AzureBatchSubtask [parameters]
 if ($subtask.State -eq Microsoft.Azure.Batch.Common.TaskState.Running) { }
@@ -269,7 +285,7 @@ if ($subtask.State -eq Microsoft.Azure.Batch.Common.SubtaskState.Running) { }
 ### <a name="set-azurermvmaccessextension"></a>**Set-AzureRmVMAccessExtension**
 - A „UserName” és a „Password” paraméter értéke PSCredential lett
 
-```powershell
+```powershell-interactive
 # Old
 Set-AzureRmVMAccessExtension [other required parameters] -UserName "plain-text string" -Password "plain-text string"
 
@@ -300,7 +316,7 @@ Set-AzureRmVMAccessExtension [other required parameters] -Credential $PSCredenti
 ### <a name="new-azurermeventhubnamespace"></a>**New-AzureRmEventHubNamespace**
 - A NamespceAttributes „Status” és „Enabled” tulajdonságai el lesznek távolítva. 
 
-```powershell
+```powershell-interactive
 # Old
 # The $namespace has Status and Enabled property  
 $namespace = New-AzureRmEventHubNamespace <parameters>
@@ -315,7 +331,7 @@ $namespace = Get-AzureRmEventHubNamespace <parameters>
 ### <a name="get-azurermeventhubnamespace"></a>**Get-AzureRmEventHubNamespace**
 - A NamespceAttributes „Status” és „Enabled” tulajdonságai el lesznek távolítva. 
 
-```powershell
+```powershell-interactive
 # Old
 # The $namespace has Status and Enabled property 
 $namespace = Get-AzureRmEventHubNamespace <parameters>
@@ -330,7 +346,7 @@ $namespace = Get-AzureRmEventHubNamespace <parameters>
 ### <a name="set-azurermeventhubnamespace"></a>**Set-AzureRmEventHubNamespace**
 - A NamespceAttributes „Status” és „Enabled” tulajdonságai el lesznek távolítva. 
 
-```powershell
+```powershell-interactive
 # Old
 # The $namespace has Status and Enabled property 
 $namespace = Set-AzureRmEventHubNamespace <parameters>
@@ -345,7 +361,7 @@ $namespace = Set-AzureRmEventHubNamespace <parameters>
 ### <a name="new-azurermeventhubconsumergroup"></a>**New-AzureRmEventHubConsumerGroup**
 - A ConsumerGroupAttributes „EventHubPath” tulajdonsága el lesz távolítva.
 
-```powershell
+```powershell-interactive
 # Old
 # The $consumergroup has EventHubPath property 
 $consumergroup = New-AzureRmEventHubConsumerGroup <parameters>
@@ -359,7 +375,7 @@ $consumergroup = New-AzureRmEventHubConsumerGroup <parameters>
 ### <a name="set-azurermeventhubconsumergroup"></a>**Set-AzureRmEventHubConsumerGroup**
 - A ConsumerGroupAttributes „EventHubPath” tulajdonsága el lesz távolítva.
 
-```powershell
+```powershell-interactive
 # Old
 # The $consumergroup has EventHubPath property 
 $consumergroup = Set-AzureRmEventHubConsumerGroup <parameters>
@@ -373,7 +389,7 @@ $consumergroup = Set-AzureRmEventHubConsumerGroup <parameters>
 ### <a name="get-azurermeventhubconsumergroup"></a>**Get-AzureRmEventHubConsumerGroup**
 - A ConsumerGroupAttributes „EventHubPath” tulajdonsága el lesz távolítva.
 
-```powershell
+```powershell-interactive
 # Old
 # The $consumergroup has EventHubPath property 
 $consumergroup = Get-AzureRmEventHubConsumerGroup <parameters>
@@ -399,7 +415,7 @@ $consumergroup = Get-AzureRmEventHubConsumerGroup <parameters>
 ### <a name="get-azurermalertrule"></a>**Get-AzureRmAlertRule**
 - Kimeneti változás: a parancsmag kimenete egybesimított lesz (a tulajdonságok mező kiiktatásával) a felhasználói élmény javítása érdekében.
 
-```powershell
+```powershell-interactive
 # Old
 $rules = Get-AzureRmAlertRule -ResourceGroup $resourceGroup
 if ($rules -and $rules.count -ge 1)
@@ -429,7 +445,7 @@ if ($rules -and $rules.count -ge 1)
 ### <a name="get-azurermautoscalesetting"></a>**Get-AzureRmAutoscaleSetting**
 - Kimeneti változás: az AutoscaleSettingResourceName mező elavult, mivel mindig a Name mezővel egyenlő.
 
-```powershell
+```powershell-interactive
 # Old
 $s1 = Get-AzureRmAutoscaleSetting -ResourceGroup $resourceGroup -Name MySetting
 if ($s1.AutoscaleSettingResourceName -ne $s1.Name)
@@ -447,7 +463,7 @@ Write-Host $s1.Name
 ### <a name="remove-azurermalertrule--remove-azurermlogprofile"></a>**Remove-AzureRmAlertRule** / **Remove-AzureRmLogProfile**
 - Kimeneti változás: módosult a kimenet típusa, mostantól egyetlen objektumot ad vissza, amely tartalmazza a kérés azonosítóját és az állapotkódot.
 
-```powershell
+```powershell-interactive
 # Old
 $s1 = Remove-AzureRmAlertRule -ResourceGroup $resourceGroup -name $ruleName
 if ($s1 -ne $null)
@@ -467,7 +483,7 @@ $s = $s1.StatusCode
 ### <a name="add-azurermapplicationgatewaysslcertificate"></a>**Add-AzureRmApplicationGatewaySslCertificate**
 - A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett
 
-```powershell
+```powershell-interactive
 # Old
 Add-AzureRmApplicationGatewaySslCertificate [other required parameters] -Password "plain-text string"
 
@@ -478,7 +494,7 @@ Add-AzureRmApplicationGatewaySslCertificate [other required parameters] -Passwor
 ### <a name="new-azurermapplicationgatewaysslcertificate"></a>**New-AzureRmApplicationGatewaySslCertificate**
 - A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett
 
-```powershell
+```powershell-interactive
 # Old
 New-AzureRmApplicationGatewaySslCertificate [other required parameters] -Password "plain-text string"
 
@@ -489,7 +505,7 @@ New-AzureRmApplicationGatewaySslCertificate [other required parameters] -Passwor
 ### <a name="set-azurermapplicationgatewaysslcertificate"></a>**Set-AzureRmApplicationGatewaySslCertificate**
 - A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett
 
-```powershell
+```powershell-interactive
 # Old
 Set-AzureRmApplicationGatewaySslCertificate [other required parameters] -Password "plain-text string"
 
@@ -502,7 +518,7 @@ Set-AzureRmApplicationGatewaySslCertificate [other required parameters] -Passwor
 ### <a name="new-azurermadappcredential"></a>**New-AzureRmADAppCredential**
 - A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett
 
-```powershell
+```powershell-interactive
 # Old
 New-AzureRmADAppCredential [other required parameters] -Password "plain-text string"
 
@@ -513,7 +529,7 @@ New-AzureRmADAppCredential [other required parameters] -Password $SecureStringVa
 ### <a name="new-azurermadapplication"></a>**New-AzureRmADApplication**
 - A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett
 
-```powershell
+```powershell-interactive
 # Old
 New-AzureRmADApplication [other required parameters] -Password "plain-text string"
 
@@ -524,7 +540,7 @@ New-AzureRmADApplication [other required parameters] -Password $SecureStringVari
 ### <a name="new-azurermadserviceprincipal"></a>**New-AzureRmADServicePrincipal**
 - A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett
 
-```powershell
+```powershell-interactive
 # Old
 New-AzureRmADServicePrincipal [other required parameters] -Password "plain-text string"
 
@@ -535,7 +551,7 @@ New-AzureRmADServicePrincipal [other required parameters] -Password $SecureStrin
 ### <a name="new-azurermadspcredential"></a>**New-AzureRmADSpCredential**
 - A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett
 
-```powershell
+```powershell-interactive
 # Old
 New-AzureRmADSpCredential [other required parameters] -Password "plain-text string"
 
@@ -546,7 +562,7 @@ New-AzureRmADSpCredential [other required parameters] -Password $SecureStringVar
 ### <a name="new-azurermaduser"></a>**New-AzureRmADUser**
 - A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett
 
-```powershell
+```powershell-interactive
 # Old
 New-AzureRmADUser [other required parameters] -Password "plain-text string"
 
@@ -557,7 +573,7 @@ New-AzureRmADUser [other required parameters] -Password $SecureStringVariable
 ### <a name="set-azurermaduser"></a>**Set-AzureRmADUser**
 - A „Password” paraméter értéke SecureString (biztonságos karakterlánc) lett
 
-```powershell
+```powershell-interactive
 # Old
 Set-AzureRmADUser [other required parameters] -Password "plain-text string"
 
@@ -626,7 +642,7 @@ Set-AzureRmADUser [other required parameters] -Password $SecureStringVariable
     - Engedélyezve
     - status
    
-```powershell
+```powershell-interactive
 # Old
 # The $namespace has Status and Enabled property 
 $namespace = Get-AzureRmServiceBusNamespace <parameters>
@@ -645,7 +661,7 @@ $namespace = Get-AzureRmServiceBusNamespace <parameters>
     - IsAnonymousAccessible
     - SupportOrdering
 
-```powershell
+```powershell-interactive
 # Old
 # The $queue has EntityAvailabilityStatus, EnableBatchedOperations, IsAnonymousAccessible and SupportOrdering properties
 $queue = Get-AzureRmServiceBusQueue <parameters>
@@ -668,7 +684,7 @@ $queue = Get-AzureRmServiceBusQueue <parameters>
     - EnableSubscriptionPartitioning
     - EntityAvailabilityStatus
 
-```powershell
+```powershell-interactive
 # Old
 # The $topic has EntityAvailabilityStatus, EnableSubscriptionPartitioning, IsAnonymousAccessible, IsExpress, Location and FilteringMessagesBeforePublishing properties
 $topic = Get-AzureRmServiceBusTopic <parameters>
@@ -691,7 +707,7 @@ $topic = Get-AzureRmServiceBusTopic <parameters>
     - IsReadOnly
     - Hely
    
-```powershell
+```powershell-interactive
 # Old
 # The $subscription has EntityAvailabilityStatus, EnableSubscriptionPartitioning, IsAnonymousAccessible, IsExpress, Location and FilteringMessagesBeforePublishing properties
 $subscription = Get-AzureRmServiceBussubscription <parameters>

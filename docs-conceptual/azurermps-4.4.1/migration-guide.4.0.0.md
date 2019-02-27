@@ -1,3 +1,19 @@
+---
+title: A Microsoft Azure PowerShell 4.0.0 használhatatlanná tévő változásai
+description: Ebben a migrálási útmutatóban megtalálja az Azure PowerShell 4-es verziójában található kompatibilitástörő változások listáját.
+author: sptramer
+ms.author: sttramer
+manager: carmonm
+ms.devlang: powershell
+ms.topic: conceptual
+ms.date: 05/01/2018
+ms.openlocfilehash: 379bbc788e530598f51e893a2bad71f09b059193
+ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.translationtype: HT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56153438"
+---
 # <a name="breaking-changes-for-microsoft-azure-powershell-400"></a>A Microsoft Azure PowerShell 4.0.0 használhatatlanná tévő változásai
 
 Ez a dokumentum egyrészt értesítőül szolgál a használhatatlanná tévő változtatásokról, másrészt egy migrálási útmutató az Azure PowerShell-parancsmagok felhasználóinak. Minden szakasz tárgyalja a használhatatlanná tévő változások okát, valamint a legkisebb ellenállással járó migrálási módot is. A körülmények részletesebb leírásáért tekintse meg az egyes változásokhoz tartozó lekérési kérelmeket.
@@ -12,7 +28,7 @@ Ez a dokumentum egyrészt értesítőül szolgál a használhatatlanná tévő v
 - [Az SQL-parancsmagok használhatatlanná tévő változásai](#breaking-changes-to-sql-cmdlets)
 - [A Storage-parancsmagok használhatatlanná tévő változásai](#breaking-changes-to-storage-cmdlets)
 - [A Profile-parancsmagok használhatatlanná tévő változásai](#breaking-changes-to-profile-cmdlets)
-## <a name="breaking-changes-to-compute-cmdlets"></a>A Compute-parancsmagok használhatatlanná tévő változásai
+  ## <a name="breaking-changes-to-compute-cmdlets"></a>A Compute-parancsmagok használhatatlanná tévő változásai
 
 A kiadás a következő kimeneti típusokat érinti:
 
@@ -26,7 +42,7 @@ A kiadás a következő kimeneti típusokat érinti:
     - `Remove-AzureRmVMNetworkInterface`
     - `Set-AzureRmVMDataDisk`
 
-```powershell
+```powershell-interactive
 # Old
 $vm.DataDiskNames
 $vm.NetworkInterfaceIDs
@@ -56,7 +72,7 @@ A kiadás a következő parancsmagokat érinti:
 ### <a name="remove-azurermalertrule"></a>Remove-AzureRmAlertRule
 - A parancsmag kimenete (korábban egy egyetlen objektumból álló lista) egy objektumra módosult; ez az objektum tartalmazza a kérés azonosítóját és az állapotkódot.
     
-```powershell
+```powershell-interactive
 # Old  
 $s1 = Remove-AzureRmAlertRule -ResourceGroup $resourceGroup -name chiricutin
 if ($s1 -ne $null)
@@ -77,7 +93,7 @@ $s = $s1.StatusCode
 ### <a name="get-azurermalertrule"></a>Get-AzureRmAlertRule
 - A parancsmag kimenetének (egy objektumlistának) az összes eleme egybe lett simítva, azaz a rendszer az objektumokat az `{ Id, Location, Name, Tags, Properties }` struktúra helyett az `{ Id, Location, Name, Tags, Type, Description, IsEnabled, Condition, Actions, LastUpdatedTime, ...}` struktúrával adja vissza, amely magában foglalja egy Azure-erőforrás, valamint egy AlertRuleResource összes legfelsőbb szintű tulajdonságát.
     
-```powershell
+```powershell-interactive
 # Old
 $rules = Get-AzureRmAlertRule -ResourceGroup $resourceGroup
 if ($rules -and $rules.count -ge 1)
@@ -109,7 +125,7 @@ if ($rules -and $rules.count -ge 1)
 ### <a name="get-azurermautoscalesetting"></a>Get-AzureRmAutoscaleSetting
 - Az `AutoscaleSettingResourceName` mező elavult, mivel az értéke mindig megegyezik a `Name` mező értékével.
 
-```powershell
+```powershell-interactive
 # Old  
 $s1 = Get-AzureRmAutoscaleSetting -ResourceGroup $resourceGroup -Name MySetting
 if ($s1.AutoscaleSettingResourceName -ne $s1.Name)
@@ -127,7 +143,7 @@ Write-Host $s1.Name
 ### <a name="remove-azurermlogprofile"></a>Remove-AzureRmLogProfile
 - A parancsmag kimenete `Boolean` értékről egy `RequestId` és `StatusCode` tulajdonságot tartalmazó objektumra módosul.
 
-```powershell
+```powershell-interactive
 # Old  
 $s1 = Remove-AzureRmLogProfile -Name myLogProfile
 if ($s1 -eq $true)
@@ -148,7 +164,7 @@ $s = $s1.StatusCode
 ### <a name="add-azurermlogprofile"></a>Add-AzureRmLogProfile
 - A parancsmag kimenete egy olyan objektumra módosul, amely tartalmazza a kérés azonosítóját és az állapotkódot, valamint a frissített vagy újonnan létrehozott erőforrást.
     
-```powershell
+```powershell-interactive
 # Old  
 $s1 = Add-AzureRmLogProfile -Name default -StorageAccountId /subscriptions/df602c9c-7aa0-407d-a6fb-eb20c8bd1192/resourceGroups/JohnKemTest/providers/Microsoft.Storage/storageAccounts/johnkemtest8162 -Locations Global -categ Delete, Write, Action -retention 3
 $r = $s1.ServiceBusRuleId
@@ -164,7 +180,7 @@ $a = $s1.NewResource.ServiceBusRuleId
 ### <a name="set-azurermdiagnosticsettings"></a>Set-AzureRmDiagnosticSettings
 - A parancs új nevet kap: `Update-AzureRmDiagnsoticSettings`
 
-```powershell
+```powershell-interactive
 # Old
 Set-AzureRmDiagnosticSettings
 
@@ -179,7 +195,7 @@ A kiadás a következő parancsmagokat érinti:
 ### <a name="new-azurermvirtualnetworkgatewayconnection"></a>New-AzureRmVirtualNetworkGatewayConnection
 - Az `EnableBgp` paraméter értéke `boolean` helyett `string` lett
 
-```powershell
+```powershell-interactive
 # Old
 New-AzureRmVirtualNetworkGatewayConnection -ResourceGroupName "RG" -name "conn1" -VirtualNetworkGateway1 $vnetGateway -LocalNetworkGateway2 $localnetGateway -ConnectionType IPsec -SharedKey "key" -EnableBgp "true"
 
@@ -206,7 +222,7 @@ A kiadás a következő parancsmagokat érinti:
 - A `Tag` paraméter el lett távolítva
 - A `GracePeriodWithDataLossHour` paraméter új nevet kapott: `GracePeriodWithDataLossHours`
 
-```powershell
+```powershell-interactive
 # Old
 New-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1 -FailoverGroupName fg -PartnerServerName server2 -FailoverPolicy Automatic -GracePeriodWithDataLossHour 1 -Tag @{ Environment="Test" }
 
@@ -218,7 +234,7 @@ New-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1 -F
 - A `Tag` paraméter el lett távolítva
 - A `GracePeriodWithDataLossHour` paraméter új nevet kapott: `GracePeriodWithDataLossHours`
 
-```powershell
+```powershell-interactive
 # Old
 Set-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1 -FailoverGroupName fg -FailoverPolicy Automatic -GracePeriodWithDataLossHour 1 -Tag @{ Environment="Test" }
 
@@ -229,7 +245,7 @@ Set-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1 -F
 ### <a name="add-azurermsqldatabasetofailovergroup"></a>Add-AzureRmSqlDatabaseToFailoverGroup
 - A `Tag` paraméter el lett távolítva
 
-```powershell
+```powershell-interactive
 # Old
 Add-AzureRmSqlDatabaseToFailoverGroup -ResourceGroupName rg -ServerName server1 -FailoverGroupName fg -Database $db1 -Tag @{ Environment="Test" }
 
@@ -240,7 +256,7 @@ Add-AzureRmSqlDatabaseToFailoverGroup -ResourceGroupName rg -ServerName server1 
 ###  <a name="remove-azurermsqldatabasefromfailovergroup"></a>Remove-AzureRmSqlDatabaseFromFailoverGroup
 - A `Tag` paraméter el lett távolítva
 
-```powershell
+```powershell-interactive
 # Old
 Remove-AzureRmSqlDatabaseFromFailoverGroup -ResourceGroupName rg -ServerName server1 -FailoverGroupName fg -Database $db1 -Tag @{ Environment="Test" }
 
@@ -252,7 +268,7 @@ Remove-AzureRmSqlDatabaseFromFailoverGroup -ResourceGroupName rg -ServerName ser
 - A `PartnerResourceGroupName` paraméter el lett távolítva
 - A `PartnerServerName` paraméter el lett távolítva
 
-```powershell
+```powershell-interactive
 # Old
 Remove-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1 -FailoverGroupName fg -PartnerServerName server2 -PartnerResourceGroupName rg
 
@@ -318,7 +334,7 @@ A kiadás a következő kimenettípus-tulajdonságokat érinti:
     - `Get-AzureStorageTable`
     - `New-AzureStorageTable`
     
-```powershell
+```powershell-interactive
 # Old
 $LocationMode = (Get-AzureStorageBlob -Container $containername)[0].ICloudBlob.ServiceClient.LocationMode       
 $ParallelOperationThreadCount = (Get-AzureStorageContainer -Container $containername).CloudBlobContainer.ServiceClient.ParallelOperationThreadCount
@@ -338,9 +354,9 @@ A kiadás a következő parancsmagokat és a parancsmagok következő kimeneti t
 
 ### <a name="add-azurermaccount-breaking-changes"></a>Az Add-AzureRmAccount használhatatlanná tévő változásai
 
-- Az ```EnvironmentName``` paraméter el lett távolítva, és az ```Environment``` lépett a helyébe. Az ```Environment``` most már egy karakterláncot vesz fel egy ```AzureEnvironment``` objektum helyett.
+- Az ```EnvironmentName``` paraméter el lett távolítva, és az ```Environment``` lépett a helyébe. Az ```Environment``` most már egy sztringet vesz fel egy ```AzureEnvironment``` objektum helyett.
 
-```powershell
+```powershell-interactive
 # Old
 Add-AzureRmAccount -EnvironmentName AzureChinaCloud
 
@@ -352,7 +368,7 @@ Add-AzureRmAccount -Environment AzureChinaCloud
 
 A ```Select-AzureRmProfile``` új nevet kapott: ```Import-AzureRmContext```
 
-```powershell
+```powershell-interactive
 # Old
 Select-AzureRmProfile -Path c:\mydir\myprofile.json
 
@@ -364,7 +380,7 @@ Import-AzureRmContext -Path c:\mydir\myprofile.json
 
 A ```Save-AzureRmProfile``` új nevet kapott: ```Save-AzureRmContext```
 
-```powershell
+```powershell-interactive
 # Old
 Save-AzureRmProfile -Path c:\mydir\myprofile.json
 
@@ -375,7 +391,7 @@ Save-AzureRmContext -Path c:\mydir\myprofile.json
 
 - A ```TokenCache``` tulajdonság olyan típusra módosult, amely ```IAzureTokenCache``` elemet implementál ```byte[]``` helyett
 
-```powershell
+```powershell-interactive
 # Old
 $bytes = (Get-AzureRmContext).TokenCache
 $bytes = (Set-AzureRmContext -SubscriptionId xxx-xxx-xxx-xxx).TokenCache
@@ -391,7 +407,7 @@ $bytes = (Add-AzureRmAccount).Context.TokenCache.CacheData
 
 - Az ```AccountType``` tulajdonság a következőre módosult: ```Type```
 
-```powershell
+```powershell-interactive
 # Old
 $type = (Get-AzureRmContext).Account.AccountType
 $type = (Set-AzureRmContext -SubscriptionId xxx-xxx-xxx-xxx).Account.AccountType
@@ -406,7 +422,7 @@ $type = (Add-AzureRmAccount).Context.Account.Type
 ### <a name="breaking-changes-to-the-output-psazuresubscription-type"></a>A PSAzureSubscription típusú kimenet használhatatlanná tévő változásai
 - A ```SubscriptionId``` tulajdonság a következőre módosult: ```Id```
 
-```powershell
+```powershell-interactive
 # Old
 $id =(Get-AzureRmSubscription -SubscriptionId xxxx-xxxx-xxxx-xxxx).SubscriptionId
 $id =(Add-AzureRmAccount -SubscriptionId xxxx-xxxx-xxxx-xxxx).Context.Subscription.SubscriptionId
@@ -422,7 +438,7 @@ $id =(Set-AzureRmContext -SubscriptionId xxxx-xxxx-xxxx-xxxx).Subscription.Id
 
 - A ```SubscriptionName``` tulajdonság a következőre módosult: ```Name```
 
-```powershell
+```powershell-interactive
 # Old
 $name =(Get-AzureRmSubscription -SubscriptionId xxxx-xxxx-xxxx-xxxx).SubscriptionName
 $name =(Add-AzureRmAccount -SubscriptionId xxxx-xxxx-xxxx-xxxx).Context.Subscription.SubscriptionName
@@ -440,7 +456,7 @@ $name =(Set-AzureRmContext -SubscriptionId xxxx-xxxx-xxxx-xxxx).Subscription.Nam
 
 - A ```TenantId``` tulajdonság a következőre módosult: ```Id```
 
-```powershell
+```powershell-interactive
 # Old
 $id =(Get-AzureRmTenant -TenantId xxxx-xxxx-xxxx-xxxx).TenantId
 $id =(Add-AzureRmAccount -SubscriptionId xxxx-xxxx-xxxx-xxxx).Context.Tenant.TenantId
@@ -456,7 +472,7 @@ $id =(Set-AzureRmContext -SubscriptionId xxxx-xxxx-xxxx-xxxx).Tenant.Id
 
 - A ```Domain``` tulajdonság a következőre módosult: ```Directory```
 
-```powershell
+```powershell-interactive
 # Old
 $tenantName =(Get-AzureRmTenant -TenantId xxxx-xxxx-xxxx-xxxx).Domain
 
