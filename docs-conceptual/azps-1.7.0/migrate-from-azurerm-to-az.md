@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.openlocfilehash: 28122ca953d62b405f19effbbc680f2dc6202cca
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59364186"
 ---
 # <a name="migrate-from-azurerm-to-azure-powershell-az"></a>Áttelepítés az AzureRM modulból az Azure PowerShell Az modulba
@@ -68,7 +68,7 @@ Az alias mód engedélyezése után futtassa újra a szkripteket, és győződj�
 ## <a name="change-module-imports-and-cmdlet-names"></a>A modulimportálások és parancsmagnevek módosítása
 
 Általánosságban véve a modulnevek módosultak, így az `AzureRM` és az `Azure` is `Az` lett, és ugyanez igaz a parancsmagokra is.
-Az `AzureRM.Compute` modul új neve például `Az.Compute`. `New-AzureRMVM` `New-AzVM` lett, a `Get-AzureStorageBlob` pedig `Get-AzStorageBlob`.
+Az `AzureRM.Compute` modul új neve például `Az.Compute`. A `New-AzureRMVM` `New-AzVM` lett, a `Get-AzureStorageBlob` pedig `Get-AzStorageBlob`.
 
 Van néhány kivétel is ez alól a szabály alól, amelyeket érdemes figyelembe venni. Egyes modulok a parancsmagok utótagjainak módosítása nélkül lettek átnevezve vagy meglévő modulokba egyesítve, csak az `AzureRM` vagy az `Azure` helyett szerepel `Az`. Egyéb esetben a parancsmag teljes utótagja módosult az új modulnévnek megfelelően.
 

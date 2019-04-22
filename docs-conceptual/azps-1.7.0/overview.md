@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 01/10/2019
 ms.openlocfilehash: 45ab083dd133c8c7b8dbe902484c92564bc216b9
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59364162"
 ---
 # <a name="overview-of-azure-powershell"></a>Az Azure PowerShell áttekintése
@@ -47,7 +47,7 @@ A legújabb Azure PowerShell-kiadással kapcsolatos információkért tekintse m
 Az Azure PowerShell alapjainak megismeréséhez olvassa el az [Ismerkedés az Azure PowerShell szolgáltatással](get-started-azureps.md) című cikket. Ha még nem ismeri a PowerShellt, érdemes lehet megtekintenie a bemutatókat:
 
 * [A PowerShell telepítése](/powershell/scripting/install/installing-powershell)
-* [Szkript használata a PowerShell-lel](/powershell/scripting/powershell-scripting)
+* [Parancsprogram-kezelés a PowerShell-lel](/powershell/scripting/powershell-scripting)
 * [A PowerShell alapjai: (1. rész) Ismerkedés a PowerShell-lel](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1)
 * Microsoft Virtual Academy – [A PowerShell első lépéseit bemutató rövid ismertető](https://mva.microsoft.com/liveevents/powershell-jumpstart)
 

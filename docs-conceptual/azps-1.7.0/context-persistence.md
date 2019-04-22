@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.openlocfilehash: 8702de48429482748939fb1a43ff911bed15f6c0
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59363731"
 ---
 # <a name="persist-user-credentials-across-powershell-sessions"></a>Felhasználói hitelesítő adatok megőrzése a PowerShell-munkamenetek között
@@ -92,8 +92,7 @@ A környezet a `Remove-AzContext` parancsmaggal távolítható el.  Például:
 PS C:\> Remove-AzContext Contoso2
 ```
 
-Elfelejti a „Contoso2” nevű környezetet. A környezet a következő parancsmaggal hozható újra létre:
-`Set-AzContext`
+Elfelejti a „Contoso2” nevű környezetet. A környezet a `Set-AzContext` parancsmaggal hozható újra létre
 
 ## <a name="removing-credentials"></a>Hitelesítő adatok eltávolítása
 

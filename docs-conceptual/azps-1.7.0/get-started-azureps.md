@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 01/14/2019
 ms.openlocfilehash: 0c3b749cb2ac7f11dacafca76b65944f523f727d
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59364120"
 ---
 # <a name="get-started-with-azure-powershell"></a>Ismerkedés az Azure PowerShell-lel
@@ -65,11 +65,11 @@ A gyakori parancsok megtalálásának megkönnyítéséhez ez a táblázat felso
 | Erőforrás típusa | Azure PowerShell-modul | Főnévi előtag |
 |---------------|-------------------------|----------------|
 | [Erőforráscsoport](/azure/azure-resource-manager/resource-group-overview) | [Az.Resources](/powershell/module/az.resources#resources) | `AzResourceGroup` |
-| [Virtual machines (Virtuális gépek)](/azure/virtual-machines) | [Az.Compute](/powershell/module/az.compute#virtual_machines) | `AzVM` |
+| [Virtuális gépek](/azure/virtual-machines) | [Az.Compute](/powershell/module/az.compute#virtual_machines) | `AzVM` |
 | [Tárfiókok](/azure/storage/common/storage-introduction) | [Az.Storage](/powershell/module/az.storage/) | `AzStorageAccount` |
 | [Key Vault](/azure/key-vault/key-vault-whatis) | [Az.KeyVault](/powershell/module/az.keyvault) | `AzKeyVault` |
 | [Webalkalmazások](/azure/app-service) | [Az.Websites](/powershell/module/az.websites) | `AzWebApp` |
-| [SQL Database-adatbázisok](/azure/sql-database) | [Az.Sql](/powershell/module/az.sql) | `AzSqlDatabase` |
+| [SQL-adatbázisok](/azure/sql-database) | [Az.Sql](/powershell/module/az.sql) | `AzSqlDatabase` |
 
 Az Azure PowerShellben található modulok teljes listáját a GitHubon, az [Azure PowerShell-modulok listájában](https://github.com/Azure/azure-powershell/blob/master/documentation/azure-powershell-modules.md) találja.
 

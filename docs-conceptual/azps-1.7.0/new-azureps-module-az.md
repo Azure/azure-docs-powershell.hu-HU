@@ -8,10 +8,10 @@ ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.openlocfilehash: 10665a72bc7dcae8ecf36b5ef4e2ab285a0e78b7
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59364105"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Az új Azure PowerShell Az modul bemutatása
@@ -29,7 +29,7 @@ Az Az egy új modul, ezért a verziószámozás vissza lett állítva 1.0.0-ra.
 Minden felhasználónak javasoljuk, hogy frissítsen az új Az modulra. Ehhez tegye a következőket:
 
 * __AJÁNLOTT__: [Távolítsa el az Azure PowerShell AzureRM modult.](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module)
-* [Az Azure PowerShell Az modul telepítése](/powershell/azure/install-az-ps)
+* [Telepítse az Azure PowerShell Az modult.](/powershell/azure/install-az-ps)
 * Engedélyezze a kompatibilitási módot, hogy aliasokat adjon az AzureRM-parancsmagokhoz az `Enable-AzureRMAlias` paranccsal, amíg meg nem ismeri az új parancskészletet. __Csak__ akkor engedélyezze az aliasokat, ha nincs telepítve az AzureRM.
 
 ## <a name="migrate-existing-scripts-to-az"></a>Meglévő szkriptek áttelepítése az Az modulba

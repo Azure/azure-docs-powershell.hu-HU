@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/14/2018
 ms.openlocfilehash: be3e19dc4b689adbc63b933dd9f3454122d5344a
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59364148"
 ---
 # <a name="migration-guide-for-az-100"></a>Migrálási útmutató az Az 1.0.0-s verziójához
@@ -60,7 +60,7 @@ Get-AzVM
 Get-AzKeyVaultSecret
 ```
 
-Az új parancsmagokra való áttérés megkönnyítése érdekében az Az két új parancsmagot (```Enable-AzureRmAlias``` és ```Disable-AzureRmAlias```) tartalmaz.  ```Enable-AzureRmAlias``` az újabb Az-parancsmagok nevéhez aliasokat hoz létre a korábbi AzureRM-parancsmagok nevéből.  A parancsmag lehetővé teszi aliasok létrehozását az aktuális munkamenetben, vagy akár több munkamenet során, a felhasználói vagy a gépprofil váltása után. 
+Az új parancsmagokra való áttérés megkönnyítése érdekében az Az két új parancsmagot (```Enable-AzureRmAlias``` és ```Disable-AzureRmAlias```) tartalmaz.  Az ```Enable-AzureRmAlias``` az újabb Az-parancsmagok nevéhez aliasokat hoz létre a korábbi AzureRM-parancsmagok nevéből.  A parancsmag lehetővé teszi aliasok létrehozását az aktuális munkamenetben, vagy akár több munkamenet során, a felhasználói vagy a gépprofil váltása után. 
 
 A következő AzureRM-szkript például:
 ```powershell
@@ -82,7 +82,7 @@ Get-AzureRmStorageAccount | Get-AzureStorageContainer | Get-AzureStorageBlob
 
 A parancsmagok aliasaival kapcsolatos részletes információkért futtassa a ```Get-Help -Online Enable-AzureRmAlias``` parancsot a PowerShell-parancssorból.
 
-```Disable-AzureRmAlias``` eltávolítja az ```Enable-AzureRmAlias``` által létrehozott AzureRM-parancsmagaliasokat.  Részletes információkért futtassa a ```Get-Help -Online Disable-AzureRmAlias``` parancsot a PowerShell-parancssorból.
+A ```Disable-AzureRmAlias``` eltávolítja az ```Enable-AzureRmAlias``` által létrehozott AzureRM-parancsmagaliasokat.  Részletes információkért futtassa a ```Get-Help -Online Disable-AzureRmAlias``` parancsot a PowerShell-parancssorból.
 
 ### <a name="module-name-changes"></a>A modul nevének változásai
 - A modul neve a korábbi `AzureRM.*` helyett `Az.*` lett, kivéve a következő modulokban:
@@ -187,10 +187,10 @@ E szolgáltatások eszközállománya már nem aktívan támogatott.  Azt javaso
 
 ### <a name="azcompute-previously-azurermcompute"></a>Az.Compute (korábban AzureRM.Compute)
 - A `PSVirtualMachine` és `PSVirtualMachineScaleSet` objektum `Identity` tulajdonsága mostantól nem tartalmazza az `IdentityIds` azonosítókat. A szkriptek a jövőben nem veszik figyelembe a mező értékét a feldolgozási döntések során.
-- A `PSVirtualMachineScaleSetVM` objektum `InstanceView` tulajdonságának típusa `VirtualMachineInstanceView` helyett a következő lett: `VirtualMachineScaleSetVMInstanceView`
-- `AutoOSUpgradePolicy` Az `UpgradePolicy` tulajdonságból el lettek távolítva a következő tulajdonságok: `AutomaticOSUpgrade` és
-- A `PSSnapshotUpdate` objektum `Sku` tulajdonságának típusa `DiskSku` helyett a következő lett: `SnapshotSku`
-- `VmScaleSetVMParameterSet` el lett távolítva az `Add-AzVMDataDisk` parancsmagból, mostantól nem lehet önálló adatlemezt hozzáadni egy ScaleSet-virtuálisgéphez.
+- A `PSVirtualMachineScaleSetVM` objektum `InstanceView` tulajdonságának típusa `VirtualMachineInstanceView` helyett `VirtualMachineScaleSetVMInstanceView` lett.
+- Az `UpgradePolicy` tulajdonság `AutoOSUpgradePolicy` és `AutomaticOSUpgrade` tulajdonsága el lett távolítva.
+- A `PSSnapshotUpdate` objektum `Sku` tulajdonságának típusa `DiskSku` helyett `SnapshotSku` lett.
+- Az `Add-AzVMDataDisk` parancsmagból el lett távolítva a `VmScaleSetVMParameterSet`. Mostantól nem lehet önálló adatlemezt hozzáadni egy ScaleSet-virtuálisgéphez.
 
 ### <a name="azdatafactory-previously-azurermdatafactories-and-azurermdatafactoryv2"></a>Az.DataFactory (korábban AzureRM.DataFactories és AzureRM.DataFactoryV2)
 - A `New-AzDataFactoryEncryptValue` parancsmagban kötelezővé vált a `GatewayName` paraméter használata.
@@ -198,7 +198,7 @@ E szolgáltatások eszközállománya már nem aktívan támogatott.  Azt javaso
 - A `Get-AzDataFactoryV2ActivityRun` parancsmag `LinkedServiceName` paramétere el lett távolítva. A szkriptek a jövőben nem veszik figyelembe a mező értékét a feldolgozási döntések során.
 
 ### <a name="azdatalakeanalytics-previously-azurermdatalakeanalytics"></a>Az.DataLakeAnalytics (korábban AzureRM.DataLakeAnalytics)
-- El lettek távolítva a következő elavult parancsmagok: `New-AzDataLakeAnalyticsCatalogSecret`, `Remove-AzDataLakeAnalyticsCatalogSecret` és `Set-AzDataLakeAnalyticsCatalogSecret`
+- El lettek távolítva a következő elavult parancsmagok: `New-AzDataLakeAnalyticsCatalogSecret`, `Remove-AzDataLakeAnalyticsCatalogSecret`, és `Set-AzDataLakeAnalyticsCatalogSecret`
 
 ### <a name="azdatalakestore-previously-azurermdatalakestore"></a>Az.DataLakeStore (korábban AzureRM.DataLakeStore)
 - A következő parancsmagok `Encoding` paraméterének típusa `FileSystemCmdletProviderEncoding` helyett `System.Text.Encoding` lett. Ez a módosítás eltávolítja a `String` és `Oem` kódolási értéket. Az összes egyéb korábbi kódolási érték elérhető marad.
@@ -264,7 +264,7 @@ A szkriptek a jövőben nem hozhatnak feldolgozási döntéseket e mezők érté
 
 ### <a name="azrecoveryservices-previously-azurermrecoveryservices-azurermrecoveryservicesbackup-and-azurermrecoveryservicessiterecovery"></a>Az.RecoveryServices (korábban AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup és AzureRM.RecoveryServices.SiteRecovery)
 - A `New/Set-AzRecoveryServicesAsrPolicy` parancsmag `Encryption` paramétere el lett távolítva.
-- `TargetStorageAccountName` paraméter megadása mostantól kötelező a `Restore-AzRecoveryServicesBackupItem` parancsmag felügyeltlemez-visszaállítási műveleteihez
+- A `TargetStorageAccountName` paraméter megadása mostantól kötelező a `Restore-AzRecoveryServicesBackupItem` parancsmag felügyeltlemez-visszaállítási műveleteihez.
 - A `Restore-AzRecoveryServicesBackupItem` parancsmag `StorageAccountName` és `StorageAccountResourceGroupName` paramétere el lett távolítva.
 - A `Get-AzRecoveryServicesBackupContainer` parancsmag `Name` paramétere el lett távolítva
 
@@ -304,14 +304,14 @@ A szkriptek a jövőben nem hozhatnak feldolgozási döntéseket e mezők érté
 
 ### <a name="azsql-previously-azurermsql"></a>Az.Sql (korábban AzureRM.Sql)
 - A `Set-AzSqlDatabaseBackupLongTermRetentionPolicy` parancsmag `State` és `ResourceId` paramétere el lett távolítva.
-- A következő, elavult parancsmagok el lettek távolítva: `Get/Set-AzSqlServerBackupLongTermRetentionVault`, `Get/Start/Stop-AzSqlServerUpgrade`, `Get/Set-AzSqlDatabaseAuditingPolicy`, `Get/Set-AzSqlServerAuditingPolicy`, `Remove-AzSqlDatabaseAuditing`, `Remove-AzSqlServerAuditing`
+- A következő, elavult parancsmagok el lettek távolítva: `Get/Set-AzSqlServerBackupLongTermRetentionVault`, `Get/Start/Stop-AzSqlServerUpgrade`, `Get/Set-AzSqlDatabaseAuditingPolicy`, `Get/Set-AzSqlServerAuditingPolicy`, `Remove-AzSqlDatabaseAuditing` és `Remove-AzSqlServerAuditing`.
 - A `Get-AzSqlDatabaseBackupLongTermRetentionPolicy` parancsmag elavult `Current` paramétere el lett távolítva.
 - A `Get-AzSqlServerServiceObjective` parancsmag elavult `DatabaseName` paramétere el lett távolítva.
 - A `Set-AzSqlDatabaseDataMaskingPolicy` parancsmag elavult `PrivilegedLogin` paramétere el lett távolítva.
 
 ### <a name="azstorage-previously-azurestorage-and-azurermstorage"></a>Az.Storage (korábban Azure.Storage és AzureRM.Storage)
-- Annak érdekében, hogy létre lehessen hozni egy Oauth Storage-környezetet csupán a tárfiók nevét használva, az alapértelmezett paraméterkészlet a következőre módosult: `OAuthParameterSet`
-  - Példa: `$ctx = New-AzureStorageContext -StorageAccountName $accountName`
+- Annak érdekében, hogy létre lehessen hozni egy Oauth Storage-környezetet pusztán a tárfiók nevét használva, az új alapértelmezett paraméterkészlet a következő: `OAuthParameterSet`
+  - Például: `$ctx = New-AzureStorageContext -StorageAccountName $accountName`
 - A `Get-AzStorageUsage` parancsmagban kötelezővé vált a `Location` paraméter használata.
 - A Storage API-metódusok mostantól feladatalapú aszinkron mintát (TAP) használnak az egyidejű API-hívások helyett.
 #### <a name="1-blob-snapshot"></a>1. Blob-pillanatképek

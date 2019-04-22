@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/20/2019
 ms.openlocfilehash: 06116c7eb6ed848c9f369a3dd16f5e901e02afbe
-ms.sourcegitcommit: 1f13aaa89d23130f84b98047e261d26cd4e9cf0c
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/10/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59430618"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Azure-beli szolgáltatásnév létrehozása az Azure PowerShell használatával
@@ -91,8 +91,8 @@ A `New-AzADServicePrincipal` által visszaadott objektum tartalmazza az `Id` és
 
 A jelenleg aktív bérlő szolgáltatásneveinek listája a [Get-AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal) használatával kérhető le. Ez a parancs alapértelmezés szerint a bérlő __összes__ szolgáltatásnevét visszaadja, így nagy szervezetek esetén az eredmények lekérése hosszabb időt vehet igénybe. Ehelyett javasoljuk, hogy használja valamelyik választható kiszolgálóoldali szűrőargumentumot:
 
-* `-DisplayNameBeginsWith` a megadott értékkel megegyező _előtaggal_ rendelkező szolgáltatásneveket kéri le. A szolgáltatásnév megjelenített neve a `-DisplayName` létrehozáskor megadott értéke.
-* `-DisplayName` a _pontos egyezést mutató_ szolgáltatásneveket kéri le.
+* A `-DisplayNameBeginsWith` a megadott értékkel megegyező _előtaggal_ rendelkező szolgáltatásneveket kéri le. A szolgáltatásnév megjelenített neve a `-DisplayName` létrehozáskor megadott értéke.
+* A `-DisplayName` a _pontos egyezést mutató_ szolgáltatásneveket kéri le.
 
 ## <a name="manage-service-principal-roles"></a>Szolgáltatásnév-szerepkörök kezelése
 
