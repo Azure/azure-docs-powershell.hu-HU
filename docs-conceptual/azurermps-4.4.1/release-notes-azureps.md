@@ -274,9 +274,9 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
 * SQL
     * A Set-AzureRmSqlServerTransparentDataEncryptionProtector parancsmag frissítése, hogy figyelmeztetést jelenítsen meg és megerősítést kérjen, ha a titkosítási védelem típusa az AzureKeyVault értékre van állítva
     * Új, frissített naplózási beállításokra vonatkozó parancsmagok jelentek meg
-      - A Get-AzureRmSqlDatabaseAuditing parancsmag, mely egy Azure SQL Database-adatbázis naplózási beállításait olvassa be.
+      - A Get-AzureRmSqlDatabaseAuditing parancsmag, mely egy Azure SQL-adatbázis naplózási beállításait olvassa be.
       - A Get-AzureRmSqlServerAuditing parancsmag, mely egy Azure SQL Server-kiszolgáló naplózási beállításait olvassa be.
-      - A Set-AzureRmSqlDatabaseAuditing parancsmag, mely egy Azure SQL Database-adatbázis naplózási beállításait módosítja.
+      - A Set-AzureRmSqlDatabaseAuditing parancsmag, mely egy Azure SQL-adatbázis naplózási beállításait módosítja.
       - A Set-AzureRmSqlServerAuditing parancsmag, mely egy Azure SQL Server-kiszolgáló naplózási beállításait módosítja.
     * A meglévő naplózási szabályzatra vonatkozó parancsmagok elavulttá válnak
       - Get-AzureRmSqlDatabaseAuditingPolicy
