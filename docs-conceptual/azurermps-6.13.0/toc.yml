@@ -1,51 +1,45 @@
 - name: Azure PowerShell
   href: overview.md
+- name: Telepítés
   items:
-    - name: Telepítés
+    - name: Telepítés PowerShellGettel
       href: install-azurerm-ps.md
-      items:
-        - name: Telepítés macOS vagy Linux rendszeren
-          href: install-azurermps-maclinux.md
-        - name: Telepítés MSI-vel
-          href: other-install.md
-    - name: Eltávolítás
-      href: uninstall-azurerm-ps.md
-    - name: Bevezetés
-      href: get-started-azureps.md
-    - name: Cloud Shell
-      href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
-    - name: Bejelentkezés
+    - name: Telepítés MSI-vel
+      href: other-install.md
+- name: Eltávolítás
+  href: uninstall-azurerm-ps.md
+- name: Bevezetés
+  href: get-started-azureps.md
+- name: Cloud Shell
+  href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
+- name: Bejelentkezés
+  items:
+    - name: Hitelesítési módszerek
       href: authenticate-azureps.md
-      items:
-        - name: Egyszerű szolgáltatás létrehozása
-          href: create-azure-service-principal-azureps.md
-        - name: Állandó hitelesítő adatok
-          href: context-persistence.md
-    - name: Lekérdezések
-      href: queries-azureps.md
-    - name: Kimenet formátuma
-      href: formatting-output.md
-    - name: Előfizetések kezelése
-      href: manage-subscriptions-azureps.md
-    - name: Üzembe helyezés
-      items:
-        - name: Resource Manager-sablonok üzembe helyezése
-          href: /azure/azure-resource-manager/resource-group-template-deploy
-        - name: Resource Manager-sablonok exportálása
-          href: /azure/azure-resource-manager/resource-manager-export-template-powershell
-        - name: Saját Resource Manager-sablonok üzembe helyezése
-          href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
-    - name: Alapelvek
-      items:
-        - name: Kísérleti modulok
-          href: using-experimental-modules.md
-        - name: PowerShell-feladatok
-          href: using-psjobs.md
-    - name: Kibocsátási megjegyzések
-      href: release-notes-azureps.md
-      items:
-        - name: Az Azure PowerShell 6.x kompatibilitástörő változásai
-          href: migration-guide.6.0.0.md
+    - name: Egyszerű szolgáltatás létrehozása
+      href: create-azure-service-principal-azureps.md
+    - name: Állandó hitelesítő adatok
+      href: context-persistence.md
+- name: Lekérdezések
+  href: queries-azureps.md
+- name: Kimenet formátuma
+  href: formatting-output.md
+- name: Előfizetések kezelése
+  href: manage-subscriptions-azureps.md
+- name: Üzembe helyezés
+  items:
+    - name: Resource Manager-sablonok üzembe helyezése
+      href: /azure/azure-resource-manager/resource-group-template-deploy
+    - name: Resource Manager-sablonok exportálása
+      href: /azure/azure-resource-manager/resource-manager-export-template-powershell
+    - name: Saját Resource Manager-sablonok üzembe helyezése
+      href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
+- name: Alapelvek
+  items:
+    - name: Kísérleti modulok
+      href: using-experimental-modules.md
+    - name: PowerShell-feladatok
+      href: using-psjobs.md
 - name: Oktatóanyagok
   items:
     - name: Virtuális gépek létrehozása
@@ -62,3 +56,7 @@
       href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
     - name: Cosmos DB
       href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
+- name: Kibocsátási megjegyzések
+  href: release-notes-azureps.md
+- name: Az Azure PowerShell 6.x kompatibilitástörő változásai
+  href: migration-guide.6.0.0.md
