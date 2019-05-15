@@ -7,20 +7,23 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/16/2018
-ms.openlocfilehash: 97f79c01cce90d92febfd9d36f9c112918b48599
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: eea021fbd089de89637e844cd5d5c750ea3838e4
+ms.sourcegitcommit: b37b8bb6f8e39ecea5b50ceec48601eed313add7
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56144989"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65511699"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Az Azure PowerShell telepítése Windows rendszeren a PowerShellGet használatával
 
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+
 Ez a cikk a PowerShell 5.x verziójához készült Azure PowerShell-modulok telepítésének lépéseit ismerteti Windows-környezetben a PowerShellGet használatával. A PowerShellGet használata és a modulok kezelése az Azure PowerShell előnyben részesített telepítési módja, de ha mégis inkább a Webplatform-telepítővel vagy az MSI-csomaggal szeretné telepíteni, tekintse meg az [egyéb telepítési módszerekkel kapcsolatos](other-install.md) szakaszt.
 
-Az Azure PowerShell más platformokon való telepítéséhez tekintse meg [az Azure PowerShell macOS és Linux rendszeren való telepítését és konfigurálását](install-azurermps-maclinux.md) ismertető témakört.
-
 Az Azure PowerShell e verziója nem támogatja a klasszikus Azure üzemi modellt. A klasszikus üzemi modell támogatásához kövesse az [Azure PowerShell Service Management moduljának telepítésével](/powershell/azure/servicemanagement/install-azure-ps) kapcsolatos szakaszban található utasításokat.
+
+> [!IMPORTANT]
+> Az AzureRM modul a macOS és a Linux esetében nem támogatott. Az Azure PowerShell-parancsmagok ezeken a platformokon való használatával kapcsolatban lásd: [Az Az modul telepítése](/powershell/azure/install-az-ps).
 
 ## <a name="requirements"></a>Követelmények
 
