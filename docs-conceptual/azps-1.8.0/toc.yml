@@ -6,6 +6,12 @@
   href: install-az-ps.md
 - name: Eltávolítás
   href: uninstall-az-ps.md
+- name: Migrálás az AzureRM-ből
+  items:
+    - name: Migrálás indítása
+      href: migrate-from-azurerm-to-az.md
+    - name: Változások az AzureRM és az Az között
+      href: migrate-az-1.0.0.md
 - name: Bevezetés
   href: get-started-azureps.md
 - name: Cloud Shell
@@ -18,8 +24,6 @@
       href: create-azure-service-principal-azureps.md
     - name: Állandó hitelesítő adatok
       href: context-persistence.md
-- name: Migrálás az AzureRM-ből
-  href: migrate-from-azurerm-to-az.md
 - name: Lekérdezések
   href: queries-azureps.md
 - name: Kimenet formátuma
@@ -58,5 +62,3 @@
       href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
 - name: Kibocsátási megjegyzések
   href: release-notes-azureps.md
-- name: Az Az 1.0.0 kompatibilitástörő változásai
-  href: migrate-az-1.0.0.md
