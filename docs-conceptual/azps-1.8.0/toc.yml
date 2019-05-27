@@ -8,7 +8,7 @@
   href: uninstall-az-ps.md
 - name: Migrálás az AzureRM-ből
   items:
-    - name: Migrálás indítása
+    - name: A migrálás lépései
       href: migrate-from-azurerm-to-az.md
     - name: Változások az AzureRM és az Az között
       href: migrate-az-1.0.0.md
