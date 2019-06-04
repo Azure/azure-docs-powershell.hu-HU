@@ -73,4 +73,8 @@
       href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
       displayName: 'database, nosql, mongodb, couchdb'
 - name: Kibocsátási megjegyzések
-  href: release-notes-azureps.md
+  items:
+    - name: Az Az 2.1.0 kibocsátási megjegyzései
+      href: release-notes-azureps.md
+    - name: Az Az 2.0.0 kompatibilitástörő változásai
+      href: migrate-az-2.0.0.md
