@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/08/2018
-ms.openlocfilehash: 30778a650e7e6769cac814f8da581371a7943de4
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: dae1db158f940587d81a3fe47dfad8524f136d56
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56144608"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534639"
 ---
 # <a name="query-output-of-azure-powershell-cmdlets"></a>Azure PowerShell-parancsmagok lekérdezésének kimenete
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 A lekérdezés a PowerShellben a beépített parancsmagokkal hajtható végre. A PowerShellben a parancsmagok angol neve az **_állítmány-tárgy_** sémát követi. A **_Get_** (lekérés) állítmányt használó parancsmagok a lekérdező parancsmagok. A parancsmag tárgya az az Azure-erőforrástípus, amelyen a parancsmag állítmánya által jelzett művelet végre lesz hajtva.
 

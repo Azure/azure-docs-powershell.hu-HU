@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
-ms.openlocfilehash: 390285bcf483e75b7a2b77d345ccb108669f66e5
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 6a35024e1bac819fa9b69174195e5245361cb7cc
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153486"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65535004"
 ---
 # <a name="format-azurepowershell-cmdlet-output"></a>Azure PowerShell-parancsmag kimenetének formázása
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Alapértelmezés szerint minden Azure PowerShell-parancsmag kimenete előre meghatározott formátummal rendelkezik, hogy könnyen olvasható legyen.  A PowerShell lehetővé teszi a parancsmag kimenetének rugalmas állítását, vagy más formátumba való átalakítását a következő parancsmagokkal:
 

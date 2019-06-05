@@ -8,14 +8,16 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 08/28/2018
-ms.openlocfilehash: 7f517f0b3768a2075557b131158ee1264ea9ab3f
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: eecd66ddf433cc2543ceeaef1519d69179f2f099
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153450"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534451"
 ---
 # <a name="release-notes"></a>Kibocsátási megjegyzések
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítások listája olvasható.
 
@@ -139,7 +141,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
 * Hozzá lett adva az Azure-fájlmegosztások támogatása a Recovery Servicesben.
 
 #### <a name="azurermresources"></a>AzureRM.Resources
-*  https://github.com/Azure/azure-powershell/issues/7402 javítása
+* https://github.com/Azure/azure-powershell/issues/7402 javítása
     - Lehetségessé vált az erőforrások felsorolása a -ResourceId paraméter a Get-AzureRmResource parancsmaggal való használatával
 
 #### <a name="azurermservicebus"></a>AzureRM.ServiceBus

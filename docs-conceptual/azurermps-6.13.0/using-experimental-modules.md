@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.openlocfilehash: 77d0ce36ae3ab7c7bddd3febef4600fc9652850f
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 11847ca2fe09ebeb48f962eab6dac2be06bd8805
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56144573"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534350"
 ---
 # <a name="use-experimental-azure-powershell-modules"></a>Kísérleti Azure PowerShell-modulok használata
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Mivel az Azure a fejlesztői eszközökre (különösen a parancssori felületekre) helyezi a hangsúlyt, az Azure PowerShell csapata az Azure PowerShell felhasználói felületének számos fejlesztésével kísérletezik.
 
