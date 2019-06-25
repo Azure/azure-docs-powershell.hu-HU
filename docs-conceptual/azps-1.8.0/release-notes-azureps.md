@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 10d8d50131b3c55ae19c5142c42cb47f37c68c92
-ms.sourcegitcommit: 6171bab74aec6785938cad54d584f425ddbb850e
+ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971903"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67345235"
 ---
 ## <a name="180---april-2019"></a>1.8.0 – 2019. április
 ### <a name="highlights-since-the-last-major-release"></a>A legutóbbi nagyobb kiadás óta megjelent kiemelt újdonságok
