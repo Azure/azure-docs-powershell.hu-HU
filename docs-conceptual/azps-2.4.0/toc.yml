@@ -74,7 +74,7 @@
       displayName: 'database, nosql, mongodb, couchdb'
 - name: Kibocsátási megjegyzések
   items:
-    - name: Az Az 2.1.0 kibocsátási megjegyzései
+    - name: Kibocsátási megjegyzések
       href: release-notes-azureps.md
     - name: Az Az 2.0.0 kompatibilitástörő változásai
       href: migrate-az-2.0.0.md
