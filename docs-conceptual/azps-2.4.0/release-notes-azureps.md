@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: ac8513b3eee4adfcaf0be8bf7b4e8d09190811df
-ms.sourcegitcommit: a4e527d3deba004007cfa22fa536e8255dd23b37
+ms.openlocfilehash: f357a17f698d68c1a29dcb78f83671973fd6ecad
+ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67516640"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67863742"
 ---
 ## <a name="240---july-2019"></a>2.4.0 – 2019. július
 #### <a name="azaccounts"></a>Az.Accounts
@@ -23,7 +23,7 @@ ms.locfileid: "67516640"
         - „/”, „/apis”, „/apis/echo-api” hatókör használatával történő lekérdezés támogatása hozzáadva
 * A következő hibák ki lettek javítva: https://github.com/Azure/azure-powershell/issues/9307 és https://github.com/Azure/azure-powershell/issues/8432
     - **Import-AzApiManagementApi**
-        - Az „ApiVersion” és „ApiVersionSetId” megadásának támogatása API-k importálásakor hozzáadva
+        - Az „ApiVersion” és az „ApiVersionSetId” megadhatóvá vált az API-k importálásakor
 
 #### <a name="azautomation"></a>Az.Automation
 * A Set-AzAutomationConnectionFieldValue parancsmag sztringértékek kezelése esetén fellépő hibája javítva lett.

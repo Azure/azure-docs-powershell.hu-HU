@@ -16,12 +16,12 @@ metadata:
   ms.technology: azure-powershell
   ms.topic: tutorial
   clicktale: true
-  ms.openlocfilehash: a037b16eef107ecfab9a8df9de0b085b0c9a9ae2
-  ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+  ms.openlocfilehash: d161f0467c2371ce004a895eb12ebd8d257399a5
+  ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
   ms.translationtype: HT
   ms.contentlocale: hu-HU
-  ms.lasthandoff: 05/11/2019
-  ms.locfileid: "65534783"
+  ms.lasthandoff: 07/13/2019
+  ms.locfileid: "67863869"
 items:
 - durationInMinutes: 1
   content: "\n[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]\n\nEbben az oktatóanyagban elsajátíthatja a virtuális gépek Azure PowerShell használatával történő beállításához szükséges lépéseket. Az oktatóanyag ezen kívül a kimeneti lekérdezésekre, az Azure-erőforrások újbóli felhasználására és az erőforrások felesleges tartalmainak törlésére is kitér.\n\nAz oktatóanyagot az Azure Cloud Shell által nyújtott interaktív felületen keresztül vagy az [Azure PowerShell helyi telepítésével](install-azurerm-ps.md) teljesítheti.\n\nA __ctrl-shift-v__ (macOS rendszeresen__cmd-shift-v__) billentyűkombináció segítségével illesztheti be az oktatóanyag szövegét az Azure Cloud Shellbe."
