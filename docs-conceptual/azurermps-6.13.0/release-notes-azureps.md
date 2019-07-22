@@ -141,7 +141,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
 * Hozzá lett adva az Azure-fájlmegosztások támogatása a Recovery Servicesben.
 
 #### <a name="azurermresources"></a>AzureRM.Resources
-* https://github.com/Azure/azure-powershell/issues/7402 javítása
+* [https://github.com/Azure/azure-powershell/issues/7402](https://github.com/Azure/azure-powershell/issues/7402 ) javítása
     - Lehetségessé vált az erőforrások felsorolása a -ResourceId paraméter a Get-AzureRmResource parancsmaggal való használatával
 
 #### <a name="azurermservicebus"></a>AzureRM.ServiceBus
