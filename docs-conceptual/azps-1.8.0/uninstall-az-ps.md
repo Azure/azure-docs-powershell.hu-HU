@@ -1,18 +1,18 @@
 ---
 title: Az Azure PowerShell eltávolítása
 description: Az Azure PowerShell teljes eltávolítása
-ms.date: 05/10/2019
+ms.date: 06/10/2019
 author: sptramer
 ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: b32547e9c3df0df7495d1631a43be6934e1f62dc
-ms.sourcegitcommit: febbbd3f75c8dd1a296281d265289f015b6cb537
+ms.openlocfilehash: e71b4d0d662b29a32610fecb36351532040428e4
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67037764"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807443"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Az Azure PowerShell-modul eltávolítása
 
@@ -106,7 +106,8 @@ Uninstalling Az.AnalysisServices version 0.7.0
 ```
 
 > [!NOTE]
-> Ha ez a szkript nem talál egy pontosan ugyanolyan függő modulverziót az eltávolításhoz, akkor a modulnak _semelyik_ verzióját nem fogja eltávolítani. Ennek oka, hogy más `Az`-verziók is megtalálhatóak lehetnek a rendszeren, amelyek használhatják az adott modulokat. Ebben az esetben a nem található modul verziói lesznek felsorolva, ha azok telepítve vannak. Ezután manuálisan eltávolíthatja a régi verziókat az `Uninstall-Module` paranccsal.
+> Ha ez a szkript nem talál egy pontosan ugyanolyan verziójú függőséget az eltávolításhoz, akkor a függőségnek _egyik_ verzióját sem fogja eltávolítani. Ennek oka, hogy a célmodulnak más verziói is megtalálhatók lehetnek a rendszeren, amelyek használhatják az adott függőségeket. Ebben az esetben az adott függőség elérhető verziói lesznek felsorolva.
+> Ezután manuálisan eltávolíthatja a régi verziókat az `Uninstall-Module` paranccsal.
 
 Futtassa ezt a parancsot minden olyan Azure PowerShell-verzió esetében, amelyet el szeretne távolítani. Az egyszerűség kedvéért az alábbi szkript az Az összes verzióját eltávolítja, __kivéve__ a legfrissebbet.
 

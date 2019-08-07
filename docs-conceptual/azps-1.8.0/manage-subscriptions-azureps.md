@@ -7,16 +7,18 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/04/2019
-ms.openlocfilehash: 29d7c84d0ca9ae8d3e4e22f407b007d2d582f8bc
-ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
+ms.openlocfilehash: 778fdb463a42b609d3a94c910a2c0f9553ef4eb9
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67346560"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807521"
 ---
 # <a name="use-multiple-azure-subscriptions"></a>Több Azure-előfizetés használata
 
 A legtöbb Azure-felhasználó egész életében egy előfizetést használ. Azonban több vállalat tagjaként, vagy ha a vállalat különböző csoportokra osztotta a hozzáférést bizonyos erőforrásokhoz, több előfizetéssel is rendelkezhet az Azure-ban. A CLI az előfizetések globális és parancsonkénti kiválasztását is támogatja.
+
+Az előfizetésekkel, számlázással és költségkezeléssel kapcsolatos további információkért lásd [a számlázás és költségkezelés dokumentációját](/azure/billing/).
 
 ## <a name="tenants-users-and-subscriptions"></a>Bérlők, felhasználók, és előfizetések
 
