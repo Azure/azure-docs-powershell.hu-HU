@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
-ms.openlocfilehash: d99265c7f156622d876d700106e2b06dd729e8b8
-ms.sourcegitcommit: 020c69430358b13cbd99fedd5d56607c9b10047b
+ms.openlocfilehash: 8e63e3efb2671eef435498063010d5704c793060
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365749"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807501"
 ---
 # <a name="install-the-azure-powershell-module"></a>Az Azure PowerShell-modul telepítése
 
@@ -37,23 +37,19 @@ Nincsenek további követelmények az Azure PowerShellhez a PowerShell Core hasz
 
 ## <a name="install-the-azure-powershell-module"></a>Az Azure PowerShell-modul telepítése
 
-> [!IMPORTANT]
->
-> Az AzureRM és az Az modul egyszerre is telepítve lehet ugyanazon a rendszeren. Ha mindkettő telepítve van, __ne engedélyezze az aliasokat__.
-> Az aliasok engedélyezése ütközéseket okozhat az AzureRM parancsmagok és az Az-parancsaliasok között, ami nem várt működéshez vezethet.
-> Az Az modul telepítése előtt ajánlott eltávolítani az AzureRM-et. Az AzureRM-et bármikor eltávolíthatja, illetve bármikor engedélyezheti az aliasokat. Az AzureRM-parancsaliasokról [az AzureRM modulból az Az modulba való áttelepítést](migrate-from-azurerm-to-az.md) ismertető szakaszban olvashat.
-> Az eltávolításra vonatkozó útmutatásért lásd a következő cikket: [Az AzureRM modul eltávolítása](uninstall-az-ps.md#uninstall-the-azurerm-module). 
+> [!WARNING]
+> Az AzureRM és az Az modul __nem__ lehet egyszerre telepítve a PowerShell 5.1-hez ugyanazon a Windows rendszeren. Ha az AzureRM-nek továbbra is elérhetőnek kell maradnia a rendszeren, telepítse a PowerShell Core 6.x vagy újabb verziójához készült Az modult. Ehhez [telepítse a PowerShell Core 6.x vagy újabb](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows) verzióját, majd kövesse az itt ismertetett utasításokat a PowerShell Core-terminálban.
 
-A modulok globális hatókörben való telepítéséhez megemelt jogosultsági szint szükséges a PowerShell-galériából való telepítés esetén. Az Azure PowerShell telepítéséhez futtassa a következő parancsot egy emelt szintű munkamenetben („Futtatás rendszergazdaként” a Windows, vagy felügyelői jogosultságok a macOS vagy a Linux alatt):
-
-```powershell-interactive
-Install-Module -Name Az -AllowClobber
-```
-
-Ha nem rendelkezik rendszergazdai jogosultsággal, a `-Scope` argumentum hozzáadásával végezhet telepítést az aktuális felhasználó számára.
+Ajánlott csak az aktív felhasználó számára telepíteni:
 
 ```powershell-interactive
 Install-Module -Name Az -AllowClobber -Scope CurrentUser
+```
+
+Ha a rendszer összes felhasználója számára szeretné telepíteni, akkor rendszergazdai jogosultságokra lesz szüksége. Egy rendszergazdaként, illetve macOS vagy Linux rendszeren a `sudo` paranccsal indított, emelt szintű PowerShell-munkamenetben:
+
+```powershell-interactive
+Install-Module -Name Az -AllowClobber -Scope AllUsers
 ```
 
 Alapértelmezés szerint a PowerShell-galéria nincs konfigurálva a PowerShellGet megbízható adattáraként. A PSGallery első használatakor a következő üzenet jelenik meg:
@@ -71,6 +67,28 @@ Are you sure you want to install the modules from 'PSGallery'?
 A telepítés folytatásához válassza a `Yes` vagy a `Yes to All` lehetőséget.
 
 Az Az modul az Azure PowerShell-parancsmagok összesített modulja. A modul telepítésével letölti az összes elérhető Azure Resource Manager-modult, és használatra elérhetővé teszi a parancsmagjaikat.
+
+## <a name="troubleshooting"></a>Hibaelhárítás
+
+Az alábbiakban néhány, az Azure PowerShell modul telepítése során gyakran jelentkező problémáról olvashat. Ha itt nem szereplő problémába ütközik, [jelentse be a problémát a GitHubon](https://github.com/azure/azure-powershell/issues).
+
+### <a name="proxy-blocks-connection"></a>Egy proxy blokkolja a kapcsolatot
+
+Ha `Install-Module`-hibaüzenet jelenik meg, amely jelzi, hogy a PowerShell-galéria nem érhető el, lehetséges, hogy egy proxy mögött van. A különböző operációs rendszereknek eltérő követelményei vannak a rendszerszintű proxy konfigurálásához, amelynek részleteit itt most nem tárgyaljuk. A proxybeállításokkal és az operációs rendszer beállításaival kapcsolatban vegye fel a kapcsolatot a rendszergazdával.
+
+Lehetséges, hogy maga a PowerShell nem konfigurálható a proxy automatikus használatára. PowerShell 5.1 vagy újabb változat esetén konfigurálja a proxyt PowerShell-munkamenet használatára az alábbi paranccsal:
+
+```powershell
+(New-Object System.Net.WebClient).Proxy.Credentials = `
+  [System.Net.CredentialCache]::DefaultNetworkCredentials
+```
+
+Ha az operációs rendszer hitelesítő adatai megfelelően vannak konfigurálva, a PowerShell-kéréseket a proxyn keresztül irányítja át.
+Ha azt szeretné, hogy ezt a beállítást a munkamenetek között is megőrizze a rendszer, adja hozzá ezt a parancsot egy [PowerShell-profilhoz](/powershell/module/microsoft.powershell.core/about/about_profiles).
+
+A csomag telepítéséhez a proxynak engedélyeznie kell az alábbi címekre irányuló HTTPS-kapcsolatokat:
+
+* `https://www.powershellgallery.com`
 
 ## <a name="sign-in"></a>Bejelentkezés
 

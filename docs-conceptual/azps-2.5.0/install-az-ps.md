@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
-ms.openlocfilehash: ead6c48496c646b5184f88aeac64fbe650be17c4
-ms.sourcegitcommit: 6c0d296bfec7c1c35a1d15074ca5eacda6684ea4
+ms.openlocfilehash: 8e63e3efb2671eef435498063010d5704c793060
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657977"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807474"
 ---
 # <a name="install-the-azure-powershell-module"></a>Az Azure PowerShell-modul telepítése
 
@@ -40,16 +40,16 @@ Nincsenek további követelmények az Azure PowerShellhez a PowerShell Core hasz
 > [!WARNING]
 > Az AzureRM és az Az modul __nem__ lehet egyszerre telepítve a PowerShell 5.1-hez ugyanazon a Windows rendszeren. Ha az AzureRM-nek továbbra is elérhetőnek kell maradnia a rendszeren, telepítse a PowerShell Core 6.x vagy újabb verziójához készült Az modult. Ehhez [telepítse a PowerShell Core 6.x vagy újabb](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows) verzióját, majd kövesse az itt ismertetett utasításokat a PowerShell Core-terminálban.
 
-A modulok globális hatókörben való telepítéséhez megemelt jogosultsági szint szükséges a PowerShell-galériából való telepítés esetén. Az Azure PowerShell telepítéséhez futtassa a következő parancsot egy emelt szintű munkamenetben („Futtatás rendszergazdaként” a Windows, vagy felügyelői jogosultságok a macOS vagy a Linux alatt):
-
-```powershell-interactive
-Install-Module -Name Az -AllowClobber
-```
-
-Ha nem rendelkezik rendszergazdai jogosultsággal, a `-Scope` argumentum hozzáadásával végezhet telepítést az aktuális felhasználó számára.
+Ajánlott csak az aktív felhasználó számára telepíteni:
 
 ```powershell-interactive
 Install-Module -Name Az -AllowClobber -Scope CurrentUser
+```
+
+Ha a rendszer összes felhasználója számára szeretné telepíteni, akkor rendszergazdai jogosultságokra lesz szüksége. Egy rendszergazdaként, illetve macOS vagy Linux rendszeren a `sudo` paranccsal indított, emelt szintű PowerShell-munkamenetben:
+
+```powershell-interactive
+Install-Module -Name Az -AllowClobber -Scope AllUsers
 ```
 
 Alapértelmezés szerint a PowerShell-galéria nincs konfigurálva a PowerShellGet megbízható adattáraként. A PSGallery első használatakor a következő üzenet jelenik meg:

@@ -7,16 +7,16 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: da1d7ec9a196068db237d871834b92f8b077b42c
-ms.sourcegitcommit: 020c69430358b13cbd99fedd5d56607c9b10047b
+ms.openlocfilehash: 8dc5a7d3b47870455213aa01aebc1d215ad640a7
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365697"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807485"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Az új Azure PowerShell Az modul bemutatása
 
-2018 decemberétől az Azure PowerShell Az modul általánosan elérhetővé vált, és mostantól az Azure-ral való kommunikációhoz használható PowerShell modul is elérhető. Az Az rövidebb parancsokat és nagyobb stabilitást kínál, valamint több platformot is támogat. Emellett funkcióparitást és egyszerű áttelepítési útvonalat biztosít az AzureRM-ről.
+2018 decemberétől az Azure PowerShell Az modul általánosan elérhetővé vált, és mostantól az Azure-ral való kommunikációhoz használható PowerShell modul is elérhető. Az Az rövidebb parancsokat és nagyobb stabilitást kínál, valamint több platformot is támogat. Az Az emellett funkcióparitást kínál az AzureRM-mel, így egyszerű migrálási útvonalat biztosít.
 
 Az Az modulnak köszönhetően az Azure PowerShell már kompatibilis a PowerShell 5.1-gyel Windows rendszeren és a PowerShell Core 6.x és újabb verzióival az összes támogatott platformon – beleértve a Windows, macOS és Linux rendszereket is.
 
@@ -27,7 +27,7 @@ Az Az egy új modul, ezért a verziószámozás vissza lett állítva 1.0.0-ra.
 A nagyobb frissítések kényelmetlenek lehetnek, ezért fontosnak tartjuk, hogy megosszuk a döntés okát, miért vezettünk be új modulokat, új parancsmagokkal az Azure PowerShellből történő eléréséhez.
 
 A legnagyobb és legfontosabb változás, hogy a .NET Standard-kódtáron alapuló [PowerShell Core 6.x](/powershell/scripting/overview) bevezetése óta a PowerShell platformfüggetlen termékké vált.
-Elkötelezettek vagyunk az Azure-támogatás valamennyi platformra történő kiterjesztésében, ami azt jelenti, hogy az Azure PowerShell-modulokat frissíteni kell a .NET Standard használata és a PowerShell Core-kompatibilitás érdekében. Ahelyett, hogy a meglévő AzureRM modulon hajtottunk volna végre összetett módosításokat a támogatás hozzáadásához, létrehoztuk az Az modult.
+Elkötelezettek vagyunk az Azure-támogatás valamennyi platformra történő kiterjesztésében, ami azt jelenti, hogy az Azure PowerShell-modulokat frissíteni kell a .NET standard használata és a PowerShell Core-kompatibilitás érdekében. Ahelyett, hogy a meglévő AzureRM modulon hajtottunk volna végre összetett módosításokat a támogatás hozzáadásához, létrehoztuk az Az modult.
 
 Az új modul létrehozása azt is lehetővé tette mérnökeink számára, hogy a parancsmagok és a modulok megjelenését és elnevezését egységesítsék. Mostantól az összes modul neve `Az.` előtaggal kezdődik, a parancsmagok pedig mind a _Művelet_-`Az`_Főnév_ formát alkalmazzák. Ezt megelőzően a parancsmagnevek nemcsak hosszabbak voltak, de következetlenségek is voltak bennük.
 
@@ -67,6 +67,4 @@ Az Az modul kompatibilitási módjával továbbra is használhatja a meglévő s
 
 ## <a name="continued-support-for-azurerm"></a>Az AzureRM további támogatása
 
-A meglévő AzureRM modul nem bővül újabb parancsmagokkal vagy funkciókkal. Azonban az AzureRM hivatalos karbantartása és hibajavítása legalább 2020 decemberéig nem szűnik meg.
-
-Ha aggályai vannak azzal kapcsolatban, hogy az Az modul teljes funkcionalitással rendelkezik-e, tesztelve lett-e vagy készen áll-e az éles használatra: Azt a mérnöki munkát, amelyet az AzureRM megalkotásába fektettünk, most az Az modulra összpontosítottuk. Igyekeztünk például minél többet újra felhasználni a meglévő modulok kódjából, és kiterjedt tesztelést végeztünk annak érdekében, hogy az új modulok kompatibilisek legyenek a funkciókkal. Az Az-re történő váltást csak a szervezet ütemezése befolyásolhatja, nem kell adott szolgáltatások megjelenésére várnia.
+Az AzureRM modul nem bővül újabb parancsmagokkal vagy funkciókkal. Az AzureRM modul hivatalos karbantartása és hibajavítása azonban 2020 decemberéig nem szűnik meg.
