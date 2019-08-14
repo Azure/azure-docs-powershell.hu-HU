@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
-ms.openlocfilehash: ee9fb7e777d06f50514c6b4ba39805936b867045
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: 61ab0f91c3d6fffdbffd336fa0d6ed9b0ab8f6ec
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65535067"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863284"
 ---
 # <a name="release-notes"></a>Kibocsátási megjegyzések
 
@@ -669,7 +669,7 @@ Változások a legutóbbi kiadás óta: https://github.com/Azure/azure-powershel
   - Új Update-AzureRmPowerBIEmbeddedCapacity parancsmag – Módosít egy Power BI Embedded-kapacitáspéldányt
 * Profil
   - USGovernmentActiveDirectoryEndpoint frissítve a következőre: https://login.microsoftonline.us/
-    - Az Azure Government végpontleképezéseivel kapcsolatos további információért tekintse meg az alábbi hivatkozást: https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-developer-guide#endpoint-mapping
+    - Az Azure Government végpontleképezéseivel kapcsolatos további információért tekintse meg az alábbi hivatkozást: https://docs.microsoft.com/azure/azure-government/documentation-government-developer-guide#endpoint-mapping
     - -AsJob támogatás hozzáadva a parancsmagokhoz, amely lehetővé teszi, hogy a kiválasztott parancsmagok a háttérben fussanak, és visszaad egy feladatot, amely nyomon követi és szabályozza az előrehaladást
     - -AsJob paraméter hozzáadva a Get-AzureRmSubscription parancsmaghoz
 * RecoveryServices.Backup
@@ -723,7 +723,7 @@ Változások a legutóbbi kiadás óta: https://github.com/Azure/azure-powershel
   - AzureRM.StreamAnalytics
 
 ## <a name="2017118---version-500"></a>2017.11.8. – 5.0.0-s verzió
-* MEGJEGYZÉS: Ez egy kompatibilitástörő változást tartalmazó kiadás. A bevezetett kompatibilitástörő változások teljes listájához tekintse meg a migrálási útmutatót (https://aka.ms/azps-migration-guide)).
+* MEGJEGYZÉS: Ez egy kompatibilitástörő változást tartalmazó kiadás. A bevezetett kompatibilitástörő változások teljes listájához tekintse meg a migrálási útmutatót (https://aka.ms/azps-migration-guide) ).
 * Mostantól az AzureRM összes parancsmagja támogatja az online súgó használatát
   - Futtassa a Get-Help parancsmagot -Online paraméterrel az online súgónak az alapértelmezett böngészőben történő megnyitásához
 * AnalysisServices

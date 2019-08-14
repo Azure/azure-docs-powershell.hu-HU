@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e72aae940b48543d6a99801032186112748ea48b
-ms.sourcegitcommit: 6c0d296bfec7c1c35a1d15074ca5eacda6684ea4
+ms.openlocfilehash: 77cb28e47d8dddcf3936edff23f794de3b78442b
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657960"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68861191"
 ---
 ## <a name="250---july-2019"></a>2.5.0 – 2019. július
 #### <a name="azaccounts"></a>Az.Accounts
@@ -536,7 +536,7 @@ ms.locfileid: "68657960"
     - Set-AzScheduledQueryRule
     - Update-AzScheduledQueryRule
     - Remove-AzScheduledQueryRule
-    - [További](https://docs.microsoft.com/en-us/rest/api/monitor/scheduledqueryrules) információk az SQR API-ról
+    - [További](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) információk az SQR API-ról
     - A frissített Az.Monitor.md tartalmazza a GenV2 (nem klasszikus) metrikaalapú riasztási szabály parancsmagjait
 
 #### <a name="aznetwork"></a>Az.Network
@@ -589,7 +589,7 @@ ms.locfileid: "68657960"
 ### <a name="highlights-since-the-last-major-release"></a>A legutóbbi nagyobb kiadás óta megjelent kiemelt újdonságok
 * A(z) `Az` modul általános rendelkezésre állása
 * Ha további információt szeretne a(z) `Az` modulról, látogasson el a következő helyre: https://aka.ms/azps-announce
-* Új Location-, ResourceGroup- és ResourceName-befejezők hozzáadása: https://azure.microsoft.com/en-us/blog/completers-in-azure-powershell/
+* Új Location-, ResourceGroup- és ResourceName-befejezők hozzáadása: https://azure.microsoft.com/blog/completers-in-azure-powershell/
 * Helyettesítő karakterek támogatásának hozzáadása a Get-parancsmagokhoz az Az.Compute és az Az.Network esetében
 * Interaktív felhasználónév-/jelszó-hitelesítés hozzáadva, csak a Windows PowerShell 5.1 esetében
 * Mostantól támogatottak a Python 2-runbookok az Az.Automation esetében
@@ -693,7 +693,7 @@ ms.locfileid: "68657960"
 ### <a name="highlights-since-the-last-major-release"></a>A legutóbbi nagyobb kiadás óta megjelent kiemelt újdonságok
 * A(z) `Az` modul általános rendelkezésre állása
 * Ha további információt szeretne a(z) `Az` modulról, látogasson el a következő helyre: https://aka.ms/azps-announce
-* Új Location-, ResourceGroup- és ResourceName-befejezők hozzáadása: https://azure.microsoft.com/en-us/blog/completers-in-azure-powershell/
+* Új Location-, ResourceGroup- és ResourceName-befejezők hozzáadása: https://azure.microsoft.com/blog/completers-in-azure-powershell/
 * Helyettesítő karakterek támogatásának hozzáadása a Get-parancsmagokhoz az Az.Compute és az Az.Network esetében
 * Interaktív felhasználónév-/jelszó-hitelesítés hozzáadva, csak a Windows PowerShell 5.1 esetében
 * Mostantól támogatottak a Python 2-runbookok az Az.Automation esetében
@@ -750,7 +750,7 @@ ms.locfileid: "68657960"
 ### <a name="highlights-since-the-last-major-release"></a>A legutóbbi nagyobb kiadás óta megjelent kiemelt újdonságok
 * A(z) `Az` modul általános rendelkezésre állása
 * Ha további információt szeretne a(z) `Az` modulról, látogasson el a következő helyre: https://aka.ms/azps-announce
-* Új Location-, ResourceGroup- és ResourceName-befejezők hozzáadása: https://azure.microsoft.com/en-us/blog/completers-in-azure-powershell/
+* Új Location-, ResourceGroup- és ResourceName-befejezők hozzáadása: https://azure.microsoft.com/blog/completers-in-azure-powershell/
 * Helyettesítő karakterek támogatásának hozzáadása a Get-parancsmagokhoz az Az.Compute és az Az.Network esetében
 * Interaktív felhasználónév-/jelszó-hitelesítés hozzáadva, csak a Windows PowerShell 5.1 esetében
 * Mostantól támogatottak a Python 2-runbookok az Az.Automation esetében

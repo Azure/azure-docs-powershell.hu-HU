@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: 39bf3c879135989bdd9a7382eb003a8f69e5bdbb
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: dc11af0fff84899ca1b3ad3abf8760dd8c59e6f6
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65534849"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863272"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Az Azure PowerShell telepítése Windows rendszeren a PowerShellGet használatával
 
@@ -25,7 +25,7 @@ Az Azure PowerShell e verziója nem támogatja a klasszikus Azure üzemi modellt
 > [!IMPORTANT]
 > Az AzureRM modul a macOS és a Linux esetében nem támogatott. Az Azure PowerShell-parancsmagok ezeken a platformokon való használatával kapcsolatban lásd: [Az Az modul telepítése](/powershell/azure/install-az-ps).
 
-## <a name="step-1-install-powershellget"></a>1. lépés: A PowerShellGet telepítése
+## <a name="step-1-install-powershellget"></a>1\. lépés: A PowerShellGet telepítése
 
 Ahhoz, hogy elemeket telepíthessen a PowerShell-galériából, szükség van a PowerShellGet modulra. Győződjön meg arról, hogy rendelkezik a PowerShellGet megfelelő verziójával, és az egyéb rendszerkövetelmények is teljesülnek. A következő parancs futtatásával ellenőrizze, hogy telepítve van-e a PowerShellGet a rendszerben.
 
@@ -59,7 +59,7 @@ Ha a PowerShellGet nincs telepítve, akkor tekintse meg a jelen cikk [A PowerShe
 > [!IMPORTANT]
 > Az ebben a dokumentumban bemutatott AzureRM modul .NET-keretrendszert használ. Ennek következtében nem kompatibilis a PowerShell 6.0-s verziójával, amely a .NET Core-t használja. Ha 6.0-s PowerShell verziót használ, kövesse a [macOS és Linux rendszerekre vonatkozó telepítési utasításokat](install-azurermps-maclinux.md).
 
-## <a name="step-2-install-azure-powershell"></a>2. lépés: Az Azure PowerShell telepítése
+## <a name="step-2-install-azure-powershell"></a>2\. lépés: Az Azure PowerShell telepítése
 
 Az Azure Powershell PowerShell-galériából történő telepítéséhez emelt szintű jogosultságok szükségesek. Futtassa a következő parancssort egy emelt szintű PowerShell-munkamenetből:
 
@@ -89,7 +89,7 @@ Az AzureRM-modul az Azure Resource Manager-parancsmagok összesített modulja. A
 
 Ha az Azure PowerShell korábbi verziójával rendelkezik, hibaüzenetet kaphat. A probléma megoldásához tekintse meg a cikk [Frissítés az Azure PowerShell új verziójára ](#update-azps) című részét.
 
-## <a name="step-3-load-the-azurerm-module"></a>3. lépés: Az AzureRM-modul betöltése
+## <a name="step-3-load-the-azurerm-module"></a>3\. lépés: Az AzureRM-modul betöltése
 
 A modul telepítése után be kell tölteni a azt a PowerShell-munkamenetbe. Ezt a lépést normál (nem emelt szintű) PowerShell-munkamenetben kell végrehajtani. A modulok az `Import-Module` parancsmaggal, az alábbi módon tölthetők be:
 
@@ -114,7 +114,7 @@ Ha az eszköz használata során bármilyen hibát tapasztal, jelentse be a prob
 |Operációs rendszer verziója|Telepítési utasítások|
 |---|---|
 |Windows 10 vagy Windows Server 2016 rendszert használok|Az operációs rendszer részét képező Windows Management Framework (WMF) 5.0 beépített eleme|
-|Frissíteni szeretnék a PowerShell 5-ös verziójára|[A WMF legújabb verziójának telepítése](https://www.microsoft.com/en-us/download/details.aspx?id=54616)|
+|Frissíteni szeretnék a PowerShell 5-ös verziójára|[A WMF legújabb verziójának telepítése](https://www.microsoft.com/download/details.aspx?id=54616)|
 |A PowerShell 3-as vagy 4-es verziójával rendelkező Windows-verziót használok|[A PackageManagement-modulok beszerzése](http://go.microsoft.com/fwlink/?LinkID=746217)|
 
 ### <a name="div-idhelpmechoosechecking-the-version-of-azure-powershell"></a><div id="helpmechoose"/>Az Azure PowerShell verziószámának ellenőrzése

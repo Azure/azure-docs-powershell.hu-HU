@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/20/2019
-ms.openlocfilehash: 1e25d4650cc20d7b6613e0efb12ec60d424608c4
-ms.sourcegitcommit: 6c0d296bfec7c1c35a1d15074ca5eacda6684ea4
+ms.openlocfilehash: 0b7a6fa4278d95a69b21f570ac6fb22b70f073f6
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68658096"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68861323"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Bejelentkezés az Azure PowerShell-lel
 
@@ -110,7 +110,7 @@ Az Azure-erőforrások felügyelt identitásairól további információt [a hoz
 
 Ha a fiókja egynél több bérlőhöz van társítva, kapcsolódáskor a bejelentkezéshez a `-TenantId` paramétert kell használni. Ez a paraméter bármely egyéb bejelentkezési módszer esetében is használható. Bejelentkezéskor a paraméter értéke a bérlő Azure-objektumazonosítója (bérlőazonosító) vagy a bérlő teljes tartományneve lehet.
 
-[Felhőszolgáltatóként (CSP-ként)](https://azure.microsoft.com/en-us/offers/ms-azr-0145p/) való bejelentkezés esetén a `-TenantId` értékének a bérlőazonosítónak **kell** lennie.
+[Felhőszolgáltatóként (CSP-ként)](https://azure.microsoft.com/offers/ms-azr-0145p/) való bejelentkezés esetén a `-TenantId` értékének a bérlőazonosítónak **kell** lennie.
 
 ```azurepowershell-interactive
 Connect-AzAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'

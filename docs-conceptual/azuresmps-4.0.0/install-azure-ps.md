@@ -7,18 +7,18 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/06/2017
-ms.openlocfilehash: b7283e4a54cd423282141c07750630050799d59c
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 1f859dcbaca88e28ebc0814513b7f4ee35610dc2
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153744"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863220"
 ---
 # <a name="installing-the-azure-powershell-service-management-module"></a>Az Azure PowerShell Service Management moduljának telepítése
 
 Az Azure PowerShell telepítésének előnyben részesített módszere a [PowerShell-galériából](https://www.powershellgallery.com/) történő telepítés.
 
-## <a name="step-1-install-powershellget"></a>1. lépés: A PowerShellGet telepítése
+## <a name="step-1-install-powershellget"></a>1\. lépés: A PowerShellGet telepítése
 
 Ahhoz, hogy elemeket telepíthessen a PowerShell-galériából, szükség van a PowerShellGet modulra. Győződjön meg arról, hogy rendelkezik a PowerShellGet megfelelő verziójával, és az egyéb rendszerkövetelmények is teljesülnek. A következő parancs futtatásával ellenőrizze, hogy telepítve van-e a PowerShellGet a rendszerben.
 
@@ -36,7 +36,7 @@ PowerShellGet 1.0.0.1 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1
 
 Ha a PowerShellGet nincs telepítve, akkor tekintse meg [A PowerShellGet beszerzése](#how-to-get-powershellget) című szakaszt.
 
-## <a name="step-2-install-azure-powershell"></a>2. lépés: Az Azure PowerShell telepítése
+## <a name="step-2-install-azure-powershell"></a>2\. lépés: Az Azure PowerShell telepítése
 
 Futtassa az alábbi parancsot rendszergazdaként a Windows PowerShell-konzolból:
 
@@ -81,7 +81,7 @@ Az Azure-ban gyakran előforduló feladatok némelyikének automatizálását se
 |Operációs rendszer verziója|Telepítési utasítások|
 |---|---|
 |Windows 10 vagy Windows Server 2016 rendszert használok|Az operációs rendszer részét képező Windows Management Framework (WMF) 5.0 beépített eleme|
-|Frissíteni szeretnék a PowerShell 5-ös verziójára|[A WMF legújabb verziójának telepítése](https://www.microsoft.com/en-us/download/details.aspx?id=54616)|
+|Frissíteni szeretnék a PowerShell 5-ös verziójára|[A WMF legújabb verziójának telepítése](https://www.microsoft.com/download/details.aspx?id=54616)|
 |A PowerShell 3-as vagy 4-es verziójával rendelkező Windows-verziót használok|[A PackageManagement-modulok beszerzése](http://go.microsoft.com/fwlink/?LinkID=746217)|
 
 <div id="helpmechoose"/>
