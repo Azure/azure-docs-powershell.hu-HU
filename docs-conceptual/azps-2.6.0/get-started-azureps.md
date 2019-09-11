@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 01/14/2019
-ms.openlocfilehash: c60036ba8be6282007aa34a0bb9c0d9e33197072
-ms.sourcegitcommit: abca342d8687ca638679c049792d0cef6045837d
+ms.openlocfilehash: a4c8792f2ff27e1b6d3cee97144c26455356b7fd
+ms.sourcegitcommit: e5b029312d17e12257b2b5351b808fdab0b4634c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70052923"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386741"
 ---
 # <a name="get-started-with-azure-powershell"></a>Ismerkedés az Azure PowerShell-lel
 
@@ -43,7 +43,8 @@ Ha az Egyesült Államokon kívüli régióban van, a bejelentkezéshez használ
 Connect-AzAccount -Environment AzureChinaCloud
 ```
 
-Kap egy jogkivonatot, amelyet a https://microsoft.com/devicelogin címen használhat. Nyissa meg ezt az oldalt a böngészőjében, és írja be a jogkivonatot, majd jelentkezzen be az Azure-fiókjának hitelesítő adataival, és engedélyezze az Azure PowerShellt. 
+PowerShell 5.1-környezetekben egy bejelentkezési párbeszédpanelen kell megadnia az Azure-fiókjához tartozó felhasználónevet és jelszót. A többi PowerShell-verzió esetében kap egy jogkivonatot, amelyet a [https://microsoft.com/devicelogin ] címen használhat.
+Nyissa meg ezt az oldalt a böngészőjében, és írja be a jogkivonatot, majd jelentkezzen be az Azure-fiókjának hitelesítő adataival, és engedélyezze az Azure PowerShellt.
 
 A bejelentkezést követően az aktív Azure-előfizetésre vonatkozó információk jelennek meg. Ha a fiókjához több Azure-előfizetés is tartozik, és egy másikat szeretne kiválasztani, kérje le az elérhető előfizetéseket a [Get-AzSubscription](/powershell/module/az.accounts/get-azsubscription) segítségével, majd futtassa a [Set-AzContext](/powershell/module/az.accounts/set-azcontext) parancsmagot az előfizetés azonosítójával.
 További információk az Azure-előfizetések felügyeletéről az Azure PowerShellben: [Több Azure-előfizetés használata](manage-subscriptions-azureps.md).
