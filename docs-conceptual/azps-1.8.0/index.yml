@@ -1,0 +1,88 @@
+###YamlMime:Landing
+title: Azure PowerShell-dokumentáció
+summary: |
+  Az Azure PowerShell olyan parancsmagok készletét kínálja, amelyekkel az Azure-erőforrások közvetlenül a PowerShell-parancssorból kezelhetők. Az Azure PowerShell használata könnyen elsajátítható, mégis hatékony eszközként szolgál az automatizálási funkciók létrehozásához. Az Azure PowerShell .NET Standard nyelven íródott, Windows rendszeren a PowerShell 5.1-es, más platformokon a PowerShell 6.x-es vagy újabb verziójával működik.
+metadata:
+  title: Az Azure PowerShell áttekintése
+  description: 'Bevezetés az Azure PowerShell használatába annak telepítésével, valamint funkcióinak és képességeinek megismerésével.'
+  ms.topic: landing-page
+  author: sptramer
+  ms.author: sttramer
+  ms.date: 9/19/2019
+landingContent:
+  - title: Ismerkedés az Azure PowerShell-lel
+    linkLists:
+      - linkListType: download
+        links:
+          - text: Az Azure PowerShell telepítése
+            url: install-az-ps.md
+          - text: A PowerShell telepítése
+            url: /powershell/scripting/install/installing-powershell
+          - text: Futtatás az Azure Cloud Shellben
+            url: 'https://shell.azure.com'
+      - linkListType: get-started
+        links:
+          - text: Bevezetés
+            url: get-started-azureps.md
+          - text: A PowerShell alapelveinek ismertetése
+            url: /powershell/scripting/overview
+      - linkListType: how-to-guide
+        links:
+          - text: Hitelesítés az Azure PowerShell-lel
+            url: authenticate-azureps.md
+          - text: Egyszerű szolgáltatás létrehozása
+            url: create-azure-service-principal-azureps.md
+          - text: Parancsmag-eredmények szűrése
+            url: queries-azureps.md
+          - text: Parancsmag-kimenetek formázása
+            url: formatting-output.md
+  - title: Azure-erőforrások kezelése
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Mintaszkriptek a virtuális gépekhez
+            url: /azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=/powershell/azure/toc.json
+          - text: Mintaszkriptek az Azure App Service-hez
+            url: /azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json
+          - text: Mintaszkriptek az SQL-adatbázisokhoz
+            url: /azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json
+      - linkListType: tutorial
+        links:
+          - text: Virtuális gépek létrehozása azonos alhálózaton
+            url: azureps-vm-tutorial.yml
+      - linkListType: learn
+        links:
+          - text: Azure-feladatok automatizálása a PowerShellből
+            url: /learn/modules/automate-azure-tasks-with-powershell/
+  - title: Migrálás az AzureRM-ből
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Az Azure PowerShell „Az” moduljának bemutatása
+            url: new-azureps-module-az.md
+      - linkListType: concept
+        links:
+          - text: Migrálás az AzureRM-ből az Az modulba
+            url: migrate-from-azurerm-to-az.md
+      - linkListType: reference
+        links:
+          - text: Az AzureRM és az Az közötti kompatibilitástörő változások
+            url: migrate-az-1.0.0.md
+  - title: Azure PowerShell-re vonatkozó referenciák
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: Parancsmag-referencia
+            url: /powershell/module/?view=azps-1.8.0
+          - text: Kibocsátási megjegyzések
+            url: release-notes-azureps.md
+  - title: Egyéb Azure PowerShell-modulok
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Azure Active Directory a PowerShellhez
+            url: /powershell/azure/active-directory/
+          - text: Azure Service Fabric a PowerShellhez
+            url: /powershell/azure/service-fabric/
+          - text: Azure ElasticDB a PowerShellhez
+            url: /powershell/azure/elasticdbjobs/
