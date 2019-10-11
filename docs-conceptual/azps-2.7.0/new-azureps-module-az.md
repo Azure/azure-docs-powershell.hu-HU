@@ -7,16 +7,16 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: 21d41b6e14d1b39a78e40daee74b80de3a80c2a0
-ms.sourcegitcommit: 92722d603b60dc769660e7517da60110133d9959
+ms.openlocfilehash: 36bb0074694947f48d703aebc9119f90b508da57
+ms.sourcegitcommit: a6ea0fb4d58a4e4177cab0e7bfd17f893325bc69
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71226422"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72162592"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Az új Azure PowerShell Az modul bemutatása
 
-2018 decemberétől az Azure PowerShell Az modul általánosan elérhetővé vált, és mostantól az Azure-ral való kommunikációhoz használható PowerShell modul is elérhető. Az Az rövidebb parancsokat és nagyobb stabilitást kínál, valamint több platformot is támogat. Az Az emellett funkcióparitást kínál az AzureRM-mel, így egyszerű migrálási útvonalat biztosít.
+2018 decemberétől az Azure PowerShell Az modul általánosan elérhetővé vált, és mostantól ez az Azure-ral való kommunikációhoz használható PowerShell-modul. Az Az rövidebb parancsokat és nagyobb stabilitást kínál, valamint több platformot is támogat. Az Az emellett funkcióparitást kínál az AzureRM-mel, így egyszerű migrálási útvonalat biztosít.
 
 Az Az modulnak köszönhetően az Azure PowerShell már kompatibilis a PowerShell 5.1-gyel Windows rendszeren és a PowerShell Core 6.x és újabb verzióival az összes támogatott platformon – beleértve a Windows, macOS és Linux rendszereket is.
 
