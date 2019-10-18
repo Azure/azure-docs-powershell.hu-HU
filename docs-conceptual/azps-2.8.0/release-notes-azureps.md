@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/25/2019
-ms.openlocfilehash: 24cbfc44c2d23d37b35671f6dad21341cf31874f
-ms.sourcegitcommit: 0b94b9566124331d0b15eb7f5a811305c254172e
+ms.date: 10/15/2019
+ms.openlocfilehash: 83e6039153bcc2b8ccb7ceddfa91609f0d6c7b3f
+ms.sourcegitcommit: b4ee3fbaaa2a329ea28308bd1902ae83a34db698
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72370215"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380187"
 ---
 ## <a name="280---october-2019"></a>2.8.0 – 2019. október
 ### <a name="general"></a>Általános kérdések
