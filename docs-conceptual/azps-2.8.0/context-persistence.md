@@ -1,150 +1,161 @@
 ---
-title: Azure hitelesítő adatok megőrzése a PowerShell-munkamenetek között
+title: Azure-környezetek és bejelentkezési hitelesítő adatok
 description: A cikkből megismerheti, hogyan használhatók fel újra az Azure-beli hitelesítő és egyéb adatok több PowerShell-munkamenet során.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 12/13/2018
-ms.openlocfilehash: 02b8090aa1868f24445ddff3a95c0d0c376e2cb8
-ms.sourcegitcommit: 0b94b9566124331d0b15eb7f5a811305c254172e
+ms.date: 10/21/2019
+ms.openlocfilehash: 72d1b07bb2c66f80ea6f5d37ef7012d0d0a5bbbc
+ms.sourcegitcommit: 1cdff856d1d559b978aac6bc034dd2f99ac04afe
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72370410"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72791466"
 ---
-# <a name="persist-azure-user-credentials-across-powershell-sessions"></a>Azure-felhasználói hitelesítő adatok megőrzése a PowerShell-munkamenetek között
+# <a name="azure-powershell-context-objects"></a>Azure PowerShell környezeti objektumok
 
-Az Azure PowerShell új, **Azure-környezet automatikus mentése** nevű funkciója a következő szolgáltatásokat nyújtja:
+Az Azure PowerShell _Azure PowerShell környezeti objektumokat_ (Azure-környezeteket) használ az előfizetési és a hitelesítési információk tárolására. Ha több előfizetéssel is rendelkezik, az Azure-környezetekben kiválaszthatja azt az előfizetést, amelyben futtatni szeretné az Azure PowerShell-parancsmagokat. Az Azure-környezetek a bejelentkezési adatok több PowerShell-munkamenetre kiterjedő tárolására, illetve a háttérfeladatok futtatására is használhatók.
 
-- A bejelentkezési adatok megőrzése és ismételt használata az új PowerShell-munkamenetekben.
-- A háttérfeladatok egyszerűbb használata a hosszú ideig futó parancsmagok végrehajtásához.
-- Váltás a fiókok, előfizetések és környezet között külön bejelentkezés nélkül.
-- Feladatok egyidejű végrehajtása több bejelentkezés és előfizetés használatával ugyanabból a PowerShell-munkamenetből.
+Ez a cikk az Azure-környezetek kezelését ismerteti, az előfizetések és a fiókok kezelésére nem tér ki. Ha felhasználók, előfizetések, bérlők vagy más fiókadatok kezelése iránt érdeklődik, tekintse át az [Azure Active Directory](/azure/active-directory) dokumentációját. A környezetek háttér- vagy párhuzamos feladatok futtatására való használatával kapcsolatban tekintse meg [az Azure PowerShell-parancsmagok PowerShell-feladatokban való használatát](using-psjobs.md) ismertető cikket, miután megismerkedett az Azure-környezetekkel.
 
-## <a name="azure-contexts-defined"></a>Az Azure-környezetek
+## <a name="overview-of-azure-context-objects"></a>Az Azure-beli környezeti objektumok áttekintése
 
-Az *Azure-környezet* az Azure PowerShell-parancsmagok célját meghatározó adatok halmaza. A környezet öt részből áll:
+Az Azure-környezetek olyan PowerShell-objektumok, amelyek a parancsok futtatásához kiválasztott aktív előfizetést, illetve az Azure-felhőkhöz való csatlakozáshoz szükséges hitelesítő adatokat képviselik. Az Azure-környezeteknek köszönhetően az Azure PowerShellnek nem kell az előfizetések közötti váltáskor újból és újból hitelesítenie a fiókját. Az Azure-környezetek a következőkből állnak:
 
-- A *Fiók* – Az Azure-beli kommunikáció hitelesítéséhez használt felhasználónév vagy szolgáltatásnév
-- Az *előfizetés* – Az adott erőforrásokat tartalmazó Azure-előfizetés, amelyre a műveletek irányulnak.
-- A *bérlő* – Az előfizetést tartalmazó Azure Active Directory-bérlő. A bérlők a szolgáltatásnévvel való hitelesítés során fontosabbak.
-- A *környezet* – A célzott Azure-felhő, általában az Azure globális felhője.
-  A környezetbeállításban azonban megadhat országos, kormányzati és helyszíni (Azure Stack) felhőket is.
-- A *hitelesítő adatok* – Az Azure által az identitás és az Azure-erőforrások hozzáférési jogosultságának ellenőrzéséhez használt adatok.
+* A _fiókból_, amelyet az Azure-ba való bejelentkezéshez használt a [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) parancsmaggal. Az Azure-környezetek a fiókok szempontjából ugyanúgy kezelik a felhasználókat, az alkalmazásazonosítókat és a szolgáltatásneveket.
+* Az aktív _előfizetésből_, azaz egy adott _bérlőhöz_ társított Azure-erőforrások létrehozására és futtatására vonatkozó, Microsofttal kötött szolgáltatási szerződésből. A bérlőket gyakran _szervezeteknek_ is nevezik a dokumentációkban vagy az Active Directory használata során.
+* Egy _jogkivonat-gyorsítótárra_, azaz egy, az Azure-felhők elérésére használt, tárolt hitelesítési jogkivonatra mutató hivatkozásból. A [környezet automatikus mentésére vonatkozó beállítások](#save-azure-contexts-across-powershell-sessions) határozzák meg, hogy a rendszer hol tárolja és mennyi ideig őrzi meg a jogkivonatot.
 
-Az Azure PowerShell legújabb verziójában új PowerShell-munkamenet megnyitásakor beállítható az Azure-környezetek automatikus mentése.
+A kifejezésekkel kapcsolatos további információkért lásd [az Azure Active Directory terminológiáját](/azure/active-directory/fundamentals/active-directory-whatis#terminology). Az Azure-környezetek által használt hitelesítési jogkivonatok ugyanolyanok, mint az állandó munkamenet részét képező többi tárolt jogkivonat. 
 
-## <a name="automatically-save-the-context-for-the-next-sign-in"></a>A környezet automatikus mentése a következő bejelentkezéshez
+Amikor bejelentkezik a `Connect-AzAccount` parancsmaggal, a rendszer legalább egy Azure-környezetet létrehoz az alapértelmezett előfizetéshez. A `Connect-AzAccount` által visszaadott objektum a PowerShell-munkamenet hátralévő részéhez használt alapértelmezett Azure-környezet.
 
-Az Azure PowerShell automatikusan megőrzi a környezet adatait a munkamenetek között. Ha szeretné beállítani, hogy a PowerShell elfelejtse a környezetet és a hitelesítő adatokat, használja a `Disable-AzContextAutoSave` parancsmagot. Ha le van tiltva a környezet mentése, minden alkalommal be kell jelentkeznie az Azure-ba, amikor megnyit egy PowerShell-munkamenetet.
+## <a name="get-azure-contexts"></a>Azure-környezetek lekérése
 
-Ha szeretné engedélyezni, hogy az Azure PowerShell megjegyezze a környezet adatait a PowerShell-munkamenetek bezárásakor, használja az `Enable-AzContextAutosave` parancsmagot. A rendszer automatikusan menti a környezet adatait és a hitelesítő adatokat egy speciális rejtett mappába a felhasználó könyvtárában (`$env:USERPROFILE\.Azure` Windows rendszeren és `$HOME/.Azure` más platformokon). Minden egyes új PowerShell-munkamenet az utolsó munkamenet során használt környezetre irányul.
+Az elérhető Azure-környezeteket a [Get-AzContext](/powershell/module/az.accounts/get-azcontext) parancsmaggal lehet lekérni. Az összes elérhető környezetet a `-ListAvailable` argumentummal lehet megjeleníteni:
 
-Az Azure-környezetek kezeléséhez használt parancsmagokkal pontosan szabályozható a működés. Például megadhatja, hogy a módosítások csak az aktuális PowerShell-munkamenetre (`Process` hatókör) vagy minden PowerShell-munkamenetre (`CurrentUser` hatókör) érvényesek legyenek. Ezeket a beállításokat részletesebben a [Környezeti hatókörök használata](#using-context-scopes) című szakasz tárgyalja.
+```azurepowershell-interactive
+Get-AzContext -ListAvailable
+```
 
-## <a name="running-azure-powershell-cmdlets-as-background-jobs"></a>Azure PowerShell-parancsmagok futtatása háttérfeladatként
+Azt is megteheti, hogy név alapján kér le egy környezetet:
 
-Az **Azure-környezet automatikus mentése** funkcióval megoszthatja a környezetet a PowerShell-háttérfeladatokkal. A PowerShell segítségével a hosszú lefutású feladatokat indíthatja és monitorozhatja háttérfeladatokként is, így nem kell megvárnia, amíg ezek befejeződnek. A hitelesítő adatokat kétféleképpen oszthatja meg a háttérfeladatokkal:
+```azurepowershell-interactive
+$context = Get-Context -Name "mycontext"
+```
 
-- A környezet átadása argumentumként
+A környezetek nevei eltérhetnek a társított előfizetés nevétől.
 
-  A legtöbb AzureRM-parancsmagba a környezet átadható a parancsmag paramétereként. A környezet a háttérfeladat számára az alábbi példában látható módon adható át:
+> [!IMPORTANT]
+> Az elérhető Azure-környezetek __nem__ mindig azonosak az elérhető előfizetésekkel. Az Azure-környezetek csak a helyben tárolt adatokat jelölik. Az előfizetéseit a [Get-AzSubscription](/powershell/module/Az.Accounts/Get-AzSubscription?view=azps-1.8.0) parancsmaggal kérheti le.
 
-  ```powershell-interactive
-  PS C:\> $job = Start-Job { param ($ctx) New-AzVm -AzureRmContext $ctx [... Additional parameters ...]} -ArgumentList (Get-AzContext)
+## <a name="create-a-new-azure-context-from-subscription-information"></a>Új Azure-környezet létrehozása előfizetési adatokból
+
+A [Set-AzContext](/powershell/module/Az.Accounts/Set-AzContext) parancsmaggal új Azure-környezeteket hozhat létre, és be is állíthatja őket aktív környezetként.
+Az új Azure-környezetek létrehozásának legegyszerűbb módja a meglévő előfizetési adatok használata. A parancsmagot arra tervezték, hogy átirányított értékként kivegye a `Get-AzSubscription` kimeneti objektumát, és konfiguráljon egy új Azure-környezetet:
+
+```azurepowershell-interactive
+Get-AzSubscription -SubscriptionName 'MySubscriptionName' | Set-AzContext -Name 'MyContextName'
+```
+
+Azt is megteheti, hogy megadja az előfizetés nevét vagy azonosítóját, és szükség esetén a bérlőazonosítót:
+
+```azurepowershell-interactive
+Set-AzContext -Name 'MyContextName' -Subscription 'MySubscriptionName' -Tenant '.......'
+```
+
+Ha a `-Name` argumentum kimarad, a rendszer az előfizetés nevét és azonosítóját használja a környezet neveként, `Subscription Name (subscription-id)` formátumban.
+
+## <a name="change-the-active-azure-context"></a>Az aktív Azure-környezet módosítása
+
+Az aktív Azure-környezetet a `Set-AzContext` és a [Select-AzContext](/powershell/module/az.accounts/set-azcontext) parancsmaggal is meg lehet változtatni. Az [új Azure-környezet létrehozásával](#create-a-new-azure-context-from-subscription-information) foglalkozó szakaszban leírtak szerint a `Set-AzContext` létrehoz egy új Azure-környezetet egy előfizetéshez, ha annak még nincs környezete, majd beállítja aktívként.
+
+A `Select-AzContext` csak a meglévő Azure-környezetekkel használható. Hasonlóan működik, mint a `Set-AzContext -Context`, de átadáshoz tervezték:
+
+```azurepowershell-interactive
+Set-AzContext -Context $(Get-AzContext -Name "mycontext") # Set a context with an inline Azure context object
+Get-AzContext -Name "mycontext" | Select-AzContext # Set a context with a piped Azure context object
+```
+
+Az Azure PowerShell számos más fiók- és környezetkezelési parancsához hasonlóan a `Set-AzContext` és a `Select-AzContext` támogatja a `-Scope` argumentumot, így Ön szabályozhatja, hogy mennyi ideig legyen aktív a környezet. A `-Scope` argumentummal meg lehet változtatni egyetlen munkamenet aktív környezetét, az alapértelmezett érték módosítása nélkül:
+
+```azurepowershell-interactive
+Get-AzContext -Name "mycontext" | Select-AzContext -Scope Process
+```
+
+Ha el szeretné kerülni, hogy a rendszer a teljes PowerShell-munkamenetre vonatkozóan lecserélje a környezetet, az Azure PowerShell-parancsokat egy adott környezetben is futtathatja az `-AzContext` argumentummal:
+
+```azurepowershell-interactive
+$context = Get-AzContext -Name "mycontext"
+New-AzVM -Name ExampleVM -AzContext $context
+```
+
+A környezetek Azure PowerShell-parancsmagokkal való használatának másik fő felhasználási módja a parancsok háttérbeli futtatása. A PowerShell-feladatok Azure PowerShell-lel történő futtatásával kapcsolatos további információkért lásd: [Azure PowerShell-parancsmagok futtatása PowerShell-feladatokban](using-psjobs.md).
+
+## <a name="save-azure-contexts-across-powershell-sessions"></a>Azure-környezetek több PowerShell-munkamenetre kiterjedő mentése
+
+A rendszer alapértelmezés szerint menti az Azure-környezeteket, hogy több PowerShell-munkamenetben is használhatók legyenek. Az alábbiak szerint módosíthatja ezt a viselkedést:
+
+* Jelentkezzen be a `-Scope Process` és a `Connect-AzAccount` használatával.
+
+  ```azurepowershell
+  Connect-AzAccount -Scope Process
   ```
 
-- Az alapértelmezett környezet használata működő automatikus mentés mellett
+  A bejelentkezés részeként visszaadott Azure-környezet _csak_ az aktuális munkamenetre érvényes, és a rendszer az Azure PowerShell-környezet automatikus mentési beállításától függetlenül nem fogja automatikusan menteni.
+* Tiltsa le az Azure PowerShell környezeteinek automatikus mentését a [Disable-AzContextAutosave](/powershell/module/az.accounts/disable-azcontextautosave) parancsmaggal.
+  A környezet automatikus mentésének letiltása __nem__ törli a tárolt jogkivonatokat. A tárolt Azure-beli környezeti adatok törlésével kapcsolatban lásd az [Azure-környezetek és hitelesítő adatok eltávolításával](#remove-azure-contexts-and-stored-credentials) foglalkozó szakaszt.
+* Explicit módon engedélyezze az Azure-környezet automatikus mentését. Ezt az [Enable-AzContextAutosave](/powershell/module/az.accounts/enable-azcontextautosave) parancsmaggal teheti meg. Ha engedélyezte az automatikus mentést, a rendszer helyben fogja tárolni a felhasználó környezeteit a későbbi PowerShell-munkamenetek számára.
+* Mentse manuálisan a környezeteket a [Save-AzContext](/powershell/module/az.accounts/save-azcontext) parancsmaggal a későbbi PowerShell-munkamenetekben való használathoz, amelyekbe az [Import-AzContext](/powershell/module/az.accounts/import-azcontext) parancsmaggal tölthetők be:
 
-  Ha engedélyezte a **Környezet automatikus mentése** funkciót, a háttérfeladatok automatikusan az alapértelmezett mentett környezetet használják.
-
-  ```powershell-interactive
-  PS C:\> $job = Start-Job { New-AzVm [... Additional parameters ...]}
+  ```azurepowershell
+  Save-AzContext -Path current-context.json # Save the current context
+  Save-AzContext -Profile $profileObject -Path other-context.json # Save a context object
+  Import-AzContext -Path other-context.json # Load the context from a file and set it to the current context
   ```
 
-Ha tájékozódni szeretne egy háttérfeladat kimeneteléről, a `Get-Job` parancsmaggal ellenőrizheti le a feladat állapotát, és a `Wait-Job` parancsmaggal várhatja meg a feladat befejezését. A `Receive-Job` parancsmaggal rögzítheti és jelenítheti meg a háttérfeladat kimenetét. További információkért lásd a [feladatokat ismertető szakaszt](/powershell/module/microsoft.powershell.core/about/about_jobs).
+> [!WARNING]
+> A környezet automatikus mentésének letiltása __nem__ törli a mentett környezeti adatokat. A tárolt adatok eltávolításához használja a [Clear-AzContext](/powershell/module/az.accounts/Clear-AzContext) parancsmagot. A mentett környezetek eltávolításával kapcsolatos további információkért lásd a [környezetek és hitelesítő adatok eltávolításával](#remove-azure-contexts-and-stored-credentials) foglalkozó szakaszt.
 
-## <a name="creating-selecting-renaming-and-removing-contexts"></a>Környezetek létrehozása, kiválasztása, átnevezése és eltávolítása
-
-Környezetek létrehozásához be kell jelentkeznie az Azure-ba. Az `Connect-AzAccount` parancsmag (vagy az aliasa, a `Login-AzAccount` parancsmag) beállítja az Azure PowerShell-parancsmagok által használt alapértelmezett környezetet, valamint lehetővé teszi a bejelentkezési hitelesítő adatai számára engedélyezett bérlők vagy előfizetések elérését.
-
-A bejelentkezés után új környezet hozzáadásához használja a `Set-AzContext` parancsmagot (vagy az aliasát, a `Select-AzSubscription` parancsmagot).
+Mindegyik parancs támogatja a `-Scope` paramétert, ami fel tudja venni a `Process` értéket, hogy csak a jelenleg futó folyamatra vonatkozzon. Adja meg például a következőt, ha gondoskodni szeretne róla, hogy a rendszer ne mentse az újonnan létrehozott környezeteket a PowerShell-munkamenetből való kilépés után:
 
 ```azurepowershell-interactive
-PS C:\> Set-AzContext -Subscription "Contoso Subscription 1" -Name "Contoso1"
+Disable-AzContextAutosave -Scope Process
+$context2 = Set-AzContext -Subscription "sub-id" -Tenant "other-tenant"
 ```
 
-Az előző példa hozzáad egy új környezetet, amely a „Contoso Subscription 1” nevű előfizetést célozza az aktuális hitelesítő adatokkal. Az új környezet neve „Contoso1”. Ha nem ad meg nevet a környezetnek, a rendszer egy alapértelmezett nevet ad a használt fiók- és előfizetés-azonosító alapján.
+A Windows az `$env:USERPROFILE\.Azure` könyvtárban tárolja a környezetek adatait és a jogkivonatokat, más platformok pedig a `$HOME/.Azure` könyvtárban. Előfordulhat, hogy a tárolt adatok között megtalálható bizalmas adatokat, például az előfizetési azonosítókat és bérlőazonosítókat továbbra is el lehet érni a naplókon vagy a mentett környezeteken keresztül. A tárolt adatok törlésével kapcsolatban tekintse meg a [környezetek és hitelesítő adatok eltávolítását](#remove-azure-contexts-and-stored-credentials) ismertető szakaszt.
 
-Meglévő környezetek átnevezéséhez használja a `Rename-AzContext` parancsmagot. Például:
+## <a name="remove-azure-contexts-and-stored-credentials"></a>Az Azure-környezetek és a tárolt hitelesítő adatok eltávolítása
 
-```azurepowershell-interactive
-PS C:\> Rename-AzContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Contoso2'
-```
+Azure-környezetek és hitelesítő adatok törlése:
 
-A példa az automatikusan elnevezett `[user1@contoso.org; 123456-7890-1234-564321]` környezetet átnevezi az egyszerű „Contoso2” névre. A környezetek kezelésére szolgáló parancsmagok parancssori kiegészítés funkcióval rendelkeznek, így a beírásukkor gyorsan kiválasztható a környezet.
+* Jelentkezzen ki a fiókból a [Disconnect-AzAccount](/powershell/module/az.accounts/disconnect-azaccount) parancsmaggal.
+  Bármely fiókból kijelentkezhet a fiók vagy a környezet megadásával:
 
-A környezet a `Remove-AzContext` parancsmaggal távolítható el.  Például:
+  ```azurepowershell-interactive
+  Disconnect-AzAccount # Disconnect active account 
+  Disconnect-AzAccount -Username "user@contoso.com" # Disconnect by account name
 
-```azurepowershell-interactive
-PS C:\> Remove-AzContext Contoso2
-```
+  Disconnect-AzAccount -ContextName "subscription2" # Disconnect by context name
+  Disconnect-AzAccount -AzureContext $contextObject # Disconnect using context object information
+  ```
 
-Elfelejti a „Contoso2” nevű környezetet. A környezet a `Set-AzContext` parancsmaggal hozható újra létre
+  A kapcsolat bontásakor a rendszer mindig eltávolítja a tárolt hitelesítési jogkivonatokat, és törli a leválasztott felhasználóhoz vagy környezethez társított mentett környezeteket.
+* Használja a [Clear-AzContext](/powershell/module/az.accounts/Clear-AzContext) parancsmagot. Ez a parancsmag garantáltan mindig eltávolítja a tárolt környezeteket és hitelesítési jogkivonatokat, és a felhasználót is kilépteti.
+* Távolítson el egy környezetet a [Remove-AzContext](/powershell/module/az.accounts/remove-azcontext) parancsmaggal:
+  
+  ```azurepowershell-interactive
+  Remove-AzContext -Name "mycontext" # Remove by name
+  Get-AzContext -Name "mycontext" | Remove-AzContext # Remove by piping Azure context object
+  ```
 
-## <a name="removing-credentials"></a>Hitelesítő adatok eltávolítása
+  Ha eltávolítja az aktív környezetet, a rendszer bontja a kapcsolatot az Azure-ral, és Önnek újból hitelesítenie kell magát a `Connect-AzAccount` parancsmaggal.
 
-Egy adott felhasználó vagy szolgáltatásnév összes hitelesítő adatát és társított környezetét a `Disconnect-AzAccount` (vagy más néven `Logout-AzAccount`) parancsmaggal távolíthatja el. Paraméterek nélkül a `Disconnect-AzAccount` parancsmag az aktuális környezetben bejelentkezett felhasználó vagy szolgáltatásnév összes társított hitelesítő adatát és környezetét eltávolítja. A parancsmagnak átadható egy felhasználónév, egyszerű szolgáltatásnév vagy egy környezet is, ha egy adott szolgáltatást kíván megcélozni.
+## <a name="see-also"></a>Lásd még
 
-```azurepowershell-interactive
-Disconnect-AzAccount user1@contoso.org
-```
-
-## <a name="using-context-scopes"></a>Környezeti hatókörök használata
-
-Előfordulhat, hogy úgy szeretné kiválasztani, módosítani vagy eltávolítani egy PowerShell-munkamenet valamely környezetét, hogy a többi munkamenetet ne érintse a módosítás. A környezeti parancsmagok alapértelmezett viselkedésének módosításához használja a `Scope` paramétert. A `Process` hatókör felülírja az alapértelmezett viselkedést, hogy csak az aktuális munkamenetre vonatkozzon. A `CurrentUser` hatókör ezzel szemben nemcsak az aktuális, hanem minden munkamenetben módosítja a környezetet.
-
-Ha például anélkül szeretné módosítani az aktuális PowerShell-munkamenet alapértelmezett környezetét, hogy a módosítás a többi ablakot vagy a munkamenet következő megnyitásakor használt környezetet is érintené, használja a következő parancsmagot:
-
-```azurepowershell-interactive
-PS C:\> Select-AzContext Contoso1 -Scope Process
-```
-
-## <a name="how-the-context-autosave-setting-is-remembered"></a>A környezet automatikus mentési beállításainak megőrzése
-
-A rendszer a felhasználó Azure PowerShell-könyvtárába (`$env:USERPROFILE\.Azure` Windows rendszeren és `$HOME/.Azure` más platformokon) menti a környezet automatikus mentési beállításait. Előfordulhat, hogy egyes számítógépfiókok nem rendelkeznek hozzáféréshez ehhez a könyvtárhoz. Ilyen esetekben használhatja a következő környezeti változót:
-
-```azurepowershell-interactive
-$env:AzureRmContextAutoSave="true" | "false"
-```
-
-Ha a változó értéke „true”, a rendszer automatikusan menti a környezetet. Ha az érték „false”, a rendszer nem menti a környezetet.
-
-## <a name="context-management-cmdlets"></a>Környezet kezelésének parancsmagjai
-
-- [Enable-AzContextAutosave][enable] – A környezet mentésének engedélyezése a PowerShell-munkamenetek között.
-  Minden változás módosítja a globális környezetet.
-- [Disable-AzContextAutosave][disable] – A környezet automatikus mentésének letiltása. Minden egyes új PowerShell-munkamenetnek újra be kell jelentkeznie.
-- [Select-AzContext][select] – Az alapértelmezett környezet kiválasztása. Az összes parancsmag ennek a környezetnek a hitelesítő adatait használja.
-- [Disconnect-AzAccount][remove-cred] – Egy fiókhoz tartozó összes hitelesítő adat és környezet eltávolítása.
-- [Remove-AzContext][remove-context] – Egy nevesített környezet eltávolítása.
-- [Rename-AzContext][rename] – Meglévő környezet átnevezése.
-- [Add-AzAccount][login] – Lehetővé teszi a bejelentkezés hatókörének beállítását a folyamatra vagy az aktuális felhasználóra.
-  Lehetővé teszi az alapértelmezett környezet elnevezését a bejelentkezés után.
-- [Import-AzContext][import] – Lehetővé teszi a bejelentkezés hatókörének beállítását a folyamatra vagy az aktuális felhasználóra.
-- [Set-AzContext][set-context] – Lehetővé teszi meglévő nevesített környezetek kiválasztását, valamint a hatókör módosítását a folyamatra vagy az aktuális felhasználóra.
-
-<!-- Hyperlinks -->
-[enable]: /powershell/module/az.accounts/Enable-AzureRmContextAutosave
-[disable]: /powershell/module/az.accounts/Disable-AzContextAutosave
-[select]: /powershell/module/az.accounts/Select-AzContext
-[remove-cred]: /powershell/module/az.accounts/Disconnect-AzAccount
-[remove-context]: /powershell/module/az.accounts/Remove-AzContext
-[rename]: /powershell/module/az.accounts/Rename-AzContext
-
-<!-- Updated cmdlets -->
-[login]: /powershell/module/az.accounts/Connect-AzAccount
-[import]:  /powershell/module/az.accounts/Import-AzContext
-[set-context]: /powershell/module/az.accounts/Set-AzContext
+* [Azure PowerShell-parancsmagok futtatása PowerShell-feladatokban](using-psjobs.md)
+* [Az Azure Active Directory terminológiája](/azure/active-directory/fundamentals/active-directory-whatis#terminology)
+* [Az.Accounts referencia](/powershell/module/az.accounts)
