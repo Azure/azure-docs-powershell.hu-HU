@@ -4,7 +4,11 @@
   href: new-azureps-module-az.md
   displayName: 'intro, introduction, azurerm'
 - name: Telepítés
-  href: install-az-ps.md
+  items:
+    - name: Telepítés a PowerShell Gettel
+      href: install-az-ps.md
+    - name: Telepítés MSI-vel
+      href: install-az-ps-msi.md
 - name: Eltávolítás
   href: uninstall-az-ps.md
 - name: Migrálás az AzureRM-ből
