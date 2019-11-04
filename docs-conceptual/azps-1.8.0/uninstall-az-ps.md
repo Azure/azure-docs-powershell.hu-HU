@@ -1,25 +1,36 @@
 ---
 title: Az Azure PowerShell eltávolítása
 description: Az Azure PowerShell teljes eltávolítása
-ms.date: 06/10/2019
+ms.date: 10/22/2019
 author: sptramer
 ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: e71b4d0d662b29a32610fecb36351532040428e4
-ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
+ms.openlocfilehash: 772667032d421e32c6cd63abbcb686b4eab308e2
+ms.sourcegitcommit: ad7677d703a8512d371d3123dc7e541156b95cb8
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68807443"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72814341"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Az Azure PowerShell-modul eltávolítása
 
 Ez a cikk bemutatja, hogyan távolítható el az Azure PowerShell egy régebbi verziója, illetve hogyan távolítható el az Azure PowerShell teljesen a rendszerből. Ha úgy döntött, hogy teljesen eltávolítja az Azure PowerShellt, ossza meg velünk visszajelzését a [Send-Feedback](/powershell/module/az.accounts/send-feedback) parancsmaggal.
 Ha hibát tapasztal, [jelentse be a GitHubon](https://github.com/azure/azure-powershell/issues), hogy kijavíthassuk.
 
-## <a name="uninstall-the-az-module"></a>Az Az modul eltávolítása
+## <a name="uninstall-azure-powershell-from-msi"></a>Az Azure PowerShell eltávolítása az MSI-ből
+
+Ha az Azure PowerShellt az MSI-csomaggal telepítette, akkor a Windows rendszer segítségével kell eltávolítania, nem a PowerShell-lel.
+
+| Platform | Utasítások |
+|----------|--------------|
+| Windows 10 | Start menü > Gépház > Alkalmazások |
+| Windows 7 </br>Windows 8 | Start menü > Vezérlőpult > Programok > Program eltávolítása |
+
+Itt a programok listájában megjelenik az __Azure PowerShell__. Ezt az alkalmazást távolítsa el. Ha nem látja ezt a programot a listában, akkor a telepítést a PowerShellGet segítségével végezte, és a következő utasításokat kell követnie.
+
+## <a name="uninstall-azure-powershell-from-powershell-get"></a>Az Azure PowerShell eltávolítása a PowerShell Getből
 
 Az Az modulok eltávolításához használja az [Uninstall-Module](/powershell/module/powershellget/uninstall-module) parancsmagot. Azonban az `Uninstall-Module` csak egy modult távolít el. Az Azure PowerShell teljes eltávolításához egyesével kell eltávolítania a modulokat. Az eltávolítás bonyolult lehet, ha több Azure PowerShell-verzió is telepítve van.
 
