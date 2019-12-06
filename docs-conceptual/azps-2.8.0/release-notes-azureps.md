@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/15/2019
-ms.openlocfilehash: 83e6039153bcc2b8ccb7ceddfa91609f0d6c7b3f
-ms.sourcegitcommit: b4ee3fbaaa2a329ea28308bd1902ae83a34db698
+ms.openlocfilehash: 8c1369cdedf8848f3c62ca6b6bc4eb3d2d78be95
+ms.sourcegitcommit: f9445d1525eac8c165637e1a80fbc92b1ab005c2
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380187"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74656830"
 ---
 ## <a name="280---october-2019"></a>2.8.0 – 2019. október
 ### <a name="general"></a>Általános kérdések
@@ -56,7 +56,7 @@ ms.locfileid: "72380187"
 * Kisebb hibajavítás: A Get-AzIothub nem adja vissza a következőt: subscriptionId 
 
 #### <a name="azmonitor"></a>Az.Monitor
-* Új műveleticsoport-fogadók hozzáadva a következő műveleti csoporthoz:   -ItsmReceiver   -VoiceReceiver   -ArmRoleReceiver   -AzureFunctionReceiver   -LogicAppReceiver   -AutomationRunbookReceiver   -AzureAppPushReceiver
+* Új műveleticsoport-fogadók hozzáadva a New-AzActionGroupReceiver parancsmaghoz:   -ItsmReceiver   -VoiceReceiver   -ArmRoleReceiver   -AzureFunctionReceiver   -LogicAppReceiver   -AutomationRunbookReceiver   -AzureAppPushReceiver
 * Az általános riasztási séma használata engedélyezve a fogadók számára. Ez nem vonatkozik az SMS, az Azure App leküldéses üzenetei, az ITSM és a Voice fogadóira.
 * A webhookok mostantól az Azure Active Directory-hitelesítés használatát is támogatják.
 
@@ -65,7 +65,7 @@ ms.locfileid: "72380187"
 * Forgalomválasztók hozzáadásának támogatása a virtuális hálózati átjáró kapcsolataihoz
     - Új hozzáadott parancsmagok:
         - New-AzureRmTrafficSelectorPolicy
-    - Parancsmagok frissítve választható paraméterekkel -TrafficSelectorPolicies   -New-AzureRmVirtualNetworkGatewayConnection   -Set-AzureRmVirtualNetworkGatewayConnection
+    - Parancsmagok frissítve választható paraméterekkel -TrafficSelectorPolicies   -New-AzVirtualNetworkGatewayConnection   -Set-AzVirtualNetworkGatewayConnection
 * Az ESP és AH protokollok támogatása a hálózati biztonsági szabályzati konfigurációkban
     - Frissített parancsmagok:
         - Add-AzNetworkSecurityRuleConfig
