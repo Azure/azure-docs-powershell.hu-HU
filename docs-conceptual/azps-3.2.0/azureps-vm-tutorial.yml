@@ -1,0 +1,376 @@
+### YamlMime:Tutorial
+title: Virtuális gépek létrehozása az Azure PowerShell-lel
+metadata:
+  title: Virtuális gépek létrehozása az Azure PowerShell-lel
+  description: Bevezetés az Azure PowerShell használatába virtuális gépek létrehozásán keresztül.
+  audience: Developer
+  level: Beginner
+  displayType: two-column
+  interactive: azurepowershell
+  ms.date: 12/13/2018
+  ms.author: sttramer
+  author: sptramer
+  manager: carmonm
+  ms.devlang: azure-powershell
+  ms.prod: powershell
+  ms.technology: azure-powershell
+  ms.topic: tutorial
+  clicktale: true
+  ms.openlocfilehash: 71f250c0578e46888845f7a9a1ae4b74f7a38fab
+  ms.sourcegitcommit: e598dc45a26ff5a71112383252b350d750144a47
+  ms.translationtype: HT
+  ms.contentlocale: hu-HU
+  ms.lasthandoff: 12/17/2019
+  ms.locfileid: "75182417"
+items:
+- durationInMinutes: 1
+  content: >-
+    Ebben az oktatóanyagban elsajátíthatja a virtuális gépek Azure PowerShell használatával történő beállításához szükséges lépéseket. Az oktatóanyag ezen kívül a kimeneti lekérdezésekre, az Azure-erőforrások újbóli felhasználására és az erőforrások felesleges tartalmainak törlésére is kitér.
+
+
+    Az oktatóanyagot az Azure Cloud Shell által nyújtott interaktív felületen keresztül vagy az [Azure PowerShell helyi telepítésével](install-az-ps.md) teljesítheti.
+
+
+    A __ctrl-shift-v__ (macOS rendszeresen__cmd-shift-v__) billentyűkombináció segítségével illesztheti be az oktatóanyag szövegét az Azure Cloud Shellbe.
+- durationInMinutes: 1
+  title: Bejelentkezés
+  content: >-
+    Ha az Azure PowerShell helyi telepítését választotta, akkor a további lépések végrehajtása előtt jelentkezzen be.
+
+
+    ```powershell-interactive
+
+    Connect-AzAccount
+
+    ```
+
+
+    A terminálon megjelenő utasítások alapján végezze el a bejelentkezési folyamatot.
+- durationInMinutes: 1
+  title: Hozzon létre egy erőforráscsoportot
+  content: >-
+    Az Azure-ban minden erőforrás erőforrás-kezelési csoportokban van lefoglalva. Az erőforráscsoportok segítségével az erőforrások követhető logika szerint csoportosíthatók, és lehetővé válik gyűjteményként való kezelésük.
+
+    Ebben az oktatóanyagban létrehozott minden erőforrás egy `TutorialResources` nevű csoportba kerül.
+
+
+    ```powershell-interactive
+
+    New-AzResourceGroup -Name TutorialResources -Location eastus
+
+    ```
+
+
+    ```Output
+
+    ResourceGroupName : TutorialResources
+
+    Location          : eastus
+
+    ProvisioningState : Succeeded
+
+    Tags              :
+
+    ResourceId        : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/TutorialResources
+
+    ```
+- durationInMinutes: 1
+  title: Rendszergazdai hitelesítő adatok létrehozása a virtuális géphez
+  content: >-
+    Új virtuális gép létrehozása előtt létre kell hoznia egy hitelesítő objektumot, amely tartalmazza a Windows rendszerű virtuális gép rendszergazdai fiókjának felhasználónevét és jelszavát.
+
+
+    ```powershell-interactive
+
+    $cred = Get-Credential -Message "Enter a username and password for the virtual machine."
+
+    ```
+
+
+    Amikor a rendszer kéri, adja meg a felhasználónevet és a jelszót. Az eredményül kapott hitelesítő objektumot a rendszer a következő lépésben paraméterként adja tovább.
+
+
+    ```Output
+
+    Windows PowerShell credential request.
+
+    Enter a username and password for the virtual machine.
+
+    User: tutorAdmin
+
+    Password for user tutorAdmin: *********
+
+    ```
+- durationInMinutes: 4
+  title: Virtuális gép létrehozása
+  content: >-
+    Az Azure-beli virtuális gépek nagy számú függőséggel rendelkeznek. Az Azure PowerShell ezeket az erőforrásokat az Ön által megadott parancssori argumentumok alapján hozza létre. Az olvashatóság érdekében [PowerShell-paramétercsomagolást](/powershell/module/microsoft.powershell.core/about/about_splatting) használunk a paraméterek Azure PowerShell-parancsmagokba történő továbbításához.
+
+
+    Hozzon létre egy Windows rendszerű új virtuális gépet.
+
+
+    ```powershell-interactive
+
+    $vmParams = @{
+      ResourceGroupName = 'TutorialResources'
+      Name = 'TutorialVM1'
+      Location = 'eastus'
+      ImageName = 'Win2016Datacenter'
+      PublicIpAddressName = 'tutorialPublicIp'
+      Credential = $cred
+      OpenPorts = 3389
+    }
+
+    $newVM1 = New-AzVM @vmParams
+
+    ```
+
+    A virtuális gép létrehozása során megjelennek a felhasznált paraméterértékek és a létrehozandó Azure-erőforrások.
+
+    A PowerShell az alább látható módon megjelenít egy folyamatjelzőt.
+
+
+    ```Output
+     Creating Azure resources
+      39% \
+      [ooooooooooooooooooooooooooooooooooo                                                                 ]
+
+      Creating TutorialVM1 virtual machine.
+    ```
+
+
+    Ha a virtuális gép létrejött, az eredmények megtekinthetők az Azure Portalon vagy a \$newVM1 változó vizsgálatával.
+
+
+    ```powershell-interactive
+
+    $newVM1
+
+    ```
+
+
+    ```Output
+
+    ResourceGroupName : TutorialResources
+
+    Id                : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/TutorialResources/providers/Microsoft.Compute/virtualMachines/TutorialVM1
+
+    VmId              : 12345678-9abc-def0-1234-56789abcedf0
+
+    Name              : TutorialVM1
+
+    Type              : Microsoft.Compute/virtualMachines
+
+    Location          : eastus
+
+    Tags              : {}
+
+    HardwareProfile   : {VmSize}
+
+    NetworkProfile    : {NetworkInterfaces}
+
+    OSProfile         : {ComputerName, AdminUsername, WindowsConfiguration, Secrets}
+
+    ProvisioningState : Succeeded
+
+    StorageProfile    : {ImageReference, OsDisk, DataDisks}
+
+    ```
+
+
+    A kapcsos zárójelben szereplő tulajdonságértékek beágyazott objektumok. A következő lépésekből megtudhatja, hogyan tekintheti meg a beágyazott objektumok egyes értékeit.
+- durationInMinutes: 5
+  title: Virtuális gépre vonatkozó adatok lekérdezése
+  content: >-
+    Az imént létrehozott virtuális gépről további részletes információkat is beszerezhet. Ebben a példában ellenőrizni fogja a létrehozott virtuális gép és rendszergazdai fiók nevét.
+
+
+    ```powershell-interactive
+
+    $newVM1.OSProfile | Select-Object ComputerName,AdminUserName
+
+    ```
+
+
+    ```Output
+
+    ComputerName AdminUsername
+
+    ------------ -------------
+
+    TutorialVM1  tutorialAdmin
+
+    ```
+
+
+    Egyéb Azure PowerShell-parancsokkal a hálózati konfigurációval kapcsolatos információkat lehet lekérni.
+
+
+    ```powershell-interactive
+
+    $newVM1 | Get-AzNetworkInterface |
+      Select-Object -ExpandProperty IpConfigurations |
+        Select-Object Name,PrivateIpAddress
+    ```
+
+
+    Ebben a példában a PowerShell-folyamattal küldjük el a \$newVM1 objektumot a `Get-AzNetworkInterface` parancsmagnak. Az eredményül kapott hálózatiadapter-objektumban kiválasztjuk a beágyazott IpConfigurations objektumot. Az IpConfigurations objektumban kiválasztjuk a Name és a PrivateIpAddress tulajdonságot.
+
+
+    ```Output
+
+    Name        PrivateIpAddress
+
+    ----        ----------------
+
+    TutorialVM1 192.168.1.4
+
+    ```
+
+
+    Ha ellenőrizni szeretné, hogy a virtuális gép fut-e, csatlakoznia kell hozzá távoli asztali kapcsolaton keresztül. Ehhez szükség van a nyilvános IP-címre.
+
+
+    ```powershell-interactive
+
+    $publicIp = Get-AzPublicIpAddress -Name tutorialPublicIp -ResourceGroupName TutorialResources
+
+
+    $publicIp | Select-Object Name,IpAddress,@{label='FQDN';expression={$_.DnsSettings.Fqdn}}
+
+    ```
+
+
+    Ebben a példában a `Get-AzPublicIpAddress` parancsmagot használjuk, az eredményeket pedig a \$publicIp változóban tároljuk. Ebben a változóban tulajdonságokat választunk ki, és egy kifejezés használatával lekérjük a beágyazott Fqdn tulajdonságot.
+
+
+    ```Output
+
+    Name             IpAddress           FQDN
+
+    ----             ---------           ----
+
+    tutorialPublicIp <PUBLIC_IP_ADDRESS> tutorialvm1-8a0999.eastus.cloudapp.azure.com
+
+    ```
+
+
+    A virtuális gép távoli asztali eléréséhez futtassa a következő parancsot a helyi gépen.
+
+
+    ```powershell-interactive
+
+    mstsc.exe /v <PUBLIC_IP_ADDRESS>
+
+    ```
+
+
+    Az objektumtulajdonságok lekérdezésével kapcsolatos bővebb információt az [Azure-erőforrások lekérdezése](./queries-azureps.md) című cikkben talál.
+- durationInMinutes: 4
+  title: Új virtuális gép létrehozása meglévő alhálózaton
+  content: >-
+    A második virtuális gép a meglévő alhálózatot használja.
+
+
+    ```powershell-interactive
+
+    $vm2Params = @{
+      ResourceGroupName = 'TutorialResources'
+      Name = 'TutorialVM2'
+      ImageName = 'Win2016Datacenter'
+      VirtualNetworkName = 'TutorialVM1'
+      SubnetName = 'TutorialVM1'
+      PublicIpAddressName = 'tutorialPublicIp2'
+      Credential = $cred
+      OpenPorts = 3389
+    }
+
+    $newVM2 = New-AzVM @vm2Params
+
+
+    $newVM2
+
+    ```
+
+
+    ```Output
+
+    ResourceGroupName        : TutorialResources
+
+    Id                       : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/TutorialResources/providers/Microsoft.Compute/virtualMachines/TutorialVM2
+
+    VmId                     : 12345678-9abc-def0-1234-56789abcedf1
+
+    Name                     : TutorialVM2
+
+    Type                     : Microsoft.Compute/virtualMachines
+
+    Location                 : eastus
+
+    Tags                     : {}
+
+    HardwareProfile          : {VmSize}
+
+    NetworkProfile           : {NetworkInterfaces}
+
+    OSProfile                : {ComputerName, AdminUsername, WindowsConfiguration, Secrets}
+
+    ProvisioningState        : Succeeded
+
+    StorageProfile           : {ImageReference, OsDisk, DataDisks}
+
+    FullyQualifiedDomainName : tutorialvm2-dfa5af.eastus.cloudapp.azure.com
+
+    ```
+
+
+    Kihagyhatja azt a pár lépést, amellyel az új virtuális gép nyilvános IP-címét kérné le, mivel azt a rendszer a \$newVM2 objektum FullyQualifiedDomainName tulajdonságában visszaadja. Az alábbi parancs használatával csatlakozhat távoli asztali kapcsolaton keresztül.
+
+
+    ```powershell-interactive
+
+    mstsc.exe /v $newVM2.FullyQualifiedDomainName
+
+    ```
+- durationInMinutes: 4
+  title: Felesleges tartalmak törlése
+  content: >-
+    Most, hogy végzett az oktatóanyaggal, ideje törölni a létrehozott erőforrásokat. Az egyes erőforrásokat a `Remove-AzResource` paranccsal törölheti, de az erőforráscsoportban szereplő összes erőforrás eltávolításának legbiztosabb módja, ha a `Remove-AzResourceGroup` paranccsal törli az egész csoportot.
+
+
+    ```powershell-interactive
+
+    $job = Remove-AzResourceGroup -Name TutorialResources -Force -AsJob
+
+
+    $job
+
+    ```
+
+
+    ```Output
+
+    Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
+
+    --     ----            -------------   -----         -----------     --------             -------
+
+    1      Long Running... AzureLongRun... Running       True            localhost            Remove-AzResource...
+
+    ```
+
+
+    Ez a parancs törli az oktatóanyag használata közben létrehozott erőforrásokat, és garantáltan a megfelelő sorrendben szabadítja fel őket. Az `-AsJob` paraméter megakadályozza, hogy a PowerShell blokkoljon a törlés végrehajtása közben. Ha várni szeretne, amíg a törlés befejeződik, használja a következő parancsot:
+
+
+    ```powershell-interactive
+
+    Wait-Job -Id $job.Id
+
+    ```
+
+
+    A tartalmak törlésével az oktatóanyag végére ért. Tekintse át az eddig tanultak összegzését, illetve a következő lépések végrehajtásában segítségére lévő erőforrásokra mutató hivatkozásokat.
+- durationInMinutes: 1
+  title: Összegzés
+  content: "\nGratulálunk! Megismerte, hogyan hozhat létre virtuális gépeket új vagy meglévő erőforrásokkal, kifejezések és egyéb Azure PowerShell-parancsok segítségével felületváltozókon tárolandó adatokat rögzített, és áttekintett néhány, az Azure-beli virtuális gépek számára létrehozott erőforrást.\n\nA következő lépést az határozza meg, hogy mire szeretné használni az Azure PowerShellt. Számos forrásanyag érhető el a jelen oktatóanyagban tárgyalt funkciók alaposabb megismeréséhez.\n\n### <a name=\"in-depth-azure-powershell-documentation\"></a>Részletes Azure PowerShell-dokumentáció\n\nÉrdemes időt szánni a teljes [Azure PowerShell-dokumentáció](overview.md) megismerésére.\n\nAz oktatóanyagban szereplő parancsokkal kapcsolatos további információkért tekintse meg az alábbi cikkeket.\n\n- [New-AzResourceGroup](/powershell/module/Az.resources/new-Azresourcegroup)\n- [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential)\n- [New-AzVM](/powershell/module/Az.compute/new-Azvm)\n- [Select-Object](/powershell/module/microsoft.powershell.utility/select-object)\n- [Get-AzPublicIpAddress](/powershell/module/Az.network/get-AzPublicIpAddress)\n- [Remove-AzResourceGroup](/powershell/module/Az.resources/Remove-AzResourceGroup)\n- [Wait-Job](/powershell/module/microsoft.powershell.core/wait-job)\n\nOlyan cikkek is rendelkezésre állnak, amelyek részletesebben tárgyalják a jelen oktatóanyagban ismertetett funkciókat.\n\n- [PowerShell-paramétercsomagolás](/powershell/module/microsoft.powershell.core/about/about_splatting)\n- [Lekérdezések](queries-azureps.md)\n- [Formázás](formatting-output.md)\n- [A PowerShell-feladatok használata](using-psjobs.md)\n\n### <a name=\"sample-scripts\"></a>Mintaszkriptek\n\nHa máris hozzá szeretne fogni konkrét feladatokhoz, tekintsen át néhány mintául szolgáló szkriptet.\n\n- [Linux rendszerű virtuális gépek](/azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Windows rendszerű virtuális gépek](/azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [SQL Database-adatbázisok](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Cosmos DB](/azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json)\n\n### <a name=\"feedback\"></a>Visszajelzés\n\nHa visszajelzést szeretne küldeni, illetve javaslatai vagy kérdései vannak, akkor több módon is felveheti velünk a kapcsolatot.\n\n* A `Send-Feedback` az Azure PowerShell egy beépített parancsa, amellyel szabad formátumú visszajelzést küldhet a csapatnak.\n* A szolgáltatással kapcsolatos kéréseit és hibajelentéseit az [Azure PowerShell-adattáron](https://github.com/Azure/azure-powershell/issues) keresztül küldheti be.\n* Kérdéseit és pontosításra vonatkozó megkereséseit az [Azure PowerShell dokumentációs adattárján](https://github.com/MicrosoftDocs/azure-docs-powershell/issues) keresztül teheti fel és küldheti be.\n\nReméljük, hogy örömét leli az Azure PowerShell használatában!"
