@@ -7,13 +7,358 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/15/2019
-ms.openlocfilehash: 98a24c805fbf43dd899119d43301b4261c1f60dc
-ms.sourcegitcommit: f9445d1525eac8c165637e1a80fbc92b1ab005c2
+ms.openlocfilehash: f77d901169b0d98b2425a2e50d33a1789150b770
+ms.sourcegitcommit: e598dc45a26ff5a71112383252b350d750144a47
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/16/2019
-ms.locfileid: "75035761"
+ms.lasthandoff: 12/17/2019
+ms.locfileid: "75182553"
 ---
+## <a name="320---december-2019"></a>3.2.0 – 2019. december
+
+### <a name="general"></a>Általános kérdések
+* A .psd1 hivatkozásai frissítve, hogy minden modulhoz a relatív elérési utat használják
+
+#### <a name="azaccounts"></a>Az.Accounts
+* A megfelelő felhasználói ügynök beállítva az ügyféloldali telemetriához az Az 4.0 előzetes verziójában
+* Felhasználóbarát hibaüzenet megjelenítése, ha az Az 4.0 előzetes verziójában a környezet null értékű
+
+#### <a name="azbatch"></a>Az.Batch
+* Ki lett javítva a [10602-es](https://github.com/Azure/azure-powershell/issues/10602) számú hiba, amely miatt a **New-AzBatchPool** nem megfelelően küldte el a „VirtualMachineConfiguration.ContainerConfiguration” és a „VirtualMachineConfiguration.DataDisks” paramétereket a kiszolgálónak.
+
+#### <a name="azdatafactory"></a>Az.DataFactory
+* Az ADF .Net SDK a 4.5.0-s verzióra frissült
+
+#### <a name="azfrontdoor"></a>Az.FrontDoor
+* A WAF felügyeleti szabályok kizárása mostantól támogatott
+* Hozzá lett adva a SocketAddr automatikus kitöltése
+
+#### <a name="azhealthcareapis"></a>Az.HealthcareApis
+* Kivételkezelés
+
+#### <a name="azkeyvault"></a>Az.KeyVault
+* Ki lett javítva az esetleg nem beállított értékek hozzáférésével kapcsolatos hiba
+* Az elliptikus görbéjű titkosítási tanúsítványok kezelése
+    - A görbe tanúsítványszabályzatokhoz történő meghatározásának támogatása
+
+#### <a name="azmonitor"></a>Az.Monitor
+* Opcionális argumentum hozzáadva a Diagnosztikai beállítások hozzáadása parancshoz. Ez egy kapcsoló argumentum, amely megléte esetén azt jelzi, hogy a Log Analyticsbe történő exportálást egy rögzített séma (más néven dedikált adattípus) szerint kell végrehajtani
+
+#### <a name="aznetwork"></a>Az.Network
+* Támogatás az Ip-csoportok számára az AzureFirewall alkalmazás, valamint a Nat- és a hálózati szabályok esetében.
+
+#### <a name="azresources"></a>Az.Resources
+* Ki lett javítva az a hiba, amely miatt a sablonalapú üzembe helyezés során a sablonparamétert nem lehet olvasni, ha a sablonparaméter és egy beépített paraméter neve között névütközés áll fenn.
+* Frissültek a szabályzat parancsmagjai a 2019. 09. 01. dátumú új API-verzió használatára, amely bevezeti a szabályzatkészlet-definíciókon belüli csoportos támogatást.
+
+#### <a name="azsql"></a>Az.Sql
+* Frissítve lett a sebezhetőségi felmérés automatikus engedélyezéséhez szükséges tárterület létrehozása a Storagev2-ben
+
+#### <a name="azstorage"></a>Az.Storage
+* A blob-/tárolóidentitás-alapú SAS-token Oauth-hitelesítésen alapuló Storage-környezettel való létrehozásának támogatása
+    - New-AzStorageContainerSASToken
+    - New-AzStorageBlobSASToken
+* Támogatott lett a tárfiókhoz tartozó felhasználódelegálási kulcsok visszavonása, így minden identitásalapú SAS-token visszavonható
+    - Revoke-AzStorageAccountUserDelegationKeys
+* Frissítés a Microsoft.Azure.Management.Storage 14.2.0-s verziójára az új API-verzió (2019. 06. 01.) támogatásához.
+* A QuotaGiB megosztása több mint 5120 fájlmegosztási parancsmagot támogat a felügyeleti síkon, és a „Kvóta” paraméteraliast hozzáadva a „QuotaGiB” paraméterhez 
+    - New-AzRmStorageShare
+    - Update-AzRmStorageShare
+* A „QuotaGiB” paraméteralias hozzáadva a „kvóta” paraméterhez
+    - Set-AzStorageShareQuota
+* Ki lett javítva az a hiba, amely miatt a Set-AzStorageContainerAcl parancsmag el tudta távolítani a tárolt hozzáférési szabályzatot
+    - Set-AzStorageContainerAcl
+
+## <a name="310---november-2019"></a>3.1.0 – 2019. november
+### <a name="highlights-since-the-last-major-release"></a>A legutóbbi nagyobb kiadás óta megjelent kiemelt újdonságok
+* Az.DataBoxEdge 1.0.0 kiadva
+* Az.SqlVirtualMachine 1.0.0 kiadva
+
+#### <a name="azcompute"></a>Az.Compute
+* A virtuális gépek Reapply funkciója
+    - A Reapply paraméter hozzá lett adva a Set-AzVM parancsmaghoz.
+* A virtuálisgép-méretezési csoportok AutomaticRepairs funkciója:
+    - Az EnableAutomaticRepair, az AutomaticRepairGracePeriod és az AutomaticRepairMaxInstanceRepairsPercent paraméter hozzá lett adva a következő parancsmagokhoz:   New-AzVmssConfig   Update-AzVmss
+* Több-bérlős katalógus-rendszerkép támogatása a New-AzVM parancsmag esetében
+* A Spot hozzá lett adva a New-AzVM, a New-AzVMConfig és a New-AzVmss parancsmag Priority paraméterének argumentumbefejezőjéhez
+* A DiskIOPSReadWrite és a DiskMBpsReadWrite paraméter hozzá lett adva az Add-AzVmssDataDisk parancsmaghoz
+* A New-AzGalleryImageVersion parancsmag SourceImageId paramétere mostantól nem kötelező
+* A New-AzGalleryImageVersion parancsmag az OSDiskImage és a DataDiskImage paraméterrel bővült
+* A HyperVGeneration paraméter mostantól elérhető a New-AzGalleryImageDefinition parancsmagban
+* A SkipExtensionsOnOverprovisionedVMs paraméter hozzá lett adva a New-AzVmss, a New-AzVmssConfig és az Update-AzVmss parancsmaghoz
+
+#### <a name="azdataboxedge"></a>Az.DataBoxEdge
+* A(z) `Get-AzDataBoxEdgeOrder` parancsmag hozzá lett adva
+    - Megrendelés lekérése
+* A(z) `New-AzDataBoxEdgeOrder` parancsmag hozzá lett adva
+    - Új megrendelés létrehozása
+* A(z) `Remove-AzDataBoxEdgeOrder` parancsmag hozzá lett adva
+    - Megrendelés eltávolítása
+* `New-AzDataBoxEdgeShare` parancsmag módosítása
+    - Mostantól helyi megosztást hoz létre
+* A(z) `Set-AzDataBoxEdgeRole` parancsmag hozzá lett adva
+    - Mostantól az IotRole leképezhető a Share-re
+* A(z) `Invoke-AzDataBoxEdgeDevice` parancsmag hozzá lett adva
+    - Frissítések keresésének, letöltésének, telepítésének indítása az eszközön
+* A(z) `Get-AzDataBoxEdgeTrigger` parancsmag hozzá lett adva
+    - Triggerek információinak lekérdezése
+* A(z) `New-AzDataBoxEdgeTrigger` parancsmag hozzá lett adva
+    - Új triggerek létrehozása
+* A(z) `Remove-AzDataBoxEdgeTrigger` parancsmag hozzá lett adva
+    - Triggerek eltávolítása
+
+#### <a name="azdatafactory"></a>Az.DataFactory
+* Az ADF .Net SDK a 4.4.0-s verzióra frissült
+* Az ExpressCustomSetup paraméter hozzá lett adva a Set-AzureRmDataFactoryV2IntegrationRuntime parancsmaghoz a beállítási konfigurációk és külső összetevők egyéni beállítási szkript nélkül történő engedélyezéséhez.
+
+#### <a name="azdatalakestore"></a>Az.DataLakeStore
+* Frissült a Get-AzDataLakeStoreDeletedItem és a Restore-AzDataLakeStoreDeletedItem dokumentációja
+
+#### <a name="azeventhub"></a>Az.EventHub
+* A 10301-es hiba javítása: Az SAS-token dátumformátumának javítása
+
+#### <a name="azfrontdoor"></a>Az.FrontDoor
+* Az Enable-AzFrontDoorCustomDomainHttps és a New-AzFrontDoorFrontendEndpointObject a MinimumTlsVersion paraméterrel bővült
+* A New-AzFrontDoorHealthProbeSettingObject a HealthProbeMethod és az EnabledState paraméterrel bővült
+* Új parancsmag érhető el a Front Door létrehozásakor/frissítésekor megadandó BackendPoolsSettings objektum létrehozásához
+    - New-AzFrontDoorBackendPoolsSettingObject
+
+#### <a name="aznetwork"></a>Az.Network
+* A Start-AzVirtualNetworkGatewayConnectionPacketCapture.md és a Start-AzVirtualnetworkGatewayPacketCapture.md FilterData kapcsolójának példái módosultak.
+
+#### <a name="azprivatedns"></a>Az.PrivateDns
+* A PrivateDns .net sdk frissült az 1.0.0-s verzióra
+
+#### <a name="azrecoveryservices"></a>Az.RecoveryServices
+* Mostantól Azure Site Recovery-támogatás érhető el a lemeztípus kiválasztásához a védelem engedélyezésekor.
+* Azure Site Recovery-hibajavítás a visszaállítási terv műveletének szerkesztéséhez.
+* SQL-visszaállítási támogatás az Azure Backuphoz a fájlstream-adatbázisok elfogadása érdekében.
+
+#### <a name="azrediscache"></a>Az.RedisCache
+* A MinimumTlsVersion paraméter hozzá lett adva a New-AzRedisCache és a Set-AzRedisCache parancsmagban. Emellett a MinimumTlsVersion hozzá lett adva a Get-AzRedisCache parancsmag kimenetéhez.
+* Mostantól elérhető a -Size paraméter érvényesítése a Set-AzRedisCache és a New-AzRedisCache parancsmaghoz.
+
+#### <a name="azresources"></a>Az.Resources
+- Frissültek a szabályzat parancsmagjai a 2019. 06. 01. dátumú új API-verzió használatára, amely tartalmazza az új EnforcementMode tulajdonságot a szabályzat-hozzárendelésekben.
+- Frissült a létrehozási szabályzat definíciójának súgóbeli példája
+- Kijavítottuk azt a hibát, amikor a Remove-AZADServicePrincipal -ServicePrincipalName null értékű hivatkozást ad vissza, ha az egyszerű szolgáltatásnév nem található.
+- Kijavítottuk azt a hibát, amikor a New-AZADServicePrincipal null értékű hivatkozást ad vissza, ha a bérlőnek nincs előfizetése.
+- A New-AzAdServicePrincipal módosult, és már csak a társított alkalmazáshoz ad hitelesítő adatokat.
+
+#### <a name="azsql"></a>Az.Sql
+* Az adatbázisbeli ReadReplicaCount mostantól támogatott.
+* A Set-AzSqlDatabase ki lett javítva nem beállított zónaredundancia esetén
+
+## <a name="300---november-2019"></a>3.0.0 – 2019. november
+### <a name="general"></a>Általános kérdések
+* Megjelent az Az.PrivateDns 1.0.0
+
+#### <a name="azaccounts"></a>Az.Accounts
+* A Resolve-Error aliast érintő elavulási üzenet hozzáadása.
+
+#### <a name="azadvisor"></a>Az.Advisor
+* Új Működésbeli kiválóság kategória hozzáadva a Get-AzAdvisorRecommendation parancsmaghoz.
+
+#### <a name="azbatch"></a>Az.Batch
+* A `CoreQuota` átnevezve `BatchAccountContext` értékre a következőn: `DedicatedCoreQuota`. Emellett egy új `LowPriorityCoreQuota` elem is található.
+  - Ez hatással van a következőre: **Get-AzBatchAccount**.
+* A **New-AzBatchTask** `-ResourceFile` paraméter most már `PSResourceFile` objektumok gyűjteményét használja, amely az új **New-AzBatchResourceFile** parancsmaggal hozható létre.
+* Új **New-AzBatchResourceFile** parancsfájl a szükséges `PSResourceFile` objektumok létrehozásának elősegítéséhez. Ezek az **New-AzBatchTask** `-ResourceFile` paraméterénél adhatók meg.
+  - Ez két új típusú erőforrásfájlt támogat a meglévő `HttpUrl` mód mellett:
+    - Az `AutoStorageContainerName`-alapú erőforrásfájlok egy teljes automatikus tárolót töltenek le a Batch-csomópontra.
+    - A `StorageContainerUrl`-alapú erőforrásfájlok az URL-címben megadott tárolót töltik le a Batch-csomópontra.
+* A `PSApplication` **Get-AzBatchApplication** által visszaadott `ApplicationPackages` tulajdonsága eltávolítva.
+  - Most már lekérhetők az alkalmazásokon belüli adott csomagok a **Get-AzBatchApplicationPackage** használatával. Például: `Get-AzBatchApplication -AccountName myaccount -ResourceGroupName myresourcegroup -ApplicationId myapplication`.
+* Az `ApplicationId` átnevezve `ApplicationName` értékre a **Get-AzBatchApplicationPackage**, a **New-AzBatchApplicationPackage**, a **Remove-AzBatchApplicationPackage**, a **Get-AzBatchApplication**, a **New-AzBatchApplication**, a **Remove-AzBatchApplication** és a **Set-AzBatchApplication** esetében.
+  - Az `ApplicationId` mostantól az `ApplicationName` aliasa.
+* Az új `PSWindowsUserConfiguration` tulajdonság hozzáadva a következőhöz: `PSUserAccount`.
+* A `Version` átnevezve `Name` értékre a `PSApplicationPackage` esetében.
+* A `BlobSource` átnevezve `HttpUrl` értékre a `PSResourceFile` esetében.
+* Az `OSDisk` tulajdonság eltávolítva a következőből: `PSVirtualMachineConfiguration`.
+* A **Set-AzBatchPoolOSVersion** eltávolítva. Ez a művelet már nem támogatott.
+* `PSCloudServiceConfiguration` `TargetOSVersion` eleme eltávolítva.
+* A `CurrentOSVersion` átnevezve `OSVersion` értékre a `PSCloudServiceConfiguration` esetében.
+* `DataEgressGiB` és `DataIngressGiB` eltávolítva a következőből: `PSPoolUsageMetrics`.
+* A **Get-AzBatchNodeAgentSku** eltávolítva és a **Get-AzBatchSupportedImage** parancsmaggal helyettesítve. 
+  - A **Get-AzBatchSupportedImage** ugyanazokat az adatokat jeleníti meg, mint a **Get-AzBatchNodeAgentSku**, csak egyszerűbb formátumban.
+  - Most már új, nem ellenőrzött rendszerképeket is visszaad a rendszer. Minden rendszerképről további, `Capabilities` és `BatchSupportEndOfLife` típusú információk is szerepelnek.
+* Lehetőség arra, hogy távoli fájlrendszereket lehessen csatlakoztatni egy készlet minden csomópontjára a **New-AzBatchPool** új `MountConfiguration` paraméterével.
+* Most már támogatja a hálózati biztonsági szabályokat, amelyek a letiltják a készletekhez való hozzáférést a forgalom forrásportja alapján. Ez a `PSNetworkSecurityGroupRule` `SourcePortRanges` tulajdonsága alapján történik.
+* Tároló futtatásakor a Batch támogatja a feladat végrehajtását a tároló munkakönyvtárában vagy a Batch-feladat munkakönyvtárában. Ezt a `PSTaskContainerSettings` `WorkingDirectory` tulajdonsága szabályozza.
+* Új lehetőség nyilvános IP-gyűjtemény megadására az érintett `PSNetworkConfiguration` elemen az új `PublicIPs` tulajdonsággal. Ez garantálja, hogy a készletben található csomópontok rendelkeznek majd IP-címmel a felhasználó által megadott IP-listáról.
+* Ha nincs megadva, a `PSSTartTask` alapértelmezett `WaitForSuccess` értéke `$True` (korábban `$False` volt).
+* Ha nincs megadva, a `PSAutoUserSpecification` alapértelmezett `Scope` értéke `Pool` (korábban Windowson `Task`, Linuxon pedig `Pool` volt).
+
+#### <a name="azcdn"></a>Az.Cdn
+* A RulesEngine tartalmazza az új UrlRewriteAction és a CacheKeyQueryStringAction műveleteket.
+* Javítva számos olyan hiba, mint a New-AzDeliveryRuleCondition parancsmag hiányzó Selector bemenete.
+
+#### <a name="azcompute"></a>Az.Compute
+* Lemeztitkosítási készlet funkció
+    - Új parancsmagok:   New-AzDiskEncryptionSetConfig   New-AzDiskEncryptionSet   Get-AzDiskEncryptionSet   Remove-AzDiskEncryptionSet
+    - A DiskEncryptionSetId paraméter hozzá lett adva a következő parancsmagokhoz: Set-AzImageOSDisk Set-AzVMOSDisk Set-AzVmssStorageProfile        
+        Add-AzImageDataDisk New-AzVMDataDisk Set-AzVMDataDisk Add-AzVMDataDisk Add-AzVmssDataDisk Add-AzVmssVMDataDisk
+    - A DiskEncryptionSetId és az EncryptionType paraméter hozzá lett adva a következő parancsmagokhoz:   New-AzDiskConfig   New-AzSnapshotConfig
+* A PublicIPAddressVersion paraméter hozzá lett adva a New-AzVmssIPConfig parancsmaghoz
+* Egyéni szkriptbővítmény FileUris tulajdonságának módosítása nyilvánosról védett beállításra
+* ScaleInPolicy hozzáadva a New-AzVmss, New-AzVmssConfig és Update-AzVmss parancsmagokhoz
+* Kompatibilitástörő változások
+    - A New-AzDiskConfig esetében a DiskSizeGB helyett az UploadSizeInBytes paramétert kell használni, ha a CreateOption értéke Upload
+    - A PublishingProfile.Source.ManagedImage.Id elemet a StorageProfile.Source.Id helyettesíti a GalleryImageVersion objektumban
+
+#### <a name="azdatafactory"></a>Az.DataFactory
+* Az ADF .Net SDK a 4.3.0-s verzióra frissült
+
+#### <a name="azdatalakestore"></a>Az.DataLakeStore
+* Az ADLS SDK-verziójának frissítése (https://github.com/Azure/azure-data-lake-store-net/blob/preview-alpha/CHANGELOG.md#version-123-alpha), a következő javításokkal
+* Kivétel jelzésének elkerülése, amikor a lomtár vagy a könyvtár bejegyzésének CreationTime tulajdonsága nem deszerializálható.
+* Beállítás megjelenítése minden kérelem-időtúllépés esetén az adlsclient objektumban
+* Az eredeti syncflag átadásának javítása a badoffset helyreállításához
+* Az EnumerateDirectory javítása a folytatási token válaszellenőrzés utáni lekéréséhez
+* Concat-hiba javítása
+
+#### <a name="azfrontdoor"></a>Az.FrontDoor
+* Különféle elgépelések kijavítva a modulban
+
+#### <a name="azhdinsight"></a>Az.HDInsight
+* Kijavítva az a hiba, amely miatt az ügyfél a Nem érvényes Base-64-sztring hibát kapta, amikor a Get-AzHDInsightCluster használatával próbálta lekérni a fürtöt az ADLSGen1 tároló esetében.
+* Új, ApplicationId nevű paraméter hozzáadva az Add-AzHDInsightClusterIdentity, New-AzHDInsightClusterConfig és New-AzHDInsightCluster nevű három parancsmaghoz, hogy az ügyfél megadhassa a szolgáltatásnév alkalmazásazonosítóját az Azure Data Lake eléréséhez.
+* A Microsoft.Azure.Management.HDInsight 2.1.0 módosítva a következőre: 5.1.0
+* Öt parancsmag el lett távolítva:
+    - Get-AzHDInsightOMS
+    - Enable-AzHDInsightOMS
+    - Disable-AzHDInsightOMS
+    - Grant-AzHDInsightRdpServicesAccess
+    - Revoke-AzHDInsightRdpServicesAccess
+* Három parancsmag hozzáadva:
+    - Get-AzHDInsightMonitoring a Get-AzHDInsightOMS helyett.
+    - Enable-AzHDInsightMonitoring az Enable-AzHDInsightOMS helyett.
+    - Disable-AzHDInsightMonitoring a Disable-AzHDInsightOMS helyett.
+* A Get-AzHDInsightProperties javítva, hogy támogassa a képességinformációk adott helyről történő beszerzését.
+* Paraméterkészletek (Spark1, Spark2) eltávolítva a következőből: Add-AzHDInsightConfigValue.
+* Az Add-AzHDInsightSecurityProfile parancsmag súgódokumentumai példákkal bővültek.
+* A következő parancsmagok kimeneti típusa megváltozott:
+*  - A Get-AzHDInsightProperties kimeneti típusa CapabilitiesResponse értékről AzureHDInsightCapabilities értékre változott.
+*  - A Remove-AzHDInsightCluster kimeneti típusa ClusterGetResponse értékről logikai értékre változott.
+*  - A Set-AzHDInsightGatewaySettings HttpConnectivitySettings kimeneti típusa GatewaySettings értékre változott.
+* Néhány forgatókönyvi teszteset hozzáadva.
+* Néhány alias eltávolítva: Add-AzHDInsightConfigValues, Get-AzHDInsightProperties.
+
+#### <a name="aziothub"></a>Az.IotHub
+* Kompatibilitástörő változások:
+    - Az Add-AzIotHubEventHubConsumerGroup parancsmag a továbbiakban nem támogatja az EventHubEndpointName paramétert, és nem található alias az eredeti paraméternévhez.
+    - Az Add-AzIotHubEventHubConsumerGroup parancsmaghoz tartozó __AllParameterSets paraméterkészlet el lett távolítva.
+    - A Get-AzIotHubEventHubConsumerGroup parancsmag a továbbiakban nem támogatja az EventHubEndpointName paramétert, és nem található alias az eredeti paraméternévhez.
+    - A Get-AzIotHubEventHubConsumerGroup parancsmaghoz tartozó __AllParameterSets paraméterkészlet el lett távolítva.
+    - A Microsoft.Azure.Commands.Management.IotHub.Models.PSIotHubProperties típus OperationsMonitoringProperties tulajdonsága el lett távolítva.
+    - A Microsoft.Azure.Commands.Management.IotHub.Models.PSIotHubInputProperties típus OperationsMonitoringProperties tulajdonsága el lett távolítva.
+    - A New-AzIotHubExportDevice parancsmag már nem támogatja a New-AzIotHubExportDevices aliast.
+    - A New-AzIotHubImportDevice parancsmag már nem támogatja a New-AzIotHubImportDevices aliast.
+    - A Remove-AzIotHubEventHubConsumerGroup parancsmag a továbbiakban nem támogatja az EventHubEndpointName paramétert, és nem található alias az eredeti paraméternévhez.
+    - A Remove-AzIotHubEventHubConsumerGroup parancsmaghoz tartozó __AllParameterSets paraméterkészlet el lett távolítva.
+    - A Set-AzIotHub parancsmag a továbbiakban nem támogatja az OperationsMonitoringProperties paramétert, és nem található alias az eredeti paraméternévhez.
+    - A Set-AzIotHub parancsmaghoz tartozó UpdateOperationsMonitoringProperties paraméterkészlet el lett távolítva.
+
+#### <a name="azrecoveryservices"></a>Az.RecoveryServices
+* Azure Site Recovery-támogatás az olyan hálózati erőforrások konfigurálásához, mint a hálózati biztonsági csoportok, a nyilvános IP-címek és az Azure–Azure belső terheléselosztók.
+* Azure Site Recovery-támogatás felügyelt lemezekre történő íráshoz VMware-ről az Azure-ba történő helyreállításkor.
+* Azure Site Recovery-támogatás hálózati adapter csökkentéséhez VMware-ről az Azure-ba történő helyreállításkor.
+* Azure Site Recovery-támogatás a hálózat felgyorsításához Azure-ból az Azure-ba történő helyreállításkor.
+* Azure Site Recovery-támogatás az automatikus frissítési ügynök biztosításához Azure-ból az Azure-ba történő helyreállításkor.
+* Azure Site Recovery-támogatás standard SSD-meghajtóhoz Azure-ból az Azure-ba történő helyreállításkor.
+* Azure Site Recovery-támogatás az Azure Disk Encryption kétlépéses hitelesítéséhez Azure-ból az Azure-ba történő helyreállításkor.
+* Azure Site Recovery-támogatás az újonnan hozzáadott lemez védelméhez Azure-ból az Azure-ba történő helyreállításkor.
+* SoftDelete funkció hozzáadva a virtuális géphez, továbbá a softdelete-hez hozzáadott tesztek
+
+#### <a name="azresources"></a>Az.Resources
+* A Microsoft.Extensions.Caching.Memory függőségi szerelvény frissítése 1.1.1-esről 2.2-es verzióra
+
+#### <a name="aznetwork"></a>Az.Network
+* A PrivateEndpointConnection összes parancsmagjának módosítása az általános szolgáltató támogatásához.
+    - Frissített parancsmag:
+        - Approve-AzPrivateEndpointConnection
+        - Deny-AzPrivateEndpointConnection
+        - Get-AzPrivateEndpointConnection
+        - Remove-AzPrivateEndpointConnection
+        - Set-AzPrivateEndpointConnection
+* Új parancsmag hozzáadása a PrivateLinkResource-hoz, valamint az általános szolgáltató támogatása.
+    - Új parancsmag:
+        - Get-AzPrivateLinkResource
+* Új mezőket és paramétereket ad a Proxy Protocol V2 funkcióhoz.
+    - Hozzáadja az EnableProxyProtocol tulajdonságot a PrivateLinkService osztályban
+    - Hozzáadja a LinkIdentifier tulajdonságot a PrivateEndpointConnection osztályban
+    - New-AzPrivateLinkService frissítve az új, választható EnableProxyProtocol paraméter hozzáadásával.
+* Ki lett javítva a New-AzApplicationGatewaySku referenciadokumentációjában található helytelen paraméterleírás
+* Új parancsmagok az Azure Firewall-szabályzat támogatásához
+* A VirtualHub RouteTables gyermekerőforrásának támogatása hozzáadva
+    - Új hozzáadott parancsmagok:
+        - Add-AzVirtualHubRoute
+        - Add-AzVirtualHubRouteTable
+        - Get-AzVirtualHubRouteTable
+        - Remove-AzVirtualHubRouteTable
+        - Set-AzVirtualHub
+* Az új termékváltozat és VirtualWANType tulajdonság támogatásának hozzáadása a VirtualHub, illetve a VirtualWan esetében
+    - Opcionális paraméterekkel frissített parancsmagok:
+        - New-AzVirtualHub: Sku paraméter hozzáadva
+        - Update-AzVirtualHub: Sku paraméter hozzáadva
+        - New-AzVirtualWan: VirtualWANType paraméter hozzáadva
+        - Update-AzVirtualWan: VirtualWANType paraméter hozzáadva
+* Az EnableInternetSecurity tulajdonság támogatásának hozzáadása a HubVnetConnection, a VpnConnection és az ExpressRouteConnection esetében
+    - Új hozzáadott parancsmagok:
+        - Update-AzureRmVirtualHubVnetConnection
+    - Opcionális paraméterekkel frissített parancsmagok:
+        - New-AzureRmVirtualHubVnetConnection: EnableInternetSecurity paraméter hozzáadva
+        - New-AzureRmVpnConnection: EnableInternetSecurity paraméter hozzáadva
+        - Update-AzureRmVpnConnection: EnableInternetSecurity paraméter hozzáadva
+        - New-AzureRmExpressRouteConnection: EnableInternetSecurity paraméter hozzáadva
+        - Set-AzureRmExpressRouteConnection: EnableInternetSecurity paraméter hozzáadva
+* TopLevel WebApplicationFirewall-szabályzat beállításának támogatása hozzáadva
+    - Új hozzáadott parancsmagok:
+        - New-AzApplicationGatewayFirewallPolicySetting
+        - New-AzApplicationGatewayFirewallPolicyExclusion
+        - New-AzApplicationGatewayFirewallPolicyManagedRuleGroupOverride
+        - New-AzApplicationGatewayFirewallPolicyManagedRuleOverride
+        - New-AzApplicationGatewayFirewallPolicyManagedRule
+        - New-AzApplicationGatewayFirewallPolicyManagedRuleSet
+    - Opcionális paraméterekkel frissített parancsmagok:
+        - New-AzApplicationGatewayFirewallPolicy: PolicySetting, ManagedRule paraméter hozzáadva
+* A CustomRule Geo-Match operátorának támogatása hozzáadva
+    - A GeoMatch hozzáadva a FirewallCondition operátorához
+* perListener és a perSite tűzfalszabályzat támogatása hozzáadva
+    - Opcionális paraméterekkel frissített parancsmagok:
+        - New-AzApplicationGatewayHttpListener: FirewallPolicy, FirewallPolicyId paraméter hozzáadva
+        - New-AzApplicationGatewayPathRuleConfig: FirewallPolicy, FirewallPolicyId paraméter hozzáadva
+* Javítva: a PSBastion esetében a szükséges AzureBastionSubnet alhálózat nevében nem kell megkülönböztetni a kis- és nagybetűket
+* A hálózati szabályok céltartományneveinek és a NAT-szabályok lefordított tartományneveinek támogatása az Azure Firewallban
+* Az IpGroup legfelsőbb szintű RouteTables erőforrásának támogatása hozzáadva
+    - Új hozzáadott parancsmagok:
+        - New-AzIpGroup
+        - Remove-AzIpGroup
+        - Get-AzIpGroup
+        - Set-AzIpGroup
+
+#### <a name="azservicefabric"></a>Az.ServiceFabric
+* Az Add-AzServiceFabricApplicationCertificate parancsmag el lett távolítva, mivel az Add-AzVmssSecret lefedi ezt a forgatókönyvet.
+
+#### <a name="azsql"></a>Az.Sql
+* Törölt adatbázisok visszaállításának támogatása hozzáadva a felügyelt példányokon.
+* A régi naplózási parancsmagok elavulttá váltak a kódban.
+* A következő elavult aliasok el lettek távolítva:
+* Get-AzSqlDatabaseIndexRecommendations (a Get-AzSqlDatabaseIndexRecommendation használata javasolt helyette)
+* Get-AzSqlDatabaseRestorePoints (a Get-AzSqlDatabaseRestorePoint használata javasolt helyette)
+* A Get-AzSqlDatabaseSecureConnectionPolicy parancsmag eltávolítva
+* Az elavult sebezhetőség-felmérési beállítások parancsmagjainak aliasai eltávolítva
+* A fejlett fenyegetésészlelési beállítások parancsmagjai elavulttá váltak 
+* Parancsmagok hozzáadása egy adatbázis oszlopait érintő érzékenységi javaslatok letiltása és engedélyezése céljából.
+
+#### <a name="azstorage"></a>Az.Storage
+* Nagy fájlok megosztásának engedélyezése Storage-fiók létrehozása vagy frissítése esetén
+    -  New-AzStorageAccount
+    -  Set-AzStorageAccount
+* Fájlkezelő bezárása/lekérése esetén a fájlkönyvtár vagy fájl bemeneti elérési út ellenőrzése kimarad, hogy a DeletePending állapotban lévő objektum ne okozhasson hibát
+    -  Get-AzStorageFileHandle
+    -  Close-AzStorageFileHandle
+    
 ## <a name="280---october-2019"></a>2.8.0 – 2019. október
 ### <a name="general"></a>Általános kérdések
 * Az.HealthcareApis 1.0.0-s kiadás
@@ -56,7 +401,7 @@ ms.locfileid: "75035761"
 * Kisebb hibajavítás: A Get-AzIothub nem adja vissza a következőt: subscriptionId 
 
 #### <a name="azmonitor"></a>Az.Monitor
-* Új műveleticsoport-fogadók hozzáadva a New-AzActionGroupReceiver parancsmaghoz:   -ItsmReceiver   -VoiceReceiver   -ArmRoleReceiver   -AzureFunctionReceiver   -LogicAppReceiver   -AutomationRunbookReceiver   -AzureAppPushReceiver
+* Új műveleticsoport-fogadók hozzáadva a következő műveleti csoporthoz:   -ItsmReceiver   -VoiceReceiver   -ArmRoleReceiver   -AzureFunctionReceiver   -LogicAppReceiver   -AutomationRunbookReceiver   -AzureAppPushReceiver
 * Az általános riasztási séma használata engedélyezve a fogadók számára. Ez nem vonatkozik az SMS, az Azure App leküldéses üzenetei, az ITSM és a Voice fogadóira.
 * A webhookok mostantól az Azure Active Directory-hitelesítés használatát is támogatják.
 
@@ -65,9 +410,7 @@ ms.locfileid: "75035761"
 * Forgalomválasztók hozzáadásának támogatása a virtuális hálózati átjáró kapcsolataihoz
     - Új hozzáadott parancsmagok:
         - New-AzureRmTrafficSelectorPolicy
-    - A -TrafficSelectorPolicies opcionális paraméterrel frissített parancsmagok
-        - New-AzVirtualNetworkGatewayConnection
-        - Set-AzVirtualNetworkGatewayConnection
+    - Parancsmagok frissítve választható paraméterekkel -TrafficSelectorPolicies   -New-AzureRmVirtualNetworkGatewayConnection   -Set-AzureRmVirtualNetworkGatewayConnection
 * Az ESP és AH protokollok támogatása a hálózati biztonsági szabályzati konfigurációkban
     - Frissített parancsmagok:
         - Add-AzNetworkSecurityRuleConfig

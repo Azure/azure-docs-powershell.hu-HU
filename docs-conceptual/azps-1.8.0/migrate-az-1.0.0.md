@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
-ms.openlocfilehash: 04c520a3171d0b06ceaaa96f1c77bda6b03952ae
-ms.sourcegitcommit: 020c69430358b13cbd99fedd5d56607c9b10047b
+ms.openlocfilehash: ea7593cf2b753b210ff2955b7bd450030ad83596
+ms.sourcegitcommit: f9445d1525eac8c165637e1a80fbc92b1ab005c2
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365735"
+ms.lasthandoff: 12/16/2019
+ms.locfileid: "75035829"
 ---
 # <a name="breaking-changes-for-az-100"></a>Az Az 1.0.0 kompatibilitástörő változásai
 
@@ -227,7 +227,7 @@ Ez a szakasz részletesen bemutatja az egyes modulok és parancsmagok kompatibil
 - A `PSVirtualMachineScaleSetVM` objektum `InstanceView` tulajdonságának típusa `VirtualMachineInstanceView` helyett `VirtualMachineScaleSetVMInstanceView` lett.
 - Az `UpgradePolicy` tulajdonság `AutoOSUpgradePolicy` és `AutomaticOSUpgrade` tulajdonsága el lett távolítva.
 - A `PSSnapshotUpdate` objektum `Sku` tulajdonságának típusa `DiskSku` helyett `SnapshotSku` lett.
-- Az `Add-AzVMDataDisk` parancsmagból el lett távolítva a `VmScaleSetVMParameterSet`. Mostantól nem lehet önálló adatlemezt hozzáadni egy ScaleSet-virtuálisgéphez.
+- A `VmScaleSetVMParameterSet` el lett távolítva az `Add-AzVMDataDisk` parancsmagból, mostantól nem lehet önálló adatlemezt hozzáadni egy ScaleSet-virtuálisgéphez.
 
 ### <a name="azdatafactory-previously-azurermdatafactories-and-azurermdatafactoryv2"></a>Az.DataFactory (korábban AzureRM.DataFactories és AzureRM.DataFactoryV2)
 
@@ -272,7 +272,7 @@ Ez a szakasz részletesen bemutatja az egyes modulok és parancsmagok kompatibil
 
   A következőre kell módosítani:
   ```azurepowershell-interactive
-  New-AzMMediaService -Tag @{TagName="TagValue"}
+  New-AzMediaService -Tag @{TagName="TagValue"}
   ```
 
 ### <a name="azmonitor-previously-azurerminsights"></a>Az.Monitor (korábban AzureRM.Insights)
@@ -292,7 +292,7 @@ Ez a szakasz részletesen bemutatja az egyes modulok és parancsmagok kompatibil
 - A `Get-AzServiceEndpointPolicyDefinition` parancsmag elavult `ResourceId` paramétere el lett távolítva.
 - A `PSVirtualNetwork` objektum elavult `EnableVmProtection` tulajdonsága el lett távolítva.
 - Az elavult `Set-AzVirtualNetworkGatewayVpnClientConfig` parancsmag el lett távolítva.
-  
+
 A szkriptek a jövőben nem hozhatnak feldolgozási döntéseket e mezők értéke alapján.
 
 ### <a name="azoperationalinsights-previously-azurermoperationalinsights"></a>Az.OperationalInsights (korábban AzureRM.OperationalInsights)
