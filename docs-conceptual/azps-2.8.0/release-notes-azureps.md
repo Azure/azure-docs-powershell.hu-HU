@@ -898,7 +898,7 @@ ms.locfileid: "75035761"
 * Új parancsmagok hozzáadása az NetworkRuleSet, Namespace
 
 #### <a name="azstorage"></a>Az.Storage
-* A Storage ügyféloldali kódtárának frissítése a 10.0.1-es verziójára (az SDK összes objektuma esetében módosul a névtér a Microsoft.WindowsAzure.Storage.* névtérről a Microsoft.Azure.Storage.* névtérre)
+* A Storage ügyféloldali kódtárának frissítése a 10.0.1-es verziójára (az SDK összes objektuma esetében módosul a névtér a Microsoft.WindowsAzure.Storage. *névtérről a Microsoft.Azure.Storage.* névtérre)
 * Frissítés a Microsoft.Azure.Management.Storage 11.0.0-s verziójára az új API-verzió (2019. 04. 01.) támogatásához.
 * A Tárfiók létrehozása parancs esetében az alapértelmezett Storage-fiókaltípus a Storage helyett mostantól a StorageV2.
     - New-AzStorageAccount
@@ -1536,7 +1536,7 @@ Az Application Gateway konfigurációs RewriteRuleSets tulajdonsága mostantól 
 
 ### <a name="azresources"></a>Az.Resources
 
-* https://github.com/Azure/azure-powershell/issues/7679 javítása
+* [https://github.com/Azure/azure-powershell/issues/7679](https://github.com/Azure/azure-powershell/issues/7679 ) javítása
     - A Get-AzureRmRoleAssignment parancsmag frissítve az előfizetési hatókör használatával, ha azt megadták a klasszikus rendszergazdák kérésekor.
 
 ### <a name="azsql"></a>Az.Sql
@@ -1673,7 +1673,7 @@ Az Application Gateway konfigurációs RewriteRuleSets tulajdonsága mostantól 
 * Szabályzatszervizelési parancsmagok lettek hozzáadva
 
 #### <a name="azresources"></a>Az.Resources
-* https://github.com/Azure/azure-powershell/issues/7402 javítása
+* [https://github.com/Azure/azure-powershell/issues/7402](https://github.com/Azure/azure-powershell/issues/7402 ) javítása
     - Lehetségessé vált az erőforrások felsorolása a -ResourceId paraméter a Get-AzResource parancsmaggal való használatával
 
 #### <a name="azservicebus"></a>Az.ServiceBus
