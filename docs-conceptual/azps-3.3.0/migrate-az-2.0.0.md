@@ -12,7 +12,7 @@ ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
 ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 01/07/2020
-ms.locfileid: "75720557"
+ms.locfileid: "75721938"
 ---
 # <a name="migration-guide-for-az-200"></a>Migrálási útmutató az Az 2.0.0-s verziójához
 

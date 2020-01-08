@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
-ms.openlocfilehash: d41e7ce2faac6a82b63ed173b5b64b85b56577c0
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: c0ac4f6cfb803519b8dd711d3cca0d4a4f7e6f8b
+ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65535089"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75722458"
 ---
 # <a name="other-installation-methods"></a>Egyéb telepítési módszerek
 
@@ -23,7 +23,7 @@ Az Azure PowerShell többféle módszerrel telepíthető. Az előnyben részesí
 ## <a name="install-on-windows-using-the-web-platform-installer"></a>Telepítés Windows rendszeren a Webplatform-telepítővel
 
 A legújabb Azure PowerShell ugyanúgy telepíthető a WebPI-ről, ahogy a korábbi verziók.
-Töltse le az [Azure PowerShell WebPI csomagot](http://aka.ms/webpi-azps), és indítsa el a telepítést.
+Töltse le az [Azure PowerShell WebPI csomagot](https://aka.ms/webpi-azps), és indítsa el a telepítést.
 
 > [!NOTE]
 > Ha korábban már telepített Azure-modulokat a PowerShell-galériából, a telepítő automatikusan eltávolítja őket. Ez egyszerűbbé teszi a környezetet, mivel így biztosítható, hogy csak egy Azure PowerShell-verzió lesz telepítve. Léteznek azonban olyan forgatókönyvek, amikor több telepített verzióra lehet szüksége egy időben.
