@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 10/15/2019
-ms.openlocfilehash: fb934ed0f8bef5e2aff715debe5d406d54abf24f
-ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
+ms.date: 01/09/2020
+ms.openlocfilehash: 3806a1c609a71c53c0bddc5bafd51d845c0c296e
+ms.sourcegitcommit: 16904e0a72c55fb81248e0252769defb86c50f36
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75718984"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75831644"
 ---
 # <a name="azure-powershell-release-notes"></a>Az Azure PowerShell kibocsátási megjegyzései
 
@@ -31,19 +31,19 @@ ms.locfileid: "75718984"
 
 #### <a name="azdataboxedge"></a>Az.DataBoxEdge
 * Hozzá lett adva a Get-AzDataBoxEdgeStorageContainer parancsmag
-  - Az Edge tároló lekérése
+  - Az Edge Storage-tároló lekérése
 * Hozzá lett adva a New-AzDataBoxEdgeStorageContainer parancsmag
-  - Új Edge tároló létrehozása
+  - Új Edge Storage-tároló létrehozása
 * Hozzá lett adva a Remove-AzDataBoxEdgeStorageContainer parancsmag
-  - Az Edge tároló eltávolítása
+  - Az Edge Storage-tároló eltávolítása
 * Hozzá lett adva az Invoke-AzDataBoxEdgeStorageContainer parancsmag
-  - Meghívási művelet az Edge tárolóban lévő adatok frissítéséhez
+  - Meghívási művelet az Edge Storage-tárolóban lévő adatok frissítéséhez
 * Hozzá lett adva a Get-AzDataBoxEdgeStorageAccount parancsmag
-  - Az Edge tárfiók lekérése
+  - Az Edge Storage-fiók lekérése
 * Hozzá lett adva a New-AzDataBoxEdgeStorageAccount parancsmag
-  - Új Edge tárfiók létrehozása
+  - Új Edge Storage-fiók létrehozása
 * Hozzá lett adva a Remove-AzDataBoxEdgeStorageAccount parancsmag
-  - Az Edge tárfiók eltávolítása
+  - Az Edge Storage-fiók eltávolítása
 * Hozzá lett adva az Invoke-AzDataBoxEdgeShare parancsmag
   - Meghívási művelet a megosztott adatok frissítéséhez
 * Hozzá lett adva a Set-AzDataBoxEdgeStorageAccountCredential parancsmag
