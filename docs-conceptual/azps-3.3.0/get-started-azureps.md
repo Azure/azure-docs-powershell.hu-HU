@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
-ms.date: 01/14/2019
-ms.openlocfilehash: c515fcbbe4dcb0b6578a56da137a77e3f843a2e6
-ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
+ms.date: 01/17/2020
+ms.openlocfilehash: 718f0dc0f1ef9b0c2aa3d0630ca099fa5cec7ec0
+ms.sourcegitcommit: 30eeeec0985f8623b1bc03f461124446b04297c2
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75722040"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256823"
 ---
 # <a name="get-started-with-azure-powershell"></a>Ismerkedés az Azure PowerShell-lel
 
@@ -53,7 +53,7 @@ Miután bejelentkezett, az Azure PowerShell parancsmagjaival elérheti és kezel
 
 ## <a name="find-commands"></a>Parancsok keresése
 
-Az Azure PowerShell-parancsmagok a PowerShell esetében standard elnevezési konvenciót követnek: `VERB-NOUN`. Az ige leírja a műveletet (például `New`, `Get`, `Set`, `Remove`), a főnév pedig az erőforrástípust (például `AzVM`, `AzKeyVaultCertificate`, `AzFirewall`, `AzVirtualNetworkGateway`). Az Azure PowerShellben a főnevek mindig az `Az` előtaggal kezdődnek. A standard igék teljes listájáért tekintse meg a következőt: [PowerShell-parancsokhoz jóváhagyott igék](/powershell/developer/cmdlet/approved-verbs-for-windows-powershell-commands).
+Az Azure PowerShell-parancsmagok a PowerShell esetében standard elnevezési konvenciót követnek: `VERB-NOUN`. Az ige leírja a műveletet (például `New`, `Get`, `Set`, `Remove`), a főnév pedig az erőforrástípust (például `AzVM`, `AzKeyVaultCertificate`, `AzFirewall`, `AzVirtualNetworkGateway`). Az Azure PowerShellben a főnevek mindig az `Az` előtaggal kezdődnek. A standard igék teljes listájáért tekintse meg a következőt: [PowerShell-parancsokhoz jóváhagyott igék](/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands).
 
 A főnevek, igék és az elérhető Azure PowerShell-modulok ismerete segít megtalálni a parancsokat a [Get-Command](/powershell/module/microsoft.powershell.core/get-command) parancsmaggal. Például az összes, `Get` igét tartalmazó, virtuális géphez kapcsolódó parancs megkereséséhez:
 
