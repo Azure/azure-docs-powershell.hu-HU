@@ -5,7 +5,7 @@
   displayName: 'intro, introduction, azurerm'
 - name: Telepítés
   items:
-    - name: Telepítés a PowerShell Gettel
+    - name: Telepítés PowerShellGettel
       href: install-az-ps.md
     - name: Telepítés MSI-vel
       href: install-az-ps-msi.md
@@ -24,6 +24,8 @@
   displayName: 'sign in, signin, log in, login, find, feedback, intro, introduction'
 - name: Cloud Shell
   href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
+- name: Azure PowerShell a Dockerben
+  href: azureps-in-docker.md
 - name: Bejelentkezés
   items:
     - name: Hitelesítési módszerek
