@@ -1,18 +1,15 @@
 ---
 title: Az Azure PowerShell telepítése MSI-vel
 description: Az Azure PowerShell telepítése a PowerShellGet nélkül, MSI használatával
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 10/22/2019
-ms.openlocfilehash: 9f161d6a2bbe696bca5d2a63d39ab734cfc25cb8
+ms.date: 03/10/2020
+ms.openlocfilehash: 1bd5bd1ae529a63c848b7aa835272d79b4011d32
 ms.sourcegitcommit: f6fa6543be1e0f6330b1598f01528b2928cc426c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79035821"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79111006"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi"></a>Az Azure PowerShell telepítése Windows rendszeren MSI-vel
 
@@ -20,8 +17,7 @@ Ez a cikk bemutatja, hogyan telepíthető az Azure PowerShell Windows rendszeren
 
 ## <a name="requirements"></a>Követelmények
 
-Az Azure PowerShell MSI-telepítője __csak__ a PowerShell 5.1-hez, Windows rendszeren használható. Nem Windows-platformokon vagy a PowerShell újabb verzióival való telepítéshez [telepítsen a PowerShellGet használatával](install-az-ps.md).
-A PowerShell verziójának megtekintéséhez futtassa az alábbi parancsot:
+A Windows MSI-telepítője csak a PowerShell 5.1-hez telepíti az Azure PowerShellt. Nem Windows-platformokon vagy a PowerShell újabb verzióival való telepítéshez a [telepítést a PowerShellGet használatával](install-az-ps.md) végezze el. A PowerShell verziójának megtekintéséhez futtassa az alábbi parancsot:
 
 ```powershell-interactive
 $PSVersionTable.PSVersion
@@ -34,7 +30,7 @@ Az Azure PowerShell PowerShell 5.1-ben való használatához a következőkre va
 
 ## <a name="install-or-update-on-windows-using-the-msi-package"></a>Telepítés vagy frissítés Windows rendszeren az MSI-csomaggal
 
-A Windowshoz készült Azure PowerShell telepíthető a [GitHubról](https://github.com/Azure/azure-powershell/releases/tag/v3.5.0-February2020) elérhető MSI-fájllal is. Ha az Azure-modulok korábbi verziói már telepítve vannak MSI-ként, a telepítő automatikusan eltávolítja őket. Az MSI-csomag a következő helyre telepíti a modulokat: `${env:ProgramFiles}\WindowsPowerShell\Modules`.
+Az Azure PowerShell MSI-csomagja a [GitHubon](https://github.com/Azure/azure-powershell/releases/latest) érhető el. Ha az MSI-vel telepítette az Azure PowerShell korábbi verzióit, a telepítő automatikusan eltávolítja őket. Az MSI-csomag a következő helyre telepíti a modulokat: `${env:ProgramFiles}\WindowsPowerShell\Modules`.
 
 Az Azure PowerShell használatának megkezdéséhez jelentkezzen be Azure-beli hitelesítő adataival.
 
@@ -44,17 +40,14 @@ Connect-AzAccount
 ```
 
 > [!NOTE]
->
 > Ha letiltotta az automatikus modulbetöltést, manuálisan kell importálnia a modult a(z) `Import-Module Az` segítségével. A modul felépítéséből adódóan ez akár egy percig is eltarthat.
 
 Ezt a lépést minden új PowerShell-munkamenet esetében meg kell ismételni. Ha szeretné megtudni, hogyan őrizheti meg az Azure-bejelentkezést a PowerShell-munkamenetek között, tekintse meg a [Felhasználói hitelesítő adatok megőrzése a PowerShell-munkamenetek között](context-persistence.md) című cikket.
 
 ## <a name="provide-feedback"></a>Visszajelzés küldése
 
-Ha hibát észlel az Azure PowerShellben, [jelentse be a problémát a GitHubon](https://github.com/Azure/azure-powershell/issues).
-A parancssorból a [Send-Feedback](/powershell/module/az.accounts/send-feedback) parancsmaggal küldhet visszajelzést.
+Ha hibát észlel az Azure PowerShellben, [jelentse be a problémát a GitHubon](https://github.com/Azure/azure-powershell/issues). A parancssorból a [Send-Feedback](/powershell/module/az.accounts/send-feedback) parancsmaggal küldhet visszajelzést.
 
 ## <a name="next-steps"></a>Következő lépések
 
-Az Azure PowerShell-modulokról és azok funkcióiról az [Azure PowerShell használatának első lépéseit](get-started-azureps.md) ismertető szakaszban talál további információt.
-Ha ismeri az Azure PowerShellt, és az AzureRM-ből végez migrálást, tekintse meg [az AzureRM modulból az Az modulba való áttelepítést](migrate-from-azurerm-to-az.md) ismertető szakaszt.
+Az Azure PowerShell-modulokról és azok funkcióiról az [Azure PowerShell használatának első lépéseit](get-started-azureps.md) ismertető szakaszban talál további információt. Ha ismeri az Azure PowerShellt, és az AzureRM-ből végez migrálást, tekintse meg [az AzureRM modulból az Az modulba való áttelepítést](migrate-from-azurerm-to-az.md) ismertető szakaszt.
