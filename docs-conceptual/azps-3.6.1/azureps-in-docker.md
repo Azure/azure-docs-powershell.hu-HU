@@ -3,13 +3,13 @@ title: Az Azure PowerShell használata a Dockerben
 description: Útmutatás a Docker-rendszerképekben előre telepített Azure PowerShell használatához.
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/10/2020
-ms.openlocfilehash: a5746b71cfc41f7c6283b0e95b0940ca4b594ec7
-ms.sourcegitcommit: fb95591c45bb5f12b98e0690938d18f2ec611897
+ms.date: 03/20/2020
+ms.openlocfilehash: b5ad201abcabbdc1a88db241b028d88f05054a14
+ms.sourcegitcommit: 104c90600e0c5eeb841b5a596ba7ebe60cc7f4fa
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402680"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "79990534"
 ---
 # <a name="using-azure-powershell-in-docker"></a>Az Azure PowerShell használata a Dockerben
 
@@ -19,13 +19,13 @@ A Docker-rendszerképeket előre telepített Azure PowerShell-lel tesszük közz
 
 A kiadott rendszerképekhez a Docker 17.05-ös vagy újabb verziója szükséges. Emellett képesnek kell lennie a Docker `sudo` vagy helyi rendszergazdai jogosultságok nélkül történő futtatására. Kövesse a Docker hivatalos [útmutatását][install] a `docker` megfelelő telepítéséhez.
 
-A kiadott tárolók létrehozása a hivatalos PowerShell-tárolókból történik, majd hozzáadjuk az Az modult rétegként.
+A legfrissebb tárolórendszerkép tartalmazza a legújabb PowerShell-verziót és azokat a legújabb Azure PowerShell-modulokat, amelyeket az Az modul támogat.
 
-A legújabb stabil rendszerképek az alábbiak:
+Az Az modul minden egyes új kiadása esetében kiadunk egy-egy rendszerképet a következő operációs rendszerekhez:
 
-- Ubuntu 18.04
-- PowerShell 6.2.4-es verzió
-- Az Azure PowerShell legutóbbi Az modulja
+- Ubuntu 18.04 (alapértelmezett)
+- Debian 9
+- CentOs 7
 
 Az elérhető rendszerképek teljes listája a [Docker-rendszerképeket][az image] tartalmazó oldalunkon található meg.
 
@@ -44,6 +44,8 @@ Az alábbi lépések bemutatják a rendszerkép letöltéséhez és egy interakt
    ```console
    docker run -it mcr.microsoft.com/azure-powershell pwsh
    ```
+
+A Windows Docker-gazdagépek esetében engedélyeznie kell a Docker-fájlmegosztás használatát, hogy a Windows rendszerű helyi meghajtók megoszthatók legyenek a Linux-tárolókkal. További információkért lásd [a Windowshoz készült Docker használatát bemutató részt][file-sharing].
 
 ### <a name="run-the-azure-powershell-container-interactively-using-host-authentication"></a>Az azure-powershell tároló interaktív futtatása gazdagép-hitelesítéssel
 
@@ -71,3 +73,4 @@ Az Azure PowerShell-modulokról és azok funkcióiról az [Azure PowerShell hasz
 [install]: https://docs.docker.com/engine/installation/
 [powershell image]: https://hub.docker.com/_/microsoft-powershell
 [az image]: https://hub.docker.com/_/microsoft-azure-powershell
+[file-sharing]: https://docs.docker.com/docker-for-windows/#file-sharing
