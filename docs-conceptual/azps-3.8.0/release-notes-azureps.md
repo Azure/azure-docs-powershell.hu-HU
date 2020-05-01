@@ -4,14 +4,19 @@ description: Megismerheti az Azure PowerShell-modulok legújabb frissítéseit.
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: bee24af99da4b36e89cff9852c77214e2e09a542
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: a9c5394a5fac8a8a3de96925b3563776783ea9fe
+ms.sourcegitcommit: de813e8a4e3629a6fee6e87a0208c1f0362a16ca
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81740541"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82080198"
 ---
+# <a name="azure-powershell-release-notes"></a>Az Azure PowerShell kibocsátási megjegyzései
+
 ## <a name="380---april-2020"></a>3.8.0 – 2020. április
+### <a name="highlights-since-the-last-release"></a>A legutóbbi kiadás óta bevezetett újdonságok
+* Az Az.Storage által támogatott PowerShell-verziók: Windows PowerShell 5.1, PowerShell Core 6.2.4+, PowerShell 7
+
 #### <a name="azaccounts"></a>Az.Accounts
 * Frissítve lett az Azure PowerShell-felmérés URL-címe a következő helyen: Resolve-AzError [#11507]
 
@@ -23,7 +28,7 @@ ms.locfileid: "81740541"
 * Ki lett javítva a díjszabási termékváltozat megjelenítése a ChinaCDN kapcsán
 
 #### <a name="azcognitiveservices"></a>Az.CognitiveServices
-* Támogatott identitás, Titkosítás, UserOwnedStorage 
+* Támogatott identitás, Titkosítás, UserOwnedStorage
 
 #### <a name="azcompute"></a>Az.Compute
 * Hozzá lett adva a Set-AzVmssOrchestrationServiceState parancsmag.
@@ -97,7 +102,7 @@ ms.locfileid: "81740541"
 * Támogatott új SkuName StandardGZRS, StandardRAGZRS a Storage-fiók létrehozása/frissítése során
     - New-AzStorageAccount
     - Set-AzStorageAccount
-* Támogatott Data Lake Gen2 
+* Támogatott Data Lake Gen2
     - New-AzDataLakeGen2Item
     - Get-AzDataLakeGen2Item
     - Get-AzDataLakeGen2ChildItem
@@ -107,13 +112,31 @@ ms.locfileid: "81740541"
     - Get-AzDataLakeGen2ItemContent
     - Remove-AzDataLakeGen2Item
 
-# <a name="azure-powershell-release-notes"></a>Az Azure PowerShell kibocsátási megjegyzései
+## <a name="0100-preview---april-2020"></a>0.10.0-s előzetes verzió – 2020. április
+### <a name="general"></a>Általános kérdések
+* Az Az modulok előzetes verziója mostantól elérhető az Azure Stack Hubon. Ez lehetővé teszi a platformok közötti kompatibilitást a Linux és a macOs rendszerekkel. A Azure Stack Hub mostantól támogatja a PowerShell Core-t az Az modulokkal, további információt [itt](https://aka.ms/az4AzureStack) talál
+* Az Az modulok támogatják a 2019-03-01-hybrid profilt:
+  - Az.Billing
+  - Az.Compute
+  - Az.DataBoxEdge
+  - Az.EventHub
+  - Az.IotHub
+  - Az.KeyVault
+  - Az.Monitor
+  - Az.Network
+  - Az.Resources
+  - Az.Storage
+  - Az.Websites
+* A következő három új PowerShell-modul lett bevezetve, amelyek használhatók az Azure Stack Hubbal: Az.Databox, Az.IotHub és Az.EventHub
+* A parancsok viszonylag változatlanok maradnak, kisebb módosításokkal. Például az Az helyébe az AzureRM lép.
+* Az Azure Stack Hubhoz kapcsolódó PowerShell-dokumentáció frissített hivatkozását [itt](https://aka.ms/InstallASHPowerShell) találja
+
 ## <a name="370---march-2020"></a>3.7.0 – 2020. március
 #### <a name="azaccounts"></a>Az.Accounts
 * Ki lett javítva az a hiba, hogy a Get-AzTenant/Get-AzDefault/Set-AzDefault parancs NullReferenceException hibát ad vissza kijelentkezett állapotban [#10292]
 
 #### <a name="azcompute"></a>Az.Compute
-* A következő paraméterek lettek hozzáadva a New-AzDiskConfig parancsmaghoz: 
+* A következő paraméterek lettek hozzáadva a New-AzDiskConfig parancsmaghoz:
     - DiskIOPSReadOnly, DiskMBpsReadOnly, MaxSharesCount, GalleryImageReference
 * Engedélyezve lett a New-AzGalleryImageVersion parancsmag célparaméterének titkosítási tulajdonsága.
 * Ki lett javítva a tempDisk hibája a Set-AzVmss -Reimage és az Invoke-AzVMReimage parancsmag esetében. [#11354]
