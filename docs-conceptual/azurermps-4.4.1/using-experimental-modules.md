@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
 ms.openlocfilehash: 7867adeac41444c81c31b7ee44b910ab40d873f8
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "65534764"
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>Kísérleti Azure PowerShell-modulok használata
@@ -32,11 +32,11 @@ A kísérleti modulok az alábbi elnevezési szabályt követik: `AzureRM.*.Expe
 
 A kísérleti modulok a meglévő Azure PowerShell-modulokhoz hasonlóan a PowerShell-galériában vannak közzétéve. A kísérleti modulok listájának megtekintéséhez futtassa a következő parancsot:
 
-```azurepowershell-interactive
+```powershell-interactive
 Find-Module AzureRM.*.Experiments
 ```
 
-```output
+```Output
 Version Name                         Repository Description
 ------- ----                         ---------- -----------
 1.0.25  AzureRM.Compute.Experiments  PSGallery  Azure Compute experiments for VM creation
@@ -45,7 +45,7 @@ Version Name                         Repository Description
 
 A kísérleti modulok telepítéséhez használja a következő parancsokat egy emelt szintű PowerShell-munkamenetből:
 
-```azurepowershell-interactive
+```powershell-interactive
 Install-Module AzureRM.Compute.Experiments
 Install-Module AzureRM.Websites.Experiments
 ```

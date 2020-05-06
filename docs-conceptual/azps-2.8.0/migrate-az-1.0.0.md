@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.openlocfilehash: e5121d61b0f5f68ff3e1f33d774e3533adfeb64f
-ms.sourcegitcommit: f9445d1525eac8c165637e1a80fbc92b1ab005c2
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/16/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "75035778"
 ---
 # <a name="breaking-changes-for-az-100"></a>Az Az 1.0.0 kompatibilitástörő változásai
@@ -212,31 +212,31 @@ Ez a szakasz részletesen bemutatja az egyes modulok és parancsmagok kompatibil
   - Import-AzureRmApiManagementHostnameCertificate
   - Ezeket a tulajdonságokat mostantól a **Set-AzApiManagement** parancsmaggal kell beállítani
 - A következő tulajdonságok lettek eltávolítva:
-  - A `PsApiManagementHostnameConfiguration` típus `PortalHostnameConfiguration`, `ProxyHostnameConfiguration`, `ManagementHostnameConfiguration` és `ScmHostnameConfiguration` tulajdonsága el lett távolítva a `PsApiManagementContext`ből. Ezek helyett a `PsApiManagementCustomHostNameConfiguration` típus `PortalCustomHostnameConfiguration`, `ProxyCustomHostnameConfiguration`, `ManagementCustomHostnameConfiguration` és `ScmCustomHostnameConfiguration` tulajdonságát használja.
+  - A `PortalHostnameConfiguration` típus `ProxyHostnameConfiguration`, `ManagementHostnameConfiguration`, `ScmHostnameConfiguration` és `PsApiManagementHostnameConfiguration` tulajdonsága el lett távolítva a `PsApiManagementContext`ből. Ezek helyett a `PortalCustomHostnameConfiguration` típus `ProxyCustomHostnameConfiguration`, `ManagementCustomHostnameConfiguration`, `ScmCustomHostnameConfiguration` és `PsApiManagementCustomHostNameConfiguration` tulajdonságát használja.
   - A `StaticIPs` tulajdonság el lett távolítva a PsApiManagementContextből. Két új tulajdonságra lett osztva: ez a `PublicIPAddresses` és a `PrivateIPAddresses`.
   - A kötelező `Location` tulajdonság el lett távolítva a New-AzureApiManagementVirtualNetwork parancsmagból.
 
 ### <a name="azbilling-previously-azurermbilling-azurermconsumption-and-azurermusageaggregates"></a>Az.Billing (korábban AzureRM.Billing, AzureRM.Consumption és AzureRM.UsageAggregates)
 
-- A `Get-AzConsumptionUsageDetail` parancsmag `InvoiceName` paramétere el lett távolítva.  A szkripteknek a számlák készítéséhez más identitásparamétereket kell használniuk.
+- A `InvoiceName` parancsmag `Get-AzConsumptionUsageDetail` paramétere el lett távolítva.  A szkripteknek a számlák készítéséhez más identitásparamétereket kell használniuk.
 
 ### <a name="azcognitiveservices-previously-azurermcognitiveservices"></a>Az.CognitiveServices (korábban AzureRM.CognitiveServices)
 
-- A `Get-AzCognitiveServicesAccountSkus` parancsmag `GetSkusWithAccountParamSetName` paramétere el lett távolítva.  A termékváltozatokat a fiók típusa és helye alapján lehet lekérdezni a ResourceGroupName és a fiók nevének használata helyett.
+- A `GetSkusWithAccountParamSetName` parancsmag `Get-AzCognitiveServicesAccountSkus` paramétere el lett távolítva.  A termékváltozatokat a fiók típusa és helye alapján lehet lekérdezni a ResourceGroupName és a fiók nevének használata helyett.
 
 ### <a name="azcompute-previously-azurermcompute"></a>Az.Compute (korábban AzureRM.Compute)
 
-- A `PSVirtualMachine` és `PSVirtualMachineScaleSet` objektum `Identity` tulajdonsága mostantól nem tartalmazza az `IdentityIds` azonosítókat. A szkriptek a jövőben nem veszik figyelembe a mező értékét a feldolgozási döntések során.
-- A `PSVirtualMachineScaleSetVM` objektum `InstanceView` tulajdonságának típusa `VirtualMachineInstanceView` helyett `VirtualMachineScaleSetVMInstanceView` lett.
-- Az `UpgradePolicy` tulajdonság `AutoOSUpgradePolicy` és `AutomaticOSUpgrade` tulajdonsága el lett távolítva.
-- A `PSSnapshotUpdate` objektum `Sku` tulajdonságának típusa `DiskSku` helyett `SnapshotSku` lett.
+- A `IdentityIds` és `Identity` objektum `PSVirtualMachine` tulajdonsága mostantól nem tartalmazza az `PSVirtualMachineScaleSet` azonosítókat. A szkriptek a jövőben nem veszik figyelembe a mező értékét a feldolgozási döntések során.
+- A `InstanceView` objektum `PSVirtualMachineScaleSetVM` tulajdonságának típusa `VirtualMachineInstanceView` helyett `VirtualMachineScaleSetVMInstanceView` lett.
+- Az `AutoOSUpgradePolicy` tulajdonság `AutomaticOSUpgrade` és `UpgradePolicy` tulajdonsága el lett távolítva.
+- A `Sku` objektum `PSSnapshotUpdate` tulajdonságának típusa `DiskSku` helyett `SnapshotSku` lett.
 - A `VmScaleSetVMParameterSet` el lett távolítva az `Add-AzVMDataDisk` parancsmagból, mostantól nem lehet önálló adatlemezt hozzáadni egy ScaleSet-virtuálisgéphez.
 
 ### <a name="azdatafactory-previously-azurermdatafactories-and-azurermdatafactoryv2"></a>Az.DataFactory (korábban AzureRM.DataFactories és AzureRM.DataFactoryV2)
 
-- A `New-AzDataFactoryEncryptValue` parancsmagban kötelezővé vált a `GatewayName` paraméter használata.
+- A `GatewayName` parancsmagban kötelezővé vált a `New-AzDataFactoryEncryptValue` paraméter használata.
 - A `New-AzDataFactoryGatewayKey` parancsmag el lett távolítva.
-- A `Get-AzDataFactoryV2ActivityRun` parancsmag `LinkedServiceName` paramétere el lett távolítva. A szkriptek a jövőben nem veszik figyelembe a mező értékét a feldolgozási döntések során.
+- A `LinkedServiceName` parancsmag `Get-AzDataFactoryV2ActivityRun` paramétere el lett távolítva. A szkriptek a jövőben nem veszik figyelembe a mező értékét a feldolgozási döntések során.
 
 ### <a name="azdatalakeanalytics-previously-azurermdatalakeanalytics"></a>Az.DataLakeAnalytics (korábban AzureRM.DataLakeAnalytics)
 
@@ -248,7 +248,7 @@ Ez a szakasz részletesen bemutatja az egyes modulok és parancsmagok kompatibil
   - New-AzureRmDataLakeStoreItem
   - Add-AzureRmDataLakeStoreItemContent
   - Get-AzureRmDataLakeStoreItemContent
-- A `New-AzDataLakeStoreAccount` és `Set-AzDataLakeStoreAccount` parancsmag elavult `Tags` tulajdonságaliasa el lett távolítva.
+- A `Tags` és `New-AzDataLakeStoreAccount` parancsmag elavult `Set-AzDataLakeStoreAccount` tulajdonságaliasa el lett távolítva.
 
   A következőt használó szkripteket:
   ```azurepowershell-interactive
@@ -260,15 +260,15 @@ Ez a szakasz részletesen bemutatja az egyes modulok és parancsmagok kompatibil
   New-AzDataLakeStoreAccount -Tag @{TagName="TagValue"}
   ```
 
-- A `PSDataLakeStoreAccountBasic` objektum elavult tulajdonságai el lettek távolítva: `Identity`, `EncryptionState`, `EncryptionProvisioningState`, `EncryptionConfig`, `FirewallState`, `FirewallRules`, `VirtualNetworkRules`, `TrustedIdProviderState`, `TrustedIdProviders`, `DefaultGroup`, `NewTier`, `CurrentTier` és `FirewallAllowAzureIps`.  A `Get-AzDataLakeStoreAccount` által visszaadott `PSDatalakeStoreAccount` értéket használó szkriptek nem hivatkozhatnak ezekre a tulajdonságokra.
+- A `Identity` objektum elavult tulajdonságai el lettek távolítva: `EncryptionState`, `EncryptionProvisioningState`, `EncryptionConfig`, `FirewallState`, `FirewallRules`, `VirtualNetworkRules`, `TrustedIdProviderState`, `TrustedIdProviders`, `DefaultGroup`, `NewTier`, `CurrentTier`, `FirewallAllowAzureIps` és `PSDataLakeStoreAccountBasic`.  A `PSDatalakeStoreAccount` által visszaadott `Get-AzDataLakeStoreAccount` értéket használó szkriptek nem hivatkozhatnak ezekre a tulajdonságokra.
 
 ### <a name="azkeyvault-previously-azurermkeyvault"></a>Az.KeyVault (korábban AzureRM.KeyVault)
 
-- A `PSKeyVaultKeyAttributes`, `PSKeyVaultKeyIdentityItem` és `PSKeyVaultSecretAttributes` objektum `PurgeDisabled` tulajdonsága el lett távolítva. A szkriptek a jövőben nem hivatkozhatnak a ```PurgeDisabled``` tulajdonságra a feldolgozási döntések során.
+- A `PurgeDisabled`, `PSKeyVaultKeyAttributes` és `PSKeyVaultKeyIdentityItem` objektum `PSKeyVaultSecretAttributes` tulajdonsága el lett távolítva. A szkriptek a jövőben nem hivatkozhatnak a ```PurgeDisabled``` tulajdonságra a feldolgozási döntések során.
 
 ### <a name="azmedia-previously-azurermmedia"></a>Az.Media (korábban AzureRM.Media)
 
-- A `New-AzMediaService` parancsmag elavult `Tags` tulajdonságaliasa el lett távolítva. A következőt használó szkripteket:
+- A `Tags` parancsmag elavult `New-AzMediaService` tulajdonságaliasa el lett távolítva. A következőt használó szkripteket:
   ```azurepowershell-interactive
   New-AzureRMMediaService -Tags @{TagName="TagValue"}
   ```
@@ -292,8 +292,8 @@ Ez a szakasz részletesen bemutatja az egyes modulok és parancsmagok kompatibil
 
 ### <a name="aznetwork-previously-azurermnetwork"></a>Az.Network (korábban AzureRM.Network)
 
-- A `Get-AzServiceEndpointPolicyDefinition` parancsmag elavult `ResourceId` paramétere el lett távolítva.
-- A `PSVirtualNetwork` objektum elavult `EnableVmProtection` tulajdonsága el lett távolítva.
+- A `ResourceId` parancsmag elavult `Get-AzServiceEndpointPolicyDefinition` paramétere el lett távolítva.
+- A `EnableVmProtection` objektum elavult `PSVirtualNetwork` tulajdonsága el lett távolítva.
 - Az elavult `Set-AzVirtualNetworkGatewayVpnClientConfig` parancsmag el lett távolítva.
 
 A szkriptek a jövőben nem hozhatnak feldolgozási döntéseket e mezők értéke alapján.
@@ -314,15 +314,15 @@ A szkriptek a jövőben nem hozhatnak feldolgozási döntéseket e mezők érté
 
 ### <a name="azrecoveryservices-previously-azurermrecoveryservices-azurermrecoveryservicesbackup-and-azurermrecoveryservicessiterecovery"></a>Az.RecoveryServices (korábban AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup és AzureRM.RecoveryServices.SiteRecovery)
 
-- A `New/Set-AzRecoveryServicesAsrPolicy` parancsmag `Encryption` paramétere el lett távolítva.
+- A `Encryption` parancsmag `New/Set-AzRecoveryServicesAsrPolicy` paramétere el lett távolítva.
 - A `TargetStorageAccountName` paraméter megadása mostantól kötelező a `Restore-AzRecoveryServicesBackupItem` parancsmag felügyeltlemez-visszaállítási műveleteihez.
-- A `Restore-AzRecoveryServicesBackupItem` parancsmag `StorageAccountName` és `StorageAccountResourceGroupName` paramétere el lett távolítva.
-- A `Get-AzRecoveryServicesBackupContainer` parancsmag `Name` paramétere el lett távolítva
+- A `StorageAccountName` parancsmag `StorageAccountResourceGroupName` és `Restore-AzRecoveryServicesBackupItem` paramétere el lett távolítva.
+- A `Name` parancsmag `Get-AzRecoveryServicesBackupContainer` paramétere el lett távolítva
 
 ### <a name="azresources-previously-azurermresources"></a>Az.Resources (korábban AzureRM.Resources)
 
-- A `New/Set-AzPolicyAssignment` parancsmag `Sku` paramétere el lett távolítva.
-- A `New-AzADServicePrincipal` és `New-AzADSpCredential` parancsmag `Password` paramétere el lett távolítva. A jelszavak létrehozása automatikusan történik, a korábban jelszót biztosító szkripteket:
+- A `Sku` parancsmag `New/Set-AzPolicyAssignment` paramétere el lett távolítva.
+- A `Password` és `New-AzADServicePrincipal` parancsmag `New-AzADSpCredential` paramétere el lett távolítva. A jelszavak létrehozása automatikusan történik, a korábban jelszót biztosító szkripteket:
 
   ```azurepowershell-interactive
   New-AzAdSpCredential -ObjectId 1f99cf81-0146-4f4e-beae-2007d0668476 -Password $secPassword
@@ -338,9 +338,9 @@ A szkriptek a jövőben nem hozhatnak feldolgozási döntéseket e mezők érté
 ### <a name="azservicefabric-previously-azurermservicefabric"></a>Az.ServiceFabric (korábban AzureRM.ServiceFabric)
 
 - Módosítottuk a következő parancsmag visszatérési típusait:
-  - Az `ApplicationHealthPolicy` típus `ServiceTypeHealthPolicies` tulajdonsága el lett távolítva.
-  - A `ClusterUpgradeDeltaHealthPolicy` típus `ApplicationHealthPolicies` tulajdonsága el lett távolítva.
-  - A `ClusterUpgradePolicy` típus `OverrideUserUpgradePolicy` tulajdonsága el lett távolítva.
+  - Az `ServiceTypeHealthPolicies` típus `ApplicationHealthPolicy` tulajdonsága el lett távolítva.
+  - Az `ApplicationHealthPolicies` típus `ClusterUpgradeDeltaHealthPolicy` tulajdonsága el lett távolítva.
+  - Az `OverrideUserUpgradePolicy` típus `ClusterUpgradePolicy` tulajdonsága el lett távolítva.
   - Ezek a módosítások a következő parancsmagokat érintik:
     - Add-AzServiceFabricClientCertificate
     - Add-AzServiceFabricClusterCertificate
@@ -359,17 +359,17 @@ A szkriptek a jövőben nem hozhatnak feldolgozási döntéseket e mezők érté
 
 ### <a name="azsql-previously-azurermsql"></a>Az.Sql (korábban AzureRM.Sql)
 
-- A `Set-AzSqlDatabaseBackupLongTermRetentionPolicy` parancsmag `State` és `ResourceId` paramétere el lett távolítva.
+- A `State` parancsmag `ResourceId` és `Set-AzSqlDatabaseBackupLongTermRetentionPolicy` paramétere el lett távolítva.
 - A következő, elavult parancsmagok el lettek távolítva: `Get/Set-AzSqlServerBackupLongTermRetentionVault`, `Get/Start/Stop-AzSqlServerUpgrade`, `Get/Set-AzSqlDatabaseAuditingPolicy`, `Get/Set-AzSqlServerAuditingPolicy`, `Remove-AzSqlDatabaseAuditing` és `Remove-AzSqlServerAuditing`.
-- A `Get-AzSqlDatabaseBackupLongTermRetentionPolicy` parancsmag elavult `Current` paramétere el lett távolítva.
-- A `Get-AzSqlServerServiceObjective` parancsmag elavult `DatabaseName` paramétere el lett távolítva.
-- A `Set-AzSqlDatabaseDataMaskingPolicy` parancsmag elavult `PrivilegedLogin` paramétere el lett távolítva.
+- A `Current` parancsmag elavult `Get-AzSqlDatabaseBackupLongTermRetentionPolicy` paramétere el lett távolítva.
+- A `DatabaseName` parancsmag elavult `Get-AzSqlServerServiceObjective` paramétere el lett távolítva.
+- A `PrivilegedLogin` parancsmag elavult `Set-AzSqlDatabaseDataMaskingPolicy` paramétere el lett távolítva.
 
 ### <a name="azstorage-previously-azurestorage-and-azurermstorage"></a>Az.Storage (korábban Azure.Storage és AzureRM.Storage)
 
 - Annak érdekében, hogy létre lehessen hozni egy Oauth Storage-környezetet pusztán a tárfiók nevét használva, az új alapértelmezett paraméterkészlet a következő: `OAuthParameterSet`
   - Például: `$ctx = New-AzureStorageContext -StorageAccountName $accountName`
-- A `Get-AzStorageUsage` parancsmagban kötelezővé vált a `Location` paraméter használata.
+- A `Location` parancsmagban kötelezővé vált a `Get-AzStorageUsage` paraméter használata.
 - A Storage API-metódusok mostantól feladatalapú aszinkron mintát (TAP) használnak az egyidejű API-hívások helyett. Az alábbi példák az új, aszinkron parancsokat mutatják be:
 
 #### <a name="blob-snapshot"></a>Blob-pillanatképek
