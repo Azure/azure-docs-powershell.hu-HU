@@ -8,7 +8,7 @@
       href: other-install.md
 - name: Eltávolítás
   href: uninstall-azurerm-ps.md
-- name: Bevezetés
+- name: Első lépések
   href: get-started-azureps.md
 - name: Cloud Shell
   href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
@@ -40,7 +40,7 @@
       href: using-experimental-modules.md
     - name: PowerShell-feladatok
       href: using-psjobs.md
-- name: Oktatóanyagok
+- name: oktatóanyagokat
   items:
     - name: Virtuális gépek létrehozása
       href: azureps-vm-tutorial.yml
@@ -48,7 +48,7 @@
   items:
     - name: Linux rendszerű virtuális gépek
       href: /azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
-    - name: Windows rendszerű virtuális gépek
+    - name: Windows Virtual Machines
       href: /azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
     - name: Web Apps
       href: /azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json

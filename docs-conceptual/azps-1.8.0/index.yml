@@ -22,7 +22,7 @@ landingContent:
             url: 'https://shell.azure.com'
       - linkListType: get-started
         links:
-          - text: Bevezetés
+          - text: Első lépések
             url: get-started-azureps.md
           - text: A PowerShell alapelveinek ismertetése
             url: /powershell/scripting/overview
@@ -68,7 +68,7 @@ landingContent:
         links:
           - text: Az AzureRM és az Az közötti kompatibilitástörő változások
             url: migrate-az-1.0.0.md
-  - title: Azure PowerShell-re vonatkozó referenciák
+  - title: Azure PowerShell – referencia
     linkLists:
       - linkListType: reference
         links:
