@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/11/2017
 ms.openlocfilehash: d2ffd6cc4c5e70c53ab60b1280384faac9b45867
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "65534729"
 ---
 # <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>Parancsmagok párhuzamos futtatása PowerShell-feladatok használatával
@@ -69,7 +69,7 @@ Ezt követően, ha a feladat befejeződött, a `Receive-Job` használatával lek
 
 > [!NOTE]
 > A `Receive-Job` úgy adja vissza a parancsmag eredményét, mintha az `-AsJob` jelző nem lenne jelen.
-> Például a `Do-Action -AsJob` `Receive-Job`-eredménye ugyanaz a típus, mint a `Do-Action` eredménye.
+> Például a `Receive-Job``Do-Action -AsJob`-eredménye ugyanaz a típus, mint a `Do-Action` eredménye.
 
 ```azurepowershell-interactive
 $vm = Receive-Job $job

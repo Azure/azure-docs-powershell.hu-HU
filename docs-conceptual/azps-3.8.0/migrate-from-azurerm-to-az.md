@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/10/2019
 ms.openlocfilehash: 02b39653ebb4aa0f74d2340a7be7b35e08d5e44d
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81740099"
 ---
 # <a name="migrate-azure-powershell-from-azurerm-to-az"></a>Az Azure PowerShell migrálása az AzureRM modulból az Az modulba
@@ -62,7 +62,7 @@ Enable-AzureRmAlias -Scope CurrentUser
 ```
 
 Az aliasok segítségével továbbra is használhatja a régi parancsmagneveket, ha az Az modul telepítve van. Az aliasok a kiválasztott hatókör profiljába lesznek írva. Ha nincs profil, a rendszer létrehoz egyet.
-A `CurrentUser` értéknél nagyobb `-Scope` használatakor megfelelő engedélyek szükségesek a megfelelő profilfájl létrehozásához vagy frissítéséhez.
+A `-Scope` értéknél nagyobb `CurrentUser` használatakor megfelelő engedélyek szükségesek a megfelelő profilfájl létrehozásához vagy frissítéséhez.
 
 > [!IMPORTANT]
 > __Csak__ a parancsmagok neve rendelkezik aliassal, a modulok neve nem. Ha `#Requires` vagy `Import-Module` utasítást, `.psd1` függőségi listáit vagy teljes parancsmagneveket használ, mindenképpen ekkor migrálja őket. Ehhez kövesse a [kompatibilitástörő változások listájában](migrate-az-1.0.0.md) ismertetett, a modulnevekre vonatkozó folyamatokat.

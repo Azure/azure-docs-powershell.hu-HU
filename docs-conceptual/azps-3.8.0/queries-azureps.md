@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.openlocfilehash: 9141f5640467722608cb7748f425ce3942668fb8
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81740422"
 ---
 # <a name="query-output-of-azure-powershell"></a>Az Azure PowerShell lekérdezésének kimenete 
@@ -73,7 +73,7 @@ A `Select-Object` kimenete mindig úgy van formázva, hogy a kért adatokat jele
 
 ## <a name="select-nested-properties"></a>Beágyazott tulajdonságok kiválasztása
 
-Az Azure PowerShell-parancsmagok kimenetének néhány tulajdonsága beágyazott objektumokat használ. Ilyen például a `Get-AzVM` kimenet `StorageProfile` tulajdonsága. A beágyazott tulajdonság értékének lekéréséhez adja meg a megjelenítendő nevet és a megvizsgálni kívánt érték teljes elérési útvonalát a `Select-Object` parancshoz tartozó szótárargumentum részeként:
+Az Azure PowerShell-parancsmagok kimenetének néhány tulajdonsága beágyazott objektumokat használ. Ilyen például a `StorageProfile` kimenet `Get-AzVM` tulajdonsága. A beágyazott tulajdonság értékének lekéréséhez adja meg a megjelenítendő nevet és a megvizsgálni kívánt érték teljes elérési útvonalát a `Select-Object` parancshoz tartozó szótárargumentum részeként:
 
 ```azurepowershell-interactive
 Get-AzVM -ResourceGroupName TestGroup | `

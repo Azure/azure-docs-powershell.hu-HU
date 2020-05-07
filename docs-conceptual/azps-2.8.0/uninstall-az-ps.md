@@ -8,10 +8,10 @@ ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.openlocfilehash: 772667032d421e32c6cd63abbcb686b4eab308e2
-ms.sourcegitcommit: ad7677d703a8512d371d3123dc7e541156b95cb8
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "72814245"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Az Azure PowerShell-modul eltávolítása
@@ -145,7 +145,7 @@ Itt a programok listájában megjelenik az __Azure PowerShell__. Ezt az alkalmaz
 
 ### <a name="uninstall-from-powershell"></a>Eltávolítás PowerShellből
 
-Ha az AzureRM-et a PowerShellGet segítségével telepítette, akkor az `Az.Accounts` modul részeként elérhető [Uninstall-AzureRM](/powershell/module/az.accounts/uninstall-azurerm) paranccsal távolíthatja el a modulokat. Ez eltávolítja az _összes_ AzureRM modult a gépéről, de rendszergazdai jogosultság szükséges hozzá.
+Ha az AzureRM-et a PowerShellGet segítségével telepítette, akkor az [ modul részeként elérhető ](/powershell/module/az.accounts/uninstall-azurerm)Uninstall-AzureRM`Az.Accounts` paranccsal távolíthatja el a modulokat. Ez eltávolítja az _összes_ AzureRM modult a gépéről, de rendszergazdai jogosultság szükséges hozzá.
 
 ```powershell-interactive
 Uninstall-AzureRm

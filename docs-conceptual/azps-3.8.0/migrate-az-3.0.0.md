@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: e88752e0c997efc4f49161e358072803cb63450a
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81740133"
 ---
 # <a name="migration-guide-for-az-300"></a>Migrálási útmutató az Az 3.0.0-s verziójához
@@ -110,10 +110,10 @@ Get-AzBatchSupportedImage -BatchContext $Context
 ### <a name="previous-version-incompatibility-with-azresources-module"></a>Az előző verziók inkompatibilitása az Az.Resources modullal
 Az „Az.Batch” modul 2.0.1-es verziója nem kompatibilis az „Az.Resources” modul korábbi verzióival (1.7.0-s vagy korábbi verziók).  Ez azt eredményezi, hogy nem lehet importálni az „Az.Resources” modul 1.7.0-s verzióját, ha az „Az.Batch” modul 2.0.1-es verziója importálva van.  A probléma megoldásához egyszerűen csak frissítse az „Az.Resources” modult az 1.7.1-es vagy újabb verzióra, vagy telepítse az „Az” modul legújabb verzióját.
 
-## <a name="compute"></a>Compute
+## <a name="compute"></a>Számítás
 
 ### `New-AzDiskConfig`
-A `New-AzDiskConfig` esetében a `DiskSizeGB` paraméter helyett az `UploadSizeInBytes` paramétert kell használni, ha a CreateOption értéke Upload
+A `UploadSizeInBytes` esetében a `DiskSizeGB` paraméter helyett az `New-AzDiskConfig` paramétert kell használni, ha a CreateOption értéke Upload
 
 #### <a name="before"></a>Előtte
 ```powershell
@@ -340,7 +340,7 @@ $disk2 = New-AzRecoveryServicesAsrInMageAzureV2DiskInput -DiskId $diskId2 -LogSt
 $job = New-AzRecoveryServicesAsrReplicationProtectedItem -VMwareToAzure -Account $fabric.FabricSpecificDetails.RunAsAccounts[0] -RecoveryResourceGroupId $RecoveryResourceGroupId -RecoveryAzureNetworkId $RecoveryAzureNetworkId -name $name -ProcessServer $fabric.FabricSpecificDetails.ProcessServers[0] -ProtectableItem $protectableItem -ProtectionContainerMapping $pcm -RecoveryAzureSubnetName $RecoveryAzureSubnetName -RecoveryVmName $RecoveryVmName -LogStorageAccountId $LogStorageAccountId -InMageAzureV2DiskInput $disk1,$disk2
 ```
 
-## <a name="resources"></a>További források
+## <a name="resources"></a>Erőforrások
 
 ### <a name="previous-version-incompatibility-with-azbatch-module"></a>Az előző verziók inkompatibilitása az Az.Batch modullal
 Az „Az. Resources” modul 1.7.1-es verziója nem kompatibilis az „Az.Batch” modul korábbi verzióival (1.1.2-es vagy korábbi verziók).  Ez azt eredményezi, hogy nem lehet importálni az „Az.Batch” modul 1.1.2-es verzióját, ha az „Az.Resources” modul 1.7.1-es verziója importálva van.  A probléma megoldásához frissítse az „Az.Batch” modult a 2.0.1-es vagy újabb verzióra, vagy egyszerűen csak telepítse az „Az” modul legújabb verzióját.

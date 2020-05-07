@@ -8,10 +8,10 @@ ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.openlocfilehash: cc0b6a4369116e92b8200ffbc0838d6ee2991263
-ms.sourcegitcommit: febbbd3f75c8dd1a296281d265289f015b6cb537
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "67037692"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Az Azure PowerShell-modul eltávolítása
@@ -105,7 +105,7 @@ Uninstalling Azure.AnalysisServices version 0.4.7
 ```
 
 > [!NOTE]
-> Ha ez a szkript nem talál egy pontosan ugyanolyan verziójú függőséget az eltávolításhoz, akkor a függőségnek _semelyik_ verzióját nem fogja eltávolítani. Ennek oka, hogy a célmodulnak más verziói is megtalálhatóak lehetnek a rendszeren, amelyeknek használhatják az adott függőségeket. Ebben az esetben az adott függőség elérhető verziói nem lesznek felsorolva.
+> Ha ez a szkript nem talál egy pontosan ugyanolyan verziójú függőséget az eltávolításhoz, akkor a függőségnek _egyik_ verzióját sem fogja eltávolítani. Ennek oka, hogy a célmodulnak más verziói is megtalálhatók lehetnek a rendszeren, amelyek használhatják az adott függőségeket. Ebben az esetben az adott függőség elérhető verziói lesznek felsorolva.
 > Ezután manuálisan eltávolíthatja a régi verziókat az `Uninstall-Module` paranccsal.
 
 

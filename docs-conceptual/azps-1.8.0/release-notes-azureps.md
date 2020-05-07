@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/30/2019
 ms.openlocfilehash: 8a9a399f72ed9e3e9a3cbc09c8a4abaa91339c24
-ms.sourcegitcommit: f0f09eee03ef9dd7fe07432252a3dc8ca93e3a7b
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "71319294"
 ---
 ## <a name="180---april-2019"></a>1.8.0 – 2019. április
@@ -639,7 +639,7 @@ Az Application Gateway konfigurációs RewriteRuleSets tulajdonsága mostantól 
 
 ### <a name="azresources"></a>Az.Resources
 
-* https://github.com/Azure/azure-powershell/issues/7679 javítása
+* [https://github.com/Azure/azure-powershell/issues/7679](https://github.com/Azure/azure-powershell/issues/7679 ) javítása
     - A Get-AzureRmRoleAssignment parancsmag frissítve az előfizetési hatókör használatával, ha azt megadták a klasszikus rendszergazdák kérésekor.
 
 ### <a name="azsql"></a>Az.Sql
@@ -776,7 +776,7 @@ Az Application Gateway konfigurációs RewriteRuleSets tulajdonsága mostantól 
 * Szabályzatszervizelési parancsmagok lettek hozzáadva
 
 #### <a name="azresources"></a>Az.Resources
-* https://github.com/Azure/azure-powershell/issues/7402 javítása
+* [https://github.com/Azure/azure-powershell/issues/7402](https://github.com/Azure/azure-powershell/issues/7402 ) javítása
     - Lehetségessé vált az erőforrások felsorolása a -ResourceId paraméter a Get-AzResource parancsmaggal való használatával
 
 #### <a name="azservicebus"></a>Az.ServiceBus

@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/15/2017
 ms.openlocfilehash: 564a3e70e3f6d1803cdff9976bace119f6e20f48
-ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "75720395"
 ---
 # <a name="getting-started-with-azure-powershell"></a>Ismerkedés az Azure PowerShell-lel
@@ -40,11 +40,11 @@ Telepítheti az Azure PowerShellt, és helyileg is használhatja PowerShell-munk
 
 ## <a name="install-azure-powershell"></a>Az Azure PowerShell telepítése
 
-Első lépésként győződjön meg róla, hogy az Azure PowerShell legújabb verziója van telepítve. A legújabb kiadással kapcsolatos információkért lásd a [kibocsátási megjegyzéseket](./release-notes-azureps.md).
+Első lépésként győződjön meg róla, hogy az Azure PowerShell legújabb verziója van telepítve. A legújabb kiadással kapcsolatos információkért tekintse meg a [kibocsátási megjegyzéseket](./release-notes-azureps.md).
 
 1. [Telepítse az Azure PowerShellt](install-azurerm-ps.md).
 
-2. A telepítés sikerességének ellenőrzéséhez futtassa a `Get-InstalledModule AzureRM -AllVersions` parancsot a parancssorról.
+2. A telepítés sikerességének ellenőrzéséhez futtassa az `Get-InstalledModule AzureRM -AllVersions` parancsot a parancssorról.
 
 ## <a name="sign-in-to-azure"></a>Bejelentkezés az Azure-ba
 
@@ -362,7 +362,7 @@ Ez több percig is eltarthat.
 
 Az Azure PowerShell használatával kapcsolatos további tudnivalókért tekintse át a [Linux rendszerű virtuális gépek](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), a [Windows rendszerű virtuális gépek](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), a [Web Apps-alkalmazások](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json) és az [SQL Database-adatbázisok](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json) leggyakoribb szkriptjeit.
 
-## <a name="next-steps"></a>További lépések
+## <a name="next-steps"></a>Következő lépések
 
 * [Bejelentkezés az Azure PowerShell-lel](authenticate-azureps.md)
 * [Azure-előfizetések kezelése az Azure PowerShell-lel](manage-subscriptions-azureps.md)

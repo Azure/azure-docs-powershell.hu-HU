@@ -9,18 +9,18 @@ ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
 ms.openlocfilehash: afa83a6258e57e961576b328e67fad634704dddf
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153907"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "63053358"
 ---
 # <a name="azure-stack-module-150"></a>Azure Stack 1.5.0-s modul
 
 ## <a name="requirements"></a>Követelmények:
 A minimális támogatott Azure Stack-verzió az 1808-as.
 
-Megjegyzés: Ha korábbi verziót használ, telepítse az 1.4.0-s verziót
+Megjegyzés: Korábbi verzió használata esetén telepítse az 1.4.0-s verziót
 
 ## <a name="known-issues"></a>Ismert problémák:
 
@@ -78,7 +78,7 @@ A Backup felügyeleti modul előzetes kiadása, amelynek segítségével a rends
 ### <a name="commerce"></a>Commerce
 Az Azure Stack Commerce felügyeleti modul előzetes kiadása, amely lehetővé teszi az összesített adathasználat megtekintését a teljes Azure Stack rendszerben.
 
-### <a name="compute"></a>Compute
+### <a name="compute"></a>Számítás
 Az Azure Stack Compute felügyeleti modul előzetes kiadása, amely a számítási kvóták, platformrendszerképek, felügyelt lemezek és virtuálisgép-bővítmények felügyeletéhez szükséges funkciókat biztosít.
 
 ### <a name="fabric"></a>Fabric
@@ -102,13 +102,13 @@ Az Infrastructure Insights felügyeleti modul előzetes kiadása, amelynek segí
 ### <a name="keyvault"></a>KeyVault
 Az Azure Stack KeyVault felügyeleti modul előzetes kiadása, amelynek segítségével a rendszergazda megtekintheti a KeyVault-kvótákat.
 
-### <a name="network"></a>Network (Hálózat)
+### <a name="network"></a>Hálózat
 A Network felügyeleti modul előzetes kiadása, amely:
 - Lehetővé teszi a hálózati kvóták felügyeletét
 - Lehetővé teszi a hálózati erőforrások (például nyilvános IP-címek, virtuális hálózatok és terheléselosztók) megtekintését
 - Egy parancsmagot biztosít a felügyelet áttekintő megjelenítéséhez
 
-### <a name="storage"></a>Storage
+### <a name="storage"></a>Tárterület
 Az Azure Stack Storage felügyeleti modul előzetes kiadása.  Ebben a kiadásban a következő funkcionalitást biztosítjuk:
 - Tárhelykvóták kezelése
 - Törölt tárolási erőforrások szemétgyűjtése
@@ -123,7 +123,7 @@ Az Azure Stack Subscription adminisztrációs modul előzetes kiadása.  A modul
 - Használati és teljesítményadatok megtekintése
 - Az RBAC kezelése
 
-### <a name="subscription"></a>Előfizetés
+### <a name="subscription"></a>Előfizetést
 Az Azure Stack Subscription modul előzetes kiadása.  A modul a következő funkciókat biztosítja a felhasználók számára:
 - Előfizetések létrehozása, törlése és frissítése
 

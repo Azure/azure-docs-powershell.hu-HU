@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
 ms.openlocfilehash: 2f61e41b701dfc263df18064f6ac2cc4c6e4021e
-ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/12/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "67863555"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-400"></a>A Microsoft Azure PowerShell 4.0.0 használhatatlanná tévő változásai
@@ -35,7 +35,7 @@ Ez a dokumentum egyrészt értesítőül szolgál a használhatatlanná tévő v
 A kiadás a következő kimeneti típusokat érinti:
 
 ### <a name="psvirtualmachine"></a>PSVirtualMachine
-- A `PSVirtualMachine` objektum `DataDiskNames` és `NetworkInterfaceIDs` legfelsőbb szintű tulajdonságai el lettek távolítva a kimenettípusból. Ezek a tulajdonságok eddig is elérhetőek voltak a `PSVirtualMachine` objektum `StorageProfile` és `NetworkProfile` tulajdonságaiban, és ezentúl csak innen lehet hozzájuk férni.
+- A `DataDiskNames` objektum `NetworkInterfaceIDs` és `PSVirtualMachine` legfelsőbb szintű tulajdonságai el lettek távolítva a kimenettípusból. Ezek a tulajdonságok eddig is elérhetőek voltak a `StorageProfile` objektum `NetworkProfile` és `PSVirtualMachine` tulajdonságaiban, és ezentúl csak innen lehet hozzájuk férni.
 - A módosítás a következő parancsmagokat érinti:
     - `Add-AzureRmVMDataDisk`
     - `Add-AzureRmVMNetworkInterface`
@@ -407,7 +407,7 @@ $bytes = (Add-AzureRmAccount).Context.TokenCache.CacheData
 
 ### <a name="breaking-changes-to-the-output-psazureaccount-type"></a>A PSAzureAccount típusú kimenet használhatatlanná tévő változásai
 
-- Az ```AccountType``` tulajdonság a következőre módosult: ```Type```
+- A ```AccountType``` tulajdonság a következőre módosult: ```Type```
 
 ```powershell-interactive
 # Old

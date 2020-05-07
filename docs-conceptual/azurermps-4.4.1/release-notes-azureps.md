@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
 ms.openlocfilehash: 1491f3f23deb767b754a98b3fab616356daa71f3
-ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/12/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "67863767"
 ---
 # <a name="release-notes"></a>Kibocsátási megjegyzések
@@ -27,7 +27,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
     - Mellékelt súgófájl a parancsmaghoz
     - Hozzáadott memóriabeli tesztek és forgatókönyvteszt (csak élő)
   * Az Add-AzureAsAccount parancsmag hibáinak javítása
-* Automation
+* Automatizálás
   * A korábbi kiadásokban javított parancsmagok súgódokumentumainak javítása.
   * 4 új parancsmag lett hozzáadva a DSC csomópont-konfigurációk előkészített kibocsátásának támogatásához.
     - Start-AzureRmAutomationDscNodeConfigurationDeployment
@@ -37,25 +37,25 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
 * CognitiveServices
   * Integráció a Cognitive Services Management SDK 2.0.0-s verziójával.
   * A Get-AzureRmCognitiveServicesAccount most már megfelelően támogatja a lapozást.
-* Compute
+* Számítás
   * A futtatási parancs funkciója:
-    - Új parancsmag: Az új Invoke-AzureRmVMRunCommand parancsmag egy futtatás parancsot hív meg egy virtuális gépen
-    - Új parancsmag: A Get-AzureRmVMRunCommandDocument parancsmag megjeleníti a futtatás paranccsal kapcsolatos elérhető dokumentumokat
+    - Az új Invoke-AzureRmVMRunCommand parancsmag futtatás parancsot indít egy virtuális gépen
+    - Az új Get-AzureRmVMRunCommandDocument parancsmag megjeleníti a futtatás paranccsal kapcsolatos elérhető dokumentumokat
   * A StorageAccountType paraméter hozzá lett adva a Set-AzureRmDataDisk parancsmaghoz
   * A rendelkezésre állási zóna támogatása a virtuális gépekhez, virtuálisgép-méretezési csoportokhoz és lemezekhez
-    - Új paraméter: Zone paraméter a New-AzureRmVM, New-AzureRmVMConfig, New-AzureRmVmssConfig, New-AzureRmDiskConfig parancsmaghoz
+    - Új Zone paraméter a New-AzureRmVM, New-AzureRmVMConfig, New-AzureRmVmssConfig, New-AzureRmDiskConfig parancsmaghoz
   * Virtuálisgép-méretezési csoportok működés közbeni frissítési szolgáltatása:
-    - Új parancsmag: A Start-AzureRmVmssRollingOSUpgrade parancsmag a virtuálisgép-méretezési csoport operációs rendszerének frissítését indítja el
-    - Új parancsmag: A Set-AzureRmVmssRollingUpgradePolicy parancsmag beállítja a virtuálisgép-méretezési csoport működés közbeni frissítésének frissítési szabályzatát.
-    - Új parancsmag: A Stop-AzureRmVmssRollingUpgrade parancsmag a virtuálisgép-méretezési csoport működés közbeni frissítését vonja vissza
-    - Új parancsmag: A Get-AzureRmVmssRollingUpgrade parancsmag a virtuálisgép-méretezési csoport működés közbeni frissítésének állapotát jeleníti meg.
+    - Az új Start-AzureRmVmssRollingOSUpgrade parancsmag a virtuálisgép-méretezési csoport operációs rendszerének frissítését indítja el
+    - Az új Set-AzureRmVmssRollingUpgradePolicy parancsmag beállítja a virtuálisgép-méretezési csoport működés közbeni frissítésének frissítési szabályzatát.
+    - Az új Stop-AzureRmVmssRollingUpgrade parancsmag a virtuálisgép-méretezési csoport működés közbeni frissítését vonja vissza
+    - Az új Get-AzureRmVmssRollingUpgrade parancsmag a virtuálisgép-méretezési csoport működés közbeni frissítésének állapotát jeleníti meg.
   * Az új AssignIdentity kapcsolóparaméter a rendszerhez rendelt identitáshoz használható.
-    - Új paraméter: AssignIdentity paraméter a New-AzureRmVMConfig, New-AzureRmVmssConfig és Update-AzureRmVM parancsmaghoz
+    - Új AssignIdentity paraméter a New-AzureRmVMConfig, New-AzureRmVmssConfig és Update-AzureRmVM parancsmaghoz
   * Vmss lemeztitkosítási szolgáltatás:
-    - Új parancsmag: A Set-AzureRmVmssDiskEncryptionExtension parancsmag engedélyezi a lemeztitkosítást a virtuálisgép-méretezési csoporton
-    - Új parancsmag: A Disable-AzureRmVmssDiskEncryption parancsmag letiltja a lemeztitkosítást a virtuálisgép-méretezési csoporton
-    - Új parancsmag: A Get-AzureRmVmssDiskEncryptionStatus parancsmag megjeleníti a virtuálisgép-méretezési csoportok lemeztitkosítási állapotát
-    - Új parancsmag: A Get-AzureRmVmssVMDiskEncryptionStatus parancsmag megjeleníti a virtuálisgép-méretezési csoportban lévő virtuális gépek lemeztitkosítási állapotát
+    - Az új Set-AzureRmVmssDiskEncryptionExtension parancsmag engedélyezi a lemeztitkosítást a virtuálisgép-méretezési csoporton
+    - Az új Disable-AzureRmVmssDiskEncryption parancsmag letiltja a lemeztitkosítást a virtuálisgép-méretezési csoporton
+    - Az új Get-AzureRmVmssDiskEncryptionStatus parancsmag megjeleníti a virtuálisgép-méretezési csoportok lemeztitkosítási állapotát
+    - Az új Get-AzureRmVmssVMDiskEncryptionStatus parancsmag megjeleníti a virtuálisgép-méretezési csoportban lévő virtuális gépek lemeztitkosítási állapotát
 * ContainerInstance
   * Új PowerShell-parancsmagok az Azure Container Instance-hez
     - New-AzureRmContainerGroup
@@ -94,7 +94,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
     * Get-AzureKeyVaultCertificate
     * Remove-AzureKeyVaultCertificate
     * Undo-AzureKeyVaultCertificateRemoval
-* Network (Hálózat)
+* Hálózat
   * Végpontszolgáltatások támogatása virtuális hálózati alhálózatokhoz
     - Frissített Add-AzureRmVirtualSubnetConfig: Új választható -ServiceEndpoint paraméter
     - Frissített New-AzureRmVirtualSubnetConfig: Új választható -ServiceEndpoint paraméter
@@ -130,9 +130,9 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
     - Frissített New-AzureRmVirtualNetwork: Új EnableDDoSProtection és EnableVmProtection kapcsolóparaméterek
     - Új EnableDDoSProtection és EnableVmProtection tulajdonságok PSVirtualNetwork objektumban
   * A magas rendelkezésre állású belső terheléselosztó támogatása
-    - Frissített Add-AzureRmLoadBalancerRuleConfig: Az All a Protocol paraméter elfogadható értéke lett
-    - Frissített New-AzureRmLoadBalancerRuleConfig: Az All a Protocol paraméter elfogadható értéke lett
-    - Frissített Set-AzureRmLoadBalancerRuleConfig: Az All a Protocol paraméter elfogadható értéke lett
+    - Frissített Add-AzureRmLoadBalancerRuleConfig: Az All paraméter a protokoll-paraméterek elfogadható értéke lett
+    - Frissített AzureRmLoadBalancerRuleConfig: Az All paraméter a protokoll-paraméterek elfogadható értéke lett
+    - Frissített Set-AzureRmLoadBalancerRuleConfig: Az All paraméter a protokoll-paraméterek elfogadható értéke lett
   * Alkalmazásbiztonsági csoportok támogatása
     - Új New-AzureRmApplicationSecurityGroup
     - Új Get-AzureRmApplicationSecurityGroup
@@ -163,7 +163,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
   * Környezeti információk kezelése, parancsmag módosításai:
     - Hozzáadott hatókör = (Folyamat | AktuálisFelhasználó) a hitelesítő adatokat módosító összes parancsmaghoz
     - Get-AzureRmContext – Új ListAvailable paraméter az összes mentett környezet listájához
-* További források
+* Erőforrások
   * PolicySetDefinition parancsmagok hozzáadása
     - New-AzureRmPolicySetDefinition parancsmag szabályzatkészlet-definíciók létrehozásához
     - Get-AzureRmPolicySetDefinition parancsmag az összes szabályzatkészlet-definíció listázásához vagy adott szabályzatkészlet-definíció lekéréséhez
@@ -215,14 +215,14 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
   * A termékváltozat-keresés frissítése a New-AzureRmAnalysisServicesServer és a Set-AzureRmAnalysisServicesServer parancsmagban
     - Módosítva lett a dinamikus keresés nem változtatható termékváltozata.
   * Az Add-AzureAnalysisServicesAccount parancsmag most már támogatja a szolgáltatásnévvel való bejelentkezést
-* Automation
+* Automatizálás
   * Módosítva lettek az Automation DSC* parancsmagok, hogy 100-nál több rekordot kérjenek le
   * Meg lett oldva a probléma, amely miatt a részletes streamek néhány Automation-parancsmag (például a Get-AzureRmAutomationVariable és a Get-AzureRmAutomationJob) meghívása után nem működnek tovább.
   * Most már támogatott a csomópont-konfiguráció buildjeinek verziószámozása a StartAzureAutomationDscCompilationJob és az ImportAzureAutomationDscNodeConfiguration parancsmagban
   * Meglévő problémák hibajavításai – az aliasokkal kapcsolatos, 3775-ös számú probléma, valamint a runOn aliasok és a hibrid feldolgozók támogatásának javítása.
-* Compute
+* Számítás
   * Set-AzureRmVMAEMExtension: Mostantól támogatottak az új prémium szintű lemezméretek
-  * Set-AzureRmVMAEMExtension: Mostantól támogatott az M sorozat
+  * Set-AzureRmVMAEMExtension: Mostantól támogatott az M-sorozat
   * Megjelent a ForceUpdateTag paraméter az Add-AzureRmVmssExtension parancsmagban
   * Megjelent a Primary paraméter a New-AzureRmVmssIpConfig parancsmagban
   * Megjelent az EnableAcceleratedNetworking paraméter az Add-AzureRmVmssNetworkInterfaceConfig parancsmagban
@@ -241,7 +241,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
     - Remove-AzureRmEventHubAuthorizationRule – Töröl egy meglévő engedélyezési szabályt egy meglévő névtérből vagy EventHubból.
     - New-AzureRmEventHubKey – Új elsődleges és másodlagos kulcsot generál egy meglévő névtér vagy EventHub egy engedélyezési szabályához.
     - Get-AzureRmEventHubKey – Beolvassa egy meglévő névtér vagy EventHub egy engedélyezési szabályának elsődleges és másodlagos kulcsát.
-* Network (Hálózat)
+* Hálózat
     * Most már támogatott az IPv6 használata, és új nem kötelező paraméterként megjelent a -PeerAddressType
       * New-AzureRmExpressRouteCircuitPeeringConfig:
       * Set-AzureRmExpressRouteCircuitPeeringConfig: Most már támogatott az IPv6 használata. Új nem kötelező paraméter jelent meg
@@ -254,7 +254,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
     * Az adatgyűjtés most már alapértelmezés szerint engedélyezve van. A Microsoft a felhasználói élmény javítása érdekében gyűjti a használati adatokat. Az adatok névtelenek, és nem tartalmazzák a parancssori argumentumok értékeit.
       - A funkció a Disable-AzureRmDataCollection parancsmaggal kapcsolható ki
       - A funkció az Enable-AzureRmDataCollection parancsmaggal kapcsolható be
-* További források
+* Erőforrások
     * Mostantól támogatott a hatókörök érvényesítése az ARM-nek küldött kérelem küldése előtt az alábbi szerepkör-definíciós és szerepkör-hozzárendelési parancsmagok esetében
       - Get-AzureRMRoleAssignment
       - New-AzureRMRoleAssignment
@@ -289,7 +289,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
       - Remove-AzureRmSqlDatabaseAuditing
       - Remove-AzureRmSqlServerAuditing
     * A sémafájlok elemzése az Update-AzureRmSqlSyncGroup parancsmag esetében mostantól nem különbözteti meg a kis- és nagybetűket.
-* Storage
+* Tárterület
     * A NetworkRule tulajdonság támogatása az erőforrásmód-tárfiókok parancsmagjaihoz
       - New-AzureRmStorageAccount
       - Set-AzureRmStorageAccount
@@ -299,7 +299,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
       - Remove-AzureRmStorageAccountNetworkRule
 
 ## <a name="20170717---version-421"></a>2017.07.17. – 4.2.1-es verzió
-* Compute
+* Számítás
   - Kijavítottuk a virtuálisgép-lemez és a virtuálisgép-lemez pillanatfelvételének létrehozásához és frissítéséhez használt parancsmagok hibáit (hivatkozás)[<https://github.com/azure/azure-powershell/issues/4309>]
     - New-AzureRmDisk
     - New-AzureRmSnapshot
@@ -383,16 +383,16 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
         - SparkDefaults és SparkThriftConf paraméter a Spark 1.6-os verziójához
         - Spark2Defaults és Spark2ThriftConf paraméter a Spark 2.0-ás verziójához
 * Insights
-    * 4215. hiba (módosítási kérés): eltávolítottuk a 15 napos korlátot a Get-AzureRmLog parancsmag időtartományából. Kisebb módosítások az egység tesztneveiben.
+    * 4215 hiba (módosítási kérés): eltávolítottuk a 15 napos korlátot a Get-AzureRmLog parancsmag időtartományából. Kisebb módosítások az egység tesztneveiben.
     * Kijavítottuk a 3957 hibát a Get-AzureRmLog parancsmag esetében
-        - 1\. probléma: A háttérrendszer a rekordokat 200 rekordot tartalmazó oldalakon adja vissza, és az oldalakat a folytatási token kapcsolja össze. A felhasználók azt tapasztalták, hogy a parancsmag csak 200 rekordot adott vissza, pedig több volt ennél. Ez a MaxEvents esetében megadott értéktől függetlenül bekövetkezett, kivéve, ha az érték kisebb volt, mint 200.
-        - 2\. probléma: A dokumentáció helytelen adatokat tartalmazott erről a parancsmagról. Például a timewindow alapértelmezett értéke 1 óra volt.
-        - 1\. javítás: A parancsmag mostantól a háttérrendszer által visszaadott folytatási tokent követi, amíg el nem éri a MaxEvents tulajdonságot vagy a készlet végét.<br>A MaxEvents alapértelmezett értéke 1000, az maximális értéke pedig 100000. A MaxEvents 1-nél kisebb értékei figyelmen kívül lesznek hagyva, és az alapértelmezett érték lesz használva. Ezek az értékek és viselkedések nem módosultak, és már helyesen vannak dokumentálva.<br>Egy alias (MaxRecords) hozzá lett adva a MaxEvents-hez, mivel a parancsmag neve már nem jelzi az eseményeket, csak a naplókat.
-        - 2\. javítás: A dokumentáció helyes és részletesebb információkat tartalmaz: új alias, helyes időtartomány, helyes alapértelmezett, minimális és maximális értékek.
+        - 1 probléma: A háttérrendszer a rekordokat 200 rekordot tartalmazó oldalakon adja vissza, és az oldalakat a folytatási token kapcsolja össze. A felhasználók azt tapasztalták, hogy a parancsmag csak 200 rekordot adott vissza, pedig több volt ennél. Ez a MaxEvents esetében megadott értéktől függetlenül bekövetkezett, kivéve, ha az érték kisebb volt, mint 200.
+        - 2 probléma: A dokumentáció helytelen adatokat tartalmazott erről a parancsmagról. Például a timewindow alapértelmezett értéke 1 óra volt.
+        - 1 javítás: A parancsmag mostantól a háttérrendszer által visszaadott folytatási tokent követi, amíg el nem éri a MaxEvents tulajdonságot vagy a készlet végét.<br>A MaxEvents alapértelmezett értéke 1000, az maximális értéke pedig 100000. A MaxEvents 1 nél kisebb értékei figyelmen kívül lesznek hagyva, és az alapértelmezett érték lesz használva. Ezek az értékek és viselkedések nem módosultak, és már helyesen vannak dokumentálva.<br>Egy alias (MaxRecords) hozzá lett adva a MaxEvents-hez, mivel a parancsmag neve már nem jelzi az eseményeket, csak a naplókat.
+        - 2 javítás: A dokumentáció helyes és részletesebb információkat tartalmaz: új alias, helyes időtartomány, helyes alapértelmezett, minimális és maximális értékek.
 * KeyVault
     * E-mail-cím eltávolítása a címtárlekérdezésből, amikor a -UserPrincipalName meg van adva a Set-AzureRMKeyVaultAccessPolicy és a Remove-AzureRMKeyVaultAccessPolicy parancsmaghoz.
       - Mostantól mindkét parancsmag rendelkezik -EmailAddress paraméterrel, amely a -UserPrincipalName paraméter helyett használható, ha az e-mail-cím lekérdezése megfelelő.  Ha egynél több egyező e-mail-cím található a címtárban, a parancsmag futtatása sikertelen lesz.
-* Network (Hálózat)
+* Hálózat
     * New-AzureRmIpsecPolicy: A SALifeTimeSeconds és a SADataSizeKilobytes már nem kötelező paraméterek
         - Az SALifeTimeSeconds alapértelmezett értéke 27000 másodperc
         - Az SADataSizeKilobytes alapértelmezett értéke 102400000 KB
@@ -452,29 +452,29 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
         - További információt itt találhat: https://github.com/Azure/azure-powershell/issues/635
 * ServiceManagement ExpressRoute-hoz:
     * A frissített New-AzureBgpPeering parancsmag az alábbi új beállításokat tartalmazza:
-        - PeerAddressType : Az IPv4 vagy az IPv6 érték megadásával létrehozható a megfelelő címcsaládtípus BGP-társviszonya
+        - PeerAddressType: Az IPv4 vagy az IPv6 értékei megadhatók a megfelelő címcsalád-típus BGP társviszonyának létrehozásához
     * A frissített Set-AzureBgpPeering parancsmag az alábbi új beállításokat tartalmazza:
-        - PeerAddressType : Az IPv4 vagy az IPv6 érték megadásával frissíthető a megfelelő címcsaládtípus BGP-társviszonya
+        - PeerAddressType: Az IPv4 vagy az IPv6 értékei megadhatók a megfelelő címcsalád-típus BGP társviszonyának frissítéséhez
     * A frissített Remove-AzureBgpPeering parancsmag az alábbi új beállításokat tartalmazza:
-        - PeerAddressType : Az IPv4, az IPv6 vagy az All érték megadásával frissíthető eltávolítható megfelelő vagy az összes címcsaládtípus BGP-társviszonya
+        - PeerAddressType: Az IPv4, IPv6 vagy mindegyik értékei megadhatók a megfelelő címcsalád-típus vagy mindegyik BGP társviszonyának eltávolításához
 
 ## <a name="20170607---version-410"></a>2017.06.07. – 4.1.0-ás verzió
 * AnalysisServices
-    * Új hozzáadott termékváltozatok: B1, B2, S0
+    * Új termékváltozatok: B1, B2, S0
     * Vertikális felskálázás/leskálázás támogatásának hozzáadása
 * CognitiveServices
     * Frissült a licencszerződések részletes megjelenítése a Cognitive Services-erőforrások létrehozásakor
 * Számítás
     * Kijavítottuk a Test-AzureRmVMAEMExtension parancsmagot a több felügyelt lemezzel rendelkező virtuális gépekhez
-    * Frissített Set-AzureRmVMAEMExtension: Gyorsítótárazási információ hozzáadása a prémium szintű felügyelt lemezekhez
+    * Frissült Set-AzureRmVMAEMExtension parancsmag: Gyorsítótárazási információ hozzáadása a prémium szintű felügyelt lemezekhez
     * Add-AzureRmVhd: A virtuális merevlemezek méretkorlátja 4 TB-ra emelkedett.
-    * Stop-AzureRmVM: A STayProvisioned paraméter dokumentációja tisztázva
+    * Stop-AzureRmVM: Dokumentáció tisztázása a STayProvisioned paraméter esetében
     * New-AzureRmDiskUpdateConfig
       * Elavult paraméterek: CreateOption, StorageAccountId, ImageReference, SourceUri, SourceResourceId
     * Set-AzureRmDiskUpdateImageReference: Elavult parancsmag
     * New-AzureRmSnapshotUpdateConfig
       * Elavult paraméterek: CreateOption, StorageAccountId, ImageReference, SourceUri, SourceResourceId
-    * Set-AzureRmSnapshotUpdateImageReference: Elavult parancsmag
+    * Set-AzureRmSnapshotUpdateImageReference Elavult parancsmag
 * DataLakeStore
     * Enable-AzureRmDataLakeStoreKeyVault (Enable-AdlStoreKeyVault)
       * KeyVault által felügyelt titkosítás engedélyezése a DataLake Store-hoz
@@ -492,7 +492,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
     * Get-AzureKeyVaultManagedStorageSasDefinition
     * Set-AzureKeyVaultManagedStorageSasDefinition
     * Remove-AzureKeyVaultManagedStorageSasDefinition
-* Network (Hálózat)
+* Hálózat
     * Get-AzureRmNetworkUsage: Új parancsmag a hálózathasználat és a kapacitás részleteinek megjelenítésére
     * Új GatewaySku beállítások a VirtualNetworkGateways-hez
         * A VpnGw1, a VpnGw2 és a VpnGw3 a VPN-átjárókhoz hozzáadott új termékváltozatok
@@ -511,8 +511,8 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
     * Kijavítottuk a hibát, amely miatt a Get-AzureRMRoleAssignment Hibás kérést eredményezett, ha a szerepkörkiosztások száma nagyobb volt, mint 1000
         * A felhasználók mostantól akkor is használhatják a Get-AzureRMRoleAssignment parancsmagot, ha a visszaadandó szerepkörkiosztások száma nagyobb, mint 1000
 * SQL
-    * Restore-AzureRmSqlDatabase: A dokumentáció példái frissültek
-* Storage
+    * Restore-AzureRmSqlDatabase: Frissítettük a dokumentáció példáit
+* Tárterület
     * AssignIdentity beállítás támogatása az erőforrásmód-tárfiók parancsmagokhoz
         * New-AzureRmStorageAccount
         * Set-AzureRmStorageAccount
@@ -597,7 +597,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
     + Egyetlen objektumot ad vissza (nem pedig egy listát, mint korábban), amelyben szerepel az állapotkód, a kérés azonosítója és az újonnan létrehozott vagy módosított erőforrás.
     + A statusCode a kérelem által visszaadott állapotot követi – korábban mindig OK értékű volt.
   - New-AzureRmAutoscaleRule
-    + A ScaleActionType paraméter ki lett bővítve, és mostantól a következő értékeket fogadja el: ChangeCount, PercentChangeCount, ExactCount.
+    + A ScaleActionType paraméter ki lett bővítve, mostantól megkapja a következő értékeket: ChangeCount, PercentChangeCount, ExactCount.
   - Remove-AzureRmAutoscaleSetting
     + A kimenetben szereplő statusCode a kérelem által visszaadott statusCode értéket követi. Korábban mindig OK értékű volt.
   - Get-AzureRMLogProfile
@@ -609,7 +609,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
   - Get-AzureRmMetricDefinition
     + A kimenet továbbra is listának minősül, de a lista szerkezete megváltozott.
   - Get-AzureRmMetric
-    + A hívás megváltozott. Az új szintaxis a következő: Get-AzureRmMetric ResourceId [MetricNames [TimeGrain] [AggregationType] [StartTime] [EndTime]] [DetailedOutput]
+    + A hívás megváltozott. Az új szintaxis: Get-AzureRmMetric ResourceId [MetricNames [TimeGrain] [AggregationType] [StartTime] [EndTime]] [DetailedOutput]
     + A kimenet listának minősül, és az elemek szerkezete megváltozott.
 * KeyVault
   - A KeyVault titkos kódjai támogatják a biztonsági mentést/visszaállítást
@@ -627,7 +627,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
   - A szolgáltatás az Azure Machine Learning .Net SDK új verzióját használja, és egy új parancsmag is elérhető benne
     + Add-AzureRmMlWebServiceRegionalProperty
   - Kisebb fogalmazási hibákat javítottunk a súgószövegben.
-* Network (Hálózat)
+* Hálózat
   - Új parancsmag: Test-AzureRmNetworkWatcherConnectivity
     + A forrásként és célként megadott virtuális gép összekapcsolhatósági adatait adja vissza
     + Ha a forrás és a cél közötti kapcsolatot nem lehet létrehozni, a parancsmag a probléma részleteit adja vissza
@@ -635,8 +635,8 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
   - Az új Send-Feedback parancsmaggal a felhasználók az Azure PowerShell csapatának visszajelzést küldő rendszerüzeneteket kezdeményezhetnek.
   - Az alábbi aliasokat eltávolítottuk, mert az Azure modulban meglévő parancsmagok neveivel ütköztek:
     + `Enable-AzureDataCollection` (az `Enable-AzureRmDataCollection` támogatta)
-    + `Disable-AzureDataCollection` (a `Disable-AzureRmDataCollection` támogatta)
-* Továbbító
+    + `Disable-AzureDataCollection` (az `Disable-AzureRmDataCollection` támogatta)
+* Relay
   - Az új Azure Relay-parancsmagokkal a felhasználók az összes Azure Relay-erőforrás létrehozását és kezelését elvégezhetik.
     + `New-AzureRmRelayNamespace`
     + `Get-AzureRmRelayNamespace`
@@ -697,7 +697,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
   - Kijavítottunk a türelmi időszakhoz tartozó magas értékek használatakor jelentkező egészszám-túlcsordulási hibát
   - A türelmi időszak értéke legalább 1 óra lesz, ha ennél alacsonyabb értéket adnak meg
   - A Usage_Anomaly el lett távolítva a Set-AzureRmSqlDatabaseThreatDetectionPolicy és a Set-AzureRmSqlServerThreatDetectionPolicy parancsmag ExcludedDetectionType paraméterének elfogadható értékei közül.
-* Tárolás
+* Tárterület
   - Az SRP SDK a 6.3.0-s verzióra frissült
   - New/Set-AzureRmStorageAccount: az EnableHttpsTrafficOnly attribútumot támogató új paraméter
   - New/Set/Get-AzureRmStorageAccount: A visszaadott tárfióknak új attribútuma van (EnableHttpsTrafficOnly)

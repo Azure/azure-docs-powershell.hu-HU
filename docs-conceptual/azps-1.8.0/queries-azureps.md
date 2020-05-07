@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/10/2019
-ms.openlocfilehash: 9141f5640467722608cb7748f425ce3942668fb8
-ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
+ms.openlocfilehash: 4f74df6acaa05babc712b7b35737ce3001170b87
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67346577"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82587992"
 ---
 # <a name="query-output-of-azure-powershell"></a>Az Azure PowerShell lekérdezésének kimenete 
 
@@ -73,10 +73,10 @@ A `Select-Object` kimenete mindig úgy van formázva, hogy a kért adatokat jele
 
 ## <a name="select-nested-properties"></a>Beágyazott tulajdonságok kiválasztása
 
-Az Azure PowerShell-parancsmagok kimenetének néhány tulajdonsága beágyazott objektumokat használ. Ilyen például a `Get-AzVM` kimenet `StorageProfile` tulajdonsága. A beágyazott tulajdonság értékének lekéréséhez adja meg a megjelenítendő nevet és a megvizsgálni kívánt érték teljes elérési útvonalát a `Select-Object` parancshoz tartozó szótárargumentum részeként:
+Az Azure PowerShell-parancsmagok kimenetének néhány tulajdonsága beágyazott objektumokat használ. Ilyen például a `StorageProfile` kimenet `Get-AzVM` tulajdonsága. A beágyazott tulajdonság értékének lekéréséhez adja meg a megjelenítendő nevet és a megvizsgálni kívánt érték teljes elérési útvonalát a `Select-Object` parancshoz tartozó szótárargumentum részeként:
 
 ```azurepowershell-interactive
-Get-AzVM -ResourceGroupName TestGroup | `
+Get-AzVM -ResourceGroupName TestGroup |
     Select-Object Name,@{Name="OSType"; Expression={$_.StorageProfile.OSDisk.OSType}}
 ```
 
@@ -95,7 +95,7 @@ Minden szótárargumentum az objektum egy tulajdonságát választja ki. A kinye
 A `Where-Object` parancsmag használatával bármely tulajdonságérték alapján szűrheti az eredményeket, a beágyazott tulajdonságokat is beleértve. A következő példa bemutatja, hogyan használható a `Where-Object` egy Linux rendszerű virtuális gép megkeresésére egy erőforráscsoportban.
 
 ```azurepowershell-interactive
-Get-AzVM -ResourceGroupName TestGroup | `
+Get-AzVM -ResourceGroupName TestGroup |
     Where-Object {$_.StorageProfile.OSDisk.OSType -eq "Linux"}
 ```
 
@@ -109,8 +109,8 @@ TestGroup         TestVM2  westus2 Standard_D2s_v3  Linux testvm2669         Suc
 A `Select-Object` és a `Where-Object` eredményeit továbbíthatja az egyiktől a másiknak. A teljesítményt szem előtt tartva ajánlott a `Where-Object` műveletet a `Select-Object` elé helyezni:
 
 ```azurepowershell-interactive
-Get-AzVM -ResourceGroupName TestGroup | `
-    Where-Object {$_.StorageProfile.OsDisk.OsType -eq "Linux"} | `
+Get-AzVM -ResourceGroupName TestGroup |
+    Where-Object {$_.StorageProfile.OsDisk.OsType -eq "Linux"} |
     Select-Object Name,VmID,ProvisioningState
 ```
 
