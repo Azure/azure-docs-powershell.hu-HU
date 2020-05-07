@@ -5,10 +5,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/20/2020
 ms.openlocfilehash: b5ad201abcabbdc1a88db241b028d88f05054a14
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81445815"
 ---
 # <a name="using-azure-powershell-in-docker"></a>Az Azure PowerShell használata a Dockerben
@@ -65,7 +65,7 @@ Az alábbi paranccsal törölheti a Docker-tárolót, ha már nincs rá szüksé
 docker rmi mcr.microsoft.com/azure-powershell
 ```
 
-## <a name="next-steps"></a>További lépések
+## <a name="next-steps"></a>Következő lépések
 
 Az Azure PowerShell-modulokról és azok funkcióiról az [Azure PowerShell használatának első lépéseit](get-started-azureps.md) ismertető szakaszban talál további információt.
 

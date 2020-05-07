@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
 ms.openlocfilehash: 61ab0f91c3d6fffdbffd336fa0d6ed9b0ab8f6ec
-ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/09/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "68863284"
 ---
 # <a name="release-notes"></a>Kibocsátási megjegyzések
@@ -184,9 +184,9 @@ Változások a legutóbbi kiadás óta: https://github.com/Azure/azure-powershel
 * A „New-AzureRmVMSS” a kapcsolati sztringekat részletes módban jeleníti meg.
 * A „New-AzureRmVmss” támogatja a nyilvános IP-címeket, a terheléselosztási szabályokat és a bejövő NAT-szabályokat.
 * WriteAccelerator funkció
-    - A WriteAccelerator kapcsolóparaméter hozzáadva az alábbi parancsmagokhoz: Set-AzureRmVMOSDisk Set-AzureRmVMDataDisk Add-AzureRmVMDataDisk Add-AzureRmVmssDataDisk
-    - Az OsDiskWriteAccelerator kapcsolóparaméter hozzáadva az alábbi parancsmaghoz:     Set-AzureRmVmssStorageProfile.
-    - Az OsDiskWriteAccelerator logikai paraméter hozzáadva az alábbi parancsmagokhoz:     Update-AzureRmVM     Update-AzureRmVmss
+    - WriteAccelerator kapcsolóparaméter hozzáadva a következő parancsmagokhoz: Set-AzureRmVMOSDisk Set-AzureRmVMDataDisk Add-AzureRmVMDataDisk Add-AzureRmVmssDataDisk
+    - OsDiskWriteAccelerator kapcsolóparaméter hozzáadva az alábbi parancsmaghoz:     Set-AzureRmVmssStorageProfile.
+    - OsDiskWriteAccelerator logikai paraméter hozzáadva az alábbi parancsmagokhoz:     Update-AzureRmVM     Update-AzureRmVmss
 
 #### <a name="azurermdatafactories"></a>AzureRM.DataFactories
 * Néhány titkosítási művelet során fellépő, nem értelmezhető hibát okozó, hitelesítő adatok titkosításával kapcsolatos hiba kijavítva
@@ -275,15 +275,15 @@ Változások a legutóbbi kiadás óta: https://github.com/Azure/azure-powershel
     - Remove-AzureRmNetworkWatcherConnectionMonitor
 * Frissült a Set-AzureRmApplicationGatewayBackendAddressPool dokumentáció, amelyből egy elavult példa el lett távolítva
 * Új EnableHttp2 jelölő az Application Gatewayben
-    - Frissített New-AzureRmApplicationGateway: Új választható -EnableHttp2 paraméter
+    - A New-AzureRmApplicationGateway frissült: Új választható -EnableHttp2 paraméter
 * IP-címkék hozzáadva a PublicIpAddress elemhez
-    - Frissített New-AzureRMPublicIpAddress: IP-címkék hozzáadva
+    - A New-AzureRmPublicIpAddress frissült: IP-címkék hozzáadva
     - New-AzureRmPublicIpTag IP-címkék hozzáadásához
 * A DisableBgpRoutePropagation tulajdonság hozzáadva itt: RouteTable és effectiveRoute.
 
 #### <a name="azurermresources"></a>AzureRM.Resources
-* Register-AzureRmProviderFeature: Hiányzó példa hozzáadva a dokumentációban
-* Register-AzureRmResourceProvider: Hiányzó példa hozzáadva a dokumentációban
+* Register-AzureRmProviderFeature: Hiányzó példa hozzáadva a dokumentumokhoz
+* Register-AzureRmResourceProvider: Hiányzó példa hozzáadva a dokumentumokhoz
 
 #### <a name="azurermstorage"></a>AzureRM.Storage
 * A következő paraméterek elavultak az új és beállított Storage-fiókok parancsmagjaiban: EnableEncryptionService és DisableEncryptionService, mivel a Titkosítás inaktív állapotban alapértelmezés szerint engedélyezve van, és nem tiltható le.
@@ -296,7 +296,7 @@ Változások a legutóbbi kiadás óta: https://github.com/Azure/azure-powershel
 * Elavulással kapcsolatos figyelmeztetés hozzáadva a PowerShell 3-hoz és 4-hez
 * Az `Add-AzureRmAccount` új neve `Connect-AzureRmAccount`; a régi parancsmag nevéhez egy új alias lett hozzáadva, és más aliasok (a `Login-AzAccount` és a `Login-AzureRmAccount`) át lettek irányítva az új parancsmag nevéhez.
 * Az `Remove-AzureRmAccount` új neve `Disconnect-AzureRmAccount`; a régi parancsmag nevéhez egy új alias lett hozzáadva, és más aliasok (a `Logout-AzAccount` és a `Logout-AzureRmAccount`) át lettek irányítva az új parancsmag nevéhez.
-* Az erőforrás-sztringek mostantól a `Login-AzureRmAccount` helyett a `Connect-AzureRmAccount` aliast használják
+* Az erőforrás-sztringek mostantól a `Connect-AzureRmAccount` helyett a `Login-AzureRmAccount` aliast használják
 * `Add-AzureRmEnvironment` és `Set-AzureRmEnvironment`
   - `-AzureOperationalInsightsEndpoint` és `-AzureOperationalInsightsEndpointResourceId` paraméterek hozzáadva, amelyek az OperationalInsights adatsík RP-vel használhatók.
 
@@ -351,7 +351,7 @@ Változások a legutóbbi kiadás óta: https://github.com/Azure/azure-powershel
 * A V2 API-lekérdezések támogatása az `Invoke-AzureRmOperationalInsightsQuery` parancsmaggal. Az új API-val kapcsolatos további információért lásd: [https://dev.loganalytics.io/](https://dev.loganalytics.io/).
 
 ### <a name="azurermresources"></a>AzureRM.Resources
-* `Get-AzureRmADServicePrincipal`: `-ServicePrincipalName` eltávolítva az alapértelmezett üres paraméterkészletből, mert redundáns volt az SPN-paraméterkészlettel
+* `Get-AzureRmADServicePrincipal`: `-ServicePrincipalName` eltávolítva az alapértelmezett üres paraméterkészletből, mert redundáns volt az SPN paraméterkészlettel
 
 ### <a name="azurermservicebus"></a>AzureRM.ServiceBus
 
@@ -493,7 +493,7 @@ Változások a legutóbbi kiadás óta: https://github.com/Azure/azure-powershel
 * A -Location paraméterekhez hozzáadott Location Completer lehetővé teszi a parancssori kiegészítési funkció érvényes helyeken keresztül történő használatát
 * A -ResourceGroup paraméterekhez hozzáadott ResourceGroup Completer lehetővé teszi a parancssori kiegészítési funkció erőforráscsoportokon keresztül történő használatát az aktuális előfizetésben
 * -AsJob támogatás hozzáadva a sokáig futó KeyVault-parancsmagok számára. Lehetővé teszi, hogy a kiválasztott parancsmagok a háttérben fussanak, és visszaad egy feladatot, amely nyomon követi és szabályozza az előrehaladást.
-  * Az érintett parancsmag: Remove-AzureRmKeyVault
+  * Érintett parancsmag: Remove-AzureRmKeyVault
 * Kijavított hiba a Set-AzureRmKeyVaultAccessPolicy parancsmagban, amely akkor jelentkezett, amikor az AAD szűrő az UPN beállítása helyett az SPN számára adja meg az UPN értékét
   - További információért tekintse meg a következő problémaleírást: https://github.com/Azure/azure-powershell/issues/5201
 
@@ -616,16 +616,16 @@ Változások a legutóbbi kiadás óta: https://github.com/Azure/azure-powershel
 ## <a name="2017128-version-511"></a>2017.12.8. – 5.1.1-es verzió
 * AnalysisServices
   - Az érvényesítés helykészletének dinamikus keresésre való módosítása, hogy az összes felhőt támogassa.
-* Automation
+* Automatizálás
   - Frissítés a következőre: Import-AzureRMAutomationRunbook
     - Mostantól támogatás érhető el a Python2-runbookokhoz
 * Batch
   - Ki lett javítva az a hiba, amely miatt az erőforráscsoport nélküli fiókműveletek nem tudták automatikusan észlelni az erőforráscsoportot
-* Compute
+* Számítás
   - A Get-AzureRmComputeResourceSku parancsmag megjeleníti az időzónával kapcsolatos információkat.
   - A Disable-AzureRmVmssDiskEncryption parancsmag frissült az alábbi hiba javítása érdekében: https://github.com/Azure/azure-powershell/issues/5038
   - -AsJob támogatás hozzáadva a sokáig futó Compute parancsmagok számára. Lehetővé teszi, hogy a kiválasztott parancsmagok a háttérben fussanak, és visszaad egy feladatot, amely nyomon követi és szabályozza az előrehaladást.
-    - Az érintett parancsmagok: A virtuális gépek és virtuálisgép-méretezési csoportok New-, Update-, Set-, Remove-, Start-, Restart-, és Stop- parancsmagjai
+    - Érintett parancsmagok: A virtuális gépek és virtuálisgép-méretezési csoportok New-, Update-, Set-, Remove-, Start-, Restart-, és Stop- parancsmagjai
     - Egyszerűsített paraméterkészlet hozzáadva a New-AzureRmVM parancsmaghoz, amely az intelligens alapértelmezett beállítások használatával létrehoz egy virtuális gépet és az összes szükséges erőforrást
 * ContainerInstance
   - Az Azure Container Instance SDK 2017-10-01 alkalmazása
@@ -675,7 +675,7 @@ Változások a legutóbbi kiadás óta: https://github.com/Azure/azure-powershel
 * RecoveryServices.Backup
   - Hiba kijavítva – A Get-AzureRmRecoveryServicesBackupItem mostantól a kis- és nagybetűket megkülönböztető összehasonlítást végez a tárolónévszűrőnél.
   - Hiba kijavítva – Az AzureVmItem mostantól rendelkezik egy olyan tulajdonsággal, amely megjeleníti, mikor történt a legutóbbi biztonsági mentési művelet – LastBackupTime.
-* További források
+* Erőforrások
   - Ki lett javítva az a hiba, amely miatt a Get-AzureRMRoleAssignment parancsmag olyan hozzárendeléseket eredményezett, amelyekben nem tartozott szerepkördefiníció-név az egyéni szerepkörökhöz
     - A felhasználók mostantól a szerepkörtípustól függetlenül használhatják a Get-AzureRMRoleAssignment parancsmagot a szerepkördefiníció-névvel rendelkező hozzárendelésekkel
   - Ki lett javítva az a hiba, amely miatt a Set-AzureRMRoleRoleDefinition parancsmag „RD nem található” hibát jelzett, amikor az „assignablescopes” új hatókört tartalmazott
@@ -723,7 +723,7 @@ Változások a legutóbbi kiadás óta: https://github.com/Azure/azure-powershel
   - AzureRM.StreamAnalytics
 
 ## <a name="2017118---version-500"></a>2017.11.8. – 5.0.0-s verzió
-* MEGJEGYZÉS: Ez egy kompatibilitástörő változást tartalmazó kiadás. A bevezetett kompatibilitástörő változások teljes listájához tekintse meg a migrálási útmutatót (https://aka.ms/azps-migration-guide) ).
+* Megjegyzés: Ez egy használhatatlanná tévő változást tartalmazó kiadás. A bevezetett kompatibilitástörő változások teljes listájához tekintse meg a migrálási útmutatót (https://aka.ms/azps-migration-guide) ).
 * Mostantól az AzureRM összes parancsmagja támogatja az online súgó használatát
   - Futtassa a Get-Help parancsmagot -Online paraméterrel az online súgónak az alapértelmezett böngészőben történő megnyitásához
 * AnalysisServices
@@ -752,7 +752,7 @@ Változások a legutóbbi kiadás óta: https://github.com/Azure/azure-powershel
     - Remove-AzureRmApplicationInsightsApiKey
 * AzureBatch
   * Új paraméterek hozzáadva a következőhöz: `New-AzureRmBatchAccount`.
-    - `PoolAllocationMode`: A Batch-fiókban történő készletlétrehozásához használandó lefoglalási mód. Ha olyan Batch-fiókot szeretne létrehozni, amely lefoglalja a készletcsomópontokat a felhasználó előfizetésében, állítsa `UserSubscription` értékre.
+    - `PoolAllocationMode`: Készletek a Batch-fiókban történő létrehozásához használandó lefoglalási mód. Ha olyan Batch-fiókot szeretne létrehozni, amely lefoglalja a készletcsomópontokat a felhasználó előfizetésében, állítsa `UserSubscription` értékre.
     - `KeyVaultId`: A Batch-fiókhoz társított Azure Key Vault erőforrás-azonosítója.
     - `KeyVaultUrl`: A Batch-fiókhoz társított Azure Key Vault URL-címe.
   * Paraméterek frissítve a következő esetében: `New-AzureBatchTask`.
@@ -784,7 +784,7 @@ Változások a legutóbbi kiadás óta: https://github.com/Azure/azure-powershel
   * Támogatás hozzáadva az Azure Active Directory-alapú hitelesítéshez.
     - Az Azure Active Directory-hitelesítés használatához kérjen le egy `BatchAccountContext` objektumot a `Get-AzureRmBatchAccount` parancsmag használatával, majd adja meg a `BatchAccountContext` paramétert egy Batch szolgáltatás parancsmagjának `-BatchContext` paraméteréhez. Az Azure Active Directory-hitelesítés kötelező a `PoolAllocationMode = UserSubscription` lefoglalási móddal rendelkező fiókok esetében.
     - A meglévő vagy a `PoolAllocationMode = BatchService` használatával létrehozott új fiókok esetében továbbra is használhat megosztott kulcsos hitelesítést, ha lekér egy `BatchAccountContext` objektumot a `Get-AzureRmBatchAccoutKeys` parancsmag segítségével.
-* Compute
+* Számítás
   * Az Azure Disk Encryption bővítmény parancsai
     - A 'Set-AzureRmVmDiskEncryptionExtension’ parancs új paramétere, az '-EncryptFormatAll’ titkosított módon formázza az adatlemezeket
     - A 'Set-AzureRmVmDiskEncryptionExtension' parancs új paraméterei, az '-ExtensionPublisherName' és '-ExtensionType’ lehetővé teszik a bővítmény másik verziójára történő váltást
@@ -813,7 +813,7 @@ Változások a legutóbbi kiadás óta: https://github.com/Azure/azure-powershel
   * A jelen kiadás keretében az EventHub parancsban történt használhatatlanná tévő változásokért tekintse meg a migrálási útmutatót
 * Insights
   * A jelen kiadás keretében az Insights parancsban történt használhatatlanná tévő változásokért tekintse meg a migrálási útmutatót
-* Network (Hálózat)
+* Hálózat
   * A jelen kiadás keretében a Network parancsban történt használhatatlanná tévő változásokért tekintse meg a migrálási útmutatót
   * Parancsmag hozzáadva az egyes Azure-régiókban elérhető internetszolgáltatók felsorolásához
     - Get-AzureRmNetworkWatcherReachabilityProvidersList

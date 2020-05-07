@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 12/20/2018
 ms.openlocfilehash: a5c5504aa4c2932582df9e4a40b4950d5f999cbd
-ms.sourcegitcommit: f9445d1525eac8c165637e1a80fbc92b1ab005c2
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/16/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "75035846"
 ---
 # <a name="overview-of-azure-powershell"></a>Az Azure PowerShell áttekintése
@@ -21,7 +21,7 @@ ms.locfileid: "75035846"
 
 Az Azure PowerShell olyan parancsmagok készletét kínálja, amelyek az [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) modellt használják az Azure-erőforrások kezeléséhez. Használhatja a böngészőjében az [Azure Cloud Shell-lel](/azure/cloud-shell/overview), vagy telepítheti a helyi gépen, és használhatja bármely PowerShell-munkamenetben.
 
-A [Cloud Shell-lel](/azure/cloud-shell/overview) futtassa az Azure PowerShellt a böngészőben, vagy [telepítse](install-azurerm-ps.md) saját számítógépére. Ezután olvassa el az [Első lépések](get-started-azureps.md) című cikket, mielőtt használatba venné. A legújabb kiadással kapcsolatos információkért lásd a [kibocsátási megjegyzéseket](release-notes-azureps.md).
+A [Cloud Shell-lel](/azure/cloud-shell/overview) futtassa az Azure PowerShellt a böngészőben, vagy [telepítse](install-azurerm-ps.md) saját számítógépére. Ezután olvassa el az [Első lépések](get-started-azureps.md) című cikket a használat megkezdéséhez. A legújabb kiadással kapcsolatos információkért tekintse meg a [kibocsátási megjegyzéseket](release-notes-azureps.md).
 
 A következő példák segítenek megismerkedni az Azure PowerShell általános forgatókönyveinek végrehajtásával:
 
@@ -37,7 +37,7 @@ Amennyiben nem ismeri a PowerShellt, tekintse meg a PowerShell használatának e
 * [A PowerShell telepítése](/powershell/scripting/install/installing-windows-powershell)
 * [Parancsprogram-kezelés a PowerShell-lel](/powershell/scripting/powershell-scripting)
 
-Az alábbi videót is megtekintheti: [A PowerShell alapjai: (1. rész) Ismerkedés a PowerShell-lel](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1).
+Megtekintheti a következő videót is: [A PowerShell alapjai: (1. rész) Ismerkedés a PowerShell-lel](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1).
 
 ## <a name="build-your-skills-with-microsoft-learn"></a>Fejlessze a készségeit a Microsoft Learnnel
 
