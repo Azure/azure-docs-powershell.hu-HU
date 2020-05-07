@@ -4,16 +4,16 @@ description: Az Azure PowerShell telepítése a PowerShellGet segítségével
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/26/2020
-ms.openlocfilehash: 7a25270566f5e856ee44c4c191a47a3e7334508b
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: af088f428ce383faa7df6be2cc7d48350893be5b
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81740252"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82587960"
 ---
 # <a name="install-azure-powershell"></a>Az Azure PowerShell telepítése
 
-Ez a cikk az Azure PowerShell-modulok a PowerShellGet használatával való telepítését ismerteti. Az útmutatás Windows, macOS és Linux platformon használható.
+Ez a cikk az Azure PowerShell-modulok a [PowerShellGet](/powershell/scripting/gallery/installing-psget) használatával való telepítését ismerteti. Az útmutatás Windows, macOS és Linux platformon használható.
 
 Az Azure PowerShell az Azure [Cloud Shellben](/azure/cloud-shell/overview) is elérhető, és mostantól a [Docker-rendszerképek](azureps-in-docker.md) előre telepítve tartalmazzák.
 
@@ -31,7 +31,7 @@ Az Azure PowerShell használata PowerShell 5.1-ben Windows rendszeren:
 
 1. Frissítsen a [Windows PowerShell 5.1-re](/powershell/scripting/install/installing-windows-powershell#upgrading-existing-windows-powershell), ha szükséges. Ha Windows 10 rendszert használ, már telepítve van a PowerShell 5.1.
 2. Telepítse a [.NET-keretrendszer 4.7.2-es vagy újabb verzióját](/dotnet/framework/install).
-3. Győződjön meg arról, hogy a PowerShellGet legújabb verziójával rendelkezik. Futtassa az `Update-Module PowerShellGet -Force` parancsot.
+3. Győződjön meg arról, hogy a PowerShellGet legújabb verziójával rendelkezik. Futtassa az `Install-Module -Name PowerShellGet -Force` parancsot.
 
 ## <a name="install-the-azure-powershell-module"></a>Az Azure PowerShell-modul telepítése
 

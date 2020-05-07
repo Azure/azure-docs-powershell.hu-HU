@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
 ms.openlocfilehash: c89df2e3d04a97ebe31d62cd448ea662301b74b4
-ms.sourcegitcommit: 0fdccb57a356b6e7c35a77b1f76e01fb96ef582b
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "65854119"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Felhasználói hitelesítő adatok megőrzése a PowerShell-munkamenetek között
@@ -133,18 +133,18 @@ Ha a változó értéke „true”, a rendszer automatikusan menti a környezete
 
 - [Enable-AzureRmContextAutosave][enable] – A környezet mentésének engedélyezése a PowerShell-munkamenetek között.
   Minden változás módosítja a globális környezetet.
-- [Disable-AzureRmContextAutosave][disable] – A környezet automatikus mentésének letiltása. Minden egyes új PowerShell-munkamenetnek újra be kell jelentkeznie.
+- [Disable-AzureRmContextAutosave][disable] – A környezet automatikus mentésének kikapcsolása. Minden egyes új PowerShell-munkamenetnek újra be kell jelentkeznie.
 - [Select-AzureRmContext][select] – Az alapértelmezett környezet kiválasztása. Az ezt követő parancsmagok ennek a környezetnek a hitelesítő adatait használják.
 - [Disconnect-AzureRmAccount][remove-cred] – Egy fiókhoz tartozó összes hitelesítő adat és környezet eltávolítása.
-- [Remove-AzureRmContext][remove-context] – A megnevezett környezet eltávolítása.
+- [Remove-AzureRmContext][remove-context] – Egy elnevezett környezet eltávolítása.
 - [Rename-AzureRmContext][rename] – Meglévő környezet eltávolítása.
 
 Meglévő profilparancsmagok változásai
 
-- [Add-AzureRmAccount][login] – Lehetővé teszi a bejelentkezés hatókörének beállítását a folyamatra vagy az aktuális felhasználóra.
+- [Add-AzureRmAccount][login] – A bejelentkezés hatóköre beállításának engedélyezése a folyamatra vagy az aktuális felhasználóra.
   Lehetővé teszi az alapértelmezett környezet elnevezését a bejelentkezés után.
-- [Import-AzureRmContext][import] – Lehetővé teszi a bejelentkezés hatókörének beállítását a folyamatra vagy az aktuális felhasználóra.
-- [Set-AzureRmContext][set-context] – Lehetővé teszi meglévő megnevezett környezetek kiválasztását, valamint a hatókör beállítását a folyamatra vagy az aktuális felhasználóra.
+- [Import-AzureRmContext][import] – A bejelentkezés hatóköre beállításának engedélyezése a folyamatra vagy az aktuális felhasználóra.
+- [Set-AzureRmContext][set-context] – A meglévő elnevezett környezetek kiválasztásának, valamint a hatókör a folyamatra vagy az aktuális felhasználóra való beállításának engedélyezése.
 
 <!-- Hyperlinks -->
 [enable]: /powershell/module/azurerm.profile/Enable-AzureRmContextAutosave

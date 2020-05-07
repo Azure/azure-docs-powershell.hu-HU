@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
 ms.openlocfilehash: f8dc413a91876e53e62d25cc38ac3b3ef6afda8e
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "65534593"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-500"></a>A Microsoft Azure PowerShell 5.0.0 használhatatlanná tévő változásai
@@ -132,7 +132,7 @@ New-AzureBatchTask [other parameters] -MultiInstanceSettings $settings
 ```
 
 ### <a name="get-azurebatchtask"></a>**Get-AzureBatchTask**
- - A `PSCloudTask` `RunElevated` tulajdonsága el lett távolítva. A `UserIdentity` tulajdonság lépett a `RunElevated` helyébe.
+ - A `PSCloudTask``RunElevated` tulajdonsága el lett távolítva. A `UserIdentity` tulajdonság lépett a `RunElevated` helyébe.
 
 ```powershell-interactive
 # Old
@@ -148,7 +148,7 @@ Ez befolyásolja a `RunElevated` tulajdonságot a következők esetében: `PSClo
 
 ### <a name="multiple-types"></a>**Többféle típus**
 
-- A `PSExitConditions` `SchedulingError` tulajdonsága új nevet kapott: `PreProcessingError`.
+- A `PSExitConditions``SchedulingError` tulajdonsága új nevet kapott: `PreProcessingError`.
 
 ```powershell-interactive
 # Old
@@ -162,7 +162,7 @@ $task.ExitConditions.PreProcessingError
 
 ### <a name="multiple-types"></a>**Többféle típus**
 
-- A `PSJobPreparationTaskExecutionInformation`, `PSJobReleaseTaskExecutionInformation`, `PSStartTaskInformation`, `PSSubtaskInformation` és `PSTaskExecutionInformation` `SchedulingError` tulajdonsága új nevet kapott: `FailureInformation`.
+- A `PSJobPreparationTaskExecutionInformation`, `PSJobReleaseTaskExecutionInformation`, `PSStartTaskInformation`, `PSSubtaskInformation` és `PSTaskExecutionInformation``SchedulingError` tulajdonsága új nevet kapott: `FailureInformation`.
   - A rendszer a `FailureInformation` tulajdonságot adja vissza minden tevékenységhiba esetén, beleértve a korábbi ütemezési hibákat, a tevékenységek nullától eltérő kilépési kódjait, és az új kimeneti fájlok szolgáltatásának sikertelen fájlfeltöltéseit.
   - A szerkezet nem változott, tehát a típus használatakor nincs szükség a kód megváltoztatására.
 
@@ -193,7 +193,7 @@ New-AzureBatchPool [other parameters] [-TargetDedicatedComputeNodes <Int32>] [-T
 Szintén érintettek az alábbiak: Start-AzureBatchPoolResize
 
 ### <a name="get-azurebatchpool"></a>**Get-AzureBatchPool**
- - A `PSCloudPool` `TargetDedicated` és `CurrentDedicated` tulajdonságai új nevet kaptak: `TargetDedicatedComputeNodes` és `CurrentDedicatedComputeNodes`.
+ - A `PSCloudPool``TargetDedicated` és `CurrentDedicated` tulajdonságai új nevet kaptak: `TargetDedicatedComputeNodes` és `CurrentDedicatedComputeNodes`.
 
 ```powershell-interactive
 # Old
@@ -209,7 +209,7 @@ $pool.CurrentDedicatedComputeNodes
 
 ### <a name="type-pscloudpool"></a>**Type PSCloudPool**
 
-- A `PSCloudPool` `ResizeError` tulajdonsága új nevet kapott: `ResizeErrors`. Ez mostantól egy gyűjtemény.
+- A `PSCloudPool``ResizeError` tulajdonsága új nevet kapott: `ResizeErrors`. Ez mostantól egy gyűjtemény.
 
 ```powershell-interactive
 # Old
@@ -222,7 +222,7 @@ $pool.ResizeErrors[0]
 ```
 
 ### <a name="new-azurebatchjob"></a>**New-AzureBatchJob**
-- A `PSPoolSpecification` `TargetDedicated` tulajdonsága új nevet kapott: `TargetDedicatedComputeNodes`.
+- A `PSPoolSpecification``TargetDedicated` tulajdonsága új nevet kapott: `TargetDedicatedComputeNodes`.
 
 ```powershell-interactive
 # Old
@@ -256,7 +256,7 @@ Szintén érintettek az alábbiak: Get-AzureBatchNodeFileContent, Remove-AzureBa
 
 ### <a name="type-psnodefile"></a>**PSNodeFile** típus
 
- - A `PSNodeFile` `Name` tulajdonsága új nevet kapott: `Path`.
+ - A `PSNodeFile``Name` tulajdonsága új nevet kapott: `Path`.
 
 ```powershell-interactive
 # Old
@@ -269,7 +269,7 @@ $file.Path
 ```
 
 ### <a name="get-azurebatchsubtask"></a>**Get-AzureBatchSubtask**
-- A `PSSubtaskInformation` `PreviousState` és `State` tulajdonságai mostantól nem `TaskState`, hanem `SubtaskState` típusúak.
+- A `PSSubtaskInformation``PreviousState` és `State` tulajdonságai mostantól nem `TaskState`, hanem `SubtaskState` típusúak.
   - A `TaskState` tulajdonsággal ellentétben a `SubtaskState` tulajdonságnak nincs `Active` értéke, mivel az alfeladatok nem lehetnek `Active` állapotban.
 
 ```powershell-interactive
