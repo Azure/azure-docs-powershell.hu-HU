@@ -113,7 +113,7 @@ Az „Az.Batch” modul 2.0.1-es verziója nem kompatibilis az „Az.Resources�
 ## <a name="compute"></a>Számítás
 
 ### `New-AzDiskConfig`
-A `UploadSizeInBytes` esetében a `DiskSizeGB` paraméter helyett az `New-AzDiskConfig` paramétert kell használni, ha a CreateOption értéke Upload
+A `New-AzDiskConfig` esetében a `DiskSizeGB` paraméter helyett az `UploadSizeInBytes` paramétert kell használni, ha a CreateOption értéke Upload
 
 #### <a name="before"></a>Előtte
 ```powershell
