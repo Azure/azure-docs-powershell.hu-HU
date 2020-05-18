@@ -69,7 +69,7 @@ Ha a feladat befejeződött, a `Receive-Job` használatával lekérheti a felada
 
 > [!NOTE]
 > A `Receive-Job` úgy adja vissza a parancsmag eredményét, mintha az `-AsJob` jelző nem lenne jelen.
-> Például a `Receive-Job``Do-Action -AsJob`-eredménye ugyanaz a típus, mint a `Do-Action` eredménye.
+> Például a `Do-Action -AsJob``Receive-Job`-eredménye ugyanaz a típus, mint a `Do-Action` eredménye.
 
 ```azurepowershell-interactive
 $vm = Receive-Job $job

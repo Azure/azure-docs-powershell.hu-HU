@@ -35,7 +35,7 @@ Ez a dokumentum egyrészt értesítőül szolgál a használhatatlanná tévő v
 A kiadás a következő kimeneti típusokat érinti:
 
 ### <a name="psvirtualmachine"></a>PSVirtualMachine
-- A `DataDiskNames` objektum `NetworkInterfaceIDs` és `PSVirtualMachine` legfelsőbb szintű tulajdonságai el lettek távolítva a kimenettípusból. Ezek a tulajdonságok eddig is elérhetőek voltak a `StorageProfile` objektum `NetworkProfile` és `PSVirtualMachine` tulajdonságaiban, és ezentúl csak innen lehet hozzájuk férni.
+- A `PSVirtualMachine` objektum `DataDiskNames` és `NetworkInterfaceIDs` legfelsőbb szintű tulajdonságai el lettek távolítva a kimenettípusból. Ezek a tulajdonságok eddig is elérhetőek voltak a `PSVirtualMachine` objektum `StorageProfile` és `NetworkProfile` tulajdonságaiban, és ezentúl csak innen lehet hozzájuk férni.
 - A módosítás a következő parancsmagokat érinti:
     - `Add-AzureRmVMDataDisk`
     - `Add-AzureRmVMNetworkInterface`

@@ -62,7 +62,7 @@ Enable-AzureRmAlias -Scope CurrentUser
 ```
 
 Az aliasok segítségével továbbra is használhatja a régi parancsmagneveket, ha az Az modul telepítve van. Az aliasok a kiválasztott hatókör profiljába lesznek írva. Ha nincs profil, a rendszer létrehoz egyet.
-A `-Scope` értéknél nagyobb `CurrentUser` használatakor megfelelő engedélyek szükségesek a megfelelő profilfájl létrehozásához vagy frissítéséhez.
+A `CurrentUser` értéknél nagyobb `-Scope` használatakor megfelelő engedélyek szükségesek a megfelelő profilfájl létrehozásához vagy frissítéséhez.
 
 > [!IMPORTANT]
 > __Csak__ a parancsmagok neve rendelkezik aliassal, a modulok neve nem. Ha `#Requires` vagy `Import-Module` utasítást, `.psd1` függőségi listáit vagy teljes parancsmagneveket használ, mindenképpen ekkor migrálja őket. Ehhez kövesse a [kompatibilitástörő változások listájában](migrate-az-1.0.0.md) ismertetett, a modulnevekre vonatkozó folyamatokat.

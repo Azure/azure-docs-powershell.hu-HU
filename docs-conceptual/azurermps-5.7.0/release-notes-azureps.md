@@ -296,7 +296,7 @@ Változások a legutóbbi kiadás óta: https://github.com/Azure/azure-powershel
 * Elavulással kapcsolatos figyelmeztetés hozzáadva a PowerShell 3-hoz és 4-hez
 * Az `Add-AzureRmAccount` új neve `Connect-AzureRmAccount`; a régi parancsmag nevéhez egy új alias lett hozzáadva, és más aliasok (a `Login-AzAccount` és a `Login-AzureRmAccount`) át lettek irányítva az új parancsmag nevéhez.
 * Az `Remove-AzureRmAccount` új neve `Disconnect-AzureRmAccount`; a régi parancsmag nevéhez egy új alias lett hozzáadva, és más aliasok (a `Logout-AzAccount` és a `Logout-AzureRmAccount`) át lettek irányítva az új parancsmag nevéhez.
-* Az erőforrás-sztringek mostantól a `Connect-AzureRmAccount` helyett a `Login-AzureRmAccount` aliast használják
+* Az erőforrás-sztringek mostantól a `Login-AzureRmAccount` helyett a `Connect-AzureRmAccount` aliast használják
 * `Add-AzureRmEnvironment` és `Set-AzureRmEnvironment`
   - `-AzureOperationalInsightsEndpoint` és `-AzureOperationalInsightsEndpointResourceId` paraméterek hozzáadva, amelyek az OperationalInsights adatsík RP-vel használhatók.
 
