@@ -1,18 +1,15 @@
 ---
 title: Az Azure PowerShell telepítésének egyéb módjai
 description: Az Azure PowerShell telepítése a PowerShellGet nélkül
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/20/2018
-ms.openlocfilehash: aaba0ce38129b96e3d691f1a9d9cfdc929188ffd
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 55a89861c3bcca41b940d34d945cd43690331f3e
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "75722407"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83385762"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi-or-web-platform-installer"></a>Az Azure PowerShell telepítése Windows rendszeren MSI-vel vagy a Webplatform-telepítővel
 
@@ -38,7 +35,7 @@ Connect-AzureRmAccount
 ```
 
 Ezeket a lépéseket minden új PowerShell-munkamenet esetében meg kell ismételni. Az `AzureRM` modul automatikus importálásához be kell állítani egy PowerShell-profilt, amelyről a [profilokat ismertető](/powershell/module/microsoft.powershell.core/about/about_profiles) részben tudhat meg többet.
-Ha szeretné megtudni, hogyan őrizheti meg az Azure-bejelentkezést a munkamenetek között, tekintse meg a [Felhasználói hitelesítő adatok megőrzése a PowerShell-munkamenetek között](context-persistence.md) című részt.
+Ha szeretné megtudni, hogyan őrizheti meg az Azure-bejelentkezést a munkamenetek között, tekintse meg a [felhasználói hitelesítő adatok a PowerShell-munkamenetek között történő megőrzését](context-persistence.md) ismertető részt.
 
 ## <a name="install-or-update-on-windows-using-the-web-platform-installer"></a>Telepítés vagy frissítés Windows rendszeren a Webplatform-telepítővel
 
@@ -57,4 +54,4 @@ Connect-AzureRmAccount
 ```
 
 Ezeket a lépéseket minden új PowerShell-munkamenet esetében meg kell ismételni. Az `AzureRM` modul automatikus importálásához be kell állítani egy PowerShell-profilt, amelyről a [profilokat ismertető](/powershell/module/microsoft.powershell.core/about/about_profiles) részben tudhat meg többet.
-Ha szeretné megtudni, hogyan őrizheti meg az Azure-bejelentkezést a munkamenetek között, tekintse meg a [Felhasználói hitelesítő adatok megőrzése a PowerShell-munkamenetek között](context-persistence.md) című részt.
+Ha szeretné megtudni, hogyan őrizheti meg az Azure-bejelentkezést a munkamenetek között, tekintse meg a [felhasználói hitelesítő adatok a PowerShell-munkamenetek között történő megőrzését](context-persistence.md) ismertető részt.
