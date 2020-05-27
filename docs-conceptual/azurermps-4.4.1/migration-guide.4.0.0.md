@@ -1,15 +1,18 @@
 ---
 title: A Microsoft Azure PowerShell 4.0.0 használhatatlanná tévő változásai
 description: Ebben a migrálási útmutatóban megtalálja az Azure PowerShell 4-es verziójában található kompatibilitástörő változások listáját.
+author: sptramer
+ms.author: sttramer
+manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 47d7ab67a6b1d092bb07405e7dc925d844cac5ab
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: 2f61e41b701dfc263df18064f6ac2cc4c6e4021e
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83386714"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "67863555"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-400"></a>A Microsoft Azure PowerShell 4.0.0 használhatatlanná tévő változásai
 

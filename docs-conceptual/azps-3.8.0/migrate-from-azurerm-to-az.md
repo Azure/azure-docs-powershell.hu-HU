@@ -1,15 +1,18 @@
 ---
 title: Azure PowerShell-szkriptek áttelepítése az AzureRM modulból az Az modulba
 description: Ismerje meg a szkriptek az AzureRM modulból az új Az modulba való áttelepítésére szolgáló lépéseket és eszközöket.
+author: sptramer
+ms.author: sttramer
+manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/10/2019
-ms.openlocfilehash: 0b0b951d540ed91e15472853bba46e4f302921bc
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: 02b39653ebb4aa0f74d2340a7be7b35e08d5e44d
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387598"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "81740099"
 ---
 # <a name="migrate-azure-powershell-from-azurerm-to-az"></a>Az Azure PowerShell migrálása az AzureRM modulból az Az modulba
 

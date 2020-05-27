@@ -1,15 +1,18 @@
 ---
 title: Azure PowerShell-parancsmagok lekérdezésének kimenete
 description: Az erőforrások lekérdezése az Azure-ban, illetve az eredmények formázása.
+author: sptramer
+ms.author: sttramer
+manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/10/2019
-ms.openlocfilehash: 15067736388b35d2283932b1ca4e9a0d968315a9
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: 4f74df6acaa05babc712b7b35737ce3001170b87
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83386935"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82587992"
 ---
 # <a name="query-output-of-azure-powershell"></a>Az Azure PowerShell lekérdezésének kimenete 
 
