@@ -1,18 +1,15 @@
 ---
 title: Ismerkedés az Azure PowerShell-lel
 description: ''
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/15/2017
-ms.openlocfilehash: fde36bd3b4e2d5780f74f7bc74267ff611116400
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 92739e830e932df3919f60a14f12f127d357f5dd
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "75722475"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387921"
 ---
 # <a name="get-started-with-azure-powershell"></a>Ismerkedés az Azure PowerShell-lel
 
@@ -22,11 +19,11 @@ Az Azure PowerShell az Azure-erőforrások parancssori kezelésére és adminisz
 
 ## <a name="install-azure-powershell"></a>Az Azure PowerShell telepítése
 
-Első lépésként győződjön meg róla, hogy az Azure PowerShell legújabb verziója van telepítve. A legújabb kiadással kapcsolatos információkért tekintse meg a [kibocsátási megjegyzéseket](./release-notes-azureps.md).
+Első lépésként győződjön meg róla, hogy az Azure PowerShell legújabb verziója van telepítve. A legújabb kiadással kapcsolatos információkért lásd a [kibocsátási megjegyzéseket](./release-notes-azureps.md).
 
 1. [Telepítse az Azure PowerShellt](install-azurerm-ps.md).
 
-2. A telepítés sikerességének ellenőrzéséhez futtassa az `Get-InstalledModule AzureRM -AllVersions` parancsot a parancssorról.
+2. A telepítés sikerességének ellenőrzéséhez futtassa a `Get-InstalledModule AzureRM -AllVersions` parancsot a parancssorról.
 
 ## <a name="azure-cloud-shell"></a>Azure Cloud Shell
 
@@ -366,7 +363,7 @@ Ez több percig is eltarthat.
 
 Az Azure PowerShell használatával kapcsolatos további tudnivalókért tekintse át a [Linux rendszerű virtuális gépek](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), a [Windows rendszerű virtuális gépek](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), a [Web Apps-alkalmazások](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json) és az [SQL Database-adatbázisok](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json) leggyakoribb szkriptjeit.
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
 * [Bejelentkezés az Azure PowerShell-lel](authenticate-azureps.md)
 * [Azure-előfizetések kezelése az Azure PowerShell-lel](manage-subscriptions-azureps.md)

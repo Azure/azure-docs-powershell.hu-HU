@@ -1,18 +1,15 @@
 ---
 title: Lekérdezési eredmények formázása | Microsoft Docs
 description: Az erőforrások lekérdezése az Azure-ban, illetve az eredmények formázása.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 7f6cf61eef9c5549dfe78d2d801ab1278db40c17
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: a76ceee5ae1172630d74afd3c671031592d78a8b
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "67863569"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83386765"
 ---
 # <a name="formatting-query-results"></a>Lekérdezési eredmények formázása
 

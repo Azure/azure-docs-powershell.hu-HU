@@ -1,18 +1,15 @@
 ---
 title: Az AzureRM és az Azure PowerShell Az 1.0.0 közötti összes változás
 description: Ebben a migrálási útmutatóban megtalálja az Azure PowerShell Az 1-es verziójában található kompatibilitástörő változások listáját.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
-ms.openlocfilehash: ea7593cf2b753b210ff2955b7bd450030ad83596
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: d2e67ada70fed91a939dc72935e2fa639c731002
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "75035829"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387020"
 ---
 # <a name="breaking-changes-for-az-100"></a>Az Az 1.0.0 kompatibilitástörő változásai
 
@@ -337,7 +334,7 @@ A szkriptek a jövőben nem hozhatnak feldolgozási döntéseket e mezők érté
 - Módosítottuk a következő parancsmag visszatérési típusait:
   - Az `ApplicationHealthPolicy` típus `ServiceTypeHealthPolicies` tulajdonsága el lett távolítva.
   - Az `ClusterUpgradeDeltaHealthPolicy` típus `ApplicationHealthPolicies` tulajdonsága el lett távolítva.
-  - Az `ClusterUpgradePolicy` típus `OverrideUserUpgradePolicy` tulajdonsága el lett távolítva.
+  - A `ClusterUpgradePolicy` típus `OverrideUserUpgradePolicy` tulajdonsága el lett távolítva.
   - Ezek a módosítások a következő parancsmagokat érintik:
     - Add-AzServiceFabricClientCertificate
     - Add-AzServiceFabricClusterCertificate

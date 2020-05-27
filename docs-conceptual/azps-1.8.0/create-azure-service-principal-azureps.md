@@ -1,18 +1,15 @@
 ---
 title: Azure-beli szolgáltatásnevek használata az Azure PowerShell-lel
 description: Megtudhatja, hogyan hozhat létre és használhat szolgáltatásneveket az Azure PowerShell-lel.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: 6d9df4a62238f1e3b9cc9a62864f5d4d9337d6a7
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: cf88eb5a477139a0ef5b756ca4e768bbce1b33b7
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "68807392"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387139"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Azure-beli szolgáltatásnév létrehozása az Azure PowerShell használatával
 

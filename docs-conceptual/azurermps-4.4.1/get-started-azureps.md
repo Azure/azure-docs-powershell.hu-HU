@@ -1,18 +1,15 @@
 ---
 title: Az Azure PowerShell használatának első lépései | Microsoft Docs
 description: ''
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/15/2017
-ms.openlocfilehash: 564a3e70e3f6d1803cdff9976bace119f6e20f48
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: e7735d6f60e7f62376dbd7bdcd5e4897d177dcd7
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "75720395"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83386799"
 ---
 # <a name="getting-started-with-azure-powershell"></a>Ismerkedés az Azure PowerShell-lel
 
@@ -40,11 +37,11 @@ Telepítheti az Azure PowerShellt, és helyileg is használhatja PowerShell-munk
 
 ## <a name="install-azure-powershell"></a>Az Azure PowerShell telepítése
 
-Első lépésként győződjön meg róla, hogy az Azure PowerShell legújabb verziója van telepítve. A legújabb kiadással kapcsolatos információkért tekintse meg a [kibocsátási megjegyzéseket](./release-notes-azureps.md).
+Első lépésként győződjön meg róla, hogy az Azure PowerShell legújabb verziója van telepítve. A legújabb kiadással kapcsolatos információkért lásd a [kibocsátási megjegyzéseket](./release-notes-azureps.md).
 
 1. [Telepítse az Azure PowerShellt](install-azurerm-ps.md).
 
-2. A telepítés sikerességének ellenőrzéséhez futtassa az `Get-InstalledModule AzureRM -AllVersions` parancsot a parancssorról.
+2. A telepítés sikerességének ellenőrzéséhez futtassa a `Get-InstalledModule AzureRM -AllVersions` parancsot a parancssorról.
 
 ## <a name="sign-in-to-azure"></a>Bejelentkezés az Azure-ba
 
@@ -362,7 +359,7 @@ Ez több percig is eltarthat.
 
 Az Azure PowerShell használatával kapcsolatos további tudnivalókért tekintse át a [Linux rendszerű virtuális gépek](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), a [Windows rendszerű virtuális gépek](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), a [Web Apps-alkalmazások](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json) és az [SQL Database-adatbázisok](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json) leggyakoribb szkriptjeit.
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
 * [Bejelentkezés az Azure PowerShell-lel](authenticate-azureps.md)
 * [Azure-előfizetések kezelése az Azure PowerShell-lel](manage-subscriptions-azureps.md)

@@ -1,18 +1,15 @@
 ---
 title: Bejelentkezés az Azure PowerShell-lel
 description: Hogyan lehet bejelentkezni az Azure PowerShellbe felhasználóként, szolgáltatásnévként vagy az Azure-erőforrások felügyelt identitásaival.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/04/2019
-ms.openlocfilehash: 0de487cc34593ceac05aa2077358d692470dc23e
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: f0354c67295b425b03c9780bf76ffef11d477951
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81740609"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83386037"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Bejelentkezés az Azure PowerShell-lel
 

@@ -1,19 +1,16 @@
 ---
 title: Az Azure PowerShell változásnaplója | Microsoft Docs
 description: Az alábbiakban az Azure PowerShell legutóbbi kiadásában végrehajtott módosítások előzményei olvashatók.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 08/28/2018
-ms.openlocfilehash: eecd66ddf433cc2543ceeaef1519d69179f2f099
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 8aa0462af97877e0d20fe898ddd927a6d2850dea
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534451"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387326"
 ---
 # <a name="release-notes"></a>Kibocsátási megjegyzések
 
@@ -141,7 +138,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
 * Hozzá lett adva az Azure-fájlmegosztások támogatása a Recovery Servicesben.
 
 #### <a name="azurermresources"></a>AzureRM.Resources
-* [https://github.com/Azure/azure-powershell/issues/7679](https://github.com/Azure/azure-powershell/issues/7402 ) javítása
+* https://github.com/Azure/azure-powershell/issues/7402 javítása
     - Lehetségessé vált az erőforrások felsorolása a -ResourceId paraméter a Get-AzureRmResource parancsmaggal való használatával
 
 #### <a name="azurermservicebus"></a>AzureRM.ServiceBus
@@ -169,8 +166,8 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
 #### <a name="azurermdatalakestore"></a>AzureRM.DataLakeStore
 * Virtuális hálózati szabályok támogatása
     - Get-AzureRmDataLakeStoreVirtualNetworkRule: Beszerzi vagy listázza az Azure Data Lake Storage virtuális hálózati szabályát.
-    - Add-AzureRmDataLakeStoreVirtualNetworkRule: A virtuális hálózati szabályt hozzáadja a kiválasztott Data Lake Storage-fiókhoz.
-    - Set-AzureRmDataLakeStoreVirtualNetworkRule: Módosítja a kiválasztott Data Lake Storage-fiókhoz tartozó virtuális hálózati szabályt.
+    - Add-AzureRmDataLakeStoreVirtualNetworkRule: Hozzáad egy virtuális hálózati szabályt a kiválasztott Data Lake Storage-fiókhoz.
+    - Set-AzureRmDataLakeStoreVirtualNetworkRule: Módosítja a megadott Data Lake Storage-fiókhoz tartozó virtuális hálózati szabályt.
     - Remove-AzureRmDataLakeStoreVirtualNetworkRule: Törli az Azure Data Lake Storage virtuális hálózati szabályát.
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
@@ -327,7 +324,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
 * Alhálózat-delegálási parancsmagok hozzáadva.
   - New-AzureRmDelegation: Létrehoz egy új delegálást, amelyet hozzá lehet adni egy alhálózathoz
   - Remove-AzureRmDelegation: Felvesz egy alhálózatot, és eltávolítja a megadott delegálási nevet az adott alhálózatból
-  - Add-AzureRmDelegation: Felvesz egy alhálózatot, és eltávolítja a megadott szolgáltatásnevet az adott alhálózatból
+  - Add-AzureRmDelegation: Felvesz egy alhálózatot, és hozzáadja a megadott szolgáltatásnevet delegálásként az adott alhálózathoz
   - Get-AzureRmDelegation
   - Get-AzureRmAvailableServiceDelegations
 
@@ -778,9 +775,9 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Társviszony-létesítés engedélyezése több bérlőben lévő virtuális hálózatok között a következőhöz: Set/Add-AzureRmVirtualNetworkPeering
 * Az alábbi parancsmagok frissítése az Application Gatewayhez
-    - New-AzureRmApplicationGateway: Hozzáadott EnableFIPS jelző és zónatámogatás
-    - New-AzureRmApplicationGatewaySku: Hozzáadott új Standard_v2 és WAF_v2 SKU-k
-    - Set-AzureRmApplicationGatewaySku: Hozzáadott új Standard_v2 és WAF_v2 SKU-k
+    - New-AzureRmApplicationGateway : EnableFIPS jelző és zónatámogatás hozzáadva
+    - New-AzureRmApplicationGatewaySku : Új Standard_v2 és WAF_v2 SKU-k hozzáadva
+    - Set-AzureRmApplicationGatewaySku : Új Standard_v2 és WAF_v2 SKU-k hozzáadva
 * A legújabb generátorverzióval újból létrehozott RouteTable parancsmagok
 
 #### <a name="azurermrelay"></a>AzureRM.Relay
@@ -1008,7 +1005,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
 * A privát hitelesítésszolgáltató által kiállított tanúsítványok fő- vagy hitelesítésszolgáltatói tanúsítványként való telepítése mostantól támogatott
 * Az egyéni SSL-tanúsítványok KeyVault- és többproxys gazdaneveken keresztüli fogadása mostantól támogatott
 * Az MSI-identitások mostantól támogatottak
-* A házirendek URL-kapcsolaton keresztüli fogadása mostantól támogatott MEGJEGYZÉS: A következő parancsmagok elavulttá válnak a jövőbeli kiadásokban
+* A szabályzatok URL-kapcsolaton keresztüli fogadása mostantól támogatott MEGJEGYZÉS: A következő parancsmagok elavulttá válnak a jövőbeli kiadásokban
    - Import-AzureRmApiManagementHostnameCertificate
    - New-AzureRmApiManagementHostnameConfiguration
    - Set-AzureRmApiManagementHostnames

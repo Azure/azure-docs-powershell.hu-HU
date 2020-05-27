@@ -1,18 +1,14 @@
 ---
 title: Az Azure PowerShell Service Management modul áttekintése | Microsoft Docs
 description: Az Azure PowerShell áttekintése telepítési és konfigurációs hivatkozásokkal.
-author: sptramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.author: sttramer
-ms.manager: carmonm
-ms.openlocfilehash: 05192f290c57c8ac004ba6bb698e531e51c7d4f2
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 32e98196d1b23e96b9846e9cd4da93bca15448cb
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "63053419"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83384742"
 ---
 # <a name="overview-of-the-azure-powershell-service-management-module"></a>Az Azure PowerShell Service Management modul áttekintése
 

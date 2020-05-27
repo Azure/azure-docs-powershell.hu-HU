@@ -1,18 +1,15 @@
 ---
 title: Parancsmagok párhuzamos futtatása PowerShell-feladatok használatával
 description: Parancsok párhuzamos futtatása az -AsJob paraméter segítségével.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/11/2017
-ms.openlocfilehash: d2ffd6cc4c5e70c53ab60b1280384faac9b45867
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 3f8617ade3afbf6a283f3696f6d688ba9529173a
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534729"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387989"
 ---
 # <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>Parancsmagok párhuzamos futtatása PowerShell-feladatok használatával
 

@@ -1,18 +1,15 @@
 ---
 title: Az Azure PowerShell telepítése és konfigurálása | Microsoft Docs
 description: Az Azure PowerShell telepítése és konfigurálása az első használathoz.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: 7b099fead7cb985fc8f7e6fed55b8c1107caa0d9
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 6f894546364e6a5ae06e1915a166edb258ccc698
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "75720378"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83386748"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Az Azure PowerShell telepítése Windows rendszeren a PowerShellGet használatával
 
@@ -51,10 +48,10 @@ A PowerShellGet 1.1.2.0-s vagy újabb verziója szükséges. A PowerShellGet fri
 Install-Module PowerShellGet -Force
 ```
 
-Ha a PowerShellGet nincs telepítve, akkor tekintse meg a jelen cikk [A PowerShellGet beszerzése](#how-to-get-powershellget) című szakaszát.
+Ha a PowerShellGet nincs telepítve, akkor tekintse meg a jelen cikk [A PowerShellGet-modul beszerzése](#how-to-get-powershellget) című szakaszát.
 
 > [!NOTE]
-> A PowerShellGet használatához olyan végrehajtási szabályzatra van szükség, amely lehetővé teszi a szkriptek futtatását. A PowerShell végrehajtási házirendjével kapcsolatos további információk a [végrehajtási házirendeket áttekintő cikkben](/powershell/module/microsoft.powershell.core/about/about_execution_policies) olvashatók.
+> A PowerShellGet használatához olyan végrehajtási szabályzatra van szükség, amely lehetővé teszi a szkriptek futtatását. A PowerShell végrehajtási házirendjével kapcsolatos további információk: [A végrehajtási házirendek áttekintése](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
 >
 > [!IMPORTANT]
 > Az ebben a dokumentumban bemutatott AzureRM modul .NET-keretrendszert használ. Ennek következtében nem kompatibilis a PowerShell 6.0-s verziójával, amely a .NET Core-t használja. Ha 6.0-s PowerShell verziót használ, kövesse a [macOS és Linux rendszerekre vonatkozó telepítési utasításokat](install-azurermps-maclinux.md).
@@ -91,13 +88,13 @@ Ha az Azure PowerShell korábbi verziójával rendelkezik, hibaüzenetet kaphat.
 
 ## <a name="step-3-load-the-azurerm-module"></a>3\. lépés: Az AzureRM-modul betöltése
 
-A modul telepítése után be kell tölteni azt a PowerShell-munkamenetbe. Ezt a lépést normál (nem emelt szintű) PowerShell-munkamenetben kell végrehajtani. A modulok az `Import-Module` parancsmaggal, az alábbi módon tölthetők be:
+A modul telepítése után be kell tölteni a azt a PowerShell-munkamenetbe. Ezt a lépést normál (nem emelt szintű) PowerShell-munkamenetben kell végrehajtani. A modulok az `Import-Module` parancsmaggal, az alábbi módon tölthetők be:
 
 ```powershell-interactive
 Import-Module -Name AzureRM
 ```
 
-## <a name="next-steps"></a>További lépések
+## <a name="next-steps"></a>Következő lépések
 
 Az Azure PowerShell használatával kapcsolatos további információkat az alábbi cikkekben olvashat:
 

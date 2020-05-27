@@ -1,19 +1,16 @@
 ---
 title: Az Azure PowerShell változásnaplója | Microsoft Docs
 description: Az alábbiakban az Azure PowerShell legutóbbi kiadásában végrehajtott módosítások előzményei olvashatók.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
-ms.openlocfilehash: 61ab0f91c3d6fffdbffd336fa0d6ed9b0ab8f6ec
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 795aa938ec179bb6d845774cf25778bd2b7c1442
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "68863284"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387756"
 ---
 # <a name="release-notes"></a>Kibocsátási megjegyzések
 
