@@ -1,26 +1,23 @@
 ---
 title: Azure-előfizetések kezelése az Azure PowerShell-lel
 description: Azure-előfizetések kezelése az Azure PowerShell-lel
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 34a062010f2f86744e71bbcbb6f4db28e47d5b16
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 757d908de765d60428a3df17ba7c827f50360f3b
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534981"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387887"
 ---
-# <a name="manage-multiple-azure-subscriptions"></a><span data-ttu-id="7a66b-103">Több Azure-előfizetés kezelése</span><span class="sxs-lookup"><span data-stu-id="7a66b-103">Manage multiple Azure subscriptions</span></span>
+# <a name="manage-multiple-azure-subscriptions"></a><span data-ttu-id="c9437-103">Több Azure-előfizetés kezelése</span><span class="sxs-lookup"><span data-stu-id="c9437-103">Manage multiple Azure subscriptions</span></span>
 
 [!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
-<span data-ttu-id="7a66b-104">Ha még csak most kezd ismerkedni az Azure-ral, valószínűleg egyetlen előfizetéssel rendelkezik.</span><span class="sxs-lookup"><span data-stu-id="7a66b-104">If you are brand new to Azure, you probably only have a single subscription.</span></span> <span data-ttu-id="7a66b-105">Ha azonban már egy ideje használja az Azure-t, előfordulhat, hogy már több Azure-előfizetést is létrehozott.</span><span class="sxs-lookup"><span data-stu-id="7a66b-105">But if you have been using Azure for a while, you may have created multiple Azure subscriptions.</span></span> <span data-ttu-id="7a66b-106">Az Azure PowerShellt beállíthatja, hogy egy adott előfizetésen hajtsa végre a parancsokat.</span><span class="sxs-lookup"><span data-stu-id="7a66b-106">You can configure Azure PowerShell to execute commands against a particular subscription.</span></span>
+<span data-ttu-id="c9437-104">Ha még csak most kezd ismerkedni az Azure-ral, valószínűleg egyetlen előfizetéssel rendelkezik.</span><span class="sxs-lookup"><span data-stu-id="c9437-104">If you are brand new to Azure, you probably only have a single subscription.</span></span> <span data-ttu-id="c9437-105">Ha azonban már egy ideje használja az Azure-t, előfordulhat, hogy már több Azure-előfizetést is létrehozott.</span><span class="sxs-lookup"><span data-stu-id="c9437-105">But if you have been using Azure for a while, you may have created multiple Azure subscriptions.</span></span> <span data-ttu-id="c9437-106">Az Azure PowerShellt beállíthatja, hogy egy adott előfizetésen hajtsa végre a parancsokat.</span><span class="sxs-lookup"><span data-stu-id="c9437-106">You can configure Azure PowerShell to execute commands against a particular subscription.</span></span>
 
-1. <span data-ttu-id="7a66b-107">Kérje le a fiókban lévő összes előfizetés listáját.</span><span class="sxs-lookup"><span data-stu-id="7a66b-107">Get a list of all subscriptions in your account.</span></span>
+1. <span data-ttu-id="c9437-107">Kérje le a fiókban lévő összes előfizetés listáját.</span><span class="sxs-lookup"><span data-stu-id="c9437-107">Get a list of all subscriptions in your account.</span></span>
 
     ```azurepowershell-interactive
     Get-AzureRmSubscription
@@ -49,13 +46,13 @@ ms.locfileid: "65534981"
     CurrentStorageAccount :
     ```
 
-2. <span data-ttu-id="7a66b-108">Adja meg az alapértelmezett fiókot.</span><span class="sxs-lookup"><span data-stu-id="7a66b-108">Set the default.</span></span>
+2. <span data-ttu-id="c9437-108">Adja meg az alapértelmezett fiókot.</span><span class="sxs-lookup"><span data-stu-id="c9437-108">Set the default.</span></span>
 
     ```azurepowershell-interactive
     Select-AzureRmSubscription -SubscriptionName "My Demos"
     ```
 
-3. <span data-ttu-id="7a66b-109">Ellenőrizze a módosítást a `Get-AzureRmContext` parancsmag futtatásával.</span><span class="sxs-lookup"><span data-stu-id="7a66b-109">Verify the change by running the `Get-AzureRmContext` cmdlet.</span></span>
+3. <span data-ttu-id="c9437-109">Ellenőrizze a módosítást a `Get-AzureRmContext` parancsmag futtatásával.</span><span class="sxs-lookup"><span data-stu-id="c9437-109">Verify the change by running the `Get-AzureRmContext` cmdlet.</span></span>
 
     ```azurepowershell-interactive
     Get-AzureRmContext
@@ -70,4 +67,4 @@ ms.locfileid: "65534981"
     CurrentStorageAccount :
     ```
 
-<span data-ttu-id="7a66b-110">Miután beállította az alapértelmezett előfizetést, az összes Azure PowerShell-parancs az adott előfizetésen fut majd.</span><span class="sxs-lookup"><span data-stu-id="7a66b-110">Once you set your default subscription, all subsequent Azure PowerShell commands run against this subscription.</span></span>
+<span data-ttu-id="c9437-110">Miután beállította az alapértelmezett előfizetést, az összes Azure PowerShell-parancs az adott előfizetésen fut majd.</span><span class="sxs-lookup"><span data-stu-id="c9437-110">Once you set your default subscription, all subsequent Azure PowerShell commands run against this subscription.</span></span>

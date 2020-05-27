@@ -1,84 +1,81 @@
 ---
 title: Az AzureRM és az Azure PowerShell Az 1.0.0 közötti összes változás
 description: Ebben a migrálási útmutatóban megtalálja az Azure PowerShell Az 1-es verziójában található kompatibilitástörő változások listáját.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
-ms.openlocfilehash: ea7593cf2b753b210ff2955b7bd450030ad83596
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: d2e67ada70fed91a939dc72935e2fa639c731002
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "75035829"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387020"
 ---
-# <a name="breaking-changes-for-az-100"></a><span data-ttu-id="9c34e-103">Az Az 1.0.0 kompatibilitástörő változásai</span><span class="sxs-lookup"><span data-stu-id="9c34e-103">Breaking changes for Az 1.0.0</span></span>
+# <a name="breaking-changes-for-az-100"></a><span data-ttu-id="dcba1-103">Az Az 1.0.0 kompatibilitástörő változásai</span><span class="sxs-lookup"><span data-stu-id="dcba1-103">Breaking changes for Az 1.0.0</span></span>
 
-<span data-ttu-id="9c34e-104">Ez a dokumentum részletes információkat tartalmaz az AzureRM 6.x és az új Az modul 1.x és újabb verziója közötti változásokról.</span><span class="sxs-lookup"><span data-stu-id="9c34e-104">This document provides detailed information on the changes between AzureRM 6.x and the new Az module, version 1.x and later.</span></span> <span data-ttu-id="9c34e-105">A tartalomjegyzék végigvezeti a teljes migrálási folyamaton, és bemutatja a modulspecifikus módosításokat is, amelyek befolyásolhatják a szkripteket.</span><span class="sxs-lookup"><span data-stu-id="9c34e-105">The table of contents will help guide you through a full migration path, including module-specific changes that may affect your scripts.</span></span>
+<span data-ttu-id="dcba1-104">Ez a dokumentum részletes információkat tartalmaz az AzureRM 6.x és az új Az modul 1.x és újabb verziója közötti változásokról.</span><span class="sxs-lookup"><span data-stu-id="dcba1-104">This document provides detailed information on the changes between AzureRM 6.x and the new Az module, version 1.x and later.</span></span> <span data-ttu-id="dcba1-105">A tartalomjegyzék végigvezeti a teljes migrálási folyamaton, és bemutatja a modulspecifikus módosításokat is, amelyek befolyásolhatják a szkripteket.</span><span class="sxs-lookup"><span data-stu-id="dcba1-105">The table of contents will help guide you through a full migration path, including module-specific changes that may affect your scripts.</span></span>
 
-<span data-ttu-id="9c34e-106">Az AzureRM-ből az Az-be történő migrálás megkezdéséhez kapcsolódó általános tanácsokért lásd: [Migrálás megkezdése az AzureRM-ből az Az-be](migrate-from-azurerm-to-az.md).</span><span class="sxs-lookup"><span data-stu-id="9c34e-106">For general advice on getting started with a migration from AzureRM to Az, see [Start migration from AzureRM to Az](migrate-from-azurerm-to-az.md).</span></span>
+<span data-ttu-id="dcba1-106">Az AzureRM-ből az Az-be történő migrálás megkezdéséhez kapcsolódó általános tanácsokért lásd: [Migrálás megkezdése az AzureRM-ből az Az-be](migrate-from-azurerm-to-az.md).</span><span class="sxs-lookup"><span data-stu-id="dcba1-106">For general advice on getting started with a migration from AzureRM to Az, see [Start migration from AzureRM to Az](migrate-from-azurerm-to-az.md).</span></span>
 
-## <a name="table-of-contents"></a><span data-ttu-id="9c34e-107">Tartalomjegyzék</span><span class="sxs-lookup"><span data-stu-id="9c34e-107">Table of Contents</span></span>
+## <a name="table-of-contents"></a><span data-ttu-id="dcba1-107">Tartalomjegyzék</span><span class="sxs-lookup"><span data-stu-id="dcba1-107">Table of Contents</span></span>
 
-- [<span data-ttu-id="9c34e-108">Általános kompatibilitástörő változások</span><span class="sxs-lookup"><span data-stu-id="9c34e-108">General breaking changes</span></span>](#general-breaking-changes)
-  - [<span data-ttu-id="9c34e-109">A parancsmag főnévi előtagjának változásai</span><span class="sxs-lookup"><span data-stu-id="9c34e-109">Cmdlet noun prefix changes</span></span>](#cmdlet-noun-prefix-changes)
-  - [<span data-ttu-id="9c34e-110">A modul nevének változásai</span><span class="sxs-lookup"><span data-stu-id="9c34e-110">Module name changes</span></span>](#module-name-changes)
-  - [<span data-ttu-id="9c34e-111">Eltávolított modulok</span><span class="sxs-lookup"><span data-stu-id="9c34e-111">Removed modules</span></span>](#removed-modules)
-  - [<span data-ttu-id="9c34e-112">Windows PowerShell 5.1 és .NET 4.7.2</span><span class="sxs-lookup"><span data-stu-id="9c34e-112">Windows PowerShell 5.1 and .NET 4.7.2</span></span>](#windows-powershell-51-and-net-472)
-  - [<span data-ttu-id="9c34e-113">A felhasználói bejelentkezés ideiglenes eltávolítása a PSCredential használatával</span><span class="sxs-lookup"><span data-stu-id="9c34e-113">Temporary removal of user login using PSCredential</span></span>](#temporary-removal-of-user-login-using-pscredential)
-  - [<span data-ttu-id="9c34e-114">Bejelentkezés alapértelmezett eszközkóddal a webböngészőben megjelenő kérdés helyett</span><span class="sxs-lookup"><span data-stu-id="9c34e-114">Default device code login instead of web browser prompt</span></span>](#default-device-code-login-instead-of-web-browser-prompt)
-- [<span data-ttu-id="9c34e-115">A modul kompatibilitástörő változásai</span><span class="sxs-lookup"><span data-stu-id="9c34e-115">Module breaking changes</span></span>](#module-breaking-changes)
-  - [<span data-ttu-id="9c34e-116">Az.ApiManagement (korábban AzureRM.ApiManagement)</span><span class="sxs-lookup"><span data-stu-id="9c34e-116">Az.ApiManagement (previously AzureRM.ApiManagement)</span></span>](#azapimanagement-previously-azurermapimanagement)
-  - [<span data-ttu-id="9c34e-117">Az.Billing (korábban AzureRM.Billing, AzureRM.Consumption és AzureRM.UsageAggregates)</span><span class="sxs-lookup"><span data-stu-id="9c34e-117">Az.Billing (previously AzureRM.Billing, AzureRM.Consumption, and AzureRM.UsageAggregates)</span></span>](#azbilling-previously-azurermbilling-azurermconsumption-and-azurermusageaggregates)
-  - [<span data-ttu-id="9c34e-118">Az.CognitiveServices (korábban AzureRM.CognitiveServices)</span><span class="sxs-lookup"><span data-stu-id="9c34e-118">Az.CognitiveServices (previously AzureRM.CognitiveServices)</span></span>](#azcognitiveservices-previously-azurermcognitiveservices)
-  - [<span data-ttu-id="9c34e-119">Az.Compute (korábban AzureRM.Compute)</span><span class="sxs-lookup"><span data-stu-id="9c34e-119">Az.Compute (previously AzureRM.Compute)</span></span>](#azcompute-previously-azurermcompute)
-  - [<span data-ttu-id="9c34e-120">Az.DataFactory (korábban AzureRM.DataFactories és AzureRM.DataFactoryV2)</span><span class="sxs-lookup"><span data-stu-id="9c34e-120">Az.DataFactory (previously AzureRM.DataFactories and AzureRM.DataFactoryV2)</span></span>](#azdatafactory-previously-azurermdatafactories-and-azurermdatafactoryv2)
-  - [<span data-ttu-id="9c34e-121">Az.DataLakeAnalytics (korábban AzureRM.DataLakeAnalytics)</span><span class="sxs-lookup"><span data-stu-id="9c34e-121">Az.DataLakeAnalytics (previously AzureRM.DataLakeAnalytics)</span></span>](#azdatalakeanalytics-previously-azurermdatalakeanalytics)
-  - [<span data-ttu-id="9c34e-122">Az.DataLakeStore (korábban AzureRM.DataLakeStore)</span><span class="sxs-lookup"><span data-stu-id="9c34e-122">Az.DataLakeStore (previously AzureRM.DataLakeStore)</span></span>](#azdatalakestore-previously-azurermdatalakestore)
-  - [<span data-ttu-id="9c34e-123">Az.KeyVault (korábban AzureRM.KeyVault)</span><span class="sxs-lookup"><span data-stu-id="9c34e-123">Az.KeyVault (previously AzureRM.KeyVault)</span></span>](#azkeyvault-previously-azurermkeyvault)
-  - [<span data-ttu-id="9c34e-124">Az.Media (korábban AzureRM.Media)</span><span class="sxs-lookup"><span data-stu-id="9c34e-124">Az.Media (previously AzureRM.Media)</span></span>](#azmedia-previously-azurermmedia)
-  - [<span data-ttu-id="9c34e-125">Az.Monitor (korábban AzureRM.Insights)</span><span class="sxs-lookup"><span data-stu-id="9c34e-125">Az.Monitor (previously AzureRM.Insights)</span></span>](#azmonitor-previously-azurerminsights)
-  - [<span data-ttu-id="9c34e-126">Az.Network (korábban AzureRM.Network)</span><span class="sxs-lookup"><span data-stu-id="9c34e-126">Az.Network (previously AzureRM.Network)</span></span>](#aznetwork-previously-azurermnetwork)
-  - [<span data-ttu-id="9c34e-127">Az.OperationalInsights (korábban AzureRM.OperationalInsights)</span><span class="sxs-lookup"><span data-stu-id="9c34e-127">Az.OperationalInsights (previously AzureRM.OperationalInsights)</span></span>](#azoperationalinsights-previously-azurermoperationalinsights)
-  - [<span data-ttu-id="9c34e-128">Az.RecoveryServices (korábban AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup és AzureRM.RecoveryServices.SiteRecovery)</span><span class="sxs-lookup"><span data-stu-id="9c34e-128">Az.RecoveryServices (previously AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup, and AzureRM.RecoveryServices.SiteRecovery)</span></span>](#azrecoveryservices-previously-azurermrecoveryservices-azurermrecoveryservicesbackup-and-azurermrecoveryservicessiterecovery)
-  - [<span data-ttu-id="9c34e-129">Az.Resources (korábban AzureRM.Resources)</span><span class="sxs-lookup"><span data-stu-id="9c34e-129">Az.Resources (previously AzureRM.Resources)</span></span>](#azresources-previously-azurermresources)
-  - [<span data-ttu-id="9c34e-130">Az.ServiceFabric (korábban AzureRM.ServiceFabric)</span><span class="sxs-lookup"><span data-stu-id="9c34e-130">Az.ServiceFabric (previously AzureRM.ServiceFabric)</span></span>](#azservicefabric-previously-azurermservicefabric)
-  - [<span data-ttu-id="9c34e-131">Az.Sql (korábban AzureRM.Sql)</span><span class="sxs-lookup"><span data-stu-id="9c34e-131">Az.Sql (previously AzureRM.Sql)</span></span>](#azsql-previously-azurermsql)
-  - [<span data-ttu-id="9c34e-132">Az.Storage (korábban Azure.Storage és AzureRM.Storage)</span><span class="sxs-lookup"><span data-stu-id="9c34e-132">Az.Storage (previously Azure.Storage and AzureRM.Storage)</span></span>](#azstorage-previously-azurestorage-and-azurermstorage)
-  - [<span data-ttu-id="9c34e-133">Az.Websites (korábban AzureRM.Websites)</span><span class="sxs-lookup"><span data-stu-id="9c34e-133">Az.Websites (previously AzureRM.Websites)</span></span>](#azwebsites-previously-azurermwebsites)
+- [<span data-ttu-id="dcba1-108">Általános kompatibilitástörő változások</span><span class="sxs-lookup"><span data-stu-id="dcba1-108">General breaking changes</span></span>](#general-breaking-changes)
+  - [<span data-ttu-id="dcba1-109">A parancsmag főnévi előtagjának változásai</span><span class="sxs-lookup"><span data-stu-id="dcba1-109">Cmdlet noun prefix changes</span></span>](#cmdlet-noun-prefix-changes)
+  - [<span data-ttu-id="dcba1-110">A modul nevének változásai</span><span class="sxs-lookup"><span data-stu-id="dcba1-110">Module name changes</span></span>](#module-name-changes)
+  - [<span data-ttu-id="dcba1-111">Eltávolított modulok</span><span class="sxs-lookup"><span data-stu-id="dcba1-111">Removed modules</span></span>](#removed-modules)
+  - [<span data-ttu-id="dcba1-112">Windows PowerShell 5.1 és .NET 4.7.2</span><span class="sxs-lookup"><span data-stu-id="dcba1-112">Windows PowerShell 5.1 and .NET 4.7.2</span></span>](#windows-powershell-51-and-net-472)
+  - [<span data-ttu-id="dcba1-113">A felhasználói bejelentkezés ideiglenes eltávolítása a PSCredential használatával</span><span class="sxs-lookup"><span data-stu-id="dcba1-113">Temporary removal of user login using PSCredential</span></span>](#temporary-removal-of-user-login-using-pscredential)
+  - [<span data-ttu-id="dcba1-114">Bejelentkezés alapértelmezett eszközkóddal a webböngészőben megjelenő kérdés helyett</span><span class="sxs-lookup"><span data-stu-id="dcba1-114">Default device code login instead of web browser prompt</span></span>](#default-device-code-login-instead-of-web-browser-prompt)
+- [<span data-ttu-id="dcba1-115">A modul kompatibilitástörő változásai</span><span class="sxs-lookup"><span data-stu-id="dcba1-115">Module breaking changes</span></span>](#module-breaking-changes)
+  - [<span data-ttu-id="dcba1-116">Az.ApiManagement (korábban AzureRM.ApiManagement)</span><span class="sxs-lookup"><span data-stu-id="dcba1-116">Az.ApiManagement (previously AzureRM.ApiManagement)</span></span>](#azapimanagement-previously-azurermapimanagement)
+  - [<span data-ttu-id="dcba1-117">Az.Billing (korábban AzureRM.Billing, AzureRM.Consumption és AzureRM.UsageAggregates)</span><span class="sxs-lookup"><span data-stu-id="dcba1-117">Az.Billing (previously AzureRM.Billing, AzureRM.Consumption, and AzureRM.UsageAggregates)</span></span>](#azbilling-previously-azurermbilling-azurermconsumption-and-azurermusageaggregates)
+  - [<span data-ttu-id="dcba1-118">Az.CognitiveServices (korábban AzureRM.CognitiveServices)</span><span class="sxs-lookup"><span data-stu-id="dcba1-118">Az.CognitiveServices (previously AzureRM.CognitiveServices)</span></span>](#azcognitiveservices-previously-azurermcognitiveservices)
+  - [<span data-ttu-id="dcba1-119">Az.Compute (korábban AzureRM.Compute)</span><span class="sxs-lookup"><span data-stu-id="dcba1-119">Az.Compute (previously AzureRM.Compute)</span></span>](#azcompute-previously-azurermcompute)
+  - [<span data-ttu-id="dcba1-120">Az.DataFactory (korábban AzureRM.DataFactories és AzureRM.DataFactoryV2)</span><span class="sxs-lookup"><span data-stu-id="dcba1-120">Az.DataFactory (previously AzureRM.DataFactories and AzureRM.DataFactoryV2)</span></span>](#azdatafactory-previously-azurermdatafactories-and-azurermdatafactoryv2)
+  - [<span data-ttu-id="dcba1-121">Az.DataLakeAnalytics (korábban AzureRM.DataLakeAnalytics)</span><span class="sxs-lookup"><span data-stu-id="dcba1-121">Az.DataLakeAnalytics (previously AzureRM.DataLakeAnalytics)</span></span>](#azdatalakeanalytics-previously-azurermdatalakeanalytics)
+  - [<span data-ttu-id="dcba1-122">Az.DataLakeStore (korábban AzureRM.DataLakeStore)</span><span class="sxs-lookup"><span data-stu-id="dcba1-122">Az.DataLakeStore (previously AzureRM.DataLakeStore)</span></span>](#azdatalakestore-previously-azurermdatalakestore)
+  - [<span data-ttu-id="dcba1-123">Az.KeyVault (korábban AzureRM.KeyVault)</span><span class="sxs-lookup"><span data-stu-id="dcba1-123">Az.KeyVault (previously AzureRM.KeyVault)</span></span>](#azkeyvault-previously-azurermkeyvault)
+  - [<span data-ttu-id="dcba1-124">Az.Media (korábban AzureRM.Media)</span><span class="sxs-lookup"><span data-stu-id="dcba1-124">Az.Media (previously AzureRM.Media)</span></span>](#azmedia-previously-azurermmedia)
+  - [<span data-ttu-id="dcba1-125">Az.Monitor (korábban AzureRM.Insights)</span><span class="sxs-lookup"><span data-stu-id="dcba1-125">Az.Monitor (previously AzureRM.Insights)</span></span>](#azmonitor-previously-azurerminsights)
+  - [<span data-ttu-id="dcba1-126">Az.Network (korábban AzureRM.Network)</span><span class="sxs-lookup"><span data-stu-id="dcba1-126">Az.Network (previously AzureRM.Network)</span></span>](#aznetwork-previously-azurermnetwork)
+  - [<span data-ttu-id="dcba1-127">Az.OperationalInsights (korábban AzureRM.OperationalInsights)</span><span class="sxs-lookup"><span data-stu-id="dcba1-127">Az.OperationalInsights (previously AzureRM.OperationalInsights)</span></span>](#azoperationalinsights-previously-azurermoperationalinsights)
+  - [<span data-ttu-id="dcba1-128">Az.RecoveryServices (korábban AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup és AzureRM.RecoveryServices.SiteRecovery)</span><span class="sxs-lookup"><span data-stu-id="dcba1-128">Az.RecoveryServices (previously AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup, and AzureRM.RecoveryServices.SiteRecovery)</span></span>](#azrecoveryservices-previously-azurermrecoveryservices-azurermrecoveryservicesbackup-and-azurermrecoveryservicessiterecovery)
+  - [<span data-ttu-id="dcba1-129">Az.Resources (korábban AzureRM.Resources)</span><span class="sxs-lookup"><span data-stu-id="dcba1-129">Az.Resources (previously AzureRM.Resources)</span></span>](#azresources-previously-azurermresources)
+  - [<span data-ttu-id="dcba1-130">Az.ServiceFabric (korábban AzureRM.ServiceFabric)</span><span class="sxs-lookup"><span data-stu-id="dcba1-130">Az.ServiceFabric (previously AzureRM.ServiceFabric)</span></span>](#azservicefabric-previously-azurermservicefabric)
+  - [<span data-ttu-id="dcba1-131">Az.Sql (korábban AzureRM.Sql)</span><span class="sxs-lookup"><span data-stu-id="dcba1-131">Az.Sql (previously AzureRM.Sql)</span></span>](#azsql-previously-azurermsql)
+  - [<span data-ttu-id="dcba1-132">Az.Storage (korábban Azure.Storage és AzureRM.Storage)</span><span class="sxs-lookup"><span data-stu-id="dcba1-132">Az.Storage (previously Azure.Storage and AzureRM.Storage)</span></span>](#azstorage-previously-azurestorage-and-azurermstorage)
+  - [<span data-ttu-id="dcba1-133">Az.Websites (korábban AzureRM.Websites)</span><span class="sxs-lookup"><span data-stu-id="dcba1-133">Az.Websites (previously AzureRM.Websites)</span></span>](#azwebsites-previously-azurermwebsites)
 
-## <a name="general-breaking-changes"></a><span data-ttu-id="9c34e-134">Általános kompatibilitástörő változások</span><span class="sxs-lookup"><span data-stu-id="9c34e-134">General breaking changes</span></span>
+## <a name="general-breaking-changes"></a><span data-ttu-id="dcba1-134">Általános kompatibilitástörő változások</span><span class="sxs-lookup"><span data-stu-id="dcba1-134">General breaking changes</span></span>
 
-<span data-ttu-id="9c34e-135">Ez a szakasz részletesen bemutatja az Az modul újratervezésének részét képező általános kompatibilitástörő változásokat.</span><span class="sxs-lookup"><span data-stu-id="9c34e-135">This section details the general breaking changes that are part of the redesign of the Az module.</span></span>
+<span data-ttu-id="dcba1-135">Ez a szakasz részletesen bemutatja az Az modul újratervezésének részét képező általános kompatibilitástörő változásokat.</span><span class="sxs-lookup"><span data-stu-id="dcba1-135">This section details the general breaking changes that are part of the redesign of the Az module.</span></span>
 
-### <a name="cmdlet-noun-prefix-changes"></a><span data-ttu-id="9c34e-136">A parancsmag főnévi előtagjának változásai</span><span class="sxs-lookup"><span data-stu-id="9c34e-136">Cmdlet Noun Prefix Changes</span></span>
+### <a name="cmdlet-noun-prefix-changes"></a><span data-ttu-id="dcba1-136">A parancsmag főnévi előtagjának változásai</span><span class="sxs-lookup"><span data-stu-id="dcba1-136">Cmdlet Noun Prefix Changes</span></span>
 
-<span data-ttu-id="9c34e-137">Az AzureRM modulban a parancsmagok az `AzureRM` vagy az `Azure` főnévi előtagot használták.</span><span class="sxs-lookup"><span data-stu-id="9c34e-137">In the AzureRM module, cmdlets used either `AzureRM` or `Azure` as a noun prefix.</span></span>  <span data-ttu-id="9c34e-138">Az Az egyszerűsíti és normalizálja a parancsmagok nevét, így minden parancsmag főnévi előtagja „Az” lesz.</span><span class="sxs-lookup"><span data-stu-id="9c34e-138">Az simplifies and normalizes cmdlet names, so that all cmdlets use 'Az' as their cmdlet noun prefix.</span></span> <span data-ttu-id="9c34e-139">Például:</span><span class="sxs-lookup"><span data-stu-id="9c34e-139">For example:</span></span>
+<span data-ttu-id="dcba1-137">Az AzureRM modulban a parancsmagok az `AzureRM` vagy az `Azure` főnévi előtagot használták.</span><span class="sxs-lookup"><span data-stu-id="dcba1-137">In the AzureRM module, cmdlets used either `AzureRM` or `Azure` as a noun prefix.</span></span>  <span data-ttu-id="dcba1-138">Az Az egyszerűsíti és normalizálja a parancsmagok nevét, így minden parancsmag főnévi előtagja „Az” lesz.</span><span class="sxs-lookup"><span data-stu-id="dcba1-138">Az simplifies and normalizes cmdlet names, so that all cmdlets use 'Az' as their cmdlet noun prefix.</span></span> <span data-ttu-id="dcba1-139">Például:</span><span class="sxs-lookup"><span data-stu-id="dcba1-139">For example:</span></span>
 
 ```azurepowershell-interactive
 Get-AzureRMVM
 Get-AzureKeyVaultSecret
 ```
 
-<span data-ttu-id="9c34e-140">A következőre módosult:</span><span class="sxs-lookup"><span data-stu-id="9c34e-140">Has changed to:</span></span>
+<span data-ttu-id="dcba1-140">A következőre módosult:</span><span class="sxs-lookup"><span data-stu-id="dcba1-140">Has changed to:</span></span>
 
 ```azurepowershell-interactive
 Get-AzVM
 Get-AzKeyVaultSecret
 ```
 
-<span data-ttu-id="9c34e-141">Az új parancsmagokra való áttérés megkönnyítése érdekében az Az két új parancsmagot vezet be: [Enable-AzureRmAlias](/powershell/module/az.accounts/enable-azurermalias) és [Disable-AzureRmAlias](/powershell/module/az.accounts/disable-azurermalias).</span><span class="sxs-lookup"><span data-stu-id="9c34e-141">To make the transition to these new cmdlet names simpler, Az introduces two new cmdlets, [Enable-AzureRmAlias](/powershell/module/az.accounts/enable-azurermalias) and [Disable-AzureRmAlias](/powershell/module/az.accounts/disable-azurermalias).</span></span>  <span data-ttu-id="9c34e-142">Az `Enable-AzureRmAlias` a régebbi parancsmagok nevéhez hoz létre aliasokat az AzureRM-ben, amelyek az újabb Az-parancsmagok nevének felelnek meg.</span><span class="sxs-lookup"><span data-stu-id="9c34e-142">`Enable-AzureRmAlias` creates aliases for the older cmdlet names in AzureRM that map to the newer Az cmdlet names.</span></span> <span data-ttu-id="9c34e-143">A `-Scope` argumentum és az `Enable-AzureRmAlias` együttes használatával kiválaszthatja, hol legyenek engedélyezve az aliasok.</span><span class="sxs-lookup"><span data-stu-id="9c34e-143">Using the `-Scope` argument with `Enable-AzureRmAlias` allows you to choose where aliases are enabled.</span></span>
+<span data-ttu-id="dcba1-141">Az új parancsmagokra való áttérés megkönnyítése érdekében az Az két új parancsmagot vezet be: [Enable-AzureRmAlias](/powershell/module/az.accounts/enable-azurermalias) és [Disable-AzureRmAlias](/powershell/module/az.accounts/disable-azurermalias).</span><span class="sxs-lookup"><span data-stu-id="dcba1-141">To make the transition to these new cmdlet names simpler, Az introduces two new cmdlets, [Enable-AzureRmAlias](/powershell/module/az.accounts/enable-azurermalias) and [Disable-AzureRmAlias](/powershell/module/az.accounts/disable-azurermalias).</span></span>  <span data-ttu-id="dcba1-142">Az `Enable-AzureRmAlias` a régebbi parancsmagok nevéhez hoz létre aliasokat az AzureRM-ben, amelyek az újabb Az-parancsmagok nevének felelnek meg.</span><span class="sxs-lookup"><span data-stu-id="dcba1-142">`Enable-AzureRmAlias` creates aliases for the older cmdlet names in AzureRM that map to the newer Az cmdlet names.</span></span> <span data-ttu-id="dcba1-143">A `-Scope` argumentum és az `Enable-AzureRmAlias` együttes használatával kiválaszthatja, hol legyenek engedélyezve az aliasok.</span><span class="sxs-lookup"><span data-stu-id="dcba1-143">Using the `-Scope` argument with `Enable-AzureRmAlias` allows you to choose where aliases are enabled.</span></span>
 
-<span data-ttu-id="9c34e-144">A következő AzureRM-szkript például:</span><span class="sxs-lookup"><span data-stu-id="9c34e-144">For example, the following script in AzureRM:</span></span>
+<span data-ttu-id="dcba1-144">A következő AzureRM-szkript például:</span><span class="sxs-lookup"><span data-stu-id="dcba1-144">For example, the following script in AzureRM:</span></span>
 
 ```azurepowershell-interactive
 #Requires -Modules AzureRM.Storage
 Get-AzureRmStorageAccount | Get-AzureStorageContainer | Get-AzureStorageBlob
 ```
 
-<span data-ttu-id="9c34e-145">Az `Enable-AzureRmAlias` használatával minimális változtatásokkal futtatható:</span><span class="sxs-lookup"><span data-stu-id="9c34e-145">Can be run with minimal changes using `Enable-AzureRmAlias`:</span></span>
+<span data-ttu-id="dcba1-145">Az `Enable-AzureRmAlias` használatával minimális változtatásokkal futtatható:</span><span class="sxs-lookup"><span data-stu-id="dcba1-145">Can be run with minimal changes using `Enable-AzureRmAlias`:</span></span>
 
 ```azurepowershell-interactive
 #Requires -Modules Az.Storage
@@ -86,299 +83,299 @@ Enable-AzureRmAlias -Scope Process
 Get-AzureRmStorageAccount | Get-AzureStorageContainer | Get-AzureStorageBlob
 ```
 
-<span data-ttu-id="9c34e-146">Az `Enable-AzureRmAlias -Scope CurrentUser` futtatása engedélyezi az aliasokat az összes megnyitott PowerShell-munkamenetben, így a parancsmag végrehajtása után az ehhez hasonló szkripteket egyáltalán nem kell módosítani:</span><span class="sxs-lookup"><span data-stu-id="9c34e-146">Running `Enable-AzureRmAlias -Scope CurrentUser` will enable the aliases for all PowerShell sessions you open, so that after executing this cmdlet, a script like this would not need to be changed at all:</span></span>
+<span data-ttu-id="dcba1-146">Az `Enable-AzureRmAlias -Scope CurrentUser` futtatása engedélyezi az aliasokat az összes megnyitott PowerShell-munkamenetben, így a parancsmag végrehajtása után az ehhez hasonló szkripteket egyáltalán nem kell módosítani:</span><span class="sxs-lookup"><span data-stu-id="dcba1-146">Running `Enable-AzureRmAlias -Scope CurrentUser` will enable the aliases for all PowerShell sessions you open, so that after executing this cmdlet, a script like this would not need to be changed at all:</span></span>
 
 ```azurepowershell-interactive
 Get-AzureRmStorageAccount | Get-AzureStorageContainer | Get-AzureStorageBlob
 ```
 
-<span data-ttu-id="9c34e-147">A parancsmagok aliasaival kapcsolatos részletes információért tekintse meg az [Enable-AzureRmAlias referenciáját](/powershell/module/az.accounts/enable-azurermalias).</span><span class="sxs-lookup"><span data-stu-id="9c34e-147">For complete details on the usage of the alias cmdlets, see the [Enable-AzureRmAlias reference](/powershell/module/az.accounts/enable-azurermalias).</span></span>
+<span data-ttu-id="dcba1-147">A parancsmagok aliasaival kapcsolatos részletes információért tekintse meg az [Enable-AzureRmAlias referenciáját](/powershell/module/az.accounts/enable-azurermalias).</span><span class="sxs-lookup"><span data-stu-id="dcba1-147">For complete details on the usage of the alias cmdlets, see the [Enable-AzureRmAlias reference](/powershell/module/az.accounts/enable-azurermalias).</span></span>
 
-<span data-ttu-id="9c34e-148">Amikor készen áll az aliasok letiltására, a `Disable-AzureRmAlias` eltávolítja a létrehozott aliasokat.</span><span class="sxs-lookup"><span data-stu-id="9c34e-148">When you're ready to disable aliases, `Disable-AzureRmAlias` removes the created aliases.</span></span> <span data-ttu-id="9c34e-149">Részletes információért tekintse meg a [Disable-AzureRmAlias referenciáját](/powershell/module/az.accounts/disable-azurermalias).</span><span class="sxs-lookup"><span data-stu-id="9c34e-149">For complete details, see the [Disable-AzureRmAlias reference](/powershell/module/az.accounts/disable-azurermalias).</span></span>
+<span data-ttu-id="dcba1-148">Amikor készen áll az aliasok letiltására, a `Disable-AzureRmAlias` eltávolítja a létrehozott aliasokat.</span><span class="sxs-lookup"><span data-stu-id="dcba1-148">When you're ready to disable aliases, `Disable-AzureRmAlias` removes the created aliases.</span></span> <span data-ttu-id="dcba1-149">Részletes információért tekintse meg a [Disable-AzureRmAlias referenciáját](/powershell/module/az.accounts/disable-azurermalias).</span><span class="sxs-lookup"><span data-stu-id="dcba1-149">For complete details, see the [Disable-AzureRmAlias reference](/powershell/module/az.accounts/disable-azurermalias).</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="9c34e-150">Az aliasok letiltásakor győződjön meg arról, hogy _minden_ olyan hatókörnél le lettek tiltva, amelyekhez engedélyezve voltak az aliasok.</span><span class="sxs-lookup"><span data-stu-id="9c34e-150">When disabling aliases, make sure that they are disabled for _all_ scopes which had aliases enabled.</span></span>
+> <span data-ttu-id="dcba1-150">Az aliasok letiltásakor győződjön meg arról, hogy _minden_ olyan hatókörnél le lettek tiltva, amelyekhez engedélyezve voltak az aliasok.</span><span class="sxs-lookup"><span data-stu-id="dcba1-150">When disabling aliases, make sure that they are disabled for _all_ scopes which had aliases enabled.</span></span>
 
-### <a name="module-name-changes"></a><span data-ttu-id="9c34e-151">A modul nevének változásai</span><span class="sxs-lookup"><span data-stu-id="9c34e-151">Module Name Changes</span></span>
+### <a name="module-name-changes"></a><span data-ttu-id="dcba1-151">A modul nevének változásai</span><span class="sxs-lookup"><span data-stu-id="dcba1-151">Module Name Changes</span></span>
 
-<span data-ttu-id="9c34e-152">A modul neve a korábbi `AzureRM.*` helyett `Az.*` lett, kivéve a következő modulokban:</span><span class="sxs-lookup"><span data-stu-id="9c34e-152">The module names have changed from `AzureRM.*` to `Az.*`, except for the following modules:</span></span>
+<span data-ttu-id="dcba1-152">A modul neve a korábbi `AzureRM.*` helyett `Az.*` lett, kivéve a következő modulokban:</span><span class="sxs-lookup"><span data-stu-id="dcba1-152">The module names have changed from `AzureRM.*` to `Az.*`, except for the following modules:</span></span>
 
-| <span data-ttu-id="9c34e-153">AzureRM modul</span><span class="sxs-lookup"><span data-stu-id="9c34e-153">AzureRM module</span></span> | <span data-ttu-id="9c34e-154">Az modul</span><span class="sxs-lookup"><span data-stu-id="9c34e-154">Az module</span></span> |
+| <span data-ttu-id="dcba1-153">AzureRM modul</span><span class="sxs-lookup"><span data-stu-id="dcba1-153">AzureRM module</span></span> | <span data-ttu-id="dcba1-154">Az modul</span><span class="sxs-lookup"><span data-stu-id="dcba1-154">Az module</span></span> |
 |----------------|-----------|
-| <span data-ttu-id="9c34e-155">Azure.Storage</span><span class="sxs-lookup"><span data-stu-id="9c34e-155">Azure.Storage</span></span> | <span data-ttu-id="9c34e-156">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="9c34e-156">Az.Storage</span></span> |
-| <span data-ttu-id="9c34e-157">Azure.AnalysisServices</span><span class="sxs-lookup"><span data-stu-id="9c34e-157">Azure.AnalysisServices</span></span> | <span data-ttu-id="9c34e-158">Az.AnalysisServices</span><span class="sxs-lookup"><span data-stu-id="9c34e-158">Az.AnalysisServices</span></span> |
-| <span data-ttu-id="9c34e-159">AzureRM.Profile</span><span class="sxs-lookup"><span data-stu-id="9c34e-159">AzureRM.Profile</span></span> | <span data-ttu-id="9c34e-160">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="9c34e-160">Az.Accounts</span></span> |
-| <span data-ttu-id="9c34e-161">AzureRM.Insights</span><span class="sxs-lookup"><span data-stu-id="9c34e-161">AzureRM.Insights</span></span> | <span data-ttu-id="9c34e-162">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="9c34e-162">Az.Monitor</span></span> |
-| <span data-ttu-id="9c34e-163">AzureRM.DataFactories</span><span class="sxs-lookup"><span data-stu-id="9c34e-163">AzureRM.DataFactories</span></span> | <span data-ttu-id="9c34e-164">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="9c34e-164">Az.DataFactory</span></span> |
-| <span data-ttu-id="9c34e-165">AzureRM.DataFactoryV2</span><span class="sxs-lookup"><span data-stu-id="9c34e-165">AzureRM.DataFactoryV2</span></span> | <span data-ttu-id="9c34e-166">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="9c34e-166">Az.DataFactory</span></span> |
-| <span data-ttu-id="9c34e-167">AzureRM.RecoveryServices.Backup</span><span class="sxs-lookup"><span data-stu-id="9c34e-167">AzureRM.RecoveryServices.Backup</span></span> | <span data-ttu-id="9c34e-168">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="9c34e-168">Az.RecoveryServices</span></span> |
-| <span data-ttu-id="9c34e-169">AzureRM.RecoveryServices.SiteRecovery</span><span class="sxs-lookup"><span data-stu-id="9c34e-169">AzureRM.RecoveryServices.SiteRecovery</span></span> | <span data-ttu-id="9c34e-170">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="9c34e-170">Az.RecoveryServices</span></span> |
-| <span data-ttu-id="9c34e-171">AzureRM.Tags</span><span class="sxs-lookup"><span data-stu-id="9c34e-171">AzureRM.Tags</span></span> | <span data-ttu-id="9c34e-172">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="9c34e-172">Az.Resources</span></span> |
-| <span data-ttu-id="9c34e-173">AzureRM.MachineLearningCompute</span><span class="sxs-lookup"><span data-stu-id="9c34e-173">AzureRM.MachineLearningCompute</span></span> | <span data-ttu-id="9c34e-174">Az.MachineLearning</span><span class="sxs-lookup"><span data-stu-id="9c34e-174">Az.MachineLearning</span></span> |
-| <span data-ttu-id="9c34e-175">AzureRM.UsageAggregates</span><span class="sxs-lookup"><span data-stu-id="9c34e-175">AzureRM.UsageAggregates</span></span> | <span data-ttu-id="9c34e-176">Az.Billing</span><span class="sxs-lookup"><span data-stu-id="9c34e-176">Az.Billing</span></span> |
-| <span data-ttu-id="9c34e-177">AzureRM.Consumption</span><span class="sxs-lookup"><span data-stu-id="9c34e-177">AzureRM.Consumption</span></span> | <span data-ttu-id="9c34e-178">Az.Billing</span><span class="sxs-lookup"><span data-stu-id="9c34e-178">Az.Billing</span></span> |
+| <span data-ttu-id="dcba1-155">Azure.Storage</span><span class="sxs-lookup"><span data-stu-id="dcba1-155">Azure.Storage</span></span> | <span data-ttu-id="dcba1-156">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="dcba1-156">Az.Storage</span></span> |
+| <span data-ttu-id="dcba1-157">Azure.AnalysisServices</span><span class="sxs-lookup"><span data-stu-id="dcba1-157">Azure.AnalysisServices</span></span> | <span data-ttu-id="dcba1-158">Az.AnalysisServices</span><span class="sxs-lookup"><span data-stu-id="dcba1-158">Az.AnalysisServices</span></span> |
+| <span data-ttu-id="dcba1-159">AzureRM.Profile</span><span class="sxs-lookup"><span data-stu-id="dcba1-159">AzureRM.Profile</span></span> | <span data-ttu-id="dcba1-160">Az.Accounts</span><span class="sxs-lookup"><span data-stu-id="dcba1-160">Az.Accounts</span></span> |
+| <span data-ttu-id="dcba1-161">AzureRM.Insights</span><span class="sxs-lookup"><span data-stu-id="dcba1-161">AzureRM.Insights</span></span> | <span data-ttu-id="dcba1-162">Az.Monitor</span><span class="sxs-lookup"><span data-stu-id="dcba1-162">Az.Monitor</span></span> |
+| <span data-ttu-id="dcba1-163">AzureRM.DataFactories</span><span class="sxs-lookup"><span data-stu-id="dcba1-163">AzureRM.DataFactories</span></span> | <span data-ttu-id="dcba1-164">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="dcba1-164">Az.DataFactory</span></span> |
+| <span data-ttu-id="dcba1-165">AzureRM.DataFactoryV2</span><span class="sxs-lookup"><span data-stu-id="dcba1-165">AzureRM.DataFactoryV2</span></span> | <span data-ttu-id="dcba1-166">Az.DataFactory</span><span class="sxs-lookup"><span data-stu-id="dcba1-166">Az.DataFactory</span></span> |
+| <span data-ttu-id="dcba1-167">AzureRM.RecoveryServices.Backup</span><span class="sxs-lookup"><span data-stu-id="dcba1-167">AzureRM.RecoveryServices.Backup</span></span> | <span data-ttu-id="dcba1-168">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="dcba1-168">Az.RecoveryServices</span></span> |
+| <span data-ttu-id="dcba1-169">AzureRM.RecoveryServices.SiteRecovery</span><span class="sxs-lookup"><span data-stu-id="dcba1-169">AzureRM.RecoveryServices.SiteRecovery</span></span> | <span data-ttu-id="dcba1-170">Az.RecoveryServices</span><span class="sxs-lookup"><span data-stu-id="dcba1-170">Az.RecoveryServices</span></span> |
+| <span data-ttu-id="dcba1-171">AzureRM.Tags</span><span class="sxs-lookup"><span data-stu-id="dcba1-171">AzureRM.Tags</span></span> | <span data-ttu-id="dcba1-172">Az.Resources</span><span class="sxs-lookup"><span data-stu-id="dcba1-172">Az.Resources</span></span> |
+| <span data-ttu-id="dcba1-173">AzureRM.MachineLearningCompute</span><span class="sxs-lookup"><span data-stu-id="dcba1-173">AzureRM.MachineLearningCompute</span></span> | <span data-ttu-id="dcba1-174">Az.MachineLearning</span><span class="sxs-lookup"><span data-stu-id="dcba1-174">Az.MachineLearning</span></span> |
+| <span data-ttu-id="dcba1-175">AzureRM.UsageAggregates</span><span class="sxs-lookup"><span data-stu-id="dcba1-175">AzureRM.UsageAggregates</span></span> | <span data-ttu-id="dcba1-176">Az.Billing</span><span class="sxs-lookup"><span data-stu-id="dcba1-176">Az.Billing</span></span> |
+| <span data-ttu-id="dcba1-177">AzureRM.Consumption</span><span class="sxs-lookup"><span data-stu-id="dcba1-177">AzureRM.Consumption</span></span> | <span data-ttu-id="dcba1-178">Az.Billing</span><span class="sxs-lookup"><span data-stu-id="dcba1-178">Az.Billing</span></span> |
 
-<span data-ttu-id="9c34e-179">A modul nevének változása azt jelenti, hogy ha egy szkript a `#Requires` vagy az `Import-Module` használatával tölt be bizonyos modulokat, módosításokat kell végezni az új modul használatához.</span><span class="sxs-lookup"><span data-stu-id="9c34e-179">The changes in module names mean that any script that uses `#Requires` or `Import-Module` to load specific modules will need to be changed to use the new module instead.</span></span> <span data-ttu-id="9c34e-180">Azoknál a moduloknál, ahol a parancsmag utótagja nem változott, ez azt jelenti, hogy a modul neve megváltozott, a művelet helyét jelző utótag viszont _nem_.</span><span class="sxs-lookup"><span data-stu-id="9c34e-180">For modules where the cmdlet suffix has not changed, this means that although the module name has changed, the suffix indicating the operation space has _not_.</span></span>
+<span data-ttu-id="dcba1-179">A modul nevének változása azt jelenti, hogy ha egy szkript a `#Requires` vagy az `Import-Module` használatával tölt be bizonyos modulokat, módosításokat kell végezni az új modul használatához.</span><span class="sxs-lookup"><span data-stu-id="dcba1-179">The changes in module names mean that any script that uses `#Requires` or `Import-Module` to load specific modules will need to be changed to use the new module instead.</span></span> <span data-ttu-id="dcba1-180">Azoknál a moduloknál, ahol a parancsmag utótagja nem változott, ez azt jelenti, hogy a modul neve megváltozott, a művelet helyét jelző utótag viszont _nem_.</span><span class="sxs-lookup"><span data-stu-id="dcba1-180">For modules where the cmdlet suffix has not changed, this means that although the module name has changed, the suffix indicating the operation space has _not_.</span></span>
 
-#### <a name="migrating-requires-and-import-module-statements"></a><span data-ttu-id="9c34e-181">#Requires és Import-Module utasítások migrálása</span><span class="sxs-lookup"><span data-stu-id="9c34e-181">Migrating #Requires and Import-Module Statements</span></span>
+#### <a name="migrating-requires-and-import-module-statements"></a><span data-ttu-id="dcba1-181">#Requires és Import-Module utasítások migrálása</span><span class="sxs-lookup"><span data-stu-id="dcba1-181">Migrating #Requires and Import-Module Statements</span></span>
 
-<span data-ttu-id="9c34e-182">Ha egy szkript `#Requires` vagy `Import-Module` használatával deklarálja egy AzureRM-modultól való függőségét, akkor frissíteni kell az új modulnevek használatára.</span><span class="sxs-lookup"><span data-stu-id="9c34e-182">Scripts that use `#Requires` or `Import-Module` to declare a dependency on AzureRM modules must be updated to use the new module names.</span></span> <span data-ttu-id="9c34e-183">Például:</span><span class="sxs-lookup"><span data-stu-id="9c34e-183">For example:</span></span>
+<span data-ttu-id="dcba1-182">Ha egy szkript `#Requires` vagy `Import-Module` használatával deklarálja egy AzureRM-modultól való függőségét, akkor frissíteni kell az új modulnevek használatára.</span><span class="sxs-lookup"><span data-stu-id="dcba1-182">Scripts that use `#Requires` or `Import-Module` to declare a dependency on AzureRM modules must be updated to use the new module names.</span></span> <span data-ttu-id="dcba1-183">Például:</span><span class="sxs-lookup"><span data-stu-id="dcba1-183">For example:</span></span>
 
 ```azurepowershell-interactive
 #Requires -Module AzureRM.Compute
 ```
 
-<span data-ttu-id="9c34e-184">A következőre kell módosítani:</span><span class="sxs-lookup"><span data-stu-id="9c34e-184">Should be changed to:</span></span>
+<span data-ttu-id="dcba1-184">A következőre kell módosítani:</span><span class="sxs-lookup"><span data-stu-id="dcba1-184">Should be changed to:</span></span>
 
 ```azurepowershell-interactive
 #Requires -Module Az.Compute
 ```
 
-<span data-ttu-id="9c34e-185">`Import-Module` esetében:</span><span class="sxs-lookup"><span data-stu-id="9c34e-185">For `Import-Module`:</span></span>
+<span data-ttu-id="dcba1-185">`Import-Module` esetében:</span><span class="sxs-lookup"><span data-stu-id="dcba1-185">For `Import-Module`:</span></span>
 
 ```azurepowershell-interactive
 Import-Module -Name AzureRM.Compute
 ```
 
-<span data-ttu-id="9c34e-186">A következőre kell módosítani:</span><span class="sxs-lookup"><span data-stu-id="9c34e-186">Should be changed to:</span></span>
+<span data-ttu-id="dcba1-186">A következőre kell módosítani:</span><span class="sxs-lookup"><span data-stu-id="dcba1-186">Should be changed to:</span></span>
 
 ```azurepowershell-interactive
 Import-Module -Name Az.Compute
 ```
 
-### <a name="migrating-fully-qualified-cmdlet-invocations"></a><span data-ttu-id="9c34e-187">Teljesen minősített parancsmaghívások migrálása</span><span class="sxs-lookup"><span data-stu-id="9c34e-187">Migrating Fully-Qualified Cmdlet Invocations</span></span>
+### <a name="migrating-fully-qualified-cmdlet-invocations"></a><span data-ttu-id="dcba1-187">Teljesen minősített parancsmaghívások migrálása</span><span class="sxs-lookup"><span data-stu-id="dcba1-187">Migrating Fully-Qualified Cmdlet Invocations</span></span>
 
-<span data-ttu-id="9c34e-188">Modulhoz minősített parancsmaghívásokat használó szkriptek, például:</span><span class="sxs-lookup"><span data-stu-id="9c34e-188">Scripts that use module-qualified cmdlet invocations, such as:</span></span>
+<span data-ttu-id="dcba1-188">Modulhoz minősített parancsmaghívásokat használó szkriptek, például:</span><span class="sxs-lookup"><span data-stu-id="dcba1-188">Scripts that use module-qualified cmdlet invocations, such as:</span></span>
 
 ```azurepowershell-interactive
 AzureRM.Compute\Get-AzureRmVM
 ```
 
-<span data-ttu-id="9c34e-189">Úgy kell módosítani, hogy az új modul- és parancsmagneveket használja:</span><span class="sxs-lookup"><span data-stu-id="9c34e-189">Must be changed to use the new module and cmdlet names:</span></span>
+<span data-ttu-id="dcba1-189">Úgy kell módosítani, hogy az új modul- és parancsmagneveket használja:</span><span class="sxs-lookup"><span data-stu-id="dcba1-189">Must be changed to use the new module and cmdlet names:</span></span>
 
 ```azurepowershell-interactive
 Az.Compute\Get-AzVM
 ```
 
-### <a name="migrating-module-manifest-dependencies"></a><span data-ttu-id="9c34e-190">Moduljegyzék-függőségek migrálása</span><span class="sxs-lookup"><span data-stu-id="9c34e-190">Migrating module manifest dependencies</span></span>
+### <a name="migrating-module-manifest-dependencies"></a><span data-ttu-id="dcba1-190">Moduljegyzék-függőségek migrálása</span><span class="sxs-lookup"><span data-stu-id="dcba1-190">Migrating module manifest dependencies</span></span>
 
-<span data-ttu-id="9c34e-191">Amennyiben egy modul AzureRM-modultól való függését egy moduljegyzék (.psd1) fájl fejezi ki, a modul `RequiredModules` szakaszában frissíteni kell a modulok nevét:</span><span class="sxs-lookup"><span data-stu-id="9c34e-191">Modules that express dependencies on AzureRM modules through a module manifest (.psd1) file will need to updated the module names in their `RequiredModules` section:</span></span>
+<span data-ttu-id="dcba1-191">Amennyiben egy modul AzureRM-modultól való függését egy moduljegyzék (.psd1) fájl fejezi ki, a modul `RequiredModules` szakaszában frissíteni kell a modulok nevét:</span><span class="sxs-lookup"><span data-stu-id="dcba1-191">Modules that express dependencies on AzureRM modules through a module manifest (.psd1) file will need to updated the module names in their `RequiredModules` section:</span></span>
 
 ```powershell
 RequiredModules = @(@{ModuleName="AzureRM.Profile"; ModuleVersion="5.8.2"})
 ```
 
-<span data-ttu-id="9c34e-192">A következőre kell módosítani:</span><span class="sxs-lookup"><span data-stu-id="9c34e-192">Must be changed to:</span></span>
+<span data-ttu-id="dcba1-192">A következőre kell módosítani:</span><span class="sxs-lookup"><span data-stu-id="dcba1-192">Must be changed to:</span></span>
 
 ```powershell
 RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
 ```
 
-### <a name="removed-modules"></a><span data-ttu-id="9c34e-193">Eltávolított modulok</span><span class="sxs-lookup"><span data-stu-id="9c34e-193">Removed modules</span></span>
+### <a name="removed-modules"></a><span data-ttu-id="dcba1-193">Eltávolított modulok</span><span class="sxs-lookup"><span data-stu-id="dcba1-193">Removed modules</span></span>
 
-<span data-ttu-id="9c34e-194">Az alábbi modulok lettek eltávolítva:</span><span class="sxs-lookup"><span data-stu-id="9c34e-194">The following modules have been removed:</span></span>
+<span data-ttu-id="dcba1-194">Az alábbi modulok lettek eltávolítva:</span><span class="sxs-lookup"><span data-stu-id="dcba1-194">The following modules have been removed:</span></span>
 
 - `AzureRM.Backup`
 - `AzureRM.Compute.ManagedService`
 - `AzureRM.Scheduler`
 
-<span data-ttu-id="9c34e-195">E szolgáltatások eszközeit már nem támogatja aktívan a rendszer.</span><span class="sxs-lookup"><span data-stu-id="9c34e-195">The tools for these services are no longer actively supported.</span></span>  <span data-ttu-id="9c34e-196">Azt javasoljuk ügyfeleinknek, hogy amint lehetséges, térjenek át más szolgáltatások használatára.</span><span class="sxs-lookup"><span data-stu-id="9c34e-196">Customers are encouraged to move to alternative services as soon as it is convenient.</span></span>
+<span data-ttu-id="dcba1-195">E szolgáltatások eszközeit már nem támogatja aktívan a rendszer.</span><span class="sxs-lookup"><span data-stu-id="dcba1-195">The tools for these services are no longer actively supported.</span></span>  <span data-ttu-id="dcba1-196">Azt javasoljuk ügyfeleinknek, hogy amint lehetséges, térjenek át más szolgáltatások használatára.</span><span class="sxs-lookup"><span data-stu-id="dcba1-196">Customers are encouraged to move to alternative services as soon as it is convenient.</span></span>
 
-### <a name="windows-powershell-51-and-net-472"></a><span data-ttu-id="9c34e-197">Windows PowerShell 5.1 és .NET 4.7.2</span><span class="sxs-lookup"><span data-stu-id="9c34e-197">Windows PowerShell 5.1 and .NET 4.7.2</span></span>
+### <a name="windows-powershell-51-and-net-472"></a><span data-ttu-id="dcba1-197">Windows PowerShell 5.1 és .NET 4.7.2</span><span class="sxs-lookup"><span data-stu-id="dcba1-197">Windows PowerShell 5.1 and .NET 4.7.2</span></span>
 
-<span data-ttu-id="9c34e-198">Az Az Windows PowerShell 5.1-gyel történő használatához szükséges a .NET-keretrendszer 4.7.2 telepítése.</span><span class="sxs-lookup"><span data-stu-id="9c34e-198">Using Az with PowerShell 5.1 for Windows requires the installation of .NET Framework 4.7.2.</span></span> <span data-ttu-id="9c34e-199">A PowerShell Core 6.x vagy újabb verziójának használatához nincs szükség a .NET-keretrendszerre.</span><span class="sxs-lookup"><span data-stu-id="9c34e-199">Using PowerShell Core 6.x or later does not require .NET Framework.</span></span>
+<span data-ttu-id="dcba1-198">Az Az Windows PowerShell 5.1-gyel történő használatához szükséges a .NET-keretrendszer 4.7.2 telepítése.</span><span class="sxs-lookup"><span data-stu-id="dcba1-198">Using Az with PowerShell 5.1 for Windows requires the installation of .NET Framework 4.7.2.</span></span> <span data-ttu-id="dcba1-199">A PowerShell Core 6.x vagy újabb verziójának használatához nincs szükség a .NET-keretrendszerre.</span><span class="sxs-lookup"><span data-stu-id="dcba1-199">Using PowerShell Core 6.x or later does not require .NET Framework.</span></span>
 
-### <a name="temporary-removal-of-user-login-using-pscredential"></a><span data-ttu-id="9c34e-200">A felhasználói bejelentkezés ideiglenes eltávolítása a PSCredential használatával</span><span class="sxs-lookup"><span data-stu-id="9c34e-200">Temporary removal of User login using PSCredential</span></span>
+### <a name="temporary-removal-of-user-login-using-pscredential"></a><span data-ttu-id="dcba1-200">A felhasználói bejelentkezés ideiglenes eltávolítása a PSCredential használatával</span><span class="sxs-lookup"><span data-stu-id="dcba1-200">Temporary removal of User login using PSCredential</span></span>
 
-<span data-ttu-id="9c34e-201">A .NET Standard hitelesítési folyamatának változásai miatt ideiglenesen eltávolítjuk a PSCredential használatával történő felhasználói bejelentkezés lehetőségét.</span><span class="sxs-lookup"><span data-stu-id="9c34e-201">Due to changes in the authentication flow for .NET Standard, we are temporarily removing user login via PSCredential.</span></span> <span data-ttu-id="9c34e-202">A funkció a Windows PowerShell 5.1 2019. január 15-én megjelenő verziójában válik ismét elérhetővé.</span><span class="sxs-lookup"><span data-stu-id="9c34e-202">This capability will be re-introduced in the 1/15/2019 release for PowerShell 5.1 for Windows.</span></span> <span data-ttu-id="9c34e-203">Erről részletesen [ebben a GitHub-cikkben](https://github.com/Azure/azure-powershell/issues/7430) olvashat.</span><span class="sxs-lookup"><span data-stu-id="9c34e-203">This is discussed in detail in [this GitHub issue.](https://github.com/Azure/azure-powershell/issues/7430)</span></span>
+<span data-ttu-id="dcba1-201">A .NET Standard hitelesítési folyamatának változásai miatt ideiglenesen eltávolítjuk a PSCredential használatával történő felhasználói bejelentkezés lehetőségét.</span><span class="sxs-lookup"><span data-stu-id="dcba1-201">Due to changes in the authentication flow for .NET Standard, we are temporarily removing user login via PSCredential.</span></span> <span data-ttu-id="dcba1-202">A funkció a Windows PowerShell 5.1 2019. január 15-én megjelenő verziójában válik ismét elérhetővé.</span><span class="sxs-lookup"><span data-stu-id="dcba1-202">This capability will be re-introduced in the 1/15/2019 release for PowerShell 5.1 for Windows.</span></span> <span data-ttu-id="dcba1-203">Erről részletesen [ebben a GitHub-cikkben](https://github.com/Azure/azure-powershell/issues/7430) olvashat.</span><span class="sxs-lookup"><span data-stu-id="dcba1-203">This is discussed in detail in [this GitHub issue.](https://github.com/Azure/azure-powershell/issues/7430)</span></span>
 
-### <a name="default-device-code-login-instead-of-web-browser-prompt"></a><span data-ttu-id="9c34e-204">Bejelentkezés alapértelmezett eszközkóddal a webböngészőben megjelenő kérdés helyett</span><span class="sxs-lookup"><span data-stu-id="9c34e-204">Default device code login instead of web browser prompt</span></span>
+### <a name="default-device-code-login-instead-of-web-browser-prompt"></a><span data-ttu-id="dcba1-204">Bejelentkezés alapértelmezett eszközkóddal a webböngészőben megjelenő kérdés helyett</span><span class="sxs-lookup"><span data-stu-id="dcba1-204">Default device code login instead of web browser prompt</span></span>
 
-<span data-ttu-id="9c34e-205">A .NET Standard hitelesítési folyamatának változásai miatt az interaktív bejelentkezések során az eszközről történő bejelentkezés lesz az alapértelmezett bejelentkezési folyamat.</span><span class="sxs-lookup"><span data-stu-id="9c34e-205">Due to changes in the authentication flow for .NET Standard, we are using device login as the default login flow during interactive login.</span></span> <span data-ttu-id="9c34e-206">A webböngésző-alapú bejelentkezés a Windows PowerShell 5.1 2019. január 15-én megjelenő verziójában válik ismét elérhetővé.</span><span class="sxs-lookup"><span data-stu-id="9c34e-206">Web browser based login will be re-introduced for PowerShell 5.1 for Windows as the default in the 1/15/2019 release.</span></span> <span data-ttu-id="9c34e-207">Ezt követően a felhasználók a Switch paramétert használva választhatják az eszközről történő bejelentkezést.</span><span class="sxs-lookup"><span data-stu-id="9c34e-207">At that time, users will be able to choose device login using a Switch parameter.</span></span>
+<span data-ttu-id="dcba1-205">A .NET Standard hitelesítési folyamatának változásai miatt az interaktív bejelentkezések során az eszközről történő bejelentkezés lesz az alapértelmezett bejelentkezési folyamat.</span><span class="sxs-lookup"><span data-stu-id="dcba1-205">Due to changes in the authentication flow for .NET Standard, we are using device login as the default login flow during interactive login.</span></span> <span data-ttu-id="dcba1-206">A webböngésző-alapú bejelentkezés a Windows PowerShell 5.1 2019. január 15-én megjelenő verziójában válik ismét elérhetővé.</span><span class="sxs-lookup"><span data-stu-id="dcba1-206">Web browser based login will be re-introduced for PowerShell 5.1 for Windows as the default in the 1/15/2019 release.</span></span> <span data-ttu-id="dcba1-207">Ezt követően a felhasználók a Switch paramétert használva választhatják az eszközről történő bejelentkezést.</span><span class="sxs-lookup"><span data-stu-id="dcba1-207">At that time, users will be able to choose device login using a Switch parameter.</span></span>
 
-## <a name="module-breaking-changes"></a><span data-ttu-id="9c34e-208">A modul kompatibilitástörő változásai</span><span class="sxs-lookup"><span data-stu-id="9c34e-208">Module breaking changes</span></span>
+## <a name="module-breaking-changes"></a><span data-ttu-id="dcba1-208">A modul kompatibilitástörő változásai</span><span class="sxs-lookup"><span data-stu-id="dcba1-208">Module breaking changes</span></span>
 
-<span data-ttu-id="9c34e-209">Ez a szakasz részletesen bemutatja az egyes modulok és parancsmagok kompatibilitástörő változásait.</span><span class="sxs-lookup"><span data-stu-id="9c34e-209">This section details specific breaking changes for individual modules and cmdlets.</span></span>
+<span data-ttu-id="dcba1-209">Ez a szakasz részletesen bemutatja az egyes modulok és parancsmagok kompatibilitástörő változásait.</span><span class="sxs-lookup"><span data-stu-id="dcba1-209">This section details specific breaking changes for individual modules and cmdlets.</span></span>
 
-### <a name="azapimanagement-previously-azurermapimanagement"></a><span data-ttu-id="9c34e-210">Az.ApiManagement (korábban AzureRM.ApiManagement)</span><span class="sxs-lookup"><span data-stu-id="9c34e-210">Az.ApiManagement (previously AzureRM.ApiManagement)</span></span>
+### <a name="azapimanagement-previously-azurermapimanagement"></a><span data-ttu-id="dcba1-210">Az.ApiManagement (korábban AzureRM.ApiManagement)</span><span class="sxs-lookup"><span data-stu-id="dcba1-210">Az.ApiManagement (previously AzureRM.ApiManagement)</span></span>
 
-- <span data-ttu-id="9c34e-211">A következő parancsmagok lettek eltávolítva:</span><span class="sxs-lookup"><span data-stu-id="9c34e-211">Removed the following cmdlets:</span></span>
-  - <span data-ttu-id="9c34e-212">New-AzureRmApiManagementHostnameConfiguration</span><span class="sxs-lookup"><span data-stu-id="9c34e-212">New-AzureRmApiManagementHostnameConfiguration</span></span>
-  - <span data-ttu-id="9c34e-213">Set-AzureRmApiManagementHostnames</span><span class="sxs-lookup"><span data-stu-id="9c34e-213">Set-AzureRmApiManagementHostnames</span></span>
-  - <span data-ttu-id="9c34e-214">Update-AzureRmApiManagementDeployment</span><span class="sxs-lookup"><span data-stu-id="9c34e-214">Update-AzureRmApiManagementDeployment</span></span>
-  - <span data-ttu-id="9c34e-215">Import-AzureRmApiManagementHostnameCertificate</span><span class="sxs-lookup"><span data-stu-id="9c34e-215">Import-AzureRmApiManagementHostnameCertificate</span></span>
-  - <span data-ttu-id="9c34e-216">Ezeket a tulajdonságokat mostantól a **Set-AzApiManagement** parancsmaggal kell beállítani</span><span class="sxs-lookup"><span data-stu-id="9c34e-216">Use **Set-AzApiManagement** cmdlet to set these properties instead</span></span>
-- <span data-ttu-id="9c34e-217">A következő tulajdonságok lettek eltávolítva:</span><span class="sxs-lookup"><span data-stu-id="9c34e-217">Removed the following properties:</span></span>
-  - <span data-ttu-id="9c34e-218">A `PsApiManagementHostnameConfiguration` típus `PortalHostnameConfiguration`, `ProxyHostnameConfiguration`, `ManagementHostnameConfiguration` és `ScmHostnameConfiguration` tulajdonsága el lett távolítva a `PsApiManagementContext`ből.</span><span class="sxs-lookup"><span data-stu-id="9c34e-218">Removed property `PortalHostnameConfiguration`, `ProxyHostnameConfiguration`, `ManagementHostnameConfiguration` and `ScmHostnameConfiguration` of type `PsApiManagementHostnameConfiguration` from `PsApiManagementContext`.</span></span> <span data-ttu-id="9c34e-219">Ezek helyett a `PsApiManagementCustomHostNameConfiguration` típus `PortalCustomHostnameConfiguration`, `ProxyCustomHostnameConfiguration`, `ManagementCustomHostnameConfiguration` és `ScmCustomHostnameConfiguration` tulajdonságát használja.</span><span class="sxs-lookup"><span data-stu-id="9c34e-219">Instead use `PortalCustomHostnameConfiguration`, `ProxyCustomHostnameConfiguration`, `ManagementCustomHostnameConfiguration` and `ScmCustomHostnameConfiguration` of type `PsApiManagementCustomHostNameConfiguration`.</span></span>
-  - <span data-ttu-id="9c34e-220">A `StaticIPs` tulajdonság el lett távolítva a PsApiManagementContextből.</span><span class="sxs-lookup"><span data-stu-id="9c34e-220">Removed property `StaticIPs` from PsApiManagementContext.</span></span> <span data-ttu-id="9c34e-221">Két új tulajdonságra lett osztva: ez a `PublicIPAddresses` és a `PrivateIPAddresses`.</span><span class="sxs-lookup"><span data-stu-id="9c34e-221">The property has been split into `PublicIPAddresses` and `PrivateIPAddresses`.</span></span>
-  - <span data-ttu-id="9c34e-222">A kötelező `Location` tulajdonság el lett távolítva a New-AzureApiManagementVirtualNetwork parancsmagból.</span><span class="sxs-lookup"><span data-stu-id="9c34e-222">Removed required property `Location` from New-AzureApiManagementVirtualNetwork cmdlet.</span></span>
+- <span data-ttu-id="dcba1-211">A következő parancsmagok lettek eltávolítva:</span><span class="sxs-lookup"><span data-stu-id="dcba1-211">Removed the following cmdlets:</span></span>
+  - <span data-ttu-id="dcba1-212">New-AzureRmApiManagementHostnameConfiguration</span><span class="sxs-lookup"><span data-stu-id="dcba1-212">New-AzureRmApiManagementHostnameConfiguration</span></span>
+  - <span data-ttu-id="dcba1-213">Set-AzureRmApiManagementHostnames</span><span class="sxs-lookup"><span data-stu-id="dcba1-213">Set-AzureRmApiManagementHostnames</span></span>
+  - <span data-ttu-id="dcba1-214">Update-AzureRmApiManagementDeployment</span><span class="sxs-lookup"><span data-stu-id="dcba1-214">Update-AzureRmApiManagementDeployment</span></span>
+  - <span data-ttu-id="dcba1-215">Import-AzureRmApiManagementHostnameCertificate</span><span class="sxs-lookup"><span data-stu-id="dcba1-215">Import-AzureRmApiManagementHostnameCertificate</span></span>
+  - <span data-ttu-id="dcba1-216">Ezeket a tulajdonságokat mostantól a **Set-AzApiManagement** parancsmaggal kell beállítani</span><span class="sxs-lookup"><span data-stu-id="dcba1-216">Use **Set-AzApiManagement** cmdlet to set these properties instead</span></span>
+- <span data-ttu-id="dcba1-217">A következő tulajdonságok lettek eltávolítva:</span><span class="sxs-lookup"><span data-stu-id="dcba1-217">Removed the following properties:</span></span>
+  - <span data-ttu-id="dcba1-218">A `PsApiManagementHostnameConfiguration` típus `PortalHostnameConfiguration`, `ProxyHostnameConfiguration`, `ManagementHostnameConfiguration` és `ScmHostnameConfiguration` tulajdonsága el lett távolítva a `PsApiManagementContext`ből.</span><span class="sxs-lookup"><span data-stu-id="dcba1-218">Removed property `PortalHostnameConfiguration`, `ProxyHostnameConfiguration`, `ManagementHostnameConfiguration` and `ScmHostnameConfiguration` of type `PsApiManagementHostnameConfiguration` from `PsApiManagementContext`.</span></span> <span data-ttu-id="dcba1-219">Ezek helyett a `PsApiManagementCustomHostNameConfiguration` típus `PortalCustomHostnameConfiguration`, `ProxyCustomHostnameConfiguration`, `ManagementCustomHostnameConfiguration` és `ScmCustomHostnameConfiguration` tulajdonságát használja.</span><span class="sxs-lookup"><span data-stu-id="dcba1-219">Instead use `PortalCustomHostnameConfiguration`, `ProxyCustomHostnameConfiguration`, `ManagementCustomHostnameConfiguration` and `ScmCustomHostnameConfiguration` of type `PsApiManagementCustomHostNameConfiguration`.</span></span>
+  - <span data-ttu-id="dcba1-220">A `StaticIPs` tulajdonság el lett távolítva a PsApiManagementContextből.</span><span class="sxs-lookup"><span data-stu-id="dcba1-220">Removed property `StaticIPs` from PsApiManagementContext.</span></span> <span data-ttu-id="dcba1-221">Két új tulajdonságra lett osztva: ez a `PublicIPAddresses` és a `PrivateIPAddresses`.</span><span class="sxs-lookup"><span data-stu-id="dcba1-221">The property has been split into `PublicIPAddresses` and `PrivateIPAddresses`.</span></span>
+  - <span data-ttu-id="dcba1-222">A kötelező `Location` tulajdonság el lett távolítva a New-AzureApiManagementVirtualNetwork parancsmagból.</span><span class="sxs-lookup"><span data-stu-id="dcba1-222">Removed required property `Location` from New-AzureApiManagementVirtualNetwork cmdlet.</span></span>
 
-### <a name="azbilling-previously-azurermbilling-azurermconsumption-and-azurermusageaggregates"></a><span data-ttu-id="9c34e-223">Az.Billing (korábban AzureRM.Billing, AzureRM.Consumption és AzureRM.UsageAggregates)</span><span class="sxs-lookup"><span data-stu-id="9c34e-223">Az.Billing (previously AzureRM.Billing, AzureRM.Consumption, and AzureRM.UsageAggregates)</span></span>
+### <a name="azbilling-previously-azurermbilling-azurermconsumption-and-azurermusageaggregates"></a><span data-ttu-id="dcba1-223">Az.Billing (korábban AzureRM.Billing, AzureRM.Consumption és AzureRM.UsageAggregates)</span><span class="sxs-lookup"><span data-stu-id="dcba1-223">Az.Billing (previously AzureRM.Billing, AzureRM.Consumption, and AzureRM.UsageAggregates)</span></span>
 
-- <span data-ttu-id="9c34e-224">A `Get-AzConsumptionUsageDetail` parancsmag `InvoiceName` paramétere el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="9c34e-224">The `InvoiceName` parameter was removed from the `Get-AzConsumptionUsageDetail` cmdlet.</span></span>  <span data-ttu-id="9c34e-225">A szkripteknek a számlák készítéséhez más identitásparamétereket kell használniuk.</span><span class="sxs-lookup"><span data-stu-id="9c34e-225">Scripts will need to use other identity parameters for the invoice.</span></span>
+- <span data-ttu-id="dcba1-224">A `Get-AzConsumptionUsageDetail` parancsmag `InvoiceName` paramétere el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="dcba1-224">The `InvoiceName` parameter was removed from the `Get-AzConsumptionUsageDetail` cmdlet.</span></span>  <span data-ttu-id="dcba1-225">A szkripteknek a számlák készítéséhez más identitásparamétereket kell használniuk.</span><span class="sxs-lookup"><span data-stu-id="dcba1-225">Scripts will need to use other identity parameters for the invoice.</span></span>
 
-### <a name="azcognitiveservices-previously-azurermcognitiveservices"></a><span data-ttu-id="9c34e-226">Az.CognitiveServices (korábban AzureRM.CognitiveServices)</span><span class="sxs-lookup"><span data-stu-id="9c34e-226">Az.CognitiveServices (previously AzureRM.CognitiveServices)</span></span>
+### <a name="azcognitiveservices-previously-azurermcognitiveservices"></a><span data-ttu-id="dcba1-226">Az.CognitiveServices (korábban AzureRM.CognitiveServices)</span><span class="sxs-lookup"><span data-stu-id="dcba1-226">Az.CognitiveServices (previously AzureRM.CognitiveServices)</span></span>
 
-- <span data-ttu-id="9c34e-227">A `Get-AzCognitiveServicesAccountSkus` parancsmag `GetSkusWithAccountParamSetName` paramétere el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="9c34e-227">Removed `GetSkusWithAccountParamSetName` parameter set from `Get-AzCognitiveServicesAccountSkus` cmdlet.</span></span>  <span data-ttu-id="9c34e-228">A termékváltozatokat a fiók típusa és helye alapján lehet lekérdezni a ResourceGroupName és a fiók nevének használata helyett.</span><span class="sxs-lookup"><span data-stu-id="9c34e-228">You must get Skus by Account Type and Location, instead of using ResourceGroupName and Account Name.</span></span>
+- <span data-ttu-id="dcba1-227">A `Get-AzCognitiveServicesAccountSkus` parancsmag `GetSkusWithAccountParamSetName` paramétere el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="dcba1-227">Removed `GetSkusWithAccountParamSetName` parameter set from `Get-AzCognitiveServicesAccountSkus` cmdlet.</span></span>  <span data-ttu-id="dcba1-228">A termékváltozatokat a fiók típusa és helye alapján lehet lekérdezni a ResourceGroupName és a fiók nevének használata helyett.</span><span class="sxs-lookup"><span data-stu-id="dcba1-228">You must get Skus by Account Type and Location, instead of using ResourceGroupName and Account Name.</span></span>
 
-### <a name="azcompute-previously-azurermcompute"></a><span data-ttu-id="9c34e-229">Az.Compute (korábban AzureRM.Compute)</span><span class="sxs-lookup"><span data-stu-id="9c34e-229">Az.Compute (previously AzureRM.Compute)</span></span>
+### <a name="azcompute-previously-azurermcompute"></a><span data-ttu-id="dcba1-229">Az.Compute (korábban AzureRM.Compute)</span><span class="sxs-lookup"><span data-stu-id="dcba1-229">Az.Compute (previously AzureRM.Compute)</span></span>
 
-- <span data-ttu-id="9c34e-230">A `PSVirtualMachine` és `PSVirtualMachineScaleSet` objektum `Identity` tulajdonsága mostantól nem tartalmazza az `IdentityIds` azonosítókat. A szkriptek a jövőben nem veszik figyelembe a mező értékét a feldolgozási döntések során.</span><span class="sxs-lookup"><span data-stu-id="9c34e-230">`IdentityIds` are removed from `Identity` property in `PSVirtualMachine` and `PSVirtualMachineScaleSet` objects Scripts should no longer use the value of this field to make processing decisions.</span></span>
-- <span data-ttu-id="9c34e-231">A `PSVirtualMachineScaleSetVM` objektum `InstanceView` tulajdonságának típusa `VirtualMachineInstanceView` helyett `VirtualMachineScaleSetVMInstanceView` lett.</span><span class="sxs-lookup"><span data-stu-id="9c34e-231">The type of `InstanceView` property of `PSVirtualMachineScaleSetVM` object is changed from `VirtualMachineInstanceView` to `VirtualMachineScaleSetVMInstanceView`</span></span>
-- <span data-ttu-id="9c34e-232">Az `UpgradePolicy` tulajdonság `AutoOSUpgradePolicy` és `AutomaticOSUpgrade` tulajdonsága el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="9c34e-232">`AutoOSUpgradePolicy` and `AutomaticOSUpgrade` properties are removed from `UpgradePolicy` property</span></span>
-- <span data-ttu-id="9c34e-233">A `PSSnapshotUpdate` objektum `Sku` tulajdonságának típusa `DiskSku` helyett `SnapshotSku` lett.</span><span class="sxs-lookup"><span data-stu-id="9c34e-233">The type of `Sku` property in `PSSnapshotUpdate` object is changed from `DiskSku` to `SnapshotSku`</span></span>
-- <span data-ttu-id="9c34e-234">A `VmScaleSetVMParameterSet` el lett távolítva az `Add-AzVMDataDisk` parancsmagból, mostantól nem lehet önálló adatlemezt hozzáadni egy ScaleSet-virtuálisgéphez.</span><span class="sxs-lookup"><span data-stu-id="9c34e-234">`VmScaleSetVMParameterSet` is removed from `Add-AzVMDataDisk` cmdlet, you can no longer add a data disk individually to a ScaleSet VM.</span></span>
+- <span data-ttu-id="dcba1-230">A `PSVirtualMachine` és `PSVirtualMachineScaleSet` objektum `Identity` tulajdonsága mostantól nem tartalmazza az `IdentityIds` azonosítókat. A szkriptek a jövőben nem veszik figyelembe a mező értékét a feldolgozási döntések során.</span><span class="sxs-lookup"><span data-stu-id="dcba1-230">`IdentityIds` are removed from `Identity` property in `PSVirtualMachine` and `PSVirtualMachineScaleSet` objects Scripts should no longer use the value of this field to make processing decisions.</span></span>
+- <span data-ttu-id="dcba1-231">A `PSVirtualMachineScaleSetVM` objektum `InstanceView` tulajdonságának típusa `VirtualMachineInstanceView` helyett `VirtualMachineScaleSetVMInstanceView` lett.</span><span class="sxs-lookup"><span data-stu-id="dcba1-231">The type of `InstanceView` property of `PSVirtualMachineScaleSetVM` object is changed from `VirtualMachineInstanceView` to `VirtualMachineScaleSetVMInstanceView`</span></span>
+- <span data-ttu-id="dcba1-232">Az `UpgradePolicy` tulajdonság `AutoOSUpgradePolicy` és `AutomaticOSUpgrade` tulajdonsága el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="dcba1-232">`AutoOSUpgradePolicy` and `AutomaticOSUpgrade` properties are removed from `UpgradePolicy` property</span></span>
+- <span data-ttu-id="dcba1-233">A `PSSnapshotUpdate` objektum `Sku` tulajdonságának típusa `DiskSku` helyett `SnapshotSku` lett.</span><span class="sxs-lookup"><span data-stu-id="dcba1-233">The type of `Sku` property in `PSSnapshotUpdate` object is changed from `DiskSku` to `SnapshotSku`</span></span>
+- <span data-ttu-id="dcba1-234">A `VmScaleSetVMParameterSet` el lett távolítva az `Add-AzVMDataDisk` parancsmagból, mostantól nem lehet önálló adatlemezt hozzáadni egy ScaleSet-virtuálisgéphez.</span><span class="sxs-lookup"><span data-stu-id="dcba1-234">`VmScaleSetVMParameterSet` is removed from `Add-AzVMDataDisk` cmdlet, you can no longer add a data disk individually to a ScaleSet VM.</span></span>
 
-### <a name="azdatafactory-previously-azurermdatafactories-and-azurermdatafactoryv2"></a><span data-ttu-id="9c34e-235">Az.DataFactory (korábban AzureRM.DataFactories és AzureRM.DataFactoryV2)</span><span class="sxs-lookup"><span data-stu-id="9c34e-235">Az.DataFactory (previously AzureRM.DataFactories and AzureRM.DataFactoryV2)</span></span>
+### <a name="azdatafactory-previously-azurermdatafactories-and-azurermdatafactoryv2"></a><span data-ttu-id="dcba1-235">Az.DataFactory (korábban AzureRM.DataFactories és AzureRM.DataFactoryV2)</span><span class="sxs-lookup"><span data-stu-id="dcba1-235">Az.DataFactory (previously AzureRM.DataFactories and AzureRM.DataFactoryV2)</span></span>
 
-- <span data-ttu-id="9c34e-236">A `New-AzDataFactoryEncryptValue` parancsmagban kötelezővé vált a `GatewayName` paraméter használata.</span><span class="sxs-lookup"><span data-stu-id="9c34e-236">The `GatewayName` parameter has become mandatory in the `New-AzDataFactoryEncryptValue` cmdlet</span></span>
-- <span data-ttu-id="9c34e-237">A `New-AzDataFactoryGatewayKey` parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="9c34e-237">Removed `New-AzDataFactoryGatewayKey` cmdlet</span></span>
-- <span data-ttu-id="9c34e-238">A `Get-AzDataFactoryV2ActivityRun` parancsmag `LinkedServiceName` paramétere el lett távolítva. A szkriptek a jövőben nem veszik figyelembe a mező értékét a feldolgozási döntések során.</span><span class="sxs-lookup"><span data-stu-id="9c34e-238">Removed `LinkedServiceName` parameter from `Get-AzDataFactoryV2ActivityRun` cmdlet Scripts should no longer use the value of this field to make processing decisions.</span></span>
+- <span data-ttu-id="dcba1-236">A `New-AzDataFactoryEncryptValue` parancsmagban kötelezővé vált a `GatewayName` paraméter használata.</span><span class="sxs-lookup"><span data-stu-id="dcba1-236">The `GatewayName` parameter has become mandatory in the `New-AzDataFactoryEncryptValue` cmdlet</span></span>
+- <span data-ttu-id="dcba1-237">A `New-AzDataFactoryGatewayKey` parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="dcba1-237">Removed `New-AzDataFactoryGatewayKey` cmdlet</span></span>
+- <span data-ttu-id="dcba1-238">A `Get-AzDataFactoryV2ActivityRun` parancsmag `LinkedServiceName` paramétere el lett távolítva. A szkriptek a jövőben nem veszik figyelembe a mező értékét a feldolgozási döntések során.</span><span class="sxs-lookup"><span data-stu-id="dcba1-238">Removed `LinkedServiceName` parameter from `Get-AzDataFactoryV2ActivityRun` cmdlet Scripts should no longer use the value of this field to make processing decisions.</span></span>
 
-### <a name="azdatalakeanalytics-previously-azurermdatalakeanalytics"></a><span data-ttu-id="9c34e-239">Az.DataLakeAnalytics (korábban AzureRM.DataLakeAnalytics)</span><span class="sxs-lookup"><span data-stu-id="9c34e-239">Az.DataLakeAnalytics (previously AzureRM.DataLakeAnalytics)</span></span>
+### <a name="azdatalakeanalytics-previously-azurermdatalakeanalytics"></a><span data-ttu-id="dcba1-239">Az.DataLakeAnalytics (korábban AzureRM.DataLakeAnalytics)</span><span class="sxs-lookup"><span data-stu-id="dcba1-239">Az.DataLakeAnalytics (previously AzureRM.DataLakeAnalytics)</span></span>
 
-- <span data-ttu-id="9c34e-240">El lettek távolítva a következő elavult parancsmagok: `New-AzDataLakeAnalyticsCatalogSecret`, `Remove-AzDataLakeAnalyticsCatalogSecret`, és `Set-AzDataLakeAnalyticsCatalogSecret`</span><span class="sxs-lookup"><span data-stu-id="9c34e-240">Removed deprecated cmdlets: `New-AzDataLakeAnalyticsCatalogSecret`, `Remove-AzDataLakeAnalyticsCatalogSecret`, and `Set-AzDataLakeAnalyticsCatalogSecret`</span></span>
+- <span data-ttu-id="dcba1-240">El lettek távolítva a következő elavult parancsmagok: `New-AzDataLakeAnalyticsCatalogSecret`, `Remove-AzDataLakeAnalyticsCatalogSecret`, és `Set-AzDataLakeAnalyticsCatalogSecret`</span><span class="sxs-lookup"><span data-stu-id="dcba1-240">Removed deprecated cmdlets: `New-AzDataLakeAnalyticsCatalogSecret`, `Remove-AzDataLakeAnalyticsCatalogSecret`, and `Set-AzDataLakeAnalyticsCatalogSecret`</span></span>
 
-### <a name="azdatalakestore-previously-azurermdatalakestore"></a><span data-ttu-id="9c34e-241">Az.DataLakeStore (korábban AzureRM.DataLakeStore)</span><span class="sxs-lookup"><span data-stu-id="9c34e-241">Az.DataLakeStore (previously AzureRM.DataLakeStore)</span></span>
+### <a name="azdatalakestore-previously-azurermdatalakestore"></a><span data-ttu-id="dcba1-241">Az.DataLakeStore (korábban AzureRM.DataLakeStore)</span><span class="sxs-lookup"><span data-stu-id="dcba1-241">Az.DataLakeStore (previously AzureRM.DataLakeStore)</span></span>
 
-- <span data-ttu-id="9c34e-242">A következő parancsmagok `Encoding` paraméterének típusa `FileSystemCmdletProviderEncoding` helyett `System.Text.Encoding` lett.</span><span class="sxs-lookup"><span data-stu-id="9c34e-242">The following cmdlets have had the `Encoding` parameter changed from the type `FileSystemCmdletProviderEncoding` to `System.Text.Encoding`.</span></span> <span data-ttu-id="9c34e-243">Ez a módosítás eltávolítja a `String` és `Oem` kódolási értéket.</span><span class="sxs-lookup"><span data-stu-id="9c34e-243">This change removes the encoding values `String` and `Oem`.</span></span> <span data-ttu-id="9c34e-244">Az összes egyéb korábbi kódolási érték elérhető marad.</span><span class="sxs-lookup"><span data-stu-id="9c34e-244">All the other prior encoding values remain.</span></span>
-  - <span data-ttu-id="9c34e-245">New-AzureRmDataLakeStoreItem</span><span class="sxs-lookup"><span data-stu-id="9c34e-245">New-AzureRmDataLakeStoreItem</span></span>
-  - <span data-ttu-id="9c34e-246">Add-AzureRmDataLakeStoreItemContent</span><span class="sxs-lookup"><span data-stu-id="9c34e-246">Add-AzureRmDataLakeStoreItemContent</span></span>
-  - <span data-ttu-id="9c34e-247">Get-AzureRmDataLakeStoreItemContent</span><span class="sxs-lookup"><span data-stu-id="9c34e-247">Get-AzureRmDataLakeStoreItemContent</span></span>
-- <span data-ttu-id="9c34e-248">A `New-AzDataLakeStoreAccount` és `Set-AzDataLakeStoreAccount` parancsmag elavult `Tags` tulajdonságaliasa el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="9c34e-248">Removed deprecated `Tags` property alias from `New-AzDataLakeStoreAccount` and `Set-AzDataLakeStoreAccount` cmdlets</span></span>
+- <span data-ttu-id="dcba1-242">A következő parancsmagok `Encoding` paraméterének típusa `FileSystemCmdletProviderEncoding` helyett `System.Text.Encoding` lett.</span><span class="sxs-lookup"><span data-stu-id="dcba1-242">The following cmdlets have had the `Encoding` parameter changed from the type `FileSystemCmdletProviderEncoding` to `System.Text.Encoding`.</span></span> <span data-ttu-id="dcba1-243">Ez a módosítás eltávolítja a `String` és `Oem` kódolási értéket.</span><span class="sxs-lookup"><span data-stu-id="dcba1-243">This change removes the encoding values `String` and `Oem`.</span></span> <span data-ttu-id="dcba1-244">Az összes egyéb korábbi kódolási érték elérhető marad.</span><span class="sxs-lookup"><span data-stu-id="dcba1-244">All the other prior encoding values remain.</span></span>
+  - <span data-ttu-id="dcba1-245">New-AzureRmDataLakeStoreItem</span><span class="sxs-lookup"><span data-stu-id="dcba1-245">New-AzureRmDataLakeStoreItem</span></span>
+  - <span data-ttu-id="dcba1-246">Add-AzureRmDataLakeStoreItemContent</span><span class="sxs-lookup"><span data-stu-id="dcba1-246">Add-AzureRmDataLakeStoreItemContent</span></span>
+  - <span data-ttu-id="dcba1-247">Get-AzureRmDataLakeStoreItemContent</span><span class="sxs-lookup"><span data-stu-id="dcba1-247">Get-AzureRmDataLakeStoreItemContent</span></span>
+- <span data-ttu-id="dcba1-248">A `New-AzDataLakeStoreAccount` és `Set-AzDataLakeStoreAccount` parancsmag elavult `Tags` tulajdonságaliasa el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="dcba1-248">Removed deprecated `Tags` property alias from `New-AzDataLakeStoreAccount` and `Set-AzDataLakeStoreAccount` cmdlets</span></span>
 
-  <span data-ttu-id="9c34e-249">A következőt használó szkripteket:</span><span class="sxs-lookup"><span data-stu-id="9c34e-249">Scripts using</span></span>
+  <span data-ttu-id="dcba1-249">A következőt használó szkripteket:</span><span class="sxs-lookup"><span data-stu-id="dcba1-249">Scripts using</span></span>
   ```azurepowershell-interactive
   New-AzureRMDataLakeStoreAccount -Tags @{TagName="TagValue"}
   ```
 
-  <span data-ttu-id="9c34e-250">A következőre kell módosítani:</span><span class="sxs-lookup"><span data-stu-id="9c34e-250">Should be changed to</span></span>
+  <span data-ttu-id="dcba1-250">A következőre kell módosítani:</span><span class="sxs-lookup"><span data-stu-id="dcba1-250">Should be changed to</span></span>
   ```azurepowershell-interactive
   New-AzDataLakeStoreAccount -Tag @{TagName="TagValue"}
   ```
 
-- <span data-ttu-id="9c34e-251">A `PSDataLakeStoreAccountBasic` objektum elavult tulajdonságai el lettek távolítva: `Identity`, `EncryptionState`, `EncryptionProvisioningState`, `EncryptionConfig`, `FirewallState`, `FirewallRules`, `VirtualNetworkRules`, `TrustedIdProviderState`, `TrustedIdProviders`, `DefaultGroup`, `NewTier`, `CurrentTier` és `FirewallAllowAzureIps`.</span><span class="sxs-lookup"><span data-stu-id="9c34e-251">Removed deprecated properties `Identity`, `EncryptionState`, `EncryptionProvisioningState`, `EncryptionConfig`, `FirewallState`, `FirewallRules`, `VirtualNetworkRules`, `TrustedIdProviderState`, `TrustedIdProviders`, `DefaultGroup`, `NewTier`, `CurrentTier`, `FirewallAllowAzureIps` from `PSDataLakeStoreAccountBasic` object.</span></span>  <span data-ttu-id="9c34e-252">A `Get-AzDataLakeStoreAccount` által visszaadott `PSDatalakeStoreAccount` értéket használó szkriptek nem hivatkozhatnak ezekre a tulajdonságokra.</span><span class="sxs-lookup"><span data-stu-id="9c34e-252">Any script that uses the `PSDatalakeStoreAccount` returned from `Get-AzDataLakeStoreAccount` should not reference these properties.</span></span>
+- <span data-ttu-id="dcba1-251">A `PSDataLakeStoreAccountBasic` objektum elavult tulajdonságai el lettek távolítva: `Identity`, `EncryptionState`, `EncryptionProvisioningState`, `EncryptionConfig`, `FirewallState`, `FirewallRules`, `VirtualNetworkRules`, `TrustedIdProviderState`, `TrustedIdProviders`, `DefaultGroup`, `NewTier`, `CurrentTier` és `FirewallAllowAzureIps`.</span><span class="sxs-lookup"><span data-stu-id="dcba1-251">Removed deprecated properties `Identity`, `EncryptionState`, `EncryptionProvisioningState`, `EncryptionConfig`, `FirewallState`, `FirewallRules`, `VirtualNetworkRules`, `TrustedIdProviderState`, `TrustedIdProviders`, `DefaultGroup`, `NewTier`, `CurrentTier`, `FirewallAllowAzureIps` from `PSDataLakeStoreAccountBasic` object.</span></span>  <span data-ttu-id="dcba1-252">A `Get-AzDataLakeStoreAccount` által visszaadott `PSDatalakeStoreAccount` értéket használó szkriptek nem hivatkozhatnak ezekre a tulajdonságokra.</span><span class="sxs-lookup"><span data-stu-id="dcba1-252">Any script that uses the `PSDatalakeStoreAccount` returned from `Get-AzDataLakeStoreAccount` should not reference these properties.</span></span>
 
-### <a name="azkeyvault-previously-azurermkeyvault"></a><span data-ttu-id="9c34e-253">Az.KeyVault (korábban AzureRM.KeyVault)</span><span class="sxs-lookup"><span data-stu-id="9c34e-253">Az.KeyVault (previously AzureRM.KeyVault)</span></span>
+### <a name="azkeyvault-previously-azurermkeyvault"></a><span data-ttu-id="dcba1-253">Az.KeyVault (korábban AzureRM.KeyVault)</span><span class="sxs-lookup"><span data-stu-id="dcba1-253">Az.KeyVault (previously AzureRM.KeyVault)</span></span>
 
-- <span data-ttu-id="9c34e-254">A `PSKeyVaultKeyAttributes`, `PSKeyVaultKeyIdentityItem` és `PSKeyVaultSecretAttributes` objektum `PurgeDisabled` tulajdonsága el lett távolítva. A szkriptek a jövőben nem hivatkozhatnak a ```PurgeDisabled``` tulajdonságra a feldolgozási döntések során.</span><span class="sxs-lookup"><span data-stu-id="9c34e-254">The `PurgeDisabled` property was removed from the `PSKeyVaultKeyAttributes`, `PSKeyVaultKeyIdentityItem`, and `PSKeyVaultSecretAttributes` objects Scripts should no longer reference the ```PurgeDisabled``` property to make processing decisions.</span></span>
+- <span data-ttu-id="dcba1-254">A `PSKeyVaultKeyAttributes`, `PSKeyVaultKeyIdentityItem` és `PSKeyVaultSecretAttributes` objektum `PurgeDisabled` tulajdonsága el lett távolítva. A szkriptek a jövőben nem hivatkozhatnak a ```PurgeDisabled``` tulajdonságra a feldolgozási döntések során.</span><span class="sxs-lookup"><span data-stu-id="dcba1-254">The `PurgeDisabled` property was removed from the `PSKeyVaultKeyAttributes`, `PSKeyVaultKeyIdentityItem`, and `PSKeyVaultSecretAttributes` objects Scripts should no longer reference the ```PurgeDisabled``` property to make processing decisions.</span></span>
 
-### <a name="azmedia-previously-azurermmedia"></a><span data-ttu-id="9c34e-255">Az.Media (korábban AzureRM.Media)</span><span class="sxs-lookup"><span data-stu-id="9c34e-255">Az.Media (previously AzureRM.Media)</span></span>
+### <a name="azmedia-previously-azurermmedia"></a><span data-ttu-id="dcba1-255">Az.Media (korábban AzureRM.Media)</span><span class="sxs-lookup"><span data-stu-id="dcba1-255">Az.Media (previously AzureRM.Media)</span></span>
 
-- <span data-ttu-id="9c34e-256">A `New-AzMediaService` parancsmag elavult `Tags` tulajdonságaliasa el lett távolítva. A következőt használó szkripteket:</span><span class="sxs-lookup"><span data-stu-id="9c34e-256">Remove deprecated `Tags` property alias from `New-AzMediaService` cmdlet Scripts using</span></span>
+- <span data-ttu-id="dcba1-256">A `New-AzMediaService` parancsmag elavult `Tags` tulajdonságaliasa el lett távolítva. A következőt használó szkripteket:</span><span class="sxs-lookup"><span data-stu-id="dcba1-256">Remove deprecated `Tags` property alias from `New-AzMediaService` cmdlet Scripts using</span></span>
   ```azurepowershell-interactive
   New-AzureRMMediaService -Tags @{TagName="TagValue"}
   ```
 
-  <span data-ttu-id="9c34e-257">A következőre kell módosítani:</span><span class="sxs-lookup"><span data-stu-id="9c34e-257">Should be changed to</span></span>
+  <span data-ttu-id="dcba1-257">A következőre kell módosítani:</span><span class="sxs-lookup"><span data-stu-id="dcba1-257">Should be changed to</span></span>
   ```azurepowershell-interactive
   New-AzMediaService -Tag @{TagName="TagValue"}
   ```
 
-### <a name="azmonitor-previously-azurerminsights"></a><span data-ttu-id="9c34e-258">Az.Monitor (korábban AzureRM.Insights)</span><span class="sxs-lookup"><span data-stu-id="9c34e-258">Az.Monitor (previously AzureRM.Insights)</span></span>
+### <a name="azmonitor-previously-azurerminsights"></a><span data-ttu-id="dcba1-258">Az.Monitor (korábban AzureRM.Insights)</span><span class="sxs-lookup"><span data-stu-id="dcba1-258">Az.Monitor (previously AzureRM.Insights)</span></span>
 
-- <span data-ttu-id="9c34e-259">A `Categories` és a `Timegrains` többes számú paraméternév el lett távolítva. Ezek helyett a `Set-AzDiagnosticSetting` parancsmag egyes számú paraméterneveit kell használni. A következőt használó szkripteket:</span><span class="sxs-lookup"><span data-stu-id="9c34e-259">Removed plural names `Categories` and `Timegrains` parameter in favor of singular parameter names from `Set-AzDiagnosticSetting` cmdlet Scripts using</span></span>
+- <span data-ttu-id="dcba1-259">A `Categories` és a `Timegrains` többes számú paraméternév el lett távolítva. Ezek helyett a `Set-AzDiagnosticSetting` parancsmag egyes számú paraméterneveit kell használni. A következőt használó szkripteket:</span><span class="sxs-lookup"><span data-stu-id="dcba1-259">Removed plural names `Categories` and `Timegrains` parameter in favor of singular parameter names from `Set-AzDiagnosticSetting` cmdlet Scripts using</span></span>
   ```azurepowershell-interactive
   Set-AzureRmDiagnosticSetting -Timegrains PT1M -Categories Category1, Category2
   ```
 
-  <span data-ttu-id="9c34e-260">A következőre kell módosítani:</span><span class="sxs-lookup"><span data-stu-id="9c34e-260">Should be changed to</span></span>
+  <span data-ttu-id="dcba1-260">A következőre kell módosítani:</span><span class="sxs-lookup"><span data-stu-id="dcba1-260">Should be changed to</span></span>
   ```azurepowershell-interactive
   Set-AzDiagnosticSetting -Timegrain PT1M -Category Category1, Category2
   ```
 
-### <a name="aznetwork-previously-azurermnetwork"></a><span data-ttu-id="9c34e-261">Az.Network (korábban AzureRM.Network)</span><span class="sxs-lookup"><span data-stu-id="9c34e-261">Az.Network (previously AzureRM.Network)</span></span>
+### <a name="aznetwork-previously-azurermnetwork"></a><span data-ttu-id="dcba1-261">Az.Network (korábban AzureRM.Network)</span><span class="sxs-lookup"><span data-stu-id="dcba1-261">Az.Network (previously AzureRM.Network)</span></span>
 
-- <span data-ttu-id="9c34e-262">A `Get-AzServiceEndpointPolicyDefinition` parancsmag elavult `ResourceId` paramétere el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="9c34e-262">Removed deprecated `ResourceId` parameter from `Get-AzServiceEndpointPolicyDefinition` cmdlet</span></span>
-- <span data-ttu-id="9c34e-263">A `PSVirtualNetwork` objektum elavult `EnableVmProtection` tulajdonsága el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="9c34e-263">Removed deprecated `EnableVmProtection` property from `PSVirtualNetwork` object</span></span>
-- <span data-ttu-id="9c34e-264">Az elavult `Set-AzVirtualNetworkGatewayVpnClientConfig` parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="9c34e-264">Removed deprecated `Set-AzVirtualNetworkGatewayVpnClientConfig` cmdlet</span></span>
+- <span data-ttu-id="dcba1-262">A `Get-AzServiceEndpointPolicyDefinition` parancsmag elavult `ResourceId` paramétere el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="dcba1-262">Removed deprecated `ResourceId` parameter from `Get-AzServiceEndpointPolicyDefinition` cmdlet</span></span>
+- <span data-ttu-id="dcba1-263">A `PSVirtualNetwork` objektum elavult `EnableVmProtection` tulajdonsága el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="dcba1-263">Removed deprecated `EnableVmProtection` property from `PSVirtualNetwork` object</span></span>
+- <span data-ttu-id="dcba1-264">Az elavult `Set-AzVirtualNetworkGatewayVpnClientConfig` parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="dcba1-264">Removed deprecated `Set-AzVirtualNetworkGatewayVpnClientConfig` cmdlet</span></span>
 
-<span data-ttu-id="9c34e-265">A szkriptek a jövőben nem hozhatnak feldolgozási döntéseket e mezők értéke alapján.</span><span class="sxs-lookup"><span data-stu-id="9c34e-265">Scripts should no longer make processing decisions based on the values fo these fields.</span></span>
+<span data-ttu-id="dcba1-265">A szkriptek a jövőben nem hozhatnak feldolgozási döntéseket e mezők értéke alapján.</span><span class="sxs-lookup"><span data-stu-id="dcba1-265">Scripts should no longer make processing decisions based on the values fo these fields.</span></span>
 
-### <a name="azoperationalinsights-previously-azurermoperationalinsights"></a><span data-ttu-id="9c34e-266">Az.OperationalInsights (korábban AzureRM.OperationalInsights)</span><span class="sxs-lookup"><span data-stu-id="9c34e-266">Az.OperationalInsights (previously AzureRM.OperationalInsights)</span></span>
+### <a name="azoperationalinsights-previously-azurermoperationalinsights"></a><span data-ttu-id="dcba1-266">Az.OperationalInsights (korábban AzureRM.OperationalInsights)</span><span class="sxs-lookup"><span data-stu-id="dcba1-266">Az.OperationalInsights (previously AzureRM.OperationalInsights)</span></span>
 
-- <span data-ttu-id="9c34e-267">A `Get-AzOperationalInsightsDataSource` alapértelmezett paraméterkészlete el lett távolítva. Mostantól a `ByWorkspaceNameByKind` az alapértelmezett paraméterkészlet.</span><span class="sxs-lookup"><span data-stu-id="9c34e-267">Default parameter set for `Get-AzOperationalInsightsDataSource` is removed, and `ByWorkspaceNameByKind` has become the default parameter set</span></span>
+- <span data-ttu-id="dcba1-267">A `Get-AzOperationalInsightsDataSource` alapértelmezett paraméterkészlete el lett távolítva. Mostantól a `ByWorkspaceNameByKind` az alapértelmezett paraméterkészlet.</span><span class="sxs-lookup"><span data-stu-id="dcba1-267">Default parameter set for `Get-AzOperationalInsightsDataSource` is removed, and `ByWorkspaceNameByKind` has become the default parameter set</span></span>
 
-  <span data-ttu-id="9c34e-268">Azokat a szkripteket, amelyek a következő használatával listázták az adatforrásokat:</span><span class="sxs-lookup"><span data-stu-id="9c34e-268">Scripts that listed data sources using</span></span>
+  <span data-ttu-id="dcba1-268">Azokat a szkripteket, amelyek a következő használatával listázták az adatforrásokat:</span><span class="sxs-lookup"><span data-stu-id="dcba1-268">Scripts that listed data sources using</span></span>
   ```azurepowershell-interactive
   Get-AzureRmOperationalInsightsDataSource
   ```
 
-  <span data-ttu-id="9c34e-269">Úgy kell módosítani, hogy megadjanak egy altípust:</span><span class="sxs-lookup"><span data-stu-id="9c34e-269">Should be changed to specify a Kind</span></span>
+  <span data-ttu-id="dcba1-269">Úgy kell módosítani, hogy megadjanak egy altípust:</span><span class="sxs-lookup"><span data-stu-id="dcba1-269">Should be changed to specify a Kind</span></span>
   ```azurepowershell-interactive
   Get-AzOperationalInsightsDataSource -Kind AzureActivityLog
   ```
 
-### <a name="azrecoveryservices-previously-azurermrecoveryservices-azurermrecoveryservicesbackup-and-azurermrecoveryservicessiterecovery"></a><span data-ttu-id="9c34e-270">Az.RecoveryServices (korábban AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup és AzureRM.RecoveryServices.SiteRecovery)</span><span class="sxs-lookup"><span data-stu-id="9c34e-270">Az.RecoveryServices (previously AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup, and AzureRM.RecoveryServices.SiteRecovery)</span></span>
+### <a name="azrecoveryservices-previously-azurermrecoveryservices-azurermrecoveryservicesbackup-and-azurermrecoveryservicessiterecovery"></a><span data-ttu-id="dcba1-270">Az.RecoveryServices (korábban AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup és AzureRM.RecoveryServices.SiteRecovery)</span><span class="sxs-lookup"><span data-stu-id="dcba1-270">Az.RecoveryServices (previously AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup, and AzureRM.RecoveryServices.SiteRecovery)</span></span>
 
-- <span data-ttu-id="9c34e-271">A `New/Set-AzRecoveryServicesAsrPolicy` parancsmag `Encryption` paramétere el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="9c34e-271">Removed `Encryption` parameter from `New/Set-AzRecoveryServicesAsrPolicy` cmdlet</span></span>
-- <span data-ttu-id="9c34e-272">A `TargetStorageAccountName` paraméter megadása mostantól kötelező a `Restore-AzRecoveryServicesBackupItem` parancsmag felügyeltlemez-visszaállítási műveleteihez.</span><span class="sxs-lookup"><span data-stu-id="9c34e-272">`TargetStorageAccountName` parameter is now mandatory for managed disk restores in `Restore-AzRecoveryServicesBackupItem` cmdlet</span></span>
-- <span data-ttu-id="9c34e-273">A `Restore-AzRecoveryServicesBackupItem` parancsmag `StorageAccountName` és `StorageAccountResourceGroupName` paramétere el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="9c34e-273">Removed `StorageAccountName` and `StorageAccountResourceGroupName` parameters in `Restore-AzRecoveryServicesBackupItem` cmdlet</span></span>
-- <span data-ttu-id="9c34e-274">A `Get-AzRecoveryServicesBackupContainer` parancsmag `Name` paramétere el lett távolítva</span><span class="sxs-lookup"><span data-stu-id="9c34e-274">Removed `Name`parameter in `Get-AzRecoveryServicesBackupContainer` cmdlet</span></span>
+- <span data-ttu-id="dcba1-271">A `New/Set-AzRecoveryServicesAsrPolicy` parancsmag `Encryption` paramétere el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="dcba1-271">Removed `Encryption` parameter from `New/Set-AzRecoveryServicesAsrPolicy` cmdlet</span></span>
+- <span data-ttu-id="dcba1-272">A `TargetStorageAccountName` paraméter megadása mostantól kötelező a `Restore-AzRecoveryServicesBackupItem` parancsmag felügyeltlemez-visszaállítási műveleteihez.</span><span class="sxs-lookup"><span data-stu-id="dcba1-272">`TargetStorageAccountName` parameter is now mandatory for managed disk restores in `Restore-AzRecoveryServicesBackupItem` cmdlet</span></span>
+- <span data-ttu-id="dcba1-273">A `Restore-AzRecoveryServicesBackupItem` parancsmag `StorageAccountName` és `StorageAccountResourceGroupName` paramétere el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="dcba1-273">Removed `StorageAccountName` and `StorageAccountResourceGroupName` parameters in `Restore-AzRecoveryServicesBackupItem` cmdlet</span></span>
+- <span data-ttu-id="dcba1-274">A `Get-AzRecoveryServicesBackupContainer` parancsmag `Name` paramétere el lett távolítva</span><span class="sxs-lookup"><span data-stu-id="dcba1-274">Removed `Name`parameter in `Get-AzRecoveryServicesBackupContainer` cmdlet</span></span>
 
-### <a name="azresources-previously-azurermresources"></a><span data-ttu-id="9c34e-275">Az.Resources (korábban AzureRM.Resources)</span><span class="sxs-lookup"><span data-stu-id="9c34e-275">Az.Resources (previously AzureRM.Resources)</span></span>
+### <a name="azresources-previously-azurermresources"></a><span data-ttu-id="dcba1-275">Az.Resources (korábban AzureRM.Resources)</span><span class="sxs-lookup"><span data-stu-id="dcba1-275">Az.Resources (previously AzureRM.Resources)</span></span>
 
-- <span data-ttu-id="9c34e-276">A `New/Set-AzPolicyAssignment` parancsmag `Sku` paramétere el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="9c34e-276">Removed `Sku` parameter from `New/Set-AzPolicyAssignment` cmdlet</span></span>
-- <span data-ttu-id="9c34e-277">A `New-AzADServicePrincipal` és `New-AzADSpCredential` parancsmag `Password` paramétere el lett távolítva. A jelszavak létrehozása automatikusan történik, a korábban jelszót biztosító szkripteket:</span><span class="sxs-lookup"><span data-stu-id="9c34e-277">Removed `Password` parameter from `New-AzADServicePrincipal` and `New-AzADSpCredential` cmdlet Passwords are automatically generated, scripts that provided the password:</span></span>
+- <span data-ttu-id="dcba1-276">A `New/Set-AzPolicyAssignment` parancsmag `Sku` paramétere el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="dcba1-276">Removed `Sku` parameter from `New/Set-AzPolicyAssignment` cmdlet</span></span>
+- <span data-ttu-id="dcba1-277">A `New-AzADServicePrincipal` és `New-AzADSpCredential` parancsmag `Password` paramétere el lett távolítva. A jelszavak létrehozása automatikusan történik, a korábban jelszót biztosító szkripteket:</span><span class="sxs-lookup"><span data-stu-id="dcba1-277">Removed `Password` parameter from `New-AzADServicePrincipal` and `New-AzADSpCredential` cmdlet Passwords are automatically generated, scripts that provided the password:</span></span>
 
   ```azurepowershell-interactive
   New-AzAdSpCredential -ObjectId 1f99cf81-0146-4f4e-beae-2007d0668476 -Password $secPassword
   ```
 
-  <span data-ttu-id="9c34e-278">Úgy kell módosítani, hogy a kimenetből kérjék le a jelszót:</span><span class="sxs-lookup"><span data-stu-id="9c34e-278">Should be changed to retrieve the password from the output:</span></span>
+  <span data-ttu-id="dcba1-278">Úgy kell módosítani, hogy a kimenetből kérjék le a jelszót:</span><span class="sxs-lookup"><span data-stu-id="dcba1-278">Should be changed to retrieve the password from the output:</span></span>
 
   ```azurepowershell-interactive
   $credential = New-AzAdSpCredential -ObjectId 1f99cf81-0146-4f4e-beae-2007d0668476
   $secPassword = $credential.Secret
   ```
 
-### <a name="azservicefabric-previously-azurermservicefabric"></a><span data-ttu-id="9c34e-279">Az.ServiceFabric (korábban AzureRM.ServiceFabric)</span><span class="sxs-lookup"><span data-stu-id="9c34e-279">Az.ServiceFabric (previously AzureRM.ServiceFabric)</span></span>
+### <a name="azservicefabric-previously-azurermservicefabric"></a><span data-ttu-id="dcba1-279">Az.ServiceFabric (korábban AzureRM.ServiceFabric)</span><span class="sxs-lookup"><span data-stu-id="dcba1-279">Az.ServiceFabric (previously AzureRM.ServiceFabric)</span></span>
 
-- <span data-ttu-id="9c34e-280">Módosítottuk a következő parancsmag visszatérési típusait:</span><span class="sxs-lookup"><span data-stu-id="9c34e-280">The following cmdlet return types have been changed:</span></span>
-  - <span data-ttu-id="9c34e-281">Az `ApplicationHealthPolicy` típus `ServiceTypeHealthPolicies` tulajdonsága el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="9c34e-281">The property `ServiceTypeHealthPolicies` of type `ApplicationHealthPolicy` has been removed.</span></span>
-  - <span data-ttu-id="9c34e-282">Az `ClusterUpgradeDeltaHealthPolicy` típus `ApplicationHealthPolicies` tulajdonsága el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="9c34e-282">The property `ApplicationHealthPolicies` of type `ClusterUpgradeDeltaHealthPolicy` has been removed.</span></span>
-  - <span data-ttu-id="9c34e-283">Az `ClusterUpgradePolicy` típus `OverrideUserUpgradePolicy` tulajdonsága el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="9c34e-283">The property `OverrideUserUpgradePolicy` of type `ClusterUpgradePolicy` has been removed.</span></span>
-  - <span data-ttu-id="9c34e-284">Ezek a módosítások a következő parancsmagokat érintik:</span><span class="sxs-lookup"><span data-stu-id="9c34e-284">These changes affect the following cmdlets:</span></span>
-    - <span data-ttu-id="9c34e-285">Add-AzServiceFabricClientCertificate</span><span class="sxs-lookup"><span data-stu-id="9c34e-285">Add-AzServiceFabricClientCertificate</span></span>
-    - <span data-ttu-id="9c34e-286">Add-AzServiceFabricClusterCertificate</span><span class="sxs-lookup"><span data-stu-id="9c34e-286">Add-AzServiceFabricClusterCertificate</span></span>
-    - <span data-ttu-id="9c34e-287">Add-AzServiceFabricNode</span><span class="sxs-lookup"><span data-stu-id="9c34e-287">Add-AzServiceFabricNode</span></span>
-    - <span data-ttu-id="9c34e-288">Add-AzServiceFabricNodeType</span><span class="sxs-lookup"><span data-stu-id="9c34e-288">Add-AzServiceFabricNodeType</span></span>
-    - <span data-ttu-id="9c34e-289">Get-AzServiceFabricCluster</span><span class="sxs-lookup"><span data-stu-id="9c34e-289">Get-AzServiceFabricCluster</span></span>
-    - <span data-ttu-id="9c34e-290">Remove-AzServiceFabricClientCertificate</span><span class="sxs-lookup"><span data-stu-id="9c34e-290">Remove-AzServiceFabricClientCertificate</span></span>
-    - <span data-ttu-id="9c34e-291">Remove-AzServiceFabricClusterCertificate</span><span class="sxs-lookup"><span data-stu-id="9c34e-291">Remove-AzServiceFabricClusterCertificate</span></span>
-    - <span data-ttu-id="9c34e-292">Remove-AzServiceFabricNode</span><span class="sxs-lookup"><span data-stu-id="9c34e-292">Remove-AzServiceFabricNode</span></span>
-    - <span data-ttu-id="9c34e-293">Remove-AzServiceFabricNodeType</span><span class="sxs-lookup"><span data-stu-id="9c34e-293">Remove-AzServiceFabricNodeType</span></span>
-    - <span data-ttu-id="9c34e-294">Remove-AzServiceFabricSetting</span><span class="sxs-lookup"><span data-stu-id="9c34e-294">Remove-AzServiceFabricSetting</span></span>
-    - <span data-ttu-id="9c34e-295">Set-AzServiceFabricSetting</span><span class="sxs-lookup"><span data-stu-id="9c34e-295">Set-AzServiceFabricSetting</span></span>
-    - <span data-ttu-id="9c34e-296">Set-AzServiceFabricUpgradeType</span><span class="sxs-lookup"><span data-stu-id="9c34e-296">Set-AzServiceFabricUpgradeType</span></span>
-    - <span data-ttu-id="9c34e-297">Update-AzServiceFabricDurability</span><span class="sxs-lookup"><span data-stu-id="9c34e-297">Update-AzServiceFabricDurability</span></span>
-    - <span data-ttu-id="9c34e-298">Update-AzServiceFabricReliability</span><span class="sxs-lookup"><span data-stu-id="9c34e-298">Update-AzServiceFabricReliability</span></span>
+- <span data-ttu-id="dcba1-280">Módosítottuk a következő parancsmag visszatérési típusait:</span><span class="sxs-lookup"><span data-stu-id="dcba1-280">The following cmdlet return types have been changed:</span></span>
+  - <span data-ttu-id="dcba1-281">Az `ApplicationHealthPolicy` típus `ServiceTypeHealthPolicies` tulajdonsága el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="dcba1-281">The property `ServiceTypeHealthPolicies` of type `ApplicationHealthPolicy` has been removed.</span></span>
+  - <span data-ttu-id="dcba1-282">Az `ClusterUpgradeDeltaHealthPolicy` típus `ApplicationHealthPolicies` tulajdonsága el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="dcba1-282">The property `ApplicationHealthPolicies` of type `ClusterUpgradeDeltaHealthPolicy` has been removed.</span></span>
+  - <span data-ttu-id="dcba1-283">A `ClusterUpgradePolicy` típus `OverrideUserUpgradePolicy` tulajdonsága el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="dcba1-283">The property `OverrideUserUpgradePolicy` of type `ClusterUpgradePolicy` has been removed.</span></span>
+  - <span data-ttu-id="dcba1-284">Ezek a módosítások a következő parancsmagokat érintik:</span><span class="sxs-lookup"><span data-stu-id="dcba1-284">These changes affect the following cmdlets:</span></span>
+    - <span data-ttu-id="dcba1-285">Add-AzServiceFabricClientCertificate</span><span class="sxs-lookup"><span data-stu-id="dcba1-285">Add-AzServiceFabricClientCertificate</span></span>
+    - <span data-ttu-id="dcba1-286">Add-AzServiceFabricClusterCertificate</span><span class="sxs-lookup"><span data-stu-id="dcba1-286">Add-AzServiceFabricClusterCertificate</span></span>
+    - <span data-ttu-id="dcba1-287">Add-AzServiceFabricNode</span><span class="sxs-lookup"><span data-stu-id="dcba1-287">Add-AzServiceFabricNode</span></span>
+    - <span data-ttu-id="dcba1-288">Add-AzServiceFabricNodeType</span><span class="sxs-lookup"><span data-stu-id="dcba1-288">Add-AzServiceFabricNodeType</span></span>
+    - <span data-ttu-id="dcba1-289">Get-AzServiceFabricCluster</span><span class="sxs-lookup"><span data-stu-id="dcba1-289">Get-AzServiceFabricCluster</span></span>
+    - <span data-ttu-id="dcba1-290">Remove-AzServiceFabricClientCertificate</span><span class="sxs-lookup"><span data-stu-id="dcba1-290">Remove-AzServiceFabricClientCertificate</span></span>
+    - <span data-ttu-id="dcba1-291">Remove-AzServiceFabricClusterCertificate</span><span class="sxs-lookup"><span data-stu-id="dcba1-291">Remove-AzServiceFabricClusterCertificate</span></span>
+    - <span data-ttu-id="dcba1-292">Remove-AzServiceFabricNode</span><span class="sxs-lookup"><span data-stu-id="dcba1-292">Remove-AzServiceFabricNode</span></span>
+    - <span data-ttu-id="dcba1-293">Remove-AzServiceFabricNodeType</span><span class="sxs-lookup"><span data-stu-id="dcba1-293">Remove-AzServiceFabricNodeType</span></span>
+    - <span data-ttu-id="dcba1-294">Remove-AzServiceFabricSetting</span><span class="sxs-lookup"><span data-stu-id="dcba1-294">Remove-AzServiceFabricSetting</span></span>
+    - <span data-ttu-id="dcba1-295">Set-AzServiceFabricSetting</span><span class="sxs-lookup"><span data-stu-id="dcba1-295">Set-AzServiceFabricSetting</span></span>
+    - <span data-ttu-id="dcba1-296">Set-AzServiceFabricUpgradeType</span><span class="sxs-lookup"><span data-stu-id="dcba1-296">Set-AzServiceFabricUpgradeType</span></span>
+    - <span data-ttu-id="dcba1-297">Update-AzServiceFabricDurability</span><span class="sxs-lookup"><span data-stu-id="dcba1-297">Update-AzServiceFabricDurability</span></span>
+    - <span data-ttu-id="dcba1-298">Update-AzServiceFabricReliability</span><span class="sxs-lookup"><span data-stu-id="dcba1-298">Update-AzServiceFabricReliability</span></span>
 
-### <a name="azsql-previously-azurermsql"></a><span data-ttu-id="9c34e-299">Az.Sql (korábban AzureRM.Sql)</span><span class="sxs-lookup"><span data-stu-id="9c34e-299">Az.Sql (previously AzureRM.Sql)</span></span>
+### <a name="azsql-previously-azurermsql"></a><span data-ttu-id="dcba1-299">Az.Sql (korábban AzureRM.Sql)</span><span class="sxs-lookup"><span data-stu-id="dcba1-299">Az.Sql (previously AzureRM.Sql)</span></span>
 
-- <span data-ttu-id="9c34e-300">A `Set-AzSqlDatabaseBackupLongTermRetentionPolicy` parancsmag `State` és `ResourceId` paramétere el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="9c34e-300">Removed `State` and `ResourceId` parameters from `Set-AzSqlDatabaseBackupLongTermRetentionPolicy` cmdlet</span></span>
-- <span data-ttu-id="9c34e-301">A következő, elavult parancsmagok el lettek távolítva: `Get/Set-AzSqlServerBackupLongTermRetentionVault`, `Get/Start/Stop-AzSqlServerUpgrade`, `Get/Set-AzSqlDatabaseAuditingPolicy`, `Get/Set-AzSqlServerAuditingPolicy`, `Remove-AzSqlDatabaseAuditing` és `Remove-AzSqlServerAuditing`.</span><span class="sxs-lookup"><span data-stu-id="9c34e-301">Removed deprecated cmdlets: `Get/Set-AzSqlServerBackupLongTermRetentionVault`, `Get/Start/Stop-AzSqlServerUpgrade`, `Get/Set-AzSqlDatabaseAuditingPolicy`, `Get/Set-AzSqlServerAuditingPolicy`, `Remove-AzSqlDatabaseAuditing`, `Remove-AzSqlServerAuditing`</span></span>
-- <span data-ttu-id="9c34e-302">A `Get-AzSqlDatabaseBackupLongTermRetentionPolicy` parancsmag elavult `Current` paramétere el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="9c34e-302">Removed deprecated parameter `Current` from `Get-AzSqlDatabaseBackupLongTermRetentionPolicy` cmdlet</span></span>
-- <span data-ttu-id="9c34e-303">A `Get-AzSqlServerServiceObjective` parancsmag elavult `DatabaseName` paramétere el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="9c34e-303">Removed deprecated parameter `DatabaseName` from `Get-AzSqlServerServiceObjective` cmdlet</span></span>
-- <span data-ttu-id="9c34e-304">A `Set-AzSqlDatabaseDataMaskingPolicy` parancsmag elavult `PrivilegedLogin` paramétere el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="9c34e-304">Removed deprecated parameter `PrivilegedLogin` from `Set-AzSqlDatabaseDataMaskingPolicy` cmdlet</span></span>
+- <span data-ttu-id="dcba1-300">A `Set-AzSqlDatabaseBackupLongTermRetentionPolicy` parancsmag `State` és `ResourceId` paramétere el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="dcba1-300">Removed `State` and `ResourceId` parameters from `Set-AzSqlDatabaseBackupLongTermRetentionPolicy` cmdlet</span></span>
+- <span data-ttu-id="dcba1-301">A következő, elavult parancsmagok el lettek távolítva: `Get/Set-AzSqlServerBackupLongTermRetentionVault`, `Get/Start/Stop-AzSqlServerUpgrade`, `Get/Set-AzSqlDatabaseAuditingPolicy`, `Get/Set-AzSqlServerAuditingPolicy`, `Remove-AzSqlDatabaseAuditing` és `Remove-AzSqlServerAuditing`.</span><span class="sxs-lookup"><span data-stu-id="dcba1-301">Removed deprecated cmdlets: `Get/Set-AzSqlServerBackupLongTermRetentionVault`, `Get/Start/Stop-AzSqlServerUpgrade`, `Get/Set-AzSqlDatabaseAuditingPolicy`, `Get/Set-AzSqlServerAuditingPolicy`, `Remove-AzSqlDatabaseAuditing`, `Remove-AzSqlServerAuditing`</span></span>
+- <span data-ttu-id="dcba1-302">A `Get-AzSqlDatabaseBackupLongTermRetentionPolicy` parancsmag elavult `Current` paramétere el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="dcba1-302">Removed deprecated parameter `Current` from `Get-AzSqlDatabaseBackupLongTermRetentionPolicy` cmdlet</span></span>
+- <span data-ttu-id="dcba1-303">A `Get-AzSqlServerServiceObjective` parancsmag elavult `DatabaseName` paramétere el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="dcba1-303">Removed deprecated parameter `DatabaseName` from `Get-AzSqlServerServiceObjective` cmdlet</span></span>
+- <span data-ttu-id="dcba1-304">A `Set-AzSqlDatabaseDataMaskingPolicy` parancsmag elavult `PrivilegedLogin` paramétere el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="dcba1-304">Removed deprecated parameter `PrivilegedLogin` from `Set-AzSqlDatabaseDataMaskingPolicy` cmdlet</span></span>
 
-### <a name="azstorage-previously-azurestorage-and-azurermstorage"></a><span data-ttu-id="9c34e-305">Az.Storage (korábban Azure.Storage és AzureRM.Storage)</span><span class="sxs-lookup"><span data-stu-id="9c34e-305">Az.Storage (previously Azure.Storage and AzureRM.Storage)</span></span>
+### <a name="azstorage-previously-azurestorage-and-azurermstorage"></a><span data-ttu-id="dcba1-305">Az.Storage (korábban Azure.Storage és AzureRM.Storage)</span><span class="sxs-lookup"><span data-stu-id="dcba1-305">Az.Storage (previously Azure.Storage and AzureRM.Storage)</span></span>
 
-- <span data-ttu-id="9c34e-306">Annak érdekében, hogy létre lehessen hozni egy Oauth Storage-környezetet pusztán a tárfiók nevét használva, az új alapértelmezett paraméterkészlet a következő: `OAuthParameterSet`</span><span class="sxs-lookup"><span data-stu-id="9c34e-306">To support creating an Oauth storage context with only the storage account name, the default parameter set has been changed to `OAuthParameterSet`</span></span>
-  - <span data-ttu-id="9c34e-307">Például: `$ctx = New-AzureStorageContext -StorageAccountName $accountName`</span><span class="sxs-lookup"><span data-stu-id="9c34e-307">Example: `$ctx = New-AzureStorageContext -StorageAccountName $accountName`</span></span>
-- <span data-ttu-id="9c34e-308">A `Get-AzStorageUsage` parancsmagban kötelezővé vált a `Location` paraméter használata.</span><span class="sxs-lookup"><span data-stu-id="9c34e-308">The `Location` parameter has become mandatory in the `Get-AzStorageUsage` cmdlet</span></span>
-- <span data-ttu-id="9c34e-309">A Storage API-metódusok mostantól feladatalapú aszinkron mintát (TAP) használnak az egyidejű API-hívások helyett.</span><span class="sxs-lookup"><span data-stu-id="9c34e-309">The Storage API methods now use the Task-based Asynchronous Pattern (TAP), instead of synchronous API calls.</span></span> <span data-ttu-id="9c34e-310">Az alábbi példák az új, aszinkron parancsokat mutatják be:</span><span class="sxs-lookup"><span data-stu-id="9c34e-310">The following examples demonstrate the new asynchronous commands:</span></span>
+- <span data-ttu-id="dcba1-306">Annak érdekében, hogy létre lehessen hozni egy Oauth Storage-környezetet pusztán a tárfiók nevét használva, az új alapértelmezett paraméterkészlet a következő: `OAuthParameterSet`</span><span class="sxs-lookup"><span data-stu-id="dcba1-306">To support creating an Oauth storage context with only the storage account name, the default parameter set has been changed to `OAuthParameterSet`</span></span>
+  - <span data-ttu-id="dcba1-307">Például: `$ctx = New-AzureStorageContext -StorageAccountName $accountName`</span><span class="sxs-lookup"><span data-stu-id="dcba1-307">Example: `$ctx = New-AzureStorageContext -StorageAccountName $accountName`</span></span>
+- <span data-ttu-id="dcba1-308">A `Get-AzStorageUsage` parancsmagban kötelezővé vált a `Location` paraméter használata.</span><span class="sxs-lookup"><span data-stu-id="dcba1-308">The `Location` parameter has become mandatory in the `Get-AzStorageUsage` cmdlet</span></span>
+- <span data-ttu-id="dcba1-309">A Storage API-metódusok mostantól feladatalapú aszinkron mintát (TAP) használnak az egyidejű API-hívások helyett.</span><span class="sxs-lookup"><span data-stu-id="dcba1-309">The Storage API methods now use the Task-based Asynchronous Pattern (TAP), instead of synchronous API calls.</span></span> <span data-ttu-id="dcba1-310">Az alábbi példák az új, aszinkron parancsokat mutatják be:</span><span class="sxs-lookup"><span data-stu-id="dcba1-310">The following examples demonstrate the new asynchronous commands:</span></span>
 
-#### <a name="blob-snapshot"></a><span data-ttu-id="9c34e-311">Blob-pillanatképek</span><span class="sxs-lookup"><span data-stu-id="9c34e-311">Blob Snapshot</span></span>
+#### <a name="blob-snapshot"></a><span data-ttu-id="dcba1-311">Blob-pillanatképek</span><span class="sxs-lookup"><span data-stu-id="dcba1-311">Blob Snapshot</span></span>
 
-<span data-ttu-id="9c34e-312">AzureRM:</span><span class="sxs-lookup"><span data-stu-id="9c34e-312">AzureRM:</span></span>
+<span data-ttu-id="dcba1-312">AzureRM:</span><span class="sxs-lookup"><span data-stu-id="dcba1-312">AzureRM:</span></span>
 
 ```azurepowershell-interactive
 $b = Get-AzureStorageBlob -Container $containerName -Blob $blobName -Context $ctx
 $b.ICloudBlob.Snapshot()
 ```
 
-<span data-ttu-id="9c34e-313">Az:</span><span class="sxs-lookup"><span data-stu-id="9c34e-313">Az:</span></span>
+<span data-ttu-id="dcba1-313">Az:</span><span class="sxs-lookup"><span data-stu-id="dcba1-313">Az:</span></span>
 
 ```azurepowershell-interactive
 $b = Get-AzureStorageBlob -Container $containerName -Blob $blobName -Context $ctx
@@ -387,16 +384,16 @@ $task.Wait()
 $snapshot = $task.Result
 ```
 
-#### <a name="share-snapshot"></a><span data-ttu-id="9c34e-314">Megosztási pillanatképek</span><span class="sxs-lookup"><span data-stu-id="9c34e-314">Share Snapshot</span></span>
+#### <a name="share-snapshot"></a><span data-ttu-id="dcba1-314">Megosztási pillanatképek</span><span class="sxs-lookup"><span data-stu-id="dcba1-314">Share Snapshot</span></span>
 
-<span data-ttu-id="9c34e-315">AzureRM:</span><span class="sxs-lookup"><span data-stu-id="9c34e-315">AzureRM:</span></span>
+<span data-ttu-id="dcba1-315">AzureRM:</span><span class="sxs-lookup"><span data-stu-id="dcba1-315">AzureRM:</span></span>
 
 ```azurepowershell-interactive
 $Share = Get-AzureStorageShare -Name $containerName -Context $ctx
 $snapshot = $Share.Snapshot()
 ```
 
-<span data-ttu-id="9c34e-316">Az:</span><span class="sxs-lookup"><span data-stu-id="9c34e-316">Az:</span></span>
+<span data-ttu-id="dcba1-316">Az:</span><span class="sxs-lookup"><span data-stu-id="dcba1-316">Az:</span></span>
 
 ```azurepowershell-interactive
 $Share = Get-AzureStorageShare -Name $containerName -Context $ctx
@@ -405,16 +402,16 @@ $task.Wait()
 $snapshot = $task.Result
 ```
 
-#### <a name="undelete-soft-deleted-blob"></a><span data-ttu-id="9c34e-317">Blob helyreállítható törlésének visszavonása</span><span class="sxs-lookup"><span data-stu-id="9c34e-317">Undelete soft-deleted blob</span></span>
+#### <a name="undelete-soft-deleted-blob"></a><span data-ttu-id="dcba1-317">Blob helyreállítható törlésének visszavonása</span><span class="sxs-lookup"><span data-stu-id="dcba1-317">Undelete soft-deleted blob</span></span>
 
-<span data-ttu-id="9c34e-318">AzureRM:</span><span class="sxs-lookup"><span data-stu-id="9c34e-318">AzureRM:</span></span>
+<span data-ttu-id="dcba1-318">AzureRM:</span><span class="sxs-lookup"><span data-stu-id="dcba1-318">AzureRM:</span></span>
 
 ```azurepowershell-interactive
 $b = Get-AzureStorageBlob -Container $containerName -Blob $blobName -IncludeDeleted -Context $ctx
 $b.ICloudBlob.Undelete()
 ```
 
-<span data-ttu-id="9c34e-319">Az:</span><span class="sxs-lookup"><span data-stu-id="9c34e-319">Az:</span></span>
+<span data-ttu-id="dcba1-319">Az:</span><span class="sxs-lookup"><span data-stu-id="dcba1-319">Az:</span></span>
 
 ```azurepowershell-interactive
 $b = Get-AzureStorageBlob -Container $containerName -Blob $blobName -IncludeDeleted -Context $ctx
@@ -422,9 +419,9 @@ $task = $b.ICloudBlob.UndeleteAsync()
 $task.Wait()
 ```
 
-#### <a name="set-blob-tier"></a><span data-ttu-id="9c34e-320">Blobszint beállítása</span><span class="sxs-lookup"><span data-stu-id="9c34e-320">Set Blob Tier</span></span>
+#### <a name="set-blob-tier"></a><span data-ttu-id="dcba1-320">Blobszint beállítása</span><span class="sxs-lookup"><span data-stu-id="dcba1-320">Set Blob Tier</span></span>
 
-<span data-ttu-id="9c34e-321">AzureRM:</span><span class="sxs-lookup"><span data-stu-id="9c34e-321">AzureRM:</span></span>
+<span data-ttu-id="dcba1-321">AzureRM:</span><span class="sxs-lookup"><span data-stu-id="dcba1-321">AzureRM:</span></span>
 
 ```azurepowershell-interactive
 $blockBlob = Get-AzureStorageBlob -Container $containerName -Blob $blockBlobName -Context $ctx
@@ -434,7 +431,7 @@ $pageBlob = Get-AzureStorageBlob -Container $containerName -Blob $pageBlobName -
 $pageBlob.ICloudBlob.SetPremiumBlobTier("P4")
 ```
 
-<span data-ttu-id="9c34e-322">Az:</span><span class="sxs-lookup"><span data-stu-id="9c34e-322">Az:</span></span>
+<span data-ttu-id="dcba1-322">Az:</span><span class="sxs-lookup"><span data-stu-id="dcba1-322">Az:</span></span>
 
 ```azurepowershell-interactive
 $blockBlob = Get-AzureStorageBlob -Container $containerName -Blob $blockBlobName -Context $ctx
@@ -446,6 +443,6 @@ $task = $pageBlob.ICloudBlob.SetPremiumBlobTierAsync("P4")
 $task.Wait()
 ```
 
-### <a name="azwebsites-previously-azurermwebsites"></a><span data-ttu-id="9c34e-323">Az.Websites (korábban AzureRM.Websites)</span><span class="sxs-lookup"><span data-stu-id="9c34e-323">Az.Websites (previously AzureRM.Websites)</span></span>
+### <a name="azwebsites-previously-azurermwebsites"></a><span data-ttu-id="dcba1-323">Az.Websites (korábban AzureRM.Websites)</span><span class="sxs-lookup"><span data-stu-id="dcba1-323">Az.Websites (previously AzureRM.Websites)</span></span>
 
-- <span data-ttu-id="9c34e-324">A `PSAppServicePlan`, `PSCertificate`, `PSCloningInfo` és `PSSite` objektum elavult tulajdonságai el lettek távolítva.</span><span class="sxs-lookup"><span data-stu-id="9c34e-324">Removed deprecated properties from the `PSAppServicePlan`, `PSCertificate`, `PSCloningInfo`, and `PSSite` objects</span></span>
+- <span data-ttu-id="dcba1-324">A `PSAppServicePlan`, `PSCertificate`, `PSCloningInfo` és `PSSite` objektum elavult tulajdonságai el lettek távolítva.</span><span class="sxs-lookup"><span data-stu-id="dcba1-324">Removed deprecated properties from the `PSAppServicePlan`, `PSCertificate`, `PSCloningInfo`, and `PSSite` objects</span></span>
