@@ -4,12 +4,12 @@ description: Bemutatkozik az új Azure PowerShell-modul, az Az, amely az AzureRM
 ms.date: 05/20/2020
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: a50592c65c52eab005a6531572dbbfc144a0e43a
+ms.openlocfilehash: 5bc5e1230427289ec1d61971d6cab52ce2e099ac
 ms.sourcegitcommit: 308ebca475d1c37624d7a10a2c02047594f44cdf
 ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/22/2020
-ms.locfileid: "83778135"
+ms.locfileid: "83778106"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Az új Azure PowerShell Az modul bemutatása
 
@@ -18,7 +18,7 @@ ms.locfileid: "83778135"
 > [!NOTE]
 > A PowerShell az Azure PowerShell-lel történő használatához az összes platformon a PowerShell 7.x vagy újabb verziója javasolt.
 
-A legújabb Az modul révén az Azure PowerShell kompatibilis a PowerShell 6.x- vagy újabb verziójával az összes platformon, beleértve a Windows, macOS és Linux rendszereket is. Windows rendszeren a PowerShell 5.1-es verziójával is kompatibilis.
+A legújabb Az modul révén az Azure PowerShell kompatibilis a PowerShell 6.2.4-es vagy újabb verziójával az összes platformon, beleértve a Windows, macOS és Linux rendszereket is. Windows rendszeren a PowerShell 5.1-es verziójával is kompatibilis.
 
 Az Az egy új modul, ezért a verziószámozás vissza lett állítva 1.0.0-ra.
 
@@ -26,7 +26,7 @@ Az Az egy új modul, ezért a verziószámozás vissza lett állítva 1.0.0-ra.
 
 A nagyobb frissítések kényelmetlenek lehetnek, ezért fontosnak tartjuk, hogy megosszuk a döntés okát, miért vezettünk be új modulokat, új parancsmagokkal az Azure PowerShellből történő eléréséhez.
 
-A legnagyobb és legfontosabb változás, hogy a .NET Standard-kódtáron alapuló [PowerShell 6.x](/powershell/scripting/overview) bevezetése óta a PowerShell platformfüggetlen termékké vált. Elkötelezettek vagyunk az Azure-támogatás valamennyi platformra történő kiterjesztésében. Ez azt jelenti, hogy az Azure PowerShell-modulokat frissíteni kell a .NET Standard használata és a PowerShell 6.x és újabb verziójával való kompatibilitás érdekében.
+A legnagyobb és legfontosabb változás, hogy a .NET Standard-kódtáron alapuló [PowerShell 6.x](/powershell/scripting/overview) bevezetése óta a PowerShell platformfüggetlen termékké vált. Elkötelezettek vagyunk az Azure-támogatás valamennyi platformra történő kiterjesztésében. Ez azt jelenti, hogy az Azure PowerShell-modulokat frissíteni kell a .NET Standard használata és a PowerShell 6.2.4-es és újabb verziójával való kompatibilitás érdekében.
 Ahelyett, hogy a meglévő AzureRM modulon hajtottunk volna végre összetett módosításokat a támogatás hozzáadásához, létrehoztuk az Az modult.
 
 Egy új modul létrehozása lehetővé tette a mérnökeink számára, hogy a parancsmagok és modulok kialakítását és elnevezését egységesítsék. Mostantól az összes modul neve `Az.` előtaggal kezdődik, a parancsmagok pedig mind a _Művelet_-`Az`_Főnév_ formát alkalmazzák. Ezt megelőzően a parancsmagnevek nemcsak hosszabbak voltak, de következetlenségek is voltak bennük.
@@ -40,7 +40,7 @@ Ezekkel a fontos változtatásokkal, amelyekre az új Azure PowerShell-modul lé
 Az Azure PowerShell-beli legfrissebb funkcióinak használatához érdemes minél hamarabb áttérnie az Az modul használatára. Ha nem áll készen az Az modul telepítésére az AzureRM helyett, több lehetősége is van, hogy kipróbálja az Az modult:
 
 - Használjon egy `PowerShell` környezetet az [Azure Cloud Shell-lel](https://docs.microsoft.com/azure/cloud-shell/overview). Az Azure Cloud Shell egy böngészőalapú környezet, amely telepített Az modullal és engedélyezett `Enable-AzureRM` kompatibilitási aliasokkal rendelkezik.
-- Tartsa meg a Windowshoz készült 5.1-es PowerShell-lel telepített AzureRM modult, de telepítse az Az modult a PowerShell 6.x vagy újabb verziójához. A Windows rendszerhez készült PowerShell 5.1 és a PowerShell 6.x és újabb verziói különböző modulgyűjteményeket használnak. Kövesse az utasításokat a [PowerShell legújabb verziójának](/powershell/scripting/install/installing-powershell) telepítéséhez, majd [telepítse az Az modult](install-az-ps.md) a PowerShell 6.x vagy újabb verziójából.
+- Tartsa meg a Windowshoz készült 5.1-es PowerShell-lel telepített AzureRM modult, de telepítse az Az modult a PowerShell 6.2.4-es vagy újabb verziójához. A Windows rendszerhez készült PowerShell 5.1 és a PowerShell 6.2.4-es és újabb verziói különböző modulgyűjteményeket használnak. Kövesse az utasításokat a [PowerShell legújabb verziójának](/powershell/scripting/install/installing-powershell) telepítéséhez, majd [telepítse az Az modult](install-az-ps.md) a PowerShell 6.2.4-es vagy újabb verziójából.
 
 Frissítés meglévő AzureRM-telepítésből:
 
