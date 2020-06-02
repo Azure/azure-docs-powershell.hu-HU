@@ -4,13 +4,14 @@ description: Megismerheti az Azure PowerShell-modulok legújabb frissítéseit.
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/30/2019
-ms.openlocfilehash: 287e9e1f066d0768e7f572ca7f5f2ee2b78931d9
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: 34b21292ccc47bb53b6609cd637ef18338a45cd3
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83386969"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84121454"
 ---
+# <a name="azure-powershell-release-notes"></a>Az Azure PowerShell kibocsátási megjegyzései
 ## <a name="180---april-2019"></a>1.8.0 – 2019. április
 ### <a name="highlights-since-the-last-major-release"></a>A legutóbbi nagyobb kiadás óta megjelent kiemelt újdonságok
 * A(z) `Az` modul általános rendelkezésre állása
@@ -48,7 +49,7 @@ ms.locfileid: "83386969"
 * A Súgó szöveg jelzi, hogy erőforrásokat kell létrehozni a create/update eseményt előfizetés parancsmagok használata előtt végpont frissítése.
 
 #### <a name="azeventhub"></a>Az.EventHub
-* Új parancsmagok hozzáadása az NetworkRuleSet, Namespace 
+* Új parancsmagok hozzáadása az NetworkRuleSet, Namespace
 
 #### <a name="azhdinsight"></a>Az.HDInsight
 * A parancsmagok frissítése többes számú főneveket, és egyes elavult többes számú nevét.
@@ -138,7 +139,7 @@ ms.locfileid: "83386969"
 
 #### <a name="azcompute"></a>Az.Compute
 * HyperVGeneration paraméter hozzáadása a New-AzDiskConfig és a New-AzSnapshotConfig parancsmagokhoz
-* Virtuális gépek más bérlők katalógus-rendszerképével való létrehozásának engedélyezése. 
+* Virtuális gépek más bérlők katalógus-rendszerképével való létrehozásának engedélyezése.
 
 #### <a name="azcontainerinstance"></a>Az.ContainerInstance
 * Ki lett javítva a New-AzContainerGroup üres záró argumentumot hozzáadó -Command paraméterével kapcsolatos hiba
@@ -220,7 +221,7 @@ ms.locfileid: "83386969"
     - New-AzStorageAccountManagementPolicyRule
 
 #### <a name="azwebsites"></a>Az.Websites
-* Ki lett javítva az ARM-sablon azon hibája, amely miatt meghiúsul az összes tárolóhely a New-AzWebApp - IncludeSourceWebAppSlots használatával történő klónozása 
+* Ki lett javítva az ARM-sablon azon hibája, amely miatt meghiúsul az összes tárolóhely a New-AzWebApp - IncludeSourceWebAppSlots használatával történő klónozása
 
 ## <a name="150---march-2019"></a>1.5.0 – 2019. március
 #### <a name="azaccounts"></a>Az.Accounts
@@ -289,7 +290,7 @@ ms.locfileid: "83386969"
 * Parancsmagok hozzáadása a törölt ADL-elemek enumerálásához és visszaállításához
 
 #### <a name="azeventhub"></a>Az.EventHub
-* Új SkipEmptyArchives logikai tulajdonság hozzáadva az üres archívumok kihagyásához az Eventhub CaptureDescription osztályában 
+* Új SkipEmptyArchives logikai tulajdonság hozzáadva az üres archívumok kihagyásához az Eventhub CaptureDescription osztályában
 
 #### <a name="azkeyvault"></a>Az.KeyVault
 * A Set-AzKeyVaultSecret címkézésének kijavítása
@@ -317,8 +318,8 @@ ms.locfileid: "83386969"
 
 #### <a name="azoperationalinsights"></a>Az.OperationalInsights
 * Kibővített támogatás a New és a Get ApplicationInsights adatforráshoz.
-    - Új „ApplicationInsights” altípus hozzáadva az adott munkaterület Get specific és Get all Application Insights-adatforrásainak támogatásához. 
-    - A New-AzOperationalInsightsApplicationInsightsDataSource parancsmag hozzáadva adatforrás létrehozásához a következő Application Insights-erőforrásparaméterekkel: subscriptionId, resourceGroupName és name. 
+    - Új „ApplicationInsights” altípus hozzáadva az adott munkaterület Get specific és Get all Application Insights-adatforrásainak támogatásához.
+    - A New-AzOperationalInsightsApplicationInsightsDataSource parancsmag hozzáadva adatforrás létrehozásához a következő Application Insights-erőforrásparaméterekkel: subscriptionId, resourceGroupName és name.
 
 #### <a name="azresources"></a>Az.Resources
 * A következő hiba ki lett javítva: https://github.com/Azure/azure-powershell/issues/8166
@@ -349,9 +350,9 @@ Az Az.AnalysisServices modul általános rendelkezésre állása.
 Az Az.RecoveryServices modul általános rendelkezésre állása.
 
 #### <a name="azresources"></a>Az.Resources
-* Az erőforráscsoportok címkézése ki lett javítva. 
+* Az erőforráscsoportok címkézése ki lett javítva.
     - További információ: https://github.com/Azure/azure-powershell/issues/8166
-* Ki lett javítva az a hiba, amikor a `Get-AzureRmRoleAssignment` nem vette figyelembe az -ErrorAction paramétert. 
+* Ki lett javítva az a hiba, amikor a `Get-AzureRmRoleAssignment` nem vette figyelembe az -ErrorAction paramétert.
     - További információ: https://github.com/Azure/azure-powershell/issues/8235
 
 #### <a name="azsql"></a>Az.Sql
@@ -656,7 +657,7 @@ Az Application Gateway konfigurációs RewriteRuleSets tulajdonsága mostantól 
 
 ### <a name="azwebsites"></a>Az.Websites
 
-* Set-AzureRmWebApp és Set-AzureRmWebAppSlot 
+* Set-AzureRmWebApp és Set-AzureRmWebAppSlot
     - Egy új paraméter (-AzureStoragePath) adja meg a windowsos és linuxos tárolóalkalmazásokban csatlakoztatni kívánt Azure Storage-tárolók elérési útját. Az új New-AzureRmWebAppAzureStoragePath parancsmag kimenetét paraméterként használhatja az Azure Storage elérési útjainak megadásához.
 
 ## <a name="061---november-2018"></a>0.6.1 – 2018. november
@@ -684,7 +685,7 @@ Az Application Gateway konfigurációs RewriteRuleSets tulajdonsága mostantól 
 ### <a name="aznetwork"></a>Az.Network
 * A következő új parancsmagok érhetőek el: New-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayCustomError, Get-AzureRmApplicationGatewayCustomError, Set-AzureRmApplicationGatewayCustomError, Remove-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayHttpListenerCustomError, Get-AzureRmApplicationGatewayHttpListenerCustomError, Set-AzureRmApplicationGatewayHttpListenerCustomError, Remove-AzureRmApplicationGatewayHttpListenerCustomError.
 * Az ICMP újra bekerült a támogatott Azure Firewall hálózati protokollok közé.
-* Frissült a Test-AzureRmNetworkWatcherConnectivity parancsmag, új érvényesítési lehetőségek érhetőek el a célazonosítóra, címre és portra vonatkozóan. 
+* Frissült a Test-AzureRmNetworkWatcherConnectivity parancsmag, új érvényesítési lehetőségek érhetőek el a célazonosítóra, címre és portra vonatkozóan.
 * Ki lettek javítva a memóriahasználattal kapcsolatos problémák a VirtualNetwork leképezésben.
 
 ### <a name="azrecoveryservicesbackup"></a>Az.RecoveryServices.Backup
@@ -816,7 +817,7 @@ Az Application Gateway konfigurációs RewriteRuleSets tulajdonsága mostantól 
     - Start-AzureStorageFileCopy
 * Támogatott lett az egyes helyek Storage-erőforráshasználatának lekérése, és egy figyelmeztető üzenet hívja fel a figyelmet arra, hogy a globális Storage-erőforráshasználat lekérdezése már elavultnak számít.
     - Get-AzStorageUsage
-    
+
 #### <a name="azcognitiveservices"></a>Az.CognitiveServices
 * A Get-AzCognitiveServicesAccountSkus már létező fiók nélkül is használható.
 

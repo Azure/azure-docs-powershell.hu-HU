@@ -4,12 +4,12 @@ description: Megismerheti az Azure PowerShell-modulok legújabb frissítéseit.
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: c02cfaa7f7f39393f21cec31c5115f009381b19c
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 9dd733865ba8235eed6dcef4637a63ad93999338
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81446053"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84121915"
 ---
 # <a name="azure-powershell-release-notes"></a>Az Azure PowerShell kibocsátási megjegyzései
 ## <a name="0100-preview---april-2020"></a>0.10.0-s előzetes verzió – 2020. április
@@ -29,7 +29,7 @@ ms.locfileid: "81446053"
   - Az.Websites
 * A következő három új PowerShell-modul lett bevezetve, amelyek használhatók az Azure Stack Hubbal: Az.Databox, Az.IotHub és Az.EventHub
 * A parancsok viszonylag változatlanok maradnak, kisebb módosításokkal. Például az Az helyébe az AzureRM lép.
-* Az Azure Stack Hubhoz kapcsolódó PowerShell-dokumentáció frissített hivatkozását [itt](aka.ms/InstallASHPowerShell) találja
+* Az Azure Stack Hubhoz kapcsolódó PowerShell-dokumentáció frissített hivatkozását [itt](https://aka.ms/InstallASHPowerShell) találja
 
 #### <a name="azaccounts"></a>Az.Accounts
 * Frissítés ADAL-ról MSAL-re
@@ -40,7 +40,7 @@ ms.locfileid: "81446053"
 * Ki lett javítva az a hiba, hogy a Get-AzTenant/Get-AzDefault/Set-AzDefault parancs NullReferenceException hibát ad vissza kijelentkezett állapotban [#10292]
 
 #### <a name="azcompute"></a>Az.Compute
-* A következő paraméterek lettek hozzáadva a New-AzDiskConfig parancsmaghoz: 
+* A következő paraméterek lettek hozzáadva a New-AzDiskConfig parancsmaghoz:
     - DiskIOPSReadOnly, DiskMBpsReadOnly, MaxSharesCount, GalleryImageReference
 * Engedélyezve lett a New-AzGalleryImageVersion parancsmag célparaméterének titkosítási tulajdonsága.
 * Ki lett javítva a tempDisk hibája a Set-AzVmss -Reimage és az Invoke-AzVMReimage parancsmag esetében. [#11354]

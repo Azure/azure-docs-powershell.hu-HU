@@ -4,13 +4,14 @@ description: Megismerheti az Azure PowerShell-modulok legújabb frissítéseit.
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/15/2019
-ms.openlocfilehash: 0fc897579e8caef999c337303428fd12740c3606
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: bcbb78809c2db63d665dc0c3d05e0614acce6045
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83386102"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84122156"
 ---
+# <a name="azure-powershell-release-notes"></a>Az Azure PowerShell kibocsátási megjegyzései
 ## <a name="280---october-2019"></a>2.8.0 – 2019. október
 ### <a name="general"></a>Általános kérdések
 * Az.HealthcareApis 1.0.0-s kiadás
@@ -23,7 +24,7 @@ ms.locfileid: "83386102"
     - A következő hiba ki lett javítva: https://github.com/Azure/azure-powershell/issues/10068
 
 #### <a name="azautomation"></a>Az.Automation
-* Ki lett javítva a New-AzAutomationSoftwareUpdateConfiguration parancsmag a Linux újraindítási beállítási paramétere kapcsán. 
+* Ki lett javítva a New-AzAutomationSoftwareUpdateConfiguration parancsmag a Linux újraindítási beállítási paramétere kapcsán.
 
 #### <a name="azbatch"></a>Az.Batch
 * A **Get-AzBatchNodeAgentSku** elavult, így a 2.0.0-ás verziótól a **Get-AzBatchSupportImage** váltja fel.
@@ -31,7 +32,7 @@ ms.locfileid: "83386102"
 #### <a name="azcompute"></a>Az.Compute
 * A Priority, EvictionPolicy és MaxPrice paraméterek hozzáadása a New-AzVM és a New-AzVmss parancsmagokhoz
 * Az Add-AzVMAdditionalUnattendContent és az Add-AzVMSshPublicKey parancsmagok figyelmeztető üzenetének és súgójának kijavítása
-* A -skipVmBackup kivétel kijavítása felügyelt lemezekkel rendelkező Linux rendszerű virtuális gépek esetében a Set-AzVMDiskEncryptionExtension kapcsán. 
+* A -skipVmBackup kivétel kijavítása felügyelt lemezekkel rendelkező Linux rendszerű virtuális gépek esetében a Set-AzVMDiskEncryptionExtension kapcsán.
 * A titkosítási beállítások frissítési hibájának kijavítása a Set-AzVMDiskEncryptionExtension kétmenetes forgatókönyvében.
 
 #### <a name="azdatafactory"></a>Az.DataFactory
@@ -50,7 +51,7 @@ ms.locfileid: "83386102"
 
 #### <a name="aziothub"></a>Az.IotHub
 * Új útválasztási forrás hozzáadása: DigitalTwinChangeEvents
-* Kisebb hibajavítás: A Get-AzIothub nem adja vissza a következőt: subscriptionId 
+* Kisebb hibajavítás: A Get-AzIothub nem adja vissza a következőt: subscriptionId
 
 #### <a name="azmonitor"></a>Az.Monitor
 * Új műveleticsoport-fogadók hozzáadva a New-AzActionGroupReceiver parancsmaghoz:   -ItsmReceiver   -VoiceReceiver   -ArmRoleReceiver   -AzureFunctionReceiver   -LogicAppReceiver   -AutomationRunbookReceiver   -AzureAppPushReceiver
@@ -148,7 +149,7 @@ ms.locfileid: "83386102"
 * Ki lett javítva a „Set-AzActionRule” hatókörtípusának meghatározásával kapcsolatos hiba
 
 #### <a name="aznetwork"></a>Az.Network
-* Ki lett javítva a „New-AzApplicationGateway” referenciadokumentációjában található helytelen példa 
+* Ki lett javítva a „New-AzApplicationGateway” referenciadokumentációjában található helytelen példa
 * Hozzá lett adva egy csomagrögzítés összes tulajdonságának lekérésével kapcsolatos megjegyzés a „Get-AzNetworkWatcherPacketCapture” referenciadokumentációjában
 * Ki lett javítva a „Test-AzNetworkWatcherIPFlow” referenciadokumentációjában található példa a hálózati adapterek megfelelő számbavétele érdekében
 * Tovább lett fejlesztve a felhőkivétel-elemzés az esetleges további részletek megjelenítése érdekében
@@ -284,7 +285,7 @@ ms.locfileid: "83386102"
     - A PublicIpAddress elavult, mert a kiszolgálóoldalon nem használatos.
     - Hozzá lett adva egy opcionális Primary paraméter, amely azt jelzi, hogy a jelenlegi IP-konfiguráció elsődleges-e.
 * Javítva lett az SDK kérelemhiba-kivételének kezelése – kijavítja azt a problémát, amely miatt az SDK-kivételek kezelése korábban nem volt megfelelő, és a fontos hibarészletek nem jelentek meg
-* Be lett állítva, hogy az IPv6 IP-előtag ellenőrzési logikája ellenőrizze az IPv6-előtag hosszának megfelelőségét. 
+* Be lett állítva, hogy az IPv6 IP-előtag ellenőrzési logikája ellenőrizze az IPv6-előtag hosszának megfelelőségét.
 * Frissült a Get-AzVirtualNetworkSubnetConfig: Új paraméterkészlet lett hozzáadva az alhálózat erőforrás-azonosítója szerinti lekéréshez.
 * Frissült az AzNetworkServiceTag Location paraméterének leírása
 
@@ -307,7 +308,7 @@ ms.locfileid: "83386102"
 #### <a name="azservicebus"></a>Az.ServiceBus
 * Ki lett javítva a 9658-as számú hiba: Elgépelt VirtualNetworkRule paraméter a Set-AzServiceBusNetworkRuleSet parancsmagban
 * Ki lett javítva a 9786-os számú hiba: nem lehetett csak figyelési jogokkal ellátott szabályt létrehozni
-* Új Test-AzServiceBusNameAvailability parancs lett hozzáadva annak ellenőrzésére, hogy az üzenetsor és a témakör neve elérhető-e 
+* Új Test-AzServiceBusNameAvailability parancs lett hozzáadva annak ellenőrzésére, hogy az üzenetsor és a témakör neve elérhető-e
 
 #### <a name="azservicefabric"></a>Az.ServiceFabric
 * Ki lettek javítva a csomóponttípus-hozzáadási parancsmag hibái:
@@ -334,10 +335,10 @@ ms.locfileid: "83386102"
 * A ClientRuntime legújabb verziójának használatához frissíteni kell az általános kódot.
 
 #### <a name="azapplicationinsights"></a>Az.ApplicationInsights
-* A Remove-AzApplicationInsightsApiKey dokumentáció példájában található elírás javítása 
+* A Remove-AzApplicationInsightsApiKey dokumentáció példájában található elírás javítása
 
 #### <a name="azautomation"></a>Az.Automation
-* Az erőforrássztringben található elírás javítása 
+* Az erőforrássztringben található elírás javítása
 
 #### <a name="azcognitiveservices"></a>Az.CognitiveServices
 * NetworkRuleSet támogatás hozzáadva.
@@ -398,7 +399,7 @@ ms.locfileid: "83386102"
     - Frissített New-AzApplicationGatewayProbeConfig: A Port opcionális paraméter hozzáadva, amelyet a rendszer a háttérrendszer-kiszolgáló mintavételére használ. Ez a paraméter a Standard_V2 és WAF_V2 termékváltozatokban használható.
 
 #### <a name="azoperationalinsights"></a>Az.OperationalInsights
-* A mentett keresések alapértelmezett verziója 1 értékre frissítve. 
+* A mentett keresések alapértelmezett verziója 1 értékre frissítve.
 * Null reguláris kifejezések kezelése javítva az egyéni naplókban
 
 #### <a name="azrecoveryservices"></a>Az.RecoveryServices
@@ -552,7 +553,7 @@ ms.locfileid: "83386102"
     - New-AzureRmEventGridDomainTopic:
         - Új Azure Event Grid-tartományi témakört hoz létre.
     - Get-AzureRmEventGridDomainTopic
-        - Lekéri egy Event Grid-tartományi témakör részleteit, vagy az aktuális Azure-előfizetés adott Event Grid-tartományához tartozó Event Grid-tartományi témakörök listáját 
+        - Lekéri egy Event Grid-tartományi témakör részleteit, vagy az aktuális Azure-előfizetés adott Event Grid-tartományához tartozó Event Grid-tartományi témakörök listáját
     - Remove-AzureRmEventGridDomainTopic:
         - Eltávolít egy meglévő Azure Event Grid-tartományi témakört.
 * Frissített parancsmagok:
@@ -564,7 +565,7 @@ ms.locfileid: "83386102"
             - Esemény-előfizetés lejárati dátuma,
             - Speciális szűrési paraméterek.
         - Új felsorolási érték lett hozzáadva a servicebusqueue elem célértékeként.
-        - Nem engedélyezett az -IncludedEventType beállításnál az „All” érték használata és a következővel való helyettesítése: 
+        - Nem engedélyezett az -IncludedEventType beállításnál az „All” érték használata és a következővel való helyettesítése:
     - Get-AzEventGridTopic, Get-AzEventGridDomain, Get-AzEventGridDomainTopic, Get-AzEventGridSubscription:
         - Új opcionális paraméterek (Top, ODataQuery és NextLink) az eredmények tördelésének és szűrésének támogatásához.
     - Remove-AzureRmEventGridSubscription
@@ -582,11 +583,11 @@ ms.locfileid: "83386102"
     - Új parancsmagok
         - Get-AzVirtualNetworkGatewayVpnClientConnectionHealth
 * AvailablePrivateEndpointType hozzáadva
-    - Új parancsmagok 
+    - Új parancsmagok
         - Get-AzAvailablePrivateEndpointType
 * PrivatePrivateLinkService hozzáadva
-    - Új parancsmagok 
-        - Get-AzPrivateLinkService 
+    - Új parancsmagok
+        - Get-AzPrivateLinkService
         - New-AzPrivateLinkService
         - Remove-AzPrivateLinkService
         - New-AzPrivateLinkServiceIpConfig
@@ -615,8 +616,8 @@ ms.locfileid: "83386102"
         - Hozzá lett adva a -PublicIpAddress paraméter, amely egy vagy több nyilvános IP-cím-objektumot fogad el
         - Hozzá lett adva a -VirtualNetwork paraméter, amely virtuális hálózati objektumokat fogad el
         - Hozzá lett adva az AddPublicIpAddress és RemovePublicIpAddress metódus a tűzfalobjektumok esetében, és nyilvános IP-cím-objektumokat fogadnak el bemeneti adatként
-        - Elavult a -PublicIpName és a -VirtualNetworkName paraméter 
-* Az alábbi parancsok frissítve lettek a következő szolgáltatás esetében: VpnClient AAD-alapú hitelesítési beállítások megadása a virtuális hálózati átjárók erőforrásaihoz. 
+        - Elavult a -PublicIpName és a -VirtualNetworkName paraméter
+* Az alábbi parancsok frissítve lettek a következő szolgáltatás esetében: VpnClient AAD-alapú hitelesítési beállítások megadása a virtuális hálózati átjárók erőforrásaihoz.
     - Frissült a New-AzVirtualNetworkGateway: Hozzá lett adva az AadTenantUri, AadAudienceId, AadIssuerUri opcionális paraméter a VpnClient AAD-alapú hitelesítési beállítások megadásához az átjáró esetében.
     - Frissült a Set-AzVirtualNetworkGateway: Hozzá lett adva az AadTenantUri, AadAudienceId, AadIssuerUri opcionális paraméter a VpnClient AAD-alapú hitelesítési beállítások megadásához az átjáró esetében.
     - Frissült a Set-AzVirtualNetworkGateway: Hozzá lett adva a RemoveAadAuthentication opcionális kapcsolóparaméter a VpnClient AAD-alapú hitelesítési beállítások eltávolításához az átjáró esetében.
@@ -711,17 +712,17 @@ ms.locfileid: "83386102"
     - **Get-AzApiManagementSchema** – Az API-ban konfigurált sémák beolvasása
     - **Remove-AzApiManagementSchema** – Az API-ban konfigurált sémák eltávolítása
     - **Set-AzApiManagementSchema** – Az API-ban konfigurált séma frissítése
-* Új parancsmag a felhasználói jogkivonat létrehozásához 
+* Új parancsmag a felhasználói jogkivonat létrehozásához
     - **New-AzApiManagementUserToken** – Új, alapértelmezés szerint 8 órán át érvényes felhasználói jogkivonat létrehozása. Ezen parancsmag használatával lehet a „GIT” felhasználó számára jogkivonatot létrehozni.
 * Új parancsmag a hálózat állapotának lekérdezéséhez
     - **Get-AzApiManagementNetworkStatus** – Azon erőforrások hálózati állapotának beolvasása, amelyektől az API Management szolgáltatás függ. Ez hasznos lehet, ha az ApiManagement szolgáltatást virtuális hálózatra telepíti, és ellenőrizni kell, hogy rendben működnek-e a függőségek.
-* A **New-AzApiManagement** parancsmag frissítése az ApiManagement szolgáltatás kezeléséhez 
+* A **New-AzApiManagement** parancsmag frissítése az ApiManagement szolgáltatás kezeléséhez
     - Mostantól az új „Consumption” SKU is támogatott
     - Mostantól az „EnableClientCertificate” jelző a „Consumption” SKU-hoz is bekapcsolható
     - Az új **New-AzApiManagementSslSetting** parancsmag lehetővé teszi a „TLS/SSL” beállítás konfigurálását a „Háttér” és „Előtér” esetén is. Ez egy ApiManagement szolgáltatás előterén a titkosítások, mint például a 3DES, valamint a szerverprotokollok, mint például a Http2 konfigurálására is alkalmas.
     - Mostantól támogatott a „DeveloperPortal” gazdanév ApiManagement szolgáltatáson történő konfigurálása.
 * A **Get-AzApiManagementSsoToken** parancsmagok frissítése a „PsApiManagement” objektum bemenetként való használatához
-* A parancsmag frissítése a hibaüzenetek beágyazott megjelenítéséhez 
+* A parancsmag frissítése a hibaüzenetek beágyazott megjelenítéséhez
      > PS D:\github\azure-powershell> Set-AzApiManagementPolicy -Context  -PolicyFilePath C:\wrongpolicy.xml -ApiId httpbin Set-AzApiManagementPolicy : Hibakód: ValidationError Hibaüzenet: Egy vagy több mező hibás értéket tartalmaz: Hiba részletei:    [Kód=ValidationError, Üzenet=Hiba a log-to-eventhub elemben, 3. sor, 10. oszlop: A naplózó nem található, Cél=log-to-eventhub]
 * Az **Export-AzApiManagementApi** parancsmag frissítse az API-k OpenApi 3.0 formátumban való exportálásához
 * Az **Import-AzApiManagementApi** parancsmag frissítése
@@ -730,15 +731,15 @@ ms.locfileid: "83386102"
     - A bármely dokumentumban megadott ServiceUrl tulajdonság felülbírálása
 * A **Get-AzApiManagementPolicy** parancsmag frissítése a szabályzat nem XML-nek megfelelő feloldójeles formátumban (rawxml használatával) való visszaadásához
 * A **Set-AzApiManagementPolicy** parancsmag frissítése a szabályzat nem XML-nek megfelelő feloldójeles formátumban (rawxml használatával) és XML-nek megfelelő feloldójeles formátumban (xml használatával) való elfogadásához
-* A **New-AzApiManagementApi** parancsmag frissítése 
+* A **New-AzApiManagementApi** parancsmag frissítése
     - API konfigurálása OpenId engedélyezési kiszolgálón
     - API létrehozása ApiVersionSet tulajdonságban
     - API klónozása SourceApiId és SourceApiRevision használatával
-    - Lehetőség a SubscriptionRequired API hatókörben való konfigurálására 
+    - Lehetőség a SubscriptionRequired API hatókörben való konfigurálására
 * A **Set-AzApiManagementApi** parancsmag frissítése
     - API konfigurálása OpenId engedélyezési kiszolgálón
-    - API frissítése ApiVersionSet tulajdonságba    
-    - Lehetőség a SubscriptionRequired API hatókörben való konfigurálására 
+    - API frissítése ApiVersionSet tulajdonságba
+    - Lehetőség a SubscriptionRequired API hatókörben való konfigurálására
 * A **New-AzApiManagementRevision** parancsmag frissítése
     - Létező változat klónozása (címkék, termékek, műveletek és szabályzatok másolása) a SourceApiRevision használatával Az új változat a szülő ApiId értékét veszi át
     - ApiRevisionDescription biztosítása
@@ -764,7 +765,7 @@ ms.locfileid: "83386102"
     - Get-AzApiManagementAuthorizationServer
     - Get-AzApiManagementBackend
         > Get-AzApiManagementBackend -ResourceId /subscriptions/subid/resourceGroups/rgName/providers/Microsoft.ApiManagement/service/contoso/backends/servicefabric
-    - Get-AzApiManagementCertificate 
+    - Get-AzApiManagementCertificate
     - Remove-AzApiManagementApiVersionSet
     - Remove-AzApiManagementSubscription
 
@@ -812,7 +813,7 @@ ms.locfileid: "83386102"
     - Az új ProximityPlacementGroupId paraméter hozzá lett adva a következő parancsmagokhoz:   New-AzAvailabilitySet   New-AzVMConfig   New-AzVmssConfig
 * A StorageAccountType paraméter hozzá lett adva a New-AzGalleryImageVersion parancsmaghoz.
 * A New-AzGalleryImageVersion TargetRegion paramétere tartalmazhatja a következőt: StorageAccountType.
-* A SkipShutdown kapcsolóparaméter hozzá lett adva a Stop-AzVM és Stop-AzVmss parancsmagokhoz       
+* A SkipShutdown kapcsolóparaméter hozzá lett adva a Stop-AzVM és Stop-AzVmss parancsmagokhoz
 * Kompatibilitástörő változások
     - A Set-AzVMBootDiagnostics parancsmag új neve: Set-AzVMBootDiagnostic.
     - Az Export-AzLogAnalyticThrottledRequests parancsmag új neve: Export-AzLogAnalyticThrottledRequests.
@@ -847,7 +848,7 @@ ms.locfileid: "83386102"
     - A HDInsight-operátori szerepkörrel rendelkező felhasználókat ez nem érinti.
 
 #### <a name="azmonitor"></a>Az.Monitor
-* Az SQR API (ütemezett lekérdezési szabály) új parancsmagjai  
+* Az SQR API (ütemezett lekérdezési szabály) új parancsmagjai
     - New-AzScheduledQueryRuleAlertingAction
     - New-AzScheduledQueryRuleAznsActionGroup
     - New-AzScheduledQueryRuleLogMetricTrigger
@@ -945,7 +946,7 @@ ms.locfileid: "83386102"
 * A Súgó szöveg jelzi, hogy erőforrásokat kell létrehozni a create/update eseményt előfizetés parancsmagok használata előtt végpont frissítése.
 
 #### <a name="azeventhub"></a>Az.EventHub
-* Új parancsmagok hozzáadása az NetworkRuleSet, Namespace 
+* Új parancsmagok hozzáadása az NetworkRuleSet, Namespace
 
 #### <a name="azhdinsight"></a>Az.HDInsight
 * A parancsmagok frissítése többes számú főneveket, és egyes elavult többes számú nevét.
@@ -1035,7 +1036,7 @@ ms.locfileid: "83386102"
 
 #### <a name="azcompute"></a>Az.Compute
 * HyperVGeneration paraméter hozzáadása a New-AzDiskConfig és a New-AzSnapshotConfig parancsmagokhoz
-* Virtuális gépek más bérlők katalógus-rendszerképével való létrehozásának engedélyezése. 
+* Virtuális gépek más bérlők katalógus-rendszerképével való létrehozásának engedélyezése.
 
 #### <a name="azcontainerinstance"></a>Az.ContainerInstance
 * Ki lett javítva a New-AzContainerGroup üres záró argumentumot hozzáadó -Command paraméterével kapcsolatos hiba
@@ -1117,7 +1118,7 @@ ms.locfileid: "83386102"
     - New-AzStorageAccountManagementPolicyRule
 
 #### <a name="azwebsites"></a>Az.Websites
-* Ki lett javítva az ARM-sablon azon hibája, amely miatt meghiúsul az összes tárolóhely a New-AzWebApp - IncludeSourceWebAppSlots használatával történő klónozása 
+* Ki lett javítva az ARM-sablon azon hibája, amely miatt meghiúsul az összes tárolóhely a New-AzWebApp - IncludeSourceWebAppSlots használatával történő klónozása
 
 ## <a name="150---march-2019"></a>1.5.0 – 2019. március
 #### <a name="azaccounts"></a>Az.Accounts
@@ -1186,7 +1187,7 @@ ms.locfileid: "83386102"
 * Parancsmagok hozzáadása a törölt ADL-elemek enumerálásához és visszaállításához
 
 #### <a name="azeventhub"></a>Az.EventHub
-* Új SkipEmptyArchives logikai tulajdonság hozzáadva az üres archívumok kihagyásához az Eventhub CaptureDescription osztályában 
+* Új SkipEmptyArchives logikai tulajdonság hozzáadva az üres archívumok kihagyásához az Eventhub CaptureDescription osztályában
 
 #### <a name="azkeyvault"></a>Az.KeyVault
 * A Set-AzKeyVaultSecret címkézésének kijavítása
@@ -1214,8 +1215,8 @@ ms.locfileid: "83386102"
 
 #### <a name="azoperationalinsights"></a>Az.OperationalInsights
 * Kibővített támogatás a New és a Get ApplicationInsights adatforráshoz.
-    - Új „ApplicationInsights” altípus hozzáadva az adott munkaterület Get specific és Get all Application Insights-adatforrásainak támogatásához. 
-    - A New-AzOperationalInsightsApplicationInsightsDataSource parancsmag hozzáadva adatforrás létrehozásához a következő Application Insights-erőforrásparaméterekkel: subscriptionId, resourceGroupName és name. 
+    - Új „ApplicationInsights” altípus hozzáadva az adott munkaterület Get specific és Get all Application Insights-adatforrásainak támogatásához.
+    - A New-AzOperationalInsightsApplicationInsightsDataSource parancsmag hozzáadva adatforrás létrehozásához a következő Application Insights-erőforrásparaméterekkel: subscriptionId, resourceGroupName és name.
 
 #### <a name="azresources"></a>Az.Resources
 * A következő hiba ki lett javítva: https://github.com/Azure/azure-powershell/issues/8166
@@ -1246,9 +1247,9 @@ Az Az.AnalysisServices modul általános rendelkezésre állása.
 Az Az.RecoveryServices modul általános rendelkezésre állása.
 
 #### <a name="azresources"></a>Az.Resources
-* Az erőforráscsoportok címkézése ki lett javítva. 
+* Az erőforráscsoportok címkézése ki lett javítva.
     - További információ: https://github.com/Azure/azure-powershell/issues/8166
-* Ki lett javítva az a hiba, amikor a `Get-AzureRmRoleAssignment` nem vette figyelembe az -ErrorAction paramétert. 
+* Ki lett javítva az a hiba, amikor a `Get-AzureRmRoleAssignment` nem vette figyelembe az -ErrorAction paramétert.
     - További információ: https://github.com/Azure/azure-powershell/issues/8235
 
 #### <a name="azsql"></a>Az.Sql
@@ -1553,7 +1554,7 @@ Az Application Gateway konfigurációs RewriteRuleSets tulajdonsága mostantól 
 
 ### <a name="azwebsites"></a>Az.Websites
 
-* Set-AzureRmWebApp és Set-AzureRmWebAppSlot 
+* Set-AzureRmWebApp és Set-AzureRmWebAppSlot
     - Egy új paraméter (-AzureStoragePath) adja meg a windowsos és linuxos tárolóalkalmazásokban csatlakoztatni kívánt Azure Storage-tárolók elérési útját. Az új New-AzureRmWebAppAzureStoragePath parancsmag kimenetét paraméterként használhatja az Azure Storage elérési útjainak megadásához.
 
 ## <a name="061---november-2018"></a>0.6.1 – 2018. november
@@ -1581,7 +1582,7 @@ Az Application Gateway konfigurációs RewriteRuleSets tulajdonsága mostantól 
 ### <a name="aznetwork"></a>Az.Network
 * A következő új parancsmagok érhetőek el: New-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayCustomError, Get-AzureRmApplicationGatewayCustomError, Set-AzureRmApplicationGatewayCustomError, Remove-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayHttpListenerCustomError, Get-AzureRmApplicationGatewayHttpListenerCustomError, Set-AzureRmApplicationGatewayHttpListenerCustomError, Remove-AzureRmApplicationGatewayHttpListenerCustomError.
 * Az ICMP újra bekerült a támogatott Azure Firewall hálózati protokollok közé.
-* Frissült a Test-AzureRmNetworkWatcherConnectivity parancsmag, új érvényesítési lehetőségek érhetőek el a célazonosítóra, címre és portra vonatkozóan. 
+* Frissült a Test-AzureRmNetworkWatcherConnectivity parancsmag, új érvényesítési lehetőségek érhetőek el a célazonosítóra, címre és portra vonatkozóan.
 * Ki lettek javítva a memóriahasználattal kapcsolatos problémák a VirtualNetwork leképezésben.
 
 ### <a name="azrecoveryservicesbackup"></a>Az.RecoveryServices.Backup
@@ -1713,7 +1714,7 @@ Az Application Gateway konfigurációs RewriteRuleSets tulajdonsága mostantól 
     - Start-AzureStorageFileCopy
 * Támogatott lett az egyes helyek Storage-erőforráshasználatának lekérése, és egy figyelmeztető üzenet hívja fel a figyelmet arra, hogy a globális Storage-erőforráshasználat lekérdezése már elavultnak számít.
     - Get-AzStorageUsage
-    
+
 #### <a name="azcognitiveservices"></a>Az.CognitiveServices
 * A Get-AzCognitiveServicesAccountSkus már létező fiók nélkül is használható.
 
