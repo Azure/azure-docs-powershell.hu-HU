@@ -1,64 +1,65 @@
 ---
 title: Az Azure PowerShell telepítése a PowerShellGet segítségével
 description: Az Azure PowerShell telepítése a PowerShellGet segítségével
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/22/2019
-ms.openlocfilehash: 7f22a420068db87fa2c3c007bd36f515384162fb
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: b62fdd051b59708cc2afb6d4cec925aa73af55d9
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "72814222"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84121361"
 ---
-# <a name="install-the-azure-powershell-module"></a>Az Azure PowerShell-modul telepítése
+# <a name="install-azure-powershell"></a>Az Azure PowerShell telepítése
 
-Ez a cikk az Azure PowerShell-modulok a PowerShellGet használatával való telepítését mutatja be. Az útmutatás Windows, macOS és Linux platformon használható. Az Az modulhoz jelenleg nem támogatottak más telepítési módszerek.
+Ez a cikk az Azure PowerShell-modulok a [PowerShellGet](/powershell/scripting/gallery/installing-psget) használatával való telepítését ismerteti. Az útmutatás Windows, macOS és Linux platformon használható.
+
+Az Azure PowerShell az Azure [Cloud Shellben](/azure/cloud-shell/overview) is elérhető.
 
 ## <a name="requirements"></a>Követelmények
 
-Az Azure PowerShell Windows rendszeren a PowerShell 5.1 vagy újabb, más platformon a PowerShell Core 6.x vagy újabb verziójával működik. Ha nem biztos abban, hogy rendelkezik-e PowerShell-lel, illetve macOS vagy Linux rendszert használ, [telepítse a PowerShell Core legújabb verzióját](/powershell/scripting/install/installing-powershell#powershell-core).
+> [!NOTE]
+> A PowerShell az Azure PowerShell-lel történő használatához az összes platformon a PowerShell 7.x vagy újabb verziója javasolt.
+
+Az Azure PowerShell kompatibilis a PowerShell 6.2.4-es vagy újabb verziójával az összes platformon. Windows rendszeren a PowerShell 5.1-es verziójával is támogatott. Telepítse az operációs rendszeréhez elérhető [legújabb PowerShell-verziót](/powershell/scripting/install/installing-powershell). Az Azure PowerShell nem támaszt további követelményeket a PowerShell 6.2.4-es vagy újabb verziója használata esetén.
 
 A PowerShell verziójának megtekintéséhez futtassa az alábbi parancsot:
 
-```powershell-interactive
+```azurepowershell-interactive
 $PSVersionTable.PSVersion
 ```
 
-Az Azure PowerShell futtatása PowerShell 5.1-ben Windows rendszeren:
+Az Azure PowerShell használata PowerShell 5.1-ben Windows rendszeren:
 
-1. Frissítsen a [Windows PowerShell 5.1-re](/powershell/scripting/install/installing-windows-powershell#upgrading-existing-windows-powershell), ha szükséges. Ha Windows 10 rendszert használ, már telepítve van a PowerShell 5.1.
+1. Frissítsen a [Windows PowerShell 5.1-re](/powershell/scripting/windows-powershell/install/installing-windows-powershell#upgrading-existing-windows-powershell).
+   Ha a Windows 10 1607-es vagy újabb verzióját használja, már telepítve van a PowerShell 5.1.
 2. Telepítse a [.NET-keretrendszer 4.7.2-es vagy újabb verzióját](/dotnet/framework/install).
-
-Nincsenek további követelmények az Azure PowerShellhez a PowerShell Core használata esetén.
+3. Győződjön meg arról, hogy a PowerShellGet legújabb verziójával rendelkezik. Futtassa az `Install-Module -Name PowerShellGet -Force` parancsot.
 
 ## <a name="install-the-azure-powershell-module"></a>Az Azure PowerShell-modul telepítése
 
 > [!WARNING]
-> Az AzureRM és az Az modul __nem__ lehet egyszerre telepítve a PowerShell 5.1-hez ugyanazon a Windows rendszeren. Ha az AzureRM-nek továbbra is elérhetőnek kell maradnia a rendszeren, telepítse a PowerShell Core 6.x vagy újabb verziójához készült Az modult. Ehhez [telepítse a PowerShell Core 6.x vagy újabb](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows) verzióját, majd kövesse az itt ismertetett utasításokat a PowerShell Core-terminálban.
+> Az AzureRM és az Az modul nem lehet egyszerre telepítve a PowerShell 5.1-hez ugyanazon a Windows rendszeren. Ha az AzureRM-nek továbbra is elérhetőnek kell maradnia a rendszeren, telepítse a PowerShell Core 6.x vagy újabb verziójához készült Az modult.
 
-Ajánlott csak az aktív felhasználó számára telepíteni:
-
-```powershell-interactive
-Install-Module -Name Az -AllowClobber -Scope CurrentUser
-```
-
-Ha a rendszer összes felhasználója számára szeretné telepíteni, akkor rendszergazdai jogosultságokra lesz szüksége. Egy rendszergazdaként, illetve macOS vagy Linux rendszeren a `sudo` paranccsal indított, emelt szintű PowerShell-munkamenetben:
+Az előnyben részesített telepítési módszer a PowerShellGet-parancsmagok használata. Csak az aktuális felhasználó számára telepítse az Az modult. Ez az ajánlott telepítési hatókör. Ez a módszer Windows, macOS és Linux platformon ugyanúgy működik. Futtassa az alábbi parancsot egy PowerShell-munkamenetből:
 
 ```powershell-interactive
-Install-Module -Name Az -AllowClobber -Scope AllUsers
+if (Get-Module -Name AzureRM -ListAvailable) {
+    Write-Warning -Message ('Az module not installed. Having both the AzureRM and ' +
+      'Az modules installed at the same time is not supported.')
+} else {
+    Install-Module -Name Az -AllowClobber -Scope CurrentUser
+}
 ```
 
 Alapértelmezés szerint a PowerShell-galéria nincs konfigurálva a PowerShellGet megbízható adattáraként. A PSGallery első használatakor a következő üzenet jelenik meg:
 
-```output
+```Output
 Untrusted repository
 
 You are installing the modules from an untrusted repository. If you trust this repository, change
-its InstallationPolicy value by running the Set-PSRepository cmdlet.
+its InstallationPolicy value by running the `Set-PSRepository` cmdlet.
 
 Are you sure you want to install the modules from 'PSGallery'?
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
@@ -66,37 +67,48 @@ Are you sure you want to install the modules from 'PSGallery'?
 
 A telepítés folytatásához válassza a `Yes` vagy a `Yes to All` lehetőséget.
 
-Az Az modul az Azure PowerShell-parancsmagok összesített modulja. A modul telepítésével letölti az összes elérhető Azure Resource Manager-modult, és használatra elérhetővé teszi a parancsmagjaikat.
+A modulnak a rendszer összes felhasználója számára történő telepítéséhez emelt szintű jogosultságokra van szükség. A PowerShell-munkamenetet a **Futtatás rendszergazdaként** paranccsal indítsa el Windows, illetve a `sudo` paranccsal macOS vagy Linux rendszeren:
+
+```powershell-interactive
+if (Get-Module -Name AzureRM -ListAvailable) {
+    Write-Warning -Message ('Az module not installed. Having both the AzureRM and ' +
+      'Az modules installed at the same time is not supported.')
+} else {
+    Install-Module -Name Az -AllowClobber -Scope AllUsers
+}
+```
+
+Az Az modul az Azure PowerShell-parancsmagok összesített modulja. A modul telepítésével letölti az összes általánosan elérhető Az PowerShell-modult, és használatra elérhetővé teszi a parancsmagjaikat.
 
 ## <a name="install-offline"></a>Offline telepítés
 
 Néhány környezetben nem lehet csatlakozni a PowerShell-galériához. Ezekben a helyzetekben offline telepítést végezhet az alábbi módszerek valamelyikével:
 
-* Töltse le a modulokat egy másik helyre, és azt a helyet használja a hálózat telepítési forrásaként. Ez bonyolult folyamat lehet, de lehetővé teszi, hogy a PowerShell-modulokat egyetlen kiszolgálón vagy fájlmegosztáson gyorsítótárazza, így a PowerShellGet használatával bármely leválasztott rendszeren üzembe helyezheti őket. Megtudhatja, hogyan állíthat be helyi adattárat, és hogyan telepíthet leválasztott rendszerekre [helyi PowerShellGet-adattárakkal](/powershell/scripting/gallery/how-to/working-with-local-psrepositories).
+* Töltse le a modulokat a hálózat egy másik helyére, és azt a helyet használja a telepítési forrásként.
+  Ez a módszer lehetővé teszi, hogy a PowerShell-modulokat egyetlen kiszolgálón vagy fájlmegosztáson gyorsítótárazza, így a PowerShellGet használatával bármely leválasztott rendszeren üzembe helyezheti őket. Megtudhatja, hogyan állíthat be helyi adattárat, és hogyan telepíthet leválasztott rendszerekre [helyi PowerShellGet-adattárakkal](/powershell/scripting/gallery/how-to/working-with-local-psrepositories).
 * [Letöltheti az Azure PowerShell MSI-t](install-az-ps-msi.md) a hálózathoz csatlakoztatott egyik gépre, majd a telepítőt olyan rendszerekre másolhatja, amelyek nem férnek hozzá a PowerShell-galériához. Ne feledje, hogy az MSI-telepítő csak a PowerShell 5.1-hez, Windows rendszeren használható.
 * A modult a [Save-Module](/powershell/module/PowershellGet/Save-Module) paranccsal egy fájlmegosztásra mentheti, vagy egy másik forrásra mentheti, és más gépekre másolhatja:
-  
+
   ```powershell-interactive
-  Save-Module -Name Az -Path '\\someshare\PowerShell\modules' -Force
+  Save-Module -Name Az -Path '\\server\share\PowerShell\modules' -Force
   ```
 
-## <a name="troubleshooting"></a>Hibakeresés
+## <a name="troubleshooting"></a>Hibaelhárítás
 
 Az alábbiakban néhány, az Azure PowerShell modul telepítése során gyakran jelentkező problémáról olvashat. Ha itt nem szereplő problémába ütközik, [jelentse be a problémát a GitHubon](https://github.com/azure/azure-powershell/issues).
 
 ### <a name="proxy-blocks-connection"></a>Egy proxy blokkolja a kapcsolatot
 
-Ha `Install-Module`-hibaüzenet jelenik meg, amely jelzi, hogy a PowerShell-galéria nem érhető el, lehetséges, hogy egy proxy mögött van. A különböző operációs rendszereknek eltérő követelményei vannak a rendszerszintű proxy konfigurálásához, amelynek részleteit itt most nem tárgyaljuk. A proxybeállításokkal és az operációs rendszer beállításaival kapcsolatban vegye fel a kapcsolatot a rendszergazdával.
+Ha `Install-Module`-hibaüzenet jelenik meg, amely jelzi, hogy a PowerShell-galéria nem érhető el, lehetséges, hogy egy proxy mögött van. A különböző operációs rendszerek és hálózati környezetek eltérő követelményeket támasztanak a rendszerszintű proxy konfigurálására vonatkozóan. A proxybeállításokkal és a környezet számára történő konfigurálásukkal kapcsolatban vegye fel a kapcsolatot a rendszergazdával.
 
-Lehetséges, hogy maga a PowerShell nem konfigurálható a proxy automatikus használatára. PowerShell 5.1 vagy újabb változat esetén konfigurálja a proxyt PowerShell-munkamenet használatára az alábbi paranccsal:
+Lehetséges, hogy maga a PowerShell nem konfigurálható a proxy automatikus használatára. A PowerShell 5.1-es vagy újabb verziója esetén konfigurálja a PowerShell-munkamenetet egy proxy használatára az alábbi parancsokkal:
 
 ```powershell
-(New-Object System.Net.WebClient).Proxy.Credentials = `
-  [System.Net.CredentialCache]::DefaultNetworkCredentials
+$webClient = New-Object System.Net.WebClient
+$webClient.Proxy.Credentials = [System.Net.CredentialCache]::DefaultNetworkCredentials
 ```
 
-Ha az operációs rendszer hitelesítő adatai megfelelően vannak konfigurálva, a PowerShell-kéréseket a proxyn keresztül irányítja át.
-Ha azt szeretné, hogy ezt a beállítást a munkamenetek között is megőrizze a rendszer, adja hozzá ezt a parancsot egy [PowerShell-profilhoz](/powershell/module/microsoft.powershell.core/about/about_profiles).
+Ha az operációs rendszer hitelesítő adatai megfelelően vannak konfigurálva, ez a konfiguráció a proxyn keresztül irányítja át PowerShell-kéréseket. Ha azt szeretné, hogy ezt a beállítást a munkamenetek között is megőrizze a rendszer, adja hozzá a parancsokat a [PowerShell-profilhoz](/powershell/module/microsoft.powershell.core/about/about_profiles).
 
 A csomag telepítéséhez a proxynak engedélyeznie kell az alábbi címekre irányuló HTTPS-kapcsolatokat:
 
@@ -112,50 +124,53 @@ Connect-AzAccount
 ```
 
 > [!NOTE]
->
-> Ha letiltotta az automatikus modulbetöltést, manuálisan kell importálnia a modult az `Import-Module Az` segítségével. A modul felépítéséből adódóan ez eltarthat néhány másodpercig.
+> Ha letiltotta az automatikus modulbetöltést, manuálisan kell importálnia a modult az `Import-Module -Name Az` segítségével.
+> A modul felépítéséből adódóan ez eltarthat néhány másodpercig.
 
 Ezeket a lépéseket minden új PowerShell-munkamenet esetében meg kell ismételni. Ha szeretné megtudni, hogyan őrizheti meg az Azure-bejelentkezést a PowerShell-munkamenetek között, tekintse meg a [Felhasználói hitelesítő adatok megőrzése a PowerShell-munkamenetek között](context-persistence.md) című cikket.
 
 ## <a name="update-the-azure-powershell-module"></a>Az Azure PowerShell-modul frissítése
 
-Az Az modul csomagolásának módja miatt az [Update-Module](/powershell/module/powershellget/update-module) parancs nem fogja megfelelően frissíteni a telepítést. Az Az modul telepítésekor a modul összegyűjti és telepíti az összes függő almodult, és megadja az egyes szolgáltatások parancsmagjait.
-Ez azt jelenti, hogy az Azure PowerShell-modul frissítéséhez nem elég __frissíteni__ azt, hanem __újra kell telepítenie__. Ez ugyanúgy történik, mint a telepítés, de előfordulhat, hogy hozzá kell adnia a `-Force` argumentumot:
+PowerShell-modulok frissítéséhez ugyanazt a módszert használja, mint a modul telepítéséhez. Ha eredetileg például az `Install-Module` parancsmagot használta, akkor használja az [Update-Module](/powershell/module/powershellget/update-module) parancsmagot a legújabb verzió beszerzéséhez. Ha eredetileg az MSI-csomagot használta, akkor töltse le és telepítse az új MSI-csomagot.
+
+A PowerShellGet-parancsmagok nem tudnak MSI-csomagból telepített modulokat frissíteni. Az MSI-csomagok nem frissítenek a PowerShellGettel telepített modulokat. Ha bármilyen problémába ütközik a PowerShellGettel történő frissítés közben, akkor a **frissítés** helyett **újra kell telepítenie** a modult. Az újratelepítés ugyanúgy történik, mint a telepítés, de hozzá kell adnia a `-Force` paramétert:
 
 ```powershell
-Install-Module -Name Az -AllowClobber -Force
+if (Get-Module -Name AzureRM -ListAvailable) {
+    Write-Warning -Message ('Az module not installed. Having both the AzureRM and ' +
+      'Az modules installed at the same time is not supported.')
+} else {
+    Install-Module -Name Az -AllowClobber -Force
+}
 ```
 
-Bár ez felülírhatja a telepített modulokat, még így is előfordulhat hogy maradnak régebbi verziók a rendszeren.
-Az Azure PowerShell régebbi verzióinak eltávolításáról [Az Azure PowerShell-modul eltávolítása](uninstall-az-ps.md) című szakaszban olvashat.
+Az MSI-alapú telepítésektől eltérően a PowerShellGettel történő telepítés vagy frissítés nem távolítja el a rendszeren esetlegesen megtalálható régebbi verziókat. Az Azure PowerShell régebbi verzióinak eltávolításáról [az Azure PowerShell-modul eltávolítását](uninstall-az-ps.md) ismertető szakaszban olvashat. Az MSI-alapú telepítésekkel kapcsolatban [az Azure PowerShell MSI-vel történő telepítését](install-az-ps-msi.md) ismertető témakörben tekinthet meg további információt.
 
 ## <a name="use-multiple-versions-of-azure-powershell"></a>Az Azure PowerShell több verziójának használata
 
 Lehetőség van az Azure PowerShell több verziójának telepítésére. Ha szeretné ellenőrizni, hogy több Azure PowerShell-verzió is telepítve van-e, használja a következő parancsot:
 
 ```powershell-interactive
-Get-InstalledModule -Name Az -AllVersions | select Name,Version
+Get-InstalledModule -Name Az -AllVersions | Select-Object -Property Name, Version
 ```
 
 Ha el szeretné távolítani az Azure PowerShell egyik verzióját, tekintse meg az [Azure PowerShell-modul eltávolítását](uninstall-az-ps.md) ismertető szakaszt.
 
-Az `Az` modul adott verziójának telepítéséhez vagy betöltéséhez használja a `-RequiredVersion` argumentumot:
+Ha a modul több verziója is telepítve van, alapértelmezés szerint a modul automatikus betöltésével és az `Import-Module` használatával töltse be a legújabb verziót.
+
+Az `Az` modul adott verziójának telepítéséhez vagy betöltéséhez használja a `-RequiredVersion` paramétert:
 
 ```powershell-interactive
-# Install Az version 0.7.0
-Install-Module -Name Az -RequiredVersion 0.7.0 
-# Load Az version 0.7.0
-Import-Module -Name Az -RequiredVersion 0.7.0
+# Install Az version 2.8.0
+Install-Module -Name Az -RequiredVersion 2.8.0
+# Load Az version 2.8.0
+Import-Module -Name Az -RequiredVersion 2.8.0
 ```
-
-Ha a modul több verziója is telepítve van, alapértelmezés szerint a modul automatikus betöltésével és az `Import-Module` használatával töltse be a legújabb verziót.
 
 ## <a name="provide-feedback"></a>Visszajelzés küldése
 
-Ha hibát észlel az Azure PowerShellben, [jelentse be a problémát a GitHubon](https://github.com/Azure/azure-powershell/issues).
-A parancssorból a [Send-Feedback](/powershell/module/az.accounts/send-feedback) parancsmaggal küldhet visszajelzést.
+Ha hibát észlel az Azure PowerShellben, [jelentse be a problémát a GitHubon](https://github.com/Azure/azure-powershell/issues). A parancssorból a [Send-Feedback](/powershell/module/az.accounts/send-feedback) parancsmaggal küldhet visszajelzést.
 
-## <a name="next-steps"></a>További lépések
+## <a name="next-steps"></a>Következő lépések
 
-Az Azure PowerShell-modulokról és azok funkcióiról az [Azure PowerShell használatának első lépéseit](get-started-azureps.md) ismertető szakaszban talál további információt.
-Ha ismeri az Azure PowerShellt, és az AzureRM-ből végez migrálást, tekintse meg [az AzureRM modulból az Az modulba való áttelepítést](migrate-from-azurerm-to-az.md) ismertető szakaszt.
+Az Azure PowerShell-modulokról és azok funkcióiról az [Azure PowerShell használatának első lépéseit](get-started-azureps.md) ismertető szakaszban talál további információt. Ha ismeri az Azure PowerShellt, és az AzureRM-ből végez migrálást, tekintse meg [az AzureRM modulból az Az modulba való áttelepítést](migrate-from-azurerm-to-az.md) ismertető szakaszt.

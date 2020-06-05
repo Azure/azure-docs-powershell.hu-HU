@@ -4,12 +4,12 @@ description: Ebben a migrálási útmutatóban megtalálja az Azure PowerShell 6
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 629cbb31f086c569d2b8961497d0255663602f54
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: ab20dd07fb0c14d8066ad12185f8245be291e7ec
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387207"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84122236"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>A Microsoft Azure PowerShell 6.0.0 kompatibilitástörő változásai
 
@@ -20,9 +20,9 @@ Ez a dokumentum egyrészt értesítőül szolgál a használhatatlanná tévő v
 ## <a name="table-of-contents"></a>Tartalomjegyzék
 
 - [Általános kompatibilitástörő változások](#general-breaking-changes)
-    - [PowerShell minimálisan szükséges verziója: 5.0](#minimum-powershell-version-required-bumped-to-50)
-    - [Környezet automatikus mentése alapértelmezés szerint engedélyezve](#context-autosave-enabled-by-default)
-    - [A Tags alias eltávolítása](#removal-of-tags-alias)
+  - [PowerShell minimálisan szükséges verziója: 5.0](#minimum-powershell-version-required-bumped-to-50)
+  - [Környezet automatikus mentése alapértelmezés szerint engedélyezve](#context-autosave-enabled-by-default)
+  - [A Tags alias eltávolítása](#removal-of-tags-alias)
 - [Az AzureRM.Compute-parancsmagok kompatibilitástörő változásai](#breaking-changes-to-azurermcompute-cmdlets)
 - [Az AzureRM.DataLakeStore-parancsmagok kompatibilitástörő változásai](#breaking-changes-to-azurermdatalakestore-cmdlets)
 - [Az AzureRM.Dns-parancsmagok kompatibilitástörő változásai](#breaking-changes-to-azurermdns-cmdlets)
@@ -33,22 +33,23 @@ Ez a dokumentum egyrészt értesítőül szolgál a használhatatlanná tévő v
 - [Az AzureRM.Resources-parancsmagok kompatibilitástörő változásai](#breaking-changes-to-azurermresources-cmdlets)
 - [Az AzureRM.Storage-parancsmagok kompatibilitástörő változásai](#breaking-changes-to-azurermstorage-cmdlets)
 - [Eltávolított modulok](#removed-modules)
-    - [`AzureRM.ServerManagement`](#azurermservermanagement)
-    - [`AzureRM.SiteRecovery`](#azurermsiterecovery)
+  - [`AzureRM.ServerManagement`](#azurermservermanagement)
+  - [`AzureRM.SiteRecovery`](#azurermsiterecovery)
 
 ## <a name="general-breaking-changes"></a>Általános kompatibilitástörő változások
 
 ### <a name="minimum-powershell-version-required-bumped-to-50"></a>PowerShell minimálisan szükséges verziója: 5.0
 
-Korábban az Azure PowerShellnek _legalább_ a PowerShell 3.0-s verziójára volt szüksége bármely parancsmag futtatásához. A továbbiakban ez a követelmény a PowerShell 5.0-s verziójára változik. A PowerShell 5.0-s verziójára történő frissítéssel kapcsolatos információkért lásd [ezt a táblázatot](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
+Korábban az Azure PowerShellnek _legalább_ a PowerShell 3.0-s verziójára volt szüksége bármely parancsmag futtatásához. A továbbiakban ez a követelmény a PowerShell 5.0-s verziójára változik. A PowerShell 5.0-s verziójára történő frissítéssel kapcsolatos információkért lásd [ezt a táblázatot](/powershell/scripting/windows-powershell/install/installing-windows-powershell#upgrading-existing-windows-powershell).
 
 ### <a name="context-autosave-enabled-by-default"></a>Környezet alapértelmezés szerinti automatikus mentése
 
-A környezet automatikus mentése azon Azure-beli bejelentkezési adatok tárolását jelenti, amelyek a PowerShell új és eltérő munkamenetei között használhatók. A környezet automatikus mentéséről további információt [ebben a dokumentumban](https://docs.microsoft.com/powershell/azure/context-persistence) talál.
+A környezet automatikus mentése azon Azure-beli bejelentkezési adatok tárolását jelenti, amelyek a PowerShell új és eltérő munkamenetei között használhatók. A környezet automatikus mentéséről további információt [ebben a dokumentumban](/powershell/azure/context-persistence) talál.
 
 A környezet automatikus mentése le volt tiltva korábban alapértelmezés szerint le volt tiltva, ami azt jelentette, hogy a felhasználó Azure-beli hitelesítési adatait nem tárolta a rendszer a munkamenetek között, amíg a környezetmegőrzést engedélyező `Enable-AzureRmContextAutosave` parancsmag nem lett futtatva. Ezután a környezet automatikus mentése alapértelmezés szerint engedélyezve lesz, ami azt jelenti, hogy a _környezet automatikus mentésére vonatkozó beállításokkal nem rendelkező felhasználók_ esetén a környezet a következő bejelentkezéstől kezdve lesz tárolva. Ezt a funkciót a `Disable-AzureRmContextAutosave` parancsmag használatával lehet felülbírálni.
 
-_Megjegyzés:_ A változás nem érinti azokat a felhasználókat, akik korábban letiltották a környezet automatikus mentését, vagy engedélyezték azt, és rendelkeznek meglévő környezettel
+> [!NOTE]
+> A változás nem érinti azokat a felhasználókat, akik korábban letiltották a környezet automatikus mentését, vagy engedélyezték azt, és rendelkeznek meglévő környezettel.
 
 ### <a name="removal-of-tags-alias"></a>A Tags alias eltávolítása
 
@@ -96,6 +97,7 @@ A `Tag` paraméter `Tags` aliasa több parancsmag esetén is el lett távolítva
 ## <a name="breaking-changes-to-azurermcompute-cmdlets"></a>Az AzureRM.Compute-parancsmagok kompatibilitástörő változásai
 
 **Egyéb**
+
 - A `PSDisk` és `PSSnapshot` típus beágyazott termékváltozat-tulajdonsága `StandardLRS` és `PremiumLRS` értékről `Standard_LRS` és `Premium_LRS` értékre változott
 
 ```powershell-interactive
@@ -114,12 +116,15 @@ $vm.StorageProfile.DataDisks[0].ManagedDisk.StorageAccountType   # This will now
 ```
 
 **Add-AzureRmImageDataDisk**
+
 - A `StorageAccountType` paraméter elfogadott értéke `StandardLRS` és `PremiumLRS` helyett `Standard_LRS` és `Premium_LRS` lett
 
 **Add-AzureRmVMDataDisk**
+
 - A `StorageAccountType` paraméter elfogadott értéke `StandardLRS` és `PremiumLRS` helyett `Standard_LRS` és `Premium_LRS` lett
 
 **Add-AzureRmVmssDataDisk**
+
 - A `StorageAccountType` paraméter elfogadott értéke `StandardLRS` és `PremiumLRS` helyett `Standard_LRS` és `Premium_LRS` lett
 
 **New-AzureRmAvailabilitySet**
@@ -254,8 +259,9 @@ Remove-AzureRmDataLakeStoreItem -Account "ContosoADL" -path /myFolder -Recurse
 - A parancsmag többé már nem fogad olyan paramétereket, amelyek a hozzáférési jogkivonatot határozzák meg. Ehelyett a parancsmag lecseréli az olyan kifejezett jogkivonat-paramétereket, mint a `Service` és a `Permissions` egy általános `TemplateUri` paraméterre, amely egy máshol (valószínűleg Storage PowerShell-parancsmagokkal vagy a Storage-dokumentáció alapján manuálisan) meghatározott hozzáférési mintajogkivonatnak feleltethető meg. A parancsmag megőrzi a `ValidityPeriod` paramétert.
 
 Az Azure Storage megosztott hozzáférési jogkivonatok létrehozásával kapcsolatos további információiért tekintse meg az alábbi dokumentációs oldalakat:
-- [SAS-szolgáltatás létrehozása](https://docs.microsoft.com/rest/api/storageservices/Constructing-a-Service-SAS)
-- [SAS-fiók létrehozása](https://docs.microsoft.com/rest/api/storageservices/constructing-an-account-sas)
+
+- [SAS-szolgáltatás létrehozása](/rest/api/storageservices/Constructing-a-Service-SAS)
+- [SAS-fiók létrehozása](/rest/api/storageservices/constructing-an-account-sas)
 
 ```powershell-interactive
 # Old
@@ -282,7 +288,7 @@ $sas=Set-AzureKeyVaultManagedStorageSasDefinition -AccountName $sa.StorageAccoun
 - Az `all` engedély el lett távolítva a `PermissionsToKeys`, `PermissionsToSecrets` és `PermissionsToCertificates` esetén.
 
 **Általános**
-- A `ValueFromPipelineByPropertyName` tulajdonság el lett távolítva az összes olyan parancsmagból, ahol az `InputObject` általi átirányítás engedélyezve volt.  Az érintett parancsmagok az alábbiak:
+- A `ValueFromPipelineByPropertyName` tulajdonság el lett távolítva az összes olyan parancsmagból, ahol az `InputObject` általi átirányítás engedélyezve volt. Az érintett parancsmagok az alábbiak:
     - `Add-AzureKeyVaultCertificate`
     - `Add-AzureKeyVaultCertificateContact`
     - `Add-AzureKeyVaultKey`

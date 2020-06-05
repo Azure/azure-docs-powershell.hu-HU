@@ -4,12 +4,12 @@ description: Bemutatkozik az új Azure PowerShell-modul, az Az, amely az AzureRM
 ms.date: 05/20/2020
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: a50592c65c52eab005a6531572dbbfc144a0e43a
-ms.sourcegitcommit: 308ebca475d1c37624d7a10a2c02047594f44cdf
+ms.openlocfilehash: 1626bb4bee775ac173d078cf67934ee5a22632c4
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83778135"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84122137"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Az új Azure PowerShell Az modul bemutatása
 
@@ -26,8 +26,8 @@ Az Az egy új modul, ezért a verziószámozás vissza lett állítva 1.0.0-ra.
 
 A nagyobb frissítések kényelmetlenek lehetnek, ezért fontosnak tartjuk, hogy megosszuk a döntés okát, miért vezettünk be új modulokat, új parancsmagokkal az Azure PowerShellből történő eléréséhez.
 
-A legnagyobb és legfontosabb változás, hogy a .NET Standard-kódtáron alapuló [PowerShell 6.x](/powershell/scripting/overview) bevezetése óta a PowerShell platformfüggetlen termékké vált. Elkötelezettek vagyunk az Azure-támogatás valamennyi platformra történő kiterjesztésében. Ez azt jelenti, hogy az Azure PowerShell-modulokat frissíteni kell a .NET Standard használata és a PowerShell 6.x és újabb verziójával való kompatibilitás érdekében.
-Ahelyett, hogy a meglévő AzureRM modulon hajtottunk volna végre összetett módosításokat a támogatás hozzáadásához, létrehoztuk az Az modult.
+A legnagyobb és legfontosabb változás, hogy a .NET Standard-kódtáron alapuló [PowerShell](/powershell/scripting/overview) bevezetése óta a PowerShell platformfüggetlen termékké vált.
+Elkötelezettek vagyunk az Azure-támogatás valamennyi platformra történő kiterjesztésében, ami azt jelenti, hogy az Azure PowerShell-modulokat frissíteni kell a .NET standard használata és a PowerShell Core-kompatibilitás érdekében. Ahelyett, hogy a meglévő AzureRM modulon hajtottunk volna végre összetett módosításokat a támogatás hozzáadásához, létrehoztuk az Az modult.
 
 Egy új modul létrehozása lehetővé tette a mérnökeink számára, hogy a parancsmagok és modulok kialakítását és elnevezését egységesítsék. Mostantól az összes modul neve `Az.` előtaggal kezdődik, a parancsmagok pedig mind a _Művelet_-`Az`_Főnév_ formát alkalmazzák. Ezt megelőzően a parancsmagnevek nemcsak hosszabbak voltak, de következetlenségek is voltak bennük.
 
@@ -46,12 +46,12 @@ Frissítés meglévő AzureRM-telepítésből:
 
 1. [Távolítsa el az Azure PowerShell AzureRM modult.](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module)
 2. [Telepítse az Azure PowerShell Az modult.](install-az-ps.md)
-3. __NEM KÖTELEZŐ__: Engedélyezze a kompatibilitási módot, hogy aliasokat adjon az AzureRM-parancsmagokhoz az [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias) paranccsal, amíg meg nem ismeri az új parancskészletet. További információt a következő szakaszban vagy [az AzureRM modulból az Az modulba való áttelepítést](migrate-from-azurerm-to-az.md) ismertető cikkben talál.
+3. **NEM KÖTELEZŐ**: Engedélyezze a kompatibilitási módot, hogy aliasokat adjon az AzureRM-parancsmagokhoz az [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias) paranccsal, amíg meg nem ismeri az új parancskészletet. További részleteket a következő szakaszban vagy az [az AzureRM modulból az Az modulba való áttelepítést](migrate-from-azurerm-to-az.md) ismertető cikkben talál.
 
 ## <a name="migrate-existing-scripts-to-az"></a>Meglévő szkriptek áttelepítése az Az modulba
 
 Az új parancsmagnevek úgy lettek kidolgozva, hogy könnyen megjegyezhetők legyenek. A parancsmagnevekben az `AzureRm` és az `Azure` helyett az `Az` használható. Például a régi `New-AzureRMVm` parancs megfelelője a `New-AzVm` parancs lett.
-A migrálás azonban többet jelent az új parancsmagok nevének megismerésénél. Vannak átnevezett modulok, paraméterek és más fontos változások is.
+A migrálás azonban többet jelent az új parancsmagok nevének megismerésénél: Vannak átnevezett modulok, paraméterek és más fontos változások is.
 
 Az AzureRM-ből az Az modulba történő migrálás megkönnyítéséhez számos erőforrás áll rendelkezésre:
 
