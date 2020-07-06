@@ -5,11 +5,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/17/2020
 ms.openlocfilehash: ebdc0783c43ccecbbeb315de5b5baebc9539b40e
-ms.sourcegitcommit: 285d14bff76ccc83b2eef7e142c7f62ded67f503
+ms.sourcegitcommit: 747769a143ddebff39e78c2cc62a182401adddb9
 ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 06/23/2020
-ms.locfileid: "85216365"
+ms.locfileid: "85268119"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Azure-beli szolgáltatásnév létrehozása az Azure PowerShell használatával
 
