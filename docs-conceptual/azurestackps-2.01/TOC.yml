@@ -1,9 +1,0 @@
-- name: Azure Stack PowerShell
-  href: overview.md
-  items:
-    - name: Telepítés
-      href: 'https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-install?toc=/powershell/azure/azure-stack/toc.json'
-    - name: Csatlakozás – Felhőoperátor
-      href: 'https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-configure-admin'
-    - name: Csatlakozás – Felhasználó
-      href: 'https://docs.microsoft.com/azure/azure-stack/user/azure-stack-powershell-configure-user'
