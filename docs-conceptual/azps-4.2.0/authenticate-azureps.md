@@ -3,19 +3,19 @@ title: Bejelentkezés az Azure PowerShell-lel
 description: Hogyan lehet bejelentkezni az Azure PowerShellbe felhasználóként, szolgáltatásnévként vagy az Azure-erőforrások felügyelt identitásaival.
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 06/18/2020
-ms.openlocfilehash: f82a9e373806f2f071ae59f6aee7e0a0bd4ea13d
-ms.sourcegitcommit: 5523170e571fbd1dc93bd0fa4223aba3b324d3b0
+ms.date: 7/7/2020
+ms.openlocfilehash: 7ac723202ca9e81c8ef4cba5e844d46b98ba4b67
+ms.sourcegitcommit: 7b368a9be1cea2ac4e7d269e1a51529271269a42
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85363331"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86098803"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Bejelentkezés az Azure PowerShell-lel
 
 Az Azure PowerShell többféle hitelesítési módszert támogat. Első lépésként a legegyszerűbb, ha az [Azure Cloud Shellt](/azure/cloud-shell/overview) használja, amely automatikusan belépteti. Helyi telepítés esetén interaktívan jelentkezhet be a böngészőjén keresztül. Automatizálási szkriptek írásakor az ajánlott módszer a [szolgáltatásnév](create-azure-service-principal-azureps.md) használata a szükséges engedélyekkel. Egyéni használati esetekben az Azure-erőforrások biztonságát úgy őrizheti meg, ha a lehető legnagyobb mértékben korlátozza a bejelentkezési engedélyeket.
 
-Bejelentkezés után a parancsokat a rendszer az alapértelmezett előfizetésen futtatja. Az adott munkamenethez tartozó aktív előfizetés módosításához használja a [Set-AzContext](/powershell/module/az.accounts/set-azcontext) parancsmagot. Az Azure PowerShell-lel való bejelentkezéskor használt alapértelmezett előfizetés módosításához használja a [Set-AzDefault](/powershell/module/az.accounts/set-azdefault) parancsmagot.
+A kezdetekkor az Azure által visszaadott első előfizetésbe lesz bejelentkezve, ha egynél több előfizetéshez rendelkezik hozzáféréssel. Alapértelmezés szerint a futtatott parancsok ezen az előfizetésen lesznek végrehajtva. Az adott munkamenethez tartozó aktív előfizetés módosításához használja a [Set-AzContext](/powershell/module/az.accounts/set-azcontext) parancsmagot. Ha módosítani szeretné az aktív előfizetését, és szeretné, hogy ez az ugyanazon a rendszeren indított munkamenetek között rögzítve legyen, használja a [Select-AzContext](/powershell/module/az.accounts/select-azcontext) parancsmagot.
 
 > [!IMPORTANT]
 > A hitelesítő adatok megoszlanak több PowerShell-munkamenet között, ha be van jelentkezve.
