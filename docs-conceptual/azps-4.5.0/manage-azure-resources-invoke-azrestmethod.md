@@ -3,13 +3,13 @@ title: Azure-erőforrások kezelése az Invoke-AzRestMethod használatával
 description: Erőforrások kezelése az Invoke-AzRestMethod parancsmaggal az Azure PowerShellben.
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 08/17/2020
-ms.openlocfilehash: 380fd818a3af2474ce192c7a1da8a6798795cf21
-ms.sourcegitcommit: bd7edc4d48b6a8a8bec864edc876e16af0a49505
+ms.date: 08/24/2020
+ms.openlocfilehash: 6a267e28ec8e2540ce7d6431ffd9aab0b2090c6a
+ms.sourcegitcommit: b94a3f00c147144b0ef7f8cf8d0f151e04674b89
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88512997"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88821363"
 ---
 # <a name="manage-azure-resources-with-invoke-azrestmethod"></a>Azure-erőforrások kezelése az Invoke-AzRestMethod használatával
 
@@ -19,8 +19,7 @@ Ez a parancsmag akkor hasznos, ha az Azure-szolgáltatások olyan funkcióit sze
 
 ## <a name="how-to-use-invoke-azrestmethod"></a>Az Invoke-AzRestMethod használata
 
-Például engedélyezheti az Azure Container Registry (ACR) szolgáltatáshoz való hozzáférést megadott hálózatok számára, vagy letilthatja a nyilvános hozzáférést. Ez a funkció még nem érhető el az [Az.ContainerRegistry PowerShell-modulban](/powershell/module/Az.ContainerRegistry/).
-Azonban ideiglenesen az `Invoke-AzRestMethod` használatával is felügyelhető.
+Például engedélyezheti az Azure Container Registry (ACR) szolgáltatáshoz való hozzáférést megadott hálózatok számára, vagy letilthatja a nyilvános hozzáférést. Az Az PowerShell-modul 4.5.0-s verziójában ez a funkció még nem érhető el az [Az.ContainerRegistry PowerShell-modulban](/powershell/module/Az.ContainerRegistry/). Azonban ideiglenesen az `Invoke-AzRestMethod` használatával is felügyelhető.
 
 ## <a name="using-invoke-azrestmethod-with-get-operations"></a>Az Invoke-AzRestMethod használata GET műveletekkel
 
@@ -51,7 +50,7 @@ Az ACR 2019. 12. 01-i előzetes verziójának definíciója a következő helyen
 
 ## <a name="using-invoke-azrestmethod-with-patch-operations"></a>Az Invoke-AzRestMethod használata PATCH műveletekkel
 
-Az Invoke-AzRestMethod parancsmaggal letilthatja a `myacr` elnevezésű, `myresourcegroup` erőforráscsoportban található már létező ACR-hoz való nyilvános hozzáférést.
+Az `Invoke-AzRestMethod` parancsmaggal letilthatja a `myresourcegroup` erőforráscsoport `myacr` elnevezésű, már létező ACR-hez való nyilvános hozzáférést.
 
 A nyilvános hálózati hozzáférés letiltásához az alábbi példában látható módon egy olyan API felé irányuló**PATCH** hívást kell létrehoznia, amely módosítja a `publicNetwokAccess` paraméter értékét:
 
@@ -100,11 +99,11 @@ Invoke-AzRestMethod @specificIpParams
 
 ## <a name="comparison-to-get-azresource-new-azresource-and-remove-azresource"></a>Összehasonlítás a Get-AzResource, New-AzResource és Remove-AzResource parancsmagokkal
 
-Az `*-AzResource`-parancsmagok lehetővé teszik az Azure-hoz intézett REST API-hívás testreszabását az erőforrástípus, az API-verzió és a frissítendő tulajdonságok megadásával. A tulajdonságoknak azonban `PSObject` objektumoknak kell lenniük, amelyek létrehozása gyakran bonyolulttá válhat.
+Az `*-AzResource`-parancsmagok lehetővé teszik az Azure-hoz intézett REST API-hívás testreszabását az erőforrástípus, az API-verzió és a frissítendő tulajdonságok megadásával. A tulajdonságokat azonban először `PSObject` objektumként kell létrehozni. Ez összetettebbé teszi a folyamatot, amely könnyen bonyolulttá válhat.
 
-Az `Invoke-AzRestMethod` azonban egyszerűbb módot kínál az Azure-erőforrások kezelésére. Az előző példában láthatja, hogy a hasznos adatok egy JSON-sztringben vannak megadva. Nem kell vesződnie a JSON és a `PSObjects` objektumok közötti átalakítással.
+Az `Invoke-AzRestMethod` azonban egyszerű módot kínál az Azure-erőforrások kezelésére. Ahogy az előző példában láthatta, létrehozhat egy JSON-sztringet, amellyel testre szabhatja a REST API-hívást anélkül, hogy előre létre kellene hoznia bármilyen `PSObjects` objektumot.
 
-Ha már van tapasztalata az `*-AzResource`-parancsmagok használatával kapcsolatban, továbbra is használhatja őket. Nem tervezzük a támogatásuk megszüntetését. A parancsmagok családjának legújabb tagja az `Invoke-AzRestMethod` parancsmag.
+Ha már van tapasztalata az `*-AzResource`-parancsmagok használatával kapcsolatban, továbbra is használhatja őket. Nem tervezzük a támogatásuk megszüntetését. Az eszközkészlet legújabb tagja az `Invoke-AzRestMethod` parancsmag.
 
 ## <a name="see-also"></a>Lásd még:
 
