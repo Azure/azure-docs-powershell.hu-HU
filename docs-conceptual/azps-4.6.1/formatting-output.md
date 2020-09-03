@@ -10,24 +10,24 @@ ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 09/01/2020
-ms.locfileid: "89239842"
+ms.locfileid: "89244398"
 ---
-# <a name="format-azure-powershell-cmdlet-output"></a><span data-ttu-id="943b8-103">Azure PowerShell-parancsmag kimenetének formázása</span><span class="sxs-lookup"><span data-stu-id="943b8-103">Format Azure PowerShell cmdlet output</span></span>
+# <a name="format-azure-powershell-cmdlet-output"></a><span data-ttu-id="b8a10-103">Azure PowerShell-parancsmag kimenetének formázása</span><span class="sxs-lookup"><span data-stu-id="b8a10-103">Format Azure PowerShell cmdlet output</span></span>
 
-<span data-ttu-id="943b8-104">Alapértelmezés szerint minden Azure PowerShell-parancsmag könnyen olvasható formátumúra alakítja át a kimenetet.</span><span class="sxs-lookup"><span data-stu-id="943b8-104">By default each Azure PowerShell cmdlet formats output to be easy to read.</span></span> <span data-ttu-id="943b8-105">A PowerShell segítségével a parancsmagok kimenete konvertálható vagy formázható az alábbi parancsmagok egyikére történő átirányítással:</span><span class="sxs-lookup"><span data-stu-id="943b8-105">PowerShell allows you to convert or format cmdlet output by piping to one of the following cmdlets:</span></span>
+<span data-ttu-id="b8a10-104">Alapértelmezés szerint minden Azure PowerShell-parancsmag könnyen olvasható formátumúra alakítja át a kimenetet.</span><span class="sxs-lookup"><span data-stu-id="b8a10-104">By default each Azure PowerShell cmdlet formats output to be easy to read.</span></span> <span data-ttu-id="b8a10-105">A PowerShell segítségével a parancsmagok kimenete konvertálható vagy formázható az alábbi parancsmagok egyikére történő átirányítással:</span><span class="sxs-lookup"><span data-stu-id="b8a10-105">PowerShell allows you to convert or format cmdlet output by piping to one of the following cmdlets:</span></span>
 
-| <span data-ttu-id="943b8-106">Formátum</span><span class="sxs-lookup"><span data-stu-id="943b8-106">Formatting</span></span>      | <span data-ttu-id="943b8-107">Átalakítás</span><span class="sxs-lookup"><span data-stu-id="943b8-107">Conversion</span></span>       |
+| <span data-ttu-id="b8a10-106">Formátum</span><span class="sxs-lookup"><span data-stu-id="b8a10-106">Formatting</span></span>      | <span data-ttu-id="b8a10-107">Átalakítás</span><span class="sxs-lookup"><span data-stu-id="b8a10-107">Conversion</span></span>       |
 |-----------------|------------------|
-| [<span data-ttu-id="943b8-108">Format-Custom</span><span class="sxs-lookup"><span data-stu-id="943b8-108">Format-Custom</span></span>](/powershell/module/microsoft.powershell.utility/format-custom) | [<span data-ttu-id="943b8-109">ConvertTo-Csv</span><span class="sxs-lookup"><span data-stu-id="943b8-109">ConvertTo-Csv</span></span>](/powershell/module/microsoft.powershell.utility/convertto-csv)  |
-| [<span data-ttu-id="943b8-110">Format-List</span><span class="sxs-lookup"><span data-stu-id="943b8-110">Format-List</span></span>](/powershell/module/microsoft.powershell.utility/format-list)   | [<span data-ttu-id="943b8-111">ConvertTo-Html</span><span class="sxs-lookup"><span data-stu-id="943b8-111">ConvertTo-Html</span></span>](/powershell/module/microsoft.powershell.utility/convertto-html) |
-| [<span data-ttu-id="943b8-112">Format-Table</span><span class="sxs-lookup"><span data-stu-id="943b8-112">Format-Table</span></span>](/powershell/module/microsoft.powershell.utility/format-table)  | [<span data-ttu-id="943b8-113">ConvertTo-Json</span><span class="sxs-lookup"><span data-stu-id="943b8-113">ConvertTo-Json</span></span>](/powershell/module/microsoft.powershell.utility/convertto-json) |
-| [<span data-ttu-id="943b8-114">Format-Wide</span><span class="sxs-lookup"><span data-stu-id="943b8-114">Format-Wide</span></span>](/powershell/module/microsoft.powershell.utility/format-wide)   | [<span data-ttu-id="943b8-115">ConvertTo-Xml</span><span class="sxs-lookup"><span data-stu-id="943b8-115">ConvertTo-Xml</span></span>](/powershell/module/microsoft.powershell.utility/convertto-xml)  |
+| [<span data-ttu-id="b8a10-108">Format-Custom</span><span class="sxs-lookup"><span data-stu-id="b8a10-108">Format-Custom</span></span>](/powershell/module/microsoft.powershell.utility/format-custom) | [<span data-ttu-id="b8a10-109">ConvertTo-Csv</span><span class="sxs-lookup"><span data-stu-id="b8a10-109">ConvertTo-Csv</span></span>](/powershell/module/microsoft.powershell.utility/convertto-csv)  |
+| [<span data-ttu-id="b8a10-110">Format-List</span><span class="sxs-lookup"><span data-stu-id="b8a10-110">Format-List</span></span>](/powershell/module/microsoft.powershell.utility/format-list)   | [<span data-ttu-id="b8a10-111">ConvertTo-Html</span><span class="sxs-lookup"><span data-stu-id="b8a10-111">ConvertTo-Html</span></span>](/powershell/module/microsoft.powershell.utility/convertto-html) |
+| [<span data-ttu-id="b8a10-112">Format-Table</span><span class="sxs-lookup"><span data-stu-id="b8a10-112">Format-Table</span></span>](/powershell/module/microsoft.powershell.utility/format-table)  | [<span data-ttu-id="b8a10-113">ConvertTo-Json</span><span class="sxs-lookup"><span data-stu-id="b8a10-113">ConvertTo-Json</span></span>](/powershell/module/microsoft.powershell.utility/convertto-json) |
+| [<span data-ttu-id="b8a10-114">Format-Wide</span><span class="sxs-lookup"><span data-stu-id="b8a10-114">Format-Wide</span></span>](/powershell/module/microsoft.powershell.utility/format-wide)   | [<span data-ttu-id="b8a10-115">ConvertTo-Xml</span><span class="sxs-lookup"><span data-stu-id="b8a10-115">ConvertTo-Xml</span></span>](/powershell/module/microsoft.powershell.utility/convertto-xml)  |
 
-<span data-ttu-id="943b8-116">Formázás esetén a kimenet megjeleníthető egy PowerShell-terminálon, konvertálással pedig más szkriptek vagy programok által használható adatok állíthatók elő.</span><span class="sxs-lookup"><span data-stu-id="943b8-116">Formatting is used for display in a PowerShell terminal, and conversion is used for generating data to be consumed by other scripts or programs.</span></span>
+<span data-ttu-id="b8a10-116">Formázás esetén a kimenet megjeleníthető egy PowerShell-terminálon, konvertálással pedig más szkriptek vagy programok által használható adatok állíthatók elő.</span><span class="sxs-lookup"><span data-stu-id="b8a10-116">Formatting is used for display in a PowerShell terminal, and conversion is used for generating data to be consumed by other scripts or programs.</span></span>
 
-## <a name="table-output-format"></a><span data-ttu-id="943b8-117">Tábla kimeneti formátum</span><span class="sxs-lookup"><span data-stu-id="943b8-117">Table output format</span></span>
+## <a name="table-output-format"></a><span data-ttu-id="b8a10-117">Tábla kimeneti formátum</span><span class="sxs-lookup"><span data-stu-id="b8a10-117">Table output format</span></span>
 
-<span data-ttu-id="943b8-118">Az Azure PowerShell-parancsmagok kimenete alapértelmezés szerint táblázatos formátumú.</span><span class="sxs-lookup"><span data-stu-id="943b8-118">By default, Azure PowerShell cmdlets output in the table format.</span></span> <span data-ttu-id="943b8-119">Ez a formátum nem jeleníti meg a kért erőforrás összes adatát:</span><span class="sxs-lookup"><span data-stu-id="943b8-119">This format doesn't display all information of the requested resource:</span></span>
+<span data-ttu-id="b8a10-118">Az Azure PowerShell-parancsmagok kimenete alapértelmezés szerint táblázatos formátumú.</span><span class="sxs-lookup"><span data-stu-id="b8a10-118">By default, Azure PowerShell cmdlets output in the table format.</span></span> <span data-ttu-id="b8a10-119">Ez a formátum nem jeleníti meg a kért erőforrás összes adatát:</span><span class="sxs-lookup"><span data-stu-id="b8a10-119">This format doesn't display all information of the requested resource:</span></span>
 
 ```powershell-interactive
 Get-AzVM
@@ -41,7 +41,7 @@ QueryExample         RHELExample  westus2  Standard_D2_v3   Linux    rhelexample
 QueryExample        WinExampleVM  westus2 Standard_DS1_v2 Windows   winexamplevm268         Succeeded
 ```
 
-<span data-ttu-id="943b8-120">A `Format-Table` által megjelenített adatok mennyiségét a PowerShell-munkamenet ablakának szélessége is korlátozhatja.</span><span class="sxs-lookup"><span data-stu-id="943b8-120">The amount of data displayed by `Format-Table` can be affected by the width of your PowerShell session window.</span></span> <span data-ttu-id="943b8-121">Ha a kimenetben csak adott tulajdonságokat szerepeltetne, és ezeket rendezni is szeretné, tulajdonságnevek is megadhatók a `Format-Table` argumentumaiként:</span><span class="sxs-lookup"><span data-stu-id="943b8-121">To restrict the output to specific properties and order them, property names can be provided as arguments to `Format-Table`:</span></span>
+<span data-ttu-id="b8a10-120">A `Format-Table` által megjelenített adatok mennyiségét a PowerShell-munkamenet ablakának szélessége is korlátozhatja.</span><span class="sxs-lookup"><span data-stu-id="b8a10-120">The amount of data displayed by `Format-Table` can be affected by the width of your PowerShell session window.</span></span> <span data-ttu-id="b8a10-121">Ha a kimenetben csak adott tulajdonságokat szerepeltetne, és ezeket rendezni is szeretné, tulajdonságnevek is megadhatók a `Format-Table` argumentumaiként:</span><span class="sxs-lookup"><span data-stu-id="b8a10-121">To restrict the output to specific properties and order them, property names can be provided as arguments to `Format-Table`:</span></span>
 
 ```powershell-interactive
 Get-AzVM -ResourceGroupName QueryExample | Format-Table Name,ResourceGroupName,Location
@@ -55,15 +55,15 @@ RHELExample    QueryExample      westus2
 WinExampleVM   QueryExample      westus2
 ```
 
-## <a name="list-output-format"></a><span data-ttu-id="943b8-122">Lista kimeneti formátum</span><span class="sxs-lookup"><span data-stu-id="943b8-122">List output format</span></span>
+## <a name="list-output-format"></a><span data-ttu-id="b8a10-122">Lista kimeneti formátum</span><span class="sxs-lookup"><span data-stu-id="b8a10-122">List output format</span></span>
 
-<span data-ttu-id="943b8-123">A Lista kimeneti formátum két oszlopot tartalmaz: az első oszlopban a tulajdonságnév, a másodikban annak értéke szerepel.</span><span class="sxs-lookup"><span data-stu-id="943b8-123">List output format produces two columns, property names followed by the value.</span></span> <span data-ttu-id="943b8-124">Összetett objektumok esetében ezek helyett az objektumtípus látható.</span><span class="sxs-lookup"><span data-stu-id="943b8-124">For complex objects, the type of the object is displayed instead.</span></span>
+<span data-ttu-id="b8a10-123">A Lista kimeneti formátum két oszlopot tartalmaz: az első oszlopban a tulajdonságnév, a másodikban annak értéke szerepel.</span><span class="sxs-lookup"><span data-stu-id="b8a10-123">List output format produces two columns, property names followed by the value.</span></span> <span data-ttu-id="b8a10-124">Összetett objektumok esetében ezek helyett az objektumtípus látható.</span><span class="sxs-lookup"><span data-stu-id="b8a10-124">For complex objects, the type of the object is displayed instead.</span></span>
 
 ```powershell-interactive
 Get-AzVM | Format-List
 ```
 
-<span data-ttu-id="943b8-125">Az alábbi kimenetből néhány mező el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="943b8-125">The following output has some fields removed.</span></span>
+<span data-ttu-id="b8a10-125">Az alábbi kimenetből néhány mező el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b8a10-125">The following output has some fields removed.</span></span>
 
 ```output
 ResourceGroupName        : QueryExample
@@ -89,7 +89,7 @@ Location                 : westus2
 ...
 ```
 
-<span data-ttu-id="943b8-126">A `Format-Table` formátumhoz hasonlóan a kimenet tulajdonságnevek megadásával is rendezhető és szűkíthető:</span><span class="sxs-lookup"><span data-stu-id="943b8-126">Like `Format-Table`, property names can be provided to order and restrict the output:</span></span>
+<span data-ttu-id="b8a10-126">A `Format-Table` formátumhoz hasonlóan a kimenet tulajdonságnevek megadásával is rendezhető és szűkíthető:</span><span class="sxs-lookup"><span data-stu-id="b8a10-126">Like `Format-Table`, property names can be provided to order and restrict the output:</span></span>
 
 ```powershell-interactive
 Get-AzVM | Format-List ResourceGroupName,Name,Location
@@ -109,9 +109,9 @@ Name              : WinExampleVM
 Location          : westus2
 ```
 
-## <a name="wide-output-format"></a><span data-ttu-id="943b8-127">Széles kimeneti formátum</span><span class="sxs-lookup"><span data-stu-id="943b8-127">Wide output format</span></span>
+## <a name="wide-output-format"></a><span data-ttu-id="b8a10-127">Széles kimeneti formátum</span><span class="sxs-lookup"><span data-stu-id="b8a10-127">Wide output format</span></span>
 
-<span data-ttu-id="943b8-128">A Széles kimeneti formátum lekérdezésenként egyetlen tulajdonságnevet jelenít meg.</span><span class="sxs-lookup"><span data-stu-id="943b8-128">Wide output format produces only one property name per query.</span></span> <span data-ttu-id="943b8-129">Az, hogy ez melyik tulajdonság legyen, az adott tulajdonság argumentumként való megadásával állítható be.</span><span class="sxs-lookup"><span data-stu-id="943b8-129">Which property is displayed can be controlled by giving a property as an argument.</span></span>
+<span data-ttu-id="b8a10-128">A Széles kimeneti formátum lekérdezésenként egyetlen tulajdonságnevet jelenít meg.</span><span class="sxs-lookup"><span data-stu-id="b8a10-128">Wide output format produces only one property name per query.</span></span> <span data-ttu-id="b8a10-129">Az, hogy ez melyik tulajdonság legyen, az adott tulajdonság argumentumként való megadásával állítható be.</span><span class="sxs-lookup"><span data-stu-id="b8a10-129">Which property is displayed can be controlled by giving a property as an argument.</span></span>
 
 ```powershell-interactive
 Get-AzVM | Format-Wide
@@ -131,15 +131,15 @@ QueryExample                                    QueryExample
 QueryExample
 ```
 
-## <a name="custom-output-format"></a><span data-ttu-id="943b8-130">Egyéni kimeneti formátum</span><span class="sxs-lookup"><span data-stu-id="943b8-130">Custom output format</span></span>
+## <a name="custom-output-format"></a><span data-ttu-id="b8a10-130">Egyéni kimeneti formátum</span><span class="sxs-lookup"><span data-stu-id="b8a10-130">Custom output format</span></span>
 
-<span data-ttu-id="943b8-131">A `Custom-Format` kimenettípus egyéni objektumok formázására szolgál.</span><span class="sxs-lookup"><span data-stu-id="943b8-131">The `Custom-Format` output type is meant for formatting custom objects.</span></span> <span data-ttu-id="943b8-132">Argumentum nélkül ugyanúgy viselkedik, mint a `Format-List`, de egyéni osztályok tulajdonságneveit jeleníti meg.</span><span class="sxs-lookup"><span data-stu-id="943b8-132">Without any arguments, it behaves like `Format-List` but displays the property names of custom classes.</span></span>
+<span data-ttu-id="b8a10-131">A `Custom-Format` kimenettípus egyéni objektumok formázására szolgál.</span><span class="sxs-lookup"><span data-stu-id="b8a10-131">The `Custom-Format` output type is meant for formatting custom objects.</span></span> <span data-ttu-id="b8a10-132">Argumentum nélkül ugyanúgy viselkedik, mint a `Format-List`, de egyéni osztályok tulajdonságneveit jeleníti meg.</span><span class="sxs-lookup"><span data-stu-id="b8a10-132">Without any arguments, it behaves like `Format-List` but displays the property names of custom classes.</span></span>
 
 ```powershell-interactive
 Get-AzVM | Format-Custom
 ```
 
-<span data-ttu-id="943b8-133">Az alábbi kimenetből néhány mező el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="943b8-133">The following output has some fields removed.</span></span>
+<span data-ttu-id="b8a10-133">Az alábbi kimenetből néhány mező el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b8a10-133">The following output has some fields removed.</span></span>
 
 ```output
 ResourceGroupName : QueryExample
@@ -158,13 +158,13 @@ StorageProfile    : {ImageReference, OsDisk, DataDisks}
 ...
 ```
 
-<span data-ttu-id="943b8-134">Argumentumokként tulajdonságneveket megadva a `Custom-Format` egyéni objektumok tulajdonság/érték párjait jeleníti meg értékként:</span><span class="sxs-lookup"><span data-stu-id="943b8-134">Giving property names as arguments to `Custom-Format` displays the property/value pairs for custom objects set as values:</span></span>
+<span data-ttu-id="b8a10-134">Argumentumokként tulajdonságneveket megadva a `Custom-Format` egyéni objektumok tulajdonság/érték párjait jeleníti meg értékként:</span><span class="sxs-lookup"><span data-stu-id="b8a10-134">Giving property names as arguments to `Custom-Format` displays the property/value pairs for custom objects set as values:</span></span>
 
 ```powershell-interactive
 Get-AzVM | Format-Custom Name,ResourceGroupName,Location,OSProfile
 ```
 
-<span data-ttu-id="943b8-135">Az alábbi kimenetből néhány mező el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="943b8-135">The following output has some fields removed.</span></span>
+<span data-ttu-id="b8a10-135">Az alábbi kimenetből néhány mező el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b8a10-135">The following output has some fields removed.</span></span>
 
 ```output
 class PSVirtualMachineList
@@ -228,11 +228,11 @@ class PSVirtualMachineList
 }
 ```
 
-## <a name="conversion-to-other-data-formats"></a><span data-ttu-id="943b8-136">Átalakítás egyéb adatformátumokká</span><span class="sxs-lookup"><span data-stu-id="943b8-136">Conversion to other data formats</span></span>
+## <a name="conversion-to-other-data-formats"></a><span data-ttu-id="b8a10-136">Átalakítás egyéb adatformátumokká</span><span class="sxs-lookup"><span data-stu-id="b8a10-136">Conversion to other data formats</span></span>
 
-<span data-ttu-id="943b8-137">A `ConvertTo-*` parancsmagcsalád segítségével az Azure PowerShell-parancsmagok által visszaadott eredmények számítógép által olvasható formátumra konvertálhatók.</span><span class="sxs-lookup"><span data-stu-id="943b8-137">The `ConvertTo-*` family of cmdlets allows for converting the results of Azure PowerShell cmdlets to machine-readable formats.</span></span> <span data-ttu-id="943b8-138">Ha az Azure PowerShell által visszaadott eredményekből csak egyes tulajdonságokat szeretne lekérni, még az átalakítás végrehajtása előtt használja a `Select-Object` parancsot az adott folyamatban.</span><span class="sxs-lookup"><span data-stu-id="943b8-138">To get only some properties from the Azure PowerShell results, use the `Select-Object` command in a pipe before performing the conversion.</span></span> <span data-ttu-id="943b8-139">Az alábbi példák az egyes átalakítások kimeneteinek különböző fajtáit mutatják be.</span><span class="sxs-lookup"><span data-stu-id="943b8-139">The following examples demonstrate the different kinds of output that each conversion produces.</span></span>
+<span data-ttu-id="b8a10-137">A `ConvertTo-*` parancsmagcsalád segítségével az Azure PowerShell-parancsmagok által visszaadott eredmények számítógép által olvasható formátumra konvertálhatók.</span><span class="sxs-lookup"><span data-stu-id="b8a10-137">The `ConvertTo-*` family of cmdlets allows for converting the results of Azure PowerShell cmdlets to machine-readable formats.</span></span> <span data-ttu-id="b8a10-138">Ha az Azure PowerShell által visszaadott eredményekből csak egyes tulajdonságokat szeretne lekérni, még az átalakítás végrehajtása előtt használja a `Select-Object` parancsot az adott folyamatban.</span><span class="sxs-lookup"><span data-stu-id="b8a10-138">To get only some properties from the Azure PowerShell results, use the `Select-Object` command in a pipe before performing the conversion.</span></span> <span data-ttu-id="b8a10-139">Az alábbi példák az egyes átalakítások kimeneteinek különböző fajtáit mutatják be.</span><span class="sxs-lookup"><span data-stu-id="b8a10-139">The following examples demonstrate the different kinds of output that each conversion produces.</span></span>
 
-### <a name="conversion-to-csv"></a><span data-ttu-id="943b8-140">Átalakítás CSV formátumba</span><span class="sxs-lookup"><span data-stu-id="943b8-140">Conversion to CSV</span></span>
+### <a name="conversion-to-csv"></a><span data-ttu-id="b8a10-140">Átalakítás CSV formátumba</span><span class="sxs-lookup"><span data-stu-id="b8a10-140">Conversion to CSV</span></span>
 
 ```azurepowershell-interactive
 Get-AzVM | ConvertTo-CSV
@@ -246,15 +246,15 @@ Get-AzVM | ConvertTo-CSV
 "QUERYEXAMPLE","/subscriptions/.../resourceGroups/QUERYEXAMPLE/providers/Microsoft.Compute/virtualMachines/WinExampleVM","...","WinExampleVM","Microsoft.Compute/virtualMachines","westus2",,"System.Collections.Generic.Dictionary`2[System.String,System.String]",,,"System.Collections.Generic.List`1[Microsoft.Azure.Management.Compute.Models.VirtualMachineExtension]","Microsoft.Azure.Management.Compute.Models.HardwareProfile",,"Microsoft.Azure.Management.Compute.Models.NetworkProfile","Microsoft.Azure.Management.Compute.Models.OSProfile",,"Succeeded","Microsoft.Azure.Management.Compute.Models.StorageProfile","Compact",,"System.Collections.Generic.List`1[System.String]",,,"...","OK"
 ```
 
-### <a name="conversion-to-json"></a><span data-ttu-id="943b8-141">Átalakítás JSON formátumba</span><span class="sxs-lookup"><span data-stu-id="943b8-141">Conversion to JSON</span></span>
+### <a name="conversion-to-json"></a><span data-ttu-id="b8a10-141">Átalakítás JSON formátumba</span><span class="sxs-lookup"><span data-stu-id="b8a10-141">Conversion to JSON</span></span>
 
-<span data-ttu-id="943b8-142">A JSON-kimenet alapértelmezés szerint nem bontja ki az összes tulajdonságot.</span><span class="sxs-lookup"><span data-stu-id="943b8-142">JSON output doesn't expand all properties by default.</span></span> <span data-ttu-id="943b8-143">A tulajdonságok kibontási mélységének módosítása a `-Depth` argumentummal történik.</span><span class="sxs-lookup"><span data-stu-id="943b8-143">To change the depth of properties expanded, use the `-Depth` argument.</span></span> <span data-ttu-id="943b8-144">Az alapértelmezett kibontási mélység a `2`.</span><span class="sxs-lookup"><span data-stu-id="943b8-144">By default, the expansion depth is `2`.</span></span>
+<span data-ttu-id="b8a10-142">A JSON-kimenet alapértelmezés szerint nem bontja ki az összes tulajdonságot.</span><span class="sxs-lookup"><span data-stu-id="b8a10-142">JSON output doesn't expand all properties by default.</span></span> <span data-ttu-id="b8a10-143">A tulajdonságok kibontási mélységének módosítása a `-Depth` argumentummal történik.</span><span class="sxs-lookup"><span data-stu-id="b8a10-143">To change the depth of properties expanded, use the `-Depth` argument.</span></span> <span data-ttu-id="b8a10-144">Az alapértelmezett kibontási mélység a `2`.</span><span class="sxs-lookup"><span data-stu-id="b8a10-144">By default, the expansion depth is `2`.</span></span>
 
 ```azurepowershell-interactive
 Get-AzVM|ConvertTo-JSON
 ```
 
-<span data-ttu-id="943b8-145">Az alábbi kimenetből néhány mező el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="943b8-145">The following output has some fields removed.</span></span>
+<span data-ttu-id="b8a10-145">Az alábbi kimenetből néhány mező el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="b8a10-145">The following output has some fields removed.</span></span>
 
 ```output
 [
@@ -297,9 +297,9 @@ Get-AzVM|ConvertTo-JSON
 ]
 ```
 
-### <a name="conversion-to-xml"></a><span data-ttu-id="943b8-146">Átalakítás XML formátumba</span><span class="sxs-lookup"><span data-stu-id="943b8-146">Conversion to XML</span></span>
+### <a name="conversion-to-xml"></a><span data-ttu-id="b8a10-146">Átalakítás XML formátumba</span><span class="sxs-lookup"><span data-stu-id="b8a10-146">Conversion to XML</span></span>
 
-<span data-ttu-id="943b8-147">A `ConvertTo-XML` parancsmag az Azure PowerShell-válaszobjektumot tiszta XML-objektummá konvertálja, amely a többi XML-objektumhoz hasonlóan kezelhető a PowerShellben.</span><span class="sxs-lookup"><span data-stu-id="943b8-147">The `ConvertTo-XML` cmdlet converts the Azure PowerShell response object into a pure XML object, which can be handled like any other XML object within PowerShell.</span></span> 
+<span data-ttu-id="b8a10-147">A `ConvertTo-XML` parancsmag az Azure PowerShell-válaszobjektumot tiszta XML-objektummá konvertálja, amely a többi XML-objektumhoz hasonlóan kezelhető a PowerShellben.</span><span class="sxs-lookup"><span data-stu-id="b8a10-147">The `ConvertTo-XML` cmdlet converts the Azure PowerShell response object into a pure XML object, which can be handled like any other XML object within PowerShell.</span></span> 
 
 ```azurepowershell-interactive
 Get-AzVM | ConvertTo-XML
@@ -311,10 +311,10 @@ xml                            Objects
 version="1.0" encoding="utf-8" Objects
 ```
 
-### <a name="conversion-to-html"></a><span data-ttu-id="943b8-148">Átalakítás HTML formátumba</span><span class="sxs-lookup"><span data-stu-id="943b8-148">Conversion to HTML</span></span>
+### <a name="conversion-to-html"></a><span data-ttu-id="b8a10-148">Átalakítás HTML formátumba</span><span class="sxs-lookup"><span data-stu-id="b8a10-148">Conversion to HTML</span></span>
 
-<span data-ttu-id="943b8-149">Az objektumok HTML formátumba való konvertálásának kimenete HTML-táblázatként lesz megjelenítve.</span><span class="sxs-lookup"><span data-stu-id="943b8-149">Converting an object to HTML produces output that will be rendered as an HTML table.</span></span> <span data-ttu-id="943b8-150">A HTML formátumú kimenet renderelése attól függ, hogy a böngészője hogyan jeleníti meg a szélességadatokat nem tartalmazó táblázatokat.</span><span class="sxs-lookup"><span data-stu-id="943b8-150">Rendering of the HTML will depend on your browser behavior for rendering tables which contain no width information.</span></span>
-<span data-ttu-id="943b8-151">Az egyéni osztály objektumok nincsenek kibontva.</span><span class="sxs-lookup"><span data-stu-id="943b8-151">No custom class objects are expanded.</span></span>
+<span data-ttu-id="b8a10-149">Az objektumok HTML formátumba való konvertálásának kimenete HTML-táblázatként lesz megjelenítve.</span><span class="sxs-lookup"><span data-stu-id="b8a10-149">Converting an object to HTML produces output that will be rendered as an HTML table.</span></span> <span data-ttu-id="b8a10-150">A HTML formátumú kimenet renderelése attól függ, hogy a böngészője hogyan jeleníti meg a szélességadatokat nem tartalmazó táblázatokat.</span><span class="sxs-lookup"><span data-stu-id="b8a10-150">Rendering of the HTML will depend on your browser behavior for rendering tables which contain no width information.</span></span>
+<span data-ttu-id="b8a10-151">Az egyéni osztály objektumok nincsenek kibontva.</span><span class="sxs-lookup"><span data-stu-id="b8a10-151">No custom class objects are expanded.</span></span>
 
 ```azurepowershell-interactive
 Get-AzVM | ConvertTo-HTML
