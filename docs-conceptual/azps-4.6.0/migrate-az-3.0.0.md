@@ -4,12 +4,13 @@ description: Ebben a migrálási útmutatóban megtalálja az Azure PowerShell A
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 06be35bc3573d00d90a8cf2d822ac051ab72f6bb
-ms.sourcegitcommit: b94a3f00c147144b0ef7f8cf8d0f151e04674b89
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 727a74ef9cd0f6e1bf93b65c4776816c1aa23334
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88821698"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89242681"
 ---
 # <a name="migration-guide-for-az-300"></a>Migrálási útmutató az Az 3.0.0-s verziójához
 

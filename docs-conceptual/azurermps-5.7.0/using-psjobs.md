@@ -1,22 +1,20 @@
 ---
 title: Parancsmagok párhuzamos futtatása PowerShell-feladatok használatával
 description: Parancsok párhuzamos futtatása az -AsJob paraméter segítségével.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/11/2017
-ms.openlocfilehash: d2ffd6cc4c5e70c53ab60b1280384faac9b45867
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: b5385a9fa3da508e6f0841baea2e4bcd20503b9f
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534729"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89243548"
 ---
 # <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>Parancsmagok párhuzamos futtatása PowerShell-feladatok használatával
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 A PowerShell a [PowerShell-feladatok](/powershell/module/microsoft.powershell.core/about/about_jobs) révén támogatja az aszinkron műveleteket.
 Az Azure PowerShell működése nagymértékben függ az Azure-hoz intézett hálózati hívások létrehozásától és a rájuk való várakozástól. A fejlesztők munkája során gyakran előfordul, hogy több, nem blokkoló hívást szeretnének intézni az Azure-hoz egy szkripten belül, vagy az aktuális munkamenet blokkolása nélkül szeretnének Azure-erőforrásokat létrehozni az REPL-ben. Az Azure PowerShell első osztályú [PS-feladattámogatást](/powershell/module/microsoft.powershell.core/about/about_jobs) biztosít ezen igények kielégítése céljából.

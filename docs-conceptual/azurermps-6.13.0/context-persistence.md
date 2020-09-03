@@ -4,16 +4,17 @@ description: A cikkből megismerheti, hogyan használhatók fel újra az Azure-b
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
-ms.openlocfilehash: 946920c22d7f6faeae8d3192e9f37a276a34d11f
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: edae36941312471df52946cdd752a3c1eca643ad
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83388023"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89243344"
 ---
 # <a name="persist-user-credentials-across-powershell-sessions"></a>Felhasználói hitelesítő adatok megőrzése a PowerShell-munkamenetek között
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 Az Azure PowerShell új, **Azure-környezet automatikus mentése** nevű funkciója a következő szolgáltatásokat nyújtja:
 
@@ -136,9 +137,9 @@ Ha a változó értéke „true”, a rendszer automatikusan menti a környezete
 
 Meglévő profilparancsmagok változásai
 
-- [Add-AzureRmAccount][login] – A bejelentkezés hatóköre beállításának engedélyezése a folyamatra vagy az aktuális felhasználóra.
+- [Add-AzureRmAccount][login] – Lehetővé teszi a bejelentkezés hatókörének beállítását a folyamatra vagy az aktuális felhasználóra.
   Lehetővé teszi az alapértelmezett környezet elnevezését a bejelentkezés után.
-- [Import-AzureRmContext][import] – A bejelentkezés hatóköre beállításának engedélyezése a folyamatra vagy az aktuális felhasználóra.
+- [Import-AzureRmContext][import] – Lehetővé teszi a bejelentkezés hatókörének beállítását a folyamatra vagy az aktuális felhasználóra.
 - [Set-AzureRmContext][set-context] – A meglévő elnevezett környezetek kiválasztásának, valamint a hatókör a folyamatra vagy az aktuális felhasználóra való beállításának engedélyezése.
 
 <!-- Hyperlinks -->

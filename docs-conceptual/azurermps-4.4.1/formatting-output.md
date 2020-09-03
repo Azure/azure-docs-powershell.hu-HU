@@ -4,16 +4,17 @@ description: Az erőforrások lekérdezése az Azure-ban, illetve az eredmények
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: a76ceee5ae1172630d74afd3c671031592d78a8b
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 54895da77a0073f34c1fae9565eb93092de9cfd1
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83386765"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89238715"
 ---
 # <a name="formatting-query-results"></a>Lekérdezési eredmények formázása
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 Alapértelmezés szerint minden PowerShell-parancsmag kimenete előre meghatározott formátummal rendelkezik, hogy könnyen olvasható legyen.  A PowerShell lehetővé teszi a parancsmag kimenetének rugalmas állítását, vagy más formátumba való átalakítását a következő parancsmagokkal:
 

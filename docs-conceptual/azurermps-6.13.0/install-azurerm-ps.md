@@ -4,16 +4,17 @@ description: Az Azure PowerShell telepítése a PowerShellGet segítségével
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/16/2018
-ms.openlocfilehash: 2615d1efef05c892552d7ccbea6fcff37f871039
-ms.sourcegitcommit: c19bf5a96a82a56e2b1fa9ab5e106690f850cedf
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 4c6b5b0fd1ad2cafc4d2a1cbf8af7724060ce184
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177458"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89243293"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Az Azure PowerShell telepítése Windows rendszeren a PowerShellGet használatával
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 Ez a cikk a PowerShell 5.x verziójához készült Azure PowerShell-modulok telepítésének lépéseit ismerteti Windows-környezetben a PowerShellGet használatával. A PowerShellGet használata és a modulok kezelése az Azure PowerShell előnyben részesített telepítési módja, de ha mégis inkább a Webplatform-telepítővel vagy az MSI-csomaggal szeretné telepíteni, tekintse meg az [egyéb telepítési módszerekkel kapcsolatos](other-install.md) szakaszt.
 

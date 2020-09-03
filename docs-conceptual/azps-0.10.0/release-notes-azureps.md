@@ -4,12 +4,13 @@ description: Megismerheti az Azure PowerShell-modulok legújabb frissítéseit.
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: 9dd733865ba8235eed6dcef4637a63ad93999338
-ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: f0a8c70ac16c99235b9497cddd03ec4796b40482
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84121915"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89239349"
 ---
 # <a name="azure-powershell-release-notes"></a>Az Azure PowerShell kibocsátási megjegyzései
 ## <a name="0100-preview---april-2020"></a>0.10.0-s előzetes verzió – 2020. április
