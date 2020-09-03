@@ -4,12 +4,13 @@ description: Az Azure PowerShell telepítése a PowerShellGet nélkül, MSI hasz
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/22/2019
-ms.openlocfilehash: 1bae6879dcf3cd56f9a8d6400bcd516e0cbf6a19
-ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 7e36765f34a689640e1ed82f5fa221e71d3e08ec
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84121647"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89244211"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi"></a>Az Azure PowerShell telepítése Windows rendszeren MSI-vel
 

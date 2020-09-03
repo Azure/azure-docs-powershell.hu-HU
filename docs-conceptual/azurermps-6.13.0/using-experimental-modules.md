@@ -4,16 +4,17 @@ description: A kísérleti Azure PowerShell-modulok filozófiájának és haszn�
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.openlocfilehash: 2c52dec39bdc656c7a2b17c547ec5f87ac659fa1
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 2a44d29cb0770bf1517993606358c3669b2ee982
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387292"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89244245"
 ---
 # <a name="use-experimental-azure-powershell-modules"></a>Kísérleti Azure PowerShell-modulok használata
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 Mivel az Azure a fejlesztői eszközökre (különösen a parancssori felületekre) helyezi a hangsúlyt, az Azure PowerShell csapata az Azure PowerShell felhasználói felületének számos fejlesztésével kísérletezik.
 

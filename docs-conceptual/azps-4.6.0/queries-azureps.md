@@ -4,12 +4,13 @@ description: Az erőforrások lekérdezése az Azure-ban, illetve az eredmények
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/10/2019
-ms.openlocfilehash: ebd108a2c13bdb376213d054fb72188e6205a565
-ms.sourcegitcommit: b94a3f00c147144b0ef7f8cf8d0f151e04674b89
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 2754df5132ca9d528217fa5caad95b7f59cc8215
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88821725"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89244415"
 ---
 # <a name="query-output-of-azure-powershell"></a>Az Azure PowerShell lekérdezésének kimenete 
 

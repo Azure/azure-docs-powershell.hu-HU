@@ -4,12 +4,13 @@ description: Hogyan lehet bejelentkezni az Azure PowerShellbe felhasználóként
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 7/7/2020
-ms.openlocfilehash: 7ac723202ca9e81c8ef4cba5e844d46b98ba4b67
-ms.sourcegitcommit: edfe63c6949cd59127028ac8a13bb4a8827d555c
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 8f18af8ed67ecf2aefd353208c07bf812df732d9
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87566438"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89239894"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Bejelentkezés az Azure PowerShell-lel
 

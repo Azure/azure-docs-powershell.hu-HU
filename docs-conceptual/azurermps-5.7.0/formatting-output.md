@@ -4,16 +4,17 @@ description: Az Azure PowerShell-parancsmagok kimenetének formázása.
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/07/2018
-ms.openlocfilehash: 9f35bb95d56c6c0fc070d6b291fbb95d369c789b
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 6333546ec0d57b6dedab6e26721dfab459a0fe44
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83384984"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89243820"
 ---
 # <a name="format-azurepowershell-cmdlet-output"></a>Azure PowerShell-parancsmag kimenetének formázása
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 Alapértelmezés szerint minden Azure PowerShell-parancsmag kimenete előre meghatározott formátummal rendelkezik, hogy könnyen olvasható legyen.  A PowerShell lehetővé teszi a parancsmag kimenetének rugalmas állítását, vagy más formátumba való átalakítását a következő parancsmagokkal:
 

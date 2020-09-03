@@ -4,12 +4,13 @@ description: Az Azure PowerShell-parancsmagok kimenetének formázása.
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/07/2019
-ms.openlocfilehash: dbce06569ada169cdd93ae85d40e1554a7f7fdec
-ms.sourcegitcommit: b94a3f00c147144b0ef7f8cf8d0f151e04674b89
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 27acf416d118fb4e25f0f683d97f3a56fe882a1a
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88821822"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89244466"
 ---
 # <a name="format-azure-powershell-cmdlet-output"></a>Azure PowerShell-parancsmag kimenetének formázása
 
