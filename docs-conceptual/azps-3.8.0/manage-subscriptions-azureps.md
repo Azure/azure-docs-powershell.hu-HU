@@ -4,12 +4,13 @@ description: Azure-előfizetések kezelése az Azure PowerShell-lel
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/04/2019
-ms.openlocfilehash: 2fbf4387bb6a3b70a95bf607e3a24d61539e5810
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: cfe5833bd8bbfac53f65695f8bdfbd7b946a8852
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387479"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89240658"
 ---
 # <a name="use-multiple-azure-subscriptions"></a>Több Azure-előfizetés használata
 

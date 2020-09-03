@@ -4,12 +4,13 @@ description: Ebben a migrálási útmutatóban megtalálja az Azure PowerShell A
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
-ms.openlocfilehash: d2e67ada70fed91a939dc72935e2fa639c731002
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 5aad9264cf5ea19d17601a7217285ec30b6d93ac
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387020"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89241150"
 ---
 # <a name="breaking-changes-for-az-100"></a>Az Az 1.0.0 kompatibilitástörő változásai
 
@@ -334,7 +335,7 @@ A szkriptek a jövőben nem hozhatnak feldolgozási döntéseket e mezők érté
 - Módosítottuk a következő parancsmag visszatérési típusait:
   - Az `ApplicationHealthPolicy` típus `ServiceTypeHealthPolicies` tulajdonsága el lett távolítva.
   - Az `ClusterUpgradeDeltaHealthPolicy` típus `ApplicationHealthPolicies` tulajdonsága el lett távolítva.
-  - A `ClusterUpgradePolicy` típus `OverrideUserUpgradePolicy` tulajdonsága el lett távolítva.
+  - Az `ClusterUpgradePolicy` típus `OverrideUserUpgradePolicy` tulajdonsága el lett távolítva.
   - Ezek a módosítások a következő parancsmagokat érintik:
     - Add-AzServiceFabricClientCertificate
     - Add-AzServiceFabricClusterCertificate

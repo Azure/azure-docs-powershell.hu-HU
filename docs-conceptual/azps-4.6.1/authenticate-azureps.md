@@ -3,23 +3,22 @@ title: Bejelentkezés az Azure PowerShell-lel
 description: Hogyan lehet bejelentkezni az Azure PowerShellbe felhasználóként, szolgáltatásnévként vagy az Azure-erőforrások felügyelt identitásaival.
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/04/2019
+ms.date: 7/7/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 1730d3f8d9fd2783b14c57c94bb3357803623b37
+ms.openlocfilehash: 8f18af8ed67ecf2aefd353208c07bf812df732d9
 ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 09/01/2020
-ms.locfileid: "89242035"
+ms.locfileid: "89242171"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Bejelentkezés az Azure PowerShell-lel
 
 Az Azure PowerShell többféle hitelesítési módszert támogat. Első lépésként a legegyszerűbb, ha az [Azure Cloud Shellt](/azure/cloud-shell/overview) használja, amely automatikusan belépteti. Helyi telepítés esetén interaktívan jelentkezhet be a böngészőjén keresztül. Automatizálási szkriptek írásakor az ajánlott módszer a [szolgáltatásnév](create-azure-service-principal-azureps.md) használata a szükséges engedélyekkel. Egyéni használati esetekben az Azure-erőforrások biztonságát úgy őrizheti meg, ha a lehető legnagyobb mértékben korlátozza a bejelentkezési engedélyeket.
 
-Bejelentkezés után a parancsokat a rendszer az alapértelmezett előfizetésen futtatja. Az adott munkamenethez tartozó aktív előfizetés módosításához használja a [Set-AzContext](/powershell/module/az.accounts/set-azcontext) parancsmagot. Az Azure PowerShell-lel való bejelentkezéskor használt alapértelmezett előfizetés módosításához használja a [Set-AzDefault](/powershell/module/az.accounts/set-azdefault) parancsmagot.
+A kezdetekkor az Azure által visszaadott első előfizetésbe lesz bejelentkezve, ha egynél több előfizetéshez rendelkezik hozzáféréssel. Alapértelmezés szerint a futtatott parancsok ezen az előfizetésen lesznek végrehajtva. Az adott munkamenethez tartozó aktív előfizetés módosításához használja a [Set-AzContext](/powershell/module/az.accounts/set-azcontext) parancsmagot. Ha módosítani szeretné az aktív előfizetését, és szeretné, hogy ez az ugyanazon a rendszeren indított munkamenetek között rögzítve legyen, használja a [Select-AzContext](/powershell/module/az.accounts/select-azcontext) parancsmagot.
 
 > [!IMPORTANT]
->
 > A hitelesítő adatok megoszlanak több PowerShell-munkamenet között, ha be van jelentkezve.
 > További információért tekintse meg az [Állandó hitelesítő adatokat](context-persistence.md) ismertető cikket.
 
@@ -31,12 +30,16 @@ Az interaktív bejelentkezéshez használja a [Connect-AzAccount](/powershell/mo
 Connect-AzAccount
 ```
 
-A futtatáskor ez a parancsmag jogkivonatsztringet jelenít meg. A bejelentkezéshez másolja ezt a sztringet a https://microsoft.com/devicelogin címbe egy böngészőben. A rendszer ekkor hitelesíti a PowerShell-munkamenetet az Azure-hoz való csatlakozáshoz.
+A PowerShell 6-os vagy újabb verziójának futtatásakor ez a parancsmag jogkivonatsztringet jelenít meg. A bejelentkezéshez másolja és illessze be ezt a sztringet a [microsoft.com/devicelogin](https://microsoft.com/devicelogin) helyre egy webböngészőben. A rendszer ekkor hitelesíti a PowerShell-munkamenetet az Azure-hoz való csatlakozáshoz. Megadhatja a `UseDeviceAuthentication` paramétert úgy, hogy jogkivonatsztringet fogadjon a Windows PowerShellen.
 
 > [!IMPORTANT]
->
-> Az Active Directory engedélyezési folyamatának végrehajtásában történt módosítások miatt és biztonsági okokból a felhasználónévvel és jelszóval történő hitelesítés el lett távolítva az Azure PowerShellből.
-> Ha az automatizálhatóság érdekében használta ezt a típusú hitelesítést, helyette [hozzon létre egy szolgáltatásnevet](create-azure-service-principal-azureps.md).
+> Az Active Directory engedélyezési folyamatának végrehajtásában történt módosítások miatt és biztonsági okokból a felhasználónévvel és jelszóval történő hitelesítés el lett távolítva az Azure PowerShellből. Ha az automatizálhatóság érdekében használta ezt a típusú hitelesítést, helyette [hozzon létre egy szolgáltatásnevet](create-azure-service-principal-azureps.md).
+
+Használhatja a [Get-AzContext](/powershell/module/az.accounts/get-azcontext) parancsmagot a bérlőazonosító tárolásához egy változóban, mert a cikk két ezt követő szakaszában szükség lesz rá.
+
+```azurepowershell-interactive
+$tenantId = (Get-AzContext).Tenant.Id
+```
 
 ## <a name="sign-in-with-a-service-principal"></a>Bejelentkezés szolgáltatásnévvel <a name="sp-signin"/>
 
@@ -48,18 +51,26 @@ Szolgáltatásnévvel való bejelentkezéshez használja a `-ServicePrincipal` a
 
 ### <a name="password-based-authentication"></a>Jelszóalapú hitelesítés
 
-Annak érdekében, hogy a szolgáltatásnév hitelesítő adatait a megfelelő objektumként kapja meg, használja a [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential) parancsmagot. Ez a parancsmag felhasználónév és jelszó megadását kéri. Felhasználónévként használja a szolgáltatásnév azonosítóját.
+Hozzon létre egy szolgáltatásnevet, hogy használhassa ennek a szakasznak a példáiban. További információ a szolgáltatásnevek létrehozásával kapcsolatban: [Azure-beli szolgáltatásnév létrehozása az Azure PowerShell használatával](/powershell/azure/create-azure-service-principal-azureps).
 
 ```azurepowershell-interactive
-$pscredential = Get-Credential
+$sp = New-AzADServicePrincipal -DisplayName ServicePrincipalName
+```
+
+Annak érdekében, hogy a szolgáltatásnév hitelesítő adatait a megfelelő objektumként kapja meg, használja a [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential) parancsmagot. Ez a parancsmag felhasználónév és jelszó megadását kéri. Használja a szolgáltatásnév `applicationID` azonosítóját felhasználónévként, és konvertálja annak `secret` paraméterét egyszerű szöveggé a jelszóhoz.
+
+```azurepowershell-interactive
+# Retrieve the plain text password for use with `Get-Credential` in the next command.
+$sp.secret | ConvertFrom-SecureString -AsPlainText
+
+$pscredential = Get-Credential -UserName $sp.ApplicationId
 Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
 ```
 
-Automatizálási forgatókönyvek esetén a hitelesítő adatokat egy felhasználónévből és egy biztonságos sztringből kell létrehoznia:
+Automatizálási forgatókönyvek esetén a hitelesítő adatokat egy szolgáltatásnév `applicationId` és `secret` paramétereiből kell létrehozni:
 
 ```azurepowershell-interactive
-$passwd = ConvertTo-SecureString <use a secure password here> -AsPlainText -Force
-$pscredential = New-Object System.Management.Automation.PSCredential('service principal name/id', $passwd)
+$pscredential = New-Object -TypeName System.Management.Automation.PSCredential($sp.ApplicationId, $sp.Secret)
 Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
 ```
 
@@ -93,15 +104,15 @@ Import-PfxCertificate -FilePath <path to certificate> -Password $credentials.Pas
 
 ```azurepowershell-interactive
 # Import a PFX
-$storeName = [System.Security.Cryptography.X509Certificates.StoreName]::My 
-$storeLocation = [System.Security.Cryptography.X509Certificates.StoreLocation]::CurrentUser 
-$store = [System.Security.Cryptography.X509Certificates.X509Store]::new($storeName, $storeLocation) 
+$storeName = [System.Security.Cryptography.X509Certificates.StoreName]::My
+$storeLocation = [System.Security.Cryptography.X509Certificates.StoreLocation]::CurrentUser
+$store = [System.Security.Cryptography.X509Certificates.X509Store]::new($storeName, $storeLocation)
 $certPath = <path to certificate>
 $credentials = Get-Credential -Message "Provide PFX private key password"
-$flag = [System.Security.Cryptography.X509Certificates.X509KeyStorageFlags]::Exportable 
-$certificate = [System.Security.Cryptography.X509Certificates.X509Certificate2]::new($certPath, $credentials.Password, $flag) 
-$store.Open([System.Security.Cryptography.X509Certificates.OpenFlags]::ReadWrite) 
-$store.Add($Certificate) 
+$flag = [System.Security.Cryptography.X509Certificates.X509KeyStorageFlags]::Exportable
+$certificate = [System.Security.Cryptography.X509Certificates.X509Certificate2]::new($certPath, $credentials.Password, $flag)
+$store.Open([System.Security.Cryptography.X509Certificates.OpenFlags]::ReadWrite)
+$store.Add($Certificate)
 $store.Close()
 ```
 
@@ -109,15 +120,15 @@ $store.Close()
 
 A felügyelt identitások az Azure Active Directory funkciójaként érhetők el. A felügyelt identitások Azure-ban futó erőforrásokhoz társított szolgáltatásnevek. A felügyelt identitás szolgáltatásnevével bejelentkezhet, és beszerezhet egy csak alkalmazásra érvényes hozzáférési jogkivonatot az egyéb erőforrások eléréséhez. A felügyelt identitások csak az Azure-felhőkben futó erőforrásokon érhetők el.
 
-Ez a parancs a felügyelt identitás használatával kapcsolódik a gazdakörnyezethez. Ha például egy hozzárendelt felügyeletszolgáltatás-identitással rendelkező virtuális gépet használ, akkor a kód számára lehetővé válik a hozzárendelt identitással való bejelentkezés.
+Ebben a példában a kapcsolódás a gazdakörnyezet felügyelt identitásával történik. Ha például egy hozzárendelt felügyeletszolgáltatás-identitással rendelkező virtuális gépet használ, akkor a kód számára lehetővé válik a hozzárendelt identitással való bejelentkezés.
 
 ```azurepowershell-interactive
- Connect-AzAccount -Identity 
+ Connect-AzAccount -Identity
 ```
 
 ## <a name="sign-in-with-a-non-default-tenant-or-as-a-cloud-solution-provider-csp"></a>Bejelentkezés nem alapértelmezett bérlővel vagy felhőszolgáltatóként (CSP-ként)
 
-Ha a fiókja egynél több bérlőhöz van társítva, kapcsolódáskor a bejelentkezéshez a `-Tenant` paramétert kell használni. Ez a paraméter bármely bejelentkezési módszer esetében használható. Bejelentkezéskor a paraméter értéke a bérlő Azure-objektumazonosítója (bérlőazonosító) vagy a bérlő teljes tartományneve lehet.
+Ha a fiókja egynél több bérlőhöz van társítva, kapcsolódáskor a bejelentkezéshez a `-Tenant` paramétert kell megadni. Ez a paraméter bármely bejelentkezési módszer esetében használható. Bejelentkezéskor a paraméter értéke a bérlő Azure-objektumazonosítója (bérlőazonosító) vagy a bérlő teljes tartományneve lehet.
 
 [Felhőszolgáltatóként (CSP-ként)](https://azure.microsoft.com/offers/ms-azr-0145p/) való bejelentkezés esetén a `-Tenant` értékének a bérlőazonosítónak **kell** lennie.
 
@@ -127,9 +138,7 @@ Connect-AzAccount -Tenant 'xxxx-xxxx-xxxx-xxxx'
 
 ## <a name="sign-in-to-another-cloud"></a>Bejelentkezés egy másik felhőbe
 
-Az Azure Cloud Services által biztosított környezetek megfelelnek a helyi szabályozásoknak.
-Regionális felhőszolgáltatásban található fiókok esetében a környezetet az `-Environment` argumentummal való bejelentkezéskor kell beállítania.
-Ez a paraméter bármely bejelentkezési módszer esetében használható. Például ha a fiók a kínai felhőszolgáltatásban található:
+Az Azure Cloud Services által biztosított környezetek megfelelnek a helyi szabályozásoknak. Regionális felhőszolgáltatásban található fiókok esetében a környezetet az `-Environment` argumentummal való bejelentkezéskor kell beállítania. Ez a paraméter bármely bejelentkezési módszer esetében használható. Például ha a fiók a kínai felhőszolgáltatásban található:
 
 ```azurepowershell-interactive
 Connect-AzAccount -Environment AzureChinaCloud
@@ -138,5 +147,5 @@ Connect-AzAccount -Environment AzureChinaCloud
 Az alábbi paranccsal olvashatja be a rendelkezésre álló környezetek listáját:
 
 ```azurepowershell-interactive
-Get-AzEnvironment | Select-Object Name
+Get-AzEnvironment | Select-Object -Property Name
 ```

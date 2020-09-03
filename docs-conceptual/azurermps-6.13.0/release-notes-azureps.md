@@ -5,16 +5,17 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 08/28/2018
-ms.openlocfilehash: 8aa0462af97877e0d20fe898ddd927a6d2850dea
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 189b360f8825b7de93b67b0b2cbe670d00187327
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387326"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89241355"
 ---
 # <a name="release-notes"></a>Kibocsátási megjegyzések
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítások listája olvasható.
 
@@ -46,7 +47,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * A következő új parancsmagok érhetőek el: New-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayCustomError, Get-AzureRmApplicationGatewayCustomError, Set-AzureRmApplicationGatewayCustomError, Remove-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayHttpListenerCustomError, Get-AzureRmApplicationGatewayHttpListenerCustomError, Set-AzureRmApplicationGatewayHttpListenerCustomError, Remove-AzureRmApplicationGatewayHttpListenerCustomError.
 * Az ICMP újra bekerült a támogatott Azure Firewall hálózati protokollok közé.
-* Frissült a Test-AzureRmNetworkWatcherConnectivity parancsmag, új érvényesítési lehetőségek érhetőek el a célazonosítóra, címre és portra vonatkozóan. 
+* Frissült a Test-AzureRmNetworkWatcherConnectivity parancsmag, új érvényesítési lehetőségek érhetőek el a célazonosítóra, címre és portra vonatkozóan.
 * Ki lettek javítva a memóriahasználattal kapcsolatos problémák a VirtualNetwork leképezésben.
 
 #### <a name="azurermrecoveryservicesbackup"></a>AzureRM.RecoveryServices.Backup
@@ -231,14 +232,14 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
 #### <a name="azurermprofile"></a>AzureRM.Profile
 * Kisebb módosítások a tárolók általános kódjában
 * Teljes paramétertípusokkal frissült súgófájlok
-* A -ServicePrincipal módosítása nem kötelezőre a ServicePrincipalCertificateWithSubscriptionId paraméterkészletben 
+* A -ServicePrincipal módosítása nem kötelezőre a ServicePrincipalCertificateWithSubscriptionId paraméterkészletben
 
 #### <a name="azurestorage"></a>Azure.Storage
-* Storage-környezet létrehozásának támogatása OAuth használatával. 
+* Storage-környezet létrehozásának támogatása OAuth használatával.
     - New-AzureStorageContext
 
 #### <a name="azurermcdn"></a>AzureRM.Cdn
-* Standard_Microsoft hozzáadva a CDN-díjszabási termékváltozatban. 
+* Standard_Microsoft hozzáadva a CDN-díjszabási termékváltozatban.
 
 #### <a name="azurermcompute"></a>AzureRM.Compute
 * A Key Vault és a Storage függőségeinek áthelyezése az általános függőségekhez
@@ -349,7 +350,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
 * Verzió mező hozzáadva a PSSignalRResource objektumhoz, és kapcsolati sztring hozzáadva a PSSignalRKeys objektumhoz.
 
 #### <a name="azurermstorage"></a>AzureRM.Storage
-* Módosíthatatlansági szabályzat támogatva az AzureRM.Storage-ban 
+* Módosíthatatlansági szabályzat támogatva az AzureRM.Storage-ban
     - Remove-AzureRmStorageAccountNetworkRule
     - Get-AzureRmStorageContainer
     - Update-AzureRmStorageContainer
@@ -685,7 +686,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
 * Frissült a New-AzureRmDisk példája
 * Hozzá lett adva egy, a New-AzureRmVM-re vonatkozó példa
 * Frissült a Set-AzureRmVMOSDisk leírása
-* Megfelelő helyesírással és előtaggal frissült a Set-AzureRmVMBginfoExtension 1. példája. 
+* Megfelelő helyesírással és előtaggal frissült a Set-AzureRmVMBginfoExtension 1. példája.
 
 #### <a name="azurermdatafactoryv2"></a>AzureRM.DataFactoryV2
 * Az ADF.Net SDK verziója 1.1.0-ra frissült.
@@ -897,7 +898,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
 * További információk lettek hozzáadva a súgófájlokhoz a -Permissions paraméterrel kapcsolatban.
 
 #### <a name="azurermcompute"></a>AzureRM.Compute
-* A Get-AzureRmVmDiskEncryptionStatus kijavít egy hibát, amely az adatlemezekkel nem rendelkező virtuális gépeken jelentkezik 
+* A Get-AzureRmVmDiskEncryptionStatus kijavít egy hibát, amely az adatlemezekkel nem rendelkező virtuális gépeken jelentkezik
 * A Compute ügyfélkódtár-verziója frissült, a következő parancsmagok javítása érdekében
     - Grant-AzureRmDiskAccess
     - Grant-AzureRmSnapshotAccess
@@ -1020,8 +1021,8 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
 
 #### <a name="azurermdatalakestore"></a>AzureRM.DataLakeStore
 * Az Export-AzureRmDataLakeStoreChildItemProperties példájának kijavítása
-* A Set-AzureRmDataLakeStoreItemAclEntry Recurse esetében fellépő null paraméter kivétel kijavítása 
-* A Set-AzureRmDataLakeStoreItemAclEntry, a Set-AzureRmDataLakeStoreItemAcl és a Remove-AzureRmDataLakeStoreItemAclEntry súgófájljainak javítása 
+* A Set-AzureRmDataLakeStoreItemAclEntry Recurse esetében fellépő null paraméter kivétel kijavítása
+* A Set-AzureRmDataLakeStoreItemAclEntry, a Set-AzureRmDataLakeStoreItemAcl és a Remove-AzureRmDataLakeStoreItemAclEntry súgófájljainak javítása
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * A hálózati SDK-verzió felléptetése a 18.0.0-s előzetes verzióról a 19.0.0-s előzetes verzióra
@@ -1041,7 +1042,7 @@ Az alábbiakban az Azure PowerShell jelen kiadásában végrehajtott módosítá
 * A frissített naplózási parancsmagok lehetővé teszik az AuditAction és AuditActionGroup paraméterek eltávolítását
 * A Set-AzureRmSqlDatabaseBackupLongTermRetentionPolicy hibája ki lett javítva, amikor az új rugalmas adatmegőrzési szabályzatok megadásakor a parancs a következő hibát adta vissza: „A hosszútávú adatmegőrzési szabályzat megadása Azure Recovery Services-tárolókkal és szabályzatokkal már nem támogatott. Adja le a kérést az új rugalmas adatmegőrzési szabályzattal”.
 * Az összes Azure SQL Database/ElasticPool létrehozással/frissítéssel kapcsolatos parancsmag frissítve lett az új Database API használatára, amely támogatja a termékváltozat tulajdonságot a méretezéssel és szintekkel kapcsolatos tulajdonságok esetében.
-* A frissített parancsmagok a következők: 
+* A frissített parancsmagok a következők:
     - New-AzureRmSqlDatabase; Set-AzureRmSqlDatabase
     - New-AzureRmSqlElasticPool; Set-AzureRmSqlElasticPool
     - New-AzureRmSqlDatabaseCopy

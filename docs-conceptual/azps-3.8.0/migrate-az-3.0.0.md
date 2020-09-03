@@ -1,18 +1,16 @@
 ---
 title: Migrálási útmutató az Az 3.0.0-s verziójához
 description: Ebben a migrálási útmutatóban megtalálja az Azure PowerShell Az 3.0-s verziójában található kompatibilitástörő változások listáját.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: e88752e0c997efc4f49161e358072803cb63450a
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 727a74ef9cd0f6e1bf93b65c4776816c1aa23334
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81740133"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89240828"
 ---
 # <a name="migration-guide-for-az-300"></a>Migrálási útmutató az Az 3.0.0-s verziójához
 
