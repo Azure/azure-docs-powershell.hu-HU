@@ -4,12 +4,13 @@ description: Az Azure PowerShell telepítése a PowerShellGet segítségével
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/14/2020
-ms.openlocfilehash: caa0c2fbba8b8b7e07424481360a60f3da163e66
-ms.sourcegitcommit: b94a3f00c147144b0ef7f8cf8d0f151e04674b89
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: a263f1d363b3d1a1cce433a6112c55afe65262a4
+ms.sourcegitcommit: 2f1e3c275626fba1c4275cae8ef1d13b11f55735
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88821859"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89449993"
 ---
 # <a name="install-azure-powershell"></a>Az Azure PowerShell telepítése
 
