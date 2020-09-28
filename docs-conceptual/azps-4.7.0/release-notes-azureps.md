@@ -5,14 +5,176 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 52129f31202a8ae04bf80988b5aa07b12fe081b8
+ms.openlocfilehash: 98bae70dbd61c74aa92e69cb67afc89ebae23f70
 ms.sourcegitcommit: 15f21c40dcb7610e2fbaaabf264ad925e4224500
 ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 09/22/2020
-ms.locfileid: "90913382"
+ms.locfileid: "90928377"
 ---
 # <a name="azure-powershell-release-notes"></a>Az Azure PowerShell kibocsátási megjegyzései
+
+## <a name="470---september-2020"></a>4.7.0 – 2020. szeptember
+#### <a name="azaccounts"></a>Az.Accounts
+* A jövőbeni kompatibilitástörő változáshoz kapcsolódó üzenetek formázva lettek
+* Az Azure.Core frissítve lett az 1.4.1-es verzióra
+
+#### <a name="azaks"></a>Az.Aks
+* Az ügyféloldali paraméter ellenőrzési logikája hozzá lett adva a 'New-AzAksCluster', a 'set-AzAksCluster' és a 'New-AzAksNodePool' esetében. [#12372]
+* A 'New-AzAksCluster' bővítményei mostantól támogatottak. [#11239]
+* Az 'Enable-AzAksAddOn' és a 'Disable-AzAksAddOn' parancsmagok hozzá lettek adva a bővítmények esetében. [#11239]
+* A 'GenerateSshKey' paraméter hozzá lett adva a 'New-AzAksCluster' esetében. [#12371]
+* Az API-verzió frissítve lett a 2020-06-01-es verzióra.
+
+#### <a name="azcognitiveservices"></a>Az.CognitiveServices
+* További jogi feltételek lettek megjelenítve bizonyos API-k esetében.
+
+#### <a name="azcompute"></a>Az.Compute
+* Az '-EncryptionType' opcionális paraméter hozzá lett adva a következőhöz: 'New-AzVmDiskEncryptionSetConfig'
+* Új parancsmagok az új erőforrás-típusok esetében: DiskAccess 'Get-AzDiskAccess', 'New-AzDiskAccess', 'Get-AzDiskAccess'
+* A '-DiskAccessId' és a '-NetworkAccessPolicy' opcionális paraméterek hozzá lettek adva a következőhöz: 'New-AzSnapshotConfig'
+* A '-DiskAccessId' és a '-NetworkAccessPolicy' opcionális paraméterek hozzá lettek adva a következőhöz: 'New-AzDiskConfig'
+* A 'PatchStatus' tulajdonság hozzá lett adva a virtuális gép példánynézetéhez
+* A 'VMHealth' tulajdonság hozzá lett adva a virtuális gép példánynézetéhez, és ez lesz a visszaadott objektum, ha a 'Get-AzVm' meghívása a '-Status' paraméterrel történik
+* Az 'AssignedHost' mező hozzá lett adva a 'Get-AzVm' és a 'Get-AzVmssVM' példánynézetekhez. A mezőben a virtuálisgép-példány erőforrás-azonosítója látható
+* A '-SupportAutomaticPlacement' opcionális paraméter hozzá lett adva a következőhöz: 'New-AzHostGroup' 
+* A '-HostGroupId' paraméter hozzá lett adva a következőkhöz: 'New-AzVm' és 'New-AzVmss'
+
+#### <a name="azdatafactory"></a>Az.DataFactory
+* Az ADF .Net SDK a 4.11.0-s verzióra frissült
+
+#### <a name="azeventhub"></a>Az.EventHub
+* Új fürtparancsmagok lettek hozzáadva – 'New-AzEventHubCluster', 'Set-AzEventHubCluster', 'Get-AzEventHubCluster', 'Remove-AzEventHubCluster', 'Get-AzEventHubClustersAvailableRegions'.
+* Ki lett javítva a 10722-es számú hiba: Ki lett javítva, hogy csak a 'Listen' paraméter legyen hozzárendelve az AuthorizationRule jogosultságokhoz.
+
+#### <a name="azfunctions"></a>Az.Functions
+* El lett távolítva az a képesség, amely lehetővé tette, hogy az azokat nem támogató régiókban is lehessen v2 függvényeket létrehozni.
+* A PowerShell 6.2 elavult. Figyelmeztetés lett hozzáadva arra az esetre, ha a felhasználó olyan PowerShell 6.2 függvényalkalmazást hoz létre, amely PowerShell 7.0-függvényalkalmazás létrehozását javasolja.
+
+#### <a name="azhdinsight"></a>Az.HDInsight
+* Támogatott a fürtlétrehozás az automatikus skálázási konfiguráció használatával
+    - Új 'AutoscaleConfiguration' paraméter lett hozzáadva a 'New-AzHDInsightCluster' parancsmaghoz
+* Támogatott az üzemeltető fürt automatikus skálázási konfigurációja
+    - Hozzáadott új parancsmag: 'Get-AzHDInsihgtClusterAutoscaleConfiguration'
+    - Hozzáadott új parancsmag: 'New-AzHDInsihgtClusterAutoscaleConfiguration'
+    - Hozzáadott új parancsmag: 'Set-AzHDInsihgtClusterAutoscaleConfiguration'
+    - Hozzáadott új parancsmag: 'Remove-AzHDInsihgtClusterAutoscaleConfiguration'
+    - Hozzáadott új parancsmag: 'New-AzHDInsihgtClusterAutoscaleScheduleCondition'
+
+#### <a name="azkeyvault"></a>Az.KeyVault
+* Az RBAC-engedélyezés mostantól támogatott [#10557]
+* Továbbfejlesztett hibakezelés a következőben: 'Set-AzKeyVaultAccessPolicy' [#4007]
+
+#### <a name="azkusto"></a>Az.Kusto
+* Az 'Az.Kusto' modul általános rendelkezésre állása
+
+#### <a name="aznetwork"></a>Az.Network
+* [Kompatibilitástörő változás] Az alábbi parancsmagok frissítve lettek az erőforrás virtuális útválasztója és a virtuális központ megfeleltetéséhez
+    - 'New-AzVirtualRouter': 
+        - A -HostedSubnet paraméter hozzá lett adva az IP-konfigurációs gyermekerőforrás támogatásához
+        - A -HostedGateway és a -HostedGatewayId paraméter törölve lett
+    - 'Get-AzVirtualRouter':
+        - Előfizetés-szintű paraméterkészlet lett hozzáadva
+    - 'Remove-AzVirtualRouter'
+    - 'Add-AzVirtualRouterPeer'
+    - 'Get-AzVirtualRouterPeer'
+    - 'Remove-AzVirtualRouterPeer'
+* Új parancsmag lett hozzáadva az Azure ExpressRoute-port esetében
+    - 'New-AzExpressRoutePortLOA'
+* A RemoteBgpCommunities tulajdonság hozzá lett adva a virtuális hálózat társhálózat-létesítési erőforrásához
+* A „New-AzLoadBalancerFrontendIpConfig”, „New-AzPublicIpAddress” és „New-AzPublicIpPrefix” figyelmeztető üzenete módosult.
+* A VpnGatewayIpConfigurations hozzá lett adva a 'Get-AzVpnGateway' kimenetéhez
+* Ki lett javítva a hiba a 'Set-AzApplicationGatewaySslCertificate' esetében [#9488]
+* Az 'AllowActiveFTP' paraméter hozzá lett adva a következőhöz: 'AzureFirewall'
+* Az alábbi parancsok frissítve lettek a következő szolgáltatás esetében: Engedélyezze az internetbiztonság-beállítási/eltávolítási funkciót a VirtualWan P2SVpnGateway átjárón.
+- Frissült a 'New-AzP2sVpnGateway': Az 'EnableInternetSecurityFlag' opcionális kapcsolóparaméter hozzá lett adva a felhasználók számára, amelynek true (igaz) értékre való beállításával engedélyezhetik az internetbiztonságot a P2SVpnGateway átjárón – ez pont–hely ügyfelekre fog vonatkozni.
+- Frissült az 'Update-AzP2sVpnGateway': Az 'EnableInternetSecurityFlag' vagy a 'DisableInternetSecurityFlag' opcionális kapcsolóparaméter hozzá lett adva a felhasználók számára, amelynek true (igaz)/false (hamis) értékre való beállításával engedélyezhetik/letilthatják az internetbiztonságot a P2SVpnGateway átjárón – ez pont–hely ügyfelekre fog vonatkozni.
+* Új 'Reset-AzP2sVpnGateway' parancsmag lett hozzáadva a felhasználók számára, hogy alaphelyzetbe állíthassák/újraindíthassák a VirtualWan P2SVpnGateway átjárót a hibaelhárításhoz.
+* Új 'Reset-AzVpnGateway' parancsmag lett hozzáadva a felhasználók számára, hogy alaphelyzetbe állíthassák/újraindíthassák a VirtualWan VpnGateway átjárót a hibaelhárításhoz.
+* Frissült a 'Set-AzVirtualNetworkSubnetConfig'
+    - Állítsa null értékre az alhálózat NSG- és útválasztásitáblázat-tulajdonságait, ha azok explicit módon meg vannak adva a paraméterekben [#1548] [#9718]
+
+#### <a name="azrecoveryservices"></a>Az.RecoveryServices
+* Ki lett javítva a Biztonsági másolati elemek számítási feladat törlési állapota.
+
+#### <a name="azresources"></a>Az.Resources
+* Hozzá lett adva a hiányzó ellenőrzés a Set-AzRoleAssignment parancsmag esetében
+* Kompatibilitástörő változást okozó attribútum lett hozzáadva a 'Get-AzResourceGroupDeploymentOperation' parancsmag 'SubscriptionId' paraméteréhez
+* Az ARM-sablon What-If parancsmagjai úgy lettek frissítve, hogy az 'Ignore' erőforrás módosításait jelenítsék meg utoljára
+* Az üzembehelyezési parancsmagok biztonsági és tömbparaméter-szerializálási hibái ki lettek javítva [#12773]
+
+#### <a name="azservicefabric"></a>Az.ServiceFabric
+* Új parancsmagok lettek hozzáadva a következő felügyelt fürtökhöz és csomóponttípusokhoz:
+    - 'New-AzServiceFabricManagedCluster'
+    - 'Get-AzServiceFabricManagedCluster'
+    - 'Set-AzServiceFabricManagedCluster'
+    - 'Remove-AzServiceFabricManagedCluster'
+    - 'Add-AzServiceFabricManagedClusterClientCertificate'
+    - 'Remove-AzServiceFabricManagedClusterClientCertificate'
+    - 'New-AzServiceFabricManagedNodeType'
+    - 'Get-AzServiceFabricManagedNodeType'
+    - 'Set-AzServiceFabricManagedNodeType'
+    - 'Remove-AzServiceFabricManagedNodeType'
+    - 'Add-AzServiceFabricManagedNodeTypeVMExtension'
+    - 'Add-AzServiceFabricManagedNodeTypeVMSecret'
+    - 'Remove-AzServiceFabricManagedNodeTypeVMExtension'
+    - 'Restart-AzServiceFabricManagedNodeTyp'
+* A Service Fabric SDK az 1.2.0-s verzióra frissült, amely a Service Fabric erőforrás-szolgáltató 2020-03-01-es API-verzióját használja a jelenlegi modell, illetve a 2020-01-01-es előzetes verziót a felügyelt fürtök esetében.
+
+#### <a name="azsql"></a>Az.Sql
+* A BackupStorageRedundancy hozzá lett adva a következőkhöz: 'New-AzSqlInstance és 'Get-AzSqlInstance'
+* A 'Get-AzSqlServerActiveDirectoryOnlyAuthentication' parancsmag hozzá lett adva
+* Az 'Enable-AzSqlServerActiveDirectoryOnlyAuthentication' parancsmag hozzá lett adva
+* Force paraméter lett hozzáadva a következőhöz: 'New-AzSqlInstance'
+* Parancsmagok lettek hozzáadva a felügyelt adatbázis naplóvisszajátszási szolgáltatása esetében
+    - 'Start-AzSqlInstanceDatabaseLogReplay'
+    - 'Get-AzSqlInstanceDatabaseLogReplay'
+    - 'Complete-AzSqlInstanceDatabaseLogReplay'
+    - 'Stop-AzSqlInstanceDatabaseLogReplay'
+* A 'Get-AzSqlInstanceActiveDirectoryOnlyAuthentication' parancsmag hozzá lett adva
+* Az 'Enable-AzSqlInstanceActiveDirectoryOnlyAuthentication' parancsmag hozzá lett adva
+* A 'Disable-AzSqlInstanceActiveDirectoryOnlyAuthentication' parancsmag hozzá lett adva
+* A 'New-AzSqlDatabaseImport' és 'New-AzSqlDatabaseExport' parancsmagok frissítve lettek a hálózatelkülönítési funkció támogatásához
+* A 'New-AzSqlDatabaseImportExisting' parancsmag hozzá lett adva
+* Az adatbázis-parancsmagok frissítve lettek a biztonsági mentési tártípus-specifikáció támogatásához
+* Force paraméter lett hozzáadva a következőhöz: 'New-AzSqlDatabase'
+* A BackupStorageRedundancy konfigurációra vonatkozó figyelmeztetés lett hozzáadva a 'New-AzSqlDatabase' egyes régióiban
+* Frissítve lettek a kiszolgáló és a példány ActiveDirectoryOnlyAuthentication parancsmagjai, hogy a ResourceID és az InputObject paramétereket is tartalmazzák
+
+#### <a name="azstorage"></a>Az.Storage
+* Ki lett javítva a blobfeltöltési hiba a Microsoft.Azure.Storage.DataMovement 2.0.0-s verziójára való frissítéssel [#12220]
+* Támogatott az időponthoz kötött visszaállítás
+    - 'Enable-AzStorageBlobRestorePolicy'
+    - 'Disable-AzStorageBlobRestorePolicy'
+    - 'New-AzStorageBlobRangeToRestore'
+    - 'Restore-AzStorageBlobRange'
+* Támogatott a tárfiók blobhelyreállítási állapotának lekérése a get-AzureRMStorageAccount parancsmag -IncludeBlobRestoreStatus paraméterrel való futtatásával 
+    - 'Get-AzureRMStorageAccount'
+* Hozzá lett adva egy kompatibilitástörő változáshoz kapcsolódó figyelmeztető üzenet a jövőbeli parancsmagkimenet- módosítás esetében
+    - 'Get-AzStorageContainerStoredAccessPolicy'
+    - 'Set-AzStorageContainerStoredAccessPolicy'
+    - 'Set-AzStorageAccountManagementPolicy'
+    - 'Get-AzStorageAccountManagementPolicy'
+    - 'Add-AzStorageAccountManagementPolicyAction'
+    - 'New-AzStorageAccountManagementPolicyRule'
+* A Microsoft.Azure.Cosmos.Table SDK az 1.0.8-as verzióra frissült
+
+### <a name="thanks-to-our-community-contributors"></a>Köszönjük a közösség alábbi tagjainak
+* Thomas Van Laere (@ThomVanL), A Dockerfile-alpine-3.10 hozzáadása (#12911) 
+* Lohith Chowdary Chilukuri (@Lochiluk), A Remove-AzNetworkInterfaceIpConfig.md frissítése (#12807) 
+* Roberth Strand (@roberthstrand), Get-AzResourceGroup – Új példa és a felesleges tartalmak törlése (#12828) 
+* Ravi Mishra (@inmishrar), Az Azure-webalkalmazásokhoz tartozó futtatókörnyezeti verem frissítése a következőre: DOTNETCORE (#12833) 
+* @jack-education, A Set-AzVirtualNetworkSubnetConfig frissítése az NSG és az útválasztási táblázat alhálózatból való eltávolításának engedélyezéséhez (#12351) 
+* @hagop-globanet, Az Add-AzApplicationGatewayCustomError.md frissítése (#12784) 
+* Joshua Van Daalen (@greenSacrifice)
+  * A Property helyesírásának frissítése (#12821) 
+  * A New-AzResourceLock.md példáinak frissítése (#12806)
+* Eragon Riddle (@eragonriddle), A paramétermező-név javítása a példában (#12825) 
+* @rossifumax, Az elírás kijavítása a következőben: New-AzConfigurationAssignment.md (#12701)
+
+## <a name="461---august-2020"></a>4.6.1 – 2020. augusztus
+#### <a name="azcompute"></a>Az.Compute
+* A New-AzVm -EncryptionAtHost paraméterének javítása az alapértelmezett False érték eltávolításához [#12776]
 
 ## <a name="460---august-2020"></a>4.6.0 – 2020. augusztus
 #### <a name="azaccounts"></a>Az.Accounts
@@ -55,7 +217,7 @@ ms.locfileid: "90913382"
 * Hozzá lett adva a 'Get-AzDeploymentManagementGroupWhatIfResult' az ARM-sablon What-If típusú eredményeinek a felügyeleti csoport hatókörében történő lekéréséhez
 * Hozzá lett adva az új 'Get-AzTenantWhatIfResult' parancsmag az ARM-sablonok What-If típusú eredményeinek bérlői hatókörben történő lekéréséhez
 * A '-WhatIf' és a '-Confirm' felül lett bírálva a 'New-AzManagementGroupDeployment' és a 'New-AzTenantDeployment' esetében az ARM-sablon What-If típusú eredményeinek használata érdekében
-* Ki lett javítva a '-WhatIf' és a '-Confirm' viselkedése az új üzembehelyezési parancsmagok esetében, hogy megfeleljenek a $WhatIfPreference és a $ConfirmPreference paramétereknek.
+* Ki lett javítva a '-WhatIf' és a '-Confirm' viselkedése az új üzembehelyezési parancsmagok esetében, hogy megfeleljenek a hamis és 
 * Ki lett javítva a szerializálási hiba a '-TemplateObject' és a 'TemplateParameterObject' esetében [#1528] [#6292]
 * Kompatibilitástörő változást okozó attribútum lett hozzáadva a 'Get-AzResourceGroupDeploymentOperation' parancsmaghoz a kimenet típusának közelgő változása miatt
 
