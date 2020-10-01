@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/23/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 5f42bbb65313d1caa839443d463b61cc743ca0a5
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: c64541beb5eb0d3db38932fb3915de865919641b
+ms.sourcegitcommit: 5fcf17330d6f335561640a5ee3d98c59f7baab94
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89242664"
+ms.lasthandoff: 09/26/2020
+ms.locfileid: "91381462"
 ---
 # <a name="migration-guide-for-az-410"></a>Migrálási útmutató az Az 4.1.0-s verziójához
 
@@ -135,19 +135,19 @@ A `Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementServiceIdentity`
 
 ### `Get-AzApiManagementProperty`
 
-A `Get-AzApiManagementProperty` parancsmagot a `Get-AzureApiManagementNamedValue` parancsmag helyettesíti.
+A `Get-AzApiManagementProperty` parancsmagot a `Get-AzApiManagementNamedValue` parancsmag helyettesíti.
 
 ### `New-AzApiManagementProperty`
 
-A `New-AzApiManagementProperty` parancsmagot a `New-AzureApiManagementNamedValue` parancsmag helyettesíti.
+A `New-AzApiManagementProperty` parancsmagot a `New-AzApiManagementNamedValue` parancsmag helyettesíti.
 
 ### `Remove-AzApiManagementProperty`
 
-A `Remove-AzApiManagementProperty` parancsmagot a `Remove-AzureApiManagementNamedValue` parancsmag helyettesíti.
+A `Remove-AzApiManagementProperty` parancsmagot a `Remove-AzApiManagementNamedValue` parancsmag helyettesíti.
 
 ### `Set-AzApiManagementProperty`
 
-A `Set-AzApiManagementProperty` parancsmagot a `Set-AzureApiManagementNamedValue` parancsmag helyettesíti.
+A `Set-AzApiManagementProperty` parancsmagot a `Set-AzApiManagementNamedValue` parancsmag helyettesíti.
 
 ## <a name="azbatch"></a>Az.Batch
 
