@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 33d9214544ddb126b717685f9e7986bed926b149
-ms.sourcegitcommit: 15f21c40dcb7610e2fbaaabf264ad925e4224500
+ms.openlocfilehash: 193e8c5d14f1bf2fe9c84a9da2defac50be97ec7
+ms.sourcegitcommit: 3d16496984a0b9fd7631aa043726060ddae3624d
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90928250"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91833277"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi"></a>Az Azure PowerShell telepítése Windows rendszeren MSI-vel
 
@@ -31,7 +31,14 @@ Az Azure PowerShell PowerShell 5.1-ben való használatához a következőkre va
 
 ## <a name="install-or-update-on-windows-using-the-msi-package"></a>Telepítés vagy frissítés Windows rendszeren az MSI-csomaggal
 
-Az Azure PowerShell MSI-csomagja a [GitHubon](https://github.com/Azure/azure-powershell/releases/latest) érhető el. Ha az MSI-vel telepítette az Azure PowerShell korábbi verzióit, a telepítő automatikusan eltávolítja őket. Az MSI-csomag a következő helyre telepíti a modulokat: `${env:ProgramFiles}\WindowsPowerShell\Modules`.
+Az Azure PowerShell MSI-csomagja a [GitHubon](https://github.com/Azure/azure-powershell/releases) érhető el:
+
+1. Nyissa meg a következőt: https://github.com/Azure/azure-powershell/releases.
+2. Keresse meg az Azure PowerShell legújabb katalógusmodulját (ezek időrendi sorrendben jelennek meg, és általában csak név nélküli kiadásverziók, például „4.7.0”).
+3. Görgessen le a javítási jegyzetek aljára, és kattintson az „Eszközök” melletti nyílra az MSI-beállítások megtekintéséhez.
+4. A letöltés indításához kattintson a kívánt Az-Cmdlets MSI-re.
+
+Ha az MSI-vel telepítette az Azure PowerShell korábbi verzióit, a telepítő automatikusan eltávolítja őket. Az MSI-csomag a következő helyre telepíti a modulokat: `${env:ProgramFiles}\WindowsPowerShell\Modules`.
 
 Az Azure PowerShell használatának megkezdéséhez jelentkezzen be Azure-beli hitelesítő adataival.
 
