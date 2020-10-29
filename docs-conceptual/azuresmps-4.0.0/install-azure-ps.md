@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/06/2017
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 286288f83a0ad0b486cccb3543858c173a8eb087
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: 2860d5c7642b137c1cb14a38fa13d59ec2a4123c
+ms.sourcegitcommit: 038cb42a3bd8c009bc57c8c1c252e66fa170c84b
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89241321"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92523206"
 ---
 # <a name="installing-the-azure-powershell-service-management-module"></a>Az Azure PowerShell Service Management moduljának telepítése
 
@@ -72,7 +72,7 @@ Az Azure PowerShell-modulok rendszeresen frissülnek. Ha a parancsmagokat tárgy
 
 Az Azure-ban gyakran előforduló feladatok némelyikének automatizálását segítő mintaszkripteket lásd a [Microsoft Azure Script Centerben](http://www.windowsazure.com/documentation/scripts/).
 
-Általános információk a Windows PowerShell telepítéséről, megismeréséről, használatáról és testreszabásáról: [Szkriptek használata a Windows PowerShell-lel](https://go.microsoft.com/fwlink/p/?linkid=320210).
+Általános információk a Windows PowerShell telepítéséről, megismeréséről, használatáról és testreszabásáról: [Szkriptek használata a Windows PowerShell-lel](/powershell/scripting/learn/ps101/00-introduction).
 
 ### <a name="how-to-get-powershellget"></a>A PowerShellGet beszerzése
 
@@ -80,7 +80,6 @@ Az Azure-ban gyakran előforduló feladatok némelyikének automatizálását se
 |---|---|
 |Windows 10 vagy Windows Server 2016 rendszert használok|Az operációs rendszer részét képező Windows Management Framework (WMF) 5.0 beépített eleme|
 |Frissíteni szeretnék a PowerShell 5-ös verziójára|[A WMF legújabb verziójának telepítése](https://www.microsoft.com/download/details.aspx?id=54616)|
-|A PowerShell 3-as vagy 4-es verziójával rendelkező Windows-verziót használok|[A PackageManagement-modulok beszerzése](https://go.microsoft.com/fwlink/?LinkID=746217)|
 
 <div id="helpmechoose"/>
 

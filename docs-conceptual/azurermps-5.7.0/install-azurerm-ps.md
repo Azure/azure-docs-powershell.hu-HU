@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/15/2018
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: c287afa2fb34938cac7304028071afd7deedb263
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: c03c6ee3782b68de8a237b3c215405ff6513dbca
+ms.sourcegitcommit: 038cb42a3bd8c009bc57c8c1c252e66fa170c84b
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89243786"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92523236"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Az Azure PowerShell telepítése Windows rendszeren a PowerShellGet használatával
 
@@ -54,7 +54,6 @@ Ha nincs telepítve a PowerShellGet, kövesse alább, az operációs rendszerén
 |---|---|
 |Windows 10<br/>Windows Server 2016|Az operációs rendszer részét képező Windows Management Framework (WMF) 5.0 beépített eleme|
 |Frissítés a PowerShell 5-ös verziójára| <ol><li>[A WMF legújabb verziójának telepítése](https://www.microsoft.com/download/details.aspx?id=54616)</li><li>Futtassa az alábbi parancsot:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
-|A PowerShell 3-as vagy 4-es verziójával rendelkező Windows|<ol><il>[A PackageManagement-modulok beszerzése](https://go.microsoft.com/fwlink/?LinkID=746217)</il><li>Futtassa az alábbi parancsot:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
 
 > [!NOTE]
 > A PowerShellGet használatához olyan végrehajtási szabályzatra van szükség, amely lehetővé teszi a szkriptek futtatását. A PowerShell végrehajtási házirendjével kapcsolatos további információk: [A végrehajtási házirendek áttekintése](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
@@ -82,7 +81,7 @@ You are installing the modules from an untrusted repository. If you trust this r
 its InstallationPolicy value by running the Set-PSRepository cmdlet.
 
 Are you sure you want to install the modules from 'PSGallery'?
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
 A telepítés folytatásához válassza a `Yes` vagy a `Yes to All` lehetőséget.
