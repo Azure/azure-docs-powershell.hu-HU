@@ -1,0 +1,239 @@
+---
+external help file: Microsoft.WindowsAzure.Commands.Storage.dll-Help.xml
+Module Name: Azure.Storage
+ms.assetid: BCCBB05B-A5D7-4796-BE55-6BE5E18E07FC
+online version: https://docs.microsoft.com/en-us/powershell/module/azure.storage/new-azurestorageaccountsastoken
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/Storage/Commands.Storage/help/New-AzureStorageAccountSASToken.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/Storage/Commands.Storage/help/New-AzureStorageAccountSASToken.md
+ms.openlocfilehash: 8b0eb67808bf4148d93006b24273d55b737adfea
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93498647"
+---
+# <span data-ttu-id="270e7-101">New-AzureStorageAccountSASToken</span><span class="sxs-lookup"><span data-stu-id="270e7-101">New-AzureStorageAccountSASToken</span></span>
+
+## <span data-ttu-id="270e7-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="270e7-102">SYNOPSIS</span></span>
+<span data-ttu-id="270e7-103">Ügyfél szintű SAS-tokent hoz létre.</span><span class="sxs-lookup"><span data-stu-id="270e7-103">Creates an account-level SAS token.</span></span>
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## <span data-ttu-id="270e7-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="270e7-104">SYNTAX</span></span>
+
+```
+New-AzureStorageAccountSASToken -Service <SharedAccessAccountServices>
+ -ResourceType <SharedAccessAccountResourceTypes> [-Permission <String>] [-Protocol <SharedAccessProtocol>]
+ [-IPAddressOrRange <String>] [-StartTime <DateTime>] [-ExpiryTime <DateTime>] [-Context <IStorageContext>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="270e7-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="270e7-105">DESCRIPTION</span></span>
+<span data-ttu-id="270e7-106">A **New-AzureStorageSASToken** parancsmag létrehoz egy ügyfél szintű megosztott hozzáférés-aláírási (SAS) jogkivonatot egy Azure-tárterülethez.</span><span class="sxs-lookup"><span data-stu-id="270e7-106">The **New-AzureStorageSASToken** cmdlet creates an account-level shared access signature (SAS) token for an Azure Storage account.</span></span>
+<span data-ttu-id="270e7-107">A SAS-tokent használhatja több szolgáltatás engedélyeinek meghatalmazására, illetve a szolgáltatások engedélyeinek meghatalmazására, ha az objektum szintű SAS-tokent használja.</span><span class="sxs-lookup"><span data-stu-id="270e7-107">You can use the SAS token to delegate permissions for multiple services, or to delegate permissions for services not available with an object-level SAS token.</span></span>
+
+## <span data-ttu-id="270e7-108">Példák</span><span class="sxs-lookup"><span data-stu-id="270e7-108">EXAMPLES</span></span>
+
+### <span data-ttu-id="270e7-109">Példa 1: egy fiók szintű SAS-token létrehozása teljes hozzáféréssel</span><span class="sxs-lookup"><span data-stu-id="270e7-109">Example 1: Create an account-level SAS token with full permission</span></span>
+```
+PS C:\> New-AzureStorageAccountSASToken -Service Blob,File,Table,Queue -ResourceType Service,Container,Object -Permission "racwdlup"
+```
+
+<span data-ttu-id="270e7-110">A parancs teljes hozzáféréssel létrehoz egy fiók szintű SAS-jogkivonatot.</span><span class="sxs-lookup"><span data-stu-id="270e7-110">This command creates an account-level SAS token with full permission.</span></span>
+
+### <span data-ttu-id="270e7-111">2. példa: fiók szintű SAS-token létrehozása IP-címekhez</span><span class="sxs-lookup"><span data-stu-id="270e7-111">Example 2: Create an account-level SAS token for a range of IP addresses</span></span>
+```
+PS C:\> New-AzureStorageAccountSASToken -Service Blob,File,Table,Queue -ResourceType Service,Container,Object -Permission "racwdlup" -Protocol HttpsOnly -IPAddressOrRange 168.1.5.60-168.1.5.70
+```
+
+<span data-ttu-id="270e7-112">Ez a parancs egy fiók szintű SAS-jogkivonatot hoz létre a HTTPS-only kérelmekhez a megadott IP-címtartományból.</span><span class="sxs-lookup"><span data-stu-id="270e7-112">This command creates an account-level SAS token for HTTPS-only requests from the specified range of IP addresses.</span></span>
+
+## <span data-ttu-id="270e7-113">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="270e7-113">PARAMETERS</span></span>
+
+### <span data-ttu-id="270e7-114">-Környezet</span><span class="sxs-lookup"><span data-stu-id="270e7-114">-Context</span></span>
+<span data-ttu-id="270e7-115">Az Azure tárolási környezetét adja meg.</span><span class="sxs-lookup"><span data-stu-id="270e7-115">Specifies the Azure storage context.</span></span>
+<span data-ttu-id="270e7-116">A New-AzureStorageContext parancsmaggal **AzureStorageContext** -objektumokat lehet kikeresni.</span><span class="sxs-lookup"><span data-stu-id="270e7-116">You can use the New-AzureStorageContext cmdlet to get an **AzureStorageContext** object.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IStorageContext
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="270e7-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="270e7-117">-DefaultProfile</span></span>
+<span data-ttu-id="270e7-118">Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="270e7-118">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="270e7-119">-ExpiryTime</span><span class="sxs-lookup"><span data-stu-id="270e7-119">-ExpiryTime</span></span>
+<span data-ttu-id="270e7-120">Azt az időpontot adja meg, amikor a megosztott elérési aláírás érvénytelenné válik.</span><span class="sxs-lookup"><span data-stu-id="270e7-120">Specifies the time at which the shared access signature becomes invalid.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.DateTime]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="270e7-121">-IPAddressOrRange</span><span class="sxs-lookup"><span data-stu-id="270e7-121">-IPAddressOrRange</span></span>
+<span data-ttu-id="270e7-122">Adja meg az IP-címet vagy az IP-címeket, amelyekből el szeretné fogadni a kéréseket, például a 168.1.5.65 vagy a 168.1.5.60-168.1.5.70.</span><span class="sxs-lookup"><span data-stu-id="270e7-122">Specifies the IP address or range of IP addresses from which to accept requests, such as 168.1.5.65 or 168.1.5.60-168.1.5.70.</span></span>
+<span data-ttu-id="270e7-123">A tartomány bezárólag.</span><span class="sxs-lookup"><span data-stu-id="270e7-123">The range is inclusive.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="270e7-124">– Engedély</span><span class="sxs-lookup"><span data-stu-id="270e7-124">-Permission</span></span>
+<span data-ttu-id="270e7-125">A tárolási fiók engedélyei.</span><span class="sxs-lookup"><span data-stu-id="270e7-125">Specifies the permissions for Storage account.</span></span>
+<span data-ttu-id="270e7-126">Az engedélyek csak akkor érvényesek, ha megfelelnek a megadott erőforrás-típusnak.</span><span class="sxs-lookup"><span data-stu-id="270e7-126">Permissions are valid only if they match the specified resource type.</span></span>
+<span data-ttu-id="270e7-127">Fontos megjegyezni, hogy ez egy karakterlánc, például `rwd` (olvasásra, írásra és törlésre).</span><span class="sxs-lookup"><span data-stu-id="270e7-127">It is important to note that this is a string, like `rwd` (for Read, Write and Delete).</span></span>
+<span data-ttu-id="270e7-128">Az elfogadható jogosultsági értékekről további információt a fiók-SAS létrehozása című témakörben talál. https://go.microsoft.com/fwlink/?LinkId=799514</span><span class="sxs-lookup"><span data-stu-id="270e7-128">For more information about acceptable permission values, see Constructing an Account SAS https://go.microsoft.com/fwlink/?LinkId=799514</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="270e7-129">-Protocol</span><span class="sxs-lookup"><span data-stu-id="270e7-129">-Protocol</span></span>
+<span data-ttu-id="270e7-130">Annak a protokollnak a használatát adja meg, amely a biztonsági fiókkezelő fiókkal végzett kéréshez engedélyezve van.</span><span class="sxs-lookup"><span data-stu-id="270e7-130">Specifies the protocol permitted for a request made with the account SAS.</span></span>
+<span data-ttu-id="270e7-131">A paraméter elfogadható értékei a következők:</span><span class="sxs-lookup"><span data-stu-id="270e7-131">The acceptable values for this parameter are:</span></span>
+- <span data-ttu-id="270e7-132">HttpsOnly</span><span class="sxs-lookup"><span data-stu-id="270e7-132">HttpsOnly</span></span>
+- <span data-ttu-id="270e7-133">HttpsOrHttp: az alapértelmezett érték a HttpsOrHttp.</span><span class="sxs-lookup"><span data-stu-id="270e7-133">HttpsOrHttp The default value is HttpsOrHttp.</span></span>
+
+```yaml
+Type: System.Nullable`1[Microsoft.WindowsAzure.Storage.SharedAccessProtocol]
+Parameter Sets: (All)
+Aliases:
+Accepted values: HttpsOnly, HttpsOrHttp
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="270e7-134">-ResourceType</span><span class="sxs-lookup"><span data-stu-id="270e7-134">-ResourceType</span></span>
+<span data-ttu-id="270e7-135">A SAS-tokenhez elérhető erőforrás-típusokat adja meg.</span><span class="sxs-lookup"><span data-stu-id="270e7-135">Specifies the resource types that are available with the SAS token.</span></span>
+<span data-ttu-id="270e7-136">A paraméter elfogadható értékei a következők:</span><span class="sxs-lookup"><span data-stu-id="270e7-136">The acceptable values for this parameter are:</span></span>
+- <span data-ttu-id="270e7-137">Nincs</span><span class="sxs-lookup"><span data-stu-id="270e7-137">None</span></span>
+- <span data-ttu-id="270e7-138">Szolgáltatás</span><span class="sxs-lookup"><span data-stu-id="270e7-138">Service</span></span>
+- <span data-ttu-id="270e7-139">Konténer</span><span class="sxs-lookup"><span data-stu-id="270e7-139">Container</span></span>
+- <span data-ttu-id="270e7-140">Objektum</span><span class="sxs-lookup"><span data-stu-id="270e7-140">Object</span></span>
+
+```yaml
+Type: Microsoft.WindowsAzure.Storage.SharedAccessAccountResourceTypes
+Parameter Sets: (All)
+Aliases:
+Accepted values: None, Service, Container, Object
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="270e7-141">-Szolgáltatás</span><span class="sxs-lookup"><span data-stu-id="270e7-141">-Service</span></span>
+<span data-ttu-id="270e7-142">A szolgáltatást adja meg.</span><span class="sxs-lookup"><span data-stu-id="270e7-142">Specifies the service.</span></span>
+<span data-ttu-id="270e7-143">A paraméter elfogadható értékei a következők:</span><span class="sxs-lookup"><span data-stu-id="270e7-143">The acceptable values for this parameter are:</span></span>
+- <span data-ttu-id="270e7-144">Nincs</span><span class="sxs-lookup"><span data-stu-id="270e7-144">None</span></span>
+- <span data-ttu-id="270e7-145">BLOB</span><span class="sxs-lookup"><span data-stu-id="270e7-145">Blob</span></span>
+- <span data-ttu-id="270e7-146">Fájl</span><span class="sxs-lookup"><span data-stu-id="270e7-146">File</span></span>
+- <span data-ttu-id="270e7-147">Várólista</span><span class="sxs-lookup"><span data-stu-id="270e7-147">Queue</span></span>
+- <span data-ttu-id="270e7-148">Táblázat</span><span class="sxs-lookup"><span data-stu-id="270e7-148">Table</span></span>
+
+```yaml
+Type: Microsoft.WindowsAzure.Storage.SharedAccessAccountServices
+Parameter Sets: (All)
+Aliases:
+Accepted values: None, Blob, File, Queue, Table
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="270e7-149">-Kezdő időpont</span><span class="sxs-lookup"><span data-stu-id="270e7-149">-StartTime</span></span>
+<span data-ttu-id="270e7-150">Itt adhatja meg **datetime** -objektumként az időt, amelyen a biztonsági társítás érvényes lesz.</span><span class="sxs-lookup"><span data-stu-id="270e7-150">Specifies the time, as a **DateTime** object, at which the SAS becomes valid.</span></span>
+<span data-ttu-id="270e7-151">A **datetime** objektum beszerzéséhez használja az Get-Date parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="270e7-151">To get a **DateTime** object, use the Get-Date cmdlet.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.DateTime]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="270e7-152">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="270e7-152">CommonParameters</span></span>
+<span data-ttu-id="270e7-153">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="270e7-153">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="270e7-154">További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="270e7-154">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="270e7-155">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="270e7-155">INPUTS</span></span>
+
+### <span data-ttu-id="270e7-156">Microsoft. Azure. commands. Common. Authentication. absztrakciók. IStorageContext</span><span class="sxs-lookup"><span data-stu-id="270e7-156">Microsoft.Azure.Commands.Common.Authentication.Abstractions.IStorageContext</span></span>
+
+## <span data-ttu-id="270e7-157">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="270e7-157">OUTPUTS</span></span>
+
+### <span data-ttu-id="270e7-158">System. String</span><span class="sxs-lookup"><span data-stu-id="270e7-158">System.String</span></span>
+
+## <span data-ttu-id="270e7-159">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="270e7-159">NOTES</span></span>
+
+## <span data-ttu-id="270e7-160">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="270e7-160">RELATED LINKS</span></span>
+
+[<span data-ttu-id="270e7-161">Új – AzureStorageBlobSASToken</span><span class="sxs-lookup"><span data-stu-id="270e7-161">New-AzureStorageBlobSASToken</span></span>](./New-AzureStorageBlobSASToken.md)
+
+[<span data-ttu-id="270e7-162">Új – AzureStorageContainerSASToken</span><span class="sxs-lookup"><span data-stu-id="270e7-162">New-AzureStorageContainerSASToken</span></span>](./New-AzureStorageContainerSASToken.md)
+
+[<span data-ttu-id="270e7-163">Új – AzureStorageFileSASToken</span><span class="sxs-lookup"><span data-stu-id="270e7-163">New-AzureStorageFileSASToken</span></span>](./New-AzureStorageFileSASToken.md)
+
+[<span data-ttu-id="270e7-164">Új – AzureStorageQueueSASToken</span><span class="sxs-lookup"><span data-stu-id="270e7-164">New-AzureStorageQueueSASToken</span></span>](./New-AzureStorageQueueSASToken.md)
+
+[<span data-ttu-id="270e7-165">Új – AzureStorageShareSASToken</span><span class="sxs-lookup"><span data-stu-id="270e7-165">New-AzureStorageShareSASToken</span></span>](./New-AzureStorageShareSASToken.md)
+
+[<span data-ttu-id="270e7-166">Új – AzureStorageTableSASToken</span><span class="sxs-lookup"><span data-stu-id="270e7-166">New-AzureStorageTableSASToken</span></span>](./New-AzureStorageTableSASToken.md)
+
+
