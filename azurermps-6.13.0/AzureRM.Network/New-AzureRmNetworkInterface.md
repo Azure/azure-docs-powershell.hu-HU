@@ -1,0 +1,587 @@
+---
+external help file: Microsoft.Azure.Commands.Network.dll-Help.xml
+Module Name: AzureRM.Network
+ms.assetid: B2F2082F-4BAA-4FBE-8846-2D436A433570
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.network/new-azurermnetworkinterface
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Network/Commands.Network/help/New-AzureRmNetworkInterface.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Network/Commands.Network/help/New-AzureRmNetworkInterface.md
+ms.openlocfilehash: 90a3696b4f641f0518d08f821cab813effdbc74a
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93495896"
+---
+# <span data-ttu-id="bb0ed-101">New-AzureRmNetworkInterface</span><span class="sxs-lookup"><span data-stu-id="bb0ed-101">New-AzureRmNetworkInterface</span></span>
+
+## <span data-ttu-id="bb0ed-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="bb0ed-102">SYNOPSIS</span></span>
+<span data-ttu-id="bb0ed-103">Hálózati felületet hoz létre.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-103">Creates a network interface.</span></span>
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## <span data-ttu-id="bb0ed-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="bb0ed-104">SYNTAX</span></span>
+
+### <span data-ttu-id="bb0ed-105">SetByIpConfigurationResource (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="bb0ed-105">SetByIpConfigurationResource (Default)</span></span>
+```
+New-AzureRmNetworkInterface -Name <String> -ResourceGroupName <String> -Location <String>
+ -IpConfiguration <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Network.Models.PSNetworkInterfaceIPConfiguration]>
+ [-DnsServer <System.Collections.Generic.List`1[System.String]>] [-InternalDnsNameLabel <String>]
+ [-EnableIPForwarding] [-EnableAcceleratedNetworking] [-Tag <Hashtable>] [-Force] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="bb0ed-106">SetByIpConfigurationResourceId</span><span class="sxs-lookup"><span data-stu-id="bb0ed-106">SetByIpConfigurationResourceId</span></span>
+```
+New-AzureRmNetworkInterface -Name <String> -ResourceGroupName <String> -Location <String>
+ -IpConfiguration <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Network.Models.PSNetworkInterfaceIPConfiguration]>
+ [-NetworkSecurityGroupId <String>] [-NetworkSecurityGroup <PSNetworkSecurityGroup>]
+ [-DnsServer <System.Collections.Generic.List`1[System.String]>] [-InternalDnsNameLabel <String>]
+ [-EnableIPForwarding] [-EnableAcceleratedNetworking] [-Tag <Hashtable>] [-Force] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="bb0ed-107">SetByResourceId</span><span class="sxs-lookup"><span data-stu-id="bb0ed-107">SetByResourceId</span></span>
+```
+New-AzureRmNetworkInterface -Name <String> -ResourceGroupName <String> -Location <String> -SubnetId <String>
+ [-PublicIpAddressId <String>] [-NetworkSecurityGroupId <String>]
+ [-LoadBalancerBackendAddressPoolId <System.Collections.Generic.List`1[System.String]>]
+ [-LoadBalancerInboundNatRuleId <System.Collections.Generic.List`1[System.String]>]
+ [-ApplicationGatewayBackendAddressPoolId <System.Collections.Generic.List`1[System.String]>]
+ [-ApplicationSecurityGroupId <System.Collections.Generic.List`1[System.String]>] [-PrivateIpAddress <String>]
+ [-IpConfigurationName <String>] [-DnsServer <System.Collections.Generic.List`1[System.String]>]
+ [-InternalDnsNameLabel <String>] [-EnableIPForwarding] [-EnableAcceleratedNetworking] [-Tag <Hashtable>]
+ [-Force] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="bb0ed-108">SetByResource</span><span class="sxs-lookup"><span data-stu-id="bb0ed-108">SetByResource</span></span>
+```
+New-AzureRmNetworkInterface -Name <String> -ResourceGroupName <String> -Location <String> -Subnet <PSSubnet>
+ [-PublicIpAddress <PSPublicIpAddress>] [-NetworkSecurityGroup <PSNetworkSecurityGroup>]
+ [-LoadBalancerBackendAddressPool <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Network.Models.PSBackendAddressPool]>]
+ [-LoadBalancerInboundNatRule <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Network.Models.PSInboundNatRule]>]
+ [-ApplicationGatewayBackendAddressPool <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendAddressPool]>]
+ [-ApplicationSecurityGroup <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Network.Models.PSApplicationSecurityGroup]>]
+ [-PrivateIpAddress <String>] [-IpConfigurationName <String>]
+ [-DnsServer <System.Collections.Generic.List`1[System.String]>] [-InternalDnsNameLabel <String>]
+ [-EnableIPForwarding] [-EnableAcceleratedNetworking] [-Tag <Hashtable>] [-Force] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="bb0ed-109">Leírás</span><span class="sxs-lookup"><span data-stu-id="bb0ed-109">DESCRIPTION</span></span>
+<span data-ttu-id="bb0ed-110">A **New-AzureRmNetworkInterface** parancsmag Azure hálózati felületet hoz létre.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-110">The **New-AzureRmNetworkInterface** cmdlet creates an Azure network interface.</span></span>
+
+## <span data-ttu-id="bb0ed-111">Példák</span><span class="sxs-lookup"><span data-stu-id="bb0ed-111">EXAMPLES</span></span>
+
+### <span data-ttu-id="bb0ed-112">1. példa: Azure-hálózati felület létrehozása</span><span class="sxs-lookup"><span data-stu-id="bb0ed-112">Example 1: Create an Azure network interface</span></span>
+```
+PS C:\>New-AzureRmNetworkInterface -Name "NetworkInterface1" -ResourceGroupName "ResourceGroup1" -Location "centralus" -SubnetId "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/ResourceGroup1/providers/Microsoft.Network/virtualNetworks/VirtualNetwork1/subnets/Subnet1" -IpConfigurationName "IPConfiguration1" -DnsServer "8.8.8.8", "8.8.4.4"
+```
+
+<span data-ttu-id="bb0ed-113">Ez a parancs létrehoz egy NetworkInterface001 nevű hálózati felületet egy dinamikusan kiosztott privát IP-címmel a Subnet1-ról a VirtualNetwork1 nevű virtuális hálózatban.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-113">This command creates a network interface named NetworkInterface001 with a dynamically assigned private IP address from Subnet1 in the virtual network named VirtualNetwork1.</span></span> <span data-ttu-id="bb0ed-114">A parancs két DNS-kiszolgálót is hozzárendel a hálózati kapcsolathoz.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-114">The command also assigns two DNS servers to the network interface.</span></span> <span data-ttu-id="bb0ed-115">A program automatikusan létrehozza a IPConfiguration-gyermek erőforrást a IPConfiguration1 név használatával.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-115">The IPConfiguration child resource will be created automatically using the name IPConfiguration1.</span></span>
+
+### <span data-ttu-id="bb0ed-116">2. példa: Azure-hálózati kapcsolat létrehozása IP-konfigurációs objektum használatával</span><span class="sxs-lookup"><span data-stu-id="bb0ed-116">Example 2: Create an Azure network interface using an IP configuration object</span></span>
+```
+PS C:\>$IPconfig = New-AzureRmNetworkInterfaceIpConfig -Name "IPConfig1" -PrivateIpAddressVersion IPv4 -PrivateIpAddress "10.0.1.10" -SubnetId "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/ResourceGroup1/providers/Microsoft.Network/virtualNetworks/VirtualNetwork1/subnets/Subnet1"
+PS C:\> New-AzureRmNetworkInterface -Name "NetworkInterface1" -ResourceGroupName "ResourceGroup1" -Location "centralus" -IpConfiguration $IPconfig
+```
+
+<span data-ttu-id="bb0ed-117">Ez a példa egy új hálózati felületet hoz létre egy IP-konfigurációs objektum használatával.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-117">This example creates a new network interface using an IP configuration object.</span></span> <span data-ttu-id="bb0ed-118">Az IP Configuration objektum egy statikus privát IPv4-címet ad meg.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-118">The IP configuration object specifies a static private IPv4 address.</span></span>
+<span data-ttu-id="bb0ed-119">Az első parancs létrehozza a IPConfig1 nevű hálózati kapcsolat IP-konfigurációját, és a konfigurációt a $IPconfig nevű változóban tárolja.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-119">The first command creates a network interface IP configuration named IPConfig1 and stores the configuration in the variable named $IPconfig.</span></span>
+<span data-ttu-id="bb0ed-120">A második parancs létrehoz egy NetworkInterface1 nevű hálózati felületet, amely a $IPconfig nevű változóban tárolt hálózati kapcsolat IP-konfigurációját használja.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-120">The second command creates a network interface named NetworkInterface1 that uses the network interface IP configuration stored in the variable named $IPconfig.</span></span>
+
+## <span data-ttu-id="bb0ed-121">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="bb0ed-121">PARAMETERS</span></span>
+
+### <span data-ttu-id="bb0ed-122">-ApplicationGatewayBackendAddressPool</span><span class="sxs-lookup"><span data-stu-id="bb0ed-122">-ApplicationGatewayBackendAddressPool</span></span>
+<span data-ttu-id="bb0ed-123">Egy **ApplicationGatewayBackendAddressPool** objektumot ad meg.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-123">Specifies an **ApplicationGatewayBackendAddressPool** object.</span></span>
+
+```yaml
+Type: System.Collections.Generic.List`1[Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendAddressPool]
+Parameter Sets: SetByResource
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-124">-ApplicationGatewayBackendAddressPoolId</span><span class="sxs-lookup"><span data-stu-id="bb0ed-124">-ApplicationGatewayBackendAddressPoolId</span></span>
+<span data-ttu-id="bb0ed-125">Egy **ApplicationGatewayBackendAddressPool** -objektum azonosítóját adja meg.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-125">Specifies the ID of a **ApplicationGatewayBackendAddressPool** object.</span></span>
+
+```yaml
+Type: System.Collections.Generic.List`1[System.String]
+Parameter Sets: SetByResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-126">-ApplicationSecurityGroup</span><span class="sxs-lookup"><span data-stu-id="bb0ed-126">-ApplicationSecurityGroup</span></span>
+<span data-ttu-id="bb0ed-127">Az alkalmazás biztonsági csoportjának hivatkozását adja meg, amelyre a hálózati kapcsolat IP-konfigurációja tartozik.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-127">Specifies a collection of application security group references to which the network interface IP configuration should belong to.</span></span>
+
+```yaml
+Type: System.Collections.Generic.List`1[Microsoft.Azure.Commands.Network.Models.PSApplicationSecurityGroup]
+Parameter Sets: SetByResource
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-128">-ApplicationSecurityGroupId</span><span class="sxs-lookup"><span data-stu-id="bb0ed-128">-ApplicationSecurityGroupId</span></span>
+<span data-ttu-id="bb0ed-129">Az alkalmazás biztonsági csoportjának hivatkozását adja meg, amelyre a hálózati kapcsolat IP-konfigurációja tartozik.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-129">Specifies a collection of application security group references to which the network interface IP configuration should belong to.</span></span>
+
+```yaml
+Type: System.Collections.Generic.List`1[System.String]
+Parameter Sets: SetByResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-130">-AsJob</span><span class="sxs-lookup"><span data-stu-id="bb0ed-130">-AsJob</span></span>
+<span data-ttu-id="bb0ed-131">A parancsmag futtatása a háttérben</span><span class="sxs-lookup"><span data-stu-id="bb0ed-131">Run cmdlet in the background</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-132">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="bb0ed-132">-DefaultProfile</span></span>
+<span data-ttu-id="bb0ed-133">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-133">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-134">-DnsServer</span><span class="sxs-lookup"><span data-stu-id="bb0ed-134">-DnsServer</span></span>
+<span data-ttu-id="bb0ed-135">A hálózati kapcsolat DNS-kiszolgálóját adja meg.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-135">Specifies the DNS server for the network interface.</span></span>
+
+```yaml
+Type: System.Collections.Generic.List`1[System.String]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-136">-EnableAcceleratedNetworking</span><span class="sxs-lookup"><span data-stu-id="bb0ed-136">-EnableAcceleratedNetworking</span></span>
+<span data-ttu-id="bb0ed-137">Gyorsított hálózatokat tesz lehetővé.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-137">Enables accelerated networking.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-138">-EnableIPForwarding</span><span class="sxs-lookup"><span data-stu-id="bb0ed-138">-EnableIPForwarding</span></span>
+<span data-ttu-id="bb0ed-139">Jelzi, hogy ez a parancsmag engedélyezi az IP-továbbítást a hálózati felületen.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-139">Indicates that this cmdlet enables IP forwarding for the network interface.</span></span>
+<span data-ttu-id="bb0ed-140">Az IP-továbbítás lehetővé teszi a virtuális gép számára az egyéb rendeltetési helyekre címzett forgalom átvételét.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-140">IP forwarding allows a virtual machine to receive traffic addressed to other destinations.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-141">-Force</span><span class="sxs-lookup"><span data-stu-id="bb0ed-141">-Force</span></span>
+<span data-ttu-id="bb0ed-142">Akkor is kényszeríti a hálózati felület létrehozását, ha már létezik azonos nevű hálózati kapcsolat.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-142">Forces the creation of the network interface even if a network interface with the same name already exists.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-143">-InternalDnsNameLabel</span><span class="sxs-lookup"><span data-stu-id="bb0ed-143">-InternalDnsNameLabel</span></span>
+<span data-ttu-id="bb0ed-144">Az új hálózati kapcsolat belső DNS-név címkéjét adja meg.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-144">Specifies the internal DNS name label for the new network interface.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-145">-IpConfiguration</span><span class="sxs-lookup"><span data-stu-id="bb0ed-145">-IpConfiguration</span></span>
+<span data-ttu-id="bb0ed-146">A parancsmag által a hálózati kapcsolathoz használt IP-konfigurációt adja meg.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-146">Specifies the IP configuration that this cmdlet uses for the network interface.</span></span>
+
+```yaml
+Type: System.Collections.Generic.List`1[Microsoft.Azure.Commands.Network.Models.PSNetworkInterfaceIPConfiguration]
+Parameter Sets: SetByIpConfigurationResource, SetByIpConfigurationResourceId
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-147">-IpConfigurationName</span><span class="sxs-lookup"><span data-stu-id="bb0ed-147">-IpConfigurationName</span></span>
+<span data-ttu-id="bb0ed-148">Az IP-konfiguráció nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-148">Specifies the name of an IP configuration.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SetByResourceId, SetByResource
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-149">-LoadBalancerBackendAddressPool</span><span class="sxs-lookup"><span data-stu-id="bb0ed-149">-LoadBalancerBackendAddressPool</span></span>
+<span data-ttu-id="bb0ed-150">Egy **BackendAddressPool** -objektumot ad meg.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-150">Specifies a **BackendAddressPool** object.</span></span>
+
+```yaml
+Type: System.Collections.Generic.List`1[Microsoft.Azure.Commands.Network.Models.PSBackendAddressPool]
+Parameter Sets: SetByResource
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-151">-LoadBalancerBackendAddressPoolId</span><span class="sxs-lookup"><span data-stu-id="bb0ed-151">-LoadBalancerBackendAddressPoolId</span></span>
+<span data-ttu-id="bb0ed-152">Egy **BackendAddressPool** -objektum azonosítóját adja meg.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-152">Specifies the ID of a **BackendAddressPool** object.</span></span>
+
+```yaml
+Type: System.Collections.Generic.List`1[System.String]
+Parameter Sets: SetByResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-153">-LoadBalancerInboundNatRule</span><span class="sxs-lookup"><span data-stu-id="bb0ed-153">-LoadBalancerInboundNatRule</span></span>
+<span data-ttu-id="bb0ed-154">Bejövő hálózati címfordítási szabály konfigurációját adja meg a terheléselosztó számára.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-154">Specifies an inbound NAT rule configuration for a load balancer.</span></span>
+
+```yaml
+Type: System.Collections.Generic.List`1[Microsoft.Azure.Commands.Network.Models.PSInboundNatRule]
+Parameter Sets: SetByResource
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-155">-LoadBalancerInboundNatRuleId</span><span class="sxs-lookup"><span data-stu-id="bb0ed-155">-LoadBalancerInboundNatRuleId</span></span>
+<span data-ttu-id="bb0ed-156">A terheléselosztáshoz tartozó bejövő CÍMFORDÍTÁSi szabályok konfigurációjának AZONOSÍTÓját adja meg.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-156">Specifies the ID of an inbound NAT rule configuration for a load balancer.</span></span>
+
+```yaml
+Type: System.Collections.Generic.List`1[System.String]
+Parameter Sets: SetByResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-157">-Hely</span><span class="sxs-lookup"><span data-stu-id="bb0ed-157">-Location</span></span>
+<span data-ttu-id="bb0ed-158">Egy hálózati kapcsolat területét adja meg.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-158">Specifies the region for a network interface.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-159">-Name (név)</span><span class="sxs-lookup"><span data-stu-id="bb0ed-159">-Name</span></span>
+<span data-ttu-id="bb0ed-160">A létrehozandó hálózati csatoló nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-160">Specifies the name of the network interface to create.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: ResourceName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-161">-NetworkSecurityGroup</span><span class="sxs-lookup"><span data-stu-id="bb0ed-161">-NetworkSecurityGroup</span></span>
+<span data-ttu-id="bb0ed-162">Egy **NetworkSecurityGroup** -objektumot ad meg.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-162">Specifies a **NetworkSecurityGroup** object.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSNetworkSecurityGroup
+Parameter Sets: SetByIpConfigurationResourceId, SetByResource
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-163">-NetworkSecurityGroupId</span><span class="sxs-lookup"><span data-stu-id="bb0ed-163">-NetworkSecurityGroupId</span></span>
+<span data-ttu-id="bb0ed-164">Egy hálózati biztonsági csoport AZONOSÍTÓját adja meg.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-164">Specifies the ID of a network security group.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SetByIpConfigurationResourceId, SetByResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-165">-PrivateIpAddress</span><span class="sxs-lookup"><span data-stu-id="bb0ed-165">-PrivateIpAddress</span></span>
+<span data-ttu-id="bb0ed-166">Megadja a hálózati kapcsolathoz hozzárendelni kívánt statikus IPv4 IP-címet.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-166">Specifies a static IPv4 IP address to assign to this network interface.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SetByResourceId, SetByResource
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-167">-PublicIpAddress</span><span class="sxs-lookup"><span data-stu-id="bb0ed-167">-PublicIpAddress</span></span>
+<span data-ttu-id="bb0ed-168">Itt adhatja meg azt a **PublicIPAddress** objektumot, amelyet hálózati kapcsolathoz szeretne rendelni.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-168">Specifies a **PublicIPAddress** object to assign to a network interface.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSPublicIpAddress
+Parameter Sets: SetByResource
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-169">-PublicIpAddressId</span><span class="sxs-lookup"><span data-stu-id="bb0ed-169">-PublicIpAddressId</span></span>
+<span data-ttu-id="bb0ed-170">Annak a **PublicIPAddress** -objektumnak az azonosítóját adja meg, amelyet egy hálózati kapcsolathoz szeretne rendelni.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-170">Specifies the ID of a **PublicIPAddress** object to assign to a network interface.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SetByResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-171">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="bb0ed-171">-ResourceGroupName</span></span>
+<span data-ttu-id="bb0ed-172">Annak a csoportnak a neve, amelyhez a hálózati kapcsolat tartozik.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-172">Specifies the name of a resource group that the network interface belongs to.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-173">-Alhálózat</span><span class="sxs-lookup"><span data-stu-id="bb0ed-173">-Subnet</span></span>
+<span data-ttu-id="bb0ed-174">**Alhálózat** -objektumot ad meg.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-174">Specifies a **Subnet** object.</span></span>
+<span data-ttu-id="bb0ed-175">Ez a parancsmag létrehoz egy hálózati felületet annak az alhálózatnak, amelyet a paraméter határoz meg.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-175">This cmdlet creates a network interface for the subnet that this parameter specifies.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSSubnet
+Parameter Sets: SetByResource
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-176">– NetI</span><span class="sxs-lookup"><span data-stu-id="bb0ed-176">-SubnetId</span></span>
+<span data-ttu-id="bb0ed-177">Annak az alhálózatnak az AZONOSÍTÓját adja meg, amelyhez hálózati felületet szeretne létrehozni.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-177">Specifies the ID of the subnet for which to create a network interface.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SetByResourceId
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-178">-Címke</span><span class="sxs-lookup"><span data-stu-id="bb0ed-178">-Tag</span></span>
+<span data-ttu-id="bb0ed-179">A kulcs-érték párok a hash-táblázatok formájában.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-179">Key-value pairs in the form of a hash table.</span></span> <span data-ttu-id="bb0ed-180">Például: @ {key0 = "value0"; key1 = $null; azonosító2 = "érték2"}</span><span class="sxs-lookup"><span data-stu-id="bb0ed-180">For example: @{key0="value0";key1=$null;key2="value2"}</span></span>
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-181">– Megerősítés</span><span class="sxs-lookup"><span data-stu-id="bb0ed-181">-Confirm</span></span>
+<span data-ttu-id="bb0ed-182">A parancsmag futtatása előtt kéri a megerősítést.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-182">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-183">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="bb0ed-183">-WhatIf</span></span>
+<span data-ttu-id="bb0ed-184">Annak megjelenítése, hogy mi történik, ha a parancsmag fut.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-184">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="bb0ed-185">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="bb0ed-185">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bb0ed-186">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="bb0ed-186">CommonParameters</span></span>
+<span data-ttu-id="bb0ed-187">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="bb0ed-187">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="bb0ed-188">További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="bb0ed-188">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="bb0ed-189">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="bb0ed-189">INPUTS</span></span>
+
+### <span data-ttu-id="bb0ed-190">System. String</span><span class="sxs-lookup"><span data-stu-id="bb0ed-190">System.String</span></span>
+
+### <span data-ttu-id="bb0ed-191">System. Collections. Generic. list ' 1 [[Microsoft. Azure. commands. Network. models. PSNetworkInterfaceIPConfiguration, Microsoft. Azure. commands. Network, Version = 6.4.1.0, Culture = semleges, PublicKeyToken = null]]</span><span class="sxs-lookup"><span data-stu-id="bb0ed-191">System.Collections.Generic.List\`1[[Microsoft.Azure.Commands.Network.Models.PSNetworkInterfaceIPConfiguration, Microsoft.Azure.Commands.Network, Version=6.4.1.0, Culture=neutral, PublicKeyToken=null]]</span></span>
+
+### <span data-ttu-id="bb0ed-192">Microsoft. Azure. commands. Network. models. PSSubnet</span><span class="sxs-lookup"><span data-stu-id="bb0ed-192">Microsoft.Azure.Commands.Network.Models.PSSubnet</span></span>
+
+### <span data-ttu-id="bb0ed-193">Microsoft. Azure. commands. Network. models. PSPublicIpAddress</span><span class="sxs-lookup"><span data-stu-id="bb0ed-193">Microsoft.Azure.Commands.Network.Models.PSPublicIpAddress</span></span>
+
+### <span data-ttu-id="bb0ed-194">Microsoft. Azure. commands. Network. models. PSNetworkSecurityGroup</span><span class="sxs-lookup"><span data-stu-id="bb0ed-194">Microsoft.Azure.Commands.Network.Models.PSNetworkSecurityGroup</span></span>
+
+### <span data-ttu-id="bb0ed-195">System. Collections. Generic. list ' 1 [[System. string, mscorlib, Version = 4.0.0.0, Culture = semleges, PublicKeyToken = b77a5c561934e089]]</span><span class="sxs-lookup"><span data-stu-id="bb0ed-195">System.Collections.Generic.List\`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</span></span>
+
+### <span data-ttu-id="bb0ed-196">System. Collections. Generic. list ' 1 [[Microsoft. Azure. commands. Network. models. PSBackendAddressPool, Microsoft. Azure. commands. Network, Version = 6.4.1.0, Culture = semleges, PublicKeyToken = null]]</span><span class="sxs-lookup"><span data-stu-id="bb0ed-196">System.Collections.Generic.List\`1[[Microsoft.Azure.Commands.Network.Models.PSBackendAddressPool, Microsoft.Azure.Commands.Network, Version=6.4.1.0, Culture=neutral, PublicKeyToken=null]]</span></span>
+
+### <span data-ttu-id="bb0ed-197">System. Collections. Generic. list ' 1 [[Microsoft. Azure. commands. Network. models. PSInboundNatRule, Microsoft. Azure. commands. Network, Version = 6.4.1.0, Culture = semleges, PublicKeyToken = null]]</span><span class="sxs-lookup"><span data-stu-id="bb0ed-197">System.Collections.Generic.List\`1[[Microsoft.Azure.Commands.Network.Models.PSInboundNatRule, Microsoft.Azure.Commands.Network, Version=6.4.1.0, Culture=neutral, PublicKeyToken=null]]</span></span>
+
+### <span data-ttu-id="bb0ed-198">System. Collections. Generic. list ' 1 [[Microsoft. Azure. commands. Network. models. PSApplicationGatewayBackendAddressPool, Microsoft. Azure. commands. Network, Version = 6.4.1.0, Culture = semleges, PublicKeyToken = null]]</span><span class="sxs-lookup"><span data-stu-id="bb0ed-198">System.Collections.Generic.List\`1[[Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendAddressPool, Microsoft.Azure.Commands.Network, Version=6.4.1.0, Culture=neutral, PublicKeyToken=null]]</span></span>
+
+### <span data-ttu-id="bb0ed-199">System. Collections. Generic. list ' 1 [[Microsoft. Azure. commands. Network. models. PSApplicationSecurityGroup, Microsoft. Azure. commands. Network, Version = 6.4.1.0, Culture = semleges, PublicKeyToken = null]]</span><span class="sxs-lookup"><span data-stu-id="bb0ed-199">System.Collections.Generic.List\`1[[Microsoft.Azure.Commands.Network.Models.PSApplicationSecurityGroup, Microsoft.Azure.Commands.Network, Version=6.4.1.0, Culture=neutral, PublicKeyToken=null]]</span></span>
+
+### <span data-ttu-id="bb0ed-200">System. Collections. Hashtable</span><span class="sxs-lookup"><span data-stu-id="bb0ed-200">System.Collections.Hashtable</span></span>
+
+## <span data-ttu-id="bb0ed-201">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="bb0ed-201">OUTPUTS</span></span>
+
+### <span data-ttu-id="bb0ed-202">Microsoft. Azure. commands. Network. models. PSNetworkInterface</span><span class="sxs-lookup"><span data-stu-id="bb0ed-202">Microsoft.Azure.Commands.Network.Models.PSNetworkInterface</span></span>
+
+## <span data-ttu-id="bb0ed-203">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="bb0ed-203">NOTES</span></span>
+
+## <span data-ttu-id="bb0ed-204">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="bb0ed-204">RELATED LINKS</span></span>
+
+[<span data-ttu-id="bb0ed-205">Get-AzureRmNetworkInterface</span><span class="sxs-lookup"><span data-stu-id="bb0ed-205">Get-AzureRmNetworkInterface</span></span>](./Get-AzureRmNetworkInterface.md)
+
+[<span data-ttu-id="bb0ed-206">Remove-AzureRmNetworkInterface</span><span class="sxs-lookup"><span data-stu-id="bb0ed-206">Remove-AzureRmNetworkInterface</span></span>](./Remove-AzureRmNetworkInterface.md)
+
+[<span data-ttu-id="bb0ed-207">Set-AzureRmNetworkInterface</span><span class="sxs-lookup"><span data-stu-id="bb0ed-207">Set-AzureRmNetworkInterface</span></span>](./Set-AzureRmNetworkInterface.md)

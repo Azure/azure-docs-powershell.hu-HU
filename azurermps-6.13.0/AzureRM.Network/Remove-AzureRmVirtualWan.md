@@ -1,0 +1,233 @@
+---
+external help file: Microsoft.Azure.Commands.Network.dll-Help.xml
+Module Name: AzureRM.Network
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.network/remove-azurermvirtualwan
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Network/Commands.Network/help/Remove-AzureRmVirtualWan.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Network/Commands.Network/help/Remove-AzureRmVirtualWan.md
+ms.openlocfilehash: 1ff9eb4307c4419dd303d74f7528a8ee0d50bdf3
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93495002"
+---
+# <span data-ttu-id="0d761-101">Remove-AzureRmVirtualWan</span><span class="sxs-lookup"><span data-stu-id="0d761-101">Remove-AzureRmVirtualWan</span></span>
+
+## <span data-ttu-id="0d761-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="0d761-102">SYNOPSIS</span></span>
+<span data-ttu-id="0d761-103">Azure virtuális WAN-kapcsolat eltávolítása.</span><span class="sxs-lookup"><span data-stu-id="0d761-103">Removes an Azure Virtual WAN.</span></span>
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## <span data-ttu-id="0d761-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="0d761-104">SYNTAX</span></span>
+
+### <span data-ttu-id="0d761-105">ByVirtualWanName (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="0d761-105">ByVirtualWanName (Default)</span></span>
+```
+Remove-AzureRmVirtualWan -ResourceGroupName <String> -Name <String> [-Force] [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="0d761-106">ByVirtualWanObject</span><span class="sxs-lookup"><span data-stu-id="0d761-106">ByVirtualWanObject</span></span>
+```
+Remove-AzureRmVirtualWan -InputObject <PSVirtualWan> [-Force] [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="0d761-107">ByVirtualWanResourceId</span><span class="sxs-lookup"><span data-stu-id="0d761-107">ByVirtualWanResourceId</span></span>
+```
+Remove-AzureRmVirtualWan -ResourceId <String> [-Force] [-PassThru] [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="0d761-108">Leírás</span><span class="sxs-lookup"><span data-stu-id="0d761-108">DESCRIPTION</span></span>
+<span data-ttu-id="0d761-109">Azure virtuális WAN-kapcsolat eltávolítása.</span><span class="sxs-lookup"><span data-stu-id="0d761-109">Removes an Azure Virtual WAN.</span></span>
+
+## <span data-ttu-id="0d761-110">Példák</span><span class="sxs-lookup"><span data-stu-id="0d761-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="0d761-111">Példa 1</span><span class="sxs-lookup"><span data-stu-id="0d761-111">Example 1</span></span>
+
+```powershell
+PS C:\> New-AzureRmResourceGroup -Name "TestResourceGroup" -Location "Central US"
+PS C:\> New-AzureRmVirtualWan -Name "MyVirtualWan" -ResourceGroupName "TestResourceGroup" -Location "Central US"
+PS C:\> Remove-AzureRmVirtualWan -Name "MyVirtualWan" -ResourceGroupName "TestResourceGroup" -Passthru
+```
+
+<span data-ttu-id="0d761-112">Ez a példa létrehoz egy virtuális WAN-csoportot egy erőforráscsoporthoz, majd azonnal törli azt.</span><span class="sxs-lookup"><span data-stu-id="0d761-112">This example creates a Virtual WAN in a resource group and then immediately deletes it.</span></span> <span data-ttu-id="0d761-113">Ha el szeretné tiltani a virtuális WAN-kapcsolat törlésekor megjelenő üzenetet, használja a-Force jelölőt.</span><span class="sxs-lookup"><span data-stu-id="0d761-113">To suppress the prompt when deleting the Virtual WAN, use the -Force flag.</span></span>
+
+### <span data-ttu-id="0d761-114">2. példa</span><span class="sxs-lookup"><span data-stu-id="0d761-114">Example 2</span></span>
+
+```powershell
+PS C:\> New-AzureRmResourceGroup -Name "TestResourceGroup" -Location "Central US"
+PS C:\> $virtualWan = New-AzureRmVirtualWan -Name "MyVirtualWan" -ResourceGroupName "TestResourceGroup" -Location "Central US"
+PS C:\> Remove-AzureRmVirtualWan -InputObject $virtualWan -Passthru
+```
+
+<span data-ttu-id="0d761-115">Ez a példa létrehoz egy virtuális WAN-csoportot egy erőforráscsoporthoz, majd azonnal törli azt.</span><span class="sxs-lookup"><span data-stu-id="0d761-115">This example creates a Virtual WAN in a resource group and then immediately deletes it.</span></span> <span data-ttu-id="0d761-116">Ez a Törlés az új AzureRmVirtualWan által visszaadott virtuális WAN-objektum használatával történik.</span><span class="sxs-lookup"><span data-stu-id="0d761-116">This deletion happens using the virtual wan object returned by New-AzureRmVirtualWan.</span></span>
+<span data-ttu-id="0d761-117">Ha el szeretné tiltani a virtuális WAN-kapcsolat törlésekor megjelenő üzenetet, használja a-Force jelölőt.</span><span class="sxs-lookup"><span data-stu-id="0d761-117">To suppress the prompt when deleting the Virtual WAN, use the -Force flag.</span></span>
+
+### <span data-ttu-id="0d761-118">3. példa</span><span class="sxs-lookup"><span data-stu-id="0d761-118">Example 3</span></span>
+
+```powershell
+PS C:\> New-AzureRmResourceGroup -Name "TestResourceGroup" -Location "Central US"
+PS C:\> $virtualWan = New-AzureRmVirtualWan -Name "MyVirtualWan" -ResourceGroupName "TestResourceGroup" -Location "Central US"
+PS C:\> Remove-AzureRmVirtualWan -ResourceId $virtualWan.Id -Passthru
+```
+
+<span data-ttu-id="0d761-119">Ez a példa létrehoz egy virtuális WAN-csoportot egy erőforráscsoporthoz, majd azonnal törli azt.</span><span class="sxs-lookup"><span data-stu-id="0d761-119">This example creates a Virtual WAN in a resource group and then immediately deletes it.</span></span> <span data-ttu-id="0d761-120">Ez a Törlés az új AzureRmVirtualWan által visszaadott virtuális WAN-erőforrás-azonosító használatával történik.</span><span class="sxs-lookup"><span data-stu-id="0d761-120">This deletion happens using the virtual wan resource id returned by New-AzureRmVirtualWan.</span></span>
+<span data-ttu-id="0d761-121">Ha el szeretné tiltani a virtuális WAN-kapcsolat törlésekor megjelenő üzenetet, használja a-Force jelölőt.</span><span class="sxs-lookup"><span data-stu-id="0d761-121">To suppress the prompt when deleting the Virtual WAN, use the -Force flag.</span></span>
+
+## <span data-ttu-id="0d761-122">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="0d761-122">PARAMETERS</span></span>
+
+### <span data-ttu-id="0d761-123">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="0d761-123">-DefaultProfile</span></span>
+<span data-ttu-id="0d761-124">Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="0d761-124">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="0d761-125">-Force</span><span class="sxs-lookup"><span data-stu-id="0d761-125">-Force</span></span>
+<span data-ttu-id="0d761-126">Ne kérjen megerősítést.</span><span class="sxs-lookup"><span data-stu-id="0d761-126">Do not ask for confirmation.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="0d761-127">-InputObject</span><span class="sxs-lookup"><span data-stu-id="0d761-127">-InputObject</span></span>
+<span data-ttu-id="0d761-128">A törlendő virtuális WAN-objektum.</span><span class="sxs-lookup"><span data-stu-id="0d761-128">The virtual wan object to be deleted.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSVirtualWan
+Parameter Sets: ByVirtualWanObject
+Aliases: VirtualWan
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="0d761-129">-Name (név)</span><span class="sxs-lookup"><span data-stu-id="0d761-129">-Name</span></span>
+<span data-ttu-id="0d761-130">A virtuális WAN-név.</span><span class="sxs-lookup"><span data-stu-id="0d761-130">The virtual wan name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByVirtualWanName
+Aliases: ResourceName, VirtualWanName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="0d761-131">-PassThru</span><span class="sxs-lookup"><span data-stu-id="0d761-131">-PassThru</span></span>
+<span data-ttu-id="0d761-132">Egy olyan objektumot ad eredményül, amely a munkaterületet jelképezi.</span><span class="sxs-lookup"><span data-stu-id="0d761-132">Returns an object representing the item with which you are working.</span></span>
+<span data-ttu-id="0d761-133">Ez a parancsmag alapértelmezés szerint nem hoz létre semmilyen kimenetet.</span><span class="sxs-lookup"><span data-stu-id="0d761-133">By default, this cmdlet does not generate any output.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="0d761-134">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="0d761-134">-ResourceGroupName</span></span>
+<span data-ttu-id="0d761-135">Az erőforrás csoport neve.</span><span class="sxs-lookup"><span data-stu-id="0d761-135">The resource group name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByVirtualWanName
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="0d761-136">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="0d761-136">-ResourceId</span></span>
+<span data-ttu-id="0d761-137">A virtuális WAN által törölni kívánt Azure Resource ID azonosító.</span><span class="sxs-lookup"><span data-stu-id="0d761-137">The Azure resource ID for the virtual wan to be deleted.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByVirtualWanResourceId
+Aliases: VirtualWanId
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="0d761-138">– Megerősítés</span><span class="sxs-lookup"><span data-stu-id="0d761-138">-Confirm</span></span>
+<span data-ttu-id="0d761-139">A parancsmag futtatása előtt kéri a megerősítést.</span><span class="sxs-lookup"><span data-stu-id="0d761-139">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="0d761-140">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="0d761-140">-WhatIf</span></span>
+<span data-ttu-id="0d761-141">Annak megjelenítése, hogy mi történik, ha a parancsmag fut.</span><span class="sxs-lookup"><span data-stu-id="0d761-141">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="0d761-142">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="0d761-142">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="0d761-143">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="0d761-143">CommonParameters</span></span>
+<span data-ttu-id="0d761-144">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="0d761-144">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="0d761-145">További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="0d761-145">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="0d761-146">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="0d761-146">INPUTS</span></span>
+
+### <span data-ttu-id="0d761-147">Microsoft. Azure. commands. Network. models. PSVirtualWan</span><span class="sxs-lookup"><span data-stu-id="0d761-147">Microsoft.Azure.Commands.Network.Models.PSVirtualWan</span></span>
+
+### <span data-ttu-id="0d761-148">System. String</span><span class="sxs-lookup"><span data-stu-id="0d761-148">System.String</span></span>
+
+## <span data-ttu-id="0d761-149">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="0d761-149">OUTPUTS</span></span>
+
+### <span data-ttu-id="0d761-150">System. Boolean</span><span class="sxs-lookup"><span data-stu-id="0d761-150">System.Boolean</span></span>
+
+## <span data-ttu-id="0d761-151">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="0d761-151">NOTES</span></span>
+
+## <span data-ttu-id="0d761-152">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="0d761-152">RELATED LINKS</span></span>
