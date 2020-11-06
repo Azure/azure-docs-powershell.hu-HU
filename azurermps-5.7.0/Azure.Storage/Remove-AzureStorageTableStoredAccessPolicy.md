@@ -1,0 +1,159 @@
+---
+external help file: Microsoft.WindowsAzure.Commands.Storage.dll-Help.xml
+ms.assetid: 30CC0D80-505A-4988-B4EC-3B7BC5B76F5D
+online version: https://docs.microsoft.com/en-us/powershell/module/azure.storage/remove-azurestoragetablestoredaccesspolicy
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/Storage/Commands.Storage/help/Remove-AzureStorageTableStoredAccessPolicy.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/Storage/Commands.Storage/help/Remove-AzureStorageTableStoredAccessPolicy.md
+ms.openlocfilehash: a9e1290c5933d54481c57b051e170568653eee5a
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93499900"
+---
+# Remove-AzureStorageTableStoredAccessPolicy
+
+## Áttekintés
+A tárolt Access-házirendek eltávolítása az Azure Storage-táblájából.
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## SZINTAXISA
+
+```
+Remove-AzureStorageTableStoredAccessPolicy [-Table] <String> [-Policy] <String> [-PassThru]
+ [-Context <IStorageContext>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## Leírás
+A **Remove-AzureStorageTableStoredAccessPolicy** parancsmag az Azure Storage Table-ből eltávolítja a tárolt hozzáférési házirendet.
+
+## Példák
+
+### 1. példa: a tárolt Access-házirendek eltávolítása egy tárterület-táblából
+```
+PS C:\>Remove-AzureStorageTableStoredAccessPolicy -Table "MyTable" -Policy "Policy05"
+```
+
+Ez a parancs eltávolítja a Policy05 nevű házirendet a táblanév nevű tárterület táblából.
+
+## PARAMÉTEREK
+
+### -Környezet
+Az Azure tárolási környezetét adja meg.
+A tárolási környezet eléréséhez használja az New-AzureStorageContext parancsmagot.
+
+```yaml
+Type: IStorageContext
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -PassThru
+Jelzi, hogy ez a parancsmag olyan **logikai** értéket ad eredményül, amely tükrözi a művelet sikerét.
+Ez a parancsmag alapértelmezés szerint nem ad vissza értéket.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Házirend
+Annak a tárolt hozzáférési házirendnek a nevét adja meg, amelyre a parancsmag eltávolítja.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Table
+Az Azure-táblázat nevét adja meg.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: N, Name
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### – Megerősítés
+A parancsmag futtatása előtt kéri a megerősítést.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag nem fut.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## BEMENETEK
+
+### IStorageContext
+
+A "környezet" paraméter elfogadja a "IStorageContext" típusú értéket a csővezetékről
+
+## KIMENETEK
+
+### System. Boolean
+
+## MEGJEGYZI
+
+## KAPCSOLÓDÓ HIVATKOZÁSOK
+
+[Get-AzureStorageTableStoredAccessPolicy](./Get-AzureStorageTableStoredAccessPolicy.md)
+
+[Új – AzureStorageContext](./New-AzureStorageContext.md)
+
+[Új – AzureStorageTableStoredAccessPolicy](./New-AzureStorageTableStoredAccessPolicy.md)
+
+[Set-AzureStorageTableStoredAccessPolicy](./Set-AzureStorageTableStoredAccessPolicy.md)
