@@ -1,0 +1,180 @@
+---
+external help file: Microsoft.Azure.Commands.Management.CognitiveServices.dll-Help.xml
+Module Name: AzureRM.CognitiveServices
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.cognitiveservices/get-azurermcognitiveservicesaccountusage
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/CognitiveServices/Commands.Management.CognitiveServices/help/Get-AzureRmCognitiveServicesAccountUsage.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/CognitiveServices/Commands.Management.CognitiveServices/help/Get-AzureRmCognitiveServicesAccountUsage.md
+ms.openlocfilehash: a549e6c94ae43c8c1cc267448552565f932aa63d
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93492389"
+---
+# Get-AzureRmCognitiveServicesAccountUsage
+
+## Áttekintés
+Ismerje meg a kognitív Services-fiók jelenlegi használatát.
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## SZINTAXISA
+
+### InputObjectParameterSet
+```
+Get-AzureRmCognitiveServicesAccountUsage [-InputObject] <PSCognitiveServicesAccount>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### ResourceIdParameterSet
+```
+Get-AzureRmCognitiveServicesAccountUsage [-ResourceId] <String> [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+### ResourceNameParameterSet
+```
+Get-AzureRmCognitiveServicesAccountUsage [-ResourceGroupName] <String> [-Name] <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## Leírás
+A **Get-AzureRmCognitiveServicesAccountUsage** parancsmag a kognitív Services-fiók aktuális használati adatait kapja.
+
+## Példák
+
+### Példa 1
+```powershell
+PS C:\> Get-AzureRmCognitiveServicesAccountUsage -ResourceGroupName TestUsages -Name TestCVUsages_Prediction
+
+CurrentValue  : 0
+Name          : CustomVision.Prediction.Transactions
+Limit         : 10000
+Status        : Included
+Unit          : Count
+QuotaPeriod   : 30.00:00:00
+NextResetTime : 0001-01-01T00:00:00Z
+```
+
+### 2. példa
+```powershell
+PS C:\GitHub> $acc = Get-AzureRmCognitiveServicesAccount -ResourceGroupName TestUsages -Name TestCVUsages_Prediction
+
+PS C:\GitHub> Get-AzureRmCognitiveServicesAccountUsage -InputObject $acc
+
+
+CurrentValue  : 0
+Name          : CustomVision.Prediction.Transactions
+Limit         : 10000
+Status        : Included
+Unit          : Count
+QuotaPeriod   : 30.00:00:00
+NextResetTime : 0001-01-01T00:00:00Z
+```
+
+### 3. példa
+```powershell
+PS C:\GitHub> $acc = Get-AzureRmCognitiveServicesAccount -ResourceGroupName TestUsages -Name TestCVUsages_Prediction
+
+PS C:\GitHub> Get-AzureRmCognitiveServicesAccountUsage -ResourceId $acc.Id
+
+
+CurrentValue  : 0
+Name          : CustomVision.Prediction.Transactions
+Limit         : 10000
+Status        : Included
+Unit          : Count
+QuotaPeriod   : 30.00:00:00
+NextResetTime : 0001-01-01T00:00:00Z
+```
+
+## PARAMÉTEREK
+
+### -DefaultProfile
+Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+A kognitív szolgáltatások fiók objektuma.
+```yaml
+Type: PSCognitiveServicesAccount
+Parameter Sets: InputObjectParameterSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Name (név)
+A kognitív szolgáltatások fiók neve.
+
+```yaml
+Type: String
+Parameter Sets: ResourceNameParameterSet
+Aliases: CognitiveServicesAccountName, AccountName
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Erőforráscsoporthoz tartozó név.
+
+```yaml
+Type: String
+Parameter Sets: ResourceNameParameterSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ResourceId
+A kognitív szolgáltatások fiók erőforrás-azonosítója.
+```yaml
+Type: String
+Parameter Sets: ResourceIdParameterSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## BEMENETEK
+
+### System. String
+
+## KIMENETEK
+
+### Microsoft. Azure. Command. Management. CognitiveServices. models. PSCognitiveServicesUsage
+
+## MEGJEGYZI
+
+## KAPCSOLÓDÓ HIVATKOZÁSOK
