@@ -1,0 +1,126 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Compute.dll-Help-Help.xml
+Module Name: Az.Compute
+ms.assetid: D2BBAC5B-A7B9-44DA-BE37-24D89E03BAB3
+online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/get-azvmimagesku
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/Get-AzVMImageSku.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/Get-AzVMImageSku.md
+ms.openlocfilehash: fad6c42c53e475343ad518c89dbb1a918a0f1e68
+ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "93844578"
+---
+# <span data-ttu-id="75f46-101">Get-AzVMImageSku</span><span class="sxs-lookup"><span data-stu-id="75f46-101">Get-AzVMImageSku</span></span>
+
+## <span data-ttu-id="75f46-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="75f46-102">SYNOPSIS</span></span>
+<span data-ttu-id="75f46-103">Megkapja a VMImage SKU-ot.</span><span class="sxs-lookup"><span data-stu-id="75f46-103">Gets VMImage SKUs.</span></span>
+
+## <span data-ttu-id="75f46-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="75f46-104">SYNTAX</span></span>
+
+```
+Get-AzVMImageSku -Location <String> -PublisherName <String> -Offer <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="75f46-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="75f46-105">DESCRIPTION</span></span>
+<span data-ttu-id="75f46-106">A **Get-AzVMImageSku** parancsmag VMImage SKU-t kap.</span><span class="sxs-lookup"><span data-stu-id="75f46-106">The **Get-AzVMImageSku** cmdlet gets VMImage SKUs.</span></span>
+
+## <span data-ttu-id="75f46-107">Példák</span><span class="sxs-lookup"><span data-stu-id="75f46-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="75f46-108">Példa 1: VMImage SKU beszerzése</span><span class="sxs-lookup"><span data-stu-id="75f46-108">Example 1: Get VMImage SKUs</span></span>
+```
+PS C:\> Get-AzVMImageSku -Location "Central US" -PublisherName "Fabrikam" -Offer "LinuxServer"
+```
+
+<span data-ttu-id="75f46-109">Ez a parancs a megadott közzétevőhöz és ajánlathoz kapja a SKU-t.</span><span class="sxs-lookup"><span data-stu-id="75f46-109">This command gets the SKUs for the specified publisher and offer.</span></span>
+
+## <span data-ttu-id="75f46-110">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="75f46-110">PARAMETERS</span></span>
+
+### <span data-ttu-id="75f46-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="75f46-111">-DefaultProfile</span></span>
+<span data-ttu-id="75f46-112">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="75f46-112">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="75f46-113">-Hely</span><span class="sxs-lookup"><span data-stu-id="75f46-113">-Location</span></span>
+<span data-ttu-id="75f46-114">A VMImage helyét adja meg.</span><span class="sxs-lookup"><span data-stu-id="75f46-114">Specifies the location of the VMImage.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="75f46-115">-Ajánlat</span><span class="sxs-lookup"><span data-stu-id="75f46-115">-Offer</span></span>
+<span data-ttu-id="75f46-116">A VMImage-ajánlat típusát adja meg.</span><span class="sxs-lookup"><span data-stu-id="75f46-116">Specifies the type of VMImage offer.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="75f46-117">-PublisherName</span><span class="sxs-lookup"><span data-stu-id="75f46-117">-PublisherName</span></span>
+<span data-ttu-id="75f46-118">A VMImage közzétevőjét adja meg.</span><span class="sxs-lookup"><span data-stu-id="75f46-118">Specifies the publisher of a VMImage.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="75f46-119">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="75f46-119">CommonParameters</span></span>
+<span data-ttu-id="75f46-120">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="75f46-120">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="75f46-121">További információ: about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="75f46-121">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="75f46-122">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="75f46-122">INPUTS</span></span>
+
+### <span data-ttu-id="75f46-123">Nincs</span><span class="sxs-lookup"><span data-stu-id="75f46-123">None</span></span>
+<span data-ttu-id="75f46-124">Ez a parancsmag nem fogadja el a bevitelt.</span><span class="sxs-lookup"><span data-stu-id="75f46-124">This cmdlet does not accept any input.</span></span>
+
+## <span data-ttu-id="75f46-125">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="75f46-125">OUTPUTS</span></span>
+
+### <span data-ttu-id="75f46-126">Microsoft. Azure. commands. kiszámítás. models. PSVirtualMachineImageSku</span><span class="sxs-lookup"><span data-stu-id="75f46-126">Microsoft.Azure.Commands.Compute.Models.PSVirtualMachineImageSku</span></span>
+
+## <span data-ttu-id="75f46-127">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="75f46-127">NOTES</span></span>
+
+## <span data-ttu-id="75f46-128">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="75f46-128">RELATED LINKS</span></span>
+
+[<span data-ttu-id="75f46-129">Get-AzVMImage</span><span class="sxs-lookup"><span data-stu-id="75f46-129">Get-AzVMImage</span></span>](./Get-AzVMImage.md)
+
+[<span data-ttu-id="75f46-130">Get-AzVMImageOffer</span><span class="sxs-lookup"><span data-stu-id="75f46-130">Get-AzVMImageOffer</span></span>](./Get-AzVMImageOffer.md)
+
+[<span data-ttu-id="75f46-131">Get-AzVMImagePublisher</span><span class="sxs-lookup"><span data-stu-id="75f46-131">Get-AzVMImagePublisher</span></span>](./Get-AzVMImagePublisher.md)
+
+[<span data-ttu-id="75f46-132">Mentés-AzVMImage</span><span class="sxs-lookup"><span data-stu-id="75f46-132">Save-AzVMImage</span></span>](./Save-AzVMImage.md)
+
+
