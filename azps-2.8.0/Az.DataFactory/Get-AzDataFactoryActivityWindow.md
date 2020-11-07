@@ -1,0 +1,400 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.DataFactories.dll-Help.xml
+Module Name: Az.DataFactory
+ms.assetid: F8C67F7B-64C5-45E4-A0BF-32212BEBE885
+online version: https://docs.microsoft.com/en-us/powershell/module/az.datafactory/get-azdatafactoryactivitywindow
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Get-AzDataFactoryActivityWindow.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Get-AzDataFactoryActivityWindow.md
+ms.openlocfilehash: 3e79f4c11a5df5da8c01c323405f78c36aa5245b
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93667089"
+---
+# <span data-ttu-id="5a42a-101">Get-AzDataFactoryActivityWindow</span><span class="sxs-lookup"><span data-stu-id="5a42a-101">Get-AzDataFactoryActivityWindow</span></span>
+
+## <span data-ttu-id="5a42a-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="5a42a-102">SYNOPSIS</span></span>
+<span data-ttu-id="5a42a-103">Információt kap az adatgyárhoz társított tevékenység-ablakokról.</span><span class="sxs-lookup"><span data-stu-id="5a42a-103">Gets information about activity windows associated with a data factory.</span></span>
+
+## <span data-ttu-id="5a42a-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="5a42a-104">SYNTAX</span></span>
+
+### <span data-ttu-id="5a42a-105">ByFactoryName (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="5a42a-105">ByFactoryName (Default)</span></span>
+```
+Get-AzDataFactoryActivityWindow [-DataFactoryName] <String> [[-DatasetName] <String>]
+ [[-PipelineName] <String>] [[-ActivityName] <String>] [-WindowState <String>] [-WindowSubstate <String>]
+ [-Filter <String>] [-OrderBy <String>] [-WindowStart <DateTime>] [-WindowEnd <DateTime>]
+ [-RunStart <DateTime>] [-RunEnd <DateTime>] [-Top <Int32>] [-ResourceGroupName] <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="5a42a-106">ByFactoryObject</span><span class="sxs-lookup"><span data-stu-id="5a42a-106">ByFactoryObject</span></span>
+```
+Get-AzDataFactoryActivityWindow [-DataFactory] <PSDataFactory> [[-DatasetName] <String>]
+ [[-PipelineName] <String>] [[-ActivityName] <String>] [-WindowState <String>] [-WindowSubstate <String>]
+ [-Filter <String>] [-OrderBy <String>] [-WindowStart <DateTime>] [-WindowEnd <DateTime>]
+ [-RunStart <DateTime>] [-RunEnd <DateTime>] [-Top <Int32>] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="5a42a-107">Leírás</span><span class="sxs-lookup"><span data-stu-id="5a42a-107">DESCRIPTION</span></span>
+<span data-ttu-id="5a42a-108">A **Get-AzDataFactoryActivityWindow** parancsmag információt kap az adatfeldolgozó ablakokkal társított tevékenységekről.</span><span class="sxs-lookup"><span data-stu-id="5a42a-108">The **Get-AzDataFactoryActivityWindow** cmdlet gets information about the activity windows associated with a data factory.</span></span>
+
+## <span data-ttu-id="5a42a-109">Példák</span><span class="sxs-lookup"><span data-stu-id="5a42a-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="5a42a-110">1. példa: az adatfeldolgozóhoz társított Windows-tevékenységek beszerzése</span><span class="sxs-lookup"><span data-stu-id="5a42a-110">Example 1: Get activity windows associated with a data factory</span></span>
+```
+PS C:\>Get-AzDataFactoryActivityWindow -DataFactoryName "WikiADF" -ResourceGroupName "ADF" -Top 3
+ResourceGroupName : ADF
+DataFactoryName   : WikiADF
+PipelineName      : DP_WikipediaSamplePipeline
+ActivityName      : BlobToSqlCopyActivity
+ActivityType      : Copy
+LinkedServiceName : 
+WindowState       : Waiting
+WindowSubstate    : ConcurrencyLimit
+Duration          : 00:00:00
+InputDatasets     : {DA_CuratedWikiData}
+OutputDatasets    : {DA_WikiAggregatedData}
+PercentComplete   : 0
+RunAttempts       : 1
+RunStart          : 8/17/2016 10:05:51 PM
+RunEnd            : 8/17/2016 10:05:51 PM
+WindowStart       : 8/17/2016 6:00:00 AM
+WindowEnd         : 8/17/2016 7:00:00 AM
+
+
+ResourceGroupName : ADF
+DataFactoryName   : WikiADF
+PipelineName      : DP_WikipediaSamplePipeline
+ActivityName      : BlobToSqlCopyActivity
+ActivityType      : Copy
+LinkedServiceName : 
+WindowState       : Waiting
+WindowSubstate    : ConcurrencyLimit
+Duration          : 00:00:00
+InputDatasets     : {DA_CuratedWikiData}
+OutputDatasets    : {DA_WikiAggregatedData}
+PercentComplete   : 0
+RunAttempts       : 1
+RunStart          : 8/17/2016 10:05:51 PM
+RunEnd            : 8/17/2016 10:05:51 PM
+WindowStart       : 8/16/2016 10:00:00 PM
+WindowEnd         : 8/16/2016 11:00:00 PM
+
+
+ResourceGroupName : ADF
+DataFactoryName   : WikiADF
+PipelineName      : DP_WikipediaSamplePipeline
+ActivityName      : WikiHiveActivity
+ActivityType      : HDInsightHive
+LinkedServiceName : HDILinkedService
+WindowState       : Ready
+WindowSubstate    : 
+Duration          : 00:03:37.8020000
+InputDatasets     : {DA_WikipediaClickEvents}
+OutputDatasets    : {DA_CuratedWikiData}
+PercentComplete   : 100
+RunAttempts       : 1
+RunStart          : 8/17/2016 11:09:23 PM
+RunEnd            : 8/17/2016 11:13:01 PM
+WindowStart       : 8/17/2016 3:00:00 AM
+WindowEnd         : 8/17/2016 4:00:00 AM
+```
+
+<span data-ttu-id="5a42a-111">Ez a parancs információt kap a WikiADF nevű adatfeldolgozóval társított összes tevékenység ablakról.</span><span class="sxs-lookup"><span data-stu-id="5a42a-111">This command gets information about all activity window associated with the data factory named WikiADF.</span></span>
+
+## <span data-ttu-id="5a42a-112">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="5a42a-112">PARAMETERS</span></span>
+
+### <span data-ttu-id="5a42a-113">-ActivityName</span><span class="sxs-lookup"><span data-stu-id="5a42a-113">-ActivityName</span></span>
+<span data-ttu-id="5a42a-114">A tevékenység nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="5a42a-114">Specifies the name of the activity.</span></span>
+<span data-ttu-id="5a42a-115">Ez a parancsmag a Windows tevékenységeit a paraméter által megadott tevékenységhez kapja.</span><span class="sxs-lookup"><span data-stu-id="5a42a-115">This cmdlet gets activity windows for the activity that this parameter specifies.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a42a-116">-DataFactory</span><span class="sxs-lookup"><span data-stu-id="5a42a-116">-DataFactory</span></span>
+<span data-ttu-id="5a42a-117">Egy parancsmag által visszaadott **PSDataFactory** -objektumot adja meg.</span><span class="sxs-lookup"><span data-stu-id="5a42a-117">Specifies a **PSDataFactory** object returned by a cmdlet.</span></span>
+<span data-ttu-id="5a42a-118">Ez a parancsmag azokat a Windows-tevékenységeket kapja meg, amelyek az adatfeldolgozóhoz tartoznak, és ez a paraméter határozza meg.</span><span class="sxs-lookup"><span data-stu-id="5a42a-118">This cmdlet gets activity windows that belong to the data factory that this parameter specifies.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.DataFactories.Models.PSDataFactory
+Parameter Sets: ByFactoryObject
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a42a-119">-DataFactoryName</span><span class="sxs-lookup"><span data-stu-id="5a42a-119">-DataFactoryName</span></span>
+<span data-ttu-id="5a42a-120">Az adatfeldolgozó nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="5a42a-120">Specifies the name of the data factory.</span></span>
+<span data-ttu-id="5a42a-121">Ez a parancsmag azokat a Windows-tevékenységeket kapja meg, amelyek az adatfeldolgozóhoz tartoznak, és ez a paraméter határozza meg.</span><span class="sxs-lookup"><span data-stu-id="5a42a-121">This cmdlet gets activity windows that belong to the data factory that this parameter specifies.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByFactoryName
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a42a-122">-DatasetName</span><span class="sxs-lookup"><span data-stu-id="5a42a-122">-DatasetName</span></span>
+<span data-ttu-id="5a42a-123">Az adatkészlet nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="5a42a-123">Specifies the name of the dataset.</span></span>
+<span data-ttu-id="5a42a-124">Ez a parancsmag olyan Windows-tevékenységekre ad választ, amelyek a paraméter által megadott adatkészlethez tartoznak.</span><span class="sxs-lookup"><span data-stu-id="5a42a-124">This cmdlet gets activity windows that belong to the dataset that this parameter specifies.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a42a-125">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="5a42a-125">-DefaultProfile</span></span>
+<span data-ttu-id="5a42a-126">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés</span><span class="sxs-lookup"><span data-stu-id="5a42a-126">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a42a-127">-Szűrő</span><span class="sxs-lookup"><span data-stu-id="5a42a-127">-Filter</span></span>
+<span data-ttu-id="5a42a-128">A tevékenység ablak az Azure keresési szűrési nyelvhelyességi szolgáltatással.</span><span class="sxs-lookup"><span data-stu-id="5a42a-128">Specifies the activity window expressed by using Azure Search filter grammar.</span></span>
+<span data-ttu-id="5a42a-129">A nyelvhelyességről további információt az Azure Search OData kifejezés szintaxisa című témakörben talál https://msdn.microsoft.com/en-us/library/azure/dn798921.aspx ( https://msdn.microsoft.com/en-us/library/azure/dn798921.aspx) az MSDN webhelyen.</span><span class="sxs-lookup"><span data-stu-id="5a42a-129">For information about the grammar, see OData Expression Syntax for Azure Searchhttps://msdn.microsoft.com/en-us/library/azure/dn798921.aspx (https://msdn.microsoft.com/en-us/library/azure/dn798921.aspx) in MSDN.</span></span>
+<span data-ttu-id="5a42a-130">A tevékenység Windows-listáját a paraméter által megadott keresési karakterlánc szűri.</span><span class="sxs-lookup"><span data-stu-id="5a42a-130">The activity windows list is filtered by the search string that this parameter specifies.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a42a-131">-OrderBy</span><span class="sxs-lookup"><span data-stu-id="5a42a-131">-OrderBy</span></span>
+<span data-ttu-id="5a42a-132">Azt adja meg, hogy a tevékenység ablak lista paramétereinek egyike szerint rendelje a választ.</span><span class="sxs-lookup"><span data-stu-id="5a42a-132">Specifies to order the response by one of the activity window list parameters.</span></span>
+<span data-ttu-id="5a42a-133">Ez a pontosvesszővel tagolt tulajdonságok listája.</span><span class="sxs-lookup"><span data-stu-id="5a42a-133">This is a list of comma separated properties.</span></span>
+<span data-ttu-id="5a42a-134">Például: WindowStart, KészültségiSzint paraméter értéke.</span><span class="sxs-lookup"><span data-stu-id="5a42a-134">For example: WindowStart, PercentComplete.</span></span>
+<span data-ttu-id="5a42a-135">Alapértelmezés szerint a sorrend növekvő sorrendű (ASC).</span><span class="sxs-lookup"><span data-stu-id="5a42a-135">By default, the order is ascending order (ASC).</span></span>
+<span data-ttu-id="5a42a-136">Ha csökkenő sorrendben szeretné rendezni a listát, adja meg a LEÍRÁSát.</span><span class="sxs-lookup"><span data-stu-id="5a42a-136">Specify DESC if you want to order the list in descending order.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a42a-137">-PipelineName</span><span class="sxs-lookup"><span data-stu-id="5a42a-137">-PipelineName</span></span>
+<span data-ttu-id="5a42a-138">A csővezeték nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="5a42a-138">Specifies the name of the pipeline.</span></span>
+<span data-ttu-id="5a42a-139">Ez a parancsmag olyan Windows-tevékenységeket kap, amelyek a paraméter által megadott csővezetékhez tartoznak.</span><span class="sxs-lookup"><span data-stu-id="5a42a-139">This cmdlet gets activity windows that belong to the pipeline that this parameter specifies.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a42a-140">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="5a42a-140">-ResourceGroupName</span></span>
+<span data-ttu-id="5a42a-141">Az erőforráscsoport nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="5a42a-141">Specifies the name of the resource group.</span></span>
+<span data-ttu-id="5a42a-142">Ez a parancsmag olyan Windows-tevékenységekre ad választ, amelyek a paraméter által megadott erőforráscsoport csoportjába tartoznak.</span><span class="sxs-lookup"><span data-stu-id="5a42a-142">This cmdlet gets activity windows that belong to the resource group that this parameter specifies.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByFactoryName
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a42a-143">-RunEnd</span><span class="sxs-lookup"><span data-stu-id="5a42a-143">-RunEnd</span></span>
+<span data-ttu-id="5a42a-144">A tevékenység ablak befejezési időpontját adja meg.</span><span class="sxs-lookup"><span data-stu-id="5a42a-144">Specifies the end time of the activity window run.</span></span>
+<span data-ttu-id="5a42a-145">Ez a parancsmag olyan Windows-tevékenységeket kap, amelyek futási ideje a *RunStart* és a *RunEnd* között esik.</span><span class="sxs-lookup"><span data-stu-id="5a42a-145">This cmdlet gets activity windows whose run times fall between *RunStart* and *RunEnd* times.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.DateTime]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a42a-146">-RunStart</span><span class="sxs-lookup"><span data-stu-id="5a42a-146">-RunStart</span></span>
+<span data-ttu-id="5a42a-147">A tevékenység ablak kezdési időpontját adja meg.</span><span class="sxs-lookup"><span data-stu-id="5a42a-147">Specifies the start time of the activity window run.</span></span>
+<span data-ttu-id="5a42a-148">Ez a parancsmag olyan Windows-tevékenységeket kap, amelyek futási ideje a *RunStart* és a *RunEnd* között esik.</span><span class="sxs-lookup"><span data-stu-id="5a42a-148">This cmdlet gets activity windows whose run times fall between *RunStart* and *RunEnd* times.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.DateTime]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a42a-149">-Top</span><span class="sxs-lookup"><span data-stu-id="5a42a-149">-Top</span></span>
+<span data-ttu-id="5a42a-150">Itt adhatja meg, hogy a Windows hány tevékenységet ad eredményül.</span><span class="sxs-lookup"><span data-stu-id="5a42a-150">Specifies the maximum number of activity windows that this cmdlet returns.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a42a-151">-WindowEnd</span><span class="sxs-lookup"><span data-stu-id="5a42a-151">-WindowEnd</span></span>
+<span data-ttu-id="5a42a-152">A tevékenység befejezése ablak befejezési időpontját adja meg.</span><span class="sxs-lookup"><span data-stu-id="5a42a-152">Specifies the end time of activity window.</span></span>
+<span data-ttu-id="5a42a-153">Ez a parancsmag olyan Windows-tevékenységeket kap, amelyek időpontja a *WindowStart* és a *WindowEnd* időpontja között esik.</span><span class="sxs-lookup"><span data-stu-id="5a42a-153">This cmdlet gets activity windows whose times fall between *WindowStart* and *WindowEnd* times.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.DateTime]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a42a-154">-WindowStart</span><span class="sxs-lookup"><span data-stu-id="5a42a-154">-WindowStart</span></span>
+<span data-ttu-id="5a42a-155">A tevékenység ablak kezdési időpontját adja meg.</span><span class="sxs-lookup"><span data-stu-id="5a42a-155">Specifies the start time of activity window.</span></span>
+<span data-ttu-id="5a42a-156">Ez a parancsmag olyan Windows-tevékenységeket kap, amelyek időpontja a *WindowStart* és a *WindowEnd* időpontja között esik.</span><span class="sxs-lookup"><span data-stu-id="5a42a-156">This cmdlet gets activity windows whose times fall between *WindowStart* and *WindowEnd* times.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.DateTime]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a42a-157">-WindowState</span><span class="sxs-lookup"><span data-stu-id="5a42a-157">-WindowState</span></span>
+<span data-ttu-id="5a42a-158">A tevékenység ablak állapotát adja meg.</span><span class="sxs-lookup"><span data-stu-id="5a42a-158">Specifies the state of the activity window.</span></span>
+<span data-ttu-id="5a42a-159">A paraméter elfogadható értékei a következők:</span><span class="sxs-lookup"><span data-stu-id="5a42a-159">The acceptable values for this parameter are:</span></span>
+- <span data-ttu-id="5a42a-160">Nincs</span><span class="sxs-lookup"><span data-stu-id="5a42a-160">None</span></span>
+- <span data-ttu-id="5a42a-161">Várakozás</span><span class="sxs-lookup"><span data-stu-id="5a42a-161">Waiting</span></span>
+- <span data-ttu-id="5a42a-162">Előrehaladás</span><span class="sxs-lookup"><span data-stu-id="5a42a-162">InProgress</span></span>
+- <span data-ttu-id="5a42a-163">Kész</span><span class="sxs-lookup"><span data-stu-id="5a42a-163">Ready</span></span>
+- <span data-ttu-id="5a42a-164">Sikertelen</span><span class="sxs-lookup"><span data-stu-id="5a42a-164">Failed</span></span>
+- <span data-ttu-id="5a42a-165">Kihagyva: Ez a parancsmag olyan Windows-tevékenységeket kap, amelyek abban az állapotban vannak, hogy ez a paraméter adja meg.</span><span class="sxs-lookup"><span data-stu-id="5a42a-165">Skipped This cmdlet gets activity windows that are in the state that this parameter specifies.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a42a-166">-WindowSubstate</span><span class="sxs-lookup"><span data-stu-id="5a42a-166">-WindowSubstate</span></span>
+<span data-ttu-id="5a42a-167">A tevékenység ablak alállapotát adja meg.</span><span class="sxs-lookup"><span data-stu-id="5a42a-167">Specifies the substate of the activity window.</span></span>
+<span data-ttu-id="5a42a-168">A paraméter elfogadható értékei a következők:</span><span class="sxs-lookup"><span data-stu-id="5a42a-168">The acceptable values for this parameter are:</span></span>
+- <span data-ttu-id="5a42a-169">Visszavont</span><span class="sxs-lookup"><span data-stu-id="5a42a-169">Canceled</span></span>
+- <span data-ttu-id="5a42a-170">timedOut</span><span class="sxs-lookup"><span data-stu-id="5a42a-170">timedOut</span></span>
+- <span data-ttu-id="5a42a-171">A parancsmag érvényesítése olyan Windows-tevékenységeket kap, amelyek abban az alállamban vannak, hogy ez a paraméter adja meg.</span><span class="sxs-lookup"><span data-stu-id="5a42a-171">Validating This cmdlet gets activity windows that are in the substate that this parameter specifies.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a42a-172">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="5a42a-172">CommonParameters</span></span>
+<span data-ttu-id="5a42a-173">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="5a42a-173">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="5a42a-174">További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="5a42a-174">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="5a42a-175">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="5a42a-175">INPUTS</span></span>
+
+### <span data-ttu-id="5a42a-176">Microsoft.Azure.Commands.DataFactories.Models.PSDataFactory</span><span class="sxs-lookup"><span data-stu-id="5a42a-176">Microsoft.Azure.Commands.DataFactories.Models.PSDataFactory</span></span>
+
+### <span data-ttu-id="5a42a-177">System. String</span><span class="sxs-lookup"><span data-stu-id="5a42a-177">System.String</span></span>
+
+### <span data-ttu-id="5a42a-178">System. null ' 1 [[System. DateTime, System. Private. CoreLib, Version = 4.0.0.0, Culture = semleges, PublicKeyToken = 7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="5a42a-178">System.Nullable\`1[[System.DateTime, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
+
+### <span data-ttu-id="5a42a-179">System. null ' 1 [[System. Int32, System. Private. CoreLib, Version = 4.0.0.0, Culture = semleges, PublicKeyToken = 7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="5a42a-179">System.Nullable\`1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
+
+## <span data-ttu-id="5a42a-180">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="5a42a-180">OUTPUTS</span></span>
+
+### <span data-ttu-id="5a42a-181">Microsoft. Azure. Command. DataFactories. models. PSActivityWindow</span><span class="sxs-lookup"><span data-stu-id="5a42a-181">Microsoft.Azure.Commands.DataFactories.Models.PSActivityWindow</span></span>
+
+## <span data-ttu-id="5a42a-182">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="5a42a-182">NOTES</span></span>
+
+## <span data-ttu-id="5a42a-183">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="5a42a-183">RELATED LINKS</span></span>
+
+[<span data-ttu-id="5a42a-184">Azure adatgyárak parancsmagok</span><span class="sxs-lookup"><span data-stu-id="5a42a-184">Azure Data Factories Cmdlets</span></span>](./Az.DataFactory.md)
+
+
