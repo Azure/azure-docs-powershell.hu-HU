@@ -1,0 +1,181 @@
+---
+external help file: Microsoft.Azure.Commands.Sql.dll-Help.xml
+Module Name: AzureRM.Sql
+ms.assetid: 01744DBD-1991-45EF-AA92-FD471F7E7551
+online version: ''
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Sql/Commands.Sql/help/Set-AzureRmSqlDatabaseTransparentDataEncryption.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Sql/Commands.Sql/help/Set-AzureRmSqlDatabaseTransparentDataEncryption.md
+ms.openlocfilehash: ca3ee787e577eabc9e889cbb471fcf3a00a4736c
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93672394"
+---
+# <span data-ttu-id="9ab1e-101">Set-AzureRmSqlDatabaseTransparentDataEncryption</span><span class="sxs-lookup"><span data-stu-id="9ab1e-101">Set-AzureRmSqlDatabaseTransparentDataEncryption</span></span>
+
+## <span data-ttu-id="9ab1e-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="9ab1e-102">SYNOPSIS</span></span>
+<span data-ttu-id="9ab1e-103">Módosítja az adatbázis TDE tulajdonságát.</span><span class="sxs-lookup"><span data-stu-id="9ab1e-103">Modifies TDE property for a database.</span></span>
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## <span data-ttu-id="9ab1e-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="9ab1e-104">SYNTAX</span></span>
+
+```
+Set-AzureRmSqlDatabaseTransparentDataEncryption [-State] <TransparentDataEncryptionStateType>
+ [-ServerName] <String> [-DatabaseName] <String> [-ResourceGroupName] <String>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="9ab1e-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="9ab1e-105">DESCRIPTION</span></span>
+<span data-ttu-id="9ab1e-106">A **set-AzureRmSqlDatabaseTransparentDataEncryption** parancsmag módosította az Azure SQL-adatbázisok átlátszó adattitkosítási (TDE) tulajdonságát.</span><span class="sxs-lookup"><span data-stu-id="9ab1e-106">The **Set-AzureRmSqlDatabaseTransparentDataEncryption** cmdlet modifies the Transparent Data Encryption (TDE) property of an Azure SQL database.</span></span>
+<span data-ttu-id="9ab1e-107">További információért olvassa el az átlátszó adattitkosítás az Azure SQL-adatbázisokkal https://msdn.microsoft.com/library/dn948096 ( https://msdn.microsoft.com/library/dn948096) a Microsoft Developer Network Library-ban című témakört).</span><span class="sxs-lookup"><span data-stu-id="9ab1e-107">For more information, see Transparent Data Encryption with Azure SQL Databasehttps://msdn.microsoft.com/library/dn948096 (https://msdn.microsoft.com/library/dn948096) in the Microsoft Developer Network Library.</span></span>
+
+<span data-ttu-id="9ab1e-108">Ezt a parancsmagot az SQL Server stretch Database szolgáltatása is támogatja az Azure-ban.</span><span class="sxs-lookup"><span data-stu-id="9ab1e-108">This cmdlet is also supported by the SQL Server Stretch Database service on Azure.</span></span>
+
+## <span data-ttu-id="9ab1e-109">Példák</span><span class="sxs-lookup"><span data-stu-id="9ab1e-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="9ab1e-110">1. példa: TDE engedélyezése adatbázishoz</span><span class="sxs-lookup"><span data-stu-id="9ab1e-110">Example 1: Enable TDE for a database</span></span>
+```
+PS C:\>Set-AzureRmSqlDatabaseTransparentDataEncryption -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -State Enabled
+ResourceGroupName             ServerName                    DatabaseName                                          State
+-----------------             ----------                    ------------                                          -----
+ResourceGroup01               Server01                      Database01                                            Enabled
+```
+
+<span data-ttu-id="9ab1e-111">Ez a parancs engedélyezi a Server01 nevű kiszolgálón a Database01 nevű adatbázis TDE.</span><span class="sxs-lookup"><span data-stu-id="9ab1e-111">This command enables TDE for the database named Database01 on the server named Server01.</span></span>
+
+## <span data-ttu-id="9ab1e-112">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="9ab1e-112">PARAMETERS</span></span>
+
+### <span data-ttu-id="9ab1e-113">-DatabaseName</span><span class="sxs-lookup"><span data-stu-id="9ab1e-113">-DatabaseName</span></span>
+<span data-ttu-id="9ab1e-114">Annak az adatbázisnak a neve, amelyet a parancsmag módosított.</span><span class="sxs-lookup"><span data-stu-id="9ab1e-114">Specifies the name of the database that this cmdlet modifies.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9ab1e-115">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="9ab1e-115">-ResourceGroupName</span></span>
+<span data-ttu-id="9ab1e-116">Annak az erőforráscsoport a neve, amelyhez az adatbázis hozzá van rendelve.</span><span class="sxs-lookup"><span data-stu-id="9ab1e-116">Specifies the name of the resource group to which the database is assigned.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9ab1e-117">-Kiszolgálónév</span><span class="sxs-lookup"><span data-stu-id="9ab1e-117">-ServerName</span></span>
+<span data-ttu-id="9ab1e-118">Az adatbázist tároló kiszolgáló nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="9ab1e-118">Specifies the name of the server that hosts the database.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9ab1e-119">-State (állami)</span><span class="sxs-lookup"><span data-stu-id="9ab1e-119">-State</span></span>
+<span data-ttu-id="9ab1e-120">A TDE tulajdonság értékét adja meg.</span><span class="sxs-lookup"><span data-stu-id="9ab1e-120">Specifies the value of the TDE property.</span></span>
+<span data-ttu-id="9ab1e-121">A paraméter elfogadható értékei a következők:</span><span class="sxs-lookup"><span data-stu-id="9ab1e-121">The acceptable values for this parameter are:</span></span>
+
+- <span data-ttu-id="9ab1e-122">Engedélyezve</span><span class="sxs-lookup"><span data-stu-id="9ab1e-122">Enabled</span></span> 
+- <span data-ttu-id="9ab1e-123">Tiltva</span><span class="sxs-lookup"><span data-stu-id="9ab1e-123">Disabled</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Sql.TransparentDataEncryption.Model.TransparentDataEncryptionStateType
+Parameter Sets: (All)
+Aliases: 
+Accepted values: Enabled, Disabled
+
+Required: True
+Position: 3
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9ab1e-124">– Megerősítés</span><span class="sxs-lookup"><span data-stu-id="9ab1e-124">-Confirm</span></span>
+<span data-ttu-id="9ab1e-125">A parancsmag futtatása előtt kéri a megerősítést.</span><span class="sxs-lookup"><span data-stu-id="9ab1e-125">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9ab1e-126">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="9ab1e-126">-WhatIf</span></span>
+<span data-ttu-id="9ab1e-127">Annak megjelenítése, hogy mi történik, ha a parancsmag fut.</span><span class="sxs-lookup"><span data-stu-id="9ab1e-127">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="9ab1e-128">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="9ab1e-128">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9ab1e-129">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="9ab1e-129">-DefaultProfile</span></span>
+<span data-ttu-id="9ab1e-130">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="9ab1e-130">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9ab1e-131">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="9ab1e-131">CommonParameters</span></span>
+<span data-ttu-id="9ab1e-132">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="9ab1e-132">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="9ab1e-133">További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="9ab1e-133">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="9ab1e-134">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="9ab1e-134">INPUTS</span></span>
+
+## <span data-ttu-id="9ab1e-135">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="9ab1e-135">OUTPUTS</span></span>
+
+### <span data-ttu-id="9ab1e-136">Microsoft. Azure. Command. SQL. TransparentDataEncryption. Model. AzureSqlDatabaseTransparentDataEncryptionModel</span><span class="sxs-lookup"><span data-stu-id="9ab1e-136">Microsoft.Azure.Commands.Sql.TransparentDataEncryption.Model.AzureSqlDatabaseTransparentDataEncryptionModel</span></span>
+
+## <span data-ttu-id="9ab1e-137">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="9ab1e-137">NOTES</span></span>
+
+## <span data-ttu-id="9ab1e-138">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="9ab1e-138">RELATED LINKS</span></span>
+
+[<span data-ttu-id="9ab1e-139">Get-AzureRmSqlDatabaseTransparentDataEncryption</span><span class="sxs-lookup"><span data-stu-id="9ab1e-139">Get-AzureRmSqlDatabaseTransparentDataEncryption</span></span>](./Get-AzureRmSqlDatabaseTransparentDataEncryption.md)
+
+[<span data-ttu-id="9ab1e-140">Get-AzureRmSqlDatabaseTransparentDataEncryptionActivity</span><span class="sxs-lookup"><span data-stu-id="9ab1e-140">Get-AzureRmSqlDatabaseTransparentDataEncryptionActivity</span></span>](./Get-AzureRmSqlDatabaseTransparentDataEncryptionActivity.md)
+
+[<span data-ttu-id="9ab1e-141">SQL-adatbázis dokumentációja</span><span class="sxs-lookup"><span data-stu-id="9ab1e-141">SQL Database Documentation</span></span>](https://docs.microsoft.com/azure/sql-database/)
+
+

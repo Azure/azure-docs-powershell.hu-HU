@@ -1,0 +1,106 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Compute.dll-Help.xml
+Module Name: Az.Compute
+online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/get-azvmruncommanddocument
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMRunCommandDocument.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMRunCommandDocument.md
+ms.openlocfilehash: 3b66cdc6574397de7d43dfef0677a5ddac772a31
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93671340"
+---
+# <span data-ttu-id="01512-101">Get-AzVMRunCommandDocument</span><span class="sxs-lookup"><span data-stu-id="01512-101">Get-AzVMRunCommandDocument</span></span>
+
+## <span data-ttu-id="01512-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="01512-102">SYNOPSIS</span></span>
+<span data-ttu-id="01512-103">Futtathatja a Futtatás parancs dokumentumát.</span><span class="sxs-lookup"><span data-stu-id="01512-103">Get a run command document.</span></span>
+
+## <span data-ttu-id="01512-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="01512-104">SYNTAX</span></span>
+
+```
+Get-AzVMRunCommandDocument [-Location] <String> [[-CommandId] <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="01512-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="01512-105">DESCRIPTION</span></span>
+<span data-ttu-id="01512-106">Futtathatja a Futtatás parancs dokumentumát.</span><span class="sxs-lookup"><span data-stu-id="01512-106">Get a run command document.</span></span>
+
+## <span data-ttu-id="01512-107">Példák</span><span class="sxs-lookup"><span data-stu-id="01512-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="01512-108">Példa 1</span><span class="sxs-lookup"><span data-stu-id="01512-108">Example 1</span></span>
+```
+PS C:\> Get-AzVMRunCommandDocument -Location 'westus' -CommandId 'RunPowerShellScript'
+```
+
+<span data-ttu-id="01512-109">A ' westus ' "RunPowerShellScript" parancsára vonatkozó konkrét futtatási parancsot kap.</span><span class="sxs-lookup"><span data-stu-id="01512-109">Gets a specific run command document for 'RunPowerShellScript' in 'westus'.</span></span>
+
+### <span data-ttu-id="01512-110">2. példa</span><span class="sxs-lookup"><span data-stu-id="01512-110">Example 2</span></span>
+```
+PS C:\> Get-AzVMRunCommandDocument -Location 'westus'
+```
+
+<span data-ttu-id="01512-111">Az összes elérhető Futtatás parancs az "westus" listában.</span><span class="sxs-lookup"><span data-stu-id="01512-111">Lists all available run commands in 'westus'.</span></span>
+
+## <span data-ttu-id="01512-112">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="01512-112">PARAMETERS</span></span>
+
+### <span data-ttu-id="01512-113">-CommandId</span><span class="sxs-lookup"><span data-stu-id="01512-113">-CommandId</span></span>
+<span data-ttu-id="01512-114">A parancs azonosítója.</span><span class="sxs-lookup"><span data-stu-id="01512-114">The command ID.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="01512-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="01512-115">-DefaultProfile</span></span>
+<span data-ttu-id="01512-116">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="01512-116">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="01512-117">-Hely</span><span class="sxs-lookup"><span data-stu-id="01512-117">-Location</span></span>
+<span data-ttu-id="01512-118">A futtatott parancsok lekérdezésének helye.</span><span class="sxs-lookup"><span data-stu-id="01512-118">The location upon which run commands are queried.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="01512-119">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="01512-119">CommonParameters</span></span>
+<span data-ttu-id="01512-120">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="01512-120">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="01512-121">További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="01512-121">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="01512-122">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="01512-122">INPUTS</span></span>
+
+### <span data-ttu-id="01512-123">System. String</span><span class="sxs-lookup"><span data-stu-id="01512-123">System.String</span></span>
+
+## <span data-ttu-id="01512-124">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="01512-124">OUTPUTS</span></span>
+
+### <span data-ttu-id="01512-125">Microsoft. Azure. commands. számítási. Automation. models. PSRunCommandDocument</span><span class="sxs-lookup"><span data-stu-id="01512-125">Microsoft.Azure.Commands.Compute.Automation.Models.PSRunCommandDocument</span></span>
+
+## <span data-ttu-id="01512-126">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="01512-126">NOTES</span></span>
+
+## <span data-ttu-id="01512-127">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="01512-127">RELATED LINKS</span></span>
