@@ -1,0 +1,137 @@
+---
+external help file: Azs.Backup.Admin-help.xml
+Module Name: Azs.Backup.Admin
+online version: ''
+schema: 2.0.0
+ms.openlocfilehash: 25091f0cb439e0447d19b534d59a0084a5b05c6e
+ms.sourcegitcommit: fb95591c45bb5f12b98e0690938d18f2ec611897
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "93840540"
+---
+# <span data-ttu-id="b52b3-101">Get-AzsBackupConfiguration</span><span class="sxs-lookup"><span data-stu-id="b52b3-101">Get-AzsBackupConfiguration</span></span>
+
+## <span data-ttu-id="b52b3-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="b52b3-102">SYNOPSIS</span></span>
+<span data-ttu-id="b52b3-103">A biztonságimásolat-konfigurációk listáját számítja ki.</span><span class="sxs-lookup"><span data-stu-id="b52b3-103">Returns the list of backup configurations.</span></span>
+
+## <span data-ttu-id="b52b3-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="b52b3-104">SYNTAX</span></span>
+
+### <span data-ttu-id="b52b3-105">Lista (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="b52b3-105">List (Default)</span></span>
+```
+Get-AzsBackupConfiguration [-ResourceGroupName <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="b52b3-106">Beszerzése</span><span class="sxs-lookup"><span data-stu-id="b52b3-106">Get</span></span>
+```
+Get-AzsBackupConfiguration [[-Location] <String>] [-ResourceGroupName <String>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="b52b3-107">ResourceId</span><span class="sxs-lookup"><span data-stu-id="b52b3-107">ResourceId</span></span>
+```
+Get-AzsBackupConfiguration -ResourceId <String> [<CommonParameters>]
+```
+
+## <span data-ttu-id="b52b3-108">Leírás</span><span class="sxs-lookup"><span data-stu-id="b52b3-108">DESCRIPTION</span></span>
+<span data-ttu-id="b52b3-109">A biztonságimásolat-konfigurációk listáját számítja ki.</span><span class="sxs-lookup"><span data-stu-id="b52b3-109">Returns the list of backup configurations.</span></span>
+
+## <span data-ttu-id="b52b3-110">Példák</span><span class="sxs-lookup"><span data-stu-id="b52b3-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="b52b3-111">--------------------------PÉLDA 1--------------------------</span><span class="sxs-lookup"><span data-stu-id="b52b3-111">-------------------------- EXAMPLE 1 --------------------------</span></span>
+```
+Get-AzsBackupConfiguration
+```
+
+<span data-ttu-id="b52b3-112">Azure-halom biztonsági mentése konfigurációjának beszerzése</span><span class="sxs-lookup"><span data-stu-id="b52b3-112">Get Azure Stack backup configuration.</span></span>
+
+## <span data-ttu-id="b52b3-113">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="b52b3-113">PARAMETERS</span></span>
+
+### <span data-ttu-id="b52b3-114">-Hely</span><span class="sxs-lookup"><span data-stu-id="b52b3-114">-Location</span></span>
+<span data-ttu-id="b52b3-115">Biztonsági mentési hely</span><span class="sxs-lookup"><span data-stu-id="b52b3-115">Backup location.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: Get
+Aliases: 
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b52b3-116">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="b52b3-116">-ResourceGroupName</span></span>
+<span data-ttu-id="b52b3-117">Az erőforráscsoport neve.</span><span class="sxs-lookup"><span data-stu-id="b52b3-117">Name of the resource group.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: List, Get
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b52b3-118">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="b52b3-118">-ResourceId</span></span>
+<span data-ttu-id="b52b3-119">Az erőforrás-azonosító.</span><span class="sxs-lookup"><span data-stu-id="b52b3-119">The resource id.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: ResourceId
+Aliases: id
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b52b3-120">-Skip (kihagyás)</span><span class="sxs-lookup"><span data-stu-id="b52b3-120">-Skip</span></span>
+<span data-ttu-id="b52b3-121">Az első N elem kihagyása a paraméterben megadott értékkel.</span><span class="sxs-lookup"><span data-stu-id="b52b3-121">Skip the first N items as specified by the parameter value.</span></span>
+
+```yaml
+Type: Int32
+Parameter Sets: List
+Aliases: 
+
+Required: False
+Position: Named
+Default value: -1
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b52b3-122">-Top</span><span class="sxs-lookup"><span data-stu-id="b52b3-122">-Top</span></span>
+<span data-ttu-id="b52b3-123">A paraméterben megadott módon adja vissza a legfelső N-elemeket.</span><span class="sxs-lookup"><span data-stu-id="b52b3-123">Return the top N items as specified by the parameter value.</span></span>
+<span data-ttu-id="b52b3-124">A-kihagyás paraméter után érvényes.</span><span class="sxs-lookup"><span data-stu-id="b52b3-124">Applies after the -Skip parameter.</span></span>
+
+```yaml
+Type: Int32
+Parameter Sets: List
+Aliases: 
+
+Required: False
+Position: Named
+Default value: -1
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b52b3-125">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="b52b3-125">CommonParameters</span></span>
+<span data-ttu-id="b52b3-126">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="b52b3-126">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="b52b3-127">További információ: about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="b52b3-127">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="b52b3-128">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="b52b3-128">INPUTS</span></span>
+
+## <span data-ttu-id="b52b3-129">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="b52b3-129">OUTPUTS</span></span>
+
+### <span data-ttu-id="b52b3-130">Microsoft. AzureStack. Management. backup. admin. models. BackupLocation</span><span class="sxs-lookup"><span data-stu-id="b52b3-130">Microsoft.AzureStack.Management.Backup.Admin.Models.BackupLocation</span></span>
+
+## <span data-ttu-id="b52b3-131">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="b52b3-131">NOTES</span></span>
+
+## <span data-ttu-id="b52b3-132">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="b52b3-132">RELATED LINKS</span></span>
+

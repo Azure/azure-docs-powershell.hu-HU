@@ -1,0 +1,78 @@
+---
+external help file: Azs.Gallery.Admin-help.xml
+Module Name: Azs.Gallery.Admin
+online version: ''
+schema: 2.0.0
+ms.openlocfilehash: 0fa95e34c6a220a496a79f7a72c65c222f1376f1
+ms.sourcegitcommit: a6f2fc500242de6248224278d743fd09aac2fafd
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "93840288"
+---
+# <span data-ttu-id="dabec-101">Get-AzsGalleryItem</span><span class="sxs-lookup"><span data-stu-id="dabec-101">Get-AzsGalleryItem</span></span>
+
+## <span data-ttu-id="dabec-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="dabec-102">SYNOPSIS</span></span>
+<span data-ttu-id="dabec-103">A gyűjtemény felsorolja a gyűjtemény elemeit.</span><span class="sxs-lookup"><span data-stu-id="dabec-103">Lists gallery items.</span></span>
+
+## <span data-ttu-id="dabec-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="dabec-104">SYNTAX</span></span>
+
+### <span data-ttu-id="dabec-105">Lista (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="dabec-105">List (Default)</span></span>
+```
+Get-AzsGalleryItem [<CommonParameters>]
+```
+
+### <span data-ttu-id="dabec-106">Beszerzése</span><span class="sxs-lookup"><span data-stu-id="dabec-106">Get</span></span>
+```
+Get-AzsGalleryItem [-Name] <String> [<CommonParameters>]
+```
+
+## <span data-ttu-id="dabec-107">Leírás</span><span class="sxs-lookup"><span data-stu-id="dabec-107">DESCRIPTION</span></span>
+<span data-ttu-id="dabec-108">Az Azure halom piactéren elérhető gyűjtemény-elemek listájának beszerzése</span><span class="sxs-lookup"><span data-stu-id="dabec-108">Get a list of gallery items available in Azure Stack Marketplace</span></span>
+
+## <span data-ttu-id="dabec-109">Példák</span><span class="sxs-lookup"><span data-stu-id="dabec-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="dabec-110">PÉLDA 1</span><span class="sxs-lookup"><span data-stu-id="dabec-110">EXAMPLE 1</span></span>
+```
+Get-AzsGalleryItem
+```
+
+<span data-ttu-id="dabec-111">A lista gyűjtemény elemei.</span><span class="sxs-lookup"><span data-stu-id="dabec-111">List gallery items.</span></span>
+
+### <span data-ttu-id="dabec-112">2. PÉLDA</span><span class="sxs-lookup"><span data-stu-id="dabec-112">EXAMPLE 2</span></span>
+```
+Get-AzsGalleryItem -Name 'microsoft.vmss.1.3.6'
+```
+
+<span data-ttu-id="dabec-113">Gyűjtemény-elem beszerzése név alapján</span><span class="sxs-lookup"><span data-stu-id="dabec-113">Get a gallery item by name.</span></span>
+
+## <span data-ttu-id="dabec-114">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="dabec-114">PARAMETERS</span></span>
+
+### <span data-ttu-id="dabec-115">-Name (név)</span><span class="sxs-lookup"><span data-stu-id="dabec-115">-Name</span></span>
+<span data-ttu-id="dabec-116">A gyűjtemény elemeinek azonosítása</span><span class="sxs-lookup"><span data-stu-id="dabec-116">Identity of the gallery item.</span></span>
+<span data-ttu-id="dabec-117">Tartalmazza a közzétevő nevét, az elem nevét, valamint tartalmazhat az időszak karakterrel elválasztott verziót.</span><span class="sxs-lookup"><span data-stu-id="dabec-117">Includes publisher name, item name, and may include version separated by period character.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: Get
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="dabec-118">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="dabec-118">CommonParameters</span></span>
+<span data-ttu-id="dabec-119">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="dabec-119">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="dabec-120">További információ: about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="dabec-120">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="dabec-121">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="dabec-121">INPUTS</span></span>
+
+## <span data-ttu-id="dabec-122">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="dabec-122">OUTPUTS</span></span>
+
+### <span data-ttu-id="dabec-123">Microsoft. AzureStack. Management. Gallery. admin. models. GalleryItem</span><span class="sxs-lookup"><span data-stu-id="dabec-123">Microsoft.AzureStack.Management.Gallery.Admin.Models.GalleryItem</span></span>
+
+## <span data-ttu-id="dabec-124">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="dabec-124">NOTES</span></span>
+
+## <span data-ttu-id="dabec-125">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="dabec-125">RELATED LINKS</span></span>
