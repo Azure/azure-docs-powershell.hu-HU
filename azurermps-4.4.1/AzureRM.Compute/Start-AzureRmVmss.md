@@ -1,0 +1,171 @@
+---
+external help file: Microsoft.Azure.Commands.Compute.dll-Help.xml
+Module Name: AzureRM.Compute
+ms.assetid: 7F7D1F05-617C-4EC5-8FF5-D816E9148841
+online version: ''
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/Start-AzureRmVmss.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/Start-AzureRmVmss.md
+ms.openlocfilehash: 6b3291a77f7c69372124b8c0de2ba78c8810f02b
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93673128"
+---
+# <span data-ttu-id="853a7-101">Start-AzureRmVmss</span><span class="sxs-lookup"><span data-stu-id="853a7-101">Start-AzureRmVmss</span></span>
+
+## <span data-ttu-id="853a7-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="853a7-102">SYNOPSIS</span></span>
+<span data-ttu-id="853a7-103">Elindítja a VMSS vagy a virtuális gépeket a VMSS belül.</span><span class="sxs-lookup"><span data-stu-id="853a7-103">Starts the VMSS or a set of virtual machines within the VMSS.</span></span>
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## <span data-ttu-id="853a7-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="853a7-104">SYNTAX</span></span>
+
+```
+Start-AzureRmVmss [-ResourceGroupName] <String> [-VMScaleSetName] <String> [[-InstanceId] <String[]>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="853a7-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="853a7-105">DESCRIPTION</span></span>
+<span data-ttu-id="853a7-106">A **Start-AzureRmVmss** parancsmag a Virtual Machine Scale set (VMSS) vagy a virtuális gépek egy halmazán belül minden virtuális gépet elindít.</span><span class="sxs-lookup"><span data-stu-id="853a7-106">The **Start-AzureRmVmss** cmdlet starts all the virtual machines within the Virtual Machine Scale Set (VMSS) or a set of virtual machines.</span></span>
+<span data-ttu-id="853a7-107">A *InstanceId* paraméterrel kiválaszthatja a virtuális gépek halmazát.</span><span class="sxs-lookup"><span data-stu-id="853a7-107">You can use the *InstanceId* parameter to select a set of virtual machines.</span></span>
+
+## <span data-ttu-id="853a7-108">Példák</span><span class="sxs-lookup"><span data-stu-id="853a7-108">EXAMPLES</span></span>
+
+### <span data-ttu-id="853a7-109">1. példa: a virtuális gépek meghatározott halmazának indítása a VMSS belül</span><span class="sxs-lookup"><span data-stu-id="853a7-109">Example 1: Start a specific set of virtual machines within the VMSS</span></span>
+```
+PS C:\> Start-AzureRmVmss -ResourceGroupName "ContosOrg" -VMScaleSetName "ContosoVMSS"-InstanceId "0", "1"
+```
+
+<span data-ttu-id="853a7-110">Ez a parancs a ContosoVMSS nevű VMSS tartozó példánynév karakterláncban meghatározott virtuális gépek meghatározott halmazát indítja el.</span><span class="sxs-lookup"><span data-stu-id="853a7-110">This command starts a specific set of virtual machines specified by the instance ID string array that belong to the VMSS named ContosoVMSS.</span></span>
+
+### <span data-ttu-id="853a7-111">2. példa: az összes virtuális gép elindítása a VMSS belül</span><span class="sxs-lookup"><span data-stu-id="853a7-111">Example 2: Start all virtual machines within the VMSS</span></span>
+```
+PS C:\> Start-AzureRmVmss -ResourceGroupName "ContosOrg" -VMScaleSetName "ContosoVMSS"
+```
+
+<span data-ttu-id="853a7-112">Ez a parancs elindítja az összes olyan virtuális gépet, amely a ContosoVMSS nevű VMSS tartozik.</span><span class="sxs-lookup"><span data-stu-id="853a7-112">This command starts all virtual machines that belong to the VMSS named ContosoVMSS.</span></span>
+
+## <span data-ttu-id="853a7-113">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="853a7-113">PARAMETERS</span></span>
+
+### <span data-ttu-id="853a7-114">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="853a7-114">-DefaultProfile</span></span>
+<span data-ttu-id="853a7-115">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="853a7-115">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="853a7-116">-InstanceId</span><span class="sxs-lookup"><span data-stu-id="853a7-116">-InstanceId</span></span>
+<span data-ttu-id="853a7-117">Karakterláncként adja meg a parancsmag által elinduló példányok AZONOSÍTÓját vagy azonosítóit.</span><span class="sxs-lookup"><span data-stu-id="853a7-117">Specifies, as a string array, the ID or IDs of the instances that cmdlet starts.</span></span>
+<span data-ttu-id="853a7-118">Például: `-InstanceId "0", "3"`</span><span class="sxs-lookup"><span data-stu-id="853a7-118">For instance: `-InstanceId "0", "3"`</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="853a7-119">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="853a7-119">-ResourceGroupName</span></span>
+<span data-ttu-id="853a7-120">A VMSS erőforráscsoport-csoportjának nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="853a7-120">Specifies the name of the resource group of the VMSS.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="853a7-121">-VMScaleSetName</span><span class="sxs-lookup"><span data-stu-id="853a7-121">-VMScaleSetName</span></span>
+<span data-ttu-id="853a7-122">Annak a VMSS a nevét adja meg, amely a parancsmag által a virtuális gépeket indítja el.</span><span class="sxs-lookup"><span data-stu-id="853a7-122">Specifies the name of the VMSS that this cmdlet starts the virtual machines.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: Name
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="853a7-123">– Megerősítés</span><span class="sxs-lookup"><span data-stu-id="853a7-123">-Confirm</span></span>
+<span data-ttu-id="853a7-124">A parancsmag futtatása előtt kéri a megerősítést.</span><span class="sxs-lookup"><span data-stu-id="853a7-124">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="853a7-125">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="853a7-125">-WhatIf</span></span>
+<span data-ttu-id="853a7-126">Annak megjelenítése, hogy mi történik, ha a parancsmag fut.</span><span class="sxs-lookup"><span data-stu-id="853a7-126">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="853a7-127">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="853a7-127">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="853a7-128">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="853a7-128">CommonParameters</span></span>
+<span data-ttu-id="853a7-129">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="853a7-129">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="853a7-130">További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="853a7-130">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="853a7-131">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="853a7-131">INPUTS</span></span>
+
+## <span data-ttu-id="853a7-132">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="853a7-132">OUTPUTS</span></span>
+
+###  
+<span data-ttu-id="853a7-133">Ez a parancsmag semmilyen kimenetet nem hoz létre.</span><span class="sxs-lookup"><span data-stu-id="853a7-133">This cmdlet does not generate any output.</span></span>
+
+## <span data-ttu-id="853a7-134">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="853a7-134">NOTES</span></span>
+
+## <span data-ttu-id="853a7-135">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="853a7-135">RELATED LINKS</span></span>
+
+[<span data-ttu-id="853a7-136">Get-AzureRmVmss</span><span class="sxs-lookup"><span data-stu-id="853a7-136">Get-AzureRmVmss</span></span>](./Get-AzureRmVmss.md)
+
+[<span data-ttu-id="853a7-137">Új – AzureRmVmss</span><span class="sxs-lookup"><span data-stu-id="853a7-137">New-AzureRmVmss</span></span>](./New-AzureRmVmss.md)
+
+[<span data-ttu-id="853a7-138">Remove-AzureRmVmss</span><span class="sxs-lookup"><span data-stu-id="853a7-138">Remove-AzureRmVmss</span></span>](./Remove-AzureRmVmss.md)
+
+[<span data-ttu-id="853a7-139">Újraindítás – AzureRmVmss</span><span class="sxs-lookup"><span data-stu-id="853a7-139">Restart-AzureRmVmss</span></span>](./Restart-AzureRmVmss.md)
+
+[<span data-ttu-id="853a7-140">Set-AzureRmVmss</span><span class="sxs-lookup"><span data-stu-id="853a7-140">Set-AzureRmVmss</span></span>](./Set-AzureRmVmss.md)
+
+[<span data-ttu-id="853a7-141">Stop-AzureRmVmss</span><span class="sxs-lookup"><span data-stu-id="853a7-141">Stop-AzureRmVmss</span></span>](./Stop-AzureRmVmss.md)
+
+[<span data-ttu-id="853a7-142">Update-AzureRmVmss</span><span class="sxs-lookup"><span data-stu-id="853a7-142">Update-AzureRmVmss</span></span>](./Update-AzureRmVmss.md)
+
+
