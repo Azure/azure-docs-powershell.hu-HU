@@ -1,0 +1,254 @@
+---
+external help file: Microsoft.Azure.Commands.KeyVault.dll-Help.xml
+Module Name: AzureRM.KeyVault
+ms.assetid: 4C40DAC9-5C0B-4AFD-9BDB-D407E0B9F701
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.keyvault/new-azurermkeyvault
+schema: 2.0.0
+ms.openlocfilehash: b40a37729d52cfe3b1dba691fd11724fcd0b03fb
+ms.sourcegitcommit: b9b2dea3441d1532a5564ddca3dced45424fe2d6
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "93848845"
+---
+# <span data-ttu-id="24dbc-101">New-AzureRmKeyVault</span><span class="sxs-lookup"><span data-stu-id="24dbc-101">New-AzureRmKeyVault</span></span>
+
+## <span data-ttu-id="24dbc-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="24dbc-102">SYNOPSIS</span></span>
+<span data-ttu-id="24dbc-103">Egy fő boltozatot hoz létre.</span><span class="sxs-lookup"><span data-stu-id="24dbc-103">Creates a key vault.</span></span>
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## <span data-ttu-id="24dbc-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="24dbc-104">SYNTAX</span></span>
+
+```
+New-AzureRmKeyVault [-VaultName] <String> [-ResourceGroupName] <String> [-Location] <String>
+ [-EnabledForDeployment] [-EnabledForTemplateDeployment] [-EnabledForDiskEncryption] [-EnableSoftDelete]
+ [-Sku <SkuName>] [-Tag <Hashtable>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="24dbc-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="24dbc-105">DESCRIPTION</span></span>
+<span data-ttu-id="24dbc-106">A **New-AzureRmKeyVault** parancsmag létrehoz egy fő boltozatot a megadott erőforráscsoport számára.</span><span class="sxs-lookup"><span data-stu-id="24dbc-106">The **New-AzureRmKeyVault** cmdlet creates a key vault in the specified resource group.</span></span> <span data-ttu-id="24dbc-107">Ez a parancsmag az aktuálisan bejelentkezett felhasználó engedélyeit is feljogosítja a kulcsfájl hozzáadására, eltávolítására, illetve a kulcsok és a titok megadására.</span><span class="sxs-lookup"><span data-stu-id="24dbc-107">This cmdlet also grants permissions to the currently logged on user to add, remove, or list keys and secrets in the key vault.</span></span>
+
+<span data-ttu-id="24dbc-108">Megjegyzés: Ha a hiba megjelenik, **az előfizetéshez nincs regisztrálva a "Microsoft. kulcskezelő" névtér használata** az új kulcsfájl létrehozásakor, futtassa a **Register-AzureRmResourceProvider-ProviderNamespace "Microsoft. kulcskezelő"** parancsot, majd futtassa újra a **New-AzureRmKeyVault** parancsot.</span><span class="sxs-lookup"><span data-stu-id="24dbc-108">Note: If you see the error **The subscription is not registered to use namespace 'Microsoft.KeyVault'** when you try to create your new key vault, run **Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.KeyVault"** and then rerun your **New-AzureRmKeyVault** command.</span></span> <span data-ttu-id="24dbc-109">További információt a Register-AzureRmResourceProvider című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="24dbc-109">For more information, see Register-AzureRmResourceProvider.</span></span>
+
+## <span data-ttu-id="24dbc-110">Példák</span><span class="sxs-lookup"><span data-stu-id="24dbc-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="24dbc-111">Példa 1: normál kulcsú boltozat létrehozása</span><span class="sxs-lookup"><span data-stu-id="24dbc-111">Example 1: Create a Standard key vault</span></span>
+```
+PS C:\>New-AzureRmKeyVault -VaultName 'Contoso03Vault' -ResourceGroupName 'Group14' -Location 'East US'
+```
+
+<span data-ttu-id="24dbc-112">Ez a parancs létrehoz egy Contoso03Vault nevű kulcs boltozatot az Azure régióban, a Kelet-Amerikai Egyesült Államokban.</span><span class="sxs-lookup"><span data-stu-id="24dbc-112">This command creates a key vault named Contoso03Vault, in the Azure region East US.</span></span> <span data-ttu-id="24dbc-113">A parancs hozzáadja a fő boltozatot a Group14 nevű erőforráscsoport csoportjához.</span><span class="sxs-lookup"><span data-stu-id="24dbc-113">The command adds the key vault to the resource group named Group14.</span></span> <span data-ttu-id="24dbc-114">Mivel a parancs nem ad meg értéket a *SKU* paraméterhez, létrehoz egy standard kulcs boltozatot.</span><span class="sxs-lookup"><span data-stu-id="24dbc-114">Because the command does not specify a value for the *SKU* parameter, it creates a Standard key vault.</span></span>
+
+### <span data-ttu-id="24dbc-115">2. példa: prémium kulcsú boltozat létrehozása</span><span class="sxs-lookup"><span data-stu-id="24dbc-115">Example 2: Create a Premium key vault</span></span>
+```
+PS C:\>New-AzureRmKeyVault -VaultName 'Contoso03Vault' -ResourceGroupName 'Group14' -Location 'East US' -Sku 'Premium'
+```
+
+<span data-ttu-id="24dbc-116">Ez a parancs az előző példához hasonlóan létrehoz egy fő boltozatot.</span><span class="sxs-lookup"><span data-stu-id="24dbc-116">This command creates a key vault, just like the previous example.</span></span> <span data-ttu-id="24dbc-117">A prémium kulcsú boltozatot azonban a *SKU* paraméterhez tartozó prémium értékkel adja meg.</span><span class="sxs-lookup"><span data-stu-id="24dbc-117">However, it specifies a value of Premium for the *SKU* parameter to create a Premium key vault.</span></span>
+
+## <span data-ttu-id="24dbc-118">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="24dbc-118">PARAMETERS</span></span>
+
+### <span data-ttu-id="24dbc-119">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="24dbc-119">-DefaultProfile</span></span>
+<span data-ttu-id="24dbc-120">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés</span><span class="sxs-lookup"><span data-stu-id="24dbc-120">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="24dbc-121">-EnabledForDeployment</span><span class="sxs-lookup"><span data-stu-id="24dbc-121">-EnabledForDeployment</span></span>
+<span data-ttu-id="24dbc-122">A Microsoft. számítási erőforrás-szolgáltatója kinyerheti a titkokat ebből a kulcsfájlból, ha ez a kulcs boltozata az erőforrás létrehozásakor, például virtuális gép létrehozásakor jelenik meg.</span><span class="sxs-lookup"><span data-stu-id="24dbc-122">Enables the Microsoft.Compute resource provider to retrieve secrets from this key vault when this key vault is referenced in resource creation, for example when creating a virtual machine.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="24dbc-123">-EnabledForDiskEncryption</span><span class="sxs-lookup"><span data-stu-id="24dbc-123">-EnabledForDiskEncryption</span></span>
+<span data-ttu-id="24dbc-124">Lehetővé teszi, hogy az Azure Disk Encryption szolgáltatás a kulcsok kijavítását és kicsomagolását a kulcsból.</span><span class="sxs-lookup"><span data-stu-id="24dbc-124">Enables the Azure disk encryption service to get secrets and unwrap keys from this key vault.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="24dbc-125">-EnabledForTemplateDeployment</span><span class="sxs-lookup"><span data-stu-id="24dbc-125">-EnabledForTemplateDeployment</span></span>
+<span data-ttu-id="24dbc-126">Lehetővé teszi az Azure Resource Manager számára, hogy ebből a kulcsfájlból kiírja a titkot, ha ezt a kulcspárt a sablonok központi telepítéséhez hivatkozik.</span><span class="sxs-lookup"><span data-stu-id="24dbc-126">Enables Azure Resource Manager to get secrets from this key vault when this key vault is referenced in a template deployment.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="24dbc-127">-EnableSoftDelete</span><span class="sxs-lookup"><span data-stu-id="24dbc-127">-EnableSoftDelete</span></span>
+<span data-ttu-id="24dbc-128">Itt adhatja meg, hogy engedélyezve van-e a finom törlés funkció ehhez a kulcshoz.</span><span class="sxs-lookup"><span data-stu-id="24dbc-128">Specifies that the soft-delete functionality is enabled for this key vault.</span></span> <span data-ttu-id="24dbc-129">Ha a Soft-delete beállítás engedélyezve van, a türelmi időszakra visszaállíthatja a fő boltozatot és annak tartalmát a törlés után.</span><span class="sxs-lookup"><span data-stu-id="24dbc-129">When soft-delete is enabled, for a grace period, you can recover this key vault and its contents after it is deleted.</span></span>
+
+<span data-ttu-id="24dbc-130">A funkcióról további információt az [Azure Key Vault Soft-delete – áttekintés](https://docs.microsoft.com/azure/key-vault/key-vault-ovw-soft-delete)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="24dbc-130">For more information about this functionality, see [Azure Key Vault soft-delete overview](https://docs.microsoft.com/azure/key-vault/key-vault-ovw-soft-delete).</span></span> <span data-ttu-id="24dbc-131">Útmutatásért olvassa el a következő témakört: [Hogyan lehet használni a kulcsfájl Soft-deletet a PowerShell](https://docs.microsoft.com/azure/key-vault/key-vault-soft-delete-powershell)segítségével.</span><span class="sxs-lookup"><span data-stu-id="24dbc-131">For how-to instructions, see [How to use Key Vault soft-delete with PowerShell](https://docs.microsoft.com/azure/key-vault/key-vault-soft-delete-powershell).</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="24dbc-132">-Hely</span><span class="sxs-lookup"><span data-stu-id="24dbc-132">-Location</span></span>
+<span data-ttu-id="24dbc-133">Azt az Azure-területet adja meg, amelyben a fő pince hozható létre.</span><span class="sxs-lookup"><span data-stu-id="24dbc-133">Specifies the Azure region in which to create the key vault.</span></span> <span data-ttu-id="24dbc-134">Használja a [Get-AzureLocation](https://docs.microsoft.com/powershell/module/Azure/Get-AzureLocation) parancsot a lehetőségek megjelenítéséhez.</span><span class="sxs-lookup"><span data-stu-id="24dbc-134">Use the command [Get-AzureLocation](https://docs.microsoft.com/powershell/module/Azure/Get-AzureLocation) to see your choices.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="24dbc-135">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="24dbc-135">-ResourceGroupName</span></span>
+<span data-ttu-id="24dbc-136">Annak a meglévő erőforrás-csoportnak a nevét adja meg, amelybe a kulcs boltozatát létre szeretné hozni.</span><span class="sxs-lookup"><span data-stu-id="24dbc-136">Specifies the name of an existing resource group in which to create the key vault.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="24dbc-137">-SKU</span><span class="sxs-lookup"><span data-stu-id="24dbc-137">-Sku</span></span>
+<span data-ttu-id="24dbc-138">A fő boltozat-példány SKU-ának meghatározása.</span><span class="sxs-lookup"><span data-stu-id="24dbc-138">Specifies the SKU of the key vault instance.</span></span> <span data-ttu-id="24dbc-139">Ha tudni kívánja, hogy mely funkciók érhetők el az egyes SKU-hoz, olvassa el az Azure Key Vault árképzési webhelye című témakört https://go.microsoft.com/fwlink/?linkid=512521) .</span><span class="sxs-lookup"><span data-stu-id="24dbc-139">For information about which features are available for each SKU, see the Azure Key Vault Pricing website (https://go.microsoft.com/fwlink/?linkid=512521).</span></span>
+
+```yaml
+Type: SkuName
+Parameter Sets: (All)
+Aliases: 
+Accepted values: Standard, Premium
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="24dbc-140">-Címke</span><span class="sxs-lookup"><span data-stu-id="24dbc-140">-Tag</span></span>
+<span data-ttu-id="24dbc-141">A kulcs-érték párok a hash-táblázatok formájában.</span><span class="sxs-lookup"><span data-stu-id="24dbc-141">Key-value pairs in the form of a hash table.</span></span> <span data-ttu-id="24dbc-142">Példa:</span><span class="sxs-lookup"><span data-stu-id="24dbc-142">For example:</span></span>
+
+<span data-ttu-id="24dbc-143">@ {key0 = "value0"; key1 = $null; azonosító2 = "érték2"}</span><span class="sxs-lookup"><span data-stu-id="24dbc-143">@{key0="value0";key1=$null;key2="value2"}</span></span>
+
+```yaml
+Type: Hashtable
+Parameter Sets: (All)
+Aliases: Tags
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="24dbc-144">-VaultName</span><span class="sxs-lookup"><span data-stu-id="24dbc-144">-VaultName</span></span>
+<span data-ttu-id="24dbc-145">A létrehozandó fő pince nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="24dbc-145">Specifies the name of the key vault to create.</span></span> <span data-ttu-id="24dbc-146">A név lehet betűk, számjegyek és kötőjelek tetszőleges kombinációja.</span><span class="sxs-lookup"><span data-stu-id="24dbc-146">The name can be any combination of letters, digits, or hyphens.</span></span> <span data-ttu-id="24dbc-147">A névnek betűvel vagy számmal kell kezdődnie.</span><span class="sxs-lookup"><span data-stu-id="24dbc-147">The name must start and end with a letter or digit.</span></span> <span data-ttu-id="24dbc-148">A névnek univerzálisan egyedinek kell lennie.</span><span class="sxs-lookup"><span data-stu-id="24dbc-148">The name must be universally unique.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="24dbc-149">– Megerősítés</span><span class="sxs-lookup"><span data-stu-id="24dbc-149">-Confirm</span></span>
+<span data-ttu-id="24dbc-150">A parancsmag futtatása előtt kéri a megerősítést.</span><span class="sxs-lookup"><span data-stu-id="24dbc-150">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="24dbc-151">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="24dbc-151">-WhatIf</span></span>
+<span data-ttu-id="24dbc-152">Annak megjelenítése, hogy mi történik, ha a parancsmag fut.</span><span class="sxs-lookup"><span data-stu-id="24dbc-152">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="24dbc-153">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="24dbc-153">The cmdlet is not run.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="24dbc-154">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="24dbc-154">CommonParameters</span></span>
+<span data-ttu-id="24dbc-155">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="24dbc-155">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="24dbc-156">További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="24dbc-156">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="24dbc-157">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="24dbc-157">INPUTS</span></span>
+
+## <span data-ttu-id="24dbc-158">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="24dbc-158">OUTPUTS</span></span>
+
+### <span data-ttu-id="24dbc-159">Microsoft. Azure. Command. PSVault. models.</span><span class="sxs-lookup"><span data-stu-id="24dbc-159">Microsoft.Azure.Commands.KeyVault.Models.PSVault</span></span>
+
+## <span data-ttu-id="24dbc-160">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="24dbc-160">NOTES</span></span>
+
+## <span data-ttu-id="24dbc-161">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="24dbc-161">RELATED LINKS</span></span>
+
+[<span data-ttu-id="24dbc-162">Get-AzureRmKeyVault</span><span class="sxs-lookup"><span data-stu-id="24dbc-162">Get-AzureRmKeyVault</span></span>](./Get-AzureRmKeyVault.md)
+
+[<span data-ttu-id="24dbc-163">Remove-AzureRmKeyVault</span><span class="sxs-lookup"><span data-stu-id="24dbc-163">Remove-AzureRmKeyVault</span></span>](./Remove-AzureRmKeyVault.md)
