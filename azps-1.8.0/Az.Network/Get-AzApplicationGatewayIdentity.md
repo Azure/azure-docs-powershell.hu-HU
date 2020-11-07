@@ -1,0 +1,85 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/get-azapplicationgatewayidentity
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzApplicationGatewayIdentity.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzApplicationGatewayIdentity.md
+ms.openlocfilehash: 96a170d302d66ed2fa27d2cd7bdb17fc23cefcd3
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93670643"
+---
+# Get-AzApplicationGatewayIdentity
+
+## Áttekintés
+Az alkalmazás-átjáróhoz rendelt identitás beolvasása
+
+## SZINTAXISA
+
+```
+Get-AzApplicationGatewayIdentity -ApplicationGateway <PSApplicationGateway>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## Leírás
+A **Get-AzApplicationGatewayIdentity** parancsmag az alkalmazás-átjáróhoz rendelt identitást kapja.
+
+## Példák
+
+### Példa 1
+```powershell
+PS C:\> $gw = Get-AzApplicationGateway -Name $appgwName -ResourceGroupName $resgpName
+PS C:\> $identity = Get-AzApplicationGatewayIdentity -ApplicationGateway $gw
+```
+
+Ez a példa azt mutatja be, hogy miként szerezheti be az alkalmazásobjektum-identitást az alkalmazás-Átjáróból.
+
+## PARAMÉTEREK
+
+### -ApplicationGateway
+A applicationGateway
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGateway
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+
+## BEMENETEK
+
+### Microsoft. Azure. commands. Network. models. PSApplicationGateway
+
+## KIMENETEK
+
+### Microsoft. Azure. commands. Network. models. PSManagedServiceIdentity
+
+## MEGJEGYZI
+
+## KAPCSOLÓDÓ HIVATKOZÁSOK
