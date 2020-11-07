@@ -1,0 +1,289 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/set-aznetworkwatcherconfigflowlog
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Network/Network/help/Set-AzNetworkWatcherConfigFlowLog.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Network/Network/help/Set-AzNetworkWatcherConfigFlowLog.md
+ms.openlocfilehash: f250615837f4953f63a4c5ff5f0a0ea965691856
+ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "93843598"
+---
+# Set-AzNetworkWatcherConfigFlowLog
+
+## Áttekintés
+Beállítja a folyamatábra erőforrás-naplózását.
+
+## SZINTAXISA
+
+### SetByResource (alapértelmezett)
+```
+Set-AzNetworkWatcherConfigFlowLog -NetworkWatcher <PSNetworkWatcher> -TargetResourceId <String>
+ -EnableFlowLog <Boolean> -StorageAccountId <String> [-EnableRetention <Boolean>] [-RetentionInDays <Int32>]
+ [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### SetByName
+```
+Set-AzNetworkWatcherConfigFlowLog -NetworkWatcherName <String> -ResourceGroupName <String>
+ -TargetResourceId <String> -EnableFlowLog <Boolean> -StorageAccountId <String> [-EnableRetention <Boolean>]
+ [-RetentionInDays <Int32>] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+## Leírás
+A Set-AzNetworkWatcherConfigFlowLog beállítja a cél erőforráshoz tartozó folyamatábra naplózását. A megadható tulajdonságok: az adott erőforrásra vonatkozóan engedélyezve van-e a forgalom naplózása, a konfigurált tárterület-fiók a naplók küldéséhez és a naplók adatmegőrzési házirendjéhez tartozik. Jelenleg hálózati biztonsági csoportok támogatottak a forgalom naplózásához. 
+
+## Példák
+
+### ---Példa 1: a forgalom naplózásának beállítása megadott NSG---
+```
+PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
+PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
+PS C:\> $storageId = "/subscriptions/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourceGroups/NSGRG/providers/Microsoft.Storage/storageAccounts/contosostorageacct123"
+
+
+PS C:\> Set-AzNetworkWatcherConfigFlowLog -NetworkWatcher $NW -TargetResourceId $nsg.Id -EnableFlowLog $true -StorageAccountId $storageID
+
+TargetResourceId : /subscriptions/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourceGroups/NSGRG/providers/Microsoft.Network/networkSecurityGroups/appNSG
+StorageId        : /subscriptions/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourceGroups/NSGRG/providers/Microsoft.Storage/storageAccounts/contosostorageacct123
+Enabled          : True
+RetentionPolicy  : {
+                     "Days": 0,
+                     "Enabled": false
+                   }
+```
+
+Ebben a példában a naplózási állapotot egy hálózati biztonsági csoporthoz konfiguráltuk. A válaszban láthatja, hogy a megadott NSG engedélyezve van a forgalom naplózása, és nincs adatmegőrzési házirend beállítva.
+
+## PARAMÉTEREK
+
+### -AsJob
+A parancsmag futtatása a háttérben
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EnableFlowLog
+A forgalom naplózásának engedélyezésére/letiltására szolgáló jelölő
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -EnableRetention
+Jelölő az adatmegőrzés engedélyezéséhez vagy letiltásához.
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -NetworkWatcher
+A Hálózatfigyelő erőforrás.
+
+```yaml
+Type: PSNetworkWatcher
+Parameter Sets: SetByResource
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -NetworkWatcherName
+A Network Watcher neve.
+
+```yaml
+Type: String
+Parameter Sets: SetByName
+Aliases: Name
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+A Network Watcher erőforráscsoport neve.
+
+```yaml
+Type: String
+Parameter Sets: SetByName
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -RetentionInDays
+A átfolyási napló rekordjainak megtartására szolgáló napok száma.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -StorageAccountId
+Annak a tárolási fióknak az azonosítója, amely a folyamatábra tárolására szolgál.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -TargetResourceId
+A cél erőforrás-azonosító.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### – Megerősítés
+A parancsmag futtatása előtt kéri a megerősítést.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Annak megjelenítése, hogy mi történik, ha a parancsmag fut. A parancsmag nem fut.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## BEMENETEK
+
+### Microsoft. Azure. commands. Network. models. PSNetworkWatcher
+System. String System. Boolean System. Int32
+
+## KIMENETEK
+
+### Microsoft. Azure. commands. Network. models. PSFlowLog
+
+## MEGJEGYZI
+Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, hálózat, figyelő, flow, naplók, flowlog, naplózás
+
+## KAPCSOLÓDÓ HIVATKOZÁSOK
+
+[Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
+
+[Új – AzNetworkWatcher](./New-AzNetworkWatcher.md)
+
+[Get-AzNetworkWatcher](./Get-AzNetworkWatcher.md)
+
+[Remove-AzNetworkWatcher](./Remove-AzNetworkWatcher.md)
+
+[Új – AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
+
+[Új – AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
+
+[Get-AzNetworkWatcherPacketCapture](./Get-AzNetworkWatcherPacketCapture.md)
+
+[Remove-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md)
+
+[Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
+
+[Teszt-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
+
+[Get-AzNetworkWatcherNextHop](./Get-AzNetworkWatcherNextHop.md)
+
+[Get-AzNetworkWatcherSecurityGroupView](./Get-AzNetworkWatcherSecurityGroupView.md)
+
+[Get-AzNetworkWatcherTopology](./Get-AzNetworkWatcherTopology.md)
+
+[Start-AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
+
+[Get-AzNetworkWatcherTroubleshootingResult](./Get-AzNetworkWatcherTroubleshootingResult.md)
