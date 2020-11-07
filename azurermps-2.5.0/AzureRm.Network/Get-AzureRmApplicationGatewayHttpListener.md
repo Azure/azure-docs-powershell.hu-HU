@@ -1,0 +1,119 @@
+---
+external help file: Microsoft.Azure.Commands.Network.dll-Help.xml
+Module Name: AzureRM.Network
+ms.assetid: 8D41EDAC-17D9-494B-8336-67906F4E1E81
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.network/get-azurermapplicationgatewayhttplistener
+schema: 2.0.0
+ms.openlocfilehash: 79b61f5d96307afea47851b210fc1a1ee97acf61
+ms.sourcegitcommit: b9b2dea3441d1532a5564ddca3dced45424fe2d6
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "93849969"
+---
+# Get-AzureRmApplicationGatewayHttpListener
+
+## Áttekintés
+Beolvassa az alkalmazás átjárójának HTTP-figyelését.
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## SZINTAXISA
+
+```
+Get-AzureRmApplicationGatewayHttpListener [-Name <String>] -ApplicationGateway <PSApplicationGateway>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## Leírás
+A **Get-AzureRmApplicationGatewayHttpListener** parancsmag az alkalmazás-ÁTJÁRÓk http-figyelését kapja meg.
+
+## Példák
+
+### Példa 1: speciális HTTP-figyelő beszerzése
+```
+PS C:\>$Appgw = Get-AzureRmApplicationGateway -Name "ApplicationGateway01" -ResourceGroupName "ResourceGroup01"
+PS C:\> $Listener = Get-AzureRmApplicationGatewayHttpListener -Name "Listener01" -ApplicationGateway $Appgw
+```
+
+Ez a parancs a Listener01 nevű HTTP-figyelőt kapja meg.
+
+### 2. példa: a HTTP-figyelők listájának beszerzése
+```
+PS C:\>$Appgw = Get-AzureRmApplicationGateway -Name "ApplicationGateway01" -ResourceGroupName "ResourceGroup01"
+PS C:\> $Listeners = Get-AzureRmApplicationGatewayHttpListener -ApplicationGateway $Appgw
+```
+
+Ez a parancs a HTTP-figyelők listáját kapja meg.
+
+## PARAMÉTEREK
+
+### -ApplicationGateway
+A HTTP-figyelőt tartalmazó Application Gateway-objektum megadása.
+
+```yaml
+Type: PSApplicationGateway
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name (név)
+Annak a HTTP-figyelőnek a nevét adja meg, amely a parancsmagot kapja.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## BEMENETEK
+
+### System. String
+
+## KIMENETEK
+
+### Microsoft. Azure. commands. Network. models. PSApplicationGatewayHttpListener
+
+## MEGJEGYZI
+
+## KAPCSOLÓDÓ HIVATKOZÁSOK
+
+[Add-AzureRmApplicationGatewayHttpListener](./Add-AzureRmApplicationGatewayHttpListener.md)
+
+[Új – AzureRmApplicationGatewayHttpListener](./New-AzureRmApplicationGatewayHttpListener.md)
+
+[Remove-AzureRmApplicationGatewayHttpListener](./Remove-AzureRmApplicationGatewayHttpListener.md)
+
+[Set-AzureRmApplicationGatewayHttpListener](./Set-AzureRmApplicationGatewayHttpListener.md)
+
+
