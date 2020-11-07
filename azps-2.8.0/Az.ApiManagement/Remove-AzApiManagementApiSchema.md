@@ -1,0 +1,219 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ApiManagement.ServiceManagement.dll-Help.xml
+Module Name: Az.ApiManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagement/remove-azapimanagementapischema
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementApiSchema.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementApiSchema.md
+ms.openlocfilehash: 4fa05a0c3568d8d787a7b269cd0f26c0adc82d0f
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93668000"
+---
+# Remove-AzApiManagementApiSchema
+
+## Áttekintés
+Az API-séma eltávolítása az API-ról
+
+## SZINTAXISA
+
+### ByApiSchemaId (alapértelmezett)
+```
+Remove-AzApiManagementApiSchema -Context <PsApiManagementContext> -ApiId <String> -SchemaId <String>
+ [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### ByInputObject
+```
+Remove-AzApiManagementApiSchema -InputObject <PsApiManagementApiSchema> [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### ByResourceIdParameterSet
+```
+Remove-AzApiManagementApiSchema -ResourceId <String> [-PassThru] [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## Leírás
+A parancsmag **Remove-AzApiManagementSchema** az API-ról
+
+## Példák
+
+### 1. példa: az API-séma eltávolítása az API-ról
+```powershell
+PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Remove-AzAzureRmApiManagementApiSchema -Context $apimContext -ApiId "echo-api" -SchemaId "2"
+```
+
+A parancsfájl eltávolítja a sémát `2` az API-ról, `echo-api` Ha az nem hivatkozik rá.
+
+## PARAMÉTEREK
+
+### -ApiId
+Az API-azonosító.
+Ehhez a paraméterhez szükség van.
+
+```yaml
+Type: System.String
+Parameter Sets: ByApiSchemaId
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Környezet
+A PsApiManagementContext példánya.
+Ehhez a paraméterhez szükség van.
+
+```yaml
+Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
+Parameter Sets: ByApiSchemaId
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+A PsApiManagementApiSchema példánya.
+Ehhez a paraméterhez szükség van.
+
+```yaml
+Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiSchema
+Parameter Sets: ByInputObject
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -PassThru
+Ha a megadott művelet sikeres, akkor a True Write True értékre vált.
+Ez a paraméter nem kötelező.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceId
+A kar ResourceId ApiSchema. Ehhez a paraméterhez szükség van.
+
+```yaml
+Type: System.String
+Parameter Sets: ByResourceIdParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -SchemaId
+Az API-séma azonosítója.
+Ehhez a paraméterhez szükség van.
+
+```yaml
+Type: System.String
+Parameter Sets: ByApiSchemaId
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### – Megerősítés
+A parancsmag futtatása előtt kéri a megerősítést.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag nem fut.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+
+## BEMENETEK
+
+### Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementContext
+
+### Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementApiSchema
+
+### System. String
+
+## KIMENETEK
+
+### System. Boolean
+
+## MEGJEGYZI
+
+## KAPCSOLÓDÓ HIVATKOZÁSOK
+
+[Get-AzApiManagementApiSchema](./Get-AzApiManagementApiSchema.md)
+
+[Új – AzApiManagementApiSchema](./New-AzApiManagementApiSchema.md)
+
+[Set-AzApiManagementApiSchema](./Set-AzApiManagementApiSchema.md)
