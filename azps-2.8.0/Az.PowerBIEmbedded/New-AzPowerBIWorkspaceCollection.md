@@ -1,0 +1,152 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.PowerBIEmbedded.dll-Help.xml
+Module Name: Az.PowerBIEmbedded
+ms.assetid: 9F9E4273-6747-4963-AF1F-C0AEB46770A4
+online version: https://docs.microsoft.com/en-us/powershell/module/az.powerbiembedded/new-azpowerbiworkspacecollection
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/PowerBIEmbedded/PowerBIEmbedded/help/New-AzPowerBIWorkspaceCollection.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/PowerBIEmbedded/PowerBIEmbedded/help/New-AzPowerBIWorkspaceCollection.md
+ms.openlocfilehash: c16632f621af0dfe3f6b6a1b53148eef2c480e8a
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93838380"
+---
+# <span data-ttu-id="5d354-101">New-AzPowerBIWorkspaceCollection</span><span class="sxs-lookup"><span data-stu-id="5d354-101">New-AzPowerBIWorkspaceCollection</span></span>
+
+## <span data-ttu-id="5d354-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="5d354-102">SYNOPSIS</span></span>
+<span data-ttu-id="5d354-103">Létrehoz egy Power BI-munkaterületi gyűjteményt.</span><span class="sxs-lookup"><span data-stu-id="5d354-103">Creates a Power BI workspace collection.</span></span>
+
+## <span data-ttu-id="5d354-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="5d354-104">SYNTAX</span></span>
+
+```
+New-AzPowerBIWorkspaceCollection [-ResourceGroupName] <String> [-WorkspaceCollectionName] <String>
+ [-Location] <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="5d354-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="5d354-105">DESCRIPTION</span></span>
+<span data-ttu-id="5d354-106">A **New-AzPowerBIWorkspaceCollection** parancsmag létrehoz egy Power bi-munkaterületi gyűjteményt az Azure-előfizetéshez a megadott erőforrás-csoportban és-helyen.</span><span class="sxs-lookup"><span data-stu-id="5d354-106">The **New-AzPowerBIWorkspaceCollection** cmdlet creates a Power BI workspace collection for your Azure subscription in the specified resource group and location.</span></span>
+
+## <span data-ttu-id="5d354-107">Példák</span><span class="sxs-lookup"><span data-stu-id="5d354-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="5d354-108">Példa 1: munkaterületi gyűjtemény létrehozása</span><span class="sxs-lookup"><span data-stu-id="5d354-108">Example 1: Create a workspace collection</span></span>
+```
+PS C:\>New-AzPowerBIWorkspaceCollection -ResourceGroupName "ResourceGroup17" -WorkspaceCollectionName "WCN11" -Location "Japan West"
+```
+
+<span data-ttu-id="5d354-109">Ez a parancs létrehoz egy WCN11 nevű munkaterületi gyűjteményt a megadott helyen, a megadott erőforrás csoportban.</span><span class="sxs-lookup"><span data-stu-id="5d354-109">This command creates a workspace collection named WCN11 in the specified resource group in the specified location.</span></span>
+
+## <span data-ttu-id="5d354-110">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="5d354-110">PARAMETERS</span></span>
+
+### <span data-ttu-id="5d354-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="5d354-111">-DefaultProfile</span></span>
+<span data-ttu-id="5d354-112">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés</span><span class="sxs-lookup"><span data-stu-id="5d354-112">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5d354-113">-Hely</span><span class="sxs-lookup"><span data-stu-id="5d354-113">-Location</span></span>
+<span data-ttu-id="5d354-114">Annak az Azure-helynek a meghatározása, amelyben ez a parancsmag létrehoz egy munkaterületi gyűjteményt.</span><span class="sxs-lookup"><span data-stu-id="5d354-114">Specifies the Azure location in which this cmdlet creates a workspace collection.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5d354-115">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="5d354-115">-ResourceGroupName</span></span>
+<span data-ttu-id="5d354-116">Annak az erőforrás csoportnak a nevét adja meg, amelyben a parancsmag létrehoz egy munkaterületi gyűjteményt.</span><span class="sxs-lookup"><span data-stu-id="5d354-116">Specifies the name of the resource group in which this cmdlet creates a workspace collection.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5d354-117">-WorkspaceCollectionName</span><span class="sxs-lookup"><span data-stu-id="5d354-117">-WorkspaceCollectionName</span></span>
+<span data-ttu-id="5d354-118">A Power BI-munkaterületi gyűjtemény nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="5d354-118">Specifies a name for the Power BI workspace collection.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: Name, ResourceName
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5d354-119">– Megerősítés</span><span class="sxs-lookup"><span data-stu-id="5d354-119">-Confirm</span></span>
+<span data-ttu-id="5d354-120">A parancsmag futtatása előtt kéri a megerősítést.</span><span class="sxs-lookup"><span data-stu-id="5d354-120">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5d354-121">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="5d354-121">-WhatIf</span></span>
+<span data-ttu-id="5d354-122">Annak megjelenítése, hogy mi történik, ha a parancsmag fut.</span><span class="sxs-lookup"><span data-stu-id="5d354-122">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="5d354-123">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="5d354-123">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5d354-124">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="5d354-124">CommonParameters</span></span>
+<span data-ttu-id="5d354-125">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="5d354-125">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="5d354-126">További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="5d354-126">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="5d354-127">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="5d354-127">INPUTS</span></span>
+
+### <span data-ttu-id="5d354-128">System. String</span><span class="sxs-lookup"><span data-stu-id="5d354-128">System.String</span></span>
+
+## <span data-ttu-id="5d354-129">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="5d354-129">OUTPUTS</span></span>
+
+### <span data-ttu-id="5d354-130">Microsoft. Azure. Command. Management. PowerBIEmbedded. models. PSWorkspaceCollection</span><span class="sxs-lookup"><span data-stu-id="5d354-130">Microsoft.Azure.Commands.Management.PowerBIEmbedded.Models.PSWorkspaceCollection</span></span>
+
+## <span data-ttu-id="5d354-131">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="5d354-131">NOTES</span></span>
+
+## <span data-ttu-id="5d354-132">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="5d354-132">RELATED LINKS</span></span>
+
+[<span data-ttu-id="5d354-133">Get-AzPowerBIWorkspaceCollection</span><span class="sxs-lookup"><span data-stu-id="5d354-133">Get-AzPowerBIWorkspaceCollection</span></span>](./Get-AzPowerBIWorkspaceCollection.md)
+
+[<span data-ttu-id="5d354-134">Remove-AzPowerBIWorkspaceCollection</span><span class="sxs-lookup"><span data-stu-id="5d354-134">Remove-AzPowerBIWorkspaceCollection</span></span>](./Remove-AzPowerBIWorkspaceCollection.md)
+
+
