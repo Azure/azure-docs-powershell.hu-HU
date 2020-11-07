@@ -1,0 +1,305 @@
+---
+external help file: Microsoft.Azure.Commands.Insights.dll-Help.xml
+Module Name: AzureRM.Insights
+ms.assetid: A90564B5-57D7-48EB-976D-38C03D930289
+online version: ''
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Insights/Commands.Insights/help/Add-AzureRmMetricAlertRule.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Insights/Commands.Insights/help/Add-AzureRmMetricAlertRule.md
+ms.openlocfilehash: 9a215195ada1d804d2c139ed748eb844df46eed5
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93680541"
+---
+# Add-AzureRmMetricAlertRule
+
+## Áttekintés
+Metrika-alapú figyelmeztetési szabály hozzáadása vagy frissítése
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## SZINTAXISA
+
+```
+Add-AzureRmMetricAlertRule -WindowSize <TimeSpan> -Operator <ConditionOperator> -Threshold <Double>
+ -TargetResourceId <String> -MetricName <String> -TimeAggregationOperator <TimeAggregationOperator>
+ -Location <String> [-Description <String>] [-DisableRule] -ResourceGroup <String> -Name <String>
+ [-Actions <System.Collections.Generic.List`1[Microsoft.Azure.Management.Monitor.Management.Models.RuleAction]>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## Leírás
+A **Add-AzureRmMetricAlertRule** parancsmag metrikus-alapú figyelmeztetési szabályt ad hozzá vagy frissít.
+A hozzáadott szabály erőforrás-csoporthoz van társítva, és nevet tartalmaz.
+
+## Példák
+
+### Példa 1: metrikus figyelmeztetési szabály hozzáadása webhelyhez
+```
+PS C:\>Add-AzureRMMetricAlertRule -Name "metricRule5" -Location "East US" -ResourceGroup "Default-Web-EastUS" -Operator GreaterThan -Threshold 2 -WindowSize 00:05:00 -MetricName "Requests" -Description "Pura Vida" -TimeAggregationOperator Total
+RequestId                                                                                                    StatusCode
+---------                                                                                                    ----------
+33574ccf-0b01-43b4-aa97-87e6bbcf1c11                                                                         Created
+```
+
+Ez a parancs metrikus figyelmeztetési szabályt hoz létre egy webhelyhez.
+
+### 2. példa: szabály letiltása
+```
+PS C:\>Add-AzureRMMetricAlertRule -Name "metricRule5" -Location "East US" -ResourceGroup Default-Web-EastUS -Operator GreaterThan -Threshold 2 -WindowSize 00:05:00 -MetricName "Requests" -TimeAggregationOperator Total 
+RequestId                                                                                                    StatusCode
+---------                                                                                                    ----------
+96c489f1-8529-46e1-a76d-2c1463ca3116                                                                                 OK
+```
+
+Ez a parancs letiltja a szabályt.
+Ha a szabály nem létezik, akkor az a letiltott állapotot hozza létre.
+Ha a szabály létezik, akkor az csak letiltja.
+
+### 3. példa: szabály felvétele műveletekkel
+```
+PS C:\>Add-AzureRmMetricAlertRule -Name "metricRule5" -Location "East US" -ResourceGroup "Default-Web-EastUS" -Operator GreaterThan -Threshold 1 -TargetResourceId "/subscriptions/b93fb07a-6f93-30be-bf3e-4f0deca15f4f/resourceGroups/Default-Web-EastUS/providers/microsoft.web/sites/mywebsite" -MetricName "Requests" -TimeAggregationOperator Total
+RequestId                                                                                                    StatusCode
+---------                                                                                                    ----------
+9a5bc388-c7ac-4dc6-aa70-f4bc29c2c712                                                                                 OK
+```
+
+Ez a parancs metrikus figyelmeztetési szabályt hoz létre egy webhelyhez.
+
+## PARAMÉTEREK
+
+### -Műveletek
+A műveletek vesszővel elválasztott listáját adja meg.
+
+```yaml
+Type: System.Collections.Generic.List`1[Microsoft.Azure.Management.Monitor.Management.Models.RuleAction]
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Leírás
+A szabály leírását adja meg.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DisableRule
+Letiltja a szabályt.
+Ha nem adja meg ezt a paramétert, a szabály engedélyezve van.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Hely
+A szabály helyének meghatározása.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -MetricName
+Annak a metrikának a nevét adja meg, amelyre a szabály figyel.
+Csak metrikus alapú szabályok esetén adja meg ezt a paramétert.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Name (név)
+A szabály nevét adja meg.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Operátor
+A szabály feltételéhez tartozó relációs operátort adja meg.
+A paraméter elfogadható értékei a következők:
+
+- GreaterThan
+- GreaterThanOrEqual
+-  LessThan
+- LessThanOrEqual
+
+```yaml
+Type: Microsoft.Azure.Management.Monitor.Management.Models.ConditionOperator
+Parameter Sets: (All)
+Aliases: 
+Accepted values: GreaterThan, GreaterThanOrEqual, LessThan, LessThanOrEqual
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ResourceGroup
+A szabály erőforráscsoport-csoportjának nevét adja meg.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -TargetResourceId
+A szabály által figyelt erőforrás AZONOSÍTÓját adja meg. Megjegyzés: Ez a tulajdonság nem frissíthető egy meglévő figyelmeztetési szabályhoz.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Küszöb
+A szabály küszöbét adja meg.
+
+```yaml
+Type: System.Double
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -TimeAggregationOperator
+A szabály értékelése során az időablakra érvényes összesítési operátort adja meg.
+
+```yaml
+Type: System.Nullable`1[Microsoft.Azure.Management.Monitor.Management.Models.TimeAggregationOperator]
+Parameter Sets: (All)
+Aliases: 
+Accepted values: Average, Minimum, Maximum, Total, Last
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -WindowSize
+A szabály időablakának méretét adja meg az adatainak számításához.
+
+```yaml
+Type: System.TimeSpan
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## BEMENETEK
+
+## KIMENETEK
+
+### Microsoft. Azure. commands. OutputClasses. PSAddAlertRuleOperationResponse
+
+## MEGJEGYZI
+
+## KAPCSOLÓDÓ HIVATKOZÁSOK
+
+[Add-AzureRmLogAlertRule](./Add-AzureRmLogAlertRule.md)
+
+[Add-AzureRmWebtestAlertRule](./Add-AzureRmWebtestAlertRule.md)
+
+[Get-AzureRmAlertHistory](./Get-AzureRmAlertHistory.md)
+
+[Get-AzureRmAlertRule](./Get-AzureRmAlertRule.md)
+
+[Új – AzureRmAlertRuleEmail](./New-AzureRmAlertRuleEmail.md)
+
+[Új – AzureRmAlertRuleWebhook](./New-AzureRmAlertRuleWebhook.md)
+
+[Remove-AzureRmAlertRule](./Remove-AzureRmAlertRule.md)
+
+
