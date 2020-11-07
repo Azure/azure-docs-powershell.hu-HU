@@ -1,0 +1,223 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.FrontDoor.dll-Help.xml
+Module Name: Az.FrontDoor
+online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/get-azfrontdoorfrontendendpoint
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/Get-AzFrontDoorFrontendEndpoint.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/Get-AzFrontDoorFrontendEndpoint.md
+ms.openlocfilehash: f685bb7bdad663e84a67397c89568d2263d0ed9a
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93836177"
+---
+# Get-AzFrontDoorFrontendEndpoint
+
+## Áttekintés
+Első ajtós felület végpontjának beszerzése
+
+## SZINTAXISA
+
+### ByFieldsParameterSet (alapértelmezett)
+```
+Get-AzFrontDoorFrontendEndpoint -ResourceGroupName <String> -FrontDoorName <String> [-Name <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### ByObjectParameterSet
+```
+Get-AzFrontDoorFrontendEndpoint [-Name <String>] -FrontDoorObject <PSFrontDoor>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### ByResourceIdParameterSet
+```
+Get-AzFrontDoorFrontendEndpoint -ResourceId <String> [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+## Leírás
+A **Get-AzFrontDoorFrontendEndpoint** parancsmag minden olyan meglévő felületi végpontot beilleszt az aktuális bejárati ajtó erőforrásában, amely megfelel a megadott adatoknak.
+
+## Példák
+
+### 1. példa: az "frontdoor1", amely a "rg1" erőforráscsoport részét képező "az első ajtó" végpontjának beszerzése.
+```powershell
+PS C:\> Get-AzFrontDoorFrontendEndpoint -ResourceGroupName "rg1" -FrontDoorName "frontdoor1"
+
+
+HostName                         : frontdoor1.azurefd.net
+SessionAffinityEnabledState      : Disabled
+SessionAffinityTtlSeconds        : 0
+WebApplicationFirewallPolicyLink :
+Backends                         :
+CustomHttpsProvisioningState     : Disabled
+CustomHttpsProvisioningSubstate  : None
+CertificateSource                :
+ProtocolType                     :
+Vault                            :
+SecretName                       :
+SecretVersion                    :
+CertificateType                  :
+ResourceState                    : Enabled
+Id                               : /subscriptions/{guid}/resourcegroups/resourcegroup1
+                                   /providers/Microsoft.Network/frontdoors/frontdoor1/frontendendpoints/frontdoor1-azurefd-net
+Name                             : frontdoor1-azurefd-net
+Type                             : Microsoft.Network/frontdoors/frontendendpoints
+
+HostName                         : frontendpointname1.custom.xyz
+SessionAffinityEnabledState      : Disabled
+SessionAffinityTtlSeconds        : 0
+WebApplicationFirewallPolicyLink :
+Backends                         :
+CustomHttpsProvisioningState     : Disabled
+CustomHttpsProvisioningSubstate  : None
+CertificateSource                :
+ProtocolType                     :
+Vault                            :
+SecretName                       :
+SecretVersion                    :
+CertificateType                  :
+ResourceState                    : Enabled
+Id                               : /subscriptions/{guid}/resourcegroups/resourcegroup1
+                                   /providers/Microsoft.Network/frontdoors/frontdoor1/frontendendpoints/frontendpointname1-custom-xyz
+Name                             : frontendpointname1-custom-xyz
+Type                             : Microsoft.Network/frontdoors/frontendendpoints
+```
+
+A bejárati végpontok beszerzése "frontdoor1", amely a "rg1" erőforráscsoport részét képezi.
+
+### 2. példa: a frontend végpontjának beszerzése "frontdoor1-azurefd-net" néven "frontdoor1", amely a "rg1" erőforráscsoport részét képezi.
+```powershell
+PS C:\> Get-AzFrontDoorFrontendEndpoint -ResourceGroupName "rg1" -FrontDoorName "frontdoor1" -Name "frontdoor1-azurefd-net"
+
+
+HostName                         : frontdoor1.azurefd.net
+SessionAffinityEnabledState      : Disabled
+SessionAffinityTtlSeconds        : 0
+WebApplicationFirewallPolicyLink :
+Backends                         :
+CustomHttpsProvisioningState     : Disabled
+CustomHttpsProvisioningSubstate  : None
+CertificateSource                :
+ProtocolType                     :
+Vault                            :
+SecretName                       :
+SecretVersion                    :
+CertificateType                  :
+ResourceState                    : Enabled
+Id                               : /subscriptions/{guid}/resourcegroups/resourcegroup1
+                                   /providers/Microsoft.Network/frontdoors/frontdoor1/frontendendpoints/frontdoor1-azurefd-net
+Name                             : frontdoor1-azurefd-net
+Type                             : Microsoft.Network/frontdoors/frontendendpoints
+```
+
+A "frontdoor1-azurefd-net" "frontdoor1" nevű "" nevű "rg1" erőforráscsoport része
+
+## PARAMÉTEREK
+
+### -DefaultProfile
+Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FrontDoorName
+A bejárati ajtó neve.
+
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FrontDoorObject
+A FrontDoor objektum.
+
+```yaml
+Type: Microsoft.Azure.Commands.FrontDoor.Models.PSFrontDoor
+Parameter Sets: ByObjectParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Name (név)
+A frontend végpontjának neve.
+
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet, ByObjectParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Az erőforrás csoport neve.
+
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceId
+A bejárati ajtó erőforrás-azonosítója
+
+```yaml
+Type: System.String
+Parameter Sets: ByResourceIdParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+
+## BEMENETEK
+
+### Nincs
+
+## KIMENETEK
+
+### Microsoft. Azure. Command. FrontDoor. models. PSFrontendEndpoint
+
+## MEGJEGYZI
+
+## KAPCSOLÓDÓ HIVATKOZÁSOK

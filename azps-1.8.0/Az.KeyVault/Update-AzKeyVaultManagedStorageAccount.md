@@ -1,0 +1,263 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.KeyVault.dll-Help.xml
+Module Name: Az.KeyVault
+online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/update-azkeyvaultmanagedstorageaccount
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Update-AzKeyVaultManagedStorageAccount.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Update-AzKeyVaultManagedStorageAccount.md
+ms.openlocfilehash: 183618058d6400798dc2af74975fd45a0a397b16
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93835598"
+---
+# Update-AzKeyVaultManagedStorageAccount
+
+## Áttekintés
+Frissítheti egy kulcs típusú, felügyelt Azure-tárterület szerkeszthető attribútumait.
+
+## SZINTAXISA
+
+### ByDefinitionName (alapértelmezett)
+```
+Update-AzKeyVaultManagedStorageAccount [-VaultName] <String> [-AccountName] <String> [-ActiveKeyName <String>]
+ [-AutoRegenerateKey <Boolean>] [-RegenerationPeriod <TimeSpan>] [-Enable <Boolean>] [-Tag <Hashtable>]
+ [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### ByInputObject
+```
+Update-AzKeyVaultManagedStorageAccount [-InputObject] <PSKeyVaultManagedStorageAccountIdentityItem>
+ [-ActiveKeyName <String>] [-AutoRegenerateKey <Boolean>] [-RegenerationPeriod <TimeSpan>] [-Enable <Boolean>]
+ [-Tag <Hashtable>] [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+## Leírás
+Frissítheti egy kulcs típusú, felügyelt Azure-tárterület szerkeszthető attribútumát.
+
+## Példák
+
+### Példa 1: az aktív kulcs frissítése az "azonosító2"-ra egy Key Vault Managed Azure Storage-fiókban.
+```powershell
+PS C:\> Update-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -AccountName 'mystorageaccount' -ActiveKeyName 'key2'
+
+Id                  : https://myvault.vault.azure.net:443/storage/mystorageaccount
+Vault Name          : myvault
+AccountName         : mystorageaccount
+Account Resource Id : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx/resourceGroups/myrg/providers/Microsoft.St
+                      orage/storageAccounts/mystorageaccount
+Active Key Name     : key2
+Auto Regenerate Key : True
+Regeneration Period : 90.00:00:00
+Enabled             : True
+Created             : 5/21/2018 11:55:58 PM
+Updated             : 5/21/2018 11:55:58 PM
+Tags                :
+```
+
+Frissíti a Key Vault Managed Azure tárhely-fiók aktív kulcsát a "azonosító2" értékre. az "azonosító2" a frissítés után a SAS-tokenek generálásához használható.
+
+## PARAMÉTEREK
+
+### -AccountName
+Fontos: a boltozattal felügyelt tárolási fiók neve. Parancsmag: a felügyelt tárterület-fióknév teljes tartománynevét építi a Vault neve, a jelenleg kijelölt környezet és a Mangal-tároló fiók nevéből.
+
+```yaml
+Type: System.String
+Parameter Sets: ByDefinitionName
+Aliases: StorageAccountName, Name
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ActiveKeyName
+Az aktív kulcs neve
+Ha nem adja meg, akkor a felügyelt tárterület-fiók aktív kulcsnévének meglévő értéke változatlan marad
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AutoRegenerateKey
+Automatikus újragenerálási kulcs.
+Ha nem adja meg, akkor a felügyelt tárterület-fiók automatikus újragenerálási kulcsának meglévő értéke változatlan marad
+
+```yaml
+Type: System.Nullable`1[System.Boolean]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### – Engedélyezés
+Ha van, akkor lehetővé teszi a felügyelt tárterület-fiók kulcs használatát a sas-tokenek generálásához, ha az érték igaz. Letiltja a felügyelt tárterület-fiók kulcs használatát a sas-token generálásához, ha az érték hamis. Ha nem adja meg, akkor a tárterület-fiók engedélyezve/letiltva állapotának meglévő értéke változatlan marad.
+
+```yaml
+Type: System.Nullable`1[System.Boolean]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+ManagedStorageAccount objektum
+
+```yaml
+Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultManagedStorageAccountIdentityItem
+Parameter Sets: ByInputObject
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -PassThru
+A parancsmag alapértelmezés szerint nem ad vissza objektumot. Ha ez a kapcsoló van megadva, a felügyelt tárterület-ügyfél visszaadása objektum.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RegenerationPeriod
+A regeneráció időszaka Ha az automatikus újragenerálási kulcs engedélyezve van, ez az érték határozza meg azt a időszak, amely után a felügyelt tárolási fiók inaktív kulcsát újra létrehozta a rendszer, és az aktív kulcs lesz. Ha nem adja meg, a felügyelt tárterületet tároló kulcsok átgenerálási időszakának meglévő értéke változatlan marad
+
+```yaml
+Type: System.Nullable`1[System.TimeSpan]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Címke
+A kulcs-érték párok a hash-táblázatok formájában. Például: @ {key0 = "value0"; key1 = $null; azonosító2 = "érték2"}
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases: Tags
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VaultName
+Boltozat neve.
+A parancsmag a pince teljes tartománynevét a név és a jelenleg kijelölt környezet alapján építi fel.
+
+```yaml
+Type: System.String
+Parameter Sets: ByDefinitionName
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### – Megerősítés
+A parancsmag futtatása előtt kéri a megerősítést.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag nem fut.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## BEMENETEK
+
+### Microsoft. Azure. Command. PSKeyVaultManagedStorageAccountIdentityItem. models.
+
+## KIMENETEK
+
+### Microsoft. Azure. Command. PSKeyVaultManagedStorageAccount. models.
+
+## MEGJEGYZI
+
+## KAPCSOLÓDÓ HIVATKOZÁSOK
+
+[Az.-boltozat](/powershell/module/az.keyvault)
