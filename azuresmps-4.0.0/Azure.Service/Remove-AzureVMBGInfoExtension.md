@@ -1,0 +1,124 @@
+---
+external help file: Microsoft.WindowsAzure.Commands.ServiceManagement.dll-Help.xml
+ms.assetid: 8C735528-3844-452F-983B-41AC5CD4E414
+online version: ''
+schema: 2.0.0
+ms.openlocfilehash: 1ea39b2c06a5daf7540009f480e7c2ec211e7f47
+ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "94015508"
+---
+# <span data-ttu-id="cb156-101">Remove-AzureVMBGInfoExtension</span><span class="sxs-lookup"><span data-stu-id="cb156-101">Remove-AzureVMBGInfoExtension</span></span>
+
+## <span data-ttu-id="cb156-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="cb156-102">SYNOPSIS</span></span>
+<span data-ttu-id="cb156-103">Eltávolítja a virtuális gépen alkalmazott BGInfo-bővítményt.</span><span class="sxs-lookup"><span data-stu-id="cb156-103">Removes the BGInfo extension applied on a virtual machine.</span></span>
+
+## <span data-ttu-id="cb156-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="cb156-104">SYNTAX</span></span>
+
+```
+Remove-AzureVMBGInfoExtension -VM <IPersistentVM> [-Profile <AzureSMProfile>]
+ [-InformationAction <ActionPreference>] [-InformationVariable <String>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="cb156-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="cb156-105">DESCRIPTION</span></span>
+<span data-ttu-id="cb156-106">A **Remove-AzureVMBGInfoExtension** parancsmag eltávolítja a virtuális gépen alkalmazott BGInfo-bővítményt.</span><span class="sxs-lookup"><span data-stu-id="cb156-106">The **Remove-AzureVMBGInfoExtension** cmdlet removes the BGInfo extension applied on a virtual machine.</span></span>
+
+## <span data-ttu-id="cb156-107">Példák</span><span class="sxs-lookup"><span data-stu-id="cb156-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="cb156-108">1. példa: a BGInfo-bővítmény eltávolítása virtuális gépen</span><span class="sxs-lookup"><span data-stu-id="cb156-108">Example 1: Remove the BGInfo extension on a virtual machine</span></span>
+```
+PS C:\> Remove-AzureVMBGInfoExtension -VM $VM;
+```
+
+<span data-ttu-id="cb156-109">Ez a parancs eltávolítja a virtuális gépen alkalmazott BGInfo-bővítményt.</span><span class="sxs-lookup"><span data-stu-id="cb156-109">This command removes the BGInfo extension applied on a virtual machine.</span></span>
+
+## <span data-ttu-id="cb156-110">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="cb156-110">PARAMETERS</span></span>
+
+### <span data-ttu-id="cb156-111">-InformationAction</span><span class="sxs-lookup"><span data-stu-id="cb156-111">-InformationAction</span></span>
+<span data-ttu-id="cb156-112">Itt adhatja meg, hogy a parancsmag hogyan válaszoljon egy információs eseményre.</span><span class="sxs-lookup"><span data-stu-id="cb156-112">Specifies how this cmdlet responds to an information event.</span></span>
+
+<span data-ttu-id="cb156-113">A paraméter elfogadható értékei a következők:</span><span class="sxs-lookup"><span data-stu-id="cb156-113">The acceptable values for this parameter are:</span></span>
+
+- <span data-ttu-id="cb156-114">Folytassa</span><span class="sxs-lookup"><span data-stu-id="cb156-114">Continue</span></span>
+- <span data-ttu-id="cb156-115">Mellőzése</span><span class="sxs-lookup"><span data-stu-id="cb156-115">Ignore</span></span>
+- <span data-ttu-id="cb156-116">Érdeklődni</span><span class="sxs-lookup"><span data-stu-id="cb156-116">Inquire</span></span>
+- <span data-ttu-id="cb156-117">SilentlyContinue</span><span class="sxs-lookup"><span data-stu-id="cb156-117">SilentlyContinue</span></span>
+- <span data-ttu-id="cb156-118">állj</span><span class="sxs-lookup"><span data-stu-id="cb156-118">Stop</span></span>
+- <span data-ttu-id="cb156-119">Felfüggesztheti</span><span class="sxs-lookup"><span data-stu-id="cb156-119">Suspend</span></span>
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: infa
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cb156-120">-InformationVariable</span><span class="sxs-lookup"><span data-stu-id="cb156-120">-InformationVariable</span></span>
+<span data-ttu-id="cb156-121">Egy információs változót ad meg.</span><span class="sxs-lookup"><span data-stu-id="cb156-121">Specifies an information variable.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: iv
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cb156-122">-Profil</span><span class="sxs-lookup"><span data-stu-id="cb156-122">-Profile</span></span>
+<span data-ttu-id="cb156-123">Azt az Azure-profilt adja meg, amelyből a parancsmag olvasható.</span><span class="sxs-lookup"><span data-stu-id="cb156-123">Specifies the Azure profile from which this cmdlet reads.</span></span>
+<span data-ttu-id="cb156-124">Ha nem ad meg profilt, a parancsmag a helyi alapértelmezett profilból olvassa be a szöveget.</span><span class="sxs-lookup"><span data-stu-id="cb156-124">If you do not specify a profile, this cmdlet reads from the local default profile.</span></span>
+
+```yaml
+Type: AzureSMProfile
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cb156-125">-VM</span><span class="sxs-lookup"><span data-stu-id="cb156-125">-VM</span></span>
+<span data-ttu-id="cb156-126">Az állandó virtuálisgép-objektumot adja meg.</span><span class="sxs-lookup"><span data-stu-id="cb156-126">Specifies the persistent virtual machine object.</span></span>
+
+```yaml
+Type: IPersistentVM
+Parameter Sets: (All)
+Aliases: InputObject
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="cb156-127">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="cb156-127">CommonParameters</span></span>
+<span data-ttu-id="cb156-128">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="cb156-128">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="cb156-129">További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="cb156-129">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="cb156-130">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="cb156-130">INPUTS</span></span>
+
+## <span data-ttu-id="cb156-131">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="cb156-131">OUTPUTS</span></span>
+
+## <span data-ttu-id="cb156-132">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="cb156-132">NOTES</span></span>
+
+## <span data-ttu-id="cb156-133">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="cb156-133">RELATED LINKS</span></span>
+
+[<span data-ttu-id="cb156-134">Get-AzureVMBGInfoExtension</span><span class="sxs-lookup"><span data-stu-id="cb156-134">Get-AzureVMBGInfoExtension</span></span>](./Get-AzureVMBGInfoExtension.md)
+
+[<span data-ttu-id="cb156-135">Set-AzureVMBGInfoExtension</span><span class="sxs-lookup"><span data-stu-id="cb156-135">Set-AzureVMBGInfoExtension</span></span>](./Set-AzureVMBGInfoExtension.md)
+
+
