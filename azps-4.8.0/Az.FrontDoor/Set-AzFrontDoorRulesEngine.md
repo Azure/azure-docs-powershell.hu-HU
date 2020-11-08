@@ -1,0 +1,216 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.FrontDoor.dll-Help.xml
+Module Name: Az.FrontDoor
+online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/set-azfrontdoorrulesengine
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/Set-AzFrontDoorRulesEngine.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/Set-AzFrontDoorRulesEngine.md
+ms.openlocfilehash: cf98121f535f60c7d1ddc3b29e33f10fd8f29842
+ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "94184941"
+---
+# <span data-ttu-id="52fd9-101">Set-AzFrontDoorRulesEngine</span><span class="sxs-lookup"><span data-stu-id="52fd9-101">Set-AzFrontDoorRulesEngine</span></span>
+
+## <span data-ttu-id="52fd9-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="52fd9-102">SYNOPSIS</span></span>
+<span data-ttu-id="52fd9-103">Módosítsa a szabályok motorját.</span><span class="sxs-lookup"><span data-stu-id="52fd9-103">Update a Rules Engine.</span></span>
+
+## <span data-ttu-id="52fd9-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="52fd9-104">SYNTAX</span></span>
+
+### <span data-ttu-id="52fd9-105">ByFieldsParameterSet (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="52fd9-105">ByFieldsParameterSet (Default)</span></span>
+```
+Set-AzFrontDoorRulesEngine -ResourceGroupName <String> -FrontDoorName <String> -Name <String>
+ [-Rule <PSRulesEngineRule[]>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="52fd9-106">ByObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="52fd9-106">ByObjectParameterSet</span></span>
+```
+Set-AzFrontDoorRulesEngine -InputObject <PSRulesEngine> [-Rule <PSRulesEngineRule[]>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="52fd9-107">ByResourceIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="52fd9-107">ByResourceIdParameterSet</span></span>
+```
+Set-AzFrontDoorRulesEngine -ResourceId <String> [-Rule <PSRulesEngineRule[]>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="52fd9-108">Leírás</span><span class="sxs-lookup"><span data-stu-id="52fd9-108">DESCRIPTION</span></span>
+<span data-ttu-id="52fd9-109">Módosítsa a szabályok motorját.</span><span class="sxs-lookup"><span data-stu-id="52fd9-109">Update a Rules Engine.</span></span>
+
+## <span data-ttu-id="52fd9-110">Példák</span><span class="sxs-lookup"><span data-stu-id="52fd9-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="52fd9-111">Példa 1</span><span class="sxs-lookup"><span data-stu-id="52fd9-111">Example 1</span></span>
+```powershell
+PS C:\> Get-AzFrontDoorRulesEngine -ResourceGroupName $resourceGroupName -FrontDoorName $frontDoorName -Name myRulesEngine
+
+Name          RulesEngineRules
+----          ----------------
+myRulesEngine {rules1}
+
+PS C:\> $rulesEngineRule2 = New-AzFrontDoorRulesEngineRuleObject -Name rules2 -Priority 3 -Action $rulesEngineAction
+PS C:\AFD\azure-powershell\artifacts\Debug\Az.FrontDoor> Set-AzFrontDoorRulesEngine -ResourceGroupName $resourceGroupName -FrontDoorName $frontDoorName -Name myRulesEngine -Rule $rulesEngineRule1, $rulesEngineRule2
+
+Name          RulesEngineRules
+----          ----------------
+myRulesEngine {rules1, rules2}
+```
+
+<span data-ttu-id="52fd9-112">Megtudhatja, hogy van-e meglévő szabály-konfiguráció, és további szabályok szükségesek a vezérlőhöz.</span><span class="sxs-lookup"><span data-stu-id="52fd9-112">Get an existing rules engine configuration and add another rules engine rule to it.</span></span>
+
+## <span data-ttu-id="52fd9-113">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="52fd9-113">PARAMETERS</span></span>
+
+### <span data-ttu-id="52fd9-114">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="52fd9-114">-DefaultProfile</span></span>
+<span data-ttu-id="52fd9-115">Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="52fd9-115">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="52fd9-116">-FrontDoorName</span><span class="sxs-lookup"><span data-stu-id="52fd9-116">-FrontDoorName</span></span>
+<span data-ttu-id="52fd9-117">A bejárati ajtó neve.</span><span class="sxs-lookup"><span data-stu-id="52fd9-117">Front Door name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="52fd9-118">-InputObject</span><span class="sxs-lookup"><span data-stu-id="52fd9-118">-InputObject</span></span>
+<span data-ttu-id="52fd9-119">A Rule Engine objektum frissítése.</span><span class="sxs-lookup"><span data-stu-id="52fd9-119">The Rules Engine object to update.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.FrontDoor.Models.PSRulesEngine
+Parameter Sets: ByObjectParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="52fd9-120">-Name (név)</span><span class="sxs-lookup"><span data-stu-id="52fd9-120">-Name</span></span>
+<span data-ttu-id="52fd9-121">A szabályok motorjának neve</span><span class="sxs-lookup"><span data-stu-id="52fd9-121">Rules engine name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="52fd9-122">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="52fd9-122">-ResourceGroupName</span></span>
+<span data-ttu-id="52fd9-123">Az erőforráscsoport neve, amelybe az első ajtó jön létre.</span><span class="sxs-lookup"><span data-stu-id="52fd9-123">The resource group name that the Front Door will be created in.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="52fd9-124">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="52fd9-124">-ResourceId</span></span>
+<span data-ttu-id="52fd9-125">A frissítendő RulesEngine erőforrás-azonosítója</span><span class="sxs-lookup"><span data-stu-id="52fd9-125">Resource Id of the RulesEngine to update</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByResourceIdParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="52fd9-126">-Szabály</span><span class="sxs-lookup"><span data-stu-id="52fd9-126">-Rule</span></span>
+<span data-ttu-id="52fd9-127">Az egyes szabályok motor-konfigurációját meghatározó szabályok listája.</span><span class="sxs-lookup"><span data-stu-id="52fd9-127">A list of rules that define a particular Rules Engine Configuration.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.FrontDoor.Models.PSRulesEngineRule[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="52fd9-128">– Megerősítés</span><span class="sxs-lookup"><span data-stu-id="52fd9-128">-Confirm</span></span>
+<span data-ttu-id="52fd9-129">A parancsmag futtatása előtt kéri a megerősítést.</span><span class="sxs-lookup"><span data-stu-id="52fd9-129">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="52fd9-130">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="52fd9-130">-WhatIf</span></span>
+<span data-ttu-id="52fd9-131">Annak megjelenítése, hogy mi történik, ha a parancsmag fut.</span><span class="sxs-lookup"><span data-stu-id="52fd9-131">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="52fd9-132">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="52fd9-132">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="52fd9-133">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="52fd9-133">CommonParameters</span></span>
+<span data-ttu-id="52fd9-134">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="52fd9-134">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="52fd9-135">További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="52fd9-135">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="52fd9-136">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="52fd9-136">INPUTS</span></span>
+
+### <span data-ttu-id="52fd9-137">Microsoft. Azure. Command. FrontDoor. models. PSRulesEngine</span><span class="sxs-lookup"><span data-stu-id="52fd9-137">Microsoft.Azure.Commands.FrontDoor.Models.PSRulesEngine</span></span>
+
+### <span data-ttu-id="52fd9-138">System. String</span><span class="sxs-lookup"><span data-stu-id="52fd9-138">System.String</span></span>
+
+## <span data-ttu-id="52fd9-139">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="52fd9-139">OUTPUTS</span></span>
+
+### <span data-ttu-id="52fd9-140">Microsoft. Azure. Command. FrontDoor. models. PSRulesEngine</span><span class="sxs-lookup"><span data-stu-id="52fd9-140">Microsoft.Azure.Commands.FrontDoor.Models.PSRulesEngine</span></span>
+
+## <span data-ttu-id="52fd9-141">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="52fd9-141">NOTES</span></span>
+
+## <span data-ttu-id="52fd9-142">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="52fd9-142">RELATED LINKS</span></span>
