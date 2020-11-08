@@ -1,0 +1,205 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.AlertsManagement.dll-Help.xml
+Module Name: Az.AlertsManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/az.alertsmanagement/update-azactionrule
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AlertsManagement/AlertsManagement/help/Update-AzActionRule.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AlertsManagement/AlertsManagement/help/Update-AzActionRule.md
+ms.openlocfilehash: 2af687a79255d5e5ab4b49135bf8a8f7b8f819f1
+ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "94011192"
+---
+# <span data-ttu-id="702cb-101">Update-AzActionRule</span><span class="sxs-lookup"><span data-stu-id="702cb-101">Update-AzActionRule</span></span>
+
+## <span data-ttu-id="702cb-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="702cb-102">SYNOPSIS</span></span>
+<span data-ttu-id="702cb-103">A műveleti szabály tulajdonságainak frissítése</span><span class="sxs-lookup"><span data-stu-id="702cb-103">Updates action rule properties.</span></span>
+
+## <span data-ttu-id="702cb-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="702cb-104">SYNTAX</span></span>
+
+### <span data-ttu-id="702cb-105">ByNameSimplifiedPatch (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="702cb-105">ByNameSimplifiedPatch (Default)</span></span>
+```
+Update-AzActionRule -Name <String> -ResourceGroupName <String> [-Status <String>] [-Tag <Hashtable>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="702cb-106">ByResourceId</span><span class="sxs-lookup"><span data-stu-id="702cb-106">ByResourceId</span></span>
+```
+Update-AzActionRule -ResourceId <String> [-Status <String>] [-Tag <Hashtable>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="702cb-107">ByInputObject</span><span class="sxs-lookup"><span data-stu-id="702cb-107">ByInputObject</span></span>
+```
+Update-AzActionRule -InputObject <PSActionRule> [-Status <String>] [-Tag <Hashtable>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="702cb-108">Leírás</span><span class="sxs-lookup"><span data-stu-id="702cb-108">DESCRIPTION</span></span>
+<span data-ttu-id="702cb-109">**Update – a AzActionRule** parancsmag frissíti a műveleti szabály tulajdonságait – állapot és címkék.</span><span class="sxs-lookup"><span data-stu-id="702cb-109">**Update-AzActionRule** cmdlet updates action rule properties - status and tags.</span></span>
+
+## <span data-ttu-id="702cb-110">Példák</span><span class="sxs-lookup"><span data-stu-id="702cb-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="702cb-111">Példa 1</span><span class="sxs-lookup"><span data-stu-id="702cb-111">Example 1</span></span>
+```powershell
+PS C:\> Update-AzActionRule -ResourceGroupName "test-rg" -Name "Test-ActionRule" -Status "Disabled"
+```
+
+<span data-ttu-id="702cb-112">Ez a parancsmag letiltja a műveleti szabályt.</span><span class="sxs-lookup"><span data-stu-id="702cb-112">This cmdlet disables the action rule.</span></span> 
+
+## <span data-ttu-id="702cb-113">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="702cb-113">PARAMETERS</span></span>
+
+### <span data-ttu-id="702cb-114">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="702cb-114">-DefaultProfile</span></span>
+<span data-ttu-id="702cb-115">Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="702cb-115">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="702cb-116">-InputObject</span><span class="sxs-lookup"><span data-stu-id="702cb-116">-InputObject</span></span>
+<span data-ttu-id="702cb-117">A műveleti szabály erőforrás</span><span class="sxs-lookup"><span data-stu-id="702cb-117">The action rule resource</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.AlertsManagement.OutputModels.PSActionRule
+Parameter Sets: ByInputObject
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="702cb-118">-Name (név)</span><span class="sxs-lookup"><span data-stu-id="702cb-118">-Name</span></span>
+<span data-ttu-id="702cb-119">Műveleti szabály neve</span><span class="sxs-lookup"><span data-stu-id="702cb-119">Action rule name</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByNameSimplifiedPatch
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="702cb-120">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="702cb-120">-ResourceGroupName</span></span>
+<span data-ttu-id="702cb-121">Műveleti szabály neve</span><span class="sxs-lookup"><span data-stu-id="702cb-121">Action rule name</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByNameSimplifiedPatch
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="702cb-122">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="702cb-122">-ResourceId</span></span>
+<span data-ttu-id="702cb-123">A műveleti szabály erőforrás-azonosítója</span><span class="sxs-lookup"><span data-stu-id="702cb-123">The resource id of action rule</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByResourceId
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="702cb-124">-Állapot</span><span class="sxs-lookup"><span data-stu-id="702cb-124">-Status</span></span>
+<span data-ttu-id="702cb-125">Műveleti szabály állapota</span><span class="sxs-lookup"><span data-stu-id="702cb-125">Action rule status</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="702cb-126">-Címke</span><span class="sxs-lookup"><span data-stu-id="702cb-126">-Tag</span></span>
+<span data-ttu-id="702cb-127">A műveleti szabály címkéi</span><span class="sxs-lookup"><span data-stu-id="702cb-127">Action rule tags</span></span>
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="702cb-128">– Megerősítés</span><span class="sxs-lookup"><span data-stu-id="702cb-128">-Confirm</span></span>
+<span data-ttu-id="702cb-129">A parancsmag futtatása előtt kéri a megerősítést.</span><span class="sxs-lookup"><span data-stu-id="702cb-129">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="702cb-130">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="702cb-130">-WhatIf</span></span>
+<span data-ttu-id="702cb-131">Annak megjelenítése, hogy mi történik, ha a parancsmag fut.</span><span class="sxs-lookup"><span data-stu-id="702cb-131">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="702cb-132">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="702cb-132">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="702cb-133">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="702cb-133">CommonParameters</span></span>
+<span data-ttu-id="702cb-134">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="702cb-134">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="702cb-135">További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="702cb-135">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="702cb-136">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="702cb-136">INPUTS</span></span>
+
+### <span data-ttu-id="702cb-137">System. String</span><span class="sxs-lookup"><span data-stu-id="702cb-137">System.String</span></span>
+
+### <span data-ttu-id="702cb-138">Microsoft. Azure. Command. AlertsManagement. OutputModels. PSActionRule</span><span class="sxs-lookup"><span data-stu-id="702cb-138">Microsoft.Azure.Commands.AlertsManagement.OutputModels.PSActionRule</span></span>
+
+## <span data-ttu-id="702cb-139">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="702cb-139">OUTPUTS</span></span>
+
+### <span data-ttu-id="702cb-140">Microsoft. Azure. Command. AlertsManagement. OutputModels. PSActionRule</span><span class="sxs-lookup"><span data-stu-id="702cb-140">Microsoft.Azure.Commands.AlertsManagement.OutputModels.PSActionRule</span></span>
+
+## <span data-ttu-id="702cb-141">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="702cb-141">NOTES</span></span>
+
+## <span data-ttu-id="702cb-142">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="702cb-142">RELATED LINKS</span></span>
