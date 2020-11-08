@@ -1,0 +1,365 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+ms.assetid: D1D51DEF-05DE-45C4-9013-A02A5B248EAC
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/set-azvirtualnetworksubnetconfig
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzVirtualNetworkSubnetConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzVirtualNetworkSubnetConfig.md
+ms.openlocfilehash: 1ef34f3770d4eba273a679de2914184c3bf411a9
+ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "94010654"
+---
+# Set-AzVirtualNetworkSubnetConfig
+
+## Áttekintés
+Egy virtuális hálózat alhálózat-konfigurációjának frissítése.
+
+## SZINTAXISA
+
+### SetByResource (alapértelmezett)
+```
+Set-AzVirtualNetworkSubnetConfig -Name <String> -VirtualNetwork <PSVirtualNetwork> -AddressPrefix <String[]>
+ [-NetworkSecurityGroup <PSNetworkSecurityGroup>] [-RouteTable <PSRouteTable>] [-InputObject <PSNatGateway>]
+ [-ServiceEndpoint <String[]>] [-ServiceEndpointPolicy <PSServiceEndpointPolicy[]>]
+ [-Delegation <PSDelegation[]>] [-PrivateEndpointNetworkPoliciesFlag <String>]
+ [-PrivateLinkServiceNetworkPoliciesFlag <String>] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+### SetByResourceId
+```
+Set-AzVirtualNetworkSubnetConfig -Name <String> -VirtualNetwork <PSVirtualNetwork> -AddressPrefix <String[]>
+ [-NetworkSecurityGroupId <String>] [-RouteTableId <String>] [-ResourceId <String>]
+ [-ServiceEndpoint <String[]>] [-ServiceEndpointPolicy <PSServiceEndpointPolicy[]>]
+ [-Delegation <PSDelegation[]>] [-PrivateEndpointNetworkPoliciesFlag <String>]
+ [-PrivateLinkServiceNetworkPoliciesFlag <String>] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+## Leírás
+A **set-AzVirtualNetworkSubnetConfig** parancsmag frissíti a virtuális hálózat alhálózati konfigurációját.
+
+## Példák
+
+### 1: az alhálózat cím előtagjának módosítása
+```
+New-AzResourceGroup -Name TestResourceGroup -Location centralus
+
+$frontendSubnet = New-AzVirtualNetworkSubnetConfig -Name frontendSubnet -AddressPrefix "10.0.1.0/24"
+
+$virtualNetwork = New-AzVirtualNetwork -Name MyVirtualNetwork -ResourceGroupName TestResourceGroup    
+    -Location centralus -AddressPrefix "10.0.0.0/16" -Subnet $frontendSubnet
+
+Set-AzVirtualNetworkSubnetConfig -Name frontendSubnet -VirtualNetwork $virtualNetwork -AddressPrefix "10.0.3.0/23"
+
+$virtualNetwork | Set-AzVirtualNetwork
+```
+
+Ez a példa egy virtuális hálózatot hoz létre egy alhálózattal. Ezután a hívások Set-AzVirtualNetworkSubnetConfig az alhálózat AddressPrefix módosítására. Ez a funkció csak a virtuális hálózat memóriában való megjelenítését befolyásolja. Ezt követően a rendszer az Azure virtuális hálózatának módosítását kéri Set-AzVirtualNetwork.
+
+### 2: hálózati biztonsági csoport hozzáadása alhálózathoz
+```
+New-AzResourceGroup -Name TestResourceGroup -Location centralus
+
+$frontendSubnet = New-AzVirtualNetworkSubnetConfig -Name frontendSubnet -AddressPrefix "10.0.1.0/24"
+
+$virtualNetwork = New-AzVirtualNetwork -Name MyVirtualNetwork -ResourceGroupName TestResourceGroup 
+    -Location centralus -AddressPrefix "10.0.0.0/16" -Subnet $frontendSubnet
+
+$rdpRule = New-AzNetworkSecurityRuleConfig -Name rdp-rule -Description "Allow RDP" -Access Allow 
+    -Protocol Tcp -Direction Inbound -Priority 100 -SourceAddressPrefix Internet -SourcePortRange * -DestinationAddressPrefix * -DestinationPortRange 3389
+
+$networkSecurityGroup = New-AzNetworkSecurityGroup -ResourceGroupName 
+    TestResourceGroup -Location centralus -Name "NSG-FrontEnd" -SecurityRules $rdpRule
+
+Set-AzVirtualNetworkSubnetConfig -Name frontendSubnet -VirtualNetwork $virtualNetwork -AddressPrefix 
+    "10.0.1.0/24" -NetworkSecurityGroup $networkSecurityGroup
+
+$virtualNetwork | Set-AzVirtualNetwork
+```
+
+Ez a példa olyan erőforráscsoportot hoz létre, amelynek egyetlen virtuális hálózata csak egy alhálózatot tartalmaz. Ekkor létrehoz egy hálózati biztonsági csoportot az RDP-forgalom engedélyezési szabályával. A Set-AzVirtualNetworkSubnetConfig parancsmag a felületi alhálózat memóriában való megjelenítésének módosítására szolgál, hogy az az újonnan létrehozott hálózati biztonsági csoportra mutasson. Ezt követően az Set-AzVirtualNetwork parancsmag a módosított állapotnak a szolgáltatásba való visszaírását kéri.
+
+### 3: NAT-átjáró csatolása alhálózathoz
+```
+$pip = New-AzPublicIpAddress -Name "pip" -ResourceGroupName "natgateway_test" `
+   -Location "eastus2" -Sku "Standard" -IdleTimeoutInMinutes 4 -AllocationMethod "static"
+
+$natGateway = New-AzNatGateway -ResourceGroupName "natgateway_test" -Name "nat_gateway" `
+   -IdleTimeoutInMinutes 4 -Sku "Standard" -Location "eastus2" -PublicIpAddress $pip
+
+$frontendSubnet = New-AzVirtualNetworkSubnetConfig -Name frontendSubnet -AddressPrefix "10.0.1.0/24" 
+
+$virtualNetwork = New-AzVirtualNetwork -Name MyVirtualNetwork -ResourceGroupName TestResourceGroup 
+    -Location centralus -AddressPrefix "10.0.0.0/16" -Subnet $frontendSubnet
+
+Set-AzVirtualNetworkSubnetConfig -Name frontendSubnet -VirtualNetwork $virtualNetwork -InputObject $natGateway 
+
+$virtualNetwork | Set-AzVirtualNetwork
+```
+
+## PARAMÉTEREK
+
+### -AddressPrefix
+Az alhálózati konfiguráció IP-címeinek tartományát adja meg.
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### – Meghatalmazás
+Azon szolgáltatások listája, amelyeken műveleteket végezhet el az alhálózatban.
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSDelegation[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -InputObject
+Az alhálózati konfigurációhoz társított NAT-átjárót adja meg.
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSNatGateway
+Parameter Sets: SetByResource
+Aliases: NatGateway
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Name (név)
+A parancsmag által konfigurált alhálózat-konfiguráció nevét adja meg.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NetworkSecurityGroup
+Egy **NetworkSecurityGroup** -objektumot ad meg.
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSNetworkSecurityGroup
+Parameter Sets: SetByResource
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -NetworkSecurityGroupId
+Egy hálózati biztonsági csoport AZONOSÍTÓját adja meg.
+
+```yaml
+Type: System.String
+Parameter Sets: SetByResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -PrivateEndpointNetworkPoliciesFlag
+Configure: a hálózati házirendek alkalmazása a privát végpontra az alhálózatban be-és kikapcsolható.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -PrivateLinkServiceNetworkPoliciesFlag
+Configure: a hálózati házirendek alkalmazása a privát hivatkozás szolgáltatásra az alhálózatban.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ResourceId
+Az alhálózati konfigurációhoz társított NAT-átjáró erőforrás-azonosítóját adja meg.
+
+```yaml
+Type: System.String
+Parameter Sets: SetByResourceId
+Aliases: NatGatewayId
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -RouteTable
+A hálózati biztonsági csoporthoz tartozó Route Table objektumot adja meg.
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSRouteTable
+Parameter Sets: SetByResource
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -RouteTableId
+Annak az útválasztási objektumnak az AZONOSÍTÓját adja meg, amely a hálózat biztonsági csoportjához van társítva.
+
+```yaml
+Type: System.String
+Parameter Sets: SetByResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ServiceEndpoint
+A szolgáltatás végpontjának értéke
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ServiceEndpointPolicy
+Szolgáltatási végpontokra vonatkozó házirendek
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSServiceEndpointPolicy[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -VirtualNetwork
+Az alhálózati konfigurációt tartalmazó **VirtualNetwork** -objektumot adja meg.
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSVirtualNetwork
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+
+## BEMENETEK
+
+### Microsoft. Azure. commands. Network. models. PSVirtualNetwork
+
+### System. String
+
+### Microsoft. Azure. commands. Network. models. PSNetworkSecurityGroup
+
+### Microsoft. Azure. commands. Network. models. PSRouteTable
+
+### System. string []
+
+### Microsoft. Azure. commands. Network. models. PSServiceEndpointPolicy []
+
+### Microsoft.Azure.Commands.Network.Models.PSDelegation []
+
+## KIMENETEK
+
+### Microsoft. Azure. commands. Network. models. PSVirtualNetwork
+
+## MEGJEGYZI
+
+## KAPCSOLÓDÓ HIVATKOZÁSOK
+
+[Add-AzVirtualNetworkSubnetConfig](./Add-AzVirtualNetworkSubnetConfig.md)
+
+[Get-AzVirtualNetworkSubnetConfig](./Get-AzVirtualNetworkSubnetConfig.md)
+
+[Új – AzVirtualNetworkSubnetConfig](./New-AzVirtualNetworkSubnetConfig.md)
+
+[Remove-AzVirtualNetworkSubnetConfig](./Remove-AzVirtualNetworkSubnetConfig.md)
