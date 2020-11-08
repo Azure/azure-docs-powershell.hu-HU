@@ -1,0 +1,307 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/update-azvpngateway
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Update-AzVpnGateway.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Update-AzVpnGateway.md
+ms.openlocfilehash: 419c7bc71def03bc2db004e378d80ea9c31f5183
+ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "94184049"
+---
+# <span data-ttu-id="632e5-101">Update-AzVpnGateway</span><span class="sxs-lookup"><span data-stu-id="632e5-101">Update-AzVpnGateway</span></span>
+
+## <span data-ttu-id="632e5-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="632e5-102">SYNOPSIS</span></span>
+<span data-ttu-id="632e5-103">Méretezhető VPN-átjáró frissítése</span><span class="sxs-lookup"><span data-stu-id="632e5-103">Updates a scalable VPN gateway.</span></span>
+
+## <span data-ttu-id="632e5-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="632e5-104">SYNTAX</span></span>
+
+### <span data-ttu-id="632e5-105">ByVpnGatewayName (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="632e5-105">ByVpnGatewayName (Default)</span></span>
+```
+Update-AzVpnGateway -ResourceGroupName <String> -Name <String> [-VpnConnection <PSVpnConnection[]>]
+ [-VpnGatewayScaleUnit <UInt32>] [-BgpPeeringAddress <PSIpConfigurationBgpPeeringAddress[]>] [-Tag <Hashtable>]
+ [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="632e5-106">ByVpnGatewayObject</span><span class="sxs-lookup"><span data-stu-id="632e5-106">ByVpnGatewayObject</span></span>
+```
+Update-AzVpnGateway -InputObject <PSVpnGateway> [-VpnConnection <PSVpnConnection[]>]
+ [-VpnGatewayScaleUnit <UInt32>] [-BgpPeeringAddress <PSIpConfigurationBgpPeeringAddress[]>] [-Tag <Hashtable>]
+ [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="632e5-107">ByVpnGatewayResourceId</span><span class="sxs-lookup"><span data-stu-id="632e5-107">ByVpnGatewayResourceId</span></span>
+```
+Update-AzVpnGateway -ResourceId <String> [-VpnConnection <PSVpnConnection[]>] [-VpnGatewayScaleUnit <UInt32>]
+ [-BgpPeeringAddress <PSIpConfigurationBgpPeeringAddress[]>] [-Tag <Hashtable>] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="632e5-108">Leírás</span><span class="sxs-lookup"><span data-stu-id="632e5-108">DESCRIPTION</span></span>
+<span data-ttu-id="632e5-109">Az **Update-AzVpnGateway** parancsmag egy skálázható VPN-átjárót frissít.</span><span class="sxs-lookup"><span data-stu-id="632e5-109">The **Update-AzVpnGateway** cmdlet updates a scalable VPN gateway.</span></span>  
+<span data-ttu-id="632e5-110">Az Azure VPN-átjáró olyan szoftver által definiált kapcsolat a webhelyhez, ahol a VirtualHub belül a webhelyek közötti kapcsolatok használhatók.</span><span class="sxs-lookup"><span data-stu-id="632e5-110">An Azure VPN gateway is a software defined connectivity for site to site connections inside the VirtualHub.</span></span> <span data-ttu-id="632e5-111">Ez az átjáró a felhasználó által megadott méretarány alapján átméretezi a méretarányokat és a méretarányokat.</span><span class="sxs-lookup"><span data-stu-id="632e5-111">This gateway resizes and scales based on the scale unit specified by the user.</span></span> <span data-ttu-id="632e5-112">A kapcsolat beállítható egy virtuális magánhálózati webhelyről a méretezhető átjáróra.</span><span class="sxs-lookup"><span data-stu-id="632e5-112">A connection can be set up from a branch/site known as VPN site to the scalable gateway.</span></span> <span data-ttu-id="632e5-113">Mindegyik kapcsolat két Active-Active-alagútból áll</span><span class="sxs-lookup"><span data-stu-id="632e5-113">Each connection comprises of 2 Active-Active tunnels</span></span>
+
+## <span data-ttu-id="632e5-114">Példák</span><span class="sxs-lookup"><span data-stu-id="632e5-114">EXAMPLES</span></span>
+
+### <span data-ttu-id="632e5-115">Példa 1</span><span class="sxs-lookup"><span data-stu-id="632e5-115">Example 1</span></span>
+
+```powershell
+PS C:\> New-AzResourceGroup -Location "West US" -Name "testRG"
+PS C:\> $virtualWan = New-AzVirtualWan -ResourceGroupName testRG -Name myVirtualWAN -Location "West US"
+PS C:\> $virtualHub = New-AzVirtualHub -VirtualWan $virtualWan -ResourceGroupName "testRG" -Name "westushub" -AddressPrefix "10.0.0.1/24"
+PS C:\> $vpnGateway = New-AzVpnGateway -ResourceGroupName "testRG" -Name "testvpngw" -VirtualHubId $virtualHub.Id -BGPPeeringWeight 10 -VpnGatewayScaleUnit 2
+PS C:\> Update-AzVpnGateway -ResourceGroupName "testRG" -Name "testvpngw" -VpnGatewayScaleUnit 3
+
+ResourceGroupName   : testRG
+Name                : testvpngw
+Id                  : /subscriptions/{subscriptionId}/resourceGroups/testRG/providers/Microsoft.Network/vpnGateways/testvpngw
+Location            : West US
+VpnGatewayScaleUnit : 3
+VirtualHub          : /subscriptions/{subscriptionId}/resourceGroups/Ali_pS_Test/providers/Microsoft.Network/virtualHubs/westushub
+BgpSettings         : {}
+Type                : Microsoft.Network/vpnGateways
+ProvisioningState   : Succeeded
+```
+
+<span data-ttu-id="632e5-116">A fenti létrehoz egy erőforráscsoport, virtuális WAN, virtuális hálózat, virtuális hub a Nyugat-amerikai "testRG" erőforráscsoport az Azure-ban.</span><span class="sxs-lookup"><span data-stu-id="632e5-116">The above will create a resource group, Virtual WAN, Virtual Network, Virtual Hub in West US in "testRG" resource group in Azure.</span></span> <span data-ttu-id="632e5-117">Ezt követően egy VPN-átjáró jön létre a virtuális központban, 2 léptékű egységgel.</span><span class="sxs-lookup"><span data-stu-id="632e5-117">A VPN gateway will be created thereafter in the Virtual Hub with 2 scale units.</span></span>
+
+<span data-ttu-id="632e5-118">Az átjáró létrehozása után a Update-AzVpnGateway az átjáró 3 léptékű egységre való frissítéséhez használja.</span><span class="sxs-lookup"><span data-stu-id="632e5-118">After the gateway has been created, it uses  Update-AzVpnGateway to upgrade the gateway to 3 scale units.</span></span>
+
+### <span data-ttu-id="632e5-119">2. példa</span><span class="sxs-lookup"><span data-stu-id="632e5-119">Example 2</span></span>
+
+```powershell
+PS C:\> New-AzResourceGroup -Location "West US" -Name "testRG"
+PS C:\> $virtualWan = New-AzVirtualWan -ResourceGroupName testRG -Name myVirtualWAN -Location "West US"
+PS C:\> $virtualHub = New-AzVirtualHub -VirtualWan $virtualWan -ResourceGroupName "testRG" -Name "westushub" -AddressPrefix "10.0.0.1/24"
+PS C:\> $vpnGateway = New-AzVpnGateway -ResourceGroupName "testRG" -Name "testvpngw" -VirtualHubId $virtualHub.Id -BGPPeeringWeight 10 -VpnGatewayScaleUnit 2
+PS C:\>$ipconfigurationId1 = 'Instance0'
+PS C:\>$addresslist1 = @('169.254.21.5')
+PS C:\>$gw1ipconfBgp1 = New-AzIpConfigurationBgpPeeringAddressObject -IpConfigurationId $ipconfigurationId1 -CustomAddress $addresslist1
+PS C:\>$ipconfigurationId2 = 'Instance1'
+PS C:\>$addresslist2 = @('169.254.21.10')
+PS C:\>$gw1ipconfBgp2 = New-AzIpConfigurationBgpPeeringAddressObject -IpConfigurationId $ipconfigurationId2 -CustomAddress $addresslist2
+PS C:\>$gw = Get-AzVpnGateway -ResourceGroupName testRg -Name testgw
+PS C:\> Update-AzVpnGateway -ResourceGroupName "testRG" -Name "testvpngw" -BgpPeeringAddress @($gw1ipconfBgp1,$gw1ipconfBgp2)
+
+ResourceGroupName   : testRG
+Name                : testvpngw
+Id                  : /subscriptions/{subscriptionId}/resourceGroups/testRG/providers/Microsoft.Network/vpnGateways/testvpngw
+Location            : West US
+VpnGatewayScaleUnit : 3
+VirtualHub          : /subscriptions/{subscriptionId}/resourceGroups/Ali_pS_Test/providers/Microsoft.Network/virtualHubs/westushub
+BgpSettings         : {}
+Type                : Microsoft.Network/vpnGateways
+ProvisioningState   : Succeeded
+```
+
+<span data-ttu-id="632e5-120">A fenti létrehoz egy erőforráscsoport, virtuális WAN, virtuális hálózat, virtuális hub a Nyugat-amerikai "testRG" erőforráscsoport az Azure-ban.</span><span class="sxs-lookup"><span data-stu-id="632e5-120">The above will create a resource group, Virtual WAN, Virtual Network, Virtual Hub in West US in "testRG" resource group in Azure.</span></span> <span data-ttu-id="632e5-121">Ezt követően egy VPN-átjáró jön létre a virtuális központban, 2 léptékű egységgel.</span><span class="sxs-lookup"><span data-stu-id="632e5-121">A VPN gateway will be created thereafter in the Virtual Hub with 2 scale units.</span></span>
+
+<span data-ttu-id="632e5-122">Az átjáró létrehozása után Set-AzVpnGateway frissíti a BgpPeeringAddress.</span><span class="sxs-lookup"><span data-stu-id="632e5-122">After the gateway has been created, it uses Set-AzVpnGateway to update BgpPeeringAddress.</span></span>
+
+## <span data-ttu-id="632e5-123">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="632e5-123">PARAMETERS</span></span>
+
+### <span data-ttu-id="632e5-124">-AsJob</span><span class="sxs-lookup"><span data-stu-id="632e5-124">-AsJob</span></span>
+<span data-ttu-id="632e5-125">A parancsmag futtatása a háttérben</span><span class="sxs-lookup"><span data-stu-id="632e5-125">Run cmdlet in the background</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="632e5-126">-BgpPeeringAddress</span><span class="sxs-lookup"><span data-stu-id="632e5-126">-BgpPeeringAddress</span></span>
+<span data-ttu-id="632e5-127">A VpnGateway bgpsettings kapcsolatos BGP-peering-címek.</span><span class="sxs-lookup"><span data-stu-id="632e5-127">The BGP peering addresses for this VpnGateway bgpsettings.</span></span>
+
+```yaml
+Type: PSIpConfigurationBgpPeeringAddress[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="632e5-128">– Megerősítés</span><span class="sxs-lookup"><span data-stu-id="632e5-128">-Confirm</span></span>
+<span data-ttu-id="632e5-129">A parancsmag futtatása előtt kéri a megerősítést.</span><span class="sxs-lookup"><span data-stu-id="632e5-129">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="632e5-130">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="632e5-130">-DefaultProfile</span></span>
+<span data-ttu-id="632e5-131">Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="632e5-131">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="632e5-132">-InputObject</span><span class="sxs-lookup"><span data-stu-id="632e5-132">-InputObject</span></span>
+<span data-ttu-id="632e5-133">A módosítani kívánt VPN-átjáró objektum</span><span class="sxs-lookup"><span data-stu-id="632e5-133">The vpn gateway object to be modified</span></span>
+
+```yaml
+Type: PSVpnGateway
+Parameter Sets: ByVpnGatewayObject
+Aliases: VpnGateway
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="632e5-134">-Name (név)</span><span class="sxs-lookup"><span data-stu-id="632e5-134">-Name</span></span>
+<span data-ttu-id="632e5-135">A VPN-átjáró neve.</span><span class="sxs-lookup"><span data-stu-id="632e5-135">The vpn gateway name.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: ByVpnGatewayName
+Aliases: ResourceName, VpnGatewayName, GatewayName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="632e5-136">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="632e5-136">-ResourceGroupName</span></span>
+<span data-ttu-id="632e5-137">Az erőforrás csoport neve.</span><span class="sxs-lookup"><span data-stu-id="632e5-137">The resource group name.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: ByVpnGatewayName
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="632e5-138">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="632e5-138">-ResourceId</span></span>
+<span data-ttu-id="632e5-139">A módosítani kívánt VpnGateway Azure Resource AZONOSÍTÓja.</span><span class="sxs-lookup"><span data-stu-id="632e5-139">The Azure resource ID of the VpnGateway to be modified.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: ByVpnGatewayResourceId
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="632e5-140">-Címke</span><span class="sxs-lookup"><span data-stu-id="632e5-140">-Tag</span></span>
+<span data-ttu-id="632e5-141">Egy Hashtable, amely az erőforrás címkéit jelképezi.</span><span class="sxs-lookup"><span data-stu-id="632e5-141">A hashtable which represents resource tags.</span></span>
+
+```yaml
+Type: Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="632e5-142">-VpnConnection</span><span class="sxs-lookup"><span data-stu-id="632e5-142">-VpnConnection</span></span>
+<span data-ttu-id="632e5-143">Annak a VpnConnections a listája, amelyre a VpnGateway szüksége van.</span><span class="sxs-lookup"><span data-stu-id="632e5-143">The list of VpnConnections that this VpnGateway needs to have.</span></span>
+
+```yaml
+Type: PSVpnConnection[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="632e5-144">-VpnGatewayScaleUnit</span><span class="sxs-lookup"><span data-stu-id="632e5-144">-VpnGatewayScaleUnit</span></span>
+<span data-ttu-id="632e5-145">A VpnGateway méretarányos egysége.</span><span class="sxs-lookup"><span data-stu-id="632e5-145">The scale unit for this VpnGateway.</span></span>
+
+```yaml
+Type: UInt32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="632e5-146">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="632e5-146">-WhatIf</span></span>
+<span data-ttu-id="632e5-147">Annak megjelenítése, hogy mi történik, ha a parancsmag fut.</span><span class="sxs-lookup"><span data-stu-id="632e5-147">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="632e5-148">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="632e5-148">The cmdlet is not run.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="632e5-149">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="632e5-149">CommonParameters</span></span>
+<span data-ttu-id="632e5-150">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="632e5-150">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="632e5-151">További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="632e5-151">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="632e5-152">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="632e5-152">INPUTS</span></span>
+
+### <span data-ttu-id="632e5-153">Microsoft. Azure. commands. Network. models. PSVpnGateway</span><span class="sxs-lookup"><span data-stu-id="632e5-153">Microsoft.Azure.Commands.Network.Models.PSVpnGateway</span></span>
+
+### <span data-ttu-id="632e5-154">System. String</span><span class="sxs-lookup"><span data-stu-id="632e5-154">System.String</span></span>
+
+## <span data-ttu-id="632e5-155">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="632e5-155">OUTPUTS</span></span>
+
+### <span data-ttu-id="632e5-156">Microsoft. Azure. commands. Network. models. PSVpnGateway</span><span class="sxs-lookup"><span data-stu-id="632e5-156">Microsoft.Azure.Commands.Network.Models.PSVpnGateway</span></span>
+
+## <span data-ttu-id="632e5-157">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="632e5-157">NOTES</span></span>
+
+## <span data-ttu-id="632e5-158">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="632e5-158">RELATED LINKS</span></span>
+[<span data-ttu-id="632e5-159">Get-AzVpnGateway</span><span class="sxs-lookup"><span data-stu-id="632e5-159">Get-AzVpnGateway</span></span>](./Get-AzVpnGateway.md)
+
+[<span data-ttu-id="632e5-160">Új – AzVpnGateway</span><span class="sxs-lookup"><span data-stu-id="632e5-160">New-AzVpnGateway</span></span>](./New-AzVpnGateway.md)
+
+[<span data-ttu-id="632e5-161">Remove-AzVpnGateway</span><span class="sxs-lookup"><span data-stu-id="632e5-161">Remove-AzVpnGateway</span></span>](./Remove-AzVpnGateway.md)
