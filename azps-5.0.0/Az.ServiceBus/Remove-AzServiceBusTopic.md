@@ -1,0 +1,242 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.dll-Help.xml
+Module Name: Az.ServiceBus
+online version: https://docs.microsoft.com/en-us/powershell/module/az.servicebus/remove-azservicebustopic
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceBus/ServiceBus/help/Remove-AzServiceBusTopic.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceBus/ServiceBus/help/Remove-AzServiceBusTopic.md
+ms.openlocfilehash: 75da2231dae7ea0dc587d48ca832b7631fc24986
+ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "94195324"
+---
+# Remove-AzServiceBusTopic
+
+## Áttekintés
+A megadott szolgáltatási busz névtérből eltávolítja a témakört.
+
+## SZINTAXISA
+
+### TopicPropertiesSet (alapértelmezett)
+```
+Remove-AzServiceBusTopic [-ResourceGroupName] <String> [-Namespace] <String> [-Name] <String> [-PassThru]
+ [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### TopicInputObjectSet
+```
+Remove-AzServiceBusTopic [-InputObject] <PSTopicAttributes> [-PassThru] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### TopicResourceIdSet
+```
+Remove-AzServiceBusTopic [-ResourceId] <String> [-PassThru] [-AsJob] [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## Leírás
+A **Remove-AzServiceBusTopic** parancsmag eltávolítja a témakört a megadott szolgáltatási busz névteréről.
+
+## Példák
+
+### Példa 1
+```powershell
+PS C:\> Remove-AzServiceBusTopic -ResourceGroup Default-ServiceBus-WestUS -NamespaceName SB-Example1 -TopicName SB-Topic_exampl1
+```
+
+Eltávolítja a témakört `SB-Topic_exampl1` a névtérből `SB-Example1` .
+
+### 2. példa: InputObject-változó használata:
+```powershell
+PS C:\> $inputobject = Get-AzServiceBusTopic <parmas>
+PS C:\> Remove-AzServiceBusTopic -InputObject $inputobject
+```
+
+### 3. példa: InputObject csövek használata:
+```powershell
+PS C:\> Get-AzServiceBusTopic <parmas> | Remove-AzServiceBusTopic
+```
+
+### 4. példa: ResourceId változó használatával:
+```powershell
+PS C:\> $resourceid = Get-AzServiceBusTopic <params>
+PS C:\> Remove-AzServiceBusTopic -ResourceId $resourceid.Id
+```
+
+### Példa 5: ResourceId karakterlánc-érték használatával
+```powershell
+PS C:\> Remove-AzServiceBusTopic -ResourceId "/subscriptions/xxxx-xxxxx-xxxxxx-xxxxx/resourceGroups/ResourceGroupName/providers/Microsoft.ServiceBus/namespaces/NamespaceName/topics/TopicName"
+```
+
+## PARAMÉTEREK
+
+### -AsJob
+A parancsmag futtatása a háttérben
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+A szolgáltatás busz témakör objektuma
+
+```yaml
+Type: Microsoft.Azure.Commands.ServiceBus.Models.PSTopicAttributes
+Parameter Sets: TopicInputObjectSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Name (név)
+Téma neve
+
+```yaml
+Type: System.String
+Parameter Sets: TopicPropertiesSet
+Aliases: TopicName
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Namespace
+Névtér neve
+
+```yaml
+Type: System.String
+Parameter Sets: TopicPropertiesSet
+Aliases: NamespaceName
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -PassThru
+Ez a beállítás akkor igaz, ha a parancs sikeres.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Az erőforráscsoport neve
+
+```yaml
+Type: System.String
+Parameter Sets: TopicPropertiesSet
+Aliases: ResourceGroup
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ResourceId
+A szolgáltatás busz témakörének erőforrás-azonosítója
+
+```yaml
+Type: System.String
+Parameter Sets: TopicResourceIdSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### – Megerősítés
+A parancsmag futtatása előtt kéri a megerősítést.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag nem fut.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## BEMENETEK
+
+### System. String
+
+### Microsoft. Azure. Command. ServiceBus. models. PSTopicAttributes
+
+## KIMENETEK
+
+### System. Boolean
+
+## MEGJEGYZI
+
+## KAPCSOLÓDÓ HIVATKOZÁSOK
