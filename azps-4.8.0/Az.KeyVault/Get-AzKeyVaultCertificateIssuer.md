@@ -1,0 +1,181 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.KeyVault.dll-Help.xml
+Module Name: Az.KeyVault
+ms.assetid: 5F856280-C561-47B5-AA96-27E34C86D604
+online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/get-azkeyvaultcertificateissuer
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultCertificateIssuer.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultCertificateIssuer.md
+ms.openlocfilehash: 1504d4f18c8ab3baee000c2cf8d873df1dd9a177
+ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "94181743"
+---
+# <span data-ttu-id="2b4e5-101">Get-AzKeyVaultCertificateIssuer</span><span class="sxs-lookup"><span data-stu-id="2b4e5-101">Get-AzKeyVaultCertificateIssuer</span></span>
+
+## <span data-ttu-id="2b4e5-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="2b4e5-102">SYNOPSIS</span></span>
+<span data-ttu-id="2b4e5-103">Kinyeri a tanúsítványát a kulcs boltozatához.</span><span class="sxs-lookup"><span data-stu-id="2b4e5-103">Gets a certificate issuer for a key vault.</span></span>
+
+## <span data-ttu-id="2b4e5-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="2b4e5-104">SYNTAX</span></span>
+
+### <span data-ttu-id="2b4e5-105">ByName (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="2b4e5-105">ByName (Default)</span></span>
+```
+Get-AzKeyVaultCertificateIssuer [-VaultName] <String> [[-Name] <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="2b4e5-106">ByInputObject</span><span class="sxs-lookup"><span data-stu-id="2b4e5-106">ByInputObject</span></span>
+```
+Get-AzKeyVaultCertificateIssuer [-InputObject] <PSKeyVault> [[-Name] <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="2b4e5-107">ByResourceId</span><span class="sxs-lookup"><span data-stu-id="2b4e5-107">ByResourceId</span></span>
+```
+Get-AzKeyVaultCertificateIssuer [-ResourceId] <String> [[-Name] <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="2b4e5-108">Leírás</span><span class="sxs-lookup"><span data-stu-id="2b4e5-108">DESCRIPTION</span></span>
+<span data-ttu-id="2b4e5-109">A **Get-AzKeyVaultCertificateIssuer** parancsmag a megadott tanúsítvány-kibocsátót vagy az összes tanúsítvány kibocsátóját bekapja az Azure Key Vault-ban.</span><span class="sxs-lookup"><span data-stu-id="2b4e5-109">The **Get-AzKeyVaultCertificateIssuer** cmdlet gets a specified certificate issuer or all certificate issuers for a key vault in Azure Key Vault.</span></span>
+
+## <span data-ttu-id="2b4e5-110">Példák</span><span class="sxs-lookup"><span data-stu-id="2b4e5-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="2b4e5-111">Példa 1: tanúsítvány kibocsátásának beszerzése</span><span class="sxs-lookup"><span data-stu-id="2b4e5-111">Example 1: Get a certificate issuer</span></span>
+```powershell
+PS C:\> Get-AzKeyVaultCertificateIssuer -VaultName "Contosokv01" -Name "TestIssuer01"
+
+AccountId           : 555
+ApiKey              :
+OrganizationDetails : Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificateOrganizationDetails
+Name                : TestIssuer01
+IssuerProvider      : Test
+VaultName           : Contosokv01
+```
+
+<span data-ttu-id="2b4e5-112">Ez a parancs a TestIssuer01 nevű tanúsítványt kapja meg.</span><span class="sxs-lookup"><span data-stu-id="2b4e5-112">This command gets the certificate issuer named TestIssuer01.</span></span>
+
+### <span data-ttu-id="2b4e5-113">2. példa: a bizonyítvány-kibocsátók listája szűréssel</span><span class="sxs-lookup"><span data-stu-id="2b4e5-113">Example 2: List certificate issuers using filtering</span></span>
+```powershell
+PS C:\> Get-AzKeyVaultCertificateIssuer -VaultName "Contosokv01" -Name "test*"
+
+AccountId           : 555
+ApiKey              :
+OrganizationDetails : Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificateOrganizationDetails
+Name                : TestIssuer01
+IssuerProvider      : Test
+VaultName           : Contosokv01
+
+AccountId           : 555
+ApiKey              :
+OrganizationDetails : Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificateOrganizationDetails
+Name                : TestIssuer02
+IssuerProvider      : Test
+VaultName           : Contosokv01
+```
+
+<span data-ttu-id="2b4e5-114">Ez a parancs a "teszt" kezdetű tanúsítvány-kibocsátókat kapja meg.</span><span class="sxs-lookup"><span data-stu-id="2b4e5-114">This command gets the certificate issuers that start with "test".</span></span>
+
+## <span data-ttu-id="2b4e5-115">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="2b4e5-115">PARAMETERS</span></span>
+
+### <span data-ttu-id="2b4e5-116">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="2b4e5-116">-DefaultProfile</span></span>
+<span data-ttu-id="2b4e5-117">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés</span><span class="sxs-lookup"><span data-stu-id="2b4e5-117">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2b4e5-118">-InputObject</span><span class="sxs-lookup"><span data-stu-id="2b4e5-118">-InputObject</span></span>
+<span data-ttu-id="2b4e5-119">A boltozat objektum.</span><span class="sxs-lookup"><span data-stu-id="2b4e5-119">KeyVault object.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
+Parameter Sets: ByInputObject
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2b4e5-120">-Name (név)</span><span class="sxs-lookup"><span data-stu-id="2b4e5-120">-Name</span></span>
+<span data-ttu-id="2b4e5-121">A beolvasott tanúsítvány nevének megadása.</span><span class="sxs-lookup"><span data-stu-id="2b4e5-121">Specifies the name of the certificate issuer to get.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: IssuerName
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2b4e5-122">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="2b4e5-122">-ResourceId</span></span>
+<span data-ttu-id="2b4e5-123">A főkészlet erőforrás-azonosítója.</span><span class="sxs-lookup"><span data-stu-id="2b4e5-123">KeyVault Resource Id.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByResourceId
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2b4e5-124">-VaultName</span><span class="sxs-lookup"><span data-stu-id="2b4e5-124">-VaultName</span></span>
+<span data-ttu-id="2b4e5-125">A kulcsfájl nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="2b4e5-125">Specifies the name of a key vault.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByName
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2b4e5-126">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="2b4e5-126">CommonParameters</span></span>
+<span data-ttu-id="2b4e5-127">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="2b4e5-127">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="2b4e5-128">További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="2b4e5-128">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="2b4e5-129">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="2b4e5-129">INPUTS</span></span>
+
+### <span data-ttu-id="2b4e5-130">Microsoft. Azure. Command. PSKeyVault. models.</span><span class="sxs-lookup"><span data-stu-id="2b4e5-130">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault</span></span>
+
+### <span data-ttu-id="2b4e5-131">System. String</span><span class="sxs-lookup"><span data-stu-id="2b4e5-131">System.String</span></span>
+
+## <span data-ttu-id="2b4e5-132">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="2b4e5-132">OUTPUTS</span></span>
+
+### <span data-ttu-id="2b4e5-133">Microsoft. Azure. Command. PSKeyVaultCertificateIssuerIdentityItem. models.</span><span class="sxs-lookup"><span data-stu-id="2b4e5-133">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificateIssuerIdentityItem</span></span>
+
+### <span data-ttu-id="2b4e5-134">Microsoft. Azure. Command. PSKeyVaultCertificateIssuer. models.</span><span class="sxs-lookup"><span data-stu-id="2b4e5-134">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificateIssuer</span></span>
+
+## <span data-ttu-id="2b4e5-135">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="2b4e5-135">NOTES</span></span>
+
+## <span data-ttu-id="2b4e5-136">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="2b4e5-136">RELATED LINKS</span></span>
+
+[<span data-ttu-id="2b4e5-137">Remove-AzKeyVaultCertificateIssuer</span><span class="sxs-lookup"><span data-stu-id="2b4e5-137">Remove-AzKeyVaultCertificateIssuer</span></span>](./Remove-AzKeyVaultCertificateIssuer.md)
+
+[<span data-ttu-id="2b4e5-138">Set-AzKeyVaultCertificateIssuer</span><span class="sxs-lookup"><span data-stu-id="2b4e5-138">Set-AzKeyVaultCertificateIssuer</span></span>](./Set-AzKeyVaultCertificateIssuer.md)
+
+
