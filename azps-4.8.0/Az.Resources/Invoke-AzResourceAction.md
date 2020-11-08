@@ -1,0 +1,354 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ResourceManager.dll-Help.xml
+Module Name: Az.Resources
+ms.assetid: 427F7300-0FEB-4F28-9C1D-27592AEBF6A0
+online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/invoke-azresourceaction
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Invoke-AzResourceAction.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Invoke-AzResourceAction.md
+ms.openlocfilehash: 2feb6c48927c1cb5e092414c358b32912892a908
+ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "94184679"
+---
+# Invoke-AzResourceAction
+
+## Áttekintés
+Egy erőforrás műveletét hívja fel.
+
+## SZINTAXISA
+
+### ByResourceId (alapértelmezett)
+```
+Invoke-AzResourceAction [-Parameters <Hashtable>] -Action <String> -ResourceId <String> [-ODataQuery <String>]
+ [-Force] [-ApiVersion <String>] [-Pre] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### BySubscriptionLevel
+```
+Invoke-AzResourceAction [-Parameters <Hashtable>] -Action <String> -ResourceName <String>
+ -ResourceType <String> [-ExtensionResourceName <String>] [-ExtensionResourceType <String>]
+ [-ODataQuery <String>] [-ResourceGroupName <String>] [-Force] [-ApiVersion <String>] [-Pre]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### ByTenantLevel
+```
+Invoke-AzResourceAction [-Parameters <Hashtable>] -Action <String> -ResourceName <String>
+ -ResourceType <String> [-ExtensionResourceName <String>] [-ExtensionResourceType <String>]
+ [-ODataQuery <String>] [-TenantLevel] [-Force] [-ApiVersion <String>] [-Pre]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## Leírás
+A **meghívó-AzResourceAction** parancsmag egy megadott Azure-erőforrás műveletét hívja fel.
+A támogatott műveletek listáját az Azure Resource Explorer eszköz segítségével szerezheti be.
+
+## Példák
+
+### 1. példa: a VM indítása a ResourceId
+
+```powershell
+PS C:\>Invoke-AzResourceAction -ResourceId /subscriptions/{subId}/resourceGroups/{rg}/providers/Microsoft.Compute/virtualMachines/testVM -Action start
+
+Confirm
+Are you sure you want to invoke the 'start' action on the following resource: /subscriptions/{subId}/resourceGroups/testGroup/providers/Microsoft.Compute/virtualMachines/testVM
+[Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
+```
+
+A következő parancs elindítja a virtuális gépet: {ResourceId}.
+
+### 2. példa: a VM kiváltása a ResourceName
+
+```powershell
+PS C:\>Invoke-AzResourceAction -ResourceGroupName testGroup -ResourceName testVM -ResourceType Microsoft.Compute/virtualMachines/ -Action Poweroff -Force
+```
+
+Ez a parancs az {ResourceId} végződésű virtuális gépet leállítja.
+A parancs az *erő* paramétert adja meg, ezért nem kér megerősítést.
+
+### 3. példa: egy erőforrás-szolgáltató regisztrációjának meghívása a ResourceId-val
+
+```powershell
+PS C:\>Invoke-AzResourceAction -ResourceId /subscriptions/{subId}/providers/Microsoft.Network -action register -Force
+
+id                : /subscriptions/{subId}/providers/Microsoft.Network
+namespace         : Microsoft.Network
+authorizations    : {…}
+resourceTypes     : {@{resourceType=virtualNetworks; locations=System.Object[]; apiVersions=System.Object[]},
+                    @{resourceType=publicIPAddresses; locations=System.Object[]; apiVersions=System.Object[]},
+                    @{resourceType=networkInterfaces; locations=System.Object[]; apiVersions=System.Object[]},
+                    @{resourceType=privateEndpoints; locations=System.Object[]; apiVersions=System.Object[]}…}
+registrationState : Registered
+```
+
+Ez a parancs egy erőforrás-szolgáltatót regisztrál a Microsoft. hálózatban.
+A parancs az *erő* paramétert adja meg, ezért nem kér megerősítést.
+
+## PARAMÉTEREK
+
+### -Műveletek
+Annak a tevékenységnek a nevét adja meg, amelyre hivatkozni szeretne.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: ActionName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ApiVersion
+Az erőforrás-szolgáltató API-nak a verziószámát adja meg.
+Ha nem ad meg verziót, ez a parancsmag a legújabb elérhető verziót használja.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExtensionResourceName
+Annak az erőforrásnak a nevét adja meg, amelyre a parancsmag egy műveletre hivatkozik.
+Ha például egy adatbázist szeretne megadni, használja a következő formátumot: kiszolgálónév- `/` adatbázis neve
+
+```yaml
+Type: System.String
+Parameter Sets: BySubscriptionLevel, ByTenantLevel
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ExtensionResourceType
+A bővítmény erőforrásának típusát adja meg.
+Például: `Microsoft.Sql/Servers/Databases`
+
+```yaml
+Type: System.String
+Parameter Sets: BySubscriptionLevel, ByTenantLevel
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Force
+Kényszeríti a parancsot, hogy a felhasználó megerősítésének kérése nélkül fusson.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ODataQuery
+Egy Open Data Protocol (OData) stílusú szűrőt ad meg.
+Ez a parancsmag minden más szűrőn kívül hozzáfűzi ezt az értéket a kéréshez.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Paraméterek
+A parancsmag által megjelenő műveletek esetében a paramétereket a hash-táblázatként adja meg.
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases: Object
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Pre
+Jelzi, hogy ez a parancsmag az előzetes verziójú API-verziókat veszi figyelembe, amikor az automatikusan meghatározza, hogy melyik verziót használja.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Annak a csoportnak a nevét adja meg, amelyben a parancsmag egy műveletre hivatkozik.
+
+```yaml
+Type: System.String
+Parameter Sets: BySubscriptionLevel
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ResourceId
+Annak az erőforrásnak a teljesen minősített erőforrás-AZONOSÍTÓját adja meg, amelyre a parancsmag egy műveletre hivatkozik.
+Az azonosító tartalmazza az előfizetést, ahogy az alábbi példában: `/subscriptions/` előfizetés azonosítója`/providers/Microsoft.Sql/servers/ContosoServer/databases/ContosoDatabase`
+
+```yaml
+Type: System.String
+Parameter Sets: ByResourceId
+Aliases: Id
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ResourceName
+Annak az erőforrásnak a nevét adja meg, amelyre a parancsmag egy műveletre hivatkozik.
+Ha például egy adatbázist szeretne megadni, használja az alábbi formátumot: `ContosoServer/ContosoDatabase`
+
+```yaml
+Type: System.String
+Parameter Sets: BySubscriptionLevel, ByTenantLevel
+Aliases: Name
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ResourceType
+Az erőforrás típusát adja meg.
+Adatbázis esetén például az erőforrás típusa az alábbi: `Microsoft.Sql/Servers/Databases`
+
+```yaml
+Type: System.String
+Parameter Sets: BySubscriptionLevel, ByTenantLevel
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -TenantLevel
+Jelzi, hogy ez a parancsmag a bérlői szinten működik.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: ByTenantLevel
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### – Megerősítés
+A parancsmag futtatása előtt kéri a megerősítést.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag nem fut.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+
+## BEMENETEK
+
+### System. String
+
+## KIMENETEK
+
+### System. Management. Automation. PSObject
+
+## MEGJEGYZI
+
+## KAPCSOLÓDÓ HIVATKOZÁSOK
