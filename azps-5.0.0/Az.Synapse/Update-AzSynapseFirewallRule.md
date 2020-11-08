@@ -1,0 +1,225 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Synapse.dll-Help.xml
+Module Name: Az.Synapse
+online version: https://docs.microsoft.com/en-us/powershell/module/az.synapse/update-azsynapsefirewallrule
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Synapse/Synapse/help/Update-AzSynapseFirewallRule.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Synapse/Synapse/help/Update-AzSynapseFirewallRule.md
+ms.openlocfilehash: 9188a1cc8dde39db4d755fb2059f3633fc85ead8
+ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "94185143"
+---
+# Update-AzSynapseFirewallRule
+
+## Áttekintés
+A szinapszis Analytics-tűzfal szabályának frissítése
+
+## SZINTAXISA
+
+### UpdateByNameParameterSet (alapértelmezett)
+```
+Update-AzSynapseFirewallRule [-ResourceGroupName <String>] -WorkspaceName <String> -Name <String>
+ [-StartIpAddress <String>] [-EndIpAddress <String>] [-AsJob] [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### UpdateByParentObjectParameterSet
+```
+Update-AzSynapseFirewallRule -WorkspaceObject <PSSynapseWorkspace> -Name <String> [-StartIpAddress <String>]
+ [-EndIpAddress <String>] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+## Leírás
+Az **Update-AzSynapseFirewallRule** parancsmag az Azure szinapszis Analytics-tűzfal szabályát módosítja.
+
+## Példák
+
+### Példa 1
+```powershell
+PS C:\> Update-AzSynapseFirewallRule -ResourceGroupName ContosoResourceGroup -WorkspaceName ContosoWorkspace -Name ContosoFirewallRule -StartIpAddress "0.0.0.0" -EndIpAssdress "255.255.255.255"
+```
+
+Ez a parancs frissíti a ContosoFirewallRule nevű tűzfal-szabályt a ContosoFirewallRule nevű munkaterület-ContosoWorkspace.
+
+### 2. példa
+```powershell
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Update-AzSynapseFirewallRule -Name ContosoFirewallRule -StartIpAddress "0.0.0.0" -EndIpAssdress "255.255.255.255"
+```
+
+Ez a parancs frissíti a ContosoFirewallRule nevű tűzfal-szabályt a munkaterületen, a csővezetéken keresztül.
+
+## PARAMÉTEREK
+
+### -AsJob
+A parancsmag futtatása a háttérben
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EndIpAddress
+A tűzfalszabály záró IP-címe.
+IPv4 formátumúnak kell lennie.
+Nagyobbnak vagy egyenlőnek kell lennie a startIpAddress.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name (név)
+A firerwall szabály neve a munkaterülethez.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: FirewallRuleName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Erőforráscsoporthoz tartozó név.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateByNameParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -StartIpAddress
+A tűzfalszabály kezdő IP-címe.
+IPv4 formátumúnak kell lennie.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WorkspaceName
+A szinapszis munkaterületének neve.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateByNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WorkspaceObject
+munkaterület bemeneti objektuma, amely általában áthalad a csővezetéken.
+
+```yaml
+Type: Microsoft.Azure.Commands.Synapse.Models.PSSynapseWorkspace
+Parameter Sets: UpdateByParentObjectParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### – Megerősítés
+A parancsmag futtatása előtt kéri a megerősítést.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag nem fut.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+
+## BEMENETEK
+
+### Microsoft. Azure. commands. szinapszis. models. PSSynapseWorkspace
+
+## KIMENETEK
+
+### Microsoft. Azure. commands. szinapszis. models. PSSynapseIpFirewallRule
+
+## MEGJEGYZI
+
+## KAPCSOLÓDÓ HIVATKOZÁSOK
