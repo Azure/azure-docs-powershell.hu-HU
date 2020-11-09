@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 913532fa5a8937f7ba4cc1ce21c5879f3920fc7f
-ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.openlocfilehash: 4ab5639cfb997c5f9ee1286e6eacb97ef775239a
+ms.sourcegitcommit: 63181e0af0e4468b0530fdb0495ed4d44bdfd1c8
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92753588"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93134862"
 ---
 # <a name="azure-powershell-release-notes"></a>Az Azure PowerShell kibocsátási megjegyzései
 
@@ -46,7 +46,7 @@ ms.locfileid: "92753588"
 * A Tier, MaxSharesCount, DiskIOPSReadOnly és DiskMBpsReadOnly opcionális paraméterek hozzáadva a New-AzDiskUpdateConfig parancsmaghoz. 
 
 #### <a name="azcontainerregistry"></a>Az.ContainerRegistry
-* [Kompatibilitástörő változás] Az API-verziója a 2020-05-01-es verzióra frissült.
+* [Kompatibilitástörő változás] Az API-verzió a 2019. 05. 01-es verzióra frissült.
 * [Kompatibilitástörő változás] A Classic termékváltozat és a StorageAccountName paraméter el lett távolítva a New-AzContainerRegistry parancsmagból
 * Hozzáadott új parancsmagok: Connect-AzContainerRegistry, Import-AzContainerRegistry, Get-AzContainerRegistryUsage, New-AzContainerRegistryNetworkRule, Set-AzContainerRegistryNetworkRule
 * Új NetworkRuleSet paraméter hozzáadva az Update-AzContainerRegistry parancsmaghoz
@@ -1762,7 +1762,7 @@ A New-AzSqlDatabaseSecondary parancsmag javítva, hogy a PartnerDatabaseName lé
 
 #### <a name="azbatch"></a>Az.Batch
 * A `CoreQuota` átnevezve `BatchAccountContext` értékre a következőn: `DedicatedCoreQuota`. Emellett egy új `LowPriorityCoreQuota` elem is található.
-  - Ez hatással van a következőre: **Get-AzBatchAccount** .
+  - Ez hatással van a következőre: **Get-AzBatchAccount**.
 * A **New-AzBatchTask** `-ResourceFile` paraméter most már `PSResourceFile` objektumok gyűjteményét használja, amely az új **New-AzBatchResourceFile** parancsmaggal hozható létre.
 * Új **New-AzBatchResourceFile** parancsfájl a szükséges `PSResourceFile` objektumok létrehozásának elősegítéséhez. Ezek az **New-AzBatchTask**`-ResourceFile` paraméterénél adhatók meg.
   - Ez két új típusú erőforrásfájlt támogat a meglévő `HttpUrl` mód mellett:
