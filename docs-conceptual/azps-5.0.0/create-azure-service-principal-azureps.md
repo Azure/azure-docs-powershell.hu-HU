@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/17/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 3c876454560e4ad421e6d32a8ca8b30a651fd8af
-ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.openlocfilehash: 20a58253e3f9435a9d33c700435f77fbb42df7ea
+ms.sourcegitcommit: 375232b84336ef5e13052504deaa43f5bd4b7f65
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92753760"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93365143"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Azure-beli szolgáltatásnév létrehozása az Azure PowerShell használatával
 
@@ -19,6 +19,11 @@ Az Azure-szolgáltatásokat használó automatizált eszközöknek mindig korlá
 Az Azure-beli szolgáltatásnevek olyan identitások, amelyekkel az alkalmazások, üzemeltetett szolgáltatások és automatizált eszközök hozzáférhetnek az Azure erőforrásaihoz. A hozzáférést a szolgáltatásnévhez rendelt szerepkörök korlátozzák, így Ön szabhatja meg, hogy mely erőforrások, mely szinten legyenek hozzáférhetők. Biztonsági okokból az automatizált eszközök esetében minden esetben ajánlott a szolgáltatásnevek használata a felhasználói identitással való bejelentkezés helyett.
 
 A cikk bemutatja a szolgáltatásnevek létrehozásának, adatlekérésének és visszaállításának lépéseit az Azure PowerShellben.
+
+> [!WARNING]
+> Amikor a [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) paranccsal egy szolgáltatásnevet hoz létre, a kimenetben olyan hitelesítő adatok találhatóak, amelyeket meg kell védeni. Ügyeljen arra, hogy ne adja meg ezeket a hitelesítő adatokat a kódban, és ne adja be a hitelesítő adatokat a verziókövetésbe. Vagy [felügyelt identitásokat](/azure/active-directory/managed-identities-azure-resources/overview) is használhat – ebben az esetben nincs szükség hitelesítő adatokra.
+>
+> Alapértelmezés szerint a [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) parancs hozzárendeli a [Közreműködő](/azure/role-based-access-control/built-in-roles#contributor) szerepkört a szolgáltatásnévhez az előfizetési hatókörben. Annak érdekében, hogy kisebb eséllyel sérüljön a szolgáltatásnév kockázata, rendeljen hozzá egy konkrétabb szerepkört, és szűkítse a hatókört egy erőforrásra vagy erőforráscsoportra. További információt a [szerepkör-hozzárendelés hozzáadásának lépéseit](/azure/role-based-access-control/role-assignments-steps) ismertető cikkben találhat.
 
 ## <a name="create-a-service-principal"></a>Egyszerű szolgáltatás létrehozása
 
@@ -33,7 +38,7 @@ A szolgáltatásnevek esetében kétféle hitelesítési típus érhető el: Jel
 ### <a name="password-based-authentication"></a>Jelszóalapú hitelesítés
 
 > [!IMPORTANT]
-> A jelszóalapú hitelesítéshez használt szolgáltatásnevek alapértelmezett szerepköre a **Közreműködő** . Ez a szerepkör teljes körű engedélyekkel rendelkezik az Azure-fiókba való olvasásra, illetve írásra. További információ a szerepkör-hozzárendelések kezelésével kapcsolatban: [Szolgáltatásnév-szerepkörök kezelése](#manage-service-principal-roles).
+> A jelszóalapú hitelesítéshez használt szolgáltatásnevek alapértelmezett szerepköre a **Közreműködő**. Ez a szerepkör teljes körű engedélyekkel rendelkezik az Azure-fiókba való olvasásra, illetve írásra. További információ a szerepkör-hozzárendelések kezelésével kapcsolatban: [Szolgáltatásnév-szerepkörök kezelése](#manage-service-principal-roles).
 
 Egyéb hitelesítési paraméter hiányában a rendszer jelszóalapú hitelesítést használ, és véletlenszerű jelszót hoz létre az Ön számára. Ez az ajánlott módszer, ha jelszóalapú hitelesítést szeretne használni.
 
@@ -112,7 +117,7 @@ Az Azure PowerShell a következő parancsmagokat biztosítja a szerepkör-hozzá
 - [New-AzRoleAssignment](/powershell/module/az.resources/new-azroleassignment)
 - [Remove-AzRoleAssignment](/powershell/module/az.resources/remove-azroleassignment)
 
-A jelszóalapú hitelesítéshez használt szolgáltatásnevek alapértelmezett szerepköre a **Közreműködő** . Ez a szerepkör teljes körű engedélyekkel rendelkezik az Azure-fiókba való olvasásra, illetve írásra. Az **Olvasó** szerepkör sokkal korlátozóbb, kizárólag olvasási hozzáférést biztosít. További információ a szerepköralapú hozzáférés-vezérlésről (RBAC) és a szerepkörökről: [RBAC: Beépített szerepkörök](/azure/active-directory/role-based-access-built-in-roles).
+A jelszóalapú hitelesítéshez használt szolgáltatásnevek alapértelmezett szerepköre a **Közreműködő**. Ez a szerepkör teljes körű engedélyekkel rendelkezik az Azure-fiókba való olvasásra, illetve írásra. Az **Olvasó** szerepkör sokkal korlátozóbb, kizárólag olvasási hozzáférést biztosít. További információ a szerepköralapú hozzáférés-vezérlésről (RBAC) és a szerepkörökről: [RBAC: Beépített szerepkörök](/azure/active-directory/role-based-access-built-in-roles).
 
 Példánk során az **Olvasó** szerepkört adjuk hozzá, és eltávolítjuk a **Közreműködő** szerepkört:
 
