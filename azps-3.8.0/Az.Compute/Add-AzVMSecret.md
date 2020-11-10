@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ad
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Add-AzVMSecret.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Add-AzVMSecret.md
-ms.openlocfilehash: b2209b3e9d7c7dcf01a05af277dd5106e70fd8b2
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 059aedf6ca3b5c229092f9ce536d23a8fc602830
+ms.sourcegitcommit: 7aaa37edc9681b643946505bcbc3cc6435f1d7ca
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94013447"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94395458"
 ---
 # Add-AzVMSecret
 
@@ -30,7 +30,7 @@ Az **Add-AzVMSecret** parancsmag titkot ad egy virtuális géphez.
 Ezzel az értékkel adhat hozzá tanúsítványt a virtuális géphez.
 A titkot egy kulcsos boltozaton kell tárolni.
 A Key Vault-ról további információt a [Mi az Azure Key Vault?](https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/)című témakörben talál.
-A parancsmagokról további információt az [Azure Key Vault-parancsmagok](https://msdn.microsoft.com/library/azure/dn868052.aspx) a Microsoft Developer Network műsortárában vagy a [set-AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) parancsmagban című témakörben talál.
+A parancsmagokkal kapcsolatos további tudnivalók az [Azure Key Vault parancsmagok](/powershell/module/az.keyvault) vagy a [set-AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) parancsmag című témakörben olvashatók.
 
 ## Példák
 
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 
 ### -CertificateUrl
 Itt adhatja meg azt az URL-címet, amely a tanúsítványokat tartalmazó kulcs-boltozati titokra mutat.
-A tanúsítvány a következő JavaScript-objektum (JSON) objektum Base64 kódolása, amely UTF-8-ban kódolt: {"Data": " \< Base64-kódolt fájl \> ", "adattípus": " \< File-Format \> ", "password": " \< pfx-file-password" \> } jelenleg, az adattípus csak a. pfx fájlokat fogadja el.
+A tanúsítvány a következő JavaScript-objektum (JSON) objektum Base64 kódolása, amely UTF-8-ban kódolt: {"Data": " \<Base64-encoded-file\> "; "adattípus": " \<file-format\> "; "password": "" \<pfx-file-password\> } jelenleg az adattípus csak a. pfx fájlokat fogadja el.
 
 ```yaml
 Type: System.String

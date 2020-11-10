@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ad
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/Add-AzVMSecret.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/Add-AzVMSecret.md
-ms.openlocfilehash: 281b74aa14431a0bcfe0d138a78db73e28bcfeb4
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: f17da705ed65484e789a803308bcaddb60e409f3
+ms.sourcegitcommit: 7aaa37edc9681b643946505bcbc3cc6435f1d7ca
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93844742"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94395135"
 ---
 # Add-AzVMSecret
 
@@ -30,7 +30,7 @@ Az **Add-AzVMSecret** parancsmag titkot ad egy virtuális géphez.
 Ezzel az értékkel adhat hozzá tanúsítványt a virtuális géphez.
 A titkot egy kulcsos boltozaton kell tárolni.
 A Key Vault-ról további információt a [Mi az Azure Key Vault?](https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/)című témakörben talál.
-A parancsmagokról további információt az [Azure Key Vault-parancsmagok](https://msdn.microsoft.com/library/azure/dn868052.aspx) a Microsoft Developer Network műsortárában vagy a [set-AzureKeyVaultSecret](/powershell/module/azurerm.keyvault/set-azurekeyvaultsecret) parancsmagban című témakörben talál.
+A parancsmagokkal kapcsolatos további tudnivalók az [Azure Key Vault parancsmagok](/powershell/module/az.keyvault) vagy a [set-AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) parancsmag című témakörben olvashatók.
 
 ## Példák
 
@@ -90,7 +90,7 @@ Itt adhatja meg azt az URL-címet, amely a tanúsítványokat tartalmazó kulcs-
 
 A tanúsítvány az alábbi, UTF-8 kódolású JavaScript-objektum (JSON) objektum Base64 kódolása:
 
-{"Data": " \< Base64-kódolt fájl \> "," adattípus ":" fájlformátum " \< \> ," jelszó ":" \< pfx-fájl-jelszó " \> }
+{"Data": " \<Base64-encoded-file\> "; "adattípus": "" \<file-format\> ; "jelszó": " \<pfx-file-password\> "}
 
 
 Az adattípusok jelenleg csak a. pfx fájlokat fogadják el.
