@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ad
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Add-AzVmssSecret.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Add-AzVmssSecret.md
-ms.openlocfilehash: d61374be31ef8b403c3ba823cb4b3b4d010c5a28
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 7790727c87d1c2ef8d519229b73a38da139c8b60
+ms.sourcegitcommit: 7aaa37edc9681b643946505bcbc3cc6435f1d7ca
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93667500"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94395492"
 ---
-# <span data-ttu-id="f1167-101">Add-AzVmssSecret</span><span class="sxs-lookup"><span data-stu-id="f1167-101">Add-AzVmssSecret</span></span>
+# <span data-ttu-id="96864-101">Add-AzVmssSecret</span><span class="sxs-lookup"><span data-stu-id="96864-101">Add-AzVmssSecret</span></span>
 
-## <span data-ttu-id="f1167-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="f1167-102">SYNOPSIS</span></span>
-<span data-ttu-id="f1167-103">Titkot ad a VMSS.</span><span class="sxs-lookup"><span data-stu-id="f1167-103">Adds a secret to a VMSS.</span></span>
+## <span data-ttu-id="96864-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="96864-102">SYNOPSIS</span></span>
+<span data-ttu-id="96864-103">Titkot ad a VMSS.</span><span class="sxs-lookup"><span data-stu-id="96864-103">Adds a secret to a VMSS.</span></span>
 
-## <span data-ttu-id="f1167-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="f1167-104">SYNTAX</span></span>
+## <span data-ttu-id="96864-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="96864-104">SYNTAX</span></span>
 
 ```
 Add-AzVmssSecret [-VirtualMachineScaleSet] <PSVirtualMachineScaleSet> [[-SourceVaultId] <String>]
@@ -26,15 +26,15 @@ Add-AzVmssSecret [-VirtualMachineScaleSet] <PSVirtualMachineScaleSet> [[-SourceV
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="f1167-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="f1167-105">DESCRIPTION</span></span>
-<span data-ttu-id="f1167-106">Az **Add-AzVmssSecret** parancsmag titkot ad a virtuálisgép-készlethez (VMSS).</span><span class="sxs-lookup"><span data-stu-id="f1167-106">The **Add-AzVmssSecret** cmdlet adds a secret to the Virtual Machine Scale Set (VMSS).</span></span>
-<span data-ttu-id="f1167-107">A titkot az Azure Key Vault-ban kell tárolni.</span><span class="sxs-lookup"><span data-stu-id="f1167-107">The secret must be stored in an Azure Key Vault.</span></span>
-<span data-ttu-id="f1167-108">A Key Vault-ról további információt a [Mi az Azure Key Vault?](https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/) című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="f1167-108">For more information relating to Key Vault, see [What is Azure Key Vault?](https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/)</span></span> <span data-ttu-id="f1167-109">(https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/).</span><span class="sxs-lookup"><span data-stu-id="f1167-109">(https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/).</span></span>
-<span data-ttu-id="f1167-110">A parancsmagokról további információt az [Azure Key Vault-parancsmagok](https://msdn.microsoft.com/library/azure/dn868052.aspx) ( https://msdn.microsoft.com/library/azure/dn868052.aspx) a Microsoft Developer Network Library vagy a [set-AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) parancsmag) című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="f1167-110">For more information about the cmdlets, see [Azure Key Vault Cmdlets](https://msdn.microsoft.com/library/azure/dn868052.aspx) (https://msdn.microsoft.com/library/azure/dn868052.aspx) in the Microsoft Developer Network library or the [Set-AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) cmdlet.</span></span>
+## <span data-ttu-id="96864-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="96864-105">DESCRIPTION</span></span>
+<span data-ttu-id="96864-106">Az **Add-AzVmssSecret** parancsmag titkot ad a virtuálisgép-készlethez (VMSS).</span><span class="sxs-lookup"><span data-stu-id="96864-106">The **Add-AzVmssSecret** cmdlet adds a secret to the Virtual Machine Scale Set (VMSS).</span></span>
+<span data-ttu-id="96864-107">A titkot az Azure Key Vault-ban kell tárolni.</span><span class="sxs-lookup"><span data-stu-id="96864-107">The secret must be stored in an Azure Key Vault.</span></span>
+<span data-ttu-id="96864-108">A Key Vault-ról további információt a [Mi az Azure Key Vault?](https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/) című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="96864-108">For more information relating to Key Vault, see [What is Azure Key Vault?](https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/)</span></span> <span data-ttu-id="96864-109">(https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/).</span><span class="sxs-lookup"><span data-stu-id="96864-109">(https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/).</span></span>
+<span data-ttu-id="96864-110">A parancsmagokkal kapcsolatos további tudnivalók az [Azure Key Vault parancsmagok](/powershell/module/az.keyvault) vagy a [set-AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) parancsmag című témakörben olvashatók.</span><span class="sxs-lookup"><span data-stu-id="96864-110">For more information about the cmdlets, see [Azure Key Vault Cmdlets](/powershell/module/az.keyvault) or the [Set-AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) cmdlet.</span></span>
 
-## <span data-ttu-id="f1167-111">Példák</span><span class="sxs-lookup"><span data-stu-id="f1167-111">EXAMPLES</span></span>
+## <span data-ttu-id="96864-111">Példák</span><span class="sxs-lookup"><span data-stu-id="96864-111">EXAMPLES</span></span>
 
-### <span data-ttu-id="f1167-112">1. példa: titkos érték hozzáadása a VMSS</span><span class="sxs-lookup"><span data-stu-id="f1167-112">Example 1: Add a secret to the VMSS</span></span>
+### <span data-ttu-id="96864-112">1. példa: titkos érték hozzáadása a VMSS</span><span class="sxs-lookup"><span data-stu-id="96864-112">Example 1: Add a secret to the VMSS</span></span>
 ```
 PS C:\> $Vault = Get-AzKeyVault -VaultName "ContosoVault"
 PS C:\> $CertConfig = New-AzVmssVaultCertificateConfig -CertificateUrl "http://keyVaultName.vault.contoso.net/secrets/secretName/secretVersion" -CertificateStore "Certificates"
@@ -42,16 +42,16 @@ PS C:\> $VMSS = New-AzVmssConfig
 PS C:\> Add-AzVmssSecret -VirtualMachineScaleSet $VMSS -SourceVaultId $Vault.ResourceId -VaultCertificate $CertConfig
 ```
 
-<span data-ttu-id="f1167-113">Ez a példa titkot ad a VMSS.</span><span class="sxs-lookup"><span data-stu-id="f1167-113">This example adds a secret to the VMSS.</span></span>
-<span data-ttu-id="f1167-114">Az első parancs az Get-AzKeyVault parancsmagot használja a ContosoVault nevű Vault-titok kiválasztásához, és az eredményt a $Vault nevű változóban tárolja.</span><span class="sxs-lookup"><span data-stu-id="f1167-114">The first command uses the Get-AzKeyVault cmdlet to get a vault secret from the vault named ContosoVault and stores the result in the variable named $Vault.</span></span>
-<span data-ttu-id="f1167-115">A második parancs a **New-AzVmssVaultCertificateConfig** parancsmagot használja a tanúsítványok nevű tanúsítvány URL-címének megadására a megadott tanúsítvány URL-címének használatával, és az eredményt a $CertConfig nevű változóban tárolja.</span><span class="sxs-lookup"><span data-stu-id="f1167-115">The second command uses the **New-AzVmssVaultCertificateConfig** cmdlet to create a Key Vault certificate configuration using the specified certificate URL from the certificate store named Certificates and stores the results in the variable named $CertConfig.</span></span>
-<span data-ttu-id="f1167-116">A harmadik parancs a **New-AzVmssConfig** parancsmagot használja VMSS konfigurációs objektum létrehozásához, és az eredményt az $VMSS nevű változóban tárolja.</span><span class="sxs-lookup"><span data-stu-id="f1167-116">The third command uses the **New-AzVmssConfig** cmdlet to create a VMSS configuration object and stores the result in the variable named $VMSS.</span></span>
-<span data-ttu-id="f1167-117">A negyedik parancs a VMSS a $Vault és a $CertConfig változóban tárolt fő erőforrás-azonosítóval és a pince-tanúsítvánnyal titkos azonosítót ad.</span><span class="sxs-lookup"><span data-stu-id="f1167-117">The fourth command adds a secret to the VMSS using the vault secret using the key resource ID and the vault certificate stored in the $Vault and $CertConfig variables.</span></span>
+<span data-ttu-id="96864-113">Ez a példa titkot ad a VMSS.</span><span class="sxs-lookup"><span data-stu-id="96864-113">This example adds a secret to the VMSS.</span></span>
+<span data-ttu-id="96864-114">Az első parancs az Get-AzKeyVault parancsmagot használja a ContosoVault nevű Vault-titok kiválasztásához, és az eredményt a $Vault nevű változóban tárolja.</span><span class="sxs-lookup"><span data-stu-id="96864-114">The first command uses the Get-AzKeyVault cmdlet to get a vault secret from the vault named ContosoVault and stores the result in the variable named $Vault.</span></span>
+<span data-ttu-id="96864-115">A második parancs a **New-AzVmssVaultCertificateConfig** parancsmagot használja a tanúsítványok nevű tanúsítvány URL-címének megadására a megadott tanúsítvány URL-címének használatával, és az eredményt a $CertConfig nevű változóban tárolja.</span><span class="sxs-lookup"><span data-stu-id="96864-115">The second command uses the **New-AzVmssVaultCertificateConfig** cmdlet to create a Key Vault certificate configuration using the specified certificate URL from the certificate store named Certificates and stores the results in the variable named $CertConfig.</span></span>
+<span data-ttu-id="96864-116">A harmadik parancs a **New-AzVmssConfig** parancsmagot használja VMSS konfigurációs objektum létrehozásához, és az eredményt az $VMSS nevű változóban tárolja.</span><span class="sxs-lookup"><span data-stu-id="96864-116">The third command uses the **New-AzVmssConfig** cmdlet to create a VMSS configuration object and stores the result in the variable named $VMSS.</span></span>
+<span data-ttu-id="96864-117">A negyedik parancs a VMSS a $Vault és a $CertConfig változóban tárolt fő erőforrás-azonosítóval és a pince-tanúsítvánnyal titkos azonosítót ad.</span><span class="sxs-lookup"><span data-stu-id="96864-117">The fourth command adds a secret to the VMSS using the vault secret using the key resource ID and the vault certificate stored in the $Vault and $CertConfig variables.</span></span>
 
-## <span data-ttu-id="f1167-118">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="f1167-118">PARAMETERS</span></span>
+## <span data-ttu-id="96864-118">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="96864-118">PARAMETERS</span></span>
 
-### <span data-ttu-id="f1167-119">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="f1167-119">-DefaultProfile</span></span>
-<span data-ttu-id="f1167-120">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="f1167-120">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="96864-119">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="96864-119">-DefaultProfile</span></span>
+<span data-ttu-id="96864-120">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="96864-120">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -65,10 +65,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f1167-121">-SourceVaultId</span><span class="sxs-lookup"><span data-stu-id="f1167-121">-SourceVaultId</span></span>
-<span data-ttu-id="f1167-122">A virtuális géphez hozzáadható tanúsítványokat tartalmazó kulcsfájl erőforrás-AZONOSÍTÓját adja meg.</span><span class="sxs-lookup"><span data-stu-id="f1167-122">Specifies the resource ID of the Key Vault that contains the certificates that you can add to the virtual machine.</span></span>
-<span data-ttu-id="f1167-123">Ez az érték a több tanúsítvány hozzáadásának kulcsát is megadhatja.</span><span class="sxs-lookup"><span data-stu-id="f1167-123">This value also acts as the key for adding multiple certificates.</span></span>
-<span data-ttu-id="f1167-124">Ez azt jelenti, hogy ugyanazt az értéket használja a *SourceVaultId* paraméterhez, ha több tanúsítványt vesz fel ugyanabból a kulcsfájlból.</span><span class="sxs-lookup"><span data-stu-id="f1167-124">This means that you can use the same value for the *SourceVaultId* parameter when you add multiple certificates from the same Key Vault.</span></span>
+### <span data-ttu-id="96864-121">-SourceVaultId</span><span class="sxs-lookup"><span data-stu-id="96864-121">-SourceVaultId</span></span>
+<span data-ttu-id="96864-122">A virtuális géphez hozzáadható tanúsítványokat tartalmazó kulcsfájl erőforrás-AZONOSÍTÓját adja meg.</span><span class="sxs-lookup"><span data-stu-id="96864-122">Specifies the resource ID of the Key Vault that contains the certificates that you can add to the virtual machine.</span></span>
+<span data-ttu-id="96864-123">Ez az érték a több tanúsítvány hozzáadásának kulcsát is megadhatja.</span><span class="sxs-lookup"><span data-stu-id="96864-123">This value also acts as the key for adding multiple certificates.</span></span>
+<span data-ttu-id="96864-124">Ez azt jelenti, hogy ugyanazt az értéket használja a *SourceVaultId* paraméterhez, ha több tanúsítványt vesz fel ugyanabból a kulcsfájlból.</span><span class="sxs-lookup"><span data-stu-id="96864-124">This means that you can use the same value for the *SourceVaultId* parameter when you add multiple certificates from the same Key Vault.</span></span>
 
 ```yaml
 Type: System.String
@@ -82,9 +82,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f1167-125">-VaultCertificate</span><span class="sxs-lookup"><span data-stu-id="f1167-125">-VaultCertificate</span></span>
-<span data-ttu-id="f1167-126">A tanúsítvány URL-címét és tanúsítványát tartalmazó pince- **bizonyítvány** objektumát adja meg.</span><span class="sxs-lookup"><span data-stu-id="f1167-126">Specifies the Vault **Certificate** object that contains the certificate URL and certificate name.</span></span>
-<span data-ttu-id="f1167-127">Az objektum létrehozásához használhatja a [New-AzVmssVaultCertificateConfig](./New-AzVmssVaultCertificateConfig.md) parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="f1167-127">You can use the [New-AzVmssVaultCertificateConfig](./New-AzVmssVaultCertificateConfig.md) cmdlet to create this object.</span></span>
+### <span data-ttu-id="96864-125">-VaultCertificate</span><span class="sxs-lookup"><span data-stu-id="96864-125">-VaultCertificate</span></span>
+<span data-ttu-id="96864-126">A tanúsítvány URL-címét és tanúsítványát tartalmazó pince- **bizonyítvány** objektumát adja meg.</span><span class="sxs-lookup"><span data-stu-id="96864-126">Specifies the Vault **Certificate** object that contains the certificate URL and certificate name.</span></span>
+<span data-ttu-id="96864-127">Az objektum létrehozásához használhatja a [New-AzVmssVaultCertificateConfig](./New-AzVmssVaultCertificateConfig.md) parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="96864-127">You can use the [New-AzVmssVaultCertificateConfig](./New-AzVmssVaultCertificateConfig.md) cmdlet to create this object.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Management.Compute.Models.VaultCertificate[]
@@ -98,9 +98,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f1167-128">-VirtualMachineScaleSet</span><span class="sxs-lookup"><span data-stu-id="f1167-128">-VirtualMachineScaleSet</span></span>
-<span data-ttu-id="f1167-129">A VMSS objektumot adja meg.</span><span class="sxs-lookup"><span data-stu-id="f1167-129">Specifies the VMSS object.</span></span>
-<span data-ttu-id="f1167-130">Az objektum létrehozásához használhatja a [New-AzVmssConfig](./New-AzVmssConfig.md) parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="f1167-130">You can use the [New-AzVmssConfig](./New-AzVmssConfig.md) cmdlet to create this object.</span></span>
+### <span data-ttu-id="96864-128">-VirtualMachineScaleSet</span><span class="sxs-lookup"><span data-stu-id="96864-128">-VirtualMachineScaleSet</span></span>
+<span data-ttu-id="96864-129">A VMSS objektumot adja meg.</span><span class="sxs-lookup"><span data-stu-id="96864-129">Specifies the VMSS object.</span></span>
+<span data-ttu-id="96864-130">Az objektum létrehozásához használhatja a [New-AzVmssConfig](./New-AzVmssConfig.md) parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="96864-130">You can use the [New-AzVmssConfig](./New-AzVmssConfig.md) cmdlet to create this object.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Compute.Automation.Models.PSVirtualMachineScaleSet
@@ -114,8 +114,8 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f1167-131">– Megerősítés</span><span class="sxs-lookup"><span data-stu-id="f1167-131">-Confirm</span></span>
-<span data-ttu-id="f1167-132">A parancsmag futtatása előtt kéri a megerősítést.</span><span class="sxs-lookup"><span data-stu-id="f1167-132">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="96864-131">– Megerősítés</span><span class="sxs-lookup"><span data-stu-id="96864-131">-Confirm</span></span>
+<span data-ttu-id="96864-132">A parancsmag futtatása előtt kéri a megerősítést.</span><span class="sxs-lookup"><span data-stu-id="96864-132">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -129,8 +129,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f1167-133">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="f1167-133">-WhatIf</span></span>
-<span data-ttu-id="f1167-134">Annak megjelenítése, hogy mi történik, ha a parancsmag fut.</span><span class="sxs-lookup"><span data-stu-id="f1167-134">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="f1167-135">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="f1167-135">The cmdlet is not run.</span></span>
+### <span data-ttu-id="96864-133">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="96864-133">-WhatIf</span></span>
+<span data-ttu-id="96864-134">Annak megjelenítése, hogy mi történik, ha a parancsmag fut.</span><span class="sxs-lookup"><span data-stu-id="96864-134">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="96864-135">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="96864-135">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -144,25 +144,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f1167-136">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="f1167-136">CommonParameters</span></span>
-<span data-ttu-id="f1167-137">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="f1167-137">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="f1167-138">További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="f1167-138">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="96864-136">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="96864-136">CommonParameters</span></span>
+<span data-ttu-id="96864-137">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="96864-137">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="96864-138">További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="96864-138">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="f1167-139">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="f1167-139">INPUTS</span></span>
+## <span data-ttu-id="96864-139">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="96864-139">INPUTS</span></span>
 
-### <span data-ttu-id="f1167-140">Microsoft. Azure. commands. számítási. Automation. models. PSVirtualMachineScaleSet</span><span class="sxs-lookup"><span data-stu-id="f1167-140">Microsoft.Azure.Commands.Compute.Automation.Models.PSVirtualMachineScaleSet</span></span>
+### <span data-ttu-id="96864-140">Microsoft. Azure. commands. számítási. Automation. models. PSVirtualMachineScaleSet</span><span class="sxs-lookup"><span data-stu-id="96864-140">Microsoft.Azure.Commands.Compute.Automation.Models.PSVirtualMachineScaleSet</span></span>
 
-### <span data-ttu-id="f1167-141">System. String</span><span class="sxs-lookup"><span data-stu-id="f1167-141">System.String</span></span>
+### <span data-ttu-id="96864-141">System. String</span><span class="sxs-lookup"><span data-stu-id="96864-141">System.String</span></span>
 
-### <span data-ttu-id="f1167-142">Microsoft. Azure. Management. számítás. models. VaultCertificate []</span><span class="sxs-lookup"><span data-stu-id="f1167-142">Microsoft.Azure.Management.Compute.Models.VaultCertificate[]</span></span>
+### <span data-ttu-id="96864-142">Microsoft. Azure. Management. számítás. models. VaultCertificate []</span><span class="sxs-lookup"><span data-stu-id="96864-142">Microsoft.Azure.Management.Compute.Models.VaultCertificate[]</span></span>
 
-## <span data-ttu-id="f1167-143">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="f1167-143">OUTPUTS</span></span>
+## <span data-ttu-id="96864-143">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="96864-143">OUTPUTS</span></span>
 
-### <span data-ttu-id="f1167-144">Microsoft. Azure. commands. számítási. Automation. models. PSVirtualMachineScaleSet</span><span class="sxs-lookup"><span data-stu-id="f1167-144">Microsoft.Azure.Commands.Compute.Automation.Models.PSVirtualMachineScaleSet</span></span>
+### <span data-ttu-id="96864-144">Microsoft. Azure. commands. számítási. Automation. models. PSVirtualMachineScaleSet</span><span class="sxs-lookup"><span data-stu-id="96864-144">Microsoft.Azure.Commands.Compute.Automation.Models.PSVirtualMachineScaleSet</span></span>
 
-## <span data-ttu-id="f1167-145">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="f1167-145">NOTES</span></span>
+## <span data-ttu-id="96864-145">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="96864-145">NOTES</span></span>
 
-## <span data-ttu-id="f1167-146">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="f1167-146">RELATED LINKS</span></span>
+## <span data-ttu-id="96864-146">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="96864-146">RELATED LINKS</span></span>
 
-[<span data-ttu-id="f1167-147">Új – AzVmssVaultCertificateConfig</span><span class="sxs-lookup"><span data-stu-id="f1167-147">New-AzVmssVaultCertificateConfig</span></span>](./New-AzVmssVaultCertificateConfig.md)
+[<span data-ttu-id="96864-147">Új – AzVmssVaultCertificateConfig</span><span class="sxs-lookup"><span data-stu-id="96864-147">New-AzVmssVaultCertificateConfig</span></span>](./New-AzVmssVaultCertificateConfig.md)
 
-[<span data-ttu-id="f1167-148">Új – AzVmssConfig</span><span class="sxs-lookup"><span data-stu-id="f1167-148">New-AzVmssConfig</span></span>](./New-AzVmssConfig.md)
+[<span data-ttu-id="96864-148">Új – AzVmssConfig</span><span class="sxs-lookup"><span data-stu-id="96864-148">New-AzVmssConfig</span></span>](./New-AzVmssConfig.md)
