@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 4ab5639cfb997c5f9ee1286e6eacb97ef775239a
-ms.sourcegitcommit: 63181e0af0e4468b0530fdb0495ed4d44bdfd1c8
+ms.service: azure-powershell
+ms.openlocfilehash: 27073db862b83c5b95f2364355037c1ebd34a3b5
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/31/2020
-ms.locfileid: "93134862"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93407493"
 ---
 # <a name="azure-powershell-release-notes"></a>Az Azure PowerShell kibocsátási megjegyzései
 
@@ -140,7 +141,6 @@ ms.locfileid: "93134862"
 * Az -ApiVersion paraméter el lett távolítva az *-AzDeployment parancsmagokból.
 
 #### <a name="azsql"></a>Az.Sql
-* A DiffBackupIntervalInHours hozzáadva a Set-AzSqlDatabaseBackupShortTermRetentionPolicy parancsmaghoz 
 * Ki lett javítva az a hiba, amely miatt a New-AzSqlDatabaseExport meghiúsul, ha a networkIsolation nincs megadva [#13097]
 * Ki lett javítva az a hiba, amely miatt a New-AzSqlDatabaseExport és a New-AzSqlDatabaseImport nem adott vissza OperationStatusLink értéket az eredményobjektumban [#13097]
 * Az Azure párosított régiók URL-jének frissítése a biztonsági mentési tár redundanciafigyelmeztetésében 

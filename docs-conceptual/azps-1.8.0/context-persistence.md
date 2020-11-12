@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/21/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: b75382d09e01dc242acf37a1652ec265266eaf7f
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.service: azure-powershell
+ms.openlocfilehash: e428106fcc525cc8836af954897faa3f6c169990
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89243004"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93408796"
 ---
 # <a name="azure-powershell-context-objects"></a>Azure PowerShell környezeti objektumok
 
@@ -22,11 +23,11 @@ Ez a cikk az Azure-környezetek kezelését ismerteti, az előfizetések és a f
 
 Az Azure-környezetek olyan PowerShell-objektumok, amelyek a parancsok futtatásához kiválasztott aktív előfizetést, illetve az Azure-felhőkhöz való csatlakozáshoz szükséges hitelesítő adatokat képviselik. Az Azure-környezeteknek köszönhetően az Azure PowerShellnek nem kell az előfizetések közötti váltáskor újból és újból hitelesítenie a fiókját. Az Azure-környezetek a következőkből állnak:
 
-* A _fiókból_, amelyet az Azure-ba való bejelentkezéshez használt a [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) parancsmaggal. Az Azure-környezetek a fiókok szempontjából ugyanúgy kezelik a felhasználókat, az alkalmazásazonosítókat és a szolgáltatásneveket.
-* Az aktív _előfizetésből_, azaz egy adott _bérlőhöz_ társított Azure-erőforrások létrehozására és futtatására vonatkozó, Microsofttal kötött szolgáltatási szerződésből. A bérlőket gyakran _szervezeteknek_ is nevezik a dokumentációkban vagy az Active Directory használata során.
-* Egy _jogkivonat-gyorsítótárra_, azaz egy, az Azure-felhők elérésére használt, tárolt hitelesítési jogkivonatra mutató hivatkozásból. A [környezet automatikus mentésére vonatkozó beállítások](#save-azure-contexts-across-powershell-sessions) határozzák meg, hogy a rendszer hol tárolja és mennyi ideig őrzi meg a jogkivonatot.
+* A _fiókból_ , amelyet az Azure-ba való bejelentkezéshez használt a [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) parancsmaggal. Az Azure-környezetek a fiókok szempontjából ugyanúgy kezelik a felhasználókat, az alkalmazásazonosítókat és a szolgáltatásneveket.
+* Az aktív _előfizetésből_ , azaz egy adott _bérlőhöz_ társított Azure-erőforrások létrehozására és futtatására vonatkozó, Microsofttal kötött szolgáltatási szerződésből. A bérlőket gyakran _szervezeteknek_ is nevezik a dokumentációkban vagy az Active Directory használata során.
+* Egy _jogkivonat-gyorsítótárra_ , azaz egy, az Azure-felhők elérésére használt, tárolt hitelesítési jogkivonatra mutató hivatkozásból. A [környezet automatikus mentésére vonatkozó beállítások](#save-azure-contexts-across-powershell-sessions) határozzák meg, hogy a rendszer hol tárolja és mennyi ideig őrzi meg a jogkivonatot.
 
-A kifejezésekkel kapcsolatos további információkért lásd [az Azure Active Directory terminológiáját](/azure/active-directory/fundamentals/active-directory-whatis#terminology). Az Azure-környezetek által használt hitelesítési jogkivonatok ugyanolyanok, mint az állandó munkamenet részét képező többi tárolt jogkivonat. 
+A kifejezésekkel kapcsolatos további információkért lásd [az Azure Active Directory terminológiáját](/azure/active-directory/fundamentals/active-directory-whatis#terminology). Az Azure-környezetek által használt hitelesítési jogkivonatok ugyanolyanok, mint az állandó munkamenet részét képező többi tárolt jogkivonat.
 
 Amikor bejelentkezik a `Connect-AzAccount` parancsmaggal, a rendszer legalább egy Azure-környezetet létrehoz az alapértelmezett előfizetéshez. A `Connect-AzAccount` által visszaadott objektum a PowerShell-munkamenet hátralévő részéhez használt alapértelmezett Azure-környezet.
 
@@ -47,11 +48,11 @@ $context = Get-Context -Name "mycontext"
 A környezetek nevei eltérhetnek a társított előfizetés nevétől.
 
 > [!IMPORTANT]
-> Az elérhető Azure-környezetek __nem__ mindig azonosak az elérhető előfizetésekkel. Az Azure-környezetek csak a helyben tárolt adatokat jelölik. Az előfizetéseit a [Get-AzSubscription](/powershell/module/Az.Accounts/Get-AzSubscription?view=azps-1.8.0) parancsmaggal kérheti le.
+> Az elérhető Azure-környezetek __nem__ mindig azonosak az elérhető előfizetésekkel. Az Azure-környezetek csak a helyben tárolt adatokat jelölik. Az előfizetéseit a [Get-AzSubscription](/powershell/module/Az.Accounts/Get-AzSubscription) parancsmaggal kérheti le.
 
 ## <a name="create-a-new-azure-context-from-subscription-information"></a>Új Azure-környezet létrehozása előfizetési adatokból
 
-A [Set-AzContext](/powershell/module/Az.Accounts/Set-AzContext?view=azps-1.8.0) parancsmaggal új Azure-környezeteket hozhat létre, és be is állíthatja őket aktív környezetként.
+A [Set-AzContext](/powershell/module/Az.Accounts/Set-AzContext) parancsmaggal új Azure-környezeteket hozhat létre, és be is állíthatja őket aktív környezetként.
 Az új Azure-környezetek létrehozásának legegyszerűbb módja a meglévő előfizetési adatok használata. A parancsmagot arra tervezték, hogy átirányított értékként kivegye a `Get-AzSubscription` kimeneti objektumát, és konfiguráljon egy új Azure-környezetet:
 
 ```azurepowershell-interactive
@@ -68,7 +69,7 @@ Ha a `-Name` argumentum kimarad, a rendszer az előfizetés nevét és azonosít
 
 ## <a name="change-the-active-azure-context"></a>Az aktív Azure-környezet módosítása
 
-Az aktív Azure-környezetet a `Set-AzContext` és a [Select-AzContext](/powershell/module/az.accounts/set-azcontext?view=azps-1.8.0) parancsmaggal is meg lehet változtatni. Az [új Azure-környezet létrehozásával](#create-a-new-azure-context-from-subscription-information) foglalkozó szakaszban leírtak szerint a `Set-AzContext` létrehoz egy új Azure-környezetet egy előfizetéshez, ha annak még nincs környezete, majd beállítja aktívként.
+Az aktív Azure-környezetet a `Set-AzContext` és a [Select-AzContext](/powershell/module/az.accounts/set-azcontext) parancsmaggal is meg lehet változtatni. Az [új Azure-környezet létrehozásával](#create-a-new-azure-context-from-subscription-information) foglalkozó szakaszban leírtak szerint a `Set-AzContext` létrehoz egy új Azure-környezetet egy előfizetéshez, ha annak még nincs környezete, majd beállítja aktívként.
 
 A `Select-AzContext` csak a meglévő Azure-környezetekkel használható. Hasonlóan működik, mint a `Set-AzContext -Context`, de átadáshoz tervezték:
 
@@ -134,7 +135,7 @@ Azure-környezetek és hitelesítő adatok törlése:
   Bármely fiókból kijelentkezhet a fiók vagy a környezet megadásával:
 
   ```azurepowershell-interactive
-  Disconnect-AzAccount # Disconnect active account 
+  Disconnect-AzAccount # Disconnect active account
   Disconnect-AzAccount -Username "user@contoso.com" # Disconnect by account name
 
   Disconnect-AzAccount -ContextName "subscription2" # Disconnect by context name
@@ -144,7 +145,7 @@ Azure-környezetek és hitelesítő adatok törlése:
   A kapcsolat bontásakor a rendszer mindig eltávolítja a tárolt hitelesítési jogkivonatokat, és törli a leválasztott felhasználóhoz vagy környezethez társított mentett környezeteket.
 * Használja a [Clear-AzContext](/powershell/module/az.accounts/Clear-AzContext) parancsmagot. Ez a parancsmag garantáltan mindig eltávolítja a tárolt környezeteket és hitelesítési jogkivonatokat, és a felhasználót is kilépteti.
 * Távolítson el egy környezetet a [Remove-AzContext](/powershell/module/az.accounts/remove-azcontext) parancsmaggal:
-  
+
   ```azurepowershell-interactive
   Remove-AzContext -Name "mycontext" # Remove by name
   Get-AzContext -Name "mycontext" | Remove-AzContext # Remove by piping Azure context object

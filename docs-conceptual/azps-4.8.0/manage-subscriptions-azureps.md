@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/04/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 96b94ffcb5075764eb5d2dcaec7b13c5933b83da
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.service: azure-powershell
+ms.openlocfilehash: 4f48e009d9769cba671ea54e8f619a9ad40603d1
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92001929"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93407323"
 ---
 # <a name="use-multiple-azure-subscriptions"></a>Több Azure-előfizetés használata
 
