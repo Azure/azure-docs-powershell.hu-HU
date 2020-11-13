@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 10deb367456574a29b5b9c301e0e1a6b10d95c14
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.service: azure-powershell
+ms.openlocfilehash: bad681ddf6003ea7cd6f3ac90b2bff07ff277ec9
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89241474"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93409295"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Bejelentkezés az Azure PowerShell-lel
 
