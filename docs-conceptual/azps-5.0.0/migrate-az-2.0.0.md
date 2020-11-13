@@ -5,45 +5,46 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/24/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 2d8a3c04388bfc5028811f6d1b6caf2c6fce4147
-ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.service: azure-powershell
+ms.openlocfilehash: ebe18c24881f146b7cf885892c7869cd7167d511
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92753673"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93410196"
 ---
-# <a name="migration-guide-for-az-200"></a><span data-ttu-id="f938d-103">Migrálási útmutató az Az 2.0.0-s verziójához</span><span class="sxs-lookup"><span data-stu-id="f938d-103">Migration Guide for Az 2.0.0</span></span>
+# <a name="migration-guide-for-az-200"></a><span data-ttu-id="9d4f4-103">Migrálási útmutató az Az 2.0.0-s verziójához</span><span class="sxs-lookup"><span data-stu-id="9d4f4-103">Migration Guide for Az 2.0.0</span></span>
 
-<span data-ttu-id="f938d-104">Ez a dokumentum ismerteti, hogy milyen módosítások történtek az Az 1.0.0-s és 2.0.0-s verziója között</span><span class="sxs-lookup"><span data-stu-id="f938d-104">This document describes the changes between the 1.0.0 and 2.0.0 versions of Az</span></span> 
+<span data-ttu-id="9d4f4-104">Ez a dokumentum ismerteti, hogy milyen módosítások történtek az Az 1.0.0-s és 2.0.0-s verziója között</span><span class="sxs-lookup"><span data-stu-id="9d4f4-104">This document describes the changes between the 1.0.0 and 2.0.0 versions of Az</span></span> 
 
-## <a name="table-of-contents"></a><span data-ttu-id="f938d-105">Tartalomjegyzék</span><span class="sxs-lookup"><span data-stu-id="f938d-105">Table of Contents</span></span>
-- [<span data-ttu-id="f938d-106">A modul kompatibilitástörő változásai</span><span class="sxs-lookup"><span data-stu-id="f938d-106">Module breaking changes</span></span>](#module-breaking-changes)
-  - [<span data-ttu-id="f938d-107">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="f938d-107">Az.Compute</span></span>](#azcompute)
-  - [<span data-ttu-id="f938d-108">Az.HDInsight</span><span class="sxs-lookup"><span data-stu-id="f938d-108">Az.HDInsight</span></span>](#azhdinsight)
-  - [<span data-ttu-id="f938d-109">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="f938d-109">Az.Storage</span></span>](#azstorage)
+## <a name="table-of-contents"></a><span data-ttu-id="9d4f4-105">Tartalomjegyzék</span><span class="sxs-lookup"><span data-stu-id="9d4f4-105">Table of Contents</span></span>
+- [<span data-ttu-id="9d4f4-106">A modul kompatibilitástörő változásai</span><span class="sxs-lookup"><span data-stu-id="9d4f4-106">Module breaking changes</span></span>](#module-breaking-changes)
+  - [<span data-ttu-id="9d4f4-107">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="9d4f4-107">Az.Compute</span></span>](#azcompute)
+  - [<span data-ttu-id="9d4f4-108">Az.HDInsight</span><span class="sxs-lookup"><span data-stu-id="9d4f4-108">Az.HDInsight</span></span>](#azhdinsight)
+  - [<span data-ttu-id="9d4f4-109">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="9d4f4-109">Az.Storage</span></span>](#azstorage)
 
-## <a name="module-breaking-changes"></a><span data-ttu-id="f938d-110">A modul kompatibilitástörő változásai</span><span class="sxs-lookup"><span data-stu-id="f938d-110">Module breaking changes</span></span>
+## <a name="module-breaking-changes"></a><span data-ttu-id="9d4f4-110">A modul kompatibilitástörő változásai</span><span class="sxs-lookup"><span data-stu-id="9d4f4-110">Module breaking changes</span></span>
 
-### <a name="azcompute"></a><span data-ttu-id="f938d-111">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="f938d-111">Az.Compute</span></span>
+### <a name="azcompute"></a><span data-ttu-id="9d4f4-111">Az.Compute</span><span class="sxs-lookup"><span data-stu-id="9d4f4-111">Az.Compute</span></span>
 
-- <span data-ttu-id="f938d-112">A `New-AzAvailabilitySet` és `Update-AzAvailabilitySet` parancsmag `Managed` paraméterét a következő váltotta fel: ```Sku = Aligned```</span><span class="sxs-lookup"><span data-stu-id="f938d-112">Removed `Managed` Parameter from `New-AzAvailabilitySet` and `Update-AzAvailabilitySet` cmdlets in favor of using ```Sku = Aligned```</span></span>
+- <span data-ttu-id="9d4f4-112">A `New-AzAvailabilitySet` és `Update-AzAvailabilitySet` parancsmag `Managed` paraméterét a következő váltotta fel: ```Sku = Aligned```</span><span class="sxs-lookup"><span data-stu-id="9d4f4-112">Removed `Managed` Parameter from `New-AzAvailabilitySet` and `Update-AzAvailabilitySet` cmdlets in favor of using ```Sku = Aligned```</span></span>
 
-  #### <a name="before"></a><span data-ttu-id="f938d-113">Előtte</span><span class="sxs-lookup"><span data-stu-id="f938d-113">Before</span></span>
+  #### <a name="before"></a><span data-ttu-id="9d4f4-113">Előtte</span><span class="sxs-lookup"><span data-stu-id="9d4f4-113">Before</span></span>
 
   ```powershell
   Update-AzAvailabilitySet -Managed
   ```
 
-  #### <a name="after"></a><span data-ttu-id="f938d-114">Utána</span><span class="sxs-lookup"><span data-stu-id="f938d-114">After</span></span>
+  #### <a name="after"></a><span data-ttu-id="9d4f4-114">Utána</span><span class="sxs-lookup"><span data-stu-id="9d4f4-114">After</span></span>
 
   ```powershell
   Update-AzAvailabilitySet -Sku Aligned
   ```
-- <span data-ttu-id="f938d-115">A konzisztencia érdekében az `Image` paraméter el lett távolítva az `Update-AzImage` „ByName” és a „ByResourceId” paraméterkészleteiből</span><span class="sxs-lookup"><span data-stu-id="f938d-115">For consistency, removed `Image` parameter from 'ByName' and 'ByResourceId' parameter sets in `Update-AzImage`</span></span> 
+- <span data-ttu-id="9d4f4-115">A konzisztencia érdekében az `Image` paraméter el lett távolítva az `Update-AzImage` „ByName” és a „ByResourceId” paraméterkészleteiből</span><span class="sxs-lookup"><span data-stu-id="9d4f4-115">For consistency, removed `Image` parameter from 'ByName' and 'ByResourceId' parameter sets in `Update-AzImage`</span></span> 
   
-  #### <a name="before"></a><span data-ttu-id="f938d-116">Előtte</span><span class="sxs-lookup"><span data-stu-id="f938d-116">Before</span></span>
+  #### <a name="before"></a><span data-ttu-id="9d4f4-116">Előtte</span><span class="sxs-lookup"><span data-stu-id="9d4f4-116">Before</span></span>
 
-  <span data-ttu-id="f938d-117">Vegye figyelembe, hogy az alábbi kód működik, de nem használja az átadott ImageName paramétert, így a paraméter eltávolítása nem befolyásolja a működését.</span><span class="sxs-lookup"><span data-stu-id="f938d-117">Note that the below code is functional, but the passed-in ImageName is not used, so removing this parameter has no functional impact.</span></span>
+  <span data-ttu-id="9d4f4-117">Vegye figyelembe, hogy az alábbi kód működik, de nem használja az átadott ImageName paramétert, így a paraméter eltávolítása nem befolyásolja a működését.</span><span class="sxs-lookup"><span data-stu-id="9d4f4-117">Note that the below code is functional, but the passed-in ImageName is not used, so removing this parameter has no functional impact.</span></span>
 
   ```powershell
   Update-AzImage -ResourceGroupName $Rg -ImageName $Name -Image $Image -Tag $tags
@@ -51,7 +52,7 @@ ms.locfileid: "92753673"
   Update-AzImage -ResourceId $Id -Image $Image -Tag $tags
   ```
 
-  #### <a name="after"></a><span data-ttu-id="f938d-118">Utána</span><span class="sxs-lookup"><span data-stu-id="f938d-118">After</span></span>
+  #### <a name="after"></a><span data-ttu-id="9d4f4-118">Utána</span><span class="sxs-lookup"><span data-stu-id="9d4f4-118">After</span></span>
 
   ```powershell
   Update-AzImage -ResourceGroupName $Rg -ImageName $Name -Tag $tags
@@ -59,18 +60,18 @@ ms.locfileid: "92753673"
   Update-AzImage -ResourceId $Id -Tag $tags
   ```
 
-- <span data-ttu-id="f938d-119">A konzisztencia érdekében a `Name` paraméter el lett távolítva a `Restart-AzVM` „ByObject” és „ByResourceId” paraméterkészleteiből</span><span class="sxs-lookup"><span data-stu-id="f938d-119">For consistency, removed `Name` parameter from 'ByObject' and 'ByResourceId' parameter sets in `Restart-AzVM`</span></span>
+- <span data-ttu-id="9d4f4-119">A konzisztencia érdekében a `Name` paraméter el lett távolítva a `Restart-AzVM` „ByObject” és „ByResourceId” paraméterkészleteiből</span><span class="sxs-lookup"><span data-stu-id="9d4f4-119">For consistency, removed `Name` parameter from 'ByObject' and 'ByResourceId' parameter sets in `Restart-AzVM`</span></span>
   
-  #### <a name="before"></a><span data-ttu-id="f938d-120">Előtte</span><span class="sxs-lookup"><span data-stu-id="f938d-120">Before</span></span>
+  #### <a name="before"></a><span data-ttu-id="9d4f4-120">Előtte</span><span class="sxs-lookup"><span data-stu-id="9d4f4-120">Before</span></span>
 
-  <span data-ttu-id="f938d-121">Vegye figyelembe, hogy az alábbi kód működik, de nem használja az átadott Name paramétert, így a paraméter eltávolítása nem befolyásolja a működését.</span><span class="sxs-lookup"><span data-stu-id="f938d-121">Note that the below code is functional, but the passed-in Name is not used, so removing this parameter has no functional impact.</span></span>
+  <span data-ttu-id="9d4f4-121">Vegye figyelembe, hogy az alábbi kód működik, de nem használja az átadott Name paramétert, így a paraméter eltávolítása nem befolyásolja a működését.</span><span class="sxs-lookup"><span data-stu-id="9d4f4-121">Note that the below code is functional, but the passed-in Name is not used, so removing this parameter has no functional impact.</span></span>
   ```powershell
   Restart-AzVM -InputObject $VM -Name $Name 
 
   Restart-AzVM -ResourceId $Id -Name $Name
   ```
 
-  #### <a name="after"></a><span data-ttu-id="f938d-122">Utána</span><span class="sxs-lookup"><span data-stu-id="f938d-122">After</span></span>
+  #### <a name="after"></a><span data-ttu-id="9d4f4-122">Utána</span><span class="sxs-lookup"><span data-stu-id="9d4f4-122">After</span></span>
 
   ```powershell
   Restart-AzVM -InputObject $VM
@@ -78,11 +79,11 @@ ms.locfileid: "92753673"
   Restart-AzVM -ResourceId $Id
   ```
 
-- <span data-ttu-id="f938d-123">A konzisztencia érdekében a `Name` paraméter el lett távolítva a `Start-AzVM` „ByObject” és „ByResourceId” paraméterkészleteiből</span><span class="sxs-lookup"><span data-stu-id="f938d-123">For consistency, removed `Name` parameter from 'ByObject' and 'ByResourceId' parameter sets in `Start-AzVM`</span></span>
+- <span data-ttu-id="9d4f4-123">A konzisztencia érdekében a `Name` paraméter el lett távolítva a `Start-AzVM` „ByObject” és „ByResourceId” paraméterkészleteiből</span><span class="sxs-lookup"><span data-stu-id="9d4f4-123">For consistency, removed `Name` parameter from 'ByObject' and 'ByResourceId' parameter sets in `Start-AzVM`</span></span>
   
-  #### <a name="before"></a><span data-ttu-id="f938d-124">Előtte</span><span class="sxs-lookup"><span data-stu-id="f938d-124">Before</span></span>
+  #### <a name="before"></a><span data-ttu-id="9d4f4-124">Előtte</span><span class="sxs-lookup"><span data-stu-id="9d4f4-124">Before</span></span>
 
-  <span data-ttu-id="f938d-125">Vegye figyelembe, hogy az alábbi kód működik, de nem használja az átadott Name paramétert, így a paraméter eltávolítása nem befolyásolja a működését.</span><span class="sxs-lookup"><span data-stu-id="f938d-125">Note that the below code is functional, but the passed-in Name is not used, so removing this parameter has no functional impact.</span></span>
+  <span data-ttu-id="9d4f4-125">Vegye figyelembe, hogy az alábbi kód működik, de nem használja az átadott Name paramétert, így a paraméter eltávolítása nem befolyásolja a működését.</span><span class="sxs-lookup"><span data-stu-id="9d4f4-125">Note that the below code is functional, but the passed-in Name is not used, so removing this parameter has no functional impact.</span></span>
 
   ```powershell
   Start-AzVM -InputObject $VM -Name $Name 
@@ -90,7 +91,7 @@ ms.locfileid: "92753673"
   Start-AzVM -ResourceId $Id -Name $Name
   ```
 
-  #### <a name="after"></a><span data-ttu-id="f938d-126">Utána</span><span class="sxs-lookup"><span data-stu-id="f938d-126">After</span></span>
+  #### <a name="after"></a><span data-ttu-id="9d4f4-126">Utána</span><span class="sxs-lookup"><span data-stu-id="9d4f4-126">After</span></span>
 
   ```powershell
   Start-AzVM -InputObject $VM
@@ -98,11 +99,11 @@ ms.locfileid: "92753673"
   Start-AzVM -ResourceId $Id
   ```
 
-- <span data-ttu-id="f938d-127">A konzisztencia érdekében a `Name` paraméter el lett távolítva a `Stop-AzVM` „ByObject” és „ByResourceId” paraméterkészleteiből</span><span class="sxs-lookup"><span data-stu-id="f938d-127">For consistency, removed `Name` parameter from 'ByObject' and 'ByResourceId' parameter sets in `Stop-AzVM`</span></span>
+- <span data-ttu-id="9d4f4-127">A konzisztencia érdekében a `Name` paraméter el lett távolítva a `Stop-AzVM` „ByObject” és „ByResourceId” paraméterkészleteiből</span><span class="sxs-lookup"><span data-stu-id="9d4f4-127">For consistency, removed `Name` parameter from 'ByObject' and 'ByResourceId' parameter sets in `Stop-AzVM`</span></span>
   
-  #### <a name="before"></a><span data-ttu-id="f938d-128">Előtte</span><span class="sxs-lookup"><span data-stu-id="f938d-128">Before</span></span>
+  #### <a name="before"></a><span data-ttu-id="9d4f4-128">Előtte</span><span class="sxs-lookup"><span data-stu-id="9d4f4-128">Before</span></span>
 
-  <span data-ttu-id="f938d-129">Vegye figyelembe, hogy az alábbi kód működik, de nem használja az átadott Name paramétert, így a paraméter eltávolítása nem befolyásolja a működését.</span><span class="sxs-lookup"><span data-stu-id="f938d-129">Note that the below code is functional, but the passed-in Name is not used, so removing this parameter has no functional impact.</span></span>
+  <span data-ttu-id="9d4f4-129">Vegye figyelembe, hogy az alábbi kód működik, de nem használja az átadott Name paramétert, így a paraméter eltávolítása nem befolyásolja a működését.</span><span class="sxs-lookup"><span data-stu-id="9d4f4-129">Note that the below code is functional, but the passed-in Name is not used, so removing this parameter has no functional impact.</span></span>
 
   ```powershell
   Stop-AzVM -InputObject $VM -Name $Name 
@@ -110,7 +111,7 @@ ms.locfileid: "92753673"
   Stop-AzVM -ResourceId $Id -Name $Name
   ```
 
-  #### <a name="after"></a><span data-ttu-id="f938d-130">Utána</span><span class="sxs-lookup"><span data-stu-id="f938d-130">After</span></span>
+  #### <a name="after"></a><span data-ttu-id="9d4f4-130">Utána</span><span class="sxs-lookup"><span data-stu-id="9d4f4-130">After</span></span>
 
   ```powershell
   Stop-AzVM -InputObject $VM
@@ -118,11 +119,11 @@ ms.locfileid: "92753673"
   Stop-AzVM -ResourceId $Id
   ```
 
-- <span data-ttu-id="f938d-131">A konzisztencia érdekében a `Name` paraméter el lett távolítva a `Remove-AzVM` „ByObject” és „ByResourceId” paraméterkészleteiből</span><span class="sxs-lookup"><span data-stu-id="f938d-131">For consistency, removed `Name` parameter from 'ByObject' and 'ByResourceId' parameter sets in `Remove-AzVM`</span></span>
+- <span data-ttu-id="9d4f4-131">A konzisztencia érdekében a `Name` paraméter el lett távolítva a `Remove-AzVM` „ByObject” és „ByResourceId” paraméterkészleteiből</span><span class="sxs-lookup"><span data-stu-id="9d4f4-131">For consistency, removed `Name` parameter from 'ByObject' and 'ByResourceId' parameter sets in `Remove-AzVM`</span></span>
   
-  #### <a name="before"></a><span data-ttu-id="f938d-132">Előtte</span><span class="sxs-lookup"><span data-stu-id="f938d-132">Before</span></span>
+  #### <a name="before"></a><span data-ttu-id="9d4f4-132">Előtte</span><span class="sxs-lookup"><span data-stu-id="9d4f4-132">Before</span></span>
 
-  <span data-ttu-id="f938d-133">Vegye figyelembe, hogy az alábbi kód működik, de nem használja az átadott Name paramétert, így a paraméter eltávolítása nem befolyásolja a működését.</span><span class="sxs-lookup"><span data-stu-id="f938d-133">Note that the below code is functional, but the passed-in Name is not used, so removing this parameter has no functional impact.</span></span>
+  <span data-ttu-id="9d4f4-133">Vegye figyelembe, hogy az alábbi kód működik, de nem használja az átadott Name paramétert, így a paraméter eltávolítása nem befolyásolja a működését.</span><span class="sxs-lookup"><span data-stu-id="9d4f4-133">Note that the below code is functional, but the passed-in Name is not used, so removing this parameter has no functional impact.</span></span>
 
   ```powershell
   Remove-AzVM -InputObject $VM -Name $Name
@@ -130,7 +131,7 @@ ms.locfileid: "92753673"
   Remove-AzVM -ResourceId $Id -Name $Name 
   ```
 
-  #### <a name="after"></a><span data-ttu-id="f938d-134">Utána</span><span class="sxs-lookup"><span data-stu-id="f938d-134">After</span></span>
+  #### <a name="after"></a><span data-ttu-id="9d4f4-134">Utána</span><span class="sxs-lookup"><span data-stu-id="9d4f4-134">After</span></span>
 
   ```powershell
   Remove-AzVM -InputObject $VM 
@@ -138,11 +139,11 @@ ms.locfileid: "92753673"
   Remove-AzVM -ResourceId $Id 
   ```
 
-- <span data-ttu-id="f938d-135">A konzisztencia érdekében a `Name` paraméter el lett távolítva a `Set-AzVM` „ByObject” és „ByResourceId” paraméterkészleteiből</span><span class="sxs-lookup"><span data-stu-id="f938d-135">For consistency, removed `Name` parameter from 'ByObject' and 'ByResourceId' parameter sets in `Set-AzVM`</span></span>
+- <span data-ttu-id="9d4f4-135">A konzisztencia érdekében a `Name` paraméter el lett távolítva a `Set-AzVM` „ByObject” és „ByResourceId” paraméterkészleteiből</span><span class="sxs-lookup"><span data-stu-id="9d4f4-135">For consistency, removed `Name` parameter from 'ByObject' and 'ByResourceId' parameter sets in `Set-AzVM`</span></span>
   
-  #### <a name="before"></a><span data-ttu-id="f938d-136">Előtte</span><span class="sxs-lookup"><span data-stu-id="f938d-136">Before</span></span>
+  #### <a name="before"></a><span data-ttu-id="9d4f4-136">Előtte</span><span class="sxs-lookup"><span data-stu-id="9d4f4-136">Before</span></span>
 
-  <span data-ttu-id="f938d-137">Vegye figyelembe, hogy az alábbi kód működik, de nem használja az átadott Name paramétert, így a paraméter eltávolítása nem befolyásolja a működését.</span><span class="sxs-lookup"><span data-stu-id="f938d-137">Note that the below code is functional, but the passed-in Name is not used, so removing this parameter has no functional impact.</span></span>
+  <span data-ttu-id="9d4f4-137">Vegye figyelembe, hogy az alábbi kód működik, de nem használja az átadott Name paramétert, így a paraméter eltávolítása nem befolyásolja a működését.</span><span class="sxs-lookup"><span data-stu-id="9d4f4-137">Note that the below code is functional, but the passed-in Name is not used, so removing this parameter has no functional impact.</span></span>
 
   ```powershell
   Set-AzVM -InputObject $VM -Name $Name ...
@@ -150,7 +151,7 @@ ms.locfileid: "92753673"
   Set-AzVM -ResourceId $Id -Name $Name ...
   ```
 
-  #### <a name="after"></a><span data-ttu-id="f938d-138">Utána</span><span class="sxs-lookup"><span data-stu-id="f938d-138">After</span></span>
+  #### <a name="after"></a><span data-ttu-id="9d4f4-138">Utána</span><span class="sxs-lookup"><span data-stu-id="9d4f4-138">After</span></span>
 
   ```powershell
   Set-AzVM -InputObject $VM ...
@@ -158,25 +159,25 @@ ms.locfileid: "92753673"
   Set-AzVM -ResourceId $Id ...
   ```
 
-- <span data-ttu-id="f938d-139">A konzisztencia érdekében a `Name` paraméter el lett távolítva a `Save-AzVMImage` „ByObject” és „ByResourceId” paraméterkészleteiből</span><span class="sxs-lookup"><span data-stu-id="f938d-139">For consistency, removed `Name` parameter from 'ByObject' and 'ByResourceId' parameter sets in `Save-AzVMImage`</span></span> 
+- <span data-ttu-id="9d4f4-139">A konzisztencia érdekében a `Name` paraméter el lett távolítva a `Save-AzVMImage` „ByObject” és „ByResourceId” paraméterkészleteiből</span><span class="sxs-lookup"><span data-stu-id="9d4f4-139">For consistency, removed `Name` parameter from 'ByObject' and 'ByResourceId' parameter sets in `Save-AzVMImage`</span></span> 
   
-  #### <a name="before"></a><span data-ttu-id="f938d-140">Előtte</span><span class="sxs-lookup"><span data-stu-id="f938d-140">Before</span></span>
-  <span data-ttu-id="f938d-141">Vegye figyelembe, hogy az alábbi kód működik, de nem használja az átadott Name paramétert, így a paraméter eltávolítása nem befolyásolja a működését.</span><span class="sxs-lookup"><span data-stu-id="f938d-141">Note that the below code is functional, but the passed-in Name is not used, so removing this parameter has no functional impact.</span></span>
+  #### <a name="before"></a><span data-ttu-id="9d4f4-140">Előtte</span><span class="sxs-lookup"><span data-stu-id="9d4f4-140">Before</span></span>
+  <span data-ttu-id="9d4f4-141">Vegye figyelembe, hogy az alábbi kód működik, de nem használja az átadott Name paramétert, így a paraméter eltávolítása nem befolyásolja a működését.</span><span class="sxs-lookup"><span data-stu-id="9d4f4-141">Note that the below code is functional, but the passed-in Name is not used, so removing this parameter has no functional impact.</span></span>
   ```powershell
   Save-AzVMImage -InputObject $VM -Name $Name ...
 
   Save-AzVMImage -ResourceId $Id -Name $Name ...
   ```
-  #### <a name="after"></a><span data-ttu-id="f938d-142">Utána</span><span class="sxs-lookup"><span data-stu-id="f938d-142">After</span></span>
+  #### <a name="after"></a><span data-ttu-id="9d4f4-142">Utána</span><span class="sxs-lookup"><span data-stu-id="9d4f4-142">After</span></span>
   ```powershell
   Save-AzVMImage -InputObject $VM ...
 
   Save-AzVMImage -ResourceId $Id ...
   ```
 
-- <span data-ttu-id="f938d-143">A ProtectionPolicy tulajdonság hozzá lett adva, hogy beágyazza a `ProtectFromScaleIn` tulajdonságot a következőbe: `PSVirtualMachineScaleSetVM`</span><span class="sxs-lookup"><span data-stu-id="f938d-143">Added ProtectionPolicy property to encapsulate `ProtectFromScaleIn` property in `PSVirtualMachineScaleSetVM`</span></span>
+- <span data-ttu-id="9d4f4-143">A ProtectionPolicy tulajdonság hozzá lett adva, hogy beágyazza a `ProtectFromScaleIn` tulajdonságot a következőbe: `PSVirtualMachineScaleSetVM`</span><span class="sxs-lookup"><span data-stu-id="9d4f4-143">Added ProtectionPolicy property to encapsulate `ProtectFromScaleIn` property in `PSVirtualMachineScaleSetVM`</span></span>
 
-  #### <a name="before"></a><span data-ttu-id="f938d-144">Előtte</span><span class="sxs-lookup"><span data-stu-id="f938d-144">Before</span></span>
+  #### <a name="before"></a><span data-ttu-id="9d4f4-144">Előtte</span><span class="sxs-lookup"><span data-stu-id="9d4f4-144">Before</span></span>
 
   ```powershell
   $vmss = Get-AzVMssVM ...
@@ -189,7 +190,7 @@ ms.locfileid: "92753673"
   $vmss.ProtectFromScaleIn = $true
   ```
 
-  #### <a name="after"></a><span data-ttu-id="f938d-145">Utána</span><span class="sxs-lookup"><span data-stu-id="f938d-145">After</span></span>
+  #### <a name="after"></a><span data-ttu-id="9d4f4-145">Utána</span><span class="sxs-lookup"><span data-stu-id="9d4f4-145">After</span></span>
 
   ```powershell
   $vmss = Get-AzVMssVM ...
@@ -203,9 +204,9 @@ ms.locfileid: "92753673"
 
   ```
 
-- <span data-ttu-id="f938d-146">Az ```EncryptionSettingsCollection``` tulajdonság hozzá lett adva, hogy belefoglalja az `EncryptionSettings` tulajdonságot a következőbe: `PSDisk`</span><span class="sxs-lookup"><span data-stu-id="f938d-146">Added ```EncryptionSettingsCollection``` Property to enclose `EncryptionSettings` property in `PSDisk`</span></span>
+- <span data-ttu-id="9d4f4-146">Az ```EncryptionSettingsCollection``` tulajdonság hozzá lett adva, hogy belefoglalja az `EncryptionSettings` tulajdonságot a következőbe: `PSDisk`</span><span class="sxs-lookup"><span data-stu-id="9d4f4-146">Added ```EncryptionSettingsCollection``` Property to enclose `EncryptionSettings` property in `PSDisk`</span></span>
 
-  #### <a name="before"></a><span data-ttu-id="f938d-147">Előtte</span><span class="sxs-lookup"><span data-stu-id="f938d-147">Before</span></span>
+  #### <a name="before"></a><span data-ttu-id="9d4f4-147">Előtte</span><span class="sxs-lookup"><span data-stu-id="9d4f4-147">Before</span></span>
 
   ```powershell
   $disk = New-AzDisk ... | Set-AzDiskDiskEncrytionKey ...
@@ -221,7 +222,7 @@ ms.locfileid: "92753673"
   $update.EncryptionSettings
   ```
 
-  #### <a name="after"></a><span data-ttu-id="f938d-148">Utána</span><span class="sxs-lookup"><span data-stu-id="f938d-148">After</span></span>
+  #### <a name="after"></a><span data-ttu-id="9d4f4-148">Utána</span><span class="sxs-lookup"><span data-stu-id="9d4f4-148">After</span></span>
 
   ```powershell
   $disk = New-AzDisk ... | Set-AzDiskDiskEncrytionKey ...
@@ -237,9 +238,9 @@ ms.locfileid: "92753673"
   $update.EncryptionSettingsCollection.EncryptionSettings
   ```
 
-- <span data-ttu-id="f938d-149">Az ```EncryptionSettingsCollection``` tulajdonság hozzá lett adva, hogy belefoglalja az `EncryptionSettings` tulajdonságot a következőbe: `PSSnapshot`</span><span class="sxs-lookup"><span data-stu-id="f938d-149">Added ```EncryptionSettingsCollection``` Property to enclose `EncryptionSettings` property in `PSSnapshot`</span></span>
+- <span data-ttu-id="9d4f4-149">Az ```EncryptionSettingsCollection``` tulajdonság hozzá lett adva, hogy belefoglalja az `EncryptionSettings` tulajdonságot a következőbe: `PSSnapshot`</span><span class="sxs-lookup"><span data-stu-id="9d4f4-149">Added ```EncryptionSettingsCollection``` Property to enclose `EncryptionSettings` property in `PSSnapshot`</span></span>
 
-  #### <a name="before"></a><span data-ttu-id="f938d-150">Előtte</span><span class="sxs-lookup"><span data-stu-id="f938d-150">Before</span></span>
+  #### <a name="before"></a><span data-ttu-id="9d4f4-150">Előtte</span><span class="sxs-lookup"><span data-stu-id="9d4f4-150">Before</span></span>
 
   ```powershell
   $snap = New-AzSnapshotConfig ... | Set-AzSnapshotDiskEncryptionKey ...
@@ -255,7 +256,7 @@ ms.locfileid: "92753673"
   $update.EncryptionSettings
   ```
 
-  #### <a name="after"></a><span data-ttu-id="f938d-151">Utána</span><span class="sxs-lookup"><span data-stu-id="f938d-151">After</span></span>
+  #### <a name="after"></a><span data-ttu-id="9d4f4-151">Utána</span><span class="sxs-lookup"><span data-stu-id="9d4f4-151">After</span></span>
 
   ```powershell
   $snap = New-AzSnapshotConfig ... | Set-AzSnapshotDiskEncryptionKey ...
@@ -271,97 +272,97 @@ ms.locfileid: "92753673"
   $update.EncryptionSettingsCollection.EncryptionSettings
   ```
 
-- <span data-ttu-id="f938d-152">`VirtualMachineProfile` tulajdonság eltávolítva a következőből: `PSVirtualMachineScaleSet`</span><span class="sxs-lookup"><span data-stu-id="f938d-152">Removed `VirtualMachineProfile` property from `PSVirtualMachineScaleSet`</span></span>
+- <span data-ttu-id="9d4f4-152">`VirtualMachineProfile` tulajdonság eltávolítva a következőből: `PSVirtualMachineScaleSet`</span><span class="sxs-lookup"><span data-stu-id="9d4f4-152">Removed `VirtualMachineProfile` property from `PSVirtualMachineScaleSet`</span></span>
 
-  #### <a name="before"></a><span data-ttu-id="f938d-153">Előtte</span><span class="sxs-lookup"><span data-stu-id="f938d-153">Before</span></span>
+  #### <a name="before"></a><span data-ttu-id="9d4f4-153">Előtte</span><span class="sxs-lookup"><span data-stu-id="9d4f4-153">Before</span></span>
 
   ```powershell
   $vmss = New-AzVMSSConfig ...
   $vmss.VirtualMachineProfile.AdditionalCapabilities.UltraSSDEnabled = $true
   ```
 
-  #### <a name="after"></a><span data-ttu-id="f938d-154">Utána</span><span class="sxs-lookup"><span data-stu-id="f938d-154">After</span></span>
+  #### <a name="after"></a><span data-ttu-id="9d4f4-154">Utána</span><span class="sxs-lookup"><span data-stu-id="9d4f4-154">After</span></span>
 
   ```powershell
   $vmss = New-AzVMSSConfig ...
   $vmss.AdditionalCapabilities.UltraSSDEnabled = $true
   ```
 
-- <span data-ttu-id="f938d-155">A `Set-AzVMBootDiagnostic` parancsmag eltávolította az aliast a következőből: `Set-AzVMBootDiagnostics`</span><span class="sxs-lookup"><span data-stu-id="f938d-155">Cmdlet `Set-AzVMBootDiagnostic` removed alias to `Set-AzVMBootDiagnostics`</span></span>
+- <span data-ttu-id="9d4f4-155">A `Set-AzVMBootDiagnostic` parancsmag eltávolította az aliast a következőből: `Set-AzVMBootDiagnostics`</span><span class="sxs-lookup"><span data-stu-id="9d4f4-155">Cmdlet `Set-AzVMBootDiagnostic` removed alias to `Set-AzVMBootDiagnostics`</span></span>
 
-  #### <a name="before"></a><span data-ttu-id="f938d-156">Előtte</span><span class="sxs-lookup"><span data-stu-id="f938d-156">Before</span></span>
+  #### <a name="before"></a><span data-ttu-id="9d4f4-156">Előtte</span><span class="sxs-lookup"><span data-stu-id="9d4f4-156">Before</span></span>
 
-  <span data-ttu-id="f938d-157">Elavult alias használata</span><span class="sxs-lookup"><span data-stu-id="f938d-157">Using deprecated alias</span></span>
+  <span data-ttu-id="9d4f4-157">Elavult alias használata</span><span class="sxs-lookup"><span data-stu-id="9d4f4-157">Using deprecated alias</span></span>
 
   ```powershell
   Set-AzVMBootDiagnostics
   ```
 
-  #### <a name="after"></a><span data-ttu-id="f938d-158">Utána</span><span class="sxs-lookup"><span data-stu-id="f938d-158">After</span></span>
+  #### <a name="after"></a><span data-ttu-id="9d4f4-158">Utána</span><span class="sxs-lookup"><span data-stu-id="9d4f4-158">After</span></span>
 
   ```powershell
   Set-AzVMBootDIagnostic
   ```
 
-- <span data-ttu-id="f938d-159">A `Export-AzLogAnalyticThrottledRequest` parancsmag eltávolította az aliast a következőből: `Export-AzLogAnalyticThrottledRequests`</span><span class="sxs-lookup"><span data-stu-id="f938d-159">Cmdlet `Export-AzLogAnalyticThrottledRequest` removed alias to `Export-AzLogAnalyticThrottledRequests`</span></span>
+- <span data-ttu-id="9d4f4-159">A `Export-AzLogAnalyticThrottledRequest` parancsmag eltávolította az aliast a következőből: `Export-AzLogAnalyticThrottledRequests`</span><span class="sxs-lookup"><span data-stu-id="9d4f4-159">Cmdlet `Export-AzLogAnalyticThrottledRequest` removed alias to `Export-AzLogAnalyticThrottledRequests`</span></span>
 
-  #### <a name="before"></a><span data-ttu-id="f938d-160">Előtte</span><span class="sxs-lookup"><span data-stu-id="f938d-160">Before</span></span>
+  #### <a name="before"></a><span data-ttu-id="9d4f4-160">Előtte</span><span class="sxs-lookup"><span data-stu-id="9d4f4-160">Before</span></span>
 
-  <span data-ttu-id="f938d-161">Elavult alias használata</span><span class="sxs-lookup"><span data-stu-id="f938d-161">Using deprectaed alias</span></span>
+  <span data-ttu-id="9d4f4-161">Elavult alias használata</span><span class="sxs-lookup"><span data-stu-id="9d4f4-161">Using deprectaed alias</span></span>
 
   ```powershell
   Export-AzLogAnalyticThrottledRequests
   ```
 
-  #### <a name="after"></a><span data-ttu-id="f938d-162">Utána</span><span class="sxs-lookup"><span data-stu-id="f938d-162">After</span></span>
+  #### <a name="after"></a><span data-ttu-id="9d4f4-162">Utána</span><span class="sxs-lookup"><span data-stu-id="9d4f4-162">After</span></span>
 
   ```powershell
   Export-AzLogAnalyticThrottledRequest
   ```
 
-### <a name="azhdinsight"></a><span data-ttu-id="f938d-163">Az.HDInsight</span><span class="sxs-lookup"><span data-stu-id="f938d-163">Az.HDInsight</span></span>
+### <a name="azhdinsight"></a><span data-ttu-id="9d4f4-163">Az.HDInsight</span><span class="sxs-lookup"><span data-stu-id="9d4f4-163">Az.HDInsight</span></span>
 
-- <span data-ttu-id="f938d-164">A `Grant-AzHDInsightHttpServicesAccess` és a `Revoke-AzHDInsightHttpServicesAccess` parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="f938d-164">Removed the `Grant-AzHDInsightHttpServicesAccess` and `Revoke-AzHDInsightHttpServicesAccess` cmdlets.</span></span> <span data-ttu-id="f938d-165">Már nincs szükség rájuk, mivel a HTTP-hozzáférés mindig engedélyezve van a HDInsight-fürtökön.</span><span class="sxs-lookup"><span data-stu-id="f938d-165">These are no longer necessary because HTTP access is always enabled on all HDInsight clusters.</span></span>
-- <span data-ttu-id="f938d-166">Új `Set-AzHDInsightGatewayCredential` parancsmag hozzáadva.</span><span class="sxs-lookup"><span data-stu-id="f938d-166">Added a new `Set-AzHDInsightGatewayCredential`  cmdlet.</span></span> <span data-ttu-id="f938d-167">A parancsmag használatával módosíthatja az átjáró HTTP-felhasználónevét és -jelszavát (a `Grant-AzHDInsightHttpServicesAccess` helyébe lép).</span><span class="sxs-lookup"><span data-stu-id="f938d-167">Use this cmdlet to change the gateway HTTP username and password (replaces `Grant-AzHDInsightHttpServicesAccess`).</span></span>
-- <span data-ttu-id="f938d-168">Frissült a `Get-AzHDInsightJobOutput` parancsmag, és mostantól támogatja a tárkulcshoz való részletes szerepköralapú hozzáférést.</span><span class="sxs-lookup"><span data-stu-id="f938d-168">Updated the `Get-AzHDInsightJobOutput` cmdlet to support granular role-based access to the storage key.</span></span>
-    - <span data-ttu-id="f938d-169">Ez nem érinti a HDInsight-fürt operátor, közreműködő vagy tulajdonos szerepkörrel rendelkező felhasználóit.</span><span class="sxs-lookup"><span data-stu-id="f938d-169">Users with HDInsight Cluster Operator, Contributor, or Owner roles will not be affected.</span></span>
-    - <span data-ttu-id="f938d-170">A csak olvasói szerepkörrel rendelkező felhasználóknak explicit módon meg kell adniuk a `DefaultStorageAccountKey` paramétert.</span><span class="sxs-lookup"><span data-stu-id="f938d-170">Users with only the Reader role will need to specify `DefaultStorageAccountKey` parameter explicitly.</span></span>
+- <span data-ttu-id="9d4f4-164">A `Grant-AzHDInsightHttpServicesAccess` és a `Revoke-AzHDInsightHttpServicesAccess` parancsmag el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="9d4f4-164">Removed the `Grant-AzHDInsightHttpServicesAccess` and `Revoke-AzHDInsightHttpServicesAccess` cmdlets.</span></span> <span data-ttu-id="9d4f4-165">Már nincs szükség rájuk, mivel a HTTP-hozzáférés mindig engedélyezve van a HDInsight-fürtökön.</span><span class="sxs-lookup"><span data-stu-id="9d4f4-165">These are no longer necessary because HTTP access is always enabled on all HDInsight clusters.</span></span>
+- <span data-ttu-id="9d4f4-166">Új `Set-AzHDInsightGatewayCredential` parancsmag hozzáadva.</span><span class="sxs-lookup"><span data-stu-id="9d4f4-166">Added a new `Set-AzHDInsightGatewayCredential`  cmdlet.</span></span> <span data-ttu-id="9d4f4-167">A parancsmag használatával módosíthatja az átjáró HTTP-felhasználónevét és -jelszavát (a `Grant-AzHDInsightHttpServicesAccess` helyébe lép).</span><span class="sxs-lookup"><span data-stu-id="9d4f4-167">Use this cmdlet to change the gateway HTTP username and password (replaces `Grant-AzHDInsightHttpServicesAccess`).</span></span>
+- <span data-ttu-id="9d4f4-168">Frissült a `Get-AzHDInsightJobOutput` parancsmag, és mostantól támogatja a tárkulcshoz való részletes szerepköralapú hozzáférést.</span><span class="sxs-lookup"><span data-stu-id="9d4f4-168">Updated the `Get-AzHDInsightJobOutput` cmdlet to support granular role-based access to the storage key.</span></span>
+    - <span data-ttu-id="9d4f4-169">Ez nem érinti a HDInsight-fürt operátor, közreműködő vagy tulajdonos szerepkörrel rendelkező felhasználóit.</span><span class="sxs-lookup"><span data-stu-id="9d4f4-169">Users with HDInsight Cluster Operator, Contributor, or Owner roles will not be affected.</span></span>
+    - <span data-ttu-id="9d4f4-170">A csak olvasói szerepkörrel rendelkező felhasználóknak explicit módon meg kell adniuk a `DefaultStorageAccountKey` paramétert.</span><span class="sxs-lookup"><span data-stu-id="9d4f4-170">Users with only the Reader role will need to specify `DefaultStorageAccountKey` parameter explicitly.</span></span>
 
-<span data-ttu-id="f938d-171">A szerepköralapú hozzáférés változásaival kapcsolatos további információért lásd: [aka.ms/hdi-config-update](https://aka.ms/hdi-config-update)</span><span class="sxs-lookup"><span data-stu-id="f938d-171">For more information about these role-based access changes, see [aka.ms/hdi-config-update](https://aka.ms/hdi-config-update)</span></span>
+<span data-ttu-id="9d4f4-171">A szerepköralapú hozzáférés változásaival kapcsolatos további információért lásd: [aka.ms/hdi-config-update](https://aka.ms/hdi-config-update)</span><span class="sxs-lookup"><span data-stu-id="9d4f4-171">For more information about these role-based access changes, see [aka.ms/hdi-config-update](https://aka.ms/hdi-config-update)</span></span>
 
-  #### <a name="before"></a><span data-ttu-id="f938d-172">Előtte</span><span class="sxs-lookup"><span data-stu-id="f938d-172">Before</span></span>
+  #### <a name="before"></a><span data-ttu-id="9d4f4-172">Előtte</span><span class="sxs-lookup"><span data-stu-id="9d4f4-172">Before</span></span>
 
   ```powershell
   Grant-AzHDInsightHttpServicesAccess -ClusterName $cluster -HttpCredential $credential
   ```
 
-  #### <a name="after"></a><span data-ttu-id="f938d-173">Utána</span><span class="sxs-lookup"><span data-stu-id="f938d-173">After</span></span>
+  #### <a name="after"></a><span data-ttu-id="9d4f4-173">Utána</span><span class="sxs-lookup"><span data-stu-id="9d4f4-173">After</span></span>
 
   ```powershell
   Set-AzHDInsightGatewayCredential -ClusterName $cluster -HttpCredential $credential
   ```
 
-###  <a name="users-with-only-reader-role-for-cmdlet-get-azhdinsightjoboutput"></a><span data-ttu-id="f938d-174">A Get-AzHDInsightJobOutput parancsmaghoz csak olvasói szerepkörrel rendelkező felhasználók</span><span class="sxs-lookup"><span data-stu-id="f938d-174">Users with only Reader role for cmdlet Get-AzHDInsightJobOutput</span></span>
+###  <a name="users-with-only-reader-role-for-cmdlet-get-azhdinsightjoboutput"></a><span data-ttu-id="9d4f4-174">A Get-AzHDInsightJobOutput parancsmaghoz csak olvasói szerepkörrel rendelkező felhasználók</span><span class="sxs-lookup"><span data-stu-id="9d4f4-174">Users with only Reader role for cmdlet Get-AzHDInsightJobOutput</span></span>
 
-  ####  <a name="before"></a><span data-ttu-id="f938d-175">Előtte</span><span class="sxs-lookup"><span data-stu-id="f938d-175">Before</span></span>
+  ####  <a name="before"></a><span data-ttu-id="9d4f4-175">Előtte</span><span class="sxs-lookup"><span data-stu-id="9d4f4-175">Before</span></span>
 
   ```powershell
   Get-AzHDInsightJobOutput  -ClusterName $clusterName -JobId $jobId
   ```
 
-  #### <a name="after"></a><span data-ttu-id="f938d-176">Utána</span><span class="sxs-lookup"><span data-stu-id="f938d-176">After</span></span>
+  #### <a name="after"></a><span data-ttu-id="9d4f4-176">Utána</span><span class="sxs-lookup"><span data-stu-id="9d4f4-176">After</span></span>
 
   ```powershell
   Get-AzHDInsightJobOutput  -ClusterName $clusterName -JobId $jobId -DefaultStorageAccountKey $storageAccountKey
   ```
 
-### <a name="azstorage"></a><span data-ttu-id="f938d-177">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="f938d-177">Az.Storage</span></span>
+### <a name="azstorage"></a><span data-ttu-id="9d4f4-177">Az.Storage</span><span class="sxs-lookup"><span data-stu-id="9d4f4-177">Az.Storage</span></span>
 
-- <span data-ttu-id="f938d-178">A Blob, a Queue és a File parancsmagok által visszaadott típusok névterei `Microsoft.WindowsAzure.Storage`-ról `Microsoft.Azure.Storage`-ra módosultak.</span><span class="sxs-lookup"><span data-stu-id="f938d-178">Namespaces for types returned from Blob, Queue, and File cmdlets have changed their namespace from `Microsoft.WindowsAzure.Storage` to `Microsoft.Azure.Storage`.</span></span>  <span data-ttu-id="f938d-179">Bár ez a kompatibilitástörő változások szabályzata szerint technikailag nem számít kompatibilitástörő változásnak, előfordulhat, hogy végre kell hajtani néhány módosítást olyan kódokban, amelyek a Storage .Net SDK metódusaival kommunikálnak a parancsmagok által visszaadott objektumokkal.</span><span class="sxs-lookup"><span data-stu-id="f938d-179">While this is not technically a breaking change according to the breaking change policy, it may require some changes in code that uses the methods from the Storage .Net SDK to interact with the objects returned from these cmdlets.</span></span>
+- <span data-ttu-id="9d4f4-178">A Blob, a Queue és a File parancsmagok által visszaadott típusok névterei `Microsoft.WindowsAzure.Storage`-ról `Microsoft.Azure.Storage`-ra módosultak.</span><span class="sxs-lookup"><span data-stu-id="9d4f4-178">Namespaces for types returned from Blob, Queue, and File cmdlets have changed their namespace from `Microsoft.WindowsAzure.Storage` to `Microsoft.Azure.Storage`.</span></span>  <span data-ttu-id="9d4f4-179">Bár ez a kompatibilitástörő változások szabályzata szerint technikailag nem számít kompatibilitástörő változásnak, előfordulhat, hogy végre kell hajtani néhány módosítást olyan kódokban, amelyek a Storage .Net SDK metódusaival kommunikálnak a parancsmagok által visszaadott objektumokkal.</span><span class="sxs-lookup"><span data-stu-id="9d4f4-179">While this is not technically a breaking change according to the breaking change policy, it may require some changes in code that uses the methods from the Storage .Net SDK to interact with the objects returned from these cmdlets.</span></span>
 
-  #### <a name="example-1--add-a-message-to-a-queue-change-cloudqueuemessage-object-namespace"></a><span data-ttu-id="f938d-180">1\. példa:  Üzenet felvétele az üzenetsorba (a CloudQueueMessage objektumnévterének módosítása)</span><span class="sxs-lookup"><span data-stu-id="f938d-180">Example 1:  Add a message to a Queue (change CloudQueueMessage object namespace)</span></span>
+  #### <a name="example-1--add-a-message-to-a-queue-change-cloudqueuemessage-object-namespace"></a><span data-ttu-id="9d4f4-180">1\. példa:  Üzenet felvétele az üzenetsorba (a CloudQueueMessage objektumnévterének módosítása)</span><span class="sxs-lookup"><span data-stu-id="9d4f4-180">Example 1:  Add a message to a Queue (change CloudQueueMessage object namespace)</span></span>
 
-  <span data-ttu-id="f938d-181">Előtte:</span><span class="sxs-lookup"><span data-stu-id="f938d-181">Before:</span></span> 
+  <span data-ttu-id="9d4f4-181">Előtte:</span><span class="sxs-lookup"><span data-stu-id="9d4f4-181">Before:</span></span> 
 
   ```powershell
   $queue = Get-AzStorageQueue –Name $queueName –Context $ctx
@@ -369,7 +370,7 @@ ms.locfileid: "92753673"
   $queue.CloudQueue.AddMessageAsync($QueueMessage)
   ```
 
-  <span data-ttu-id="f938d-182">Utána:</span><span class="sxs-lookup"><span data-stu-id="f938d-182">After:</span></span>
+  <span data-ttu-id="9d4f4-182">Utána:</span><span class="sxs-lookup"><span data-stu-id="9d4f4-182">After:</span></span>
 
   ```powershell
   $queue = Get-AzStorageQueue –Name $queueName –Context $ctx
@@ -377,9 +378,9 @@ ms.locfileid: "92753673"
   $queue.CloudQueue.AddMessageAsync($QueueMessage)
   ```
 
-  #### <a name="example-2--fetch-blobfile-attributes-with-accesscondition-change-accesscondition-object-namespace"></a><span data-ttu-id="f938d-183">2\. példa  Blob-/Fájlattribútumok lehívása az AccessCondition használatával (az AccessCondition objektumnévterének módosítása)</span><span class="sxs-lookup"><span data-stu-id="f938d-183">Example 2:  Fetch Blob/File Attributes with AccessCondition (change AccessCondition object namespace)</span></span>
+  #### <a name="example-2--fetch-blobfile-attributes-with-accesscondition-change-accesscondition-object-namespace"></a><span data-ttu-id="9d4f4-183">2\. példa  Blob-/Fájlattribútumok lehívása az AccessCondition használatával (az AccessCondition objektumnévterének módosítása)</span><span class="sxs-lookup"><span data-stu-id="9d4f4-183">Example 2:  Fetch Blob/File Attributes with AccessCondition (change AccessCondition object namespace)</span></span>
 
-  <span data-ttu-id="f938d-184">Előtte:</span><span class="sxs-lookup"><span data-stu-id="f938d-184">Before:</span></span> 
+  <span data-ttu-id="9d4f4-184">Előtte:</span><span class="sxs-lookup"><span data-stu-id="9d4f4-184">Before:</span></span> 
 
   ```powershell
   $accessCondition= New-Object Microsoft.WindowsAzure.Storage.AccessCondition
@@ -391,7 +392,7 @@ ms.locfileid: "92753673"
   $file.FetchAttributes($accessCondition)
   ```
 
-  <span data-ttu-id="f938d-185">Utána:</span><span class="sxs-lookup"><span data-stu-id="f938d-185">After:</span></span>
+  <span data-ttu-id="9d4f4-185">Utána:</span><span class="sxs-lookup"><span data-stu-id="9d4f4-185">After:</span></span>
 
   ```powershell
   $accessCondition= New-Object Microsoft.Azure.Storage.AccessCondition
@@ -403,18 +404,18 @@ ms.locfileid: "92753673"
   $file.FetchAttributes($accessCondition)
   ```
 
-- <span data-ttu-id="f938d-186">Bár ez technikailag nem számít kompatibilitástörő változásnak, észrevehet néhány kimeneti különbséget a `New/Get/Set-AzStorageAccount` által visszaadott tárfiókok Sku.Name tulajdonságában.</span><span class="sxs-lookup"><span data-stu-id="f938d-186">While not technically a breaking change, you will notice output differences in the Sku.Name property of Storage Accounts returned from  `New/Get/Set-AzStorageAccount` changes are as follows.</span></span> <span data-ttu-id="f938d-187">(A módosítás után a SkuName kimenete és bemenete egymáshoz lesz igazítva.)</span><span class="sxs-lookup"><span data-stu-id="f938d-187">(After the change, output and input SkuName are aligned.)</span></span>
-  - <span data-ttu-id="f938d-188">„StandardLRS” -> „Standard_LRS”;</span><span class="sxs-lookup"><span data-stu-id="f938d-188">"StandardLRS" -> "Standard_LRS";</span></span>
-  - <span data-ttu-id="f938d-189">„StandardGRS” -> „Standard_GRS”;</span><span class="sxs-lookup"><span data-stu-id="f938d-189">"StandardGRS" -> "Standard_GRS";</span></span>
-  - <span data-ttu-id="f938d-190">„StandardRAGRS” -> „Standard_RAGRS”;</span><span class="sxs-lookup"><span data-stu-id="f938d-190">"StandardRAGRS" -> "Standard_RAGRS";</span></span>
-  - <span data-ttu-id="f938d-191">„StandardZRS” -> „Standard_ZRS”;</span><span class="sxs-lookup"><span data-stu-id="f938d-191">"StandardZRS" -> "Standard_ZRS";</span></span>
-  - <span data-ttu-id="f938d-192">„PremiumLRS” -> „Premium_LRS”;</span><span class="sxs-lookup"><span data-stu-id="f938d-192">"PremiumLRS" -> "Premium_LRS";</span></span>
+- <span data-ttu-id="9d4f4-186">Bár ez technikailag nem számít kompatibilitástörő változásnak, észrevehet néhány kimeneti különbséget a `New/Get/Set-AzStorageAccount` által visszaadott tárfiókok Sku.Name tulajdonságában.</span><span class="sxs-lookup"><span data-stu-id="9d4f4-186">While not technically a breaking change, you will notice output differences in the Sku.Name property of Storage Accounts returned from  `New/Get/Set-AzStorageAccount` changes are as follows.</span></span> <span data-ttu-id="9d4f4-187">(A módosítás után a SkuName kimenete és bemenete egymáshoz lesz igazítva.)</span><span class="sxs-lookup"><span data-stu-id="9d4f4-187">(After the change, output and input SkuName are aligned.)</span></span>
+  - <span data-ttu-id="9d4f4-188">„StandardLRS” -> „Standard_LRS”;</span><span class="sxs-lookup"><span data-stu-id="9d4f4-188">"StandardLRS" -> "Standard_LRS";</span></span>
+  - <span data-ttu-id="9d4f4-189">„StandardGRS” -> „Standard_GRS”;</span><span class="sxs-lookup"><span data-stu-id="9d4f4-189">"StandardGRS" -> "Standard_GRS";</span></span>
+  - <span data-ttu-id="9d4f4-190">„StandardRAGRS” -> „Standard_RAGRS”;</span><span class="sxs-lookup"><span data-stu-id="9d4f4-190">"StandardRAGRS" -> "Standard_RAGRS";</span></span>
+  - <span data-ttu-id="9d4f4-191">„StandardZRS” -> „Standard_ZRS”;</span><span class="sxs-lookup"><span data-stu-id="9d4f4-191">"StandardZRS" -> "Standard_ZRS";</span></span>
+  - <span data-ttu-id="9d4f4-192">„PremiumLRS” -> „Premium_LRS”;</span><span class="sxs-lookup"><span data-stu-id="9d4f4-192">"PremiumLRS" -> "Premium_LRS";</span></span>
 
-- <span data-ttu-id="f938d-193">Megváltozott a szolgáltatás alapértelmezett viselkedése a tárfiókok altípus megadása nélküli létrehozásakor.</span><span class="sxs-lookup"><span data-stu-id="f938d-193">The default service behavior when creating a storage account withous specifying a Kind has changed.</span></span>  <span data-ttu-id="f938d-194">A korábbi verziókban a tárfiókok `Kind` megadása nélküli létrehozásakor a rendszer a tárfiók `Storage` altípusát használta. Az új verzióban a `StorageV2` a `Kind` alapértelmezett értéke.</span><span class="sxs-lookup"><span data-stu-id="f938d-194">In previous versions, when a storage account was created with no `Kind` specified, the Storage account Kind of `Storage` was used, in the new version `StorageV2` is the default `Kind` value.</span></span> <span data-ttu-id="f938d-195">Ha létre kell hoznia egy V1-tárfiókot a „Storage” altípussal, adja hozzá a „-Kind Storage” paramétert.</span><span class="sxs-lookup"><span data-stu-id="f938d-195">If you need to create a V1 Storage account with Kind 'Storage', add parameter '-Kind Storage'</span></span>
+- <span data-ttu-id="9d4f4-193">Megváltozott a szolgáltatás alapértelmezett viselkedése a tárfiókok altípus megadása nélküli létrehozásakor.</span><span class="sxs-lookup"><span data-stu-id="9d4f4-193">The default service behavior when creating a storage account withous specifying a Kind has changed.</span></span>  <span data-ttu-id="9d4f4-194">A korábbi verziókban a tárfiókok `Kind` megadása nélküli létrehozásakor a rendszer a tárfiók `Storage` altípusát használta. Az új verzióban a `StorageV2` a `Kind` alapértelmezett értéke.</span><span class="sxs-lookup"><span data-stu-id="9d4f4-194">In previous versions, when a storage account was created with no `Kind` specified, the Storage account Kind of `Storage` was used, in the new version `StorageV2` is the default `Kind` value.</span></span> <span data-ttu-id="9d4f4-195">Ha létre kell hoznia egy V1-tárfiókot a „Storage” altípussal, adja hozzá a „-Kind Storage” paramétert.</span><span class="sxs-lookup"><span data-stu-id="9d4f4-195">If you need to create a V1 Storage account with Kind 'Storage', add parameter '-Kind Storage'</span></span>
 
-  #### <a name="example--create-a-storage-account-default-kind-change"></a><span data-ttu-id="f938d-196">Például: Tárfiók létrehozása (Alapértelmezett altípus módosítása)</span><span class="sxs-lookup"><span data-stu-id="f938d-196">Example : Create a storage Account (Default Kind change)</span></span>  
+  #### <a name="example--create-a-storage-account-default-kind-change"></a><span data-ttu-id="9d4f4-196">Például: Tárfiók létrehozása (Alapértelmezett altípus módosítása)</span><span class="sxs-lookup"><span data-stu-id="9d4f4-196">Example : Create a storage Account (Default Kind change)</span></span>  
 
-  <span data-ttu-id="f938d-197">Előtte:</span><span class="sxs-lookup"><span data-stu-id="f938d-197">Before:</span></span>
+  <span data-ttu-id="9d4f4-197">Előtte:</span><span class="sxs-lookup"><span data-stu-id="9d4f4-197">Before:</span></span>
 
   ```powershell
   PS c:\> New-AzStorageAccount -ResourceGroupName groupname -Name accountname -SkuName Standard_LRS -Location "westus"
@@ -424,7 +425,7 @@ ms.locfileid: "92753673"
   accountname        groupname         westus   StandardLRS Storage   Hot        4/17/2018 10:34:32 AM Succeeded         False
   ```
 
-  <span data-ttu-id="f938d-198">Utána:</span><span class="sxs-lookup"><span data-stu-id="f938d-198">After:</span></span>
+  <span data-ttu-id="9d4f4-198">Utána:</span><span class="sxs-lookup"><span data-stu-id="9d4f4-198">After:</span></span>
 
   ```powershell
   PS c:\> New-AzStorageAccount -ResourceGroupName groupname -Name accountname -SkuName Standard_LRS -Location "westus"
