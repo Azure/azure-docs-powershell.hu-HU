@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 280486e45dad73c935f03cedc619c0de762deb12
-ms.sourcegitcommit: d81c3b0f0f7289104be03869eb675128b61db7d3
+ms.openlocfilehash: b37d25f8efb6c0a5e590617a5ba84a5a5bf18660
+ms.sourcegitcommit: ec731e58b7de3eb14df6d3bf308df92154125bbb
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94715393"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95005823"
 ---
 # <a name="azure-powershell-release-notes"></a>Az Azure PowerShell kibocsátási megjegyzései
 
@@ -795,7 +795,7 @@ ms.locfileid: "94715393"
 * Ki lett javítva egy probléma, amely a Connect-AzAccount meghiúsulását okozhatta többszálas végrehajtás esetében [#11201]
 
 #### <a name="azaks"></a>Az.Aks
-* A régi [AccessProfile API](https://docs.microsoft.com/rest/api/aks/managedclusters/getaccessprofile) használata helyébe a [ListClusterAdmin](https://docs.microsoft.com/rest/api/aks/managedclusters/listclusteradmincredentials) és a [ListClusterUser](https://docs.microsoft.com/rest/api/aks/managedclusters/listclusterusercredentials) API-k meghívása lépett
+* A régi [AccessProfile API](/rest/api/aks/managedclusters/getaccessprofile) használata helyébe a [ListClusterAdmin](/rest/api/aks/managedclusters/listclusteradmincredentials) és a [ListClusterUser](/rest/api/aks/managedclusters/listclusterusercredentials) API-k meghívása lépett
 
 #### <a name="azbatch"></a>Az.Batch
 * Frissítve lett az Az.Batch a Microsoft.Azure.Management.Batch SDK 11.0.0-s verziójának használatára
@@ -1313,7 +1313,7 @@ ms.locfileid: "94715393"
 
 ## <a name="0100-preview---april-2020"></a>0.10.0-s előzetes verzió – 2020. április
 ### <a name="general"></a>Általános kérdések
-* Az Az modulok előzetes verziója mostantól elérhető az Azure Stack Hubon. Ez lehetővé teszi a platformok közötti kompatibilitást a Linux és a macOs rendszerekkel. A Azure Stack Hub mostantól támogatja a PowerShell Core-t az Az modulokkal, további információt [itt](https://aka.ms/az4AzureStack) talál
+* Az Az modulok előzetes verziója mostantól elérhető az Azure Stack Hubon. Ez lehetővé teszi a platformok közötti kompatibilitást a Linux és a macOs rendszerekkel. A Azure Stack Hub mostantól támogatja a PowerShell Core-t az Az modulokkal, további információt [itt](/azure-stack/operator/powershell-install-az-module) talál
 * Az Az modulok támogatják a 2019-03-01-hybrid profilt:
   - Az.Billing
   - Az.Compute
@@ -1328,7 +1328,7 @@ ms.locfileid: "94715393"
   - Az.Websites
 * A következő három új PowerShell-modul lett bevezetve, amelyek használhatók az Azure Stack Hubbal: Az.Databox, Az.IotHub és Az.EventHub
 * A parancsok viszonylag változatlanok maradnak, kisebb módosításokkal. Például az Az helyébe az AzureRM lép.
-* Az Azure Stack Hubhoz kapcsolódó PowerShell-dokumentáció frissített hivatkozását [itt](https://aka.ms/InstallASHPowerShell) találja
+* Az Azure Stack Hubhoz kapcsolódó PowerShell-dokumentáció frissített hivatkozását [itt](/azure-stack/operator/powershell-install-az-module) találja
 
 ## <a name="370---march-2020"></a>3.7.0 – 2020. március
 #### <a name="azaccounts"></a>Az.Accounts
@@ -2911,7 +2911,7 @@ A New-AzSqlDatabaseSecondary parancsmag javítva, hogy a PartnerDatabaseName lé
     - Set-AzScheduledQueryRule
     - Update-AzScheduledQueryRule
     - Remove-AzScheduledQueryRule
-    - [További](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) információk az SQR API-ról
+    - [További](/rest/api/monitor/scheduledqueryrules) információk az SQR API-ról
     - A frissített Az.Monitor.md tartalmazza a GenV2 (nem klasszikus) metrikaalapú riasztási szabály parancsmagjait
 
 #### <a name="aznetwork"></a>Az.Network

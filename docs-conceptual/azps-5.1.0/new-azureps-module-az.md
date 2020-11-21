@@ -6,12 +6,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 2643c1fbbe9be06112d2a1a377838a8cb1e7737b
-ms.sourcegitcommit: d81c3b0f0f7289104be03869eb675128b61db7d3
+ms.openlocfilehash: 4bf05058f576e7a4844f693384b4fa4aea08a042
+ms.sourcegitcommit: ec731e58b7de3eb14df6d3bf308df92154125bbb
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94715363"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95005806"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Az új Azure PowerShell Az modul bemutatása
 
@@ -41,7 +41,7 @@ Ezekkel a fontos változtatásokkal, amelyekre az új Azure PowerShell-modul lé
 
 Az Azure PowerShell-beli legfrissebb funkcióinak használatához érdemes minél hamarabb áttérnie az Az modul használatára. Ha nem áll készen az Az modul telepítésére az AzureRM helyett, több lehetősége is van, hogy kipróbálja az Az modult:
 
-- Használjon egy `PowerShell` környezetet az [Azure Cloud Shell-lel](https://docs.microsoft.com/azure/cloud-shell/overview). Az Azure Cloud Shell egy böngészőalapú környezet, amely telepített Az modullal és engedélyezett `Enable-AzureRM` kompatibilitási aliasokkal rendelkezik.
+- Használjon egy `PowerShell` környezetet az [Azure Cloud Shell-lel](/azure/cloud-shell/overview). Az Azure Cloud Shell egy böngészőalapú környezet, amely telepített Az modullal és engedélyezett `Enable-AzureRM` kompatibilitási aliasokkal rendelkezik.
 - Tartsa meg a Windowshoz készült 5.1-es PowerShell-lel telepített AzureRM modult, de telepítse az Az modult a PowerShell 6.2.4-es vagy újabb verziójához. A Windows rendszerhez készült PowerShell 5.1 és a PowerShell 6.2.4-es és újabb verziói különböző modulgyűjteményeket használnak. Kövesse az utasításokat a [PowerShell legújabb verziójának](/powershell/scripting/install/installing-powershell) telepítéséhez, majd [telepítse az Az modult](install-az-ps.md) a PowerShell 6.2.4-es vagy újabb verziójából.
 
 Frissítés meglévő AzureRM-telepítésből:
