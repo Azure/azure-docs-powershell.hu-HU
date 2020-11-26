@@ -3,15 +3,15 @@ title: Bejelentkezés az Azure PowerShell-lel
 description: Hogyan lehet bejelentkezni az Azure PowerShellbe felhasználóként, szolgáltatásnévként vagy az Azure-erőforrások felügyelt identitásaival.
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 7/7/2020
+ms.date: 11/23/2020
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 2ec432ae2823bb59f32ca7801a44a9da48db9fac
-ms.sourcegitcommit: d81c3b0f0f7289104be03869eb675128b61db7d3
+ms.openlocfilehash: 46e5e84b6718cc7a700ef2df4e82647e8cb60941
+ms.sourcegitcommit: 25eca7b5f5480758aa2cd830458900cf91cf673c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94715450"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95515109"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Bejelentkezés az Azure PowerShell-lel
 
@@ -31,7 +31,7 @@ Az interaktív bejelentkezéshez használja a [Connect-AzAccount](/powershell/mo
 Connect-AzAccount
 ```
 
-A PowerShell 6-os vagy újabb verziójának futtatásakor ez a parancsmag jogkivonatsztringet jelenít meg. A bejelentkezéshez másolja és illessze be ezt a sztringet a [microsoft.com/devicelogin](https://microsoft.com/devicelogin) helyre egy webböngészőben. A rendszer ekkor hitelesíti a PowerShell-munkamenetet az Azure-hoz való csatlakozáshoz. Megadhatja a `UseDeviceAuthentication` paramétert úgy, hogy jogkivonatsztringet fogadjon a Windows PowerShellen.
+Az Az PowerShell-modul 5.0.0-s verziójától kezdve ez a parancsmag alapértelmezés szerint interaktív böngésző-alapú bejelentkezési utasítást jelenít meg. Megadhatja a `UseDeviceAuthentication` paramétert egy olyan jogkivonatsztring fogadásához, amely korábban a PowerShell 6-os vagy újabb verziójának alapértelmezett értéke volt.
 
 > [!IMPORTANT]
 > Az Active Directory engedélyezési folyamatának végrehajtásában történt módosítások miatt és biztonsági okokból a felhasználónévvel és jelszóval történő hitelesítés el lett távolítva az Azure PowerShellből. Ha az automatizálhatóság érdekében használta ezt a típusú hitelesítést, helyette [hozzon létre egy szolgáltatásnevet](create-azure-service-principal-azureps.md).
