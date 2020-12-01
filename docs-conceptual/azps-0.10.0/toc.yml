@@ -19,11 +19,11 @@
     - name: Változások az AzureRM és az Az között
       href: migrate-az-1.0.0.md
       displayName: 'breaking, cmdlet, module, names'
-- name: Első lépések
+- name: Bevezetés
   href: get-started-azureps.md
   displayName: 'sign in, signin, log in, login, find, feedback, intro, introduction'
 - name: Cloud Shell
-  href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
+  href: /azure/cloud-shell/overview
 - name: Azure PowerShell a Dockerben
   href: azureps-in-docker.md
 - name: Bejelentkezés
@@ -59,7 +59,7 @@
     - name: PowerShell-feladatok
       href: using-psjobs.md
       displayName: 'background, task, scripting, automation, context, process'
-- name: oktatóanyagokat
+- name: Oktatóanyagok
   items:
     - name: Virtuális gépek létrehozása
       href: azureps-vm-tutorial.yml
@@ -68,7 +68,7 @@
     - name: Linux rendszerű virtuális gépek
       href: /azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
       displayName: vms
-    - name: Windows Virtual Machines
+    - name: Windows rendszerű virtuális gépek
       href: /azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
       displayName: vms
     - name: Web Apps
