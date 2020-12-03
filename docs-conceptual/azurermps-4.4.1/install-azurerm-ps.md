@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 3f4b05352ef5e5c7f32495d002a78aadd3e056e1
-ms.sourcegitcommit: 038cb42a3bd8c009bc57c8c1c252e66fa170c84b
+ms.openlocfilehash: c4aa030a7d95f5b22ceeff9438af506ced5c8cb5
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92523291"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96428040"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Az Azure PowerShell telepítése Windows rendszeren a PowerShellGet használatával
 
@@ -149,7 +149,7 @@ Ahogy a hibaüzenetben is olvasható, a modul telepítéséhez az -AllowClobber 
 Install-Module -Name AzureRM -AllowClobber
 ```
 
-További információért tekintse meg az [Install-Module](https://msdn.microsoft.com/powershell/reference/5.1/PowerShellGet/install-module) súgótémakört.
+További információért tekintse meg az [Install-Module](/powershell/module/powershellget/install-module) súgótémakört.
 
 ### <a name="installing-module-versions-side-by-side"></a>Modulverziók párhuzamos telepítése
 
@@ -167,7 +167,7 @@ Import-Module -Name AzureRM -RequiredVersion 2.3.0
 ```
 
 > [!NOTE]
-> A 2.1.0-ás és az 1.2.6-os modulverziók az elsők, amelyeket párhuzamos telepítésre és használatra terveztek. Az Azure PowerShell korábbi verziónak betöltésekor az **AzureRM.Profile** -modul nem kompatibilis verziói töltődnek be. Ezért a parancsmagok minden parancsmag végrehajtásánál bejelentkezést fognak kérni.
+> A 2.1.0-ás és az 1.2.6-os modulverziók az elsők, amelyeket párhuzamos telepítésre és használatra terveztek. Az Azure PowerShell korábbi verziónak betöltésekor az **AzureRM.Profile**-modul nem kompatibilis verziói töltődnek be. Ezért a parancsmagok minden parancsmag végrehajtásánál bejelentkezést fognak kérni.
 
 ### <a name="other-installation-methods"></a>Egyéb telepítési módszerek
 

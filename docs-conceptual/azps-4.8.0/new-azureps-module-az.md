@@ -6,12 +6,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 2643c1fbbe9be06112d2a1a377838a8cb1e7737b
-ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
+ms.openlocfilehash: 4bf05058f576e7a4844f693384b4fa4aea08a042
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93409584"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96427038"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Az új Azure PowerShell Az modul bemutatása
 
@@ -41,14 +41,14 @@ Ezekkel a fontos változtatásokkal, amelyekre az új Azure PowerShell-modul lé
 
 Az Azure PowerShell-beli legfrissebb funkcióinak használatához érdemes minél hamarabb áttérnie az Az modul használatára. Ha nem áll készen az Az modul telepítésére az AzureRM helyett, több lehetősége is van, hogy kipróbálja az Az modult:
 
-- Használjon egy `PowerShell` környezetet az [Azure Cloud Shell-lel](https://docs.microsoft.com/azure/cloud-shell/overview). Az Azure Cloud Shell egy böngészőalapú környezet, amely telepített Az modullal és engedélyezett `Enable-AzureRM` kompatibilitási aliasokkal rendelkezik.
+- Használjon egy `PowerShell` környezetet az [Azure Cloud Shell-lel](/azure/cloud-shell/overview). Az Azure Cloud Shell egy böngészőalapú környezet, amely telepített Az modullal és engedélyezett `Enable-AzureRM` kompatibilitási aliasokkal rendelkezik.
 - Tartsa meg a Windowshoz készült 5.1-es PowerShell-lel telepített AzureRM modult, de telepítse az Az modult a PowerShell 6.2.4-es vagy újabb verziójához. A Windows rendszerhez készült PowerShell 5.1 és a PowerShell 6.2.4-es és újabb verziói különböző modulgyűjteményeket használnak. Kövesse az utasításokat a [PowerShell legújabb verziójának](/powershell/scripting/install/installing-powershell) telepítéséhez, majd [telepítse az Az modult](install-az-ps.md) a PowerShell 6.2.4-es vagy újabb verziójából.
 
 Frissítés meglévő AzureRM-telepítésből:
 
 1. [Távolítsa el az Azure PowerShell AzureRM modult.](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module)
 2. [Telepítse az Azure PowerShell Az modult.](install-az-ps.md)
-3. **NEM KÖTELEZŐ** : Engedélyezze a kompatibilitási módot, hogy aliasokat adjon az AzureRM-parancsmagokhoz az [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias) paranccsal, amíg meg nem ismeri az új parancskészletet. További részleteket a következő szakaszban vagy az [az AzureRM modulból az Az modulba való áttelepítést](migrate-from-azurerm-to-az.md) ismertető cikkben talál.
+3. **NEM KÖTELEZŐ**: Engedélyezze a kompatibilitási módot, hogy aliasokat adjon az AzureRM-parancsmagokhoz az [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias) paranccsal, amíg meg nem ismeri az új parancskészletet. További részleteket a következő szakaszban vagy az [az AzureRM modulból az Az modulba való áttelepítést](migrate-from-azurerm-to-az.md) ismertető cikkben talál.
 
 ## <a name="migrate-existing-scripts-to-az"></a>Meglévő szkriptek áttelepítése az Az modulba
 

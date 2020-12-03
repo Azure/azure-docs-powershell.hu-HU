@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.custom: devx-track-azurepowershell
 ms.author: mirobb
 ms.date: 09/11/2020
-ms.openlocfilehash: d342ca65baf7664f430de3b7d294c0fc9815c0a0
-ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.openlocfilehash: 5945b573d467f1ff64e327c52124ffed1e4305aa
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92753649"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96427836"
 ---
 # <a name="quickstart-automatically-migrate-powershell-scripts-from-azurerm-to-the-az-powershell-module"></a>Gyorsútmutató: PowerShell-szkriptek automatikus migrálása az AzureRM modulból az Az PowerShell-modulba
 
@@ -103,4 +103,4 @@ $Results | Where-Object UpgradeResult -ne UpgradeCompleted | Format-List
 
 ## <a name="next-steps"></a>Következő lépések
 
-Ha többet is meg szeretne tudni az Az PowerShell-modulról, olvassa el [az Azure PowerShell dokumentációját](https://docs.microsoft.com/powershell/azure/).
+Ha többet is meg szeretne tudni az Az PowerShell-modulról, olvassa el [az Azure PowerShell dokumentációját](/powershell/azure/).

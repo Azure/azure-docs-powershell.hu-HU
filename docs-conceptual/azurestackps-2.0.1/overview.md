@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 06/22/2020
-ms.openlocfilehash: 860a32d120e203093038130a535e8b6801e2bce2
-ms.sourcegitcommit: 7b368a9be1cea2ac4e7d269e1a51529271269a42
+ms.openlocfilehash: f9bb71e19ecfe34f2c8646973f7a10526d2e8673
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86098831"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96427921"
 ---
 # <a name="azure-stack-hub-module-201"></a>Azure Stack Hub 2.0.1-es modul
 
@@ -21,7 +21,7 @@ ms.locfileid: "86098831"
 
 A minimális támogatott Azure Stack Hub-verzió a 2002-es.
 
-Megjegyzés: Az Azure Stack korábbi verzióiért tekintse meg a következőt: [Az Azure Stack PowerShell telepítése](https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)
+Megjegyzés: Az Azure Stack korábbi verzióiért tekintse meg a következőt: [Az Azure Stack PowerShell telepítése](/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)
 
 ## <a name="install"></a>Telepítés
 
@@ -45,4 +45,4 @@ Install-Module -Name AzureStack -RequiredVersion 2.0.1-preview -AllowPrerelease
 
 * Az 2002-es frissítésben támogatott  
 
-  Az Azure Stack Hub 2.0.0 egy kompatibilitástörő változást tartalmazó kiadás. Ez a modul az AzureRM modul helyett az Az modult használja. Az [Áttelepítés az AzureRM modulból az Azure PowerShell Az modulba az Azure Stack Hubban](https://aka.ms/AA7qsji) című szakaszban talál egy áttelepítési útmutatót, valamint megtekintheti a kompatibilitástörő változások listáját.
+  Az Azure Stack Hub 2.0.0 egy kompatibilitástörő változást tartalmazó kiadás. Ez a modul az AzureRM modul helyett az Az modult használja. Az [Áttelepítés az AzureRM modulból az Azure PowerShell Az modulba az Azure Stack Hubban](/azure-stack/operator/azure-stack-powershell-install) című szakaszban talál egy áttelepítési útmutatót, valamint megtekintheti a kompatibilitástörő változások listáját.

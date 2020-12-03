@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 966b6ef2fe8e0a52cf230520015e1a92cd29fe1a
-ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
+ms.openlocfilehash: 382883b6a3d6915697b7954e4346613a04a6b870
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93410179"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96427649"
 ---
 # <a name="azure-powershell-release-notes"></a>Az Azure PowerShell kibocsátási megjegyzései
 
@@ -116,7 +116,7 @@ ms.locfileid: "93410179"
 
 ## <a name="0100-preview---april-2020"></a>0.10.0-s előzetes verzió – 2020. április
 ### <a name="general"></a>Általános kérdések
-* Az Az modulok előzetes verziója mostantól elérhető az Azure Stack Hubon. Ez lehetővé teszi a platformok közötti kompatibilitást a Linux és a macOs rendszerekkel. A Azure Stack Hub mostantól támogatja a PowerShell Core-t az Az modulokkal, további információt [itt](https://aka.ms/az4AzureStack) talál
+* Az Az modulok előzetes verziója mostantól elérhető az Azure Stack Hubon. Ez lehetővé teszi a platformok közötti kompatibilitást a Linux és a macOs rendszerekkel. A Azure Stack Hub mostantól támogatja a PowerShell Core-t az Az modulokkal, további információt [itt](/azure-stack/operator/powershell-install-az-module) talál
 * Az Az modulok támogatják a 2019-03-01-hybrid profilt:
   - Az.Billing
   - Az.Compute
@@ -131,7 +131,7 @@ ms.locfileid: "93410179"
   - Az.Websites
 * A következő három új PowerShell-modul lett bevezetve, amelyek használhatók az Azure Stack Hubbal: Az.Databox, Az.IotHub és Az.EventHub
 * A parancsok viszonylag változatlanok maradnak, kisebb módosításokkal. Például az Az helyébe az AzureRM lép.
-* Az Azure Stack Hubhoz kapcsolódó PowerShell-dokumentáció frissített hivatkozását [itt](https://aka.ms/InstallASHPowerShell) találja
+* Az Azure Stack Hubhoz kapcsolódó PowerShell-dokumentáció frissített hivatkozását [itt](/azure-stack/operator/powershell-install-az-module) találja
 
 ## <a name="370---march-2020"></a>3.7.0 – 2020. március
 #### <a name="azaccounts"></a>Az.Accounts
@@ -679,7 +679,7 @@ A New-AzSqlDatabaseSecondary parancsmag javítva, hogy a PartnerDatabaseName lé
     - A `StorageContainerUrl`-alapú erőforrásfájlok az URL-címben megadott tárolót töltik le a Batch-csomópontra.
 * A `PSApplication`**Get-AzBatchApplication** által visszaadott `ApplicationPackages` tulajdonsága eltávolítva.
   - Most már lekérhetők az alkalmazásokon belüli adott csomagok a **Get-AzBatchApplicationPackage** használatával. Például: `Get-AzBatchApplication -AccountName myaccount -ResourceGroupName myresourcegroup -ApplicationId myapplication`.
-* Az `ApplicationId` átnevezve `ApplicationName` értékre a **Get-AzBatchApplicationPackage** , a **New-AzBatchApplicationPackage** , a **Remove-AzBatchApplicationPackage** , a **Get-AzBatchApplication** , a **New-AzBatchApplication** , a **Remove-AzBatchApplication** és a **Set-AzBatchApplication** esetében.
+* Az `ApplicationId` átnevezve `ApplicationName` értékre a **Get-AzBatchApplicationPackage**, a **New-AzBatchApplicationPackage**, a **Remove-AzBatchApplicationPackage**, a **Get-AzBatchApplication**, a **New-AzBatchApplication**, a **Remove-AzBatchApplication** és a **Set-AzBatchApplication** esetében.
   - Az `ApplicationId` mostantól az `ApplicationName` aliasa.
 * Az új `PSWindowsUserConfiguration` tulajdonság hozzáadva a következőhöz: `PSUserAccount`.
 * A `Version` átnevezve `Name` értékre a `PSApplicationPackage` esetében.
@@ -690,7 +690,7 @@ A New-AzSqlDatabaseSecondary parancsmag javítva, hogy a PartnerDatabaseName lé
 * A `CurrentOSVersion` átnevezve `OSVersion` értékre a `PSCloudServiceConfiguration` esetében.
 * `DataEgressGiB` és `DataIngressGiB` eltávolítva a következőből: `PSPoolUsageMetrics`.
 * A **Get-AzBatchNodeAgentSku** eltávolítva és a **Get-AzBatchSupportedImage** parancsmaggal helyettesítve.
-  - A **Get-AzBatchSupportedImage** ugyanazokat az adatokat jeleníti meg, mint a **Get-AzBatchNodeAgentSku** , csak egyszerűbb formátumban.
+  - A **Get-AzBatchSupportedImage** ugyanazokat az adatokat jeleníti meg, mint a **Get-AzBatchNodeAgentSku**, csak egyszerűbb formátumban.
   - Most már új, nem ellenőrzött rendszerképeket is visszaad a rendszer. Minden rendszerképről további, `Capabilities` és `BatchSupportEndOfLife` típusú információk is szerepelnek.
 * Lehetőség arra, hogy távoli fájlrendszereket lehessen csatlakoztatni egy készlet minden csomópontjára a **New-AzBatchPool** új `MountConfiguration` paraméterével.
 * Most már támogatja a hálózati biztonsági szabályokat, amelyek a letiltják a készletekhez való hozzáférést a forgalom forrásportja alapján. Ez a `PSNetworkSecurityGroupRule``SourcePortRanges` tulajdonsága alapján történik.
@@ -988,8 +988,8 @@ A New-AzSqlDatabaseSecondary parancsmag javítva, hogy a PartnerDatabaseName lé
 #### <a name="azmonitor"></a>Az.Monitor
 * A legújabb Monitor SDK-ra mutat, azaz a 0.24.1-preview verzióra
    - Nem kompatibilitástörő változásokkal bővíti a Metrics parancsmagokat, így az egységek számbavétele számos új értéket támogat. Ezek írásvédett parancsmagok, ezért a parancsmagok bemenetében nem történik változás.
-   - Az **ActionGroups** -kérések api-version értéke mostantól **2019-06-01** , korábban **2018-03-01** volt. A forgatókönyvtesztek frissültek, így igazodnak a változáshoz.
-   - Az **EmailReceiver** és a **WebhookReceiver** osztályok konstruktoraihoz hozzá lett adva egy új kötelező argumentum, a **useCommonAlertSchema** nevű logikai érték. A kompatibilitástörő változás parancsmagok elől való elrejtése érdekében a rögzített érték jelenleg a **false** (hamis). **MEGJEGYZÉS** : Ez egy átmeneti módosítás, amelyet a Riasztások csapatnak érvényesítenie kell.
+   - Az **ActionGroups**-kérések api-version értéke mostantól **2019-06-01**, korábban **2018-03-01** volt. A forgatókönyvtesztek frissültek, így igazodnak a változáshoz.
+   - Az **EmailReceiver** és a **WebhookReceiver** osztályok konstruktoraihoz hozzá lett adva egy új kötelező argumentum, a **useCommonAlertSchema** nevű logikai érték. A kompatibilitástörő változás parancsmagok elől való elrejtése érdekében a rögzített érték jelenleg a **false** (hamis). **MEGJEGYZÉS**: Ez egy átmeneti módosítás, amelyet a Riasztások csapatnak érvényesítenie kell.
    - A **Source** osztály (amely a **ScheduledQueryRuleSource** osztályhoz kapcsolódik) konstruktorai argumentumainak sorrendje módosult az előző SDK-hoz képest. Ehhez a módosításhoz két egységteszt kijavítására volt szükség: azokat le lehetett fordítani, azonban nem teljesítették a teszteket.
    - Az **AlertingAction** osztály (amely a **ScheduledQueryRuleSource** osztályhoz kapcsolódik) konstruktorai argumentumainak sorrendje módosult az előző SDK-hoz képest. Ehhez a módosításhoz két egységteszt kijavítására volt szükség: azokat le lehetett fordítani, azonban nem teljesítették a teszteket.
 * A dinamikus küszöbérték kritériumainak támogatása a 2-es verziójú metrikariasztás esetében
@@ -1714,7 +1714,7 @@ A New-AzSqlDatabaseSecondary parancsmag javítva, hogy a PartnerDatabaseName lé
     - Set-AzScheduledQueryRule
     - Update-AzScheduledQueryRule
     - Remove-AzScheduledQueryRule
-    - [További](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) információk az SQR API-ról
+    - [További](/rest/api/monitor/scheduledqueryrules) információk az SQR API-ról
     - A frissített Az.Monitor.md tartalmazza a GenV2 (nem klasszikus) metrikaalapú riasztási szabály parancsmagjait
 
 #### <a name="aznetwork"></a>Az.Network

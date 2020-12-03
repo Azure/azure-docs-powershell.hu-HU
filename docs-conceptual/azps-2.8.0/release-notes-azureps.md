@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 10/15/2019
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: c6880e4c09339ec6a3e192480fde9e1f85cbca5f
-ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
+ms.openlocfilehash: 656e61e7f208367fc7fae28f73d1b6f289831d77
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93409499"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96427734"
 ---
 # <a name="azure-powershell-release-notes"></a>Az Azure PowerShell kibocsátási megjegyzései
 ## <a name="280---october-2019"></a>2.8.0 – 2019. október
@@ -136,8 +136,8 @@ ms.locfileid: "93409499"
 #### <a name="azmonitor"></a>Az.Monitor
 * A legújabb Monitor SDK-ra mutat, azaz a 0.24.1-preview verzióra
    - Nem kompatibilitástörő változásokkal bővíti a Metrics parancsmagokat, így az egységek számbavétele számos új értéket támogat. Ezek írásvédett parancsmagok, ezért a parancsmagok bemenetében nem történik változás.
-   - Az **ActionGroups** -kérések api-version értéke mostantól **2019-06-01** , korábban **2018-03-01** volt. A forgatókönyvtesztek frissültek, így igazodnak a változáshoz.
-   - Az **EmailReceiver** és a **WebhookReceiver** osztályok konstruktoraihoz hozzá lett adva egy új kötelező argumentum, a **useCommonAlertSchema** nevű logikai érték. A kompatibilitástörő változás parancsmagok elől való elrejtése érdekében a rögzített érték jelenleg a **false** (hamis). **MEGJEGYZÉS** : Ez egy átmeneti módosítás, amelyet a Riasztások csapatnak érvényesítenie kell.
+   - Az **ActionGroups**-kérések api-version értéke mostantól **2019-06-01**, korábban **2018-03-01** volt. A forgatókönyvtesztek frissültek, így igazodnak a változáshoz.
+   - Az **EmailReceiver** és a **WebhookReceiver** osztályok konstruktoraihoz hozzá lett adva egy új kötelező argumentum, a **useCommonAlertSchema** nevű logikai érték. A kompatibilitástörő változás parancsmagok elől való elrejtése érdekében a rögzített érték jelenleg a **false** (hamis). **MEGJEGYZÉS**: Ez egy átmeneti módosítás, amelyet a Riasztások csapatnak érvényesítenie kell.
    - A **Source** osztály (amely a **ScheduledQueryRuleSource** osztályhoz kapcsolódik) konstruktorai argumentumainak sorrendje módosult az előző SDK-hoz képest. Ehhez a módosításhoz két egységteszt kijavítására volt szükség: azokat le lehetett fordítani, azonban nem teljesítették a teszteket.
    - Az **AlertingAction** osztály (amely a **ScheduledQueryRuleSource** osztályhoz kapcsolódik) konstruktorai argumentumainak sorrendje módosult az előző SDK-hoz képest. Ehhez a módosításhoz két egységteszt kijavítására volt szükség: azokat le lehetett fordítani, azonban nem teljesítették a teszteket.
 * A dinamikus küszöbérték kritériumainak támogatása a 2-es verziójú metrikariasztás esetében
@@ -862,7 +862,7 @@ ms.locfileid: "93409499"
     - Set-AzScheduledQueryRule
     - Update-AzScheduledQueryRule
     - Remove-AzScheduledQueryRule
-    - [További](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) információk az SQR API-ról
+    - [További](/rest/api/monitor/scheduledqueryrules) információk az SQR API-ról
     - A frissített Az.Monitor.md tartalmazza a GenV2 (nem klasszikus) metrikaalapú riasztási szabály parancsmagjait
 
 #### <a name="aznetwork"></a>Az.Network
