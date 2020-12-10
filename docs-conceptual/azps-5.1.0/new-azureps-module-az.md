@@ -6,12 +6,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: a3b74531ff71ed0e9ac473831b71efb6f29d6e66
-ms.sourcegitcommit: 7887e040bdeb2f55c035a3169cd0d9d807ab186e
+ms.openlocfilehash: d922affd608ebfce41f9608ec82d565d6afe9f7f
+ms.sourcegitcommit: 3ef9f7f6c20af98282a0499b1527c291ee54011b
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96536544"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96617719"
 ---
 # <a name="introducing-the-azure-az-powershell-module"></a>Az Azure Az PowerShell-moduljának bemutatása
 
@@ -77,7 +77,7 @@ Ha a szkriptjei még mindig az AzureRM modulon alapulnak, számos erőforrás á
 
 Az Azure legfrissebb PowerShell-modulja az Az. A hibákat vagy a funkciókéréseket közvetlenül a [GitHub-adattárban](https://github.com/Azure/azure-powershell) rögzítheti, vagy a Microsoft ügyfélszolgálatán keresztül is jelentheti, ha rendelkezik támogatási szerződéssel. A funkciókérések az Az legújabb verziójában lesznek implementálva. A kritikus hibák javítása az Az utolsó két verziójában lesz implementálva.
 
-Az AzureRM modul nem bővül újabb parancsmagokkal vagy funkciókkal. Az AzureRM modul hivatalos karbantartása és kritikus hibáinak javítása azonban 2020 februárjáig nem szűnik meg.
+Az AzureRM modul nem bővül újabb parancsmagokkal vagy funkciókkal. Az AzureRM modul hivatalos karbantartása és kritikus hibáinak javítása azonban 2021 februárjáig nem szűnik meg.
 
 ## <a name="data-collection"></a>Adatgyűjtés
 
