@@ -4,14 +4,14 @@ description: Ismerje meg az Azure PowerShell-szkriptek az AzureRM-ből az új Az
 ms.devlang: powershell
 ms.service: azure-powershell
 ms.topic: conceptual
-ms.date: 12/1/2020
-ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: bc37d0b73db0e6df226788795730730c077fcefa
-ms.sourcegitcommit: 04221336bc9eed46c05ed1e828a6811534d4b4ab
+ms.date: 12/15/2020
+ms.custom: devx-track-azurepowershell, contperf-fy21q2
+ms.openlocfilehash: 6bccaf9a628f67b8945516bae70f07939cdce8f7
+ms.sourcegitcommit: a24069b411d3a6011067770430b6dcdd4b2c2159
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96856500"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97532242"
 ---
 # <a name="migrate-azure-powershell-from-azurerm-to-az"></a>Az Azure PowerShell migrálása az AzureRM modulból az Az modulba
 
@@ -91,5 +91,5 @@ Telepítse a [VSCode-hoz készült Azure PowerShell-bővítményt](https://marke
 
 ## <a name="next-steps"></a>Következő lépések
 
-[Az AzureRM eltávolítása](uninstall-az-ps.md#uninstall-the-azurerm-module)
-[Az Azure PowerShell telepítése](install-az-ps.md)
+* [Az AzureRM eltávolítása](uninstall-az-ps.md#uninstall-the-azurerm-module)
+* [Az Azure PowerShell telepítése](install-az-ps.md)
