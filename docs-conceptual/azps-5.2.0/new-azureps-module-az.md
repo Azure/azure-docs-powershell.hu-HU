@@ -6,12 +6,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: d922affd608ebfce41f9608ec82d565d6afe9f7f
-ms.sourcegitcommit: 04221336bc9eed46c05ed1e828a6811534d4b4ab
+ms.openlocfilehash: 9021a1d8fdc73aedb87b17631f8e67cb8ef79166
+ms.sourcegitcommit: a6d92493a8d1b81b85f4db2a38f271134be5e6c5
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96856415"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97353852"
 ---
 # <a name="introducing-the-azure-az-powershell-module"></a>Az Azure Az PowerShell-moduljának bemutatása
 
@@ -34,16 +34,17 @@ Az Az PowerShell-modul előnyei:
 
 * Biztonság és stabilitás
   * Jogkivonat-gyorsítótár titkosítása
-  * Az ADFS 2019 támogatása
-  * Biztonsági mechanizmus a közbeékelődéses támadások megelőzéséhez
+  * Közbeékelődéses támadások megelőzése
+  * Hitelesítés támogatása az ADFS 2019-cel
+  * Felhasználónév- és jelszó-hitelesítés a PowerShell 7-ben
   * A folyamatos hozzáférés-kiértékelés és hasonló funkciók támogatása (várható megjelenés: 2021)
 * Az összes Azure-szolgáltatás támogatása
-  * Minden egyes Azure-szolgáltatáshoz elérhető egy modul
+  * Az összes általánosan elérhető Azure-szolgáltatás rendelkezik megfelelő támogatott PowerShell-modullal
   * Számos hibajavítás és API-verziófrissítés az AzureRM óta
-* Számos új képesség
+* Új képességek
   * Támogatás a Cloud Shellben és egyéb platformokon
   * Hozzáférési jogkivonatok lekérése és használata az Azure-erőforrások eléréséhez
-  * Általános Az-parancsmag vészkijárat típusú műveletekhez
+  * Parancsmag érhető el az Azure-erőforrásokon végzett összetett REST-műveletekhez
 
 > [!NOTE]
 > A PowerShell az Az PowerShell-lel történő használatához az összes platformon a PowerShell 7-es vagy újabb verziója javasolt.
