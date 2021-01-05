@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 05/14/2020
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: f7a1658cdcafd1e8d6cba51ead26f9ddaa8c4c56
-ms.sourcegitcommit: 04221336bc9eed46c05ed1e828a6811534d4b4ab
+ms.openlocfilehash: ae26b84ecf02ff90ddfbbc2960aed448f37f2a6a
+ms.sourcegitcommit: e4f2cb406f0ea7bcdb48e130966eabba4d0f9a67
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96856525"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97665439"
 ---
 # <a name="install-azure-powershell"></a>Az Azure PowerShell telepítése
 
@@ -44,6 +44,8 @@ Az Azure PowerShell használata PowerShell 5.1-ben Windows rendszeren:
 > [!WARNING]
 > Az AzureRM és az Az modul nem lehet egyszerre telepítve a PowerShell 5.1-hez ugyanazon a Windows rendszeren. Ha az AzureRM-nek továbbra is elérhetőnek kell maradnia a rendszeren, telepítse a PowerShell 6.2.4-es vagy újabb verziójához készült Az modult.
 
+### <a name="install-for-current-user"></a>Telepítés az aktuális felhasználó számára
+
 Az előnyben részesített telepítési módszer a PowerShellGet-parancsmagok használata. Csak az aktuális felhasználó számára telepítse az Az modult. Ez az ajánlott telepítési hatókör. Ez a módszer Windows, macOS és Linux platformon ugyanúgy működik. Futtassa az alábbi parancsot egy PowerShell-munkamenetből:
 
 ```powershell-interactive
@@ -68,6 +70,8 @@ Are you sure you want to install the modules from 'PSGallery'?
 ```
 
 A telepítés folytatásához válassza a `Yes` vagy a `Yes to All` lehetőséget.
+
+### <a name="install-for-all-users"></a>Telepítés az összes felhasználó számára
 
 A modulnak a rendszer összes felhasználója számára történő telepítéséhez emelt szintű jogosultságokra van szükség. A PowerShell-munkamenetet a **Futtatás rendszergazdaként** paranccsal indítsa el Windows, illetve a `sudo` paranccsal macOS vagy Linux rendszeren:
 

@@ -6,20 +6,17 @@ ms.service: azure-powershell
 ms.topic: quickstart
 ms.custom: devx-track-azurepowershell
 ms.author: mirobb
-ms.date: 12/10/2020
-ms.openlocfilehash: 6752fa0376c2f8887511455f56add0859f8961c8
-ms.sourcegitcommit: 076ff98abc48e072eb1727532817487bac7507c6
+ms.date: 12/18/2020
+ms.openlocfilehash: 3a26dfbb89f83a9d1983ea8d69cd47c9f74eab38
+ms.sourcegitcommit: dd90c54d8794109fa7984543649bb3faa0cbb544
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97488529"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97701289"
 ---
 # <a name="quickstart-automatically-migrate-powershell-scripts-from-azurerm-to-the-az-powershell-module"></a>Gyorsútmutató: PowerShell-szkriptek automatikus migrálása az AzureRM modulból az Az PowerShell-modulba
 
-Ez a cikk ismerteti, hogyan lehet az Az.Tools.Migration PowerShell-modul használatával automatikusan frissíteni a PowerShell-szkripteket és -szkriptmodulokat az AzureRM modulból az Az PowerShell-modulba.
-
-> [!IMPORTANT]
-> Az Az.Tools.Migration PowerShell-modul jelenleg nyilvános előzetes verzióban érhető el. Erre az előzetes verzióra nem vonatkozik szolgáltatói szerződés. Az előzetes verzió használata NEM javasolt éles számítási feladatok esetén. Előfordulhat, hogy néhány funkció nem támogatott, vagy korlátozott képességekkel rendelkezik. További információ: [Kiegészítő használati feltételek a Microsoft Azure előzetes verziójú termékeihez](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+Ez a cikk ismerteti, hogyan lehet az Az.Tools.Migration PowerShell-modul használatával automatikusan frissíteni a PowerShell-szkripteket és -szkriptmodulokat az AzureRM modulból az Az PowerShell-modulba. A további migrálási lehetőségekért lásd [Az Azure PowerShell migrálása az AzureRM modulból az Az modulba](/powershell/azure/migrate-from-azurerm-to-az) című cikket.
 
 ## <a name="requirements"></a>Követelmények
 
