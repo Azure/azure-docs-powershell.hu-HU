@@ -3,54 +3,54 @@ external help file: Microsoft.WindowsAzure.Commands.dll-Help.xml
 ms.assetid: FBB55071-454D-4473-93BA-D97F33067785
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: 0f83489d21fba97bb50145de1fedc1ac9a7195a1
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 768eff2dda32c6dfa0bad14f028338d3c5fa1abd
+ms.sourcegitcommit: 87730c7ea4f98f628d3fe1b40aa4a9d2885e1c75
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94016184"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98110478"
 ---
 # New-AzureWebsite
 
-## Áttekintés
-Az Azure-ban futtatandó új webhely létrehozása
+## SYNOPSIS
+Hozzon létre egy új webhelyet az Azure-ban való futtatáshoz.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 New-AzureWebsite [-Location <String>] [-Hostname <String>] [-PublishingUsername <String>] [-Git] [-GitHub]
- [-GithubCredentials <PSCredential>] [-GithubRepository <String>] [-Name <String>] [-Slot <String>]
+ [-GitHubCredentials <PSCredential>] [-GitHubRepository <String>] [-Name <String>] [-Slot <String>]
  [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## Leírás
-Ez a témakör a Microsoft Azure PowerShell modul 0.8.10 verziójában található parancsmagot ismerteti.
-A használt modul verziójának beszerzéséhez az Azure PowerShell konzolon írja be a következőt: `(Get-Module -Name Azure).Version` .
+## LEÍRÁS
+Ez a témakör a Microsoft Azure PowerShell modul 0.8.10-es verziójában található parancsmagot ismerteti.
+A használt modul verziójának lekérte az Azure PowerShell konzolban a `(Get-Module -Name Azure).Version` következőt: .
 
-A parancsmag létrehoz egy új webhelyet az Azure-ban, és előkészíti a bevezetést a githubon keresztül.
+A parancsmag létrehoz egy új webhelyet az Azure-ban való futtatáshoz, és felkészül a GitHubon keresztüli telepítésre.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: új webhely létrehozása git segítségével
+### 1. példa: Új webhely létrehozása a Git segítségével
 ```
 PS C:\> New-AzureWebsite mySite -Git
 ```
 
-Ez a példa létrehoz egy új webhelyet az Azure-ban, és egy helyi git tárházat használ a fájlok új webhelyre történő központi telepítéséhez.
+Ebben a példában egy új webhelyet hoz létre az Azure-ban, és egy helyi Git-tárházat, használhatja a fájlok új webhelyre való telepítéséhez.
 
-### 2. példa: a GitHub által integrált webhely létrehozása
+### 2. példa: Webhely létrehozása a GitHubbal integrálva
 ```
-PS C:\> New-AzureWebsite mysite -Github -GithubRepository myaccount/myrepo
+PS C:\> New-AzureWebsite mysite -GitHub -GitHubRepository myaccount/myrepo
 ```
 
-Ez a példa létrehoz egy új webhelyet, amely a MyAccount/myrepo GitHub nevű tárházához van társítva.
-Kötelezettséget vállal a GitHub repositoryra az Azure-beli webhelyre.
+Ez a példa létrehoz egy új webhelyet, amely egy Myaccount/myrepo nevű GitHub-tárházhoz van csatolva.
+A GitHub-tárházba való kötelezettséget a rendszer az Azure-ban a webhelyre tetszetzi.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -Git
-Egy helyi git repositoryt hoz létre, és a webhelyre hivatkozik.
-Ha meg van adva, ez a paraméter egy git-tárházat hoz létre a helyi címtárban, és felvesz egy "Azure" nevű távoli tárházat, amely az Azure webhelyére mutató hivatkozásokat tartalmaz.
+Beállítja a helyi Git-tárat, és a webhelyre mutató hivatkozást hoz létre.
+Ha meg van adva, ez a paraméter beállítja a Git-tárat a helyi címtárban, és hozzáad egy "azure" nevű távoli tárat, amely az Azure-beli webhelyre mutató hivatkozást tartalmaz.
 
 ```yaml
 Type: SwitchParameter
@@ -65,8 +65,8 @@ Accept wildcard characters: False
 ```
 
 ### -GitHub
-Jelzi, hogy ez a parancsmag az új webhelyet egy meglévő GitHub-tárházhoz csatolja.
-A Giuthub repository véglegesítése az Azure webhelyére kerül.
+Azt jelzi, hogy ez a parancsmag egy meglévő GitHub-tárházhoz kapcsolódik az új webhelyhez.
+A Giuthub-tárházba való kötelezettséget a rendszer az Azure-ban a webhelyre tolta.
 
 ```yaml
 Type: SwitchParameter
@@ -80,8 +80,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -GithubCredentials
-A Felhasználónév és a jelszó hitelesítő adatait adja meg a Githubhoz való csatlakozáshoz.
+### -GitHubCredentials
+A GitHubhoz való csatlakozáshoz használt felhasználónév és jelszó hitelesítő adatait adja meg.
 
 ```yaml
 Type: PSCredential
@@ -95,9 +95,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -GithubRepository
-Itt adhatja meg a webhelyre mutató GitHub-tárház teljes nevét.
-Például: `myaccount/myrepo` .
+### -GitHubRepository
+A webhelyre mutató hivatkozás gitHub-tár teljes nevét adja meg.
+`myaccount/myrepo`Például.
 
 ```yaml
 Type: String
@@ -111,8 +111,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Hostname (állomásnév)
-Az új webhely másodlagos állomásnevét adja meg.
+### -Hostname
+Az új webhely alternatív állomásnevét adja meg.
 
 ```yaml
 Type: String
@@ -126,8 +126,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Hely
-Annak az adatközpontnak a helyét adja meg, ahol a webhelyet telepíteni szeretné.
+### -Location
+Megadja annak az adatközpontnak a helyét, ahová a webhelyet telepíteni szeretné.
 
 ```yaml
 Type: String
@@ -141,8 +141,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name (név)
-A webhely nevét adja meg.
+### -Name
+Megadja a webhely nevét.
 
 ```yaml
 Type: String
@@ -157,8 +157,8 @@ Accept wildcard characters: False
 ```
 
 ### -Profil
-Azt az Azure-profilt adja meg, amelyből a parancsmag olvasható.
-Ha nem ad meg profilt, a parancsmag a helyi alapértelmezett profilból olvassa be a szöveget.
+Azt az Azure-profilt adja meg, amelyből a parancsmag olvas.
+Ha nem ad meg profilt, ez a parancsmag a helyi alapértelmezett profilból olvassa be.
 
 ```yaml
 Type: AzureSMProfile
@@ -173,7 +173,7 @@ Accept wildcard characters: False
 ```
 
 ### -PublishingUsername
-Megadja, hogy milyen Felhasználónév van megadva az Azure portálon a git telepítéséhez.
+Az Azure Portal for Git-telepítésben megadott felhasználónevet adja meg.
 
 ```yaml
 Type: String
@@ -188,7 +188,7 @@ Accept wildcard characters: False
 ```
 
 ### -Slot
-A webhely tárolóhelyének a nevét adja meg.
+Megadja a webhely helynevét.
 
 ```yaml
 Type: String
@@ -203,13 +203,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
 ## KIMENETEK
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
