@@ -1,0 +1,300 @@
+---
+external help file: ''
+Module Name: Az.DedicatedHsm
+online version: https://docs.microsoft.com/en-us/powershell/module/az.dedicatedhsm/new-azdedicatedhsm
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DedicatedHsm/help/New-AzDedicatedHsm.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DedicatedHsm/help/New-AzDedicatedHsm.md
+ms.openlocfilehash: ff1fc53d7fec9a56564bbf536469ea9f745f9265
+ms.sourcegitcommit: 04221336bc9eed46c05ed1e828a6811534d4b4ab
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "98343817"
+---
+# <span data-ttu-id="be25b-101">New-AzDedicatedHsm</span><span class="sxs-lookup"><span data-stu-id="be25b-101">New-AzDedicatedHsm</span></span>
+
+## <span data-ttu-id="be25b-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="be25b-102">SYNOPSIS</span></span>
+<span data-ttu-id="be25b-103">Dedikált HSM létrehozása vagy frissítése a megadott előfizetésben.</span><span class="sxs-lookup"><span data-stu-id="be25b-103">Create or Update a dedicated HSM in the specified subscription.</span></span>
+
+## <span data-ttu-id="be25b-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="be25b-104">SYNTAX</span></span>
+
+```
+New-AzDedicatedHsm -Name <String> -ResourceGroupName <String> -Location <String> [-SubscriptionId <String>]
+ [-NetworkInterface <INetworkInterface[]>] [-Sku <String>] [-StampId <String>] [-SubnetId <String>]
+ [-Tag <Hashtable>] [-Zone <String[]>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="be25b-105">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="be25b-105">DESCRIPTION</span></span>
+<span data-ttu-id="be25b-106">Dedikált HSM létrehozása vagy frissítése a megadott előfizetésben.</span><span class="sxs-lookup"><span data-stu-id="be25b-106">Create or Update a dedicated HSM in the specified subscription.</span></span>
+
+## <span data-ttu-id="be25b-107">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="be25b-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="be25b-108">1. példa: Dedikált HSM létrehozása meglévő virtuális hálózatban</span><span class="sxs-lookup"><span data-stu-id="be25b-108">Example 1: Create a Dedicated HSM into an existing virtual network</span></span>
+```powershell
+PS C:\> New-AzDedicatedHsm -Name  hsm-n7wfxi -ResourceGroupName dedicatedhsm-rg-n359cz -Location eastus -Sku "SafeNet Luna Network HSM A790" -StampId stamp1 -SubnetId "/subscriptions/xxxx-xxxx-xxx-xxx/resourceGroups/dedicatedhsm-rg-n359cz/providers/Microsoft.Network/virtualNetworks/vnetq30la9/subnets/hsmsubnet" -NetworkInterface @{PrivateIPAddress = '10.2.1.120' }
+
+Name       Provisioning State SKU                           Location
+----       ------------------ ---                           --------
+hsm-n7wfxi Succeeded          SafeNet Luna Network HSM A790 eastus
+```
+
+<span data-ttu-id="be25b-109">Ez a parancs egy dedikált HSM-et hoz létre egy meglévő virtuális hálózatban.</span><span class="sxs-lookup"><span data-stu-id="be25b-109">This command creates a Dedicated HSM into an existing virtual network.</span></span>
+
+<span data-ttu-id="be25b-110">**MEGJEGYZÉS:** Jelenleg van egy korlátozás, amely a HSM azure-on való teljes kiépítése előtt `New-AzDedicatedHsm` tér vissza.</span><span class="sxs-lookup"><span data-stu-id="be25b-110">**NOTE:** Currently `New-AzDedicatedHsm` has a limitation that it returns before the HSM is fully provisioned on Azure.</span></span>
+<span data-ttu-id="be25b-111">Ezért ha létrehoz egy új HSM-et, a használat előtt ellenőrizze az állapotát, és győződjön meg arról, hogy `Get-AzDedicatedHsm` `Provisioning State` az a `Succeeded` megfelelő.</span><span class="sxs-lookup"><span data-stu-id="be25b-111">Therefore after creating a new HSM, please query its state by `Get-AzDedicatedHsm` and make sure its `Provisioning State` is `Succeeded` before using it.</span></span>
+
+## <span data-ttu-id="be25b-112">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="be25b-112">PARAMETERS</span></span>
+
+### <span data-ttu-id="be25b-113">-AsJob</span><span class="sxs-lookup"><span data-stu-id="be25b-113">-AsJob</span></span>
+<span data-ttu-id="be25b-114">A parancs futtatása feladatként</span><span class="sxs-lookup"><span data-stu-id="be25b-114">Run the command as a job</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="be25b-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="be25b-115">-DefaultProfile</span></span>
+<span data-ttu-id="be25b-116">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="be25b-116">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: System.Management.Automation.PSObject
+Parameter Sets: (All)
+Aliases: AzureRMContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="be25b-117">-Location</span><span class="sxs-lookup"><span data-stu-id="be25b-117">-Location</span></span>
+<span data-ttu-id="be25b-118">A támogatott Azure-hely, ahol létre kell hoznunk a dedikált HSM-et.</span><span class="sxs-lookup"><span data-stu-id="be25b-118">The supported Azure location where the dedicated HSM should be created.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="be25b-119">-Name</span><span class="sxs-lookup"><span data-stu-id="be25b-119">-Name</span></span>
+<span data-ttu-id="be25b-120">A dedikált Hsm neve</span><span class="sxs-lookup"><span data-stu-id="be25b-120">Name of the dedicated Hsm</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="be25b-121">-NetworkInterface</span><span class="sxs-lookup"><span data-stu-id="be25b-121">-NetworkInterface</span></span>
+<span data-ttu-id="be25b-122">A dedikált HSM-hez társított hálózati felületek erőforrás-azonosítójának listáját adja meg.</span><span class="sxs-lookup"><span data-stu-id="be25b-122">Specifies the list of resource Ids for the network interfaces associated with the dedicated HSM.</span></span>
+<span data-ttu-id="be25b-123">Ennek létrehozásáról az NETWORKINTERFACE tulajdonságokat és egy kivonattáblát a NOTES (JEGYZETEK) című szakaszban láthat.</span><span class="sxs-lookup"><span data-stu-id="be25b-123">To construct, see NOTES section for NETWORKINTERFACE properties and create a hash table.</span></span>
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.DedicatedHsm.Models.Api20181031.INetworkInterface[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="be25b-124">-NoWait</span><span class="sxs-lookup"><span data-stu-id="be25b-124">-NoWait</span></span>
+<span data-ttu-id="be25b-125">A parancs futtatása aszinkron módon</span><span class="sxs-lookup"><span data-stu-id="be25b-125">Run the command asynchronously</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="be25b-126">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="be25b-126">-ResourceGroupName</span></span>
+<span data-ttu-id="be25b-127">Annak az erőforráscsoportnak a neve, amelyhez az erőforrás tartozik.</span><span class="sxs-lookup"><span data-stu-id="be25b-127">The name of the Resource Group to which the resource belongs.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="be25b-128">-Termékváltozat</span><span class="sxs-lookup"><span data-stu-id="be25b-128">-Sku</span></span>
+<span data-ttu-id="be25b-129">A dedikált HSM termékváltozata</span><span class="sxs-lookup"><span data-stu-id="be25b-129">SKU of the dedicated HSM</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="be25b-130">-StampId</span><span class="sxs-lookup"><span data-stu-id="be25b-130">-StampId</span></span>
+<span data-ttu-id="be25b-131">Ezt a mezőt akkor használja a program, ha a RP nem támogatja az elérhetőségi zónákat.</span><span class="sxs-lookup"><span data-stu-id="be25b-131">This field will be used when RP does not support Availability zones.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="be25b-132">-SubnetId</span><span class="sxs-lookup"><span data-stu-id="be25b-132">-SubnetId</span></span>
+<span data-ttu-id="be25b-133">A ARM/subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroupName}/...</span><span class="sxs-lookup"><span data-stu-id="be25b-133">The ARM resource id in the form of /subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroupName}/...</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="be25b-134">-SubscriptionId</span><span class="sxs-lookup"><span data-stu-id="be25b-134">-SubscriptionId</span></span>
+<span data-ttu-id="be25b-135">Előfizetési hitelesítő adatok, amelyek egyedileg azonosítják a Microsoft Azure-előfizetést.</span><span class="sxs-lookup"><span data-stu-id="be25b-135">Subscription credentials which uniquely identify Microsoft Azure subscription.</span></span>
+<span data-ttu-id="be25b-136">Az előfizetésazonosító minden szolgáltatási hívás URI-jának részét képezi.</span><span class="sxs-lookup"><span data-stu-id="be25b-136">The subscription ID forms part of the URI for every service call.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="be25b-137">-Tag</span><span class="sxs-lookup"><span data-stu-id="be25b-137">-Tag</span></span>
+<span data-ttu-id="be25b-138">Erőforráscímkék</span><span class="sxs-lookup"><span data-stu-id="be25b-138">Resource tags</span></span>
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="be25b-139">-Zone</span><span class="sxs-lookup"><span data-stu-id="be25b-139">-Zone</span></span>
+<span data-ttu-id="be25b-140">A dedikált Hsm zones.</span><span class="sxs-lookup"><span data-stu-id="be25b-140">The Dedicated Hsm zones.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="be25b-141">-Confirm</span><span class="sxs-lookup"><span data-stu-id="be25b-141">-Confirm</span></span>
+<span data-ttu-id="be25b-142">A parancsmag futtatása előtt a rendszer megerősítést kér.</span><span class="sxs-lookup"><span data-stu-id="be25b-142">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="be25b-143">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="be25b-143">-WhatIf</span></span>
+<span data-ttu-id="be25b-144">A parancsmag futtatásakor a program megjeleníti, hogy mi történik.</span><span class="sxs-lookup"><span data-stu-id="be25b-144">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="be25b-145">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="be25b-145">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="be25b-146">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="be25b-146">CommonParameters</span></span>
+<span data-ttu-id="be25b-147">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="be25b-147">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="be25b-148">További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="be25b-148">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="be25b-149">INPUTS</span><span class="sxs-lookup"><span data-stu-id="be25b-149">INPUTS</span></span>
+
+## <span data-ttu-id="be25b-150">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="be25b-150">OUTPUTS</span></span>
+
+### <span data-ttu-id="be25b-151">Microsoft.Azure.PowerShell.Cmdlets.DedicatedHsm.Models.Api20181031.IDedicatedHsm</span><span class="sxs-lookup"><span data-stu-id="be25b-151">Microsoft.Azure.PowerShell.Cmdlets.DedicatedHsm.Models.Api20181031.IDedicatedHsm</span></span>
+
+## <span data-ttu-id="be25b-152">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="be25b-152">NOTES</span></span>
+
+<span data-ttu-id="be25b-153">ALIASOK</span><span class="sxs-lookup"><span data-stu-id="be25b-153">ALIASES</span></span>
+
+<span data-ttu-id="be25b-154">COMPLEX PARAMETER PROPERTIES</span><span class="sxs-lookup"><span data-stu-id="be25b-154">COMPLEX PARAMETER PROPERTIES</span></span>
+
+<span data-ttu-id="be25b-155">Az alább ismertetett paraméterek létrehozásához hozzon létre egy olyan kivonattáblát, amely tartalmazza a megfelelő tulajdonságokat.</span><span class="sxs-lookup"><span data-stu-id="be25b-155">To create the parameters described below, construct a hash table containing the appropriate properties.</span></span> <span data-ttu-id="be25b-156">A kivonattáblákról további információt a Get-Help about_Hash_Tables.</span><span class="sxs-lookup"><span data-stu-id="be25b-156">For information on hash tables, run Get-Help about_Hash_Tables.</span></span>
+
+
+<span data-ttu-id="be25b-157">NETWORKINTERFACE <INetworkInterface[]>: A dedikált HSM-hez társított hálózati felületek erőforrás-azonosítóinak listáját adja meg.</span><span class="sxs-lookup"><span data-stu-id="be25b-157">NETWORKINTERFACE <INetworkInterface[]>: Specifies the list of resource Ids for the network interfaces associated with the dedicated HSM.</span></span>
+  - <span data-ttu-id="be25b-158">`[PrivateIPAddress <String>]`: A felület privát IP-címe</span><span class="sxs-lookup"><span data-stu-id="be25b-158">`[PrivateIPAddress <String>]`: Private Ip address of the interface</span></span>
+
+## <span data-ttu-id="be25b-159">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="be25b-159">RELATED LINKS</span></span>
+
