@@ -1,0 +1,259 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices.Backup.dll-Help.xml
+Module Name: Az.RecoveryServices
+online version: https://docs.microsoft.com/en-us/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupworkloadrecoveryconfig
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesBackupWorkloadRecoveryConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesBackupWorkloadRecoveryConfig.md
+ms.openlocfilehash: 4209755de3475b21405fafd7f1e769bbbe3f7718
+ms.sourcegitcommit: 04221336bc9eed46c05ed1e828a6811534d4b4ab
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "98333306"
+---
+# <span data-ttu-id="1ceb9-101">Get-AzRecoveryServicesBackupWorkloadRecoveryConfig</span><span class="sxs-lookup"><span data-stu-id="1ceb9-101">Get-AzRecoveryServicesBackupWorkloadRecoveryConfig</span></span>
+
+## <span data-ttu-id="1ceb9-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="1ceb9-102">SYNOPSIS</span></span>
+<span data-ttu-id="1ceb9-103">Ez a parancs egy biztonságiolt elem, például az SQL DB helyreállítási konfigurációját építi fel.</span><span class="sxs-lookup"><span data-stu-id="1ceb9-103">This command constructs the recovery configuration of a backed up item such as SQL DB.</span></span> <span data-ttu-id="1ceb9-104">A konfigurációs objektum minden részletet tárol, például a helyreállítási módot, a visszaállítási és alkalmazásspecifikus paraméterek célhelyét, például az SQL cél fizikai útvonalát.</span><span class="sxs-lookup"><span data-stu-id="1ceb9-104">The configuration object stores all details such as the recovery mode, target destinations for the restore and application specific parameters like target physical paths for SQL.</span></span>
+
+## <span data-ttu-id="1ceb9-105">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="1ceb9-105">SYNTAX</span></span>
+
+### <span data-ttu-id="1ceb9-106">RpParameterSet (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="1ceb9-106">RpParameterSet (Default)</span></span>
+```
+Get-AzRecoveryServicesBackupWorkloadRecoveryConfig [[-RecoveryPoint] <RecoveryPointBase>]
+ [[-TargetItem] <ProtectableItemBase>] [[-Item] <ItemBase>] [-OriginalWorkloadRestore]
+ [-AlternateWorkloadRestore] [-TargetContainer <ContainerBase>] [-RestoreAsFiles]
+ [-FromFull <RecoveryPointBase>] [-FilePath <String>] [-VaultId <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="1ceb9-107">LogChainParameterSet</span><span class="sxs-lookup"><span data-stu-id="1ceb9-107">LogChainParameterSet</span></span>
+```
+Get-AzRecoveryServicesBackupWorkloadRecoveryConfig [[-PointInTime] <DateTime>]
+ [[-TargetItem] <ProtectableItemBase>] [[-Item] <ItemBase>] [-OriginalWorkloadRestore]
+ [-AlternateWorkloadRestore] [-TargetContainer <ContainerBase>] [-RestoreAsFiles]
+ [-FromFull <RecoveryPointBase>] [-FilePath <String>] [-VaultId <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="1ceb9-108">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="1ceb9-108">DESCRIPTION</span></span>
+<span data-ttu-id="1ceb9-109">A parancs visszaadja a visszaállítási parancsmagnak átadott AzureWorkload-elemek helyreállítási konfigurációját.</span><span class="sxs-lookup"><span data-stu-id="1ceb9-109">The command returns a recovery config for AzureWorkload items which is passed to the restore cmdlet.</span></span>
+
+## <span data-ttu-id="1ceb9-110">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="1ceb9-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="1ceb9-111">1. példa</span><span class="sxs-lookup"><span data-stu-id="1ceb9-111">Example 1</span></span>
+```powershell
+PS C:\> $SQLRecoveryObject = Get-AzRecoveryServicesBackupRecoveryPoint -Item $SQLBkpItem $startdate $enddate | Get-AzRecoveryServicesWorkloadRecoveryConfig -OriginalWorkloadRestore
+PS C:\> $SQLRecoveryObject = Get-AzRecoveryServicesBackupRecoveryPoint -Item $SQLBkpItem $startdate $enddate | Get-AzRecoveryServicesWorkloadRecoveryConfig -AlternateWorkloadRestore -TargetItem $SQLProtItem
+```
+
+<span data-ttu-id="1ceb9-112">A rendszer az első parancsmagot használja a Helyreállítási pont objektum beszerzése során.</span><span class="sxs-lookup"><span data-stu-id="1ceb9-112">The first cmdlet is used to get the Recovery point object.</span></span>
+<span data-ttu-id="1ceb9-113">A második parancsmag létrehoz egy helyreállítási tervet az eredeti hely-visszaállításhoz.</span><span class="sxs-lookup"><span data-stu-id="1ceb9-113">The second cmdlet creates a recovery plan for a original location restore.</span></span>
+<span data-ttu-id="1ceb9-114">A harmadik parancsmag létrehoz egy helyreállítási tervet egy másik hely-visszaállításhoz.</span><span class="sxs-lookup"><span data-stu-id="1ceb9-114">THe third cmdlet creates a recovery plan for a alternate location restore.</span></span>
+
+### <span data-ttu-id="1ceb9-115">2. példa</span><span class="sxs-lookup"><span data-stu-id="1ceb9-115">Example 2</span></span>
+
+<span data-ttu-id="1ceb9-116">Ez a parancs egy biztonságiolt elem, például az SQL DB helyreállítási konfigurációját építi fel.</span><span class="sxs-lookup"><span data-stu-id="1ceb9-116">This command constructs the recovery configuration of a backed up item such as SQL DB.</span></span> <span data-ttu-id="1ceb9-117">(automatikusan generált)</span><span class="sxs-lookup"><span data-stu-id="1ceb9-117">(autogenerated)</span></span>
+
+```powershell <!-- Aladdin Generated Example --> 
+Get-AzRecoveryServicesBackupWorkloadRecoveryConfig -AlternateWorkloadRestore -RecoveryPoint $rp[0] -TargetItem <ProtectableItemBase> -VaultId $vault.ID
+```
+
+## <span data-ttu-id="1ceb9-118">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="1ceb9-118">PARAMETERS</span></span>
+
+### <span data-ttu-id="1ceb9-119">-AlternateWorkloadRestore</span><span class="sxs-lookup"><span data-stu-id="1ceb9-119">-AlternateWorkloadRestore</span></span>
+<span data-ttu-id="1ceb9-120">Azt adja meg, hogy a biztonsági másolat egy másik kijelölt kiszolgálóra legyen visszaállítva.</span><span class="sxs-lookup"><span data-stu-id="1ceb9-120">Specifies that the backed up DB should be restored onto another selected server.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1ceb9-121">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="1ceb9-121">-DefaultProfile</span></span>
+<span data-ttu-id="1ceb9-122">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="1ceb9-122">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1ceb9-123">-FilePath</span><span class="sxs-lookup"><span data-stu-id="1ceb9-123">-FilePath</span></span>
+<span data-ttu-id="1ceb9-124">A visszaállítási művelethez használt fájlpath.</span><span class="sxs-lookup"><span data-stu-id="1ceb9-124">Specifies the filepath which is used for restore operation.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1ceb9-125">-FromFull</span><span class="sxs-lookup"><span data-stu-id="1ceb9-125">-FromFull</span></span>
+<span data-ttu-id="1ceb9-126">Azt a teljes helyreállításipointot adja meg, amelyre a rendszer biztonsági másolatot készít.</span><span class="sxs-lookup"><span data-stu-id="1ceb9-126">Specifies the Full RecoveryPoint to which Log backups will be applied.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.RecoveryPointBase
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1ceb9-127">-Item</span><span class="sxs-lookup"><span data-stu-id="1ceb9-127">-Item</span></span>
+<span data-ttu-id="1ceb9-128">Azt a biztonságimásolat-elemet adja meg, amelyen a visszaállítási művelet történik.</span><span class="sxs-lookup"><span data-stu-id="1ceb9-128">Specifies the backup item on which the restore operation is being performed.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.ItemBase
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1ceb9-129">-OriginalWorkloadRestore</span><span class="sxs-lookup"><span data-stu-id="1ceb9-129">-OriginalWorkloadRestore</span></span>
+<span data-ttu-id="1ceb9-130">Azt adja meg, hogy a rendszer felülírja a biztonsági adatbázist a helyreállítási ponton található adatbázis-adatokkal.</span><span class="sxs-lookup"><span data-stu-id="1ceb9-130">Specifies that the backed up DB is to be overwritten with the DB information present in the recovery point.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1ceb9-131">-PointInTime</span><span class="sxs-lookup"><span data-stu-id="1ceb9-131">-PointInTime</span></span>
+<span data-ttu-id="1ceb9-132">Annak az időtartománynak a vége, amelynek helyreállítási pontját le kell kérni</span><span class="sxs-lookup"><span data-stu-id="1ceb9-132">End time of Time range for which recovery point need to be fetched</span></span>
+
+```yaml
+Type: System.DateTime
+Parameter Sets: LogChainParameterSet
+Aliases:
+
+Required: False
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1ceb9-133">-RecoveryPoint</span><span class="sxs-lookup"><span data-stu-id="1ceb9-133">-RecoveryPoint</span></span>
+<span data-ttu-id="1ceb9-134">Visszaállítható helyreállításipont-objektum</span><span class="sxs-lookup"><span data-stu-id="1ceb9-134">Recovery point object to be restored</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.RecoveryPointBase
+Parameter Sets: RpParameterSet
+Aliases:
+
+Required: False
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1ceb9-135">-RestoreAsFiles</span><span class="sxs-lookup"><span data-stu-id="1ceb9-135">-RestoreAsFiles</span></span>
+<span data-ttu-id="1ceb9-136">Azt adja meg, hogy az adatbázist fájlokként állítsa vissza a számítógépen.</span><span class="sxs-lookup"><span data-stu-id="1ceb9-136">Specifies to restore Database as files in a machine.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1ceb9-137">-TargetContainer</span><span class="sxs-lookup"><span data-stu-id="1ceb9-137">-TargetContainer</span></span>
+<span data-ttu-id="1ceb9-138">Azt a célgépet adja meg, amelyen a DB-fájlokat vissza kell állítani.</span><span class="sxs-lookup"><span data-stu-id="1ceb9-138">Specifies the target machine on which DB Files need to be restored.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.ContainerBase
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1ceb9-139">-TargetItem</span><span class="sxs-lookup"><span data-stu-id="1ceb9-139">-TargetItem</span></span>
+<span data-ttu-id="1ceb9-140">Azt a célt adja meg, amelyen a adatbázis-adatbázist vissza kell állítani.</span><span class="sxs-lookup"><span data-stu-id="1ceb9-140">Specifies the target on which the DB needs to be restored.</span></span> <span data-ttu-id="1ceb9-141">Az SQL-visszaállítások csak SQLInstance típusú, védett elemtípussal állíthatók be.</span><span class="sxs-lookup"><span data-stu-id="1ceb9-141">For SQL restores, it needs to be of protectable item type SQLInstance only.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.ProtectableItemBase
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1ceb9-142">-VaultId</span><span class="sxs-lookup"><span data-stu-id="1ceb9-142">-VaultId</span></span>
+<span data-ttu-id="1ceb9-143">ARM helyreállítási szolgáltatások tárolójának azonosítója.</span><span class="sxs-lookup"><span data-stu-id="1ceb9-143">ARM ID of the Recovery Services Vault.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1ceb9-144">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="1ceb9-144">CommonParameters</span></span>
+<span data-ttu-id="1ceb9-145">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="1ceb9-145">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="1ceb9-146">További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="1ceb9-146">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="1ceb9-147">INPUTS</span><span class="sxs-lookup"><span data-stu-id="1ceb9-147">INPUTS</span></span>
+
+### <span data-ttu-id="1ceb9-148">Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.RecoveryPointBase</span><span class="sxs-lookup"><span data-stu-id="1ceb9-148">Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.RecoveryPointBase</span></span>
+<span data-ttu-id="1ceb9-149">System.String</span><span class="sxs-lookup"><span data-stu-id="1ceb9-149">System.String</span></span>
+
+## <span data-ttu-id="1ceb9-150">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="1ceb9-150">OUTPUTS</span></span>
+
+### <span data-ttu-id="1ceb9-151">Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.RecoveryConfigBase</span><span class="sxs-lookup"><span data-stu-id="1ceb9-151">Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.RecoveryConfigBase</span></span>
+
+## <span data-ttu-id="1ceb9-152">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="1ceb9-152">NOTES</span></span>
+
+## <span data-ttu-id="1ceb9-153">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="1ceb9-153">RELATED LINKS</span></span>
