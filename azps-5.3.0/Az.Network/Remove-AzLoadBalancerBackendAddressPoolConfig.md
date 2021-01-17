@@ -1,0 +1,142 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+ms.assetid: F965A9DE-645C-471B-84E8-58D648B1CA57
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/remove-azloadbalancerbackendaddresspoolconfig
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzLoadBalancerBackendAddressPoolConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzLoadBalancerBackendAddressPoolConfig.md
+ms.openlocfilehash: 26f7e0dde825305e888d598a23af0b2fbaff81cd
+ms.sourcegitcommit: 68451baa389791703e666d95469602c5652609ee
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "98468914"
+---
+# <span data-ttu-id="e39db-101">Remove-AzLoadBalancerBackendAddressPoolConfig</span><span class="sxs-lookup"><span data-stu-id="e39db-101">Remove-AzLoadBalancerBackendAddressPoolConfig</span></span>
+
+## <span data-ttu-id="e39db-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="e39db-102">SYNOPSIS</span></span>
+<span data-ttu-id="e39db-103">A háttércímkészlet konfigurációjának eltávolítása a terheléselosztásból.</span><span class="sxs-lookup"><span data-stu-id="e39db-103">Removes a backend address pool configuration from a load balancer.</span></span>
+
+## <span data-ttu-id="e39db-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="e39db-104">SYNTAX</span></span>
+
+```
+Remove-AzLoadBalancerBackendAddressPoolConfig -LoadBalancer <PSLoadBalancer> [-Name <String>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="e39db-105">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="e39db-105">DESCRIPTION</span></span>
+<span data-ttu-id="e39db-106">A **Remove-AzLoadBalancerBackendAddressPoolConfig** parancsmag eltávolítja a háttércímkészletet a terheléselegyenítőből.</span><span class="sxs-lookup"><span data-stu-id="e39db-106">The **Remove-AzLoadBalancerBackendAddressPoolConfig** cmdlet removes a backend address pool from a load balancer.</span></span>
+
+## <span data-ttu-id="e39db-107">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="e39db-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="e39db-108">1. példa: Háttércímkészlet-konfiguráció eltávolítása terheléselosztásból</span><span class="sxs-lookup"><span data-stu-id="e39db-108">Example 1: Remove a backend address pool configuration from a load balancer</span></span>
+```
+PS C:\>Get-AzLoadBalancer -Name "MyLoadBalancer" -ResourceGroupName "MyResourceGroup" | Remove-AzLoadBalancerBackendAddressPoolConfig -Name "BackendAddressPool02" | Set-AzLoadBalancer
+```
+
+<span data-ttu-id="e39db-109">Ez a parancs megkapja a MyLoadBalancer nevű terheléselegyenítőt, és átadja a **Remove-AzLoadBalancerBackendAddressPoolConfig** fájlnak, amely eltávolítja a BackendAddressPool02 konfigurációt a MyLoadBalancerből.</span><span class="sxs-lookup"><span data-stu-id="e39db-109">This command gets the load balancer named MyLoadBalancer and passes it to **Remove-AzLoadBalancerBackendAddressPoolConfig**, which removes the BackendAddressPool02 configuration from MyLoadBalancer.</span></span>
+<span data-ttu-id="e39db-110">Végül a Set-AzLoadBalancer a MyLoadBalancer parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="e39db-110">Finally, the Set-AzLoadBalancer cmdlet updates MyLoadBalancer.</span></span>
+<span data-ttu-id="e39db-111">Ne feledje, hogy a törlés előtt a háttércímkészletnek konfigurálva kell lennie.</span><span class="sxs-lookup"><span data-stu-id="e39db-111">Note that a backend address pool configuration must exist before you can delete it.</span></span>
+
+## <span data-ttu-id="e39db-112">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="e39db-112">PARAMETERS</span></span>
+
+### <span data-ttu-id="e39db-113">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="e39db-113">-DefaultProfile</span></span>
+<span data-ttu-id="e39db-114">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="e39db-114">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e39db-115">-LoadBalancer</span><span class="sxs-lookup"><span data-stu-id="e39db-115">-LoadBalancer</span></span>
+<span data-ttu-id="e39db-116">Azt a terheléskiegyenlítőt adja meg, amely az eltávolítható háttércímkészletet tartalmazza.</span><span class="sxs-lookup"><span data-stu-id="e39db-116">Specifies the load balancer that contains the backend address pool to remove.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSLoadBalancer
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e39db-117">-Name</span><span class="sxs-lookup"><span data-stu-id="e39db-117">-Name</span></span>
+<span data-ttu-id="e39db-118">Annak a háttércímkészletnek a nevét adja meg, amelyről a parancsmag eltávolítja a parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="e39db-118">Specifies the name of the backend address pool that this cmdlet removes.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e39db-119">-Confirm</span><span class="sxs-lookup"><span data-stu-id="e39db-119">-Confirm</span></span>
+<span data-ttu-id="e39db-120">A parancsmag futtatása előtt a rendszer megerősítést kér.</span><span class="sxs-lookup"><span data-stu-id="e39db-120">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e39db-121">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="e39db-121">-WhatIf</span></span>
+<span data-ttu-id="e39db-122">A parancsmag futtatásakor a program megjeleníti, hogy mi történik.</span><span class="sxs-lookup"><span data-stu-id="e39db-122">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="e39db-123">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="e39db-123">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e39db-124">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="e39db-124">CommonParameters</span></span>
+<span data-ttu-id="e39db-125">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="e39db-125">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="e39db-126">További információt a about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="e39db-126">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="e39db-127">INPUTS</span><span class="sxs-lookup"><span data-stu-id="e39db-127">INPUTS</span></span>
+
+### <span data-ttu-id="e39db-128">Microsoft.Azure.Commands.Network.Models.PSLoadBalancer</span><span class="sxs-lookup"><span data-stu-id="e39db-128">Microsoft.Azure.Commands.Network.Models.PSLoadBalancer</span></span>
+
+## <span data-ttu-id="e39db-129">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="e39db-129">OUTPUTS</span></span>
+
+### <span data-ttu-id="e39db-130">Microsoft.Azure.Commands.Network.Models.PSLoadBalancer</span><span class="sxs-lookup"><span data-stu-id="e39db-130">Microsoft.Azure.Commands.Network.Models.PSLoadBalancer</span></span>
+
+## <span data-ttu-id="e39db-131">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="e39db-131">NOTES</span></span>
+
+## <span data-ttu-id="e39db-132">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="e39db-132">RELATED LINKS</span></span>
+
+[<span data-ttu-id="e39db-133">Add-AzLoadBalancerBackendAddressPoolConfig</span><span class="sxs-lookup"><span data-stu-id="e39db-133">Add-AzLoadBalancerBackendAddressPoolConfig</span></span>](./Add-AzLoadBalancerBackendAddressPoolConfig.md)
+
+[<span data-ttu-id="e39db-134">Get-AzLoadBalancer</span><span class="sxs-lookup"><span data-stu-id="e39db-134">Get-AzLoadBalancer</span></span>](./Get-AzLoadBalancer.md)
+
+[<span data-ttu-id="e39db-135">Get-AzLoadBalancerBackendAddressPoolConfig</span><span class="sxs-lookup"><span data-stu-id="e39db-135">Get-AzLoadBalancerBackendAddressPoolConfig</span></span>](./Get-AzLoadBalancerBackendAddressPoolConfig.md)
+
+[<span data-ttu-id="e39db-136">New-AzLoadBalancerBackendAddressPoolConfig</span><span class="sxs-lookup"><span data-stu-id="e39db-136">New-AzLoadBalancerBackendAddressPoolConfig</span></span>](./New-AzLoadBalancerBackendAddressPoolConfig.md)
+
+
