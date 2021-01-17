@@ -1,0 +1,127 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.MachineLearning.dll-Help.xml
+Module Name: Az.MachineLearning
+online version: https://docs.microsoft.com/en-us/powershell/module/az.machinelearning/get-azmlwebservicekey
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MachineLearning/MachineLearning/help/Get-AzMlWebServiceKey.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MachineLearning/MachineLearning/help/Get-AzMlWebServiceKey.md
+ms.openlocfilehash: e6da366738bf6b1d56c9500ddd6064c6505a5936
+ms.sourcegitcommit: 04221336bc9eed46c05ed1e828a6811534d4b4ab
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "98360805"
+---
+# <span data-ttu-id="5a60e-101">Get-AzMlWebServiceKey</span><span class="sxs-lookup"><span data-stu-id="5a60e-101">Get-AzMlWebServiceKey</span></span>
+
+## <span data-ttu-id="5a60e-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="5a60e-102">SYNOPSIS</span></span>
+<span data-ttu-id="5a60e-103">Beolvassa a webszolgáltatás kulcsait.</span><span class="sxs-lookup"><span data-stu-id="5a60e-103">Retrieves the web service's keys.</span></span>
+
+## <span data-ttu-id="5a60e-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="5a60e-104">SYNTAX</span></span>
+
+### <span data-ttu-id="5a60e-105">GetByNameAndResourceGroup</span><span class="sxs-lookup"><span data-stu-id="5a60e-105">GetByNameAndResourceGroup</span></span>
+```
+Get-AzMlWebServiceKey -ResourceGroupName <String> -Name <String> [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="5a60e-106">GetByInstance</span><span class="sxs-lookup"><span data-stu-id="5a60e-106">GetByInstance</span></span>
+```
+Get-AzMlWebServiceKey -MlWebService <WebService> [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="5a60e-107">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="5a60e-107">DESCRIPTION</span></span>
+<span data-ttu-id="5a60e-108">Beszerzi az Azure Machine Learning webszolgáltatás futásidejű API-ihoz szükséges hozzáférési kulcsokat.</span><span class="sxs-lookup"><span data-stu-id="5a60e-108">Gets the access keys for the Azure Machine Learning web service's runtime APIs.</span></span>
+
+## <span data-ttu-id="5a60e-109">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="5a60e-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="5a60e-110">1. példa : Az erőforráscsoport és a név által megadott webszolgáltatás kulcsának lekérte</span><span class="sxs-lookup"><span data-stu-id="5a60e-110">Example 1 - Get the keys for a web service specified by resource group and name</span></span>
+```
+Get-AzMlWebServiceKey -ResourceGroupName "myresourcegroup" -Name "mywebservicename"
+```
+
+### <span data-ttu-id="5a60e-111">2. példa: Kulcsok lekérte webszolgáltatás-példányhoz</span><span class="sxs-lookup"><span data-stu-id="5a60e-111">Example 2 - Get keys for web service instance</span></span>
+```
+Get-AzMlWebServiceKey -MlWebService $mlService
+```
+
+<span data-ttu-id="5a60e-112">$mlService Microsoft.Azure.Management.MachineLearning.WebServices.Models.WebService típusú objektum.</span><span class="sxs-lookup"><span data-stu-id="5a60e-112">$mlService is an object of type Microsoft.Azure.Management.MachineLearning.WebServices.Models.WebService.</span></span>
+
+## <span data-ttu-id="5a60e-113">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="5a60e-113">PARAMETERS</span></span>
+
+### <span data-ttu-id="5a60e-114">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="5a60e-114">-DefaultProfile</span></span>
+<span data-ttu-id="5a60e-115">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés</span><span class="sxs-lookup"><span data-stu-id="5a60e-115">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a60e-116">-MlWebService</span><span class="sxs-lookup"><span data-stu-id="5a60e-116">-MlWebService</span></span>
+<span data-ttu-id="5a60e-117">Annak a webszolgáltatásnak a neve, amelyhez beolvassa a hozzáférési kulcsokat.</span><span class="sxs-lookup"><span data-stu-id="5a60e-117">The name of the web service for which the access keys are retrieved.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Management.MachineLearning.WebServices.Models.WebService
+Parameter Sets: GetByInstance
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a60e-118">-Name</span><span class="sxs-lookup"><span data-stu-id="5a60e-118">-Name</span></span>
+<span data-ttu-id="5a60e-119">Annak a webszolgáltatásnak a neve, amelyhez beolvassa a hozzáférési kulcsokat.</span><span class="sxs-lookup"><span data-stu-id="5a60e-119">The name of the web service for which the access keys are retrieved.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: GetByNameAndResourceGroup
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a60e-120">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="5a60e-120">-ResourceGroupName</span></span>
+<span data-ttu-id="5a60e-121">A webszolgáltatás erőforráscsoportja.</span><span class="sxs-lookup"><span data-stu-id="5a60e-121">The resource group for the web service.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: GetByNameAndResourceGroup
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5a60e-122">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="5a60e-122">CommonParameters</span></span>
+<span data-ttu-id="5a60e-123">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="5a60e-123">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="5a60e-124">További információt a about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="5a60e-124">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="5a60e-125">INPUTS</span><span class="sxs-lookup"><span data-stu-id="5a60e-125">INPUTS</span></span>
+
+### <span data-ttu-id="5a60e-126">Microsoft.Azure.Management.MachineLearning.WebServices.Models.WebService</span><span class="sxs-lookup"><span data-stu-id="5a60e-126">Microsoft.Azure.Management.MachineLearning.WebServices.Models.WebService</span></span>
+
+## <span data-ttu-id="5a60e-127">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="5a60e-127">OUTPUTS</span></span>
+
+### <span data-ttu-id="5a60e-128">Microsoft.Azure.Management.MachineLearning.WebServices.Models.WebServiceKeys</span><span class="sxs-lookup"><span data-stu-id="5a60e-128">Microsoft.Azure.Management.MachineLearning.WebServices.Models.WebServiceKeys</span></span>
+
+## <span data-ttu-id="5a60e-129">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="5a60e-129">NOTES</span></span>
+<span data-ttu-id="5a60e-130">Kulcsszavak: azure, azurerm, arm, erőforrás, kezelés, vezető, gépi, gépi tanulás, azureml</span><span class="sxs-lookup"><span data-stu-id="5a60e-130">Keywords: azure, azurerm, arm, resource, management, manager, machine, machine learning, azureml</span></span>
+
+## <span data-ttu-id="5a60e-131">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="5a60e-131">RELATED LINKS</span></span>
