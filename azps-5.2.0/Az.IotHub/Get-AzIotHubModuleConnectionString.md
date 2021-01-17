@@ -1,0 +1,206 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.IotHub.dll-Help.xml
+Module Name: Az.IotHub
+online version: https://docs.microsoft.com/en-us/powershell/module/az.iothub/get-aziothubmoduleconnectionstring
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/IotHub/IotHub/help/Get-AzIotHubModuleConnectionString.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/IotHub/IotHub/help/Get-AzIotHubModuleConnectionString.md
+ms.openlocfilehash: 30926eaad6447f109b1755d419be0b3931a76054
+ms.sourcegitcommit: 04221336bc9eed46c05ed1e828a6811534d4b4ab
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "98348090"
+---
+# <span data-ttu-id="efbac-101">Get-AzIotHubModuleConnectionString</span><span class="sxs-lookup"><span data-stu-id="efbac-101">Get-AzIotHubModuleConnectionString</span></span>
+
+## <span data-ttu-id="efbac-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="efbac-102">SYNOPSIS</span></span>
+<span data-ttu-id="efbac-103">Az Iot-központban lekérte egy célként megcélzott IoT-eszközmodul kapcsolati karakterláncát.</span><span class="sxs-lookup"><span data-stu-id="efbac-103">Get the connection string of a target IoT device module in an Iot Hub.</span></span>
+
+## <span data-ttu-id="efbac-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="efbac-104">SYNTAX</span></span>
+
+### <span data-ttu-id="efbac-105">ResourceSet (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="efbac-105">ResourceSet (Default)</span></span>
+```
+Get-AzIotHubModuleConnectionString [-ResourceGroupName] <String> [-IotHubName] <String> [-DeviceId] <String>
+ [-ModuleId <String>] [-KeyType <PSKeyType>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="efbac-106">InputObjectSet</span><span class="sxs-lookup"><span data-stu-id="efbac-106">InputObjectSet</span></span>
+```
+Get-AzIotHubModuleConnectionString [-InputObject] <PSIotHub> [-DeviceId] <String> [-ModuleId <String>]
+ [-KeyType <PSKeyType>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="efbac-107">ResourceIdSet</span><span class="sxs-lookup"><span data-stu-id="efbac-107">ResourceIdSet</span></span>
+```
+Get-AzIotHubModuleConnectionString [-ResourceId] <String> [-DeviceId] <String> [-ModuleId <String>]
+ [-KeyType <PSKeyType>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="efbac-108">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="efbac-108">DESCRIPTION</span></span>
+<span data-ttu-id="efbac-109">List connection string of all modules or a specified module of a target IoT device contained within an Azure IoT Hub.</span><span class="sxs-lookup"><span data-stu-id="efbac-109">List connection string of all modules or a specified module of a target IoT device contained within an Azure IoT Hub.</span></span>
+
+## <span data-ttu-id="efbac-110">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="efbac-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="efbac-111">1. példa</span><span class="sxs-lookup"><span data-stu-id="efbac-111">Example 1</span></span>
+```powershell
+PS C:\> Get-AzIotHubModuleConnectionString -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -Deviceid "myDevice1"
+
+Module Id Connection String
+--------- -----------------
+module1   HostName=myiothub.azure-devices.net;DeviceId=myDevice1;ModuleId=module1;SharedAccessKey=/X4yj******     
+module2   HostName=myiothub.azure-devices.net;DeviceId=myDevice1;ModuleId=module2;x509=true
+```
+
+<span data-ttu-id="efbac-112">Egy cél IoT-eszköz összes modulkapcsolati karakterláncának megjelenítése egy Iot-központban.</span><span class="sxs-lookup"><span data-stu-id="efbac-112">Show all modules connection string of a target IoT device in an Iot Hub.</span></span>
+
+### <span data-ttu-id="efbac-113">2. példa</span><span class="sxs-lookup"><span data-stu-id="efbac-113">Example 2</span></span>
+```powershell
+PS C:\> Get-AzIotHubMCS -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -ModuleId "module1" -KeyType secondary
+
+Module Id Connection String
+--------- -----------------
+module1   HostName=myiothub.azure-devices.net;DeviceId=myDevice1;ModuleId=module1;SharedAccessKey=/X4yj******
+```
+
+<span data-ttu-id="efbac-114">Szerezze be egy cél IoT-eszköz másodlagos modulkapcsolati karakterláncát egy Iot-központban.</span><span class="sxs-lookup"><span data-stu-id="efbac-114">Get the secondary module connection string of a target IoT device in an Iot Hub.</span></span>
+
+## <span data-ttu-id="efbac-115">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="efbac-115">PARAMETERS</span></span>
+
+### <span data-ttu-id="efbac-116">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="efbac-116">-DefaultProfile</span></span>
+<span data-ttu-id="efbac-117">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="efbac-117">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="efbac-118">-DeviceId</span><span class="sxs-lookup"><span data-stu-id="efbac-118">-DeviceId</span></span>
+<span data-ttu-id="efbac-119">Céleszköz azonosítója.</span><span class="sxs-lookup"><span data-stu-id="efbac-119">Target Device Id.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="efbac-120">-InputObject</span><span class="sxs-lookup"><span data-stu-id="efbac-120">-InputObject</span></span>
+<span data-ttu-id="efbac-121">IotHub objektum</span><span class="sxs-lookup"><span data-stu-id="efbac-121">IotHub object</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Management.IotHub.Models.PSIotHub
+Parameter Sets: InputObjectSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="efbac-122">-IotHubName</span><span class="sxs-lookup"><span data-stu-id="efbac-122">-IotHubName</span></span>
+<span data-ttu-id="efbac-123">Az Iot-központ neve</span><span class="sxs-lookup"><span data-stu-id="efbac-123">Name of the Iot Hub</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ResourceSet
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="efbac-124">-KeyType</span><span class="sxs-lookup"><span data-stu-id="efbac-124">-KeyType</span></span>
+<span data-ttu-id="efbac-125">Hitelesítés megosztott hozzáférési házirendkulcstípusa.</span><span class="sxs-lookup"><span data-stu-id="efbac-125">Shared access policy key type for auth.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Management.IotHub.Models.PSKeyType
+Parameter Sets: (All)
+Aliases:
+Accepted values: primary, secondary
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="efbac-126">-ModuleId</span><span class="sxs-lookup"><span data-stu-id="efbac-126">-ModuleId</span></span>
+<span data-ttu-id="efbac-127">Célmodul-azonosító.</span><span class="sxs-lookup"><span data-stu-id="efbac-127">Target Module Id.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="efbac-128">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="efbac-128">-ResourceGroupName</span></span>
+<span data-ttu-id="efbac-129">Az erőforráscsoport neve</span><span class="sxs-lookup"><span data-stu-id="efbac-129">Name of the Resource Group</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ResourceSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="efbac-130">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="efbac-130">-ResourceId</span></span>
+<span data-ttu-id="efbac-131">IotHub erőforrás-azonosító</span><span class="sxs-lookup"><span data-stu-id="efbac-131">IotHub Resource Id</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ResourceIdSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="efbac-132">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="efbac-132">CommonParameters</span></span>
+<span data-ttu-id="efbac-133">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="efbac-133">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="efbac-134">További információt a about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="efbac-134">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="efbac-135">INPUTS</span><span class="sxs-lookup"><span data-stu-id="efbac-135">INPUTS</span></span>
+
+### <span data-ttu-id="efbac-136">Microsoft.Azure.Commands.Management.iotHub.Models.PSIotHub</span><span class="sxs-lookup"><span data-stu-id="efbac-136">Microsoft.Azure.Commands.Management.IotHub.Models.PSIotHub</span></span>
+
+### <span data-ttu-id="efbac-137">System.String</span><span class="sxs-lookup"><span data-stu-id="efbac-137">System.String</span></span>
+
+## <span data-ttu-id="efbac-138">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="efbac-138">OUTPUTS</span></span>
+
+### <span data-ttu-id="efbac-139">Microsoft.Azure.Commands.Management.iotHub.Models.PSModuleConnectionString</span><span class="sxs-lookup"><span data-stu-id="efbac-139">Microsoft.Azure.Commands.Management.IotHub.Models.PSModuleConnectionString</span></span>
+
+## <span data-ttu-id="efbac-140">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="efbac-140">NOTES</span></span>
+
+## <span data-ttu-id="efbac-141">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="efbac-141">RELATED LINKS</span></span>
