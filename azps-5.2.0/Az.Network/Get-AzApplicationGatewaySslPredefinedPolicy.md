@@ -1,0 +1,233 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/get-azapplicationgatewaysslpredefinedpolicy
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzApplicationGatewaySslPredefinedPolicy.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzApplicationGatewaySslPredefinedPolicy.md
+ms.openlocfilehash: 7a0ab0643b00de314d1e969e1d38bcc7ff4b4d86
+ms.sourcegitcommit: 04221336bc9eed46c05ed1e828a6811534d4b4ab
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "98337877"
+---
+# Get-AzApplicationGatewaySslPredefinedPolicy
+
+## SYNOPSIS
+Az alkalmazás átjárója által megadott előre definiált SSL-házirendeket kap.
+
+## SZINTAXIS
+
+```
+Get-AzApplicationGatewaySslPredefinedPolicy [-Name <String>] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+## LEÍRÁS
+A **Get-AzApplicationGatewaySslPredefinedPolicy parancsmag** előre definiált SSL-házirendeket kap az Application Gatewaytől.
+
+## PÉLDÁK
+
+### 1. példa
+```
+PS C:\> Get-AzApplicationGatewaySslPredefinedPolicy
+
+Name: AppGwSslPolicy20150501
+MinProtocolVersion: TLSv1_0
+CipherSuites:
+    TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+    TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+    TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
+    TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
+    TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA
+    TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA
+    TLS_DHE_RSA_WITH_AES_256_GCM_SHA384
+    TLS_DHE_RSA_WITH_AES_128_GCM_SHA256
+    TLS_DHE_RSA_WITH_AES_256_CBC_SHA
+    TLS_DHE_RSA_WITH_AES_128_CBC_SHA
+    TLS_RSA_WITH_AES_256_GCM_SHA384
+    TLS_RSA_WITH_AES_128_GCM_SHA256
+    TLS_RSA_WITH_AES_256_CBC_SHA256
+    TLS_RSA_WITH_AES_128_CBC_SHA256
+    TLS_RSA_WITH_AES_256_CBC_SHA
+    TLS_RSA_WITH_AES_128_CBC_SHA
+    TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+    TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+    TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384
+    TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256
+    TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA
+    TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA
+    TLS_DHE_DSS_WITH_AES_256_CBC_SHA256
+    TLS_DHE_DSS_WITH_AES_128_CBC_SHA256
+    TLS_DHE_DSS_WITH_AES_256_CBC_SHA
+    TLS_DHE_DSS_WITH_AES_128_CBC_SHA
+    TLS_RSA_WITH_3DES_EDE_CBC_SHA
+    TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA
+
+
+Name: AppGwSslPolicy20170401
+MinProtocolVersion: TLSv1_1
+CipherSuites:
+    TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+    TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+    TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA
+    TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA
+    TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256
+    TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384
+    TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+    TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+    TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA
+    TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA
+    TLS_RSA_WITH_AES_256_GCM_SHA384
+    TLS_RSA_WITH_AES_128_GCM_SHA256
+    TLS_RSA_WITH_AES_256_CBC_SHA256
+    TLS_RSA_WITH_AES_128_CBC_SHA256
+    TLS_RSA_WITH_AES_256_CBC_SHA
+    TLS_RSA_WITH_AES_128_CBC_SHA
+
+
+Name: AppGwSslPolicy20170401S
+MinProtocolVersion: TLSv1_2
+CipherSuites:
+    TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+    TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+    TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA
+    TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA
+    TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256
+    TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384
+    TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+    TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+    TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA
+    TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA
+    TLS_RSA_WITH_AES_256_GCM_SHA384
+    TLS_RSA_WITH_AES_128_GCM_SHA256
+    TLS_RSA_WITH_AES_256_CBC_SHA256
+    TLS_RSA_WITH_AES_128_CBC_SHA256
+    TLS_RSA_WITH_AES_256_CBC_SHA
+    TLS_RSA_WITH_AES_128_CBC_SHA
+```
+
+Ez a parancs az összes előre definiált SSL-házirendet visszaadja.
+
+### 2. példa
+```
+PS C:\> Get-AzApplicationGatewaySslPredefinedPolicy -Name AppGwSslPolicy20170401
+
+Name: AppGwSslPolicy20170401
+MinProtocolVersion: TLSv1_1
+CipherSuites:
+    TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+    TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+    TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA
+    TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA
+    TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256
+    TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384
+    TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+    TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+    TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA
+    TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA
+    TLS_RSA_WITH_AES_256_GCM_SHA384
+    TLS_RSA_WITH_AES_128_GCM_SHA256
+    TLS_RSA_WITH_AES_256_CBC_SHA256
+    TLS_RSA_WITH_AES_128_CBC_SHA256
+    TLS_RSA_WITH_AES_256_CBC_SHA
+    TLS_RSA_WITH_AES_128_CBC_SHA
+```
+
+Ez a parancs előre definiált házirendet ad vissza AppGwSslPolicy20170401 néven.
+
+### 3. példa
+```
+PS C:\> Get-AzApplicationGatewaySslPredefinedPolicy -Name AppGwSslPolicy2017*
+
+Name: AppGwSslPolicy20170401
+MinProtocolVersion: TLSv1_1
+CipherSuites:
+    TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+    TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+    TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA
+    TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA
+    TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256
+    TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384
+    TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+    TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+    TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA
+    TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA
+    TLS_RSA_WITH_AES_256_GCM_SHA384
+    TLS_RSA_WITH_AES_128_GCM_SHA256
+    TLS_RSA_WITH_AES_256_CBC_SHA256
+    TLS_RSA_WITH_AES_128_CBC_SHA256
+    TLS_RSA_WITH_AES_256_CBC_SHA
+    TLS_RSA_WITH_AES_128_CBC_SHA
+
+
+Name: AppGwSslPolicy20170401S
+MinProtocolVersion: TLSv1_2
+CipherSuites:
+    TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+    TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+    TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA
+    TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA
+    TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256
+    TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384
+    TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+    TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+    TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA
+    TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA
+    TLS_RSA_WITH_AES_256_GCM_SHA384
+    TLS_RSA_WITH_AES_128_GCM_SHA256
+    TLS_RSA_WITH_AES_256_CBC_SHA256
+    TLS_RSA_WITH_AES_128_CBC_SHA256
+    TLS_RSA_WITH_AES_256_CBC_SHA
+    TLS_RSA_WITH_AES_128_CBC_SHA
+```
+
+Ez a parancs előre definiált házirendet ad vissza az "AppGwSslPolicy2017" névvel kezdődő névvel.
+
+## PARAMETERS
+
+### -DefaultProfile
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+Az ssl előre definiált házirend neve
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: True
+```
+
+### CommonParameters
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
+
+## INPUTS
+
+### Nincs
+
+## KIMENETEK
+
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslPredefinedPolicy
+
+## MEGJEGYZÉSEK
+
+## KAPCSOLÓDÓ HIVATKOZÁSOK
