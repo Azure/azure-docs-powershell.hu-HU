@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 8cf52259008b2551b780d4cf6f09b4876673723c
-ms.sourcegitcommit: 12bb1a6d1f89789bf2a78992f9b8ca848691a4d7
+ms.openlocfilehash: 5310923995ad8c950183a1fbf97c01530cac734c
+ms.sourcegitcommit: 8f997856c29db6b969893d5c570215d9ab2f2bfb
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98573841"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685854"
 ---
 # <a name="azure-powershell-release-notes"></a>Az Azure PowerShell kibocsátási megjegyzései
 
@@ -52,10 +52,10 @@ ms.locfileid: "98573841"
 
 #### <a name="aznetwork"></a>Az.Network
 * Új parancsmagok lettek hozzáadva a VpnGatewayNATRule SZIFILISZhez.
-    - "New-AzAzVpnGatewayNatRule"
-    - "Update-AzAzVpnGatewayNatRule"
-    - "Get-AzAzVpnGatewayNatRule"
-    - "Remove-AzAzVpnGatewayNatRule"    
+    - "New-AzVpnGatewayNatRule"
+    - "Update-AzVpnGatewayNatRule"
+    - "Get-AzVpnGatewayNatRule"
+    - "Remove-AzVpnGatewayNatRule"  
 * Frissített parancsmagok a átjáróban-erőforrás NATRule beállításához és a VpnSiteLinkConnection-erőforráshoz való hozzárendeléséhez.
     - "New-AzVpnGateway"
     - "Update-AzVpnGateway" 
