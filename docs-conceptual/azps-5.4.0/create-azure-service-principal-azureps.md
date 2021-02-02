@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.service: azure-powershell
 ms.date: 06/17/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: a5640ded6fc8c6478084374f7808450f6a99d6e5
-ms.sourcegitcommit: 12bb1a6d1f89789bf2a78992f9b8ca848691a4d7
+ms.openlocfilehash: 1879fea883c796dae26e353adeab908c8acdb967
+ms.sourcegitcommit: e680033f216d86cd91a1dfdb8328d32f4c99d21a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98573696"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99251845"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Azure-beli szolgáltatásnév létrehozása az Azure PowerShell használatával
 
@@ -22,7 +22,7 @@ Az Azure-beli szolgáltatásnevek olyan identitások, amelyekkel az alkalmazáso
 A cikk bemutatja a szolgáltatásnevek létrehozásának, adatlekérésének és visszaállításának lépéseit az Azure PowerShellben.
 
 > [!WARNING]
-> Amikor a [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) paranccsal egy szolgáltatásnevet hoz létre, a kimenetben olyan hitelesítő adatok találhatóak, amelyeket meg kell védeni. Ügyeljen arra, hogy ne adja meg ezeket a hitelesítő adatokat a kódban, és ne adja be a hitelesítő adatokat a verziókövetésbe. Vagy [felügyelt identitásokat](/azure/active-directory/managed-identities-azure-resources/overview) is használhat – ebben az esetben nincs szükség hitelesítő adatokra.
+> Amikor a [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) paranccsal egy szolgáltatásnevet hoz létre, a kimenetben olyan hitelesítő adatok találhatóak, amelyeket meg kell védeni. Vagy [felügyelt identitásokat](/azure/active-directory/managed-identities-azure-resources/overview) is használhat – ebben az esetben nincs szükség hitelesítő adatokra.
 >
 > Alapértelmezés szerint a [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) parancs hozzárendeli a [Közreműködő](/azure/role-based-access-control/built-in-roles#contributor) szerepkört a szolgáltatásnévhez az előfizetési hatókörben. Annak érdekében, hogy kisebb eséllyel sérüljön a szolgáltatásnév kockázata, rendeljen hozzá egy konkrétabb szerepkört, és szűkítse a hatókört egy erőforrásra vagy erőforráscsoportra. További információt a [szerepkör-hozzárendelés hozzáadásának lépéseit](/azure/role-based-access-control/role-assignments-steps) ismertető cikkben találhat.
 

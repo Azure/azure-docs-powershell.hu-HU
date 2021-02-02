@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzADServicePrincipal.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzADServicePrincipal.md
-ms.openlocfilehash: 6d268c2378c93bcfb98e64c654880e8055bcede8
-ms.sourcegitcommit: 68451baa389791703e666d95469602c5652609ee
+ms.openlocfilehash: e7c77dc4daf38634e7661f4579dd5bbcc81d0443
+ms.sourcegitcommit: e680033f216d86cd91a1dfdb8328d32f4c99d21a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "98466473"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99251828"
 ---
 # New-AzADServicePrincipal
 
@@ -35,7 +35,7 @@ New-AzADServicePrincipal -ApplicationId <Guid> [-DefaultProfile <IAzureContextCo
  [<CommonParameters>]
 ```
 
-### ApplicationWithPasswordPmirParameterSet
+### ApplicationWithPasswordPatlanParameterSet
 
 ```
 New-AzADServicePrincipal -ApplicationId <Guid> [-StartDate <DateTime>] [-EndDate <DateTime>]
@@ -128,12 +128,12 @@ New-AzADServicePrincipal -ApplicationObject <PSADApplication> -KeyCredential <PS
 
 ## LEÍRÁS
 
-Új Azure Active Directory-szolgáltatásnév létrehozása. Az alapértelmezett paraméterkészlet alapértelmezett értékeket használ a paraméterekhez, ha nincsenek megadva. Az alapértelmezett értékekről további információt az egyes paraméterek leírásában láthat. Ez a parancsmag szerepkört rendelhet a egyszerű szolgáltatásnévhez a **Szerepkör** és a Hatókör **paraméterrel.** Ha mindkettőt nem ad meg, a közreműködői szerepkört a rendszer a szolgáltatásnévhez rendeli hozzá. A szerepkör és  a  hatókör paramétereinek alapértelmezett értékei **az** aktuális előfizetés közreműködői. A parancsmag létrehoz egy alkalmazást, és beállítja a tulajdonságait, ha nem ad meg ApplicationId-et. Az alkalmazásspecifikus paraméterek frissítéséhez használja az [Update-AzADApplication](./update-azadapplication.md) parancsmagot.
+Új Azure Active Directory-szolgáltatásnév létrehozása. Az alapértelmezett paraméterkészlet alapértelmezett értékeket használ a paraméterekhez, ha nincsenek megadva. Az alapértelmezett értékekről további információt az egyes paraméterek leírásában láthat. Ez a parancsmag képes szerepkört rendelni a egyszerű szolgáltatásnévhez a **Szerepkör** és a Hatókör **paraméterrel.** Ha mindkettőt nem ad meg, a közreműködői szerepkört a rendszer a szolgáltatásnévhez rendeli hozzá. A szerepkör és  a  hatókör paramétereinek alapértelmezett értékei **az** aktuális előfizetés közreműködői. A parancsmag létrehoz egy alkalmazást, és beállítja a tulajdonságait, ha nem ad meg ApplicationId-et. Az alkalmazásspecifikus paraméterek frissítéséhez használja az [Update-AzADApplication](./update-azadapplication.md) parancsmagot.
 
 > [!WARNING]
-> Amikor egyszerű szolgáltatást hoz létre a **New-AzADServicePrincipal** paranccsal, a kimenet azokat a hitelesítő adatokat tartalmazza, amelyek védelmét meg kell védenie. Győződjön meg arról, hogy ezeket a hitelesítő adatokat nem veszi fel a kódba, vagy ellenőrizze a hitelesítő adatokat a forrásvezérlőben. Másik lehetőségként fontolja meg felügyelt [identitások használatát](/azure/active-directory/managed-identities-azure-resources/overview) a hitelesítő adatok használatának elkerülése érdekében.
+> Amikor egyszerű szolgáltatást hoz létre a **New-AzADServicePrincipal** paranccsal, a kimenet azokat a hitelesítő adatokat tartalmazza, amelyek védelmét meg kell védenie. Másik lehetőségként fontolja meg felügyelt [identitások használatát](/azure/active-directory/managed-identities-azure-resources/overview) a hitelesítő adatok használatának elkerülése érdekében.
 >
-> A **New-AzADServicePrincipal** alapértelmezés szerint [](/azure/role-based-access-control/built-in-roles#contributor) hozzárendeli a közreműködői szerepkört a szolgáltatásnévhez az előfizetés hatókörében. Ha csökkenteni szeretne egy feltört szolgáltatásnév kockázatát, rendeljen hozzá egy konkrétabb szerepkört, és szűkítse a hatókört egy erőforráshoz vagy erőforráscsoporthoz. További [információért lásd: Lépések szerepkör-hozzárendelés](/azure/role-based-access-control/role-assignments-steps) hozzáadásához.
+> A **New-AzADServicePrincipal** alapértelmezés szerint [](/azure/role-based-access-control/built-in-roles#contributor) hozzárendeli a közreműködői szerepkört a szolgáltatásnévhez az előfizetés hatókörében. Ha csökkenteni szeretne egy feltört szolgáltatásnév kockázatát, rendeljen hozzá egy konkrétabb szerepkört, és szűkítse a hatókört egy erőforrás- vagy erőforráscsoportra. További [információt a Lépések a szerepkör-hozzárendelés](/azure/role-based-access-control/role-assignments-steps) hozzáadásához.
 
 ## PÉLDÁK
 
@@ -154,9 +154,9 @@ Id                    : 00000000-0000-0000-0000-000000000000
 Type                  : ServicePrincipal
 ```
 
-### 2. példa: Egyszerű AD szolgáltatásnév létrehozása meghatározott szerepkörrel és alapértelmezett hatókörrel
+### 2. példa: Egyszerű AD szolgáltatásnév létrehozása megadott szerepkörrel és alapértelmezett hatókörrel
 
-Az alábbi példa létrehoz egy egyszerű AD-szolgáltatást, amely a nem megadott paraméterek alapértelmezett értékeit használja. Mivel az alkalmazásazonosító nincs megtéve, a rendszer létrehoz egy alkalmazást a szolgáltatásnévhez. A szolgáltatásnév az aktuális előfizetés **olvasói** engedélyekkel jön létre, mivel a Scope paraméterhez nincs **megadva** érték.
+Az alábbi példa létrehoz egy egyszerű AD-szolgáltatást, amely a nem megadott paraméterek alapértelmezett értékeit használja. Mivel az alkalmazásazonosító nincs megtéve, a rendszer létrehoz egy alkalmazást a szolgáltatásnévhez. Az egyszerű szolgáltatásnév **olvasói** engedélyekkel jön létre az aktuális előfizetéshez, mivel a Scope paraméterhez nincs **megadva** érték.
 
 ```powershell
 New-AzADServicePrincipal -Role Reader
@@ -194,7 +194,7 @@ WARNING: Assigning role 'Contributor' over scope '/subscriptions/00000000-0000-0
 
 ### 4. példa: Egyszerű AD szolgáltatásnév létrehozása meghatározott hatókörrel és szerepkörrel
 
-Az alábbi példa létrehoz egy egyszerű AD-szolgáltatást, amely a nem megadott paraméterek alapértelmezett értékeit használja. Mivel az alkalmazásazonosító nincs megtéve, a rendszer létrehoz egy alkalmazást a szolgáltatásnévhez. A szolgáltatásnév **olvasói** engedélyekkel jön létre a megadott erőforráscsoport hatókörében.
+Az alábbi példa létrehoz egy egyszerű AD-szolgáltatást, amely a nem megadott paraméterek alapértelmezett értékeit használja. Mivel az alkalmazásazonosító nincs megtéve, a rendszer létrehoz egy alkalmazást a szolgáltatásnévhez. Az egyszerű szolgáltatásnév  a megadott erőforráscsoport-hatókör olvasói engedélyekkel jön létre.
 
 ```powershell
 New-AzADServicePrincipal -Role Reader -Scope /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup
@@ -213,7 +213,7 @@ WARNING: Assigning role 'Reader' over scope '/subscriptions/00000000-0000-0000-0
 
 ### 5. példa: Új AD szolgáltatásnév létrehozása szerepkör-hozzárendeléssel használt alkalmazásazonosító használatával
 
-Az alábbi példa létrehoz egy új AD szolgáltatásnévből az alkalmazáshoz a következő azonosítóval: "000000000-0000-0000-0000000000000". Mivel a szerepkör  vagy a hatókör nem tartalmaz értékeket, a létrehozott egyszerű szolgáltatásnév lesz az aktuális előfizetés közreműködői szerepköre. 
+Az alábbi példa létrehoz egy új AD-szolgáltatásnév-azonosítót az alkalmazáshoz a következő azonosítóval: "000000000-0000-0000-0000000000000". Mivel a szerepkör  vagy a hatókör nem tartalmaz értékeket, a létrehozott egyszerű szolgáltatásnév lesz az aktuális előfizetés közreműködői szerepköre. 
 
 ```powershell
 New-AzADServicePrincipal -ApplicationId 00000000-0000-0000-0000-000000000000
@@ -235,9 +235,9 @@ Az alábbi példa beolvassa az alkalmazást a [Get-AzADApplication](./get-azadap
 Get-AzADApplication -ObjectId 3ede3c26-b443-4e0b-9efc-b05e68338dc3 | New-AzADServicePrincipal
 ```
 
-### 7. példa: Új AD szolgáltatásnév létrehozása a DisplayName és a jelszó hitelesítő adataival
+### 7. példa: Új AD szolgáltatásnév létrehozása a DisplayName és a jelszó használatával
 
-Az alábbi példa létrehoz egy új alkalmazást **ServicePrincipalName** néven és **a StrongPassworld!23 jelszavával.** Létrehozza a egyszerű szolgáltatást a létrehozott alkalmazás alapján. A rendszer hozzáadja a kezdő dátumot és a záró dátumot a jelszó hitelesítő adataihoz.
+Az alábbi példa létrehoz egy új alkalmazást **ServicePrincipalName** néven és **a StrongPassworld!23 jelszavával.** Létrehozza a egyszerű szolgáltatásnév a létrehozott alkalmazás alapján. A rendszer hozzáadja a jelszó hitelesítő adatait a kezdő dátumhoz és a záró dátumhoz.
 
 ```powershell
 $credentials = New-Object -TypeName Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential -Property @{
@@ -364,7 +364,7 @@ Accept wildcard characters: False
 
 ### -DisplayName
 
-A szolgáltatásnév rövid neve. Ha nincs megjelölve megjelenítendő név, ez az érték alapértelmezés szerint az **azure-powershell-MM-dd-y-HH-mm-mm-mm értékre** van állítva, ahol az utótag az alkalmazás létrehozásának ideje.
+A szolgáltatásnév rövid neve. Ha nincs megjelölve megjelenítendő név, ez az érték alapértelmezés szerint az **azure-powershell-MM-dd-yyyy-HH-mm-mm-mm értékre** van állítva, ahol az utótag az alkalmazás létrehozásának ideje.
 
 ```yaml
 Type: System.String
@@ -525,7 +525,7 @@ Accept wildcard characters: False
 
 ### -StartDate
 
-A hitelesítő adatok használatának tényleges kezdő dátuma. Az alapértelmezett kezdő dátum a mai nap. Aszimmetrikus típusú hitelesítő adatoknál ezt az X509-tanúsítvány érvényességének dátumán vagy azt követően kell megadni.
+A hitelesítő adatok használatának tényleges kezdő dátuma. A kezdő dátum alapértelmezett értéke a mai nap. Aszimmetrikus típusú hitelesítő adatoknál ezt az X509-tanúsítvány érvényességének dátumán vagy azt követően kell megadni.
 
 ```yaml
 Type: System.DateTime
@@ -584,7 +584,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](/powershell/module/microsoft.powershell.core/about/about_commonparameters)
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](/powershell/module/microsoft.powershell.core/about/about_commonparameters)
 ## INPUTS
 
 ### System.Guid
