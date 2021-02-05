@@ -3,20 +3,19 @@ external help file: Microsoft.Azure.Commands.DeploymentManager.dll-Help.xml
 Module Name: AzureRM.DeploymentManager
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.deploymentmanager/get-azurermdeploymentmanagerservice
 schema: 2.0.0
-content_git_url: ''
-ms.openlocfilehash: 655cfeeae35d1b48bbfe2149fd4262dffe72ae09
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 4a91c2f8fdda1d2cda7c75f0cf7cfab165701f3d
+ms.sourcegitcommit: e57be0da5162efeb0a01f396e2343dd137920063
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93491764"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99572105"
 ---
 # Get-AzureRmDeploymentManagerService
 
-## Áttekintés
-Szolgáltatási topológiában kapja meg a szolgáltatást.
+## SYNOPSIS
+Szolgáltatás topológiát kap.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### Interaktív (alapértelmezett)
 ```
@@ -48,39 +47,39 @@ Get-AzureRmDeploymentManagerService [-Service] <PSServiceResource> [-DefaultProf
  [<CommonParameters>]
 ```
 
-## Leírás
-A **Get-AzureRmDeploymentManagerService** parancsmag szolgáltatás-topológiában kap egy szolgáltatást, és egy olyan objektumot ad eredményül, amely az adott szolgáltatást jelképezi.
-Adja meg a szolgáltatást a nevével, a szolgáltatási topológiával, és az erőforráscsoport nevével. Másik lehetőségként megadhatja a szolgáltatás objektumát vagy a ResourceId.
+## LEÍRÁS
+A **Get-AzureRmDeploymentManagerService parancsmag** szolgáltatás-topológia alapján kap egy szolgáltatást, és az adott szolgáltatást képviselő objektumot ad vissza.
+Adja meg a szolgáltatást a neve, a szolgáltatás topológiája és az erőforráscsoport neve alapján. Másik módon meg is használhatja a Service objektumot vagy az ResourceId objektumot.
 
-Ezt az objektumot helyileg is módosíthatja, majd a Set-AzureRmDeploymentManagerService parancsmag használatával alkalmazhatja a módosításokat.
+Ezt az objektumot helyben módosíthatja, majd a Set-AzureRmDeploymentManagerService alkalmazhatja a szolgáltatásra.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1
+### 1. példa
 ```powershell
 PS C:\> Get-AzureRmDeploymentManagerService -ResourceGroupName ContosoResourceGroup -ServiceTopologyName ContosoServiceTopology -Name ContosoService1
 ```
 
-Ez a parancs a ContosoService1 nevű szolgáltatást a ContosoResourceGroup ContosoServiceTopology nevű szolgáltatási topológiában kapja.
+Ez a parancs egy ContosoService1 nevű szolgáltatást kap a ContosoServiceTopology nevű szolgáltatás topológiában a ContosoResourceGroup csoportban.
 
-### 2. példa: szolgáltatás kérése az erőforrás-azonosítóval
+### 2. példa: Szolgáltatás lekérte az erőforrás-azonosítót használva.
 ```powershell
 PS C:\> Get-AzureRmDeploymentManagerService -ResourceId "/subscriptions/subscriptionId/resourcegroups/ContosoResourceGroup/providers/Microsoft.DeploymentManager/serviceTopologies/ContosoServiceTopology/services/ContosoService1"
 ```
 
-Ez a parancs a ContosoService1 nevű szolgáltatást a ContosoResourceGroup ContosoServiceTopology nevű szolgáltatási topológiában kapja.
+Ez a parancs egy ContosoService1 nevű szolgáltatást kap a ContosoServiceTopology nevű szolgáltatás topológiában a ContosoResourceGroup csoportban.
 
-### 3. példa: szolgáltatás beszerzése a Service objektum használatával.
+### 3. példa: Szolgáltatás lekérte a szolgáltatásobjektumot használva.
 ```powershell
 PS C:\> Get-AzureRmDeploymentManagerService -Service $serviceObject
 ```
 
-Ez a parancs olyan szolgáltatást kap, amelynek a neve, a szolgáltatás topológiájának neve és a ResourceGroup megegyezik a $serviceObject neve, a ServiceTopologyName és a ResourceGroupName tulajdonságaival.
+Ez a parancs egy olyan szolgáltatást kap, amelynek a neve, a szolgáltatás topológiája és az Erőforráscsoport neve megegyezik a $serviceObject, ServiceTopologyName és ResourceGroupName tulajdonságaival.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
@@ -94,7 +93,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (név)
+### -Name
 A szolgáltatás neve.
 
 ```yaml
@@ -125,7 +124,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Az erőforrás-azonosító.
+Az erőforrás azonosítója.
 
 ```yaml
 Type: System.String
@@ -139,8 +138,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Szolgáltatás
-Service objektum.
+### -Service
+Szolgáltatásobjektum.
 
 ```yaml
 Type: Microsoft.Azure.Commands.DeploymentManager.Models.PSServiceResource
@@ -155,7 +154,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceTopology
-A szolgáltatás topológiájának objektuma, amelyben a szolgáltatást létre kell tenni.
+Az a szolgáltatás topológia objektum, amelyben létre kell hozatni a szolgáltatást.
 
 ```yaml
 Type: Microsoft.Azure.Commands.DeploymentManager.Models.PSServiceTopologyResource
@@ -170,7 +169,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceTopologyName
-A szolgáltatás topológiájának neve.
+A szolgáltatás-topológia neve.
 
 ```yaml
 Type: System.String
@@ -185,7 +184,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceTopologyResourceId
-A szolgáltatás topológiája erőforrás-azonosító, amelyben a szolgáltatást létre kell tenni.
+Az a szolgáltatás topológia típusú erőforrás-azonosítója, amelyben létre kell hozatni a szolgáltatást.
 
 ```yaml
 Type: System.String
@@ -200,21 +199,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
 ### Nincs
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. DeploymentManager. models. PSServiceResource
+### Microsoft.Azure.Commands.DeploymentManager.Models.PSServiceResource
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Új – AzureRmDeploymentManagerService](./New-AzureRmDeploymentManagerService.md)
+[New-AzureRmDeploymentManagerService](./New-AzureRmDeploymentManagerService.md)
 
 [Remove-AzureRmDeploymentManagerService](./Remove-AzureRmDeploymentManagerService.md)
 
