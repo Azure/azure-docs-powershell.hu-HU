@@ -1,56 +1,63 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Sql.dll-Help.xml
 Module Name: Az.Sql
-ms.assetid: 2B82F5BA-ABC6-4B37-B641-353CFE814290
-online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/Update-AzSqlServerAdvancedThreatProtectionSetting
+ms.assetid: 457FD595-D5E1-45C4-9DB8-C3C6C30A0E94
+online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/Update-AzSqlDatabaseAdvancedThreatProtectionSetting
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Update-AzSqlServerAdvancedThreatProtectionSetting.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Update-AzSqlServerAdvancedThreatProtectionSetting.md
-ms.openlocfilehash: 2362d8d11d60da4a1a0ea2433f44e07653423c0c
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Update-AzSqlDatabaseAdvancedThreatProtectionSetting.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Update-AzSqlDatabaseAdvancedThreatProtectionSetting.md
+ms.openlocfilehash: baa3e3d4b272bccab5fe33b9af05edc9ed254236
 ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 02/14/2021
-ms.locfileid: "100398886"
+ms.locfileid: "100398903"
 ---
-# Update-AzSqlServerAdvancedThreatProtectionSetting
+# Update-AzSqlDatabaseAdvancedThreatProtectionSetting
 
 ## SYNOPSIS
-Speciális veszélyforrás-védelmi beállításokat ad meg a kiszolgálón.
+Speciális veszélyforrás-védelmi beállításokat ad meg az adatbázisokban.
 
 ## SZINTAXIS
 
 ```
-Update-AzSqlServerAdvancedThreatProtectionSetting [-PassThru] [-NotificationRecipientsEmails <String>]
+Update-AzSqlDatabaseAdvancedThreatProtectionSetting [-PassThru] [-NotificationRecipientsEmails <String>]
  [-EmailAdmins <Boolean>] [-ExcludedDetectionType <String[]>] [-StorageAccountName <String>]
- [-RetentionInDays <UInt32>] -ServerName <String> [-ResourceGroupName] <String>
+ [-RetentionInDays <UInt32>] [-ServerName] <String> [-DatabaseName] <String> [-ResourceGroupName] <String>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## LEÍRÁS
-Az **Update-AzSqlServerAdvancedThreatProtectionSetting** parancsmag speciális veszélyforrás-védelmi beállításokat ad meg egy Azure SQL-kiszolgálón.
-Ahhoz, hogy a kiszolgálókon lehetővé tegye a komplex veszélyforrások elleni védelmet, engedélyeznie kell a naplózási beállításokat a kiszolgálón.
-A parancsmagot a *ResourceGroupName* és a ServerName paraméter megadásával azonosíthatja a kiszolgálót.
+Az **Update-AzSqlDatabaseAdvancedThreatProtectionSetting** parancsmag speciális veszélyforrás-védelmi beállításokat állít be egy Azure SQL-adatbázisban.
+A komplex veszélyforrások elleni védelem adatbázison való speciális védelméhez engedélyezni kell az adatbázis naplózási beállításait.
+A parancsmagot a *ResourceGroupName,* *a ServerName* és a *DatabaseName* paraméter megadásával azonosíthatja az adatbázist.
+Ezt a parancsmagot az Azure SQL Server Stretch Database szolgáltatása is támogatja.
 
 ## PÉLDÁK
 
 ### 1. példa: Az adatbázisok komplex veszélyforrások elleni védelmi beállításainak megadása
-```powershell
-PS C:\>Update-AzSqlServerAdvancedThreatProtectionSetting -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -NotificationRecipientsEmails "admin01@contoso.com;secadmin@contoso.com" -EmailAdmins $False -ExcludedDetectionType "Sql_Injection_Vulnerability","SQL_Injection" -StorageAccountName "mystorageAccount"
+```
+PS C:\>Update-AzSqlDatabaseAdvancedThreatProtectionSetting -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -DatabaseName "Database01" -NotificationRecipientsEmails "admin01@contoso.com;secadmin@contoso.com" -EmailAdmins $False -ExcludedDetectionType "Sql_Injection_Vulnerability", "SQL_Injection" -StorageAccountName "mystorageAccount"
 ```
 
-Ez a parancs a Kiszolgáló01 nevű kiszolgáló komplex veszélyforrás-védelmi beállításait állítja be.
-
-### 2. példa
-
-Speciális veszélyforrás-védelmi beállításokat ad meg a kiszolgálón. (automatikusan generált)
-
-```powershell
-<!-- Aladdin Generated Example -->
-Update-AzSqlServerAdvancedThreatProtectionSetting -EmailAdmins $false -ResourceGroupName 'ResourceGroup11' -RetentionInDays <UInt32> -ServerName 'Server01' -StorageAccountName 'mystorageAccount'
-```
+Ez a parancs beállítja egy Database01 nevű adatbázis komplex veszélyforrás-védelmi beállításait a Server01 nevű kiszolgálón.
 
 ## PARAMETERS
+
+### -DatabaseName
+Annak az adatbázisnak a nevét adja meg, amelyben a beállítások meg vannak állítva.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
 
 ### -DefaultProfile
 Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
@@ -134,7 +141,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Annak az erőforráscsoportnak a nevét adja meg, amelyhez a kiszolgáló tartozik.
+Annak az erőforráscsoportnak a neve, amelyhez a kiszolgáló hozzá van rendelve.
 
 ```yaml
 Type: System.String
@@ -172,14 +179,14 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -StorageAccountName
-A használni használt tárfiók nevét adja meg. A helyettesítő karakterek használata nem engedélyezett. Ez a paraméter nem kötelező. Ha ez a paraméter nincs megadva, a parancsmag az adatbázis komplex veszélyforrás-védelmi beállításainak részeként korábban definiált tárfiókot fogja használni. Ha első alkalommal határoz meg adatbázis-veszélyforrás-észlelési beállításokat, és ez a paraméter nincs megadva, a parancsmag nem fog működni.
+A használni használt tárfiók nevét adja meg. A helyettesítő karakterek használata nem engedélyezett. Ez a paraméter nem kötelező. Ha ez a paraméter nincs megadva, a parancsmag az adatbázis komplex veszélyforrás-védelmi beállításainak részeként korábban definiált tárfiókot fogja használni. Ha első alkalommal határoz meg komplex veszélyforrások elleni védelemre vonatkozó adatbázis-beállításokat, és ez a paraméter nincs megadva, a parancsmag nem fog működni.
 
 ```yaml
 Type: System.String
@@ -239,7 +246,7 @@ Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, 
 
 ## KIMENETEK
 
-### Microsoft.Azure.Commands.Sql.ThreatDetection.Model.ServerThreatDetectionsettingsModel
+### Microsoft.Azure.Commands.Sql.ThreatDetection.Model.DatabaseThreatDetectionsettingsModel
 
 ## MEGJEGYZÉSEK
 
