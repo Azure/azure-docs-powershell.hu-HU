@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Monitor/Monitor/help/New-AzActionGroup.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Monitor/Monitor/help/New-AzActionGroup.md
-ms.openlocfilehash: 9d29240e4be9039e75491ede7d835ecba99aa2d5
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: 48ddcf7c6bed9e31bec486eaaa433c35eaed0fe3
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93842013"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399022"
 ---
 # New-AzActionGroup
 
-## Áttekintés
-Egy ActionGroup-viszonyítási objektumot hoz létre a memóriában.
+## SYNOPSIS
+ActionGroup hivatkozási objektumot hoz létre a memóriában.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 New-AzActionGroup -ActionGroupId <String>
@@ -26,22 +26,22 @@ New-AzActionGroup -ActionGroupId <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-A **New-AzActionGroup** parancsmag létrehoz egy műveleti csoport hivatkozási objektumát a memóriában.
+## LEÍRÁS
+A **New-AzActionGroup** parancsmag létrehoz egy műveletcsoport-hivatkozási objektumot a memóriában.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: Művelettípus-viszonyítási objektum létrehozása a memóriában
+### 1. példa: Műveletcsoport-hivatkozási objektum létrehozása a memóriában
 ```
 PS C:\>$dict = New-Object "System.Collections.Generic.Dictionary``2[System.String,System.String]"
 PS C:\>$dict.Add('key1', 'value1')
 PS C:\>$actionGrp1 = New-AzActionGroup -ActionGroupId 'actiongr1' -WebhookProperty $dict
 ```
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -ActionGroupId
-A műveleti csoport azonosítója/neve.
+A műveletcsoport azonosítója/neve.
 
 ```yaml
 Type: System.String
@@ -56,7 +56,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 ```
 
 ### -WebhookProperty
-A műveleti csoport webhook-tulajdonságai
+A műveletcsoport webhook tulajdonságai
 
 ```yaml
 Type: System.Collections.Generic.Dictionary`2[System.String,System.String]
@@ -86,19 +86,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
-### System. Collections. Generic. Dictionary ' 2 [[System. string, System. Private. CoreLib, Version = 4.0.0.0, Culture = semleges, PublicKeyToken = 7cec85d7bea7798e], [System. string, System. Private. CoreLib, Version = 4.0.0.0, Culture = semleges, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Collections.Generic.Dictionary'2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
 ## KIMENETEK
 
-### Microsoft. Azure. Management. monitor. Management. models. ActivityLogAlertActionGroup
+### Microsoft.Azure.Management.Monitor.Management.Models.ActivityLogAlertActionGroup
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
@@ -112,5 +112,5 @@ Ez a parancsmag a következő általános paramétereket támogatja:-debug,-Erro
 
 [Remove-AzActivityLogAlert](./Remove-AzActivityLogAlert.md)
 
-[Új – AzActivityLogAlertCondition](./Get-AzActivityLogAlertCondition.md)
+
 

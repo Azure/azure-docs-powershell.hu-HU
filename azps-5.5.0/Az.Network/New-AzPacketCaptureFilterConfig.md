@@ -1,48 +1,47 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
-online version: https://docs.microsoft.com/en-us/powershell/module/az.network/new-aznetworkwatcher
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/new-azpacketcapturefilterconfig
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkWatcher.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkWatcher.md
-ms.openlocfilehash: dbc1f3e942a95adf0cb56721ec1a2666da9b9188
-ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzPacketCaptureFilterConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzPacketCaptureFilterConfig.md
+ms.openlocfilehash: 194e3c71cc763aeb74091f912b37dd15e4dfe4aa
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100399039"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100151651"
 ---
-# New-AzNetworkWatcher
+# New-AzPacketCaptureFilterConfig
 
 ## SYNOPSIS
-Létrehoz egy új Network Watcher erőforrást.
+Létrehoz egy új csomagrögzítési szűrőobjektumot.
 
 ## SZINTAXIS
 
 ```
-New-AzNetworkWatcher -Name <String> -ResourceGroupName <String> -Location <String> [-Tag <Hashtable>]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-AzPacketCaptureFilterConfig [-Protocol <String>] [-RemoteIPAddress <String>] [-LocalIPAddress <String>]
+ [-LocalPort <String>] [-RemotePort <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## LEÍRÁS
-A New-AzNetworkWatcher parancsmag létrehoz egy új Network Watcher erőforrást.
+A New-AzPacketCaptureFilterConfig parancsmag létrehoz egy új csomagrögzítési szűrőobjektumot. Ezzel az objektummal korlátozható a csomagrögzítési munkamenet során rögzített csomagok típusa a megadott feltételekkel. A New-AzNetworkWatcherPacketCapture parancsmag több szűrőobjektumot is elfogadhat a kompatibilis rögzítési munkamenetek engedélyezéséhez.
 
 ## PÉLDÁK
 
-### 1. példa: Hálózati figyelő létrehozása
+### 1. példa: Csomagrögzítés létrehozása több szűrővel
 ```
-New-AzResourceGroup -Name NetworkWatcherRG -Location westcentralus
-New-AzNetworkWatcher -Name NetworkWatcher_westcentralus -ResourceGroup NetworkWatcherRG
+$nw = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" } 
+$networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName 
 
-Name              : NetworkWatcher_westcentralus
-Id                : /subscriptions/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourceGroups/NetworkWatcherRG/providers/Microsoft.Network/networkWatchers/NetworkWatcher_westcentralus
-Etag              : W/"7cf1f2fe-8445-4aa7-9bf5-c15347282c39"
-Location          : westcentralus
-Tags              :
-ProvisioningState : Succeeded
+$storageAccount = Get-AzStorageAccount -ResourceGroupName contosoResourceGroup -Name contosostorage123
+
+$filter1 = New-AzPacketCaptureFilterConfig -Protocol TCP -RemoteIPAddress "1.1.1.1-255.255.255" -LocalIPAddress "10.0.0.3" -LocalPort "1-65535" -RemotePort "20;80;443"
+$filter2 = New-AzPacketCaptureFilterConfig -Protocol UDP 
+New-AzNetworkWatcherPacketCapture -NetworkWatcher $networkWatcher -TargetVirtualMachineId $vm.Id -PacketCaptureName "PacketCaptureTest" -StorageAccountId $storageAccount.id -TimeLimitInSeconds 60 -Filters $filter1, $filter2
 ```
 
-Ebben a példában egy új Hálózatfigyelőt hoz létre egy újonnan létrehozott erőforráscsoporton belül. Felhívjuk a figyelmét arra, hogy előfizetésenként régiónként csak egy Hálózati figyelőt lehet létrehozni.
+Ebben a példában létrehozunk egy "PacketCaptureTest" nevű csomagrögzítést több szűrővel és egy időkorláttal. A munkamenet befejezése után a rendszer a megadott tárfiókba menti a munkamenetet. Megjegyzés: Csomagrögzítések létrehozásához az Azure Network Watcher bővítményt telepíteni kell a cél virtuális gépre.
 
 ## PARAMETERS
 
@@ -61,56 +60,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Location
-Hely.
+### -LocalIPAddress
+Megadja azt a helyi IP-címet, amely alapján szűrni kell.
+Példa: "127.0.0.1" egyetlen címbejegyzéshez.
+"127.0.0.1-127.0.0.255" a tartományhoz.
+"127.0.0.1;127.0.0.5;" több bejegyzés esetén.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Name
-A hálózati figyelő neve.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: ResourceName
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -ResourceGroupName
-Az erőforráscsoport neve.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Tag
-Kulcsérték-párok kivonattábla formájában. Például: @{key0="érték0";key1=$null;key2="érték2"}
-
-```yaml
-Type: System.Collections.Hashtable
 Parameter Sets: (All)
 Aliases:
 
@@ -121,34 +78,72 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confirm
-A parancsmag futtatása előtt a rendszer megerősítést kér.
+### -LocalPort
+Megadja azt a helyi IP-címet, amely alapján szűrni kell.
+Példa: "127.0.0.1" egyetlen címbejegyzéshez.
+"127.0.0.1-127.0.0.255" a tartományhoz.
+"127.0.0.1;127.0.0.5;" több bejegyzés esetén.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: (All)
-Aliases: cf
+Aliases:
 
 Required: False
 Position: Named
-Default value: False
-Accept pipeline input: False
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -WhatIf
-A parancsmag futtatásakor a program megjeleníti, hogy mi történik.
-A parancsmag nem fut.
+### -Protocol
+Azt a protokollt adja meg, amely alapján szűrni kell. Elfogadható értékek: "TCP","UDP","Any"
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: (All)
-Aliases: wi
+Aliases:
 
 Required: False
 Position: Named
-Default value: False
-Accept pipeline input: False
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -RemoteIPAddress
+Megadja azt a távoli IP-címet, amely alapján szűrni kell.
+Példa: "127.0.0.1" egyetlen címbejegyzéshez.
+"127.0.0.1-127.0.0.255" a tartományhoz.
+"127.0.0.1;127.0.0.5;" több bejegyzés esetén.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -RemotePort
+Megadja a távoli portot, amely alapján szűrni kell.
+Távoli port – Példa: "80" egyetlen port bejegyzéséhez.
+"80-85" a tartományhoz.
+"80;443;" több bejegyzés esetén.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -159,14 +154,12 @@ Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, 
 
 ### System.String
 
-### System.Collections.Hashtable
-
 ## KIMENETEK
 
-### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSPacketCaptureFilter
 
 ## MEGJEGYZÉSEK
-Kulcsszavak: azure, azurerm, arm, resource, management, manager, network, networking, networking, network watcher
+Kulcsszavak: azure, azurerm, arm, erőforrás, kezelés, vezető, hálózat, hálózatkezelés, figyelő, csomag, rögzítés, forgalom, szűrés 
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
@@ -222,4 +215,4 @@ Kulcsszavak: azure, azurerm, arm, resource, management, manager, network, networ
 
 [Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)

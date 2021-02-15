@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Update-AzApiManagementCache.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Update-AzApiManagementCache.md
-ms.openlocfilehash: 86eb7842bbd0dc29beb8572f4f34d53190ca06e0
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 2ac2eb7cb40cb7df4324aff276137527d4b148a5
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94014159"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398920"
 ---
 # Update-AzApiManagementCache
 
-## Áttekintés
-frissít egy gyorsítótárat az API-kezelési szolgáltatásban.
+## SYNOPSIS
+frissíti a gyorsítótárat az Api Management szolgáltatásban.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### ExpandedParameter (alapértelmezett)
 ```
@@ -40,12 +40,12 @@ Update-AzApiManagementCache -ResourceId <String> [-ConnectionString <String>] [-
  [<CommonParameters>]
 ```
 
-## Leírás
-A parancsmag **Update-AzApiManagementCache** frissíti a gyorsítótárat a ApiManagement szolgáltatásban.
+## LEÍRÁS
+Az **Update-AzApiManagementCache** parancsmag frissíti a gyorsítótárat az ApiManagement szolgáltatásban.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: frissíti a gyorsítótár tartalmát a CentralUS-ban
+### 1. példa: A gyorsítótár leírásának frissítése a centralusban
 ```powershell
 PS D:\github\azure-powershell> $context=New-AzApiManagementContext -ResourceGroupName Api-Default-Central-US -ServiceName contoso
 PS D:\github\azure-powershell> Update-AzApiManagementCache -Context $context -CacheId centralus -Description "Team new cache" -PassThru
@@ -63,10 +63,10 @@ ServiceName          : contoso
 
 Frissíti a közép-amerikai gyorsítótár leírását.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -AzureRedisResourceId
-A kar ResourceId az Azure Redis-gyorsítótár példánya.
+Arm ResourceId of the Azure Redis Cache instance.
 Ez a paraméter nem kötelező.
 
 ```yaml
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ### -CacheId
 Az új gyorsítótár azonosítója.
-Ehhez a paraméterhez szükség van.
+Ezt a paramétert kötelező megadni.
 
 ```yaml
 Type: System.String
@@ -98,7 +98,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionString
-A Redis kapcsolati karakterlánca.
+Kapcsolati karakterlánc újradirata
 Ez a paraméter nem kötelező.
 
 ```yaml
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 
 ### -Környezet
 A PsApiManagementContext példánya.
-Ehhez a paraméterhez szükség van.
+Ezt a paramétert kötelező megadni.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -162,7 +162,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 A PsApiManagementCache példánya.
-Ehhez a paraméterhez szükség van.
+Ezt a paramétert kötelező megadni.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache
@@ -177,7 +177,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Ha meg van adva a Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementCache típusa, ami a módosított gyorsítótárat jelképezi, a kimenetre fog írni.
+Ha ez meg van adva, akkor a módosított gyorsítótárat képviselő Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache típusú példány kimenetként lesz megírva.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -192,8 +192,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-A kar ResourceId a gyorsítótárból.
-Ehhez a paraméterhez szükség van.
+Gyorsítótár erőforrásazonosítója arm.
+Ezt a paramétert kötelező megadni.
 
 ```yaml
 Type: System.String
@@ -207,8 +207,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -223,7 +223,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik.
 A parancsmag nem fut.
 
 ```yaml
@@ -239,27 +239,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
-### Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementCache
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameter
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementCache
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Új – AzApiManagementCache](./New-AzApiManagementCache)
+[New-AzApiManagementCache](./New-AzApiManagementCache.md)
 
 [Get-AzApiManagementCache](./Get-AzApiManagementCache.md)
 
