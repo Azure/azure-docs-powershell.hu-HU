@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Update-AzApiManagementRegion.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Update-AzApiManagementRegion.md
-ms.openlocfilehash: fce2d356b7da56d2b93fa8634e737f96f54da178
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 3f9c88177d3f791acdd0be5c81eec2fb5bc6911c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93836892"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400705"
 ---
 # Update-AzApiManagementRegion
 
-## Áttekintés
-Frissíti a meglévő központi terjesztési területet a PsApiManagement-példányban.
+## SYNOPSIS
+A PsApiManagement-példány meglévő telepítési régiójának frissítése.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 Update-AzApiManagementRegion -ApiManagement <PsApiManagement> -Location <String> -Sku <PsApiManagementSku>
@@ -26,14 +26,14 @@ Update-AzApiManagementRegion -ApiManagement <PsApiManagement> -Location <String>
  [<CommonParameters>]
 ```
 
-## Leírás
-Az **Update-AzApiManagementRegion** parancsmag a **Microsoft. Azure. commands. ApiManagement. models. PsApiManagementRegion** egy meglévő példányát frissíti a Microsoft. **Azure. commands**. ApiManagement. modellek. PsApiManagement **AdditionalRegions** -példányban.
-Ez a parancsmag nem telepít semmit, de frissíti a **PsApiManagement** -példányokat a memóriában.
-Ha frissíteni szeretné az API-kezelés telepített példányát, használja a módosított **PsApiManagementInstance** az Update-AzApiManagementDeployment parancsmagot.
+## LEÍRÁS
+Az **Update-AzApiManagementRegion** parancsmag frissíti a **Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementRegion** típus meglévő  példányát a **Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement.**
+Ez a parancsmag nem telepít semmit, csak frissíti a **PsApiManagement** egy példányát a memóriában.
+Az API-kezelés telepítésének frissítéséhez használja a **módosított PsApiManagementInstance** Set-AzApiManagement parancsmagot.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: növeli a további régiók kapacitását egy PsApiManagement-példányban
+### 1. példa: A További régió kapacitásának növelése egy PsApiManagement-példányban
 ```powershell
 PS C:\>$apimService = Get-AzApiManagement -ResourceGroupName $resourceGroupName -Name $apiManagementName
 PS C:\>$apimService = Update-AzApiManagementRegion -ApiManagement $apimService -Location "North Central US" -Capacity 2 -Sku Premium
@@ -42,12 +42,12 @@ PS C:\>$apimService = Update-AzApiManagementRegion -ApiManagement $apimService -
 PS C:\>$updatedService = Set-AzApiManagement -InputObject $apimService -PassThru
 ```
 
-Ez a parancs beilleszti az API-menedzsment Premium SKU szolgáltatást, amely a dél-közép-amerikai és Észak-Közép-amerikai régiókat használja. Ezt követően növeli az észak-közép-amerikai régió kapacitását az **Update-AzApiManagementRegion** segítségével. A következő parancsmag Set-AzApiManagement alkalmazza a konfigurációs módosítást az API-kezelési szolgáltatásra.
+Ez a parancs az API Management Premium termékváltozat szolgáltatást kapja, amely az USA déli részén és észak-közép részén található régiókkal. Ezután az **Update-AzApiManagementRegion segítségével 2-re növeli az észak-közép-amerikai régió kapacitását.** A következő parancsmag Set-AzApiManagement a konfigurációs változást az Api Management szolgáltatásra.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -ApiManagement
-Annak a **PsApiManagement** a példányát adja meg, amely a meglévő központi terjesztési terület frissítésére használható.
+Megadja a **PsApiManagement-példányt** egy meglévő telepítési régió frissítéséhez.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement
@@ -62,7 +62,7 @@ Accept wildcard characters: False
 ```
 
 ### -Kapacitás
-Az új SKU-kapacitás értékét adja meg a központi telepítő régióban.
+A telepítési régió új termékváltozat-kapacitási értékét adja meg.
 
 ```yaml
 Type: System.Int32
@@ -77,7 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -91,10 +91,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Hely
-A frissítendő központi terjesztési terület helyét adja meg.
-Megadja az új központi üzembe helyezési terület helyét az API-kezelési szolgáltatás támogatott területe között.
-Ha érvényes helyeket szeretne beolvasni, használja a "Microsoft. ApiManagement" ProviderNamespace Get-AzResourceProvider parancsmagot. where {$ _. ResourceTypes [0]. ResourceTypeName-EQ "szolgáltatás"} | Select-Object helyek
+### -Location
+Megadja a frissíteni szükséges telepítési régió helyét.
+Megadja az új telepítési régió helyét az Api Management szolgáltatás támogatott régiója között.
+Érvényes helyek beszerzéséhez használja a Get-AzResourceProvider -ProviderNamespace "Microsoft.ApiManagement" | ahol {$_. ResourceTypes[0]. ResourceTypeName -eq "service"} | Select-Object helyek
 
 ```yaml
 Type: System.String
@@ -108,12 +108,12 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SKU
-A központi telepítő terület új Tier értékét adja meg.
-Az érvényes értékek a következők:
+### -Sku
+Az üzembe helyezési régió új rétegértékét adja meg.
+Érvényes értékek:
 - Fejlesztő
-- Standard
-- Prémium verzió
+- Normál
+- Prémium
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementSku
@@ -129,8 +129,8 @@ Accept wildcard characters: False
 ```
 
 ### -VirtualNetwork
-A központi telepítő terület virtuális hálózati konfigurációját adja meg.
-Az átadás $null eltávolítja a tartomány virtuális hálózati konfigurációját.
+Virtuális hálózati konfigurációt ad meg az üzembe helyezési régióhoz.
+A $null eltávolítja a virtuális hálózat konfigurációját a régióhoz.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementVirtualNetwork
@@ -145,25 +145,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. Azure. Command. ApiManagement. models. PsApiManagement
+### Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement
 
-### System. String
+### System.String
 
-### Microsoft. Azure. Command. ApiManagement. models. PsApiManagementSku
+### Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementSku
 
-### System. Int32
+### System.Int32
 
-### Microsoft. Azure. Command. ApiManagement. models. PsApiManagementVirtualNetwork
+### Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementVirtualNetwork
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. ApiManagement. models. PsApiManagement
+### Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
@@ -171,4 +171,4 @@ Ez a parancsmag a következő általános paramétereket támogatja:-debug,-Erro
 
 [Remove-AzApiManagementRegion](./Remove-AzApiManagementRegion.md)
 
-[Update-AzApiManagementDeployment](./Update-AzApiManagementDeployment.md)
+[Set-AzApiManagement](./Set-AzApiManagement.md)
