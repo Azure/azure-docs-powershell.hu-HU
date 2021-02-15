@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.datafactor
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Remove-AzDataFactoryV2DataFlow.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Remove-AzDataFactoryV2DataFlow.md
-ms.openlocfilehash: 75c155b765a1bcbc565a85fc0f47130a6d2a5cf0
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 69d666d2338658b108386da74040a4d30bcbbebb
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93667000"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100396013"
 ---
 # Remove-AzDataFactoryV2DataFlow
 
-## Áttekintés
-Adatforgalom eltávolítása az adatgyárból.
+## SYNOPSIS
+Eltávolít egy adatfolyamot a Data Factoryból.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### ByFactoryName (alapértelmezett)
 ```
@@ -38,12 +38,12 @@ Remove-AzDataFactoryV2DataFlow [-Force] [-ResourceId] <String> [-DefaultProfile 
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Leírás
-A Remove-AzDataFactoryV2DataFlow parancsmag eltávolítja az adatáramlást az Azure Data Factory szolgáltatásból.
+## LEÍRÁS
+A Remove-AzDataFactoryV2DataFlow parancsmag eltávolítja az adatfolyamot az Azure Data Factoryból.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1
+### 1. példa
 ```powershell
 PS C:\WINDOWS\system32> Remove-AzDataFactoryV2DataFlow -ResourceGroupName adf -DataFactoryName WikiADF -DataFlowName "dataflow5"
 
@@ -53,12 +53,12 @@ Are you sure you want to remove data flow 'dataflow5' in data factory 'WikiADF'?
 PS C:\WINDOWS\system32>
 ```
 
-Ez a parancs eltávolítja a dataflow5 nevű adatfolyamot az WikiADF nevű adatgyárból.
+Ez a parancs eltávolítja az Adatfolyam5 nevű adatfolyamot a WikiADF nevű adatüzemből.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DataFactoryName
-Az adatgyári név.
+Az adatüzem neve.
 
 ```yaml
 Type: System.String
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -117,8 +117,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name (név)
-Az adatforgalom neve.
+### -Name
+Az adatfolyam neve.
 
 ```yaml
 Type: System.String
@@ -133,7 +133,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Az erőforrás csoport neve.
+Az erőforráscsoport neve.
 
 ```yaml
 Type: System.String
@@ -148,7 +148,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Az Azure Resource ID.
+Az Azure-erőforrásazonosító.
 
 ```yaml
 Type: System.String
@@ -163,7 +163,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Ha a megadott művelet sikeres, akkor a True Write True értékre vált. Ez a paraméter nem kötelező.
+Ha a megadott érték igaz értéket ad meg, akkor a művelet sikeres lesz. Ez a paraméter nem kötelező.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -177,8 +177,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -193,7 +193,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik.
 A parancsmag nem fut.
 
 ```yaml
@@ -209,26 +209,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
 ### Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataset
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### System. Void
+### System.Void
 
-### System. Boolean
+### System.Boolean
 
-## MEGJEGYZI
-Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, Data, gyárak
+## MEGJEGYZÉSEK
+Kulcsszavak: azure, azurerm, arm, erőforrás, kezelés, vezető, adatok, faktorok
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Get-AzDataFactoryDataFlow](./Get-AzDataFactoryDataFlow.md)
 
-[Set-AzDataFactoryDataFlow](./Set-AzDataFactoryDataFlow.md)
 
