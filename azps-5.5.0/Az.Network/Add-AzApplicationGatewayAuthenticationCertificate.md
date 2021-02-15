@@ -1,0 +1,161 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+ms.assetid: 38855E74-F30C-43DF-8D94-ABD7872BCE11
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/add-azapplicationgatewayauthenticationcertificate
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Add-AzApplicationGatewayAuthenticationCertificate.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Add-AzApplicationGatewayAuthenticationCertificate.md
+ms.openlocfilehash: 687752d74e13030cd954736132dba845c2c55127
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100203274"
+---
+# <span data-ttu-id="d202d-101">Add-AzApplicationGatewayAuthenticationCertificate</span><span class="sxs-lookup"><span data-stu-id="d202d-101">Add-AzApplicationGatewayAuthenticationCertificate</span></span>
+
+## <span data-ttu-id="d202d-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="d202d-102">SYNOPSIS</span></span>
+<span data-ttu-id="d202d-103">Hozzáad egy hitelesítési tanúsítványt egy alkalmazás-átjáróhoz.</span><span class="sxs-lookup"><span data-stu-id="d202d-103">Adds an authentication certificate to an application gateway.</span></span>
+
+## <span data-ttu-id="d202d-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="d202d-104">SYNTAX</span></span>
+
+```
+Add-AzApplicationGatewayAuthenticationCertificate -ApplicationGateway <PSApplicationGateway> -Name <String>
+ -CertificateFile <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="d202d-105">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="d202d-105">DESCRIPTION</span></span>
+<span data-ttu-id="d202d-106">Az **Add-AzApplicationGatewayAuthenticationCertificate parancsmag** hozzáad egy hitelesítési tanúsítványt egy Azure-alkalmazás-átjáróhoz.</span><span class="sxs-lookup"><span data-stu-id="d202d-106">The **Add-AzApplicationGatewayAuthenticationCertificate** cmdlet adds an authentication certificate to an Azure application gateway.</span></span>
+
+## <span data-ttu-id="d202d-107">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="d202d-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="d202d-108">1. példa: Hitelesítési tanúsítvány hozzáadása alkalmazás-átjáróhoz</span><span class="sxs-lookup"><span data-stu-id="d202d-108">Example 1: Add authentication certificate to an application gateway</span></span>
+```
+PS C:\> $appgw = Get-AzApplicationGateway -ResourceGroupName "rg" -Name "appGwName"
+PS C:\> $appgw = Add-AzApplicationGatewayAuthenticationCertificate -ApplicationGateway $appgw -Name "cert01" -CertificateFile "C:\cert.cer"
+PS C:\> $appgw = Set-AzApplicationGateway -ApplicationGateway $appgw
+```
+
+<span data-ttu-id="d202d-109">Az első parancs egy appGwName nevű alkalmazás-átjárót kap, és egy $appgw tárolja.</span><span class="sxs-lookup"><span data-stu-id="d202d-109">The first command gets an application gateway named appGwName and stores it in $appgw variable.</span></span>
+<span data-ttu-id="d202d-110">A második parancs hozzáadja a cert01 nevű hitelesítési tanúsítványt az alkalmazás-átjáróhoz.</span><span class="sxs-lookup"><span data-stu-id="d202d-110">The second command adds authentication certificate named cert01 to the application gateway.</span></span>
+<span data-ttu-id="d202d-111">A harmadik parancs frissíti az alkalmazás átjáróját.</span><span class="sxs-lookup"><span data-stu-id="d202d-111">The third command updates the application gateway.</span></span>
+
+## <span data-ttu-id="d202d-112">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="d202d-112">PARAMETERS</span></span>
+
+### <span data-ttu-id="d202d-113">-ApplicationGateway</span><span class="sxs-lookup"><span data-stu-id="d202d-113">-ApplicationGateway</span></span>
+<span data-ttu-id="d202d-114">Megadja annak az alkalmazás-átjárónak a nevét, amelyhez ez a parancsmag hozzáad egy hitelesítési tanúsítványt.</span><span class="sxs-lookup"><span data-stu-id="d202d-114">Specifies the name of application gateway for which this cmdlet adds an authentication certificate.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGateway
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d202d-115">-CertificateFile</span><span class="sxs-lookup"><span data-stu-id="d202d-115">-CertificateFile</span></span>
+<span data-ttu-id="d202d-116">A parancsmag által megadott hitelesítési tanúsítvány elérési útját adja meg.</span><span class="sxs-lookup"><span data-stu-id="d202d-116">Specifies the path of the authentication certificate that this cmdlet adds.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d202d-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="d202d-117">-DefaultProfile</span></span>
+<span data-ttu-id="d202d-118">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="d202d-118">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d202d-119">-Name</span><span class="sxs-lookup"><span data-stu-id="d202d-119">-Name</span></span>
+<span data-ttu-id="d202d-120">Annak a tanúsítványnak a nevét adja meg, amely az alkalmazás-átjáróhoz hozzáadható.</span><span class="sxs-lookup"><span data-stu-id="d202d-120">Specifies the name of a certificate that this cmdlet adds to the application gateway.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d202d-121">-Confirm</span><span class="sxs-lookup"><span data-stu-id="d202d-121">-Confirm</span></span>
+<span data-ttu-id="d202d-122">A parancsmag futtatása előtt a rendszer megerősítést kér.</span><span class="sxs-lookup"><span data-stu-id="d202d-122">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d202d-123">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="d202d-123">-WhatIf</span></span>
+<span data-ttu-id="d202d-124">A parancsmag futtatásakor a program megjeleníti, hogy mi történik.</span><span class="sxs-lookup"><span data-stu-id="d202d-124">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="d202d-125">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="d202d-125">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d202d-126">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="d202d-126">CommonParameters</span></span>
+<span data-ttu-id="d202d-127">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="d202d-127">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="d202d-128">További információt a about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="d202d-128">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="d202d-129">INPUTS</span><span class="sxs-lookup"><span data-stu-id="d202d-129">INPUTS</span></span>
+
+### <span data-ttu-id="d202d-130">Microsoft.Azure.Commands.Network.Models.PSApplicationGateway</span><span class="sxs-lookup"><span data-stu-id="d202d-130">Microsoft.Azure.Commands.Network.Models.PSApplicationGateway</span></span>
+
+## <span data-ttu-id="d202d-131">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="d202d-131">OUTPUTS</span></span>
+
+### <span data-ttu-id="d202d-132">Microsoft.Azure.Commands.Network.Models.PSApplicationGateway</span><span class="sxs-lookup"><span data-stu-id="d202d-132">Microsoft.Azure.Commands.Network.Models.PSApplicationGateway</span></span>
+
+## <span data-ttu-id="d202d-133">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="d202d-133">NOTES</span></span>
+* <span data-ttu-id="d202d-134">Kulcsszavak: azure, azurerm, arm, resource, management, manager, network, networking</span><span class="sxs-lookup"><span data-stu-id="d202d-134">Keywords: azure, azurerm, arm, resource, management, manager, network, networking</span></span>
+
+## <span data-ttu-id="d202d-135">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="d202d-135">RELATED LINKS</span></span>
+
+[<span data-ttu-id="d202d-136">Get-AzApplicationGatewayAuthenticationCertificate</span><span class="sxs-lookup"><span data-stu-id="d202d-136">Get-AzApplicationGatewayAuthenticationCertificate</span></span>](./Get-AzApplicationGatewayAuthenticationCertificate.md)
+
+[<span data-ttu-id="d202d-137">New-AzApplicationGatewayAuthenticationCertificate</span><span class="sxs-lookup"><span data-stu-id="d202d-137">New-AzApplicationGatewayAuthenticationCertificate</span></span>](./New-AzApplicationGatewayAuthenticationCertificate.md)
+
+[<span data-ttu-id="d202d-138">Remove-AzApplicationGatewayAuthenticationCertificate</span><span class="sxs-lookup"><span data-stu-id="d202d-138">Remove-AzApplicationGatewayAuthenticationCertificate</span></span>](./Remove-AzApplicationGatewayAuthenticationCertificate.md)
+
+[<span data-ttu-id="d202d-139">Set-AzApplicationGatewayAuthenticationCertificate</span><span class="sxs-lookup"><span data-stu-id="d202d-139">Set-AzApplicationGatewayAuthenticationCertificate</span></span>](./Set-AzApplicationGatewayAuthenticationCertificate.md)
+
+
