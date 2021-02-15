@@ -6,71 +6,71 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/di
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Monitor/Monitor/help/Disable-AzActivityLogAlert.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Monitor/Monitor/help/Disable-AzActivityLogAlert.md
-ms.openlocfilehash: 84a377e2936a2c9f5aeaf0516dc96f848b9eb0b3
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: b37c3dde3a2f9566a4991111a53aeac72e44cce7
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93842078"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398801"
 ---
-# <span data-ttu-id="cd3e6-101">Disable-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="cd3e6-101">Disable-AzActivityLogAlert</span></span>
+# <span data-ttu-id="ffe01-101">Disable-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="ffe01-101">Disable-AzActivityLogAlert</span></span>
 
-## <span data-ttu-id="cd3e6-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="cd3e6-102">SYNOPSIS</span></span>
-<span data-ttu-id="cd3e6-103">Letiltja a műveletnapló riasztását, és beállítja annak címkéit.</span><span class="sxs-lookup"><span data-stu-id="cd3e6-103">Disables an activity log alert and sets its tags.</span></span>
+## <span data-ttu-id="ffe01-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="ffe01-102">SYNOPSIS</span></span>
+<span data-ttu-id="ffe01-103">Letilt egy tevékenységnapló-riasztást, és beállítja a címkéket.</span><span class="sxs-lookup"><span data-stu-id="ffe01-103">Disables an activity log alert and sets its tags.</span></span>
 
-## <span data-ttu-id="cd3e6-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="cd3e6-104">SYNTAX</span></span>
+## <span data-ttu-id="ffe01-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="ffe01-104">SYNTAX</span></span>
 
-### <span data-ttu-id="cd3e6-105">DisableByNameAndResourceGroup</span><span class="sxs-lookup"><span data-stu-id="cd3e6-105">DisableByNameAndResourceGroup</span></span>
+### <span data-ttu-id="ffe01-105">DisableByNameAndResourceGroup</span><span class="sxs-lookup"><span data-stu-id="ffe01-105">DisableByNameAndResourceGroup</span></span>
 ```
 Disable-AzActivityLogAlert -Name <String> -ResourceGroupName <String>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="cd3e6-106">DisableByInputObject</span><span class="sxs-lookup"><span data-stu-id="cd3e6-106">DisableByInputObject</span></span>
+### <span data-ttu-id="ffe01-106">DisableByInputObject</span><span class="sxs-lookup"><span data-stu-id="ffe01-106">DisableByInputObject</span></span>
 ```
 Disable-AzActivityLogAlert -InputObject <PSActivityLogAlertResource> [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="cd3e6-107">DisableByResourceId</span><span class="sxs-lookup"><span data-stu-id="cd3e6-107">DisableByResourceId</span></span>
+### <span data-ttu-id="ffe01-107">DisableByResourceId</span><span class="sxs-lookup"><span data-stu-id="ffe01-107">DisableByResourceId</span></span>
 ```
 Disable-AzActivityLogAlert -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="cd3e6-108">Leírás</span><span class="sxs-lookup"><span data-stu-id="cd3e6-108">DESCRIPTION</span></span>
-<span data-ttu-id="cd3e6-109">A **disable-AzActivityLogAlert** parancsmag letiltja és aktivitási naplót jelenít meg, és lehetővé teszi a címkék beállítását.</span><span class="sxs-lookup"><span data-stu-id="cd3e6-109">The **Disable-AzActivityLogAlert** cmdlet disables and activity log alert and allows setting its tags.</span></span>
-<span data-ttu-id="cd3e6-110">Ez a parancsmag végrehajtja a ShouldProcess mintát, azaz a felhasználó megerősítését kérheti az erőforrás tényleges javításának megkezdése előtt.</span><span class="sxs-lookup"><span data-stu-id="cd3e6-110">This cmdlet implements the ShouldProcess pattern, i.e. it might request confirmation from the user before actually patching the resource.</span></span>
+## <span data-ttu-id="ffe01-108">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="ffe01-108">DESCRIPTION</span></span>
+<span data-ttu-id="ffe01-109">A **Disable-AzActivityLogAlert** parancsmag letiltja és tevékenységnapló figyelmeztetést ad, és lehetővé teszi a címkék beállítását.</span><span class="sxs-lookup"><span data-stu-id="ffe01-109">The **Disable-AzActivityLogAlert** cmdlet disables and activity log alert and allows setting its tags.</span></span>
+<span data-ttu-id="ffe01-110">Ez a parancsmag implementálja a ShouldProcess mintát, azaz megerősítést kérhet a felhasználótól, mielőtt ténylegesen javítja az erőforrást.</span><span class="sxs-lookup"><span data-stu-id="ffe01-110">This cmdlet implements the ShouldProcess pattern, i.e. it might request confirmation from the user before actually patching the resource.</span></span>
 
-## <span data-ttu-id="cd3e6-111">Példák</span><span class="sxs-lookup"><span data-stu-id="cd3e6-111">EXAMPLES</span></span>
+## <span data-ttu-id="ffe01-111">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="ffe01-111">EXAMPLES</span></span>
 
-### <span data-ttu-id="cd3e6-112">1. példa: tevékenység-naplózási riasztás letiltása</span><span class="sxs-lookup"><span data-stu-id="cd3e6-112">Example 1: Disable an activity log alert</span></span>
+### <span data-ttu-id="ffe01-112">1. példa: Tevékenységnapló-riasztás letiltása</span><span class="sxs-lookup"><span data-stu-id="ffe01-112">Example 1: Disable an activity log alert</span></span>
 ```
 PS C:\>Disable-AzActivityLogAlert -Name "alert1" -ResourceGroupName "Default-ActivityLogsAlerts"
 ```
 
-<span data-ttu-id="cd3e6-113">Ez a parancs letiltja a alert1 nevű műveletnapló riasztást az erőforráscsoport default-ActivityLogsAlerts.</span><span class="sxs-lookup"><span data-stu-id="cd3e6-113">This command disables the activity log alert called alert1 in the resource group Default-ActivityLogsAlerts.</span></span>
-<span data-ttu-id="cd3e6-114">Ez a parancs megváltoztatja a alert1 nevű műveletnapló-riasztás címkék tulajdonságát, és letiltja azt.</span><span class="sxs-lookup"><span data-stu-id="cd3e6-114">This command changes the tags property of the activity log alert called alert1 and disables it.</span></span>
+<span data-ttu-id="ffe01-113">Ez a parancs letiltja a Tevékenységnapló riasztás1 nevű riasztását a Default-ActivityLogsAlerts erőforráscsoportban.</span><span class="sxs-lookup"><span data-stu-id="ffe01-113">This command disables the activity log alert called alert1 in the resource group Default-ActivityLogsAlerts.</span></span>
+<span data-ttu-id="ffe01-114">Ez a parancs módosítja a riasztás1 nevű tevékenységnapló-riasztás címketulajdonságát, és letiltja azt.</span><span class="sxs-lookup"><span data-stu-id="ffe01-114">This command changes the tags property of the activity log alert called alert1 and disables it.</span></span>
 
-### <span data-ttu-id="cd3e6-115">2. példa: tevékenység-naplózási riasztás letiltása PSActivityLogAlertResource-objektum használatával bemenetként</span><span class="sxs-lookup"><span data-stu-id="cd3e6-115">Example 2: Disable an activity log alert using a PSActivityLogAlertResource object as input</span></span>
+### <span data-ttu-id="ffe01-115">2. példa: Tevékenységnapló-riasztás letiltása a PSActivityLogAlertResource objektum használatával bevitelként</span><span class="sxs-lookup"><span data-stu-id="ffe01-115">Example 2: Disable an activity log alert using a PSActivityLogAlertResource object as input</span></span>
 ```
 PS C:\>$obj = Get-AzActivityLogAlert -ResourceGroup "Default-activityLogAlerts" -Name "alert1"
 PS C:\>Disable-AzActivityLogAlert -InputObject $obj
 ```
 
-<span data-ttu-id="cd3e6-116">Ez a parancs letiltja a alert1 nevű műveletnapló riasztást.</span><span class="sxs-lookup"><span data-stu-id="cd3e6-116">This command disables an activity log alert called alert1.</span></span> <span data-ttu-id="cd3e6-117">Ehhez a PSActivityLogAlertResource objektumot használja bemeneti argumentumként.</span><span class="sxs-lookup"><span data-stu-id="cd3e6-117">For this it uses a PSActivityLogAlertResource object as input argument.</span></span>
+<span data-ttu-id="ffe01-116">Ez a parancs letiltja az 1. tevékenységnapló-riasztást.</span><span class="sxs-lookup"><span data-stu-id="ffe01-116">This command disables an activity log alert called alert1.</span></span> <span data-ttu-id="ffe01-117">Ehhez bemeneti argumentumként egy PSActivityLogAlertResource objektumot használ.</span><span class="sxs-lookup"><span data-stu-id="ffe01-117">For this it uses a PSActivityLogAlertResource object as input argument.</span></span>
 
-### <span data-ttu-id="cd3e6-118">3. példa: a ActivityLogAlert letiltása a ResourceId paraméterrel</span><span class="sxs-lookup"><span data-stu-id="cd3e6-118">Example 3: Disable the ActivityLogAlert using the ResourceId parameter</span></span>
+### <span data-ttu-id="ffe01-118">3. példa: A ActivityLogAlert letiltása az ResourceId paraméter használatával</span><span class="sxs-lookup"><span data-stu-id="ffe01-118">Example 3: Disable the ActivityLogAlert using the ResourceId parameter</span></span>
 ```
 PS C:\>Get-AzResource -ResourceGroupName "myResourceGroup" -Name "myLogAlert" | Disable-AzActivityLogAlert
 ```
 
-<span data-ttu-id="cd3e6-119">Ez a parancs letiltja a ActivityLogAlert a ResourceId paraméterrel a pipe-ról.</span><span class="sxs-lookup"><span data-stu-id="cd3e6-119">This command disables the ActivityLogAlert using the ResourceId parameter from the pipe.</span></span>
+<span data-ttu-id="ffe01-119">Ez a parancs letiltja a ActivityLogAlert paramétert a pipe ResourceId paraméterével.</span><span class="sxs-lookup"><span data-stu-id="ffe01-119">This command disables the ActivityLogAlert using the ResourceId parameter from the pipe.</span></span>
 
-## <span data-ttu-id="cd3e6-120">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="cd3e6-120">PARAMETERS</span></span>
+## <span data-ttu-id="ffe01-120">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="ffe01-120">PARAMETERS</span></span>
 
-### <span data-ttu-id="cd3e6-121">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="cd3e6-121">-DefaultProfile</span></span>
-<span data-ttu-id="cd3e6-122">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés</span><span class="sxs-lookup"><span data-stu-id="cd3e6-122">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="ffe01-121">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="ffe01-121">-DefaultProfile</span></span>
+<span data-ttu-id="ffe01-122">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés</span><span class="sxs-lookup"><span data-stu-id="ffe01-122">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -84,8 +84,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="cd3e6-123">-InputObject</span><span class="sxs-lookup"><span data-stu-id="cd3e6-123">-InputObject</span></span>
-<span data-ttu-id="cd3e6-124">A hívás InputObject tulajdonságát állítja be a kötelező név, az erőforráscsoport neve és a választható címke tulajdonságai kinyeréséhez.</span><span class="sxs-lookup"><span data-stu-id="cd3e6-124">Sets the InputObject tags property of the call to extract the required name, resource group name, and the optional tag properties.</span></span>
+### <span data-ttu-id="ffe01-123">-InputObject</span><span class="sxs-lookup"><span data-stu-id="ffe01-123">-InputObject</span></span>
+<span data-ttu-id="ffe01-124">Beállítja a hívás InputObject tags tulajdonságát a szükséges név, az erőforráscsoport neve és a választható címketulajdonságok kinyerése érdekében.</span><span class="sxs-lookup"><span data-stu-id="ffe01-124">Sets the InputObject tags property of the call to extract the required name, resource group name, and the optional tag properties.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
@@ -99,8 +99,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="cd3e6-125">-Name (név)</span><span class="sxs-lookup"><span data-stu-id="cd3e6-125">-Name</span></span>
-<span data-ttu-id="cd3e6-126">A műveletnapló riasztásának neve.</span><span class="sxs-lookup"><span data-stu-id="cd3e6-126">The name of the activity log alert.</span></span>
+### <span data-ttu-id="ffe01-125">-Name</span><span class="sxs-lookup"><span data-stu-id="ffe01-125">-Name</span></span>
+<span data-ttu-id="ffe01-126">A tevékenységnapló-riasztás neve.</span><span class="sxs-lookup"><span data-stu-id="ffe01-126">The name of the activity log alert.</span></span>
 
 ```yaml
 Type: System.String
@@ -114,8 +114,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="cd3e6-127">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="cd3e6-127">-ResourceGroupName</span></span>
-<span data-ttu-id="cd3e6-128">Annak az erőforráscsoportnek a neve, amelyben az értesítési erőforrás létezik.</span><span class="sxs-lookup"><span data-stu-id="cd3e6-128">The name of the resource group where the alert resource is going to exist.</span></span>
+### <span data-ttu-id="ffe01-127">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="ffe01-127">-ResourceGroupName</span></span>
+<span data-ttu-id="ffe01-128">Annak az erőforráscsoportnak a neve, amelyben a riasztási erőforrás fog létezni.</span><span class="sxs-lookup"><span data-stu-id="ffe01-128">The name of the resource group where the alert resource is going to exist.</span></span>
 
 ```yaml
 Type: System.String
@@ -129,8 +129,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="cd3e6-129">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="cd3e6-129">-ResourceId</span></span>
-<span data-ttu-id="cd3e6-130">A hívás ResourceId-címkék tulajdonságát adja meg a szükséges név, az erőforráscsoport nevének kinyeréséhez.</span><span class="sxs-lookup"><span data-stu-id="cd3e6-130">Sets the ResourceId tags property of the call to extract the required name, resource group name properties.</span></span>
+### <span data-ttu-id="ffe01-129">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="ffe01-129">-ResourceId</span></span>
+<span data-ttu-id="ffe01-130">Beállítja a hívás ResourceId tags tulajdonságát a szükséges név, az erőforráscsoport nevének tulajdonságainak kibontása érdekében.</span><span class="sxs-lookup"><span data-stu-id="ffe01-130">Sets the ResourceId tags property of the call to extract the required name, resource group name properties.</span></span>
 
 ```yaml
 Type: System.String
@@ -144,8 +144,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="cd3e6-131">– Megerősítés</span><span class="sxs-lookup"><span data-stu-id="cd3e6-131">-Confirm</span></span>
-<span data-ttu-id="cd3e6-132">A parancsmag futtatása előtt kéri a megerősítést.</span><span class="sxs-lookup"><span data-stu-id="cd3e6-132">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="ffe01-131">-Confirm</span><span class="sxs-lookup"><span data-stu-id="ffe01-131">-Confirm</span></span>
+<span data-ttu-id="ffe01-132">A parancsmag futtatása előtt a rendszer megerősítést kér.</span><span class="sxs-lookup"><span data-stu-id="ffe01-132">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -159,8 +159,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="cd3e6-133">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="cd3e6-133">-WhatIf</span></span>
-<span data-ttu-id="cd3e6-134">Annak megjelenítése, hogy mi történik, ha a parancsmag fut.</span><span class="sxs-lookup"><span data-stu-id="cd3e6-134">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="cd3e6-135">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="cd3e6-135">The cmdlet is not run.</span></span>
+### <span data-ttu-id="ffe01-133">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="ffe01-133">-WhatIf</span></span>
+<span data-ttu-id="ffe01-134">A parancsmag futtatásakor a program megjeleníti, hogy mi történik.</span><span class="sxs-lookup"><span data-stu-id="ffe01-134">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="ffe01-135">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="ffe01-135">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -174,31 +174,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="cd3e6-136">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="cd3e6-136">CommonParameters</span></span>
-<span data-ttu-id="cd3e6-137">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="cd3e6-137">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="cd3e6-138">További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="cd3e6-138">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="ffe01-136">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="ffe01-136">CommonParameters</span></span>
+<span data-ttu-id="ffe01-137">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="ffe01-137">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="ffe01-138">További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="ffe01-138">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="cd3e6-139">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="cd3e6-139">INPUTS</span></span>
+## <span data-ttu-id="ffe01-139">INPUTS</span><span class="sxs-lookup"><span data-stu-id="ffe01-139">INPUTS</span></span>
 
-### <span data-ttu-id="cd3e6-140">System. String</span><span class="sxs-lookup"><span data-stu-id="cd3e6-140">System.String</span></span>
+### <span data-ttu-id="ffe01-140">System.String</span><span class="sxs-lookup"><span data-stu-id="ffe01-140">System.String</span></span>
 
-### <span data-ttu-id="cd3e6-141">Microsoft. Azure. commands. OutputClasses. PSActivityLogAlertResource</span><span class="sxs-lookup"><span data-stu-id="cd3e6-141">Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource</span></span>
+### <span data-ttu-id="ffe01-141">Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource</span><span class="sxs-lookup"><span data-stu-id="ffe01-141">Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource</span></span>
 
-## <span data-ttu-id="cd3e6-142">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="cd3e6-142">OUTPUTS</span></span>
+## <span data-ttu-id="ffe01-142">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="ffe01-142">OUTPUTS</span></span>
 
-### <span data-ttu-id="cd3e6-143">Microsoft. Azure. commands. OutputClasses. PSActivityLogAlertResource</span><span class="sxs-lookup"><span data-stu-id="cd3e6-143">Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource</span></span>
+### <span data-ttu-id="ffe01-143">Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource</span><span class="sxs-lookup"><span data-stu-id="ffe01-143">Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource</span></span>
 
-## <span data-ttu-id="cd3e6-144">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="cd3e6-144">NOTES</span></span>
+## <span data-ttu-id="ffe01-144">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="ffe01-144">NOTES</span></span>
 
-## <span data-ttu-id="cd3e6-145">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="cd3e6-145">RELATED LINKS</span></span>
+## <span data-ttu-id="ffe01-145">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="ffe01-145">RELATED LINKS</span></span>
 
-[<span data-ttu-id="cd3e6-146">Set-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="cd3e6-146">Set-AzActivityLogAlert</span></span>](./Set-AzActivityLogAlert.md)
+[<span data-ttu-id="ffe01-146">Set-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="ffe01-146">Set-AzActivityLogAlert</span></span>](./Set-AzActivityLogAlert.md)
 
-[<span data-ttu-id="cd3e6-147">Get-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="cd3e6-147">Get-AzActivityLogAlert</span></span>](./Get-AzActivityLogAlert.md)
+[<span data-ttu-id="ffe01-147">Get-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="ffe01-147">Get-AzActivityLogAlert</span></span>](./Get-AzActivityLogAlert.md)
 
-[<span data-ttu-id="cd3e6-148">Remove-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="cd3e6-148">Remove-AzActivityLogAlert</span></span>](./Remove-AzActivityLogAlert.md)
+[<span data-ttu-id="ffe01-148">Remove-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="ffe01-148">Remove-AzActivityLogAlert</span></span>](./Remove-AzActivityLogAlert.md)
 
-[<span data-ttu-id="cd3e6-149">Új – AzActionGroup</span><span class="sxs-lookup"><span data-stu-id="cd3e6-149">New-AzActionGroup</span></span>](./New-AzActionGroup.md)
+[<span data-ttu-id="ffe01-149">New-AzActionGroup</span><span class="sxs-lookup"><span data-stu-id="ffe01-149">New-AzActionGroup</span></span>](./New-AzActionGroup.md)
 
-[<span data-ttu-id="cd3e6-150">Új – AzActivityLogAlertCondition</span><span class="sxs-lookup"><span data-stu-id="cd3e6-150">New-AzActivityLogAlertCondition</span></span>](./Get-AzActivityLogAlertCondition.md)
 
-[<span data-ttu-id="cd3e6-151">Enable-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="cd3e6-151">Enable-AzActivityLogAlert</span></span>](./Enable-AzActivityLogAlert.md)
+
+[<span data-ttu-id="ffe01-150">Enable-AzActivityLogAlert</span><span class="sxs-lookup"><span data-stu-id="ffe01-150">Enable-AzActivityLogAlert</span></span>](./Enable-AzActivityLogAlert.md)
