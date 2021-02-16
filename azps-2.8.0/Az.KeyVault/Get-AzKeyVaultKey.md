@@ -6,81 +6,81 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/g
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultKey.md
-ms.openlocfilehash: 21d2f6efa039dbd9b229562fcefd53c715f400fe
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: a934b1d96b260a6615acfbe02b15c80e6d3bfae5
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93666196"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100411449"
 ---
-# <span data-ttu-id="31dd4-101">Get-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="31dd4-101">Get-AzKeyVaultKey</span></span>
+# <span data-ttu-id="20947-101">Get-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="20947-101">Get-AzKeyVaultKey</span></span>
 
-## <span data-ttu-id="31dd4-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="31dd4-102">SYNOPSIS</span></span>
-<span data-ttu-id="31dd4-103">Beolvassa a kulcsok kulcsát.</span><span class="sxs-lookup"><span data-stu-id="31dd4-103">Gets Key Vault keys.</span></span>
+## <span data-ttu-id="20947-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="20947-102">SYNOPSIS</span></span>
+<span data-ttu-id="20947-103">Lekérte a kulcstár kulcsait.</span><span class="sxs-lookup"><span data-stu-id="20947-103">Gets Key Vault keys.</span></span>
 
-## <span data-ttu-id="31dd4-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="31dd4-104">SYNTAX</span></span>
+## <span data-ttu-id="20947-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="20947-104">SYNTAX</span></span>
 
-### <span data-ttu-id="31dd4-105">ByVaultName (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="31dd4-105">ByVaultName (Default)</span></span>
+### <span data-ttu-id="20947-105">ByVaultName (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="20947-105">ByVaultName (Default)</span></span>
 ```
 Get-AzKeyVaultKey [-VaultName] <String> [[-Name] <String>] [-InRemovedState]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="31dd4-106">ByKeyName</span><span class="sxs-lookup"><span data-stu-id="31dd4-106">ByKeyName</span></span>
+### <span data-ttu-id="20947-106">ByKeyName</span><span class="sxs-lookup"><span data-stu-id="20947-106">ByKeyName</span></span>
 ```
 Get-AzKeyVaultKey [-VaultName] <String> [-Name] <String> [-Version] <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="31dd4-107">ByKeyVersions</span><span class="sxs-lookup"><span data-stu-id="31dd4-107">ByKeyVersions</span></span>
+### <span data-ttu-id="20947-107">ByKeyVersions</span><span class="sxs-lookup"><span data-stu-id="20947-107">ByKeyVersions</span></span>
 ```
 Get-AzKeyVaultKey [-VaultName] <String> [-Name] <String> [-IncludeVersions]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="31dd4-108">ByInputObjectVaultName</span><span class="sxs-lookup"><span data-stu-id="31dd4-108">ByInputObjectVaultName</span></span>
+### <span data-ttu-id="20947-108">ByInputObjectVaultName</span><span class="sxs-lookup"><span data-stu-id="20947-108">ByInputObjectVaultName</span></span>
 ```
 Get-AzKeyVaultKey [-InputObject] <PSKeyVault> [[-Name] <String>] [-InRemovedState]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="31dd4-109">ByInputObjectKeyName</span><span class="sxs-lookup"><span data-stu-id="31dd4-109">ByInputObjectKeyName</span></span>
+### <span data-ttu-id="20947-109">ByInputObjectKeyName</span><span class="sxs-lookup"><span data-stu-id="20947-109">ByInputObjectKeyName</span></span>
 ```
 Get-AzKeyVaultKey [-InputObject] <PSKeyVault> [-Name] <String> [-Version] <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="31dd4-110">ByInputObjectKeyVersions</span><span class="sxs-lookup"><span data-stu-id="31dd4-110">ByInputObjectKeyVersions</span></span>
+### <span data-ttu-id="20947-110">ByInputObjectKeyVersions</span><span class="sxs-lookup"><span data-stu-id="20947-110">ByInputObjectKeyVersions</span></span>
 ```
 Get-AzKeyVaultKey [-InputObject] <PSKeyVault> [-Name] <String> [-IncludeVersions]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="31dd4-111">ByResourceIdVaultName</span><span class="sxs-lookup"><span data-stu-id="31dd4-111">ByResourceIdVaultName</span></span>
+### <span data-ttu-id="20947-111">ByResourceIdVaultName</span><span class="sxs-lookup"><span data-stu-id="20947-111">ByResourceIdVaultName</span></span>
 ```
 Get-AzKeyVaultKey [-ResourceId] <String> [[-Name] <String>] [-InRemovedState]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="31dd4-112">ByResourceIdKeyName</span><span class="sxs-lookup"><span data-stu-id="31dd4-112">ByResourceIdKeyName</span></span>
+### <span data-ttu-id="20947-112">ByResourceIdKeyName</span><span class="sxs-lookup"><span data-stu-id="20947-112">ByResourceIdKeyName</span></span>
 ```
 Get-AzKeyVaultKey [-ResourceId] <String> [-Name] <String> [-Version] <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="31dd4-113">ByResourceIdKeyVersions</span><span class="sxs-lookup"><span data-stu-id="31dd4-113">ByResourceIdKeyVersions</span></span>
+### <span data-ttu-id="20947-113">ByResourceIdKeyVersions</span><span class="sxs-lookup"><span data-stu-id="20947-113">ByResourceIdKeyVersions</span></span>
 ```
 Get-AzKeyVaultKey [-ResourceId] <String> [-Name] <String> [-IncludeVersions]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="31dd4-114">Leírás</span><span class="sxs-lookup"><span data-stu-id="31dd4-114">DESCRIPTION</span></span>
-<span data-ttu-id="31dd4-115">A **Get-AzKeyVaultKey** parancsmag Azure Key Vault-kulcsokat kap.</span><span class="sxs-lookup"><span data-stu-id="31dd4-115">The **Get-AzKeyVaultKey** cmdlet gets Azure Key Vault keys.</span></span>
-<span data-ttu-id="31dd4-116">Ez a parancsmag a **Microsoft. Azure. commands. kulcskezelő. models.** vagy a kulcsfájl vagy **az összes kulcskezelő** objektum listáját adja meg egy kulcs-boltozatban vagy egy verzióban.</span><span class="sxs-lookup"><span data-stu-id="31dd4-116">This cmdlet gets a specific **Microsoft.Azure.Commands.KeyVault.Models.KeyBundle** or a list of all **KeyBundle** objects in a key vault or by version.</span></span>
+## <span data-ttu-id="20947-114">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="20947-114">DESCRIPTION</span></span>
+<span data-ttu-id="20947-115">A **Get-AzKeyVaultKey** parancsmag azure-kulcstár-kulcsokat kap.</span><span class="sxs-lookup"><span data-stu-id="20947-115">The **Get-AzKeyVaultKey** cmdlet gets Azure Key Vault keys.</span></span>
+<span data-ttu-id="20947-116">Ez a parancsmag egy adott **Microsoft.Azure.Commands.KeyVault.Models.KeyBundle** parancsot vagy egy kulcstárban vagy verziók szerint az összes **KeyBundle-objektum** listáját kapja.</span><span class="sxs-lookup"><span data-stu-id="20947-116">This cmdlet gets a specific **Microsoft.Azure.Commands.KeyVault.Models.KeyBundle** or a list of all **KeyBundle** objects in a key vault or by version.</span></span>
 
-## <span data-ttu-id="31dd4-117">Példák</span><span class="sxs-lookup"><span data-stu-id="31dd4-117">EXAMPLES</span></span>
+## <span data-ttu-id="20947-117">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="20947-117">EXAMPLES</span></span>
 
-### <span data-ttu-id="31dd4-118">1. példa: a billentyűk lekérése a fő boltozaton</span><span class="sxs-lookup"><span data-stu-id="31dd4-118">Example 1: Get all the keys in a key vault</span></span>
+### <span data-ttu-id="20947-118">1. példa: Az összes kulcs lekérte a kulcstárban található összes kulcsot</span><span class="sxs-lookup"><span data-stu-id="20947-118">Example 1: Get all the keys in a key vault</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso'
 
@@ -109,9 +109,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-<span data-ttu-id="31dd4-119">Ez a parancs a contoso nevű fő boltozat összes kulcsát kinyeri.</span><span class="sxs-lookup"><span data-stu-id="31dd4-119">This command gets all the keys in the key vault named Contoso.</span></span>
+<span data-ttu-id="20947-119">Ez a parancs a Contoso nevű kulcstár összes kulcsát megkapja.</span><span class="sxs-lookup"><span data-stu-id="20947-119">This command gets all the keys in the key vault named Contoso.</span></span>
 
-### <span data-ttu-id="31dd4-120">2. példa: a kulcs aktuális verziójának beszerzése</span><span class="sxs-lookup"><span data-stu-id="31dd4-120">Example 2: Get the current version of a key</span></span>
+### <span data-ttu-id="20947-120">2. példa: Kulcs aktuális verziójának lekérte</span><span class="sxs-lookup"><span data-stu-id="20947-120">Example 2: Get the current version of a key</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1'
 
@@ -128,9 +128,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-<span data-ttu-id="31dd4-121">Ez a parancs beolvassa a test1 nevű kulcs aktuális verzióját a contoso nevű kulcs boltozatában.</span><span class="sxs-lookup"><span data-stu-id="31dd4-121">This command gets the current version of the key named test1 in the key vault named Contoso.</span></span>
+<span data-ttu-id="20947-121">Ez a parancs a Contoso nevű kulcstárban a Test1 nevű kulcs aktuális verzióját kapja meg.</span><span class="sxs-lookup"><span data-stu-id="20947-121">This command gets the current version of the key named test1 in the key vault named Contoso.</span></span>
 
-### <span data-ttu-id="31dd4-122">3. példa: a kulcsok minden verziójának beolvasása</span><span class="sxs-lookup"><span data-stu-id="31dd4-122">Example 3: Get all versions of a key</span></span>
+### <span data-ttu-id="20947-122">3. példa: Kulcs összes verziójának lekérte</span><span class="sxs-lookup"><span data-stu-id="20947-122">Example 3: Get all versions of a key</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1' -IncludeVersions
 
@@ -159,9 +159,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-<span data-ttu-id="31dd4-123">Ez a parancs a ITPfx nevű kulcsot a contoso vaultnamed kulcsában kapja meg.</span><span class="sxs-lookup"><span data-stu-id="31dd4-123">This command gets all versions the key named ITPfx in the key vaultnamed Contoso.</span></span>
+<span data-ttu-id="20947-123">Ez a parancs az ITPfx nevű összes verziót megkapja a Contoso nevű kulcstárban.</span><span class="sxs-lookup"><span data-stu-id="20947-123">This command gets all versions the key named ITPfx in the key vaultnamed Contoso.</span></span>
 
-### <span data-ttu-id="31dd4-124">Példa 4: a kulcs meghatározott verziójának beszerzése</span><span class="sxs-lookup"><span data-stu-id="31dd4-124">Example 4: Get a specific version of a key</span></span>
+### <span data-ttu-id="20947-124">4. példa: Kulcs adott verziójának lekérte</span><span class="sxs-lookup"><span data-stu-id="20947-124">Example 4: Get a specific version of a key</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1' -Version 'e4e95940e669407fbdb4298bc21a3e1d'
 
@@ -178,10 +178,10 @@ Purge Disabled : False
 Tags           :
 ```
 
-<span data-ttu-id="31dd4-125">Ez a parancs beolvassa a test1 nevű kulcs egy bizonyos verzióját a contoso nevű kulcs boltozatában.</span><span class="sxs-lookup"><span data-stu-id="31dd4-125">This command gets a specific version of the key named test1 in the key vault named Contoso.</span></span>
-<span data-ttu-id="31dd4-126">Miután futtatta ezt a parancsot, a $Key objektumban való navigálással ellenőrizheti a billentyűk különböző tulajdonságait.</span><span class="sxs-lookup"><span data-stu-id="31dd4-126">After running this command, you can inspect various properties of the key by navigating the $Key object.</span></span>
+<span data-ttu-id="20947-125">Ez a parancs a Contoso nevű kulcstárban a Test1 nevű kulcs adott verzióját kapja meg.</span><span class="sxs-lookup"><span data-stu-id="20947-125">This command gets a specific version of the key named test1 in the key vault named Contoso.</span></span>
+<span data-ttu-id="20947-126">A parancs futtatása után a kulcs különféle tulajdonságainak vizsgálatához navigálhat a $Key objektumban.</span><span class="sxs-lookup"><span data-stu-id="20947-126">After running this command, you can inspect various properties of the key by navigating the $Key object.</span></span>
 
-### <span data-ttu-id="31dd4-127">5. példa: a kulcsfájl által törölt, de nem törölt billentyűk beolvasása.</span><span class="sxs-lookup"><span data-stu-id="31dd4-127">Example 5: Get all the keys that have been deleted but not purged for this key vault.</span></span>
+### <span data-ttu-id="20947-127">5. példa: Szerezze be az összes olyan kulcsot, amely törlődött, de nem lett véglegesen törölve ehhez a kulcstárhoz.</span><span class="sxs-lookup"><span data-stu-id="20947-127">Example 5: Get all the keys that have been deleted but not purged for this key vault.</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -InRemovedState
 
@@ -199,9 +199,9 @@ Purge Disabled       : False
 Tags                 :
 ```
 
-<span data-ttu-id="31dd4-128">Ez a parancs az összes korábban törölt, de nem törölt billentyűt beilleszti a contoso nevű billentyűvel.</span><span class="sxs-lookup"><span data-stu-id="31dd4-128">This command gets all the keys that have been previously deleted, but not purged, in the key vault named Contoso.</span></span>
+<span data-ttu-id="20947-128">Ez a parancs a Korábban törölt, de nem véglegesen törölt összes kulcsot a Contoso nevű kulcstárba kapja.</span><span class="sxs-lookup"><span data-stu-id="20947-128">This command gets all the keys that have been previously deleted, but not purged, in the key vault named Contoso.</span></span>
 
-### <span data-ttu-id="31dd4-129">6. példa: a kulcsfájl a ITPfx, amelyet töröltek, de nem tisztítják meg.</span><span class="sxs-lookup"><span data-stu-id="31dd4-129">Example 6: Gets the key ITPfx that has been deleted but not purged for this key vault.</span></span>
+### <span data-ttu-id="20947-129">6. példa: A kulcstár törölt, de nem véglegesen törölt ITPfx kulcsát kapja meg.</span><span class="sxs-lookup"><span data-stu-id="20947-129">Example 6: Gets the key ITPfx that has been deleted but not purged for this key vault.</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test3' -InRemovedState
 
@@ -219,10 +219,10 @@ Purge Disabled       : False
 Tags                 :
 ```
 
-<span data-ttu-id="31dd4-130">Ez a parancs a contoso nevű kulcsfájl által korábban törölt, de el nem távolított kulcs test3 kapja meg.</span><span class="sxs-lookup"><span data-stu-id="31dd4-130">This command gets the key test3 that has been previously deleted, but not purged, in the key vault named Contoso.</span></span>
-<span data-ttu-id="31dd4-131">Ez a parancs metaadatokat ad vissza, például a törlési dátumot, valamint a törölt kulcs ütemezett leöblítési dátumát.</span><span class="sxs-lookup"><span data-stu-id="31dd4-131">This command will return metadata such as the deletion date, and the scheduled purging date of this deleted key.</span></span>
+<span data-ttu-id="20947-130">Ez a parancs a Korábban törölt, de nem véglegesen törölt kulcstesztet kapja meg a Contoso nevű kulcstárban.</span><span class="sxs-lookup"><span data-stu-id="20947-130">This command gets the key test3 that has been previously deleted, but not purged, in the key vault named Contoso.</span></span>
+<span data-ttu-id="20947-131">Ez a parancs metaadatokat, például törlési dátumot és a törölt kulcs ütemezett végleges törlési dátumát adja vissza.</span><span class="sxs-lookup"><span data-stu-id="20947-131">This command will return metadata such as the deletion date, and the scheduled purging date of this deleted key.</span></span>
 
-### <span data-ttu-id="31dd4-132">7. példa: a billentyűk lekérése szűréssel</span><span class="sxs-lookup"><span data-stu-id="31dd4-132">Example 7: Get all the keys in a key vault using filtering</span></span>
+### <span data-ttu-id="20947-132">7. példa: Az összes kulcs behozása egy kulcstárba szűrés használatával</span><span class="sxs-lookup"><span data-stu-id="20947-132">Example 7: Get all the keys in a key vault using filtering</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName "test*"
 
@@ -251,12 +251,12 @@ Purge Disabled : False
 Tags           :
 ```
 
-<span data-ttu-id="31dd4-133">Ez a parancs az összes olyan billentyűt megkapja a contoso nevű kulcsban, amely a "teszt" kifejezéssel kezdődik.</span><span class="sxs-lookup"><span data-stu-id="31dd4-133">This command gets all the keys in the key vault named Contoso that start with "test".</span></span>
+<span data-ttu-id="20947-133">Ez a parancs a Contoso nevű kulcstár "teszt" kezdetű összes kulcsát megkapja.</span><span class="sxs-lookup"><span data-stu-id="20947-133">This command gets all the keys in the key vault named Contoso that start with "test".</span></span>
 
-## <span data-ttu-id="31dd4-134">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="31dd4-134">PARAMETERS</span></span>
+## <span data-ttu-id="20947-134">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="20947-134">PARAMETERS</span></span>
 
-### <span data-ttu-id="31dd4-135">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="31dd4-135">-DefaultProfile</span></span>
-<span data-ttu-id="31dd4-136">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés</span><span class="sxs-lookup"><span data-stu-id="31dd4-136">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="20947-135">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="20947-135">-DefaultProfile</span></span>
+<span data-ttu-id="20947-136">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés</span><span class="sxs-lookup"><span data-stu-id="20947-136">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -270,11 +270,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="31dd4-137">-IncludeVersions</span><span class="sxs-lookup"><span data-stu-id="31dd4-137">-IncludeVersions</span></span>
-<span data-ttu-id="31dd4-138">Azt jelzi, hogy ez a parancsmag a kulcsok minden verzióját bekapja.</span><span class="sxs-lookup"><span data-stu-id="31dd4-138">Indicates that this cmdlet gets all versions of a key.</span></span>
-<span data-ttu-id="31dd4-139">A kulcsok jelenlegi verziója az első a listán.</span><span class="sxs-lookup"><span data-stu-id="31dd4-139">The current version of a key is the first one on the list.</span></span>
-<span data-ttu-id="31dd4-140">Ha ezt a paramétert adja meg, a *nevet* és a *VaultName* paramétereket is meg kell adnia.</span><span class="sxs-lookup"><span data-stu-id="31dd4-140">If you specify this parameter you must also specify the *Name* and *VaultName* parameters.</span></span>
-<span data-ttu-id="31dd4-141">Ha nem adja meg a *IncludeVersions* paramétert, ez a parancsmag a megadott *nevű* kulcs aktuális verzióját kapja meg.</span><span class="sxs-lookup"><span data-stu-id="31dd4-141">If you do not specify the *IncludeVersions* parameter, this cmdlet gets the current version of the key with the specified *Name*.</span></span>
+### <span data-ttu-id="20947-137">-IncludeVersions</span><span class="sxs-lookup"><span data-stu-id="20947-137">-IncludeVersions</span></span>
+<span data-ttu-id="20947-138">Azt jelzi, hogy ez a parancsmag a kulcs összes verzióját megkapja.</span><span class="sxs-lookup"><span data-stu-id="20947-138">Indicates that this cmdlet gets all versions of a key.</span></span>
+<span data-ttu-id="20947-139">A kulcs aktuális verziója az első a listában.</span><span class="sxs-lookup"><span data-stu-id="20947-139">The current version of a key is the first one on the list.</span></span>
+<span data-ttu-id="20947-140">Ha ezt a paramétert adja meg, a *Name* és *a VaultName* paramétert is meg kell adnia.</span><span class="sxs-lookup"><span data-stu-id="20947-140">If you specify this parameter you must also specify the *Name* and *VaultName* parameters.</span></span>
+<span data-ttu-id="20947-141">Ha nem adja meg az *IncludeVersions* paramétert, ez a parancsmag a kulcs aktuális verzióját kapja meg a megadott *névvel.*</span><span class="sxs-lookup"><span data-stu-id="20947-141">If you do not specify the *IncludeVersions* parameter, this cmdlet gets the current version of the key with the specified *Name*.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -288,8 +288,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="31dd4-142">-InputObject</span><span class="sxs-lookup"><span data-stu-id="31dd4-142">-InputObject</span></span>
-<span data-ttu-id="31dd4-143">A boltozat objektum.</span><span class="sxs-lookup"><span data-stu-id="31dd4-143">KeyVault object.</span></span>
+### <span data-ttu-id="20947-142">-InputObject</span><span class="sxs-lookup"><span data-stu-id="20947-142">-InputObject</span></span>
+<span data-ttu-id="20947-143">KeyVault objektum.</span><span class="sxs-lookup"><span data-stu-id="20947-143">KeyVault object.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
@@ -303,8 +303,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="31dd4-144">-InRemovedState</span><span class="sxs-lookup"><span data-stu-id="31dd4-144">-InRemovedState</span></span>
-<span data-ttu-id="31dd4-145">Annak megadása, hogy a kimenetben a korábban törölt billentyűk jelenjenek-e meg</span><span class="sxs-lookup"><span data-stu-id="31dd4-145">Specifies whether to show the previously deleted keys in the output</span></span>
+### <span data-ttu-id="20947-144">-InRemovedState</span><span class="sxs-lookup"><span data-stu-id="20947-144">-InRemovedState</span></span>
+<span data-ttu-id="20947-145">Megadja, hogy a korábban törölt billentyűket a kimenetben is meg kell-e mutatni.</span><span class="sxs-lookup"><span data-stu-id="20947-145">Specifies whether to show the previously deleted keys in the output</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -318,8 +318,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="31dd4-146">-Name (név)</span><span class="sxs-lookup"><span data-stu-id="31dd4-146">-Name</span></span>
-<span data-ttu-id="31dd4-147">A beolvasott kulcs kötegének nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="31dd4-147">Specifies the name of the key bundle to get.</span></span>
+### <span data-ttu-id="20947-146">-Name</span><span class="sxs-lookup"><span data-stu-id="20947-146">-Name</span></span>
+<span data-ttu-id="20947-147">A lekért kulcscsomag nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="20947-147">Specifies the name of the key bundle to get.</span></span>
 
 ```yaml
 Type: System.String
@@ -345,8 +345,8 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="31dd4-148">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="31dd4-148">-ResourceId</span></span>
-<span data-ttu-id="31dd4-149">A főkészlet erőforrás-azonosítója.</span><span class="sxs-lookup"><span data-stu-id="31dd4-149">KeyVault Resource Id.</span></span>
+### <span data-ttu-id="20947-148">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="20947-148">-ResourceId</span></span>
+<span data-ttu-id="20947-149">KeyVault-erőforrás azonosítója.</span><span class="sxs-lookup"><span data-stu-id="20947-149">KeyVault Resource Id.</span></span>
 
 ```yaml
 Type: System.String
@@ -360,9 +360,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="31dd4-150">-VaultName</span><span class="sxs-lookup"><span data-stu-id="31dd4-150">-VaultName</span></span>
-<span data-ttu-id="31dd4-151">Annak a kulcsnak a nevét adja meg, amelyből a parancsmag kulcsokat kap.</span><span class="sxs-lookup"><span data-stu-id="31dd4-151">Specifies the name of the key vault from which this cmdlet gets keys.</span></span>
-<span data-ttu-id="31dd4-152">Ez a parancsmag a kulcsfájl teljesen minősített tartománynevét (FQDN) építi fel a paraméter által megadott név és a kijelölt környezet alapján.</span><span class="sxs-lookup"><span data-stu-id="31dd4-152">This cmdlet constructs the fully qualified domain name (FQDN) of a key vault based on the name that this parameter specifies and your selected environment.</span></span>
+### <span data-ttu-id="20947-150">-VaultName</span><span class="sxs-lookup"><span data-stu-id="20947-150">-VaultName</span></span>
+<span data-ttu-id="20947-151">Annak a kulcstárnak a neve, amelyből a parancsmag kulcsokat kap.</span><span class="sxs-lookup"><span data-stu-id="20947-151">Specifies the name of the key vault from which this cmdlet gets keys.</span></span>
+<span data-ttu-id="20947-152">Ez a parancsmag egy kulcstár teljes tartománynevét (FQDN) építi fel a paraméter által megadott név és a kiválasztott környezet alapján.</span><span class="sxs-lookup"><span data-stu-id="20947-152">This cmdlet constructs the fully qualified domain name (FQDN) of a key vault based on the name that this parameter specifies and your selected environment.</span></span>
 
 ```yaml
 Type: System.String
@@ -376,9 +376,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="31dd4-153">-Verzió</span><span class="sxs-lookup"><span data-stu-id="31dd4-153">-Version</span></span>
-<span data-ttu-id="31dd4-154">A kulcs verziószámát adja meg.</span><span class="sxs-lookup"><span data-stu-id="31dd4-154">Specifies the key version.</span></span>
-<span data-ttu-id="31dd4-155">Ez a parancsmag a kulcs teljes tartománynevét, az aktuálisan kijelölt környezetet, a kulcs nevét és a kulcs verziószámát építi fel.</span><span class="sxs-lookup"><span data-stu-id="31dd4-155">This cmdlet constructs the FQDN of a key based on the key vault name, your currently selected environment, the key name, and the key version.</span></span>
+### <span data-ttu-id="20947-153">-Version</span><span class="sxs-lookup"><span data-stu-id="20947-153">-Version</span></span>
+<span data-ttu-id="20947-154">A kulcsverziót adja meg.</span><span class="sxs-lookup"><span data-stu-id="20947-154">Specifies the key version.</span></span>
+<span data-ttu-id="20947-155">Ez a parancsmag egy kulcs FQDN-ét építi fel a kulcs tárolóneve, az aktuálisan kiválasztott környezet, a kulcs neve és a kulcsverzió alapján.</span><span class="sxs-lookup"><span data-stu-id="20947-155">This cmdlet constructs the FQDN of a key based on the key vault name, your currently selected environment, the key name, and the key version.</span></span>
 
 ```yaml
 Type: System.String
@@ -392,34 +392,33 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="31dd4-156">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="31dd4-156">CommonParameters</span></span>
-<span data-ttu-id="31dd4-157">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="31dd4-157">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="31dd4-158">További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="31dd4-158">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="20947-156">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="20947-156">CommonParameters</span></span>
+<span data-ttu-id="20947-157">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="20947-157">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="20947-158">További információt a [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="20947-158">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="31dd4-159">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="31dd4-159">INPUTS</span></span>
+## <span data-ttu-id="20947-159">INPUTS</span><span class="sxs-lookup"><span data-stu-id="20947-159">INPUTS</span></span>
 
-### <span data-ttu-id="31dd4-160">Microsoft. Azure. Command. PSKeyVault. models.</span><span class="sxs-lookup"><span data-stu-id="31dd4-160">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault</span></span>
+### <span data-ttu-id="20947-160">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault</span><span class="sxs-lookup"><span data-stu-id="20947-160">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault</span></span>
 
-### <span data-ttu-id="31dd4-161">System. String</span><span class="sxs-lookup"><span data-stu-id="31dd4-161">System.String</span></span>
+### <span data-ttu-id="20947-161">System.String</span><span class="sxs-lookup"><span data-stu-id="20947-161">System.String</span></span>
 
-## <span data-ttu-id="31dd4-162">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="31dd4-162">OUTPUTS</span></span>
+## <span data-ttu-id="20947-162">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="20947-162">OUTPUTS</span></span>
 
-### <span data-ttu-id="31dd4-163">Microsoft. Azure. Command. PSKeyVaultKeyIdentityItem. models.</span><span class="sxs-lookup"><span data-stu-id="31dd4-163">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem</span></span>
+### <span data-ttu-id="20947-163">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem</span><span class="sxs-lookup"><span data-stu-id="20947-163">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem</span></span>
 
-### <span data-ttu-id="31dd4-164">Microsoft. Azure. Command. PSKeyVaultKey. models.</span><span class="sxs-lookup"><span data-stu-id="31dd4-164">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKey</span></span>
+### <span data-ttu-id="20947-164">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="20947-164">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKey</span></span>
 
-### <span data-ttu-id="31dd4-165">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKeyIdentityItem</span><span class="sxs-lookup"><span data-stu-id="31dd4-165">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKeyIdentityItem</span></span>
+### <span data-ttu-id="20947-165">Microsoft.Azure.Commands.KeyVault.Models.PSDKeyVaultKeyIdentityItem</span><span class="sxs-lookup"><span data-stu-id="20947-165">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKeyIdentityItem</span></span>
 
-### <span data-ttu-id="31dd4-166">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="31dd4-166">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKey</span></span>
+### <span data-ttu-id="20947-166">Microsoft.Azure.Commands.KeyVault.Models.PSDKeyVaultKey billentyű</span><span class="sxs-lookup"><span data-stu-id="20947-166">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKey</span></span>
 
-## <span data-ttu-id="31dd4-167">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="31dd4-167">NOTES</span></span>
+## <span data-ttu-id="20947-167">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="20947-167">NOTES</span></span>
 
-## <span data-ttu-id="31dd4-168">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="31dd4-168">RELATED LINKS</span></span>
+## <span data-ttu-id="20947-168">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="20947-168">RELATED LINKS</span></span>
 
-[<span data-ttu-id="31dd4-169">Add-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="31dd4-169">Add-AzKeyVaultKey</span></span>](./Add-AzKeyVaultKey.md)
+[<span data-ttu-id="20947-169">Add-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="20947-169">Add-AzKeyVaultKey</span></span>](./Add-AzKeyVaultKey.md)
 
-[<span data-ttu-id="31dd4-170">Remove-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="31dd4-170">Remove-AzKeyVaultKey</span></span>](./Remove-AzKeyVaultKey.md)
+[<span data-ttu-id="20947-170">Remove-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="20947-170">Remove-AzKeyVaultKey</span></span>](./Remove-AzKeyVaultKey.md)
 
-[<span data-ttu-id="31dd4-171">Visszavonás – AzKeyVaultKeyRemoval</span><span class="sxs-lookup"><span data-stu-id="31dd4-171">Undo-AzKeyVaultKeyRemoval</span></span>](./Undo-AzKeyVaultKeyRemoval.md)
+[<span data-ttu-id="20947-171">Undo-AzKeyVaultKeyRemoval</span><span class="sxs-lookup"><span data-stu-id="20947-171">Undo-AzKeyVaultKeyRemoval</span></span>](./Undo-AzKeyVaultKeyRemoval.md)
 
-[<span data-ttu-id="31dd4-172">Set-AzKeyVaultKeyAttribute</span><span class="sxs-lookup"><span data-stu-id="31dd4-172">Set-AzKeyVaultKeyAttribute</span></span>](./Set-AzKeyVaultKeyAttribute.md)
 
