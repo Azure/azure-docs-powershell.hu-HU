@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzResource.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzResource.md
-ms.openlocfilehash: ecd70916f1ddb6e365fb9f880db9974f6c9ae771
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 9e8eea48238bd177f3a8556691db48686a57dd99
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94180946"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100414866"
 ---
 # Remove-AzResource
 
-## Áttekintés
+## SYNOPSIS
 Eltávolít egy erőforrást.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### ByResourceId (alapértelmezett)
 ```
@@ -41,25 +41,25 @@ Remove-AzResource [-AsJob] -ResourceName <String> -ResourceType <String> [-Exten
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Leírás
-A **Remove-AzResource** parancsmag eltávolítja az Azure-erőforrást.
+## LEÍRÁS
+A **Remove-AzResource** parancsmag eltávolít egy Azure-erőforrást.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: webhely-erőforrás eltávolítása
+### 1. példa: Webhelyerőforrás eltávolítása
 ```
 PS C:\>Remove-AzResource -ResourceId "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/ResourceGroup11/providers/Microsoft.Web/sites/ContosoSite" -Force
 ```
 
-Ez a parancs eltávolítja a ContosoSite nevű webhely-erőforrást.
-A példa az előfizetés AZONOSÍTÓjának helyőrző értékét használja.
-A parancs az *erő* paramétert adja meg.
-Ezért nem kéri a megerősítést.
+Ez a parancs eltávolítja a ContosoSite nevű webhelyerőforrást.
+A példa egy helyőrző értéket használ az előfizetésazonosítóhoz.
+A parancs a Force *paramétert* adja meg.
+Ezért nem kér megerősítést.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -ApiVersion
-Az erőforrás-szolgáltató API-nak a verziószámát adja meg.
+Az erőforrás-szolgáltató API-jának használnia kell verzióját adja meg.
 Ha nem ad meg verziót, ez a parancsmag a legújabb elérhető verziót használja.
 
 ```yaml
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -AsJob
-A parancsmag futtatása a háttérben
+Parancsmag futtatása a háttérben
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -105,8 +105,8 @@ Accept wildcard characters: False
 ```
 
 ### -ExtensionResourceName
-A parancsmag által eltávolított erőforrás mellék-erőforrásának a nevét adja meg.
-Ha például egy adatbázist szeretne megadni, használja a következő formátumot: kiszolgálónév- `/` adatbázis neve
+Annak az erőforrásnak a nevét adja meg, amelyből a parancsmag eltávolítja a bővítményerőforrást.
+Adatbázis megadásához például használja a következő formátumot: kiszolgálónév `/` adatbázis neve
 
 ```yaml
 Type: System.String
@@ -121,8 +121,8 @@ Accept wildcard characters: False
 ```
 
 ### -ExtensionResourceType
-A bővítmény-erőforrás erőforrás-típusát adja meg.
-Az erőforráshoz tartozó mellék-erőforrás típusát adja meg.
+Egy bővítményerőforrás erőforrástípusát adja meg.
+Az erőforrás bővítményerőforrás-típusát adja meg.
 Például: `Microsoft.Sql/Servers/Databases`
 
 ```yaml
@@ -138,7 +138,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Kényszeríti a parancsot, hogy a felhasználó megerősítésének kérése nélkül fusson.
+A parancs futtatását kényszeríti felhasználói megerősítés kérése nélkül.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -153,8 +153,8 @@ Accept wildcard characters: False
 ```
 
 ### -ODataQuery
-Egy Open Data Protocol (OData) stílusú szűrőt ad meg.
-Ez a parancsmag minden más szűrőn kívül hozzáfűzi ezt az értéket a kéréshez.
+OData-stílusszűrőt ad meg.
+Ez a parancsmag minden más szűrő mellett hozzáfűzi ezt az értéket a kérelemhez.
 
 ```yaml
 Type: System.String
@@ -169,7 +169,7 @@ Accept wildcard characters: False
 ```
 
 ### -Pre
-Jelzi, hogy ez a parancsmag az előzetes verziójú API-verziókat veszi figyelembe, amikor az automatikusan meghatározza, hogy melyik verziót használja.
+Azt jelzi, hogy ez a parancsmag figyelembe veszi a megjelenés előtt ható API-verziókat, amikor automatikusan meghatározza, hogy melyik verziót kell használni.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -184,7 +184,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Annak az erőforrás-csoportnak a neve, amelyből a parancsmag eltávolítja az erőforrást.
+Annak az erőforráscsoportnak a nevét adja meg, amelyből a parancsmag eltávolítja az erőforrást.
 
 ```yaml
 Type: System.String
@@ -199,8 +199,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-A parancsmag által eltávolított erőforrás teljesen minősített erőforrás-AZONOSÍTÓját adja meg.
-Az azonosító tartalmazza az előfizetést, ahogy az alábbi példában: `/subscriptions/` előfizetés azonosítója`/providers/Microsoft.Sql/servers/ContosoServer/databases/ContosoDatabase`
+A parancsmag által eltávolított erőforrás teljes erőforrás-azonosítóját adja meg.
+Az azonosító tartalmazza az előfizetést, ahogy az alábbi példában is: `/subscriptions/` előfizetés azonosítója`/providers/Microsoft.Sql/servers/ContosoServer/databases/ContosoDatabase`
 
 ```yaml
 Type: System.String
@@ -215,8 +215,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceName
-A parancsmag által eltávolított erőforrás nevét adja meg.
-Ha például egy adatbázist szeretne megadni, használja az alábbi formátumot: `ContosoServer/ContosoDatabase`
+Annak az erőforrásnak a nevét adja meg, amelyből a parancsmag eltávolítja.
+Adatbázis megadásához például használja az alábbi formátumot: `ContosoServer/ContosoDatabase`
 
 ```yaml
 Type: System.String
@@ -231,8 +231,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceType
-A parancsmag által eltávolított erőforrás típusát adja meg.
-Adatbázis esetén például az erőforrás típusa az alábbi: `Microsoft.Sql/Servers/Databases`
+A parancsmag által eltávolított erőforrás típusát határozza meg.
+Adatbázis például az alábbi erőforrástípust követi: `Microsoft.Sql/Servers/Databases`
 
 ```yaml
 Type: System.String
@@ -247,7 +247,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantLevel
-Jelzi, hogy ez a parancsmag a bérlői szinten működik.
+Azt jelzi, hogy ez a parancsmag a bérlői szinten működik.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -261,8 +261,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -277,7 +277,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik.
 A parancsmag nem fut.
 
 ```yaml
@@ -293,27 +293,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### System. Boolean
+### System.Boolean
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Keresés-AzResource](./Find-AzResource.md)
 
 [Get-AzResource](./Get-AzResource.md)
 
 [Move-AzResource](./Move-AzResource.md)
 
-[Új – AzResource](./New-AzResource.md)
+[New-AzResource](./New-AzResource.md)
 
 [Set-AzResource](./Set-AzResource.md)
 
