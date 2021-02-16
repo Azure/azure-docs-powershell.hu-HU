@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/Set-AzVMSqlServerExtension.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/Set-AzVMSqlServerExtension.md
-ms.openlocfilehash: 4093e236f84d7587586ba30c8bd4653c4ba7358f
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: 1795216cbc18da2d503a1e0056d614337cd12785
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93844194"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398240"
 ---
 # Set-AzVMSqlServerExtension
 
-## Áttekintés
-Egy virtuális gépen az Azure SQL Server-bővítményt állítja be.
+## SYNOPSIS
+Beállítja az Azure SQL Server-bővítményt egy virtuális gépen.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 Set-AzVMSqlServerExtension [[-Version] <String>] [-ResourceGroupName] <String> [-VMName] <String>
@@ -27,66 +27,66 @@ Set-AzVMSqlServerExtension [[-Version] <String>] [-ResourceGroupName] <String> [
  [[-Location] <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-A **set-AzVMSqlServerExtension** parancsmag egy virtuális gépen beállítja a AzureSQL Server bővítményt.
+## LEÍRÁS
+A **Set-AzVMSqlServerExtension** parancsmag beállítja az AzureSQL Server-bővítményt egy virtuális gépen.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: automatikus javítási beállítások megadása virtuális gépen
+### 1. példa: Automatikus javítási beállítások megadása virtuális gépen
 ```
 PS C:\> $AutoPatchingConfig = New-AzureVMSqlServerAutoPatchingConfig -Enable -DayOfWeek "Thursday" -MaintenanceWindowStartingHour 11 -MaintenanceWindowDuration 120 -PatchCategory "Important"
 PS C:\> Get-AzVM -ServiceName "Service02" -Name "VirtualMachine11" | Set-AzVMSqlServerExtension -AutoPatchingSettings $AutoPatchingConfig | Update-AzVM
 ```
 
-Az első parancs a **New-AzureVMSqlServerAutoPatchingConfig** parancsmag segítségével hoz létre konfigurációs objektumot.
-A parancs a $AutoPatchingConfig változóban tárolja a konfigurációt.
+Az első parancs a **New-AzureVMSqlServerAutoPatchingConfig** parancsmag használatával hoz létre konfigurációs objektumot.
+A parancs a konfigurációt a $AutoPatchingConfig tárolja.
 
-A második parancs a VirtualMachine11 nevű virtuális gépet a Service02 nevű szolgáltatáson keresztül kapja meg az Get-AzVM parancsmag használatával.
-A parancs a csővezeték-kezelő használatával továbbítja az objektumot az aktuális parancsmaghoz.
+A második parancs a VirtualMachine11 nevű virtuális gépet kapja meg a Service02 nevű szolgáltatásban a Get-AzVM parancsmag használatával.
+A parancs a folyamat műveleti operátorával átadja az objektumot az aktuális parancsmagnak.
 
-Az aktuális parancsmag a virtuális gép $AutoPatchingConfig automatikus javítási beállításait adja meg.
-A parancs átadja a virtuális gépet az Update-AzVM parancsmagnak.
+Az aktuális parancsmag beállítja az automatikus javítási beállításokat $AutoPatchingConfig virtuális gépre.
+A parancs átadja a virtuális gépet a Update-AzVM parancsmagnak.
 
-### 2. példa: automatikus biztonsági mentési beállítások megadása virtuális számítógépen
+### 2. példa: Automatikus biztonsági mentési beállítások megadása virtuális gépen
 ```
 PS C:\> $AutoBackupConfig = New-AzureVMSqlServerAutoBackupConfig -Enable -RetentionPeriod 10 -StorageUri $StorageUrl -StorageKey $StorageAccountKeySecure
 PS C:\> Get-AzVM -ServiceName "Service02" -Name "VirtualMachine11" | Set-AzVMSqlServerExtension -AutoBackupSettings $AutoBackupConfig | Update-AzVM
 ```
 
-Az első parancs a **New-AzureVMSqlServerAutoBackupConfig** parancsmag segítségével hoz létre konfigurációs objektumot.
-A parancs a $AutoBackupConfig változóban tárolja a konfigurációt.
+Az első parancs a **New-AzureVMSqlServerAutoBackupConfig** parancsmag használatával hoz létre konfigurációs objektumot.
+A parancs a konfigurációt a $AutoBackupConfig tárolja.
 
-A második parancs megkapja a VirtualMachine11 nevű virtuális gépet a Service02 nevű szolgáltatásban, majd átadja az aktuális parancsmagnak.
+A második parancs lekérte a VirtualMachine11 nevű virtuális gépet a Service02 nevű szolgáltatásban, majd átadja az aktuális parancsmagnak.
 
-A jelenlegi parancsmag a virtuális gép $AutoBackupConfigban található automatikus biztonsági mentési beállításokat állítja be.
-A parancs átadja a virtuális gépet az Update-AzVM parancsmagnak.
+Az aktuális parancsmag beállítja az automatikus biztonsági mentési beállításokat $AutoBackupConfig virtuális gépre.
+A parancs átadja a virtuális gépet a Update-AzVM parancsmagnak.
 
 ### 3. példa: SQL Server-bővítmény letiltása virtuális gépen
 ```
 PS C:\> Get-AzVM -ServiceName "Service03" -Name "VirtualMachine08" | Set-AzVMSqlServerExtension -Disable
 ```
 
-Ez a parancs a Service03 nevű virtuális gépet kapja, majd átadja az aktuális parancsmagnak a VirtualMachine08.
-A parancs letiltja az SQL Server Virtual Machine bővítményt a virtuális gépen.
+Ez a parancs egy VirtualMachine08 nevű virtuális gépet kap a Service03 szolgáltatásban, majd átadja az aktuális parancsmagnak.
+A parancs letiltja az SQL Server virtuális gép bővítményét a virtuális gépen.
 
-### 4. példa: az SQL Server-bővítmények eltávolítása egy adott virtuális gépen
+### 4. példa: SQL Server-bővítmény eltávolítása egy adott virtuális gépen
 ```
 PS C:\> Get-AzVM -ServiceName "Service03" -Name "VirtualMachine08" | Set-AzVMSqlServerExtension -Uninstall
 ```
 
-Ez a parancs a Service03 nevű virtuális gépet kapja, majd átadja az aktuális parancsmagnak a VirtualMachine08.
-A parancs eltávolítja az SQL Server Virtual Machine bővítményt a virtuális gépen.
+Ez a parancs egy VirtualMachine08 nevű virtuális gépet kap a Service03 szolgáltatásban, majd átadja az aktuális parancsmagnak.
+A parancs eltávolítja az SQL Server virtuális gép bővítményét a virtuális gépen.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -AutoBackupSettings
-Az automatikus SQL Server biztonsági mentési beállításait adja meg.
-**AutoBackupSettings** -objektum létrehozásához használja az New-AzureVMSqlServerAutoBackupConfig parancsmagot.
+Az SQL Server automatikus biztonsági mentési beállításait adja meg.
+Az **AutoBackupSettings objektum** létrehozásához használja a New-AzureVMSqlServerAutoBackupConfig parancsmagot.
 
 ```yaml
 Type: AutoBackupSettings
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 6
@@ -96,13 +96,13 @@ Accept wildcard characters: False
 ```
 
 ### -AutoPatchingSettings
-Az automatikus SQL Server-javítás beállításait adja meg.
-**AutoPatchingSettings** -objektum létrehozásához használja az New-AzureVMSqlServerAutoPatchingConfig parancsmagot.
+Az SQL Server automatikus javítási beállításait adja meg.
+**AutoPatchingSettings objektum** létrehozásához használja a New-AzureVMSqlServerAutoPatchingConfig parancsmagot.
 
 ```yaml
 Type: AutoPatchingSettings
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -112,7 +112,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: IAzureContextContainer
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```yaml
 Type: KeyVaultCredentialSettings
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 7
@@ -139,13 +139,13 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Hely
-A virtuális gép helyét adja meg.
+### -Location
+A virtuális gép helyét határozza meg.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 8
@@ -154,13 +154,13 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name (név)
-Annak az SQL Server-kiszolgálónak a nevét adja meg, amely a kiterjesztést adja.
+### -Name
+Az SQL Server bővítmény nevét adja meg.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -170,12 +170,12 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-A virtuális gép erőforráscsoport-csoportjának nevét adja meg.
+A virtuális gép erőforráscsoportját adja meg.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -184,8 +184,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Verzió
-Az SQL Server-bővítmény verziószámát adja meg.
+### -Version
+Az SQL Server-bővítmény verzióját határozza meg.
 
 ```yaml
 Type: String
@@ -200,12 +200,12 @@ Accept wildcard characters: False
 ```
 
 ### -VMName
-Annak a virtuális gépnek a neve, amelyen a parancsmag az SQL Server-bővítményt állítja be.
+Annak a virtuális gépnek a nevét adja meg, amelyen ez a parancsmag beállítja az SQL Server-bővítményt.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 3
@@ -215,18 +215,18 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
 ### Nincs
-Ez a parancsmag nem fogadja el a bevitelt.
+Ez a parancsmag semmilyen bemenetet nem fogad el.
 
 ## KIMENETEK
 
-### Microsoft. Azure. commands. kiszámítás. models. PSAzureOperationResponse
+### Microsoft.Azure.Commands.Compute.Models.PSAzureOperationResponse
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
@@ -234,9 +234,9 @@ Ez a parancsmag nem fogadja el a bevitelt.
 
 [Get-AzVMSqlServerExtension](./Get-AzVMSqlServerExtension.md)
 
-[Új – AzureVMSqlServerAutoPatchingConfig](./New-AzureVMSqlServerAutoPatchingConfig.md)
+[New-AzureVMSqlServerAutoPatchingConfig](./New-AzVMSqlServerAutoPatchingConfig.md)
 
-[Új – AzureVMSqlServerAutoBackupConfig](./New-AzureVMSqlServerAutoBackupConfig.md)
+[New-AzureVMSqlServerAutoBackupConfig](./New-AzVMSqlServerAutoBackupConfig.md)
 
 [Remove-AzVMSqlServerExtension](./Remove-AzVMSqlServerExtension.md)
 

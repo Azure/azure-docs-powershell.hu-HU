@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/New-AzVMSqlServerAutoBackupConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/New-AzVMSqlServerAutoBackupConfig.md
-ms.openlocfilehash: 1ff53a29fa26ebe7ac78cac5140a9105b43bb27d
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: ecff02643dd6d0e017d56af01792a06dc7b8d998
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93844465"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398274"
 ---
 # New-AzVMSqlServerAutoBackupConfig
 
-## Áttekintés
-Konfigurációs objektum létrehozása az SQL Server automatikus biztonsági mentéséhez.
+## SYNOPSIS
+Konfigurációs objektumot hoz létre az SQL Server automatikus biztonsági mentéséhez.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### StorageUriSqlServerAutoBackup (alapértelmezett)
 ```
@@ -39,12 +39,12 @@ New-AzVMSqlServerAutoBackupConfig [-ResourceGroupName] <String> [-Enable]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-A **New-AzVMSqlServerAutoBackupConfig** parancsmag létrehoz egy konfigurációs OBJEKTUMOT az SQL Server automatikus biztonsági mentéséhez.
+## LEÍRÁS
+A **New-AzVMSqlServerAutoBackupConfig** parancsmag létrehoz egy konfigurációs objektumot az SQL Server automatikus biztonsági mentéséhez.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: automatikus biztonsági másolat létrehozása a tárolási URI és a fiók kulccsal
+### 1. példa: Automatikus biztonságimásolat-konfiguráció létrehozása tárhely URI-jának és fiókkulcsának használatával
 ```
 PS C:\> $AutoBackupConfig = New-AzVMSqlServerAutoBackupConfig -Enable -RetentionPeriod 10 -StorageUri "\\contoso\StorageGeneral" -StorageKey "< Storage Key for ContosoGeneral >"
 Enable                : True
@@ -52,12 +52,12 @@ EnableEncryption      : False
 RetentionPeriodInDays : 10
 ```
 
-A parancs a tárterület-azonosító és a fiók kulcs megadásával automatikusan biztonsági másolatot készít a konfigurációs objektumról.
-Az automatikus biztonsági mentés be van kapcsolva, és az automatikus biztonsági mentés 10 napig tart.
-A parancs az eredményt a $AutoBackupConfig változóban tárolja.
-Ezt a konfigurációs elemet más parancsmagok, például az Set-AzVMSqlServerExtension parancsmag esetében is megadhatja.
+Ez a parancs a tárhely URI-jának és a fiókkulcsnak a megadásával létrehoz egy automatikus biztonságimásolat-konfigurációs objektumot.
+Az automatikus biztonsági mentés engedélyezve van, az automatikus biztonsági mentések pedig 10 napig maradnak meg.
+A parancs az eredményt a $AutoBackupConfig tárolja.
+Ezt a konfigurációs elemet más parancsmagok, például a Set-AzVMSqlServerExtension is megadhatja.
 
-### 2. példa: automatikus biztonságimásolat-konfiguráció létrehozása tárolási környezet használatával
+### 2. példa: Automatikus biztonsági mentés beállítása tárhelykörnyezet használatával
 ```
 PS C:\> $StorageContext = New-AzureStorageContext -StorageAccountName "ContosoGeneral" -StorageAccountKey "< Storage Key for ContosoGeneral >"
 PS C:\> $AutoBackupConfig = New-AzVMSqlServerAutoBackupConfig -StorageContext $StorageContext -Enable -RetentionPeriod 10
@@ -66,13 +66,13 @@ EnableEncryption      : False
 RetentionPeriodInDays : 10
 ```
 
-Az első parancs létrehozza a tárolási környezetet, majd a $StorageContext változóban tárolja.
-További információt az új AzureStorageContext című témakörben talál.
+Az első parancs létrehoz egy tárolási környezetet, majd a helyi $StorageContext tárolja.
+További információ: New-AzureStorageContext.
 
-A második parancs az $StorageContext tárolási környezetének megadásával automatikusan biztonsági másolatot készít a konfigurációs objektumról.
-Az automatikus biztonsági mentés be van kapcsolva, és az automatikus biztonsági mentés 10 napig tart.
+A második parancs egy automatikus biztonságimásolat-konfigurációs objektumot hoz létre a tárterület környezetének $StorageContext.
+Az automatikus biztonsági mentés engedélyezve van, az automatikus biztonsági mentések pedig 10 napig maradnak meg.
 
-### 3. példa: automatikus biztonsági másolat beállítása a tárolási környezettel a titkosítással és a jelszóval
+### 3. példa: Automatikus biztonsági mentés beállítása titkosítással és jelszóval
 ```
 PS C:\> $StorageContext = New-AzVMSqlServerAutoBackupConfig -StorageContext $StorageContext -Enable -RetentionPeriod 10 -EnableEncryption -CertificatePassword $CertificatePassword
 Enable                : True
@@ -80,21 +80,21 @@ EnableEncryption      : True
 RetentionPeriodInDays : 10
 ```
 
-Ezzel a paranccsal létrehozhatja és tárolhatja az automatikus biztonságimásolat-konfiguráció objektumát.
-A parancs az előző példában létrehozott tárterület-környezetet adja meg.
-A parancs engedélyezi a titkosítást a jelszóval.
-A jelszó korábban biztonságos karakterláncként volt tárolva a $CertificatePassword változóban.
-Ha biztonságos karakterláncot szeretne létrehozni, használja az ConvertTo-SecureString parancsmagot.
+Ez a parancs létrehoz és tárol egy automatikus biztonságimásolat-konfigurációs objektumot.
+A parancs megadja az előző példában létrehozott tárterületkörnyezetet.
+A parancs jelszóval való titkosítást tesz lehetővé.
+A jelszót korábban biztonságos karakterláncként tárolta a $CertificatePassword változóban.
+Biztonságos karakterlánc létrehozásához használja a ConvertTo-SecureString parancsmagot.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -BackupScheduleType
-Biztonságimásolat-ütemezés típusa, kézi vagy automatizált
+Biztonsági mentési ütemezés típusa, kézi vagy automatizált
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Manual, Automated
 
 Required: False
@@ -105,12 +105,12 @@ Accept wildcard characters: False
 ```
 
 ### -BackupSystemDbs
-Biztonsági másolat rendszeradatbázisai
+Rendszer-adatbázisok biztonsági mentése
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -120,12 +120,12 @@ Accept wildcard characters: False
 ```
 
 ### -CertificatePassword
-Megadja azt a jelszót, amellyel titkosítható az SQL Server titkosított biztonsági mentéseit szolgáló tanúsítvány.
+Megadja a jelszót az SQL Server által titkosított biztonsági másolatok végrehajtásához használt tanúsítvány titkosításához.
 
 ```yaml
 Type: SecureString
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -135,7 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: IAzureContextContainer
@@ -149,15 +149,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### – Engedélyezés
-Azt jelzi, hogy az SQL Server virtuális gép automatikus biztonsági másolata engedélyezve van.
-Ha ezt a paramétert adja meg, akkor az automatikus biztonsági mentés az összes aktuális és új adatbázis biztonsági ütemezését állítja be.
-Ezzel frissíti a felügyelt biztonságimásolat-beállításokat az ütemezés követéséhez.
+### -Enable
+Azt jelzi, hogy engedélyezve van az SQL Server virtuális gép automatikus biztonsági mentése.
+Ha ezt a paramétert adja meg, az automatikus biztonsági mentés biztonsági mentési ütemezést állít be az összes jelenlegi és új adatbázishoz.
+Ezzel frissíti a felügyelt biztonsági mentés beállításait, hogy kövessék ezt az ütemezést.
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -172,7 +172,7 @@ Azt jelzi, hogy ez a parancsmag engedélyezi a titkosítást.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -182,12 +182,12 @@ Accept wildcard characters: False
 ```
 
 ### -FullBackupFrequency
-SQL Server – teljes biztonsági mentés gyakorisága, naponta vagy hetente
+Sql Server Full Backup frequency, daily or weekly
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Daily, Weekly
 
 Required: False
@@ -198,12 +198,12 @@ Accept wildcard characters: False
 ```
 
 ### -FullBackupStartHour
-A nap órája (0-23), amikor az SQL Server teljes biztonsági másolatát meg kell kezdeni
+Az Sql Server teljes biztonsági mentésének indítási napja (0–23)
 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -213,12 +213,12 @@ Accept wildcard characters: False
 ```
 
 ### -FullBackupWindowInHours
-Az SQL Server teljes biztonsági másolat ablaka órában
+Sql Server Full Backup window in hours
 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -228,12 +228,12 @@ Accept wildcard characters: False
 ```
 
 ### -LogBackupFrequencyInMinutes
-SQL Server log Backup gyakorisága, 1-60 percenként
+Sql Server-napló biztonsági mentési gyakorisága, 1–60 percenként egyszer
 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -243,12 +243,12 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-A virtuális gép erőforráscsoport-csoportjának nevét adja meg.
+A virtuális gép erőforráscsoportját adja meg.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -258,12 +258,12 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionPeriodInDays
-Azt adja meg, hogy hány napig maradjon a biztonsági másolat.
+Azt adja meg, hogy hány napig őrizze meg a biztonsági másolatokat.
 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -273,14 +273,14 @@ Accept wildcard characters: False
 ```
 
 ### -StorageContext
-Azt a tárterületet adja meg, amelyet a biztonsági másolatok tárolására fog használni.
-**AzureStorageContext** objektum beolvasásához használja az New-AzureStorageContext parancsmagot.
-Az alapértelmezett érték az SQL Server virtuális géphez társított tárolási fiók.
+Azt a tárfiókot adja meg, amely a biztonsági másolatok tárolására fog használni.
+**AzureStorageContext-objektum** beszerzéséhez használja a New-AzureStorageContext parancsmagot.
+Az alapértelmezett érték az SQL Server virtuális géphez társított tárfiók.
 
 ```yaml
 Type: IStorageContext
 Parameter Sets: StorageContextSqlServerAutoBackup
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -290,12 +290,12 @@ Accept wildcard characters: False
 ```
 
 ### -StorageKey
-A blob-tároló fiók tárolási kulcsát adja meg.
+A blobtároló-fiók tárkulcsát határozza meg.
 
 ```yaml
 Type: SecureString
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -305,12 +305,12 @@ Accept wildcard characters: False
 ```
 
 ### -StorageUri
-A blob-tároló fiók egységes erőforrás-azonosítóját adja meg.
+A blobtároló fiók egységes erőforrás-azonosítóját (URI) adja meg.
 
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -320,22 +320,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
 ### Nincs
-Ez a parancsmag nem fogadja el a bevitelt.
+Ez a parancsmag semmilyen bemenetet nem fogad el.
 
 ## KIMENETEK
 
-### Microsoft. Azure. commands. kiszámítás. AutoBackupSettings
+### Microsoft.Azure.Commands.Compute.AutoBackupSettings
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Új – AzureVMSqlServerAutoPatchingConfig](./New-AzureVMSqlServerAutoPatchingConfig.md)
+[New-AzureVMSqlServerAutoPatchingConfig](./New-AzVMSqlServerAutoPatchingConfig.md)
 
 [Set-AzVMSqlServerExtension](./Set-AzVMSqlServerExtension.md)
 

@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzActivityLogAlert.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzActivityLogAlert.md
-ms.openlocfilehash: 4982cb77f4dfd318d58f24ab2e2876e4eac8d2c7
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 50ffa5beb8ab79d3c903ec5b7e6a21c9b08116db
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93665866"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406400"
 ---
 # Get-AzActivityLogAlert
 
-## Áttekintés
-Egy vagy több tevékenység naplója riasztási erőforrást kap.
+## SYNOPSIS
+Egy vagy több tevékenységnapló-riasztási erőforrást kap.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### GetByNameAndResourceGroup
 ```
@@ -32,36 +32,36 @@ Get-AzActivityLogAlert [[-ResourceGroupName] <String>] [-DefaultProfile <IAzureC
  [<CommonParameters>]
 ```
 
-## Leírás
-A **Get-AzActivityLogAlert** parancsmag egy vagy több tevékenység naplójának riasztási erőforrást kap.
+## LEÍRÁS
+A **Get-AzActivityLogAlert** parancsmag egy vagy több tevékenységnapló-riasztási erőforrást kap.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: műveletnapló értesítéseinek beszerzése előfizetés-AZONOSÍTÓval
+### 1. példa: Tevékenységnapló-riasztások lekértése előfizetésazonosító alapján
 ```
 PS C:\>Get-AzActivityLogAlert
 ```
 
-Ez a parancs felsorolja az aktuális előfizetéshez tartozó összes tevékenység-naplózási értesítést.
+Ez a parancs felsorolja az aktuális előfizetés összes tevékenységnapló-riasztását.
 
-### 2. példa: tevékenység-naplózási értesítések beszerzése az adott erőforráscsoport számára
+### 2. példa: Tevékenységnapló-riasztások lekérte az adott erőforráscsoporthoz
 ```
 PS C:\>Get-AzActivityLogAlert -ResourceGroupName "Default-activityLogAlerts"
 ```
 
-Ez a parancs megjeleníti a műveletnapló riasztásait az adott erőforráscsoport számára.
+Ez a parancs felsorolja az adott erőforráscsoport tevékenységnapló-riasztását.
 
-### 3. példa: tevékenység-naplózási riasztás kérése
+### 3. példa: Tevékenységnapló-riasztást kap.
 ```
 PS C:\>Get-AzActivityLogAlert -ResourceGroupName "Default-activityLogAlerts" -Name "alert1"
 ```
 
-Ez a parancs egy (egyetlen elemmel rendelkező) tevékenység-naplózási riasztást sorol fel.
+Ez a parancs felsorol egy (egyetlen elemet tartalmazó listát) tevékenységnapló-riasztást.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -75,8 +75,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (név)
-A műveletnapló riasztásának neve.
+### -Name
+A tevékenységnapló-riasztás neve.
 
 ```yaml
 Type: System.String
@@ -91,8 +91,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Annak az erőforráscsoportnek a neve, amelyben az értesítési erőforrás létezik.
-Ha a név nem null vagy üres, a paraméternek tartalmaznia kell és nem üres karakterláncot.
+Annak az erőforráscsoportnak a neve, amelyben a riasztási erőforrás létezik.
+Ha a Név értéke nem null vagy üres, a paraméternek tartalmaznia kell és nem üres karakterláncot.
 
 ```yaml
 Type: System.String
@@ -119,26 +119,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. commands. OutputClasses. PSActivityLogAlertResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
 [Set-AzActivityLogAlert](./Set-AzActivityLogAlert.md)
 
-[Update-AzActivityLogAlert](./Update-AzActivityLogAlert.md)
-
 [Remove-AzActivityLogAlert](./Remove-AzActivityLogAlert.md)
 
-[Új – AzActionGroup](./New-AzActionGroup.md)
-
-[Új – AzActivityLogAlertCondition](./Get-AzActivityLogAlertCondition.md)
+[New-AzActionGroup](./New-AzActionGroup.md)
