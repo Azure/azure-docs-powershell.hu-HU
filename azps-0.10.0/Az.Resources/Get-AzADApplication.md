@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Get-AzADApplication.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Get-AzADApplication.md
-ms.openlocfilehash: 5f019f413e7ae0efa2013412499fcf34bd94a248
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: a4d1831114db40295e30b30e0fb12621caff2c89
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93843490"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398852"
 ---
 # Get-AzADApplication
 
-## Áttekintés
-Felsorolja a meglévő Azure Active Directory-alkalmazásokat.
+## SYNOPSIS
+A meglévő Azure Active Directory-alkalmazások listája.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### EmptyParameterSet (alapértelmezett)
 ```
@@ -56,49 +56,49 @@ Get-AzADApplication -IdentifierUri <String> [-DefaultProfile <IAzureContextConta
  [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-## Leírás
-Felsorolja a meglévő Azure Active Directory-alkalmazásokat.
-Az alkalmazások keresése a ObjectId, az ApplicationId, a IdentifierUri vagy a DisplayName segítségével végezhető el.
-Ha nincs megadva paraméter, a program az összes alkalmazást beolvassa a bérlői webhelyre.
+## LEÍRÁS
+A meglévő Azure Active Directory-alkalmazások listája.
+Az alkalmazáskeresést az ObjectId, az ApplicationId, az IdentifierUri vagy a DisplayName segítségével lehet.
+Ha nincs megadva paraméter, akkor a bérlő alatti összes alkalmazást lehívja.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1 – az összes alkalmazás listázása
+### 1. példa – Az összes alkalmazás felsorolása
 
 ```
 PS C:\> Get-AzADApplication
 ```
 
-Felsorolja az összes alkalmazást bérlői fiókban.
+A bérlői webhely összes alkalmazását felsorolja.
 
-### Példa 2 – a lapozást használó alkalmazások listázása
+### 2. példa: Lapozást használó alkalmazások felsorolása
 
 ```
 PS C:\> Get-AzADApplication -First 100
 ```
 
-Felsorolja az első 100-alkalmazásokat bérlői fiókban.
+A bérlői webhely alatt található első 100 alkalmazás listája.
 
-### Példa: 3 – az alkalmazás beolvasása azonosító URI azonosítóval
+### 3. példa : Alkalmazás lekérte azonosító alapján URI
 
 ```
 PS C:\> Get-AzADApplication -IdentifierUri http://mySecretApp1
 ```
 
-A "" azonosítóval kapja meg az alkalmazást http://mySecretApp1 .
+Az alkalmazás uri azonosítóját "" "- ként http://mySecretApp1 kapja meg.
 
-### Példa 4 – alkalmazásobjektum-azonosító beszerzése
+### 4. példa : Alkalmazás be szerezni objektumazonosító alapján
 
 ```
 PS C:\> Get-AzADApplication -ObjectId 39e64ec6-569b-4030-8e1c-c3c519a05d69
 ```
 
-A ' 39e64ec6-569b-4030-8e1c-c3c519a05d69 ' azonosítójú objektummal kapja meg az alkalmazást.
+A (39e64ec6-569b-4030-8e1c-c3c519a05d69) objektumazonosítót használja.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -ApplicationId
-A lekérni kívánt alkalmazás azonosítója.
+A lehívni szükséges alkalmazás alkalmazásazonosítója.
 
 ```yaml
 Type: System.Guid
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
@@ -143,7 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayNameStartWith
-A megjelenítendő névvel kezdődő összes alkalmazás beolvasása
+Az összes alkalmazás lehívása a megjelenítendő névvel kezdve.
 
 ```yaml
 Type: System.String
@@ -157,8 +157,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### – Első
-A visszaadni kívánt objektumok maximális száma.
+### -First
+A vissza nem térhet objektumok maximális száma.
 
 ```yaml
 Type: System.UInt64
@@ -173,7 +173,7 @@ Accept wildcard characters: False
 ```
 
 ### -IdentifierUri
-A beolvasni kívánt alkalmazás egyedi azonosítójának URI azonosítója.
+A lehívni szükséges alkalmazás egyedi azonosítója Uri.
 
 ```yaml
 Type: System.String
@@ -188,7 +188,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeTotalCount
-Az adathalmaz objektumainak számát jelzi. Ez a paraméter jelenleg nem tesz semmit.
+Az adatkészletben lévő objektumok számát jelenti. Ez a paraméter jelenleg nem tesz semmit.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -203,7 +203,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-A beolvasni kívánt alkalmazás objektum-azonosítója.
+A lehívni szükséges alkalmazás objektumazonosítója.
 
 ```yaml
 Type: System.Guid
@@ -217,8 +217,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Skip (kihagyás)
-Figyelmen kívül hagyja az első N objektumokat, és a fennmaradó objektumokat kapja.
+### -Skip
+Figyelmen kívül hagyja az első N objektumot, majd beveszi a fennmaradó objektumokat.
 
 ```yaml
 Type: System.UInt64
@@ -233,31 +233,30 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### System. GUID
+### System.Guid
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft.Azure.Graph.RBAC.Version1_6. ActiveDirectory. PSADApplication
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADApplication
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
 [Remove-AzADAppCredential](./Remove-AzADAppCredential.md)
 
-[Új – AzADAppCredential](./New-AzADAppCredential.md)
+[New-AzADAppCredential](./New-AzADAppCredential.md)
 
 [Get-AzADAppCredential](./Get-AzADAppCredential.md)
 
 [Remove-AzADApplication](./Remove-AzADApplication.md)
 
-[Set-AzADApplication](./Set-AzADApplication.md)
 
-[Új – AzADApplication](./New-AzADApplication.md)
+[New-AzADApplication](./New-AzADApplication.md)
 
