@@ -6,48 +6,48 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleWebhook.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleWebhook.md
-ms.openlocfilehash: 03459cedbebaeba46331edf7aeb9a7972711912a
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 8410ca475ed17376e01a526512d758c4712f2726
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94011113"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100411279"
 ---
-# <span data-ttu-id="b6101-101">New-AzAlertRuleWebhook</span><span class="sxs-lookup"><span data-stu-id="b6101-101">New-AzAlertRuleWebhook</span></span>
+# <span data-ttu-id="8cae0-101">New-AzAlertRuleWebhook</span><span class="sxs-lookup"><span data-stu-id="8cae0-101">New-AzAlertRuleWebhook</span></span>
 
-## <span data-ttu-id="b6101-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="b6101-102">SYNOPSIS</span></span>
-<span data-ttu-id="b6101-103">Figyelmeztetési szabályt hoz létre.</span><span class="sxs-lookup"><span data-stu-id="b6101-103">Creates an alert rule webhook.</span></span>
+## <span data-ttu-id="8cae0-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="8cae0-102">SYNOPSIS</span></span>
+<span data-ttu-id="8cae0-103">Riasztási szabályt hoz létre webhook.</span><span class="sxs-lookup"><span data-stu-id="8cae0-103">Creates an alert rule webhook.</span></span>
 
-## <span data-ttu-id="b6101-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="b6101-104">SYNTAX</span></span>
+## <span data-ttu-id="8cae0-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="8cae0-104">SYNTAX</span></span>
 
 ```
 New-AzAlertRuleWebhook [-ServiceUri] <String> [[-Property] <Hashtable>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="b6101-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="b6101-105">DESCRIPTION</span></span>
-<span data-ttu-id="b6101-106">A **New-AzAlertRuleWebhook** parancsmag figyelmeztetési szabályt hoz létre.</span><span class="sxs-lookup"><span data-stu-id="b6101-106">The **New-AzAlertRuleWebhook** cmdlet creates an alert rule webhook.</span></span>
+## <span data-ttu-id="8cae0-105">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="8cae0-105">DESCRIPTION</span></span>
+<span data-ttu-id="8cae0-106">A **New-AzAlertRuleWebhook parancsmag** létrehoz egy webhook riasztási szabályt.</span><span class="sxs-lookup"><span data-stu-id="8cae0-106">The **New-AzAlertRuleWebhook** cmdlet creates an alert rule webhook.</span></span>
 
-## <span data-ttu-id="b6101-107">Példák</span><span class="sxs-lookup"><span data-stu-id="b6101-107">EXAMPLES</span></span>
+## <span data-ttu-id="8cae0-107">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="8cae0-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="b6101-108">Példa 1: figyelmeztetési szabály létrehozása – webhook</span><span class="sxs-lookup"><span data-stu-id="b6101-108">Example 1: Create an alert rule webhook</span></span>
+### <span data-ttu-id="8cae0-108">1. példa: Értesítési szabály létrehozása webhook</span><span class="sxs-lookup"><span data-stu-id="8cae0-108">Example 1: Create an alert rule webhook</span></span>
 ```
 PS C:\>New-AzAlertRuleWebhook -ServiceUri "http://contoso.com"
 ```
 
-<span data-ttu-id="b6101-109">Ez a parancs csak a szolgáltatás URI-azonosítójának megadásával hoz létre figyelmeztetési szabályt webhooktal.</span><span class="sxs-lookup"><span data-stu-id="b6101-109">This command creates an alert rule webhook by specifying only the service URI.</span></span>
+<span data-ttu-id="8cae0-109">Ez a parancs csak a szolgáltatás URI-ját megadásával hoz létre webhook riasztási szabályt.</span><span class="sxs-lookup"><span data-stu-id="8cae0-109">This command creates an alert rule webhook by specifying only the service URI.</span></span>
 
-### <span data-ttu-id="b6101-110">2. példa: webkampó létrehozása egy tulajdonsággal</span><span class="sxs-lookup"><span data-stu-id="b6101-110">Example 2: Create a webhook with one property</span></span>
+### <span data-ttu-id="8cae0-110">2. példa: Webhook létrehozása egyetlen tulajdonsággal</span><span class="sxs-lookup"><span data-stu-id="8cae0-110">Example 2: Create a webhook with one property</span></span>
 ```
 PS C:\>$Actual = New-AzAlertRuleWebhook -ServiceUri "http://contoso.com" -Property @{prop1 = 'value1'}
 ```
 
-<span data-ttu-id="b6101-111">Ez a parancs figyelmeztetési szabályt hoz létre a Contoso.com, amely egy tulajdonsággal rendelkezik, majd a $Actual változóban tárolja.</span><span class="sxs-lookup"><span data-stu-id="b6101-111">This command creates an alert rule webhook for Contoso.com that has one property, and then stores it in the $Actual variable.</span></span>
+<span data-ttu-id="8cae0-111">Ez a parancs egy webhook riasztási szabályt hoz létre egy olyan Contoso.com, amely egyetlen tulajdonsággal rendelkezik, majd azt a $Actual változóban tárolja.</span><span class="sxs-lookup"><span data-stu-id="8cae0-111">This command creates an alert rule webhook for Contoso.com that has one property, and then stores it in the $Actual variable.</span></span>
 
-## <span data-ttu-id="b6101-112">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="b6101-112">PARAMETERS</span></span>
+## <span data-ttu-id="8cae0-112">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="8cae0-112">PARAMETERS</span></span>
 
-### <span data-ttu-id="b6101-113">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="b6101-113">-DefaultProfile</span></span>
-<span data-ttu-id="b6101-114">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés</span><span class="sxs-lookup"><span data-stu-id="b6101-114">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="8cae0-113">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="8cae0-113">-DefaultProfile</span></span>
+<span data-ttu-id="8cae0-114">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés</span><span class="sxs-lookup"><span data-stu-id="8cae0-114">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -61,8 +61,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6101-115">-Tulajdonság</span><span class="sxs-lookup"><span data-stu-id="b6101-115">-Property</span></span>
-<span data-ttu-id="b6101-116">A @ formátum @ (property1 = "érték1",....) tulajdonságainak listáját adja meg.</span><span class="sxs-lookup"><span data-stu-id="b6101-116">Specifies the list of properties in the format @(property1 = 'value1',....).</span></span>
+### <span data-ttu-id="8cae0-115">-Tulajdonság</span><span class="sxs-lookup"><span data-stu-id="8cae0-115">-Property</span></span>
+<span data-ttu-id="8cae0-116">A @(tulajdonság1 = 'érték1',....) formátumban adja meg a tulajdonságok listáját.</span><span class="sxs-lookup"><span data-stu-id="8cae0-116">Specifies the list of properties in the format @(property1 = 'value1',....).</span></span>
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -76,8 +76,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6101-117">-ServiceUri</span><span class="sxs-lookup"><span data-stu-id="b6101-117">-ServiceUri</span></span>
-<span data-ttu-id="b6101-118">A szolgáltatás URI-jét adja meg.</span><span class="sxs-lookup"><span data-stu-id="b6101-118">Specifies the service URI.</span></span>
+### <span data-ttu-id="8cae0-117">-ServiceUri</span><span class="sxs-lookup"><span data-stu-id="8cae0-117">-ServiceUri</span></span>
+<span data-ttu-id="8cae0-118">A szolgáltatás URI-ját adja meg.</span><span class="sxs-lookup"><span data-stu-id="8cae0-118">Specifies the service URI.</span></span>
 
 ```yaml
 Type: System.String
@@ -91,31 +91,30 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b6101-119">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="b6101-119">CommonParameters</span></span>
-<span data-ttu-id="b6101-120">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="b6101-120">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="b6101-121">További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="b6101-121">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="8cae0-119">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="8cae0-119">CommonParameters</span></span>
+<span data-ttu-id="8cae0-120">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="8cae0-120">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="8cae0-121">További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="8cae0-121">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="b6101-122">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="b6101-122">INPUTS</span></span>
+## <span data-ttu-id="8cae0-122">INPUTS</span><span class="sxs-lookup"><span data-stu-id="8cae0-122">INPUTS</span></span>
 
-### <span data-ttu-id="b6101-123">System. String</span><span class="sxs-lookup"><span data-stu-id="b6101-123">System.String</span></span>
+### <span data-ttu-id="8cae0-123">System.String</span><span class="sxs-lookup"><span data-stu-id="8cae0-123">System.String</span></span>
 
-### <span data-ttu-id="b6101-124">System. Collections. Hashtable</span><span class="sxs-lookup"><span data-stu-id="b6101-124">System.Collections.Hashtable</span></span>
+### <span data-ttu-id="8cae0-124">System.Collections.Hashtable</span><span class="sxs-lookup"><span data-stu-id="8cae0-124">System.Collections.Hashtable</span></span>
 
-## <span data-ttu-id="b6101-125">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="b6101-125">OUTPUTS</span></span>
+## <span data-ttu-id="8cae0-125">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="8cae0-125">OUTPUTS</span></span>
 
-### <span data-ttu-id="b6101-126">Microsoft. Azure. Management. monitor. Management. models. RuleWebhookAction</span><span class="sxs-lookup"><span data-stu-id="b6101-126">Microsoft.Azure.Management.Monitor.Management.Models.RuleWebhookAction</span></span>
+### <span data-ttu-id="8cae0-126">Microsoft.Azure.Management.Monitor.Management.Models.RuleWebhookAction</span><span class="sxs-lookup"><span data-stu-id="8cae0-126">Microsoft.Azure.Management.Monitor.Management.Models.RuleWebhookAction</span></span>
 
-## <span data-ttu-id="b6101-127">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="b6101-127">NOTES</span></span>
+## <span data-ttu-id="8cae0-127">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="8cae0-127">NOTES</span></span>
 
-## <span data-ttu-id="b6101-128">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="b6101-128">RELATED LINKS</span></span>
+## <span data-ttu-id="8cae0-128">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="8cae0-128">RELATED LINKS</span></span>
 
-[<span data-ttu-id="b6101-129">Add-AzLogAlertRule</span><span class="sxs-lookup"><span data-stu-id="b6101-129">Add-AzLogAlertRule</span></span>](./Add-AzLogAlertRule.md)
 
-[<span data-ttu-id="b6101-130">Add-AzMetricAlertRule</span><span class="sxs-lookup"><span data-stu-id="b6101-130">Add-AzMetricAlertRule</span></span>](./Add-AzMetricAlertRule.md)
+[<span data-ttu-id="8cae0-129">Add-AzMetricAlertRule</span><span class="sxs-lookup"><span data-stu-id="8cae0-129">Add-AzMetricAlertRule</span></span>](./Add-AzMetricAlertRule.md)
 
-[<span data-ttu-id="b6101-131">Add-AzWebtestAlertRule</span><span class="sxs-lookup"><span data-stu-id="b6101-131">Add-AzWebtestAlertRule</span></span>](./Add-AzWebtestAlertRule.md)
+[<span data-ttu-id="8cae0-130">Add-AzWebtestAlertRule</span><span class="sxs-lookup"><span data-stu-id="8cae0-130">Add-AzWebtestAlertRule</span></span>](./Add-AzWebtestAlertRule.md)
 
-[<span data-ttu-id="b6101-132">Új – AzAlertRuleEmail</span><span class="sxs-lookup"><span data-stu-id="b6101-132">New-AzAlertRuleEmail</span></span>](./New-AzAlertRuleEmail.md)
+[<span data-ttu-id="8cae0-131">New-AzAlertRuleEmail</span><span class="sxs-lookup"><span data-stu-id="8cae0-131">New-AzAlertRuleEmail</span></span>](./New-AzAlertRuleEmail.md)
 
-[<span data-ttu-id="b6101-133">Új – AzAutoscaleWebhook</span><span class="sxs-lookup"><span data-stu-id="b6101-133">New-AzAutoscaleWebhook</span></span>](./New-AzAutoscaleWebhook.md)
+[<span data-ttu-id="8cae0-132">New-AzAutoscaleWebhook</span><span class="sxs-lookup"><span data-stu-id="8cae0-132">New-AzAutoscaleWebhook</span></span>](./New-AzAutoscaleWebhook.md)
 
 
