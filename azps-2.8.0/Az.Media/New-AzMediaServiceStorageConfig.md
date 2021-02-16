@@ -6,31 +6,31 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.media/new-
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Media/Media/help/New-AzMediaServiceStorageConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Media/Media/help/New-AzMediaServiceStorageConfig.md
-ms.openlocfilehash: 8fb6e4a683decc8b5615a7cf0c8088681578f8ec
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: ec411d7e1afd71849ec2d490ee70eeb0283303ca
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93665899"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413812"
 ---
 # New-AzMediaServiceStorageConfig
 
-## Áttekintés
-A Media Service-parancsmagok tárterület-konfigurációjának létrehozása
+## SYNOPSIS
+Hozzon létre tárfiók-konfigurációt a médiaszolgáltatás-parancsmagok számára.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 New-AzMediaServiceStorageConfig [-DefaultProfile <IAzureContextContainer>] [-StorageAccountId] <String>
  [-IsPrimary] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Leírás
-A **New-AzMediaServiceStorageConfig** parancsmag a Media Service-parancsmagok tárolási fiókjának konfigurációját hozza létre.
+## LEÍRÁS
+A **New-AzMediaServiceStorageConfig** parancsmag létrehoz egy tárfiók-konfigurációt a médiaszolgáltatás-parancsmagok számára.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: a Media Service-parancsmagok tároló-konfigurációjának létrehozása
+### 1. példa: Tárfiók-konfiguráció létrehozása a médiaszolgáltatás-parancsmagok számára
 ```
 PS C:\>
 $StorageAccount = New-AzStorageAccount -ResourceGroupName $ResourceGroupName -Name "Storage1" -Location "East US" -Type "Standard_GRS"
@@ -38,14 +38,14 @@ $StorageAccount = New-AzStorageAccount -ResourceGroupName $ResourceGroupName -Na
 PS C:\> New-AzMediaServiceStorageConfig -StorageAccountId $StorageAccount.Id -IsPrimary
 ```
 
-Az első parancs **a New-AzStorageAccount** parancsmaggal hozza létre a Storage Account objektum objektumát.
-A parancs a tárolási fiók Storage1 és a típus neve Standard_GRS, és az eredményt a $StorageAccount nevű változóban tárolja.
-A második parancs a $StorageAccount változóban tárolt tárterület-azonosító adataival hozza létre a tárterület-konfiguráció objektumát a médiafájlhoz társított elsődleges tárterület-fiókként.
+Az első parancs egy tárfiók-objektumot hoz létre a **New-AzStorageAccount** parancsmaggal.
+A tárfiók neve Tár1, a típus neve pedig Standard_GRS az eredményt a $StorageAccount.
+A második parancs egy tárolási konfigurációs objektumot hoz létre a médiaszolgáltatáshoz társított elsődleges tárfiókként a $StorageAccount tárolt tárfiók-azonosító adataival.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -60,7 +60,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsPrimary
-Azt jelzi, hogy a parancsmag a tárolási fiókot hozza létre a médiaszolgáltató elsődleges tárterületének.
+Azt jelzi, hogy a parancsmag a médiaszolgáltatás elsődleges tárhelyeként hozza létre a tárfiókot.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -StorageAccountId
-A tárolási fiók AZONOSÍTÓját adja meg.
+A tárfiók azonosítóját adja meg.
 
 ```yaml
 Type: System.String
@@ -89,8 +89,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -105,7 +105,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik.
 A parancsmag nem fut.
 
 ```yaml
@@ -121,20 +121,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. commands. Media. models. PSStorageAccount
+### Microsoft.Azure.Commands.Media.Models.PSStorageAccount
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Szinkronizálás – AzMediaServiceStorageKeys](./Sync-AzMediaServiceStorageKeys.md)
 
 

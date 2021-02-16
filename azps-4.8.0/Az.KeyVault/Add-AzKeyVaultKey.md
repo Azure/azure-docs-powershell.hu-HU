@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/a
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Add-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Add-AzKeyVaultKey.md
-ms.openlocfilehash: 8583a078e12be5da3a6bcbbe16bc3349f51b9bdb
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: d2c153cf0ae2f5cffbf47656d3ae64a531cb780b
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94025310"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413795"
 ---
 # Add-AzKeyVaultKey
 
-## Áttekintés
-Billentyűt hoz létre a fő tárolóban, vagy egy kulcsot egy fő boltozatba importál.
+## SYNOPSIS
+Kulcsot hoz létre egy kulcstárban, vagy kulcsot importál egy kulcstárba.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### InteractiveCreate (alapértelmezett)
 ```
@@ -65,22 +65,22 @@ Add-AzKeyVaultKey [-ResourceId] <String> [-Name] <String> -KeyFilePath <String>
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Leírás
-Az **Add-AzKeyVaultKey** parancsmag egy billentyűt hoz létre az Azure Key Vault-ban, vagy egy kulcsot importál egy fő boltozatba.
-Ezzel a parancsmaggal a következő módszerekkel adhat hozzá kulcsokat:
-- Hozzon létre egy kulcsot egy hardveres biztonsági modulban (HSM) a Key Vault szolgáltatásban.
-- Kulcsot hozhat létre a szoftverben a Key Vault szolgáltatásban.
-- Importáljon egy kulcsot a saját hardver biztonsági modulból (HSM) a HSM a Key Vault szolgáltatásba.
-- Importáljon egy kulcsot egy. pfx fájlból a számítógépre.
-- Importáljon egy kulcsot egy. pfx fájlból a számítógépen a hardver biztonsági moduljaihoz (HSM) a Key Vault szolgáltatásban.
-A fenti műveletek bármelyikével alapvető attribútumokat adhat meg, illetve elfogadhat alapértelmezett beállításokat.
-Ha olyan billentyűt hoz létre vagy importál, amelynek a neve megegyezik egy meglévő kulccsal, az eredeti kulcs frissül az új kulcshoz megadott értékekkel. A korábbi értékeket a kulcs adott verziójához tartozó, a verziószámot tartalmazó URI-azonosító használatával érheti el. A főbb verziókkal és az URI-felépítéssel kapcsolatban további információt a [kulcsok és titkok](http://go.microsoft.com/fwlink/?linkid=518560) a Key Vault REST API-dokumentációban című témakörben talál.
-Megjegyzés: Ha egy kulcsot saját hardveres biztonsági modulból szeretne importálni, először létre kell hoznia egy BYOK-csomagot (. BYOK fájlnév-kiterjesztésű fájlt) az Azure Key Vault BYOK eszközkészlet használatával. További információt a [HSM-Protected kulcsok létrehozása és továbbítása az Azure Key Vault](http://go.microsoft.com/fwlink/?LinkId=522252)-ban című témakörben találhat.
-Ajánlott eljárásként készítsen biztonsági másolatot a kulcsról, miután létrehozta vagy frissíti őket a Backup-AzKeyVaultKey parancsmag használatával. Nincs eltávolítási funkció, ezért ha véletlenül törli a billentyűt vagy törli, majd meggondolja magát, a kulcs nem állítható helyre, hacsak nem rendelkezik biztonsági másolattal.
+## LEÍRÁS
+Az **Add-AzKeyVaultKey** parancsmag létrehoz egy kulcsot egy kulcstárban az Azure Kulcstárban, vagy importál egy kulcsot egy kulcstárba.
+Ezzel a parancsmagkal az alábbi módszerek bármelyikével adhat hozzá billentyűket:
+- Hozzon létre egy kulcsot egy hardverbiztonsági modulban (HSM) a kulcstár szolgáltatásban.
+- Termékkulcs létrehozása a kulcstár szolgáltatásban.
+- Importálhat egy kulcsot a saját hardveres biztonsági modulból (HSM) a kulcstár szolgáltatásban található HSM-ekbe.
+- Importálja a kulcsot egy .pfx fájlból a számítógépen.
+- A kulcstár szolgáltatásban egy .pfx fájlból hardveres biztonsági modulokba (HSM-eket) importálhat.
+E műveletek bármelyikéhez meg kell adnia a legfontosabb attribútumokat, vagy el kell fogadnia az alapértelmezett beállításokat.
+Ha olyan kulcsot hoz létre vagy importál, amely neve megegyezik a kulcstárban meglévő kulcs nevével, az eredeti kulcs frissül az új kulcshoz megadott értékekkel. A korábbi értékeket a kulcs adott verziójához használt verzióspecifikus URI azonosítóval tudja elérni. A legfontosabb verziókról és az URI-struktúráról a Kulcstár REST API dokumentációjában található A kulcsok és a titkos információk szolgáltatásról olvashat. [](http://go.microsoft.com/fwlink/?linkid=518560)
+Megjegyzés: Ha saját hardveres biztonsági modulból importálni kívánt kulcsot, először létre kell hoznia egy BYOK-csomagot (egy .byok kiterjesztésű fájlt) az Azure Key Vault BYOK eszközkészletével. További információt az Azure-kulcstárhoz HSM-Protected kulcsok létrehozása és [átvitele.](http://go.microsoft.com/fwlink/?LinkId=522252)
+Gyakorlati megoldásként a termékkulcsról a létrehozása vagy frissítése után is biztonsági Backup-AzKeyVaultKey parancsmag használatával. Nincs előtűnés funkció, ezért ha véletlenül törli vagy törli a kulcsot, majd meggondolja magát, a kulcs csak akkor állítható helyre, ha biztonsági másolatot készít róla.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: kulcs létrehozása
+### 1. példa: Kulcs létrehozása
 ```powershell
 PS C:\> Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITSoftware' -Destination 'Software'
 
@@ -97,9 +97,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-Ez a parancs létrehoz egy ITSoftware nevű, a contoso nevű kulcsfájl nevű kulccsal védett kulcsot.
+Ez a parancs létrehoz egy ITSoftware nevű szoftver védett kulcsot a Contoso nevű kulcstárban.
 
-### 2. példa: HSM-védelemmel ellátott kulcs létrehozása
+### 2. példa: HSM-védelemű kulcs létrehozása
 ```powershell
 PS C:\> Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITHsm' -Destination 'HSM'
 
@@ -116,9 +116,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-Ez a parancs egy HSM-védelemmel ellátott billentyűt hoz létre a contoso nevű kulcs boltozatához.
+Ez a parancs létrehoz egy HSM által védett kulcsot a Contoso nevű kulcstárban.
 
-### 3. példa: kulcs létrehozása nem alapértelmezett értékekkel
+### 3. példa: Nem alapértelmezett értékeket tartalmazó kulcs létrehozása
 ```powershell
 PS C:\> $KeyOperations = 'decrypt', 'verify'
 PS C:\> $Expires = (Get-Date).AddYears(2).ToUniversalTime()
@@ -141,13 +141,13 @@ Tags           : Name        Value
                  Accounting  true
 ```
 
-Az első parancs a $KeyOperations változóban tárolja az értékeket dekódolja és ellenőrzi.
-A második parancs létrehoz egy **datetime** típusú objektumot, amelyet az UTC a **Get-Date** parancsmag használatával definiál.
-Ez az objektum két év múlva adja meg a jövőbeli időpontot. A parancs a $Expires változóban tárolja a dátumot. További információért írja be a következőt: `Get-Help Get-Date` .
-A harmadik parancs egy **datetime** típusú objektumot hoz létre a **Get-Date** parancsmag használatával. Az objektum a jelenlegi UTC időpontot adja meg. A parancs a $NotBefore változóban tárolja a dátumot.
-A végleges parancs létrehoz egy ITHsmNonDefault, amely egy HSM-védelemmel ellátott kulcs. A parancs a $KeyOperations tárolt, engedélyezett műveletek értékeit adja meg. A parancs az előző parancsokban létrehozott *lejáratok* és *NotBefore* paramétereinek időpontját adja meg, valamint a nagy SÚLYOSSÁGú és az IT-címkéket. Az új kulcs le van tiltva. A **set-AzKeyVaultKey** parancsmag használatával engedélyezheti azt.
+Az első parancs az értékeket visszafejti és ellenőrzi a $KeyOperations változóban.
+A második parancs a **Get-Date** parancsmag használatával létrehozza az **UTC-ben** definiált DateTime objektumot.
+Ez az objektum a jövőben két évet ad meg. A parancs ezt a dátumot a $Expires tárolja. További információért írja be a `Get-Help Get-Date` .
+A harmadik parancs a **Get-Date** parancsmag használatával hoz létre **DateTime-objektumot.** Ez az objektum az aktuális UTC-időt adja meg. A parancs ezt a dátumot a $NotBefore tárolja.
+Az utolsó parancs létrehoz egy ITHsmNonDefault nevű kulcsot, amely egy HSM-védelem alatt áll. A parancs az engedélyezett kulcsműveleteket a $KeyOperations. A parancs az előző  parancsokban létrehozott Lejárati és *NemBefore* paraméterek, valamint a magas súlyosság és az IT címkéit adja meg. Az új kulcs le van tiltva. A beállítás engedélyezéséhez használja a **Set-AzKeyVaultKey** parancsmagot.
 
-### Példa 4: HSM-védelemmel ellátott kulcs importálása
+### 4. példa: HSM-védelemű kulcs importálása
 ```powershell
 PS C:\> Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITByok' -KeyFilePath 'C:\Contoso\ITByok.byok' -Destination 'HSM'
 
@@ -164,11 +164,11 @@ Purge Disabled : False
 Tags           :
 ```
 
-Ez a parancs a ITByok nevű kulcsot a *KeyFilePath* paraméter által megadott helyről importálja. Az importált kulcs egy HSM-védelemmel ellátott kulcs.
-Ha egy kulcsot saját hardveres biztonsági modulból szeretne importálni, először létre kell hoznia egy BYOK-csomagot (. BYOK fájlnév-kiterjesztésű fájlt) az Azure Key Vault BYOK eszközkészlet használatával.
-További információt a [HSM-Protected kulcsok létrehozása és továbbítása az Azure Key Vault](http://go.microsoft.com/fwlink/?LinkId=522252)-ban című témakörben találhat.
+Ez a parancs a *KeyFilePath* paraméter által megadott helyről importálja az ITByok nevű kulcsot. Az importált kulcs egy HSM-védelem alatt áll.
+Ha saját hardveres biztonsági modulból importálni kívánt kulcsot, először létre kell hoznia egy BYOK-csomagot (egy .byok kiterjesztésű fájlt) az Azure Key Vault BYOK eszközkészletével.
+További információt az Azure-kulcstárhoz HSM-Protected kulcsok létrehozása és [átvitele.](http://go.microsoft.com/fwlink/?LinkId=522252)
 
-### Példa 5: szoftverrel védett kulcs importálása
+### 5. példa: Szoftver által védett kulcs importálása
 ```powershell
 PS C:\> $Password = ConvertTo-SecureString -String 'Password' -AsPlainText -Force
 PS C:\> Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITPfx' -KeyFilePath 'C:\Contoso\ITPfx.pfx' -KeyFilePassword $Password
@@ -186,11 +186,11 @@ Purge Disabled : False
 Tags           :
 ```
 
-Az első parancs a karakterláncot egy biztonságos karakterláncba a **ConvertTo-SecureString** parancsmag használatával konvertálja, majd a karakterláncot a $Password változóban tárolja. További információért írja be a következőt: `Get-Help
+Az első parancs biztonságos karakterláncgé alakít egy karakterláncot a **ConvertTo-SecureString** parancsmag használatával, majd a karakterláncot a $Password tárolja. További információért írja be a `Get-Help
 ConvertTo-SecureString` .
-A második parancs a contoso Key Vault-ban hozza létre a szoftverhez tartozó jelszót. A parancs a $Passwordban tárolt kulcs és jelszó helyét adja meg.
+A második parancs létrehoz egy szoftverjelszót a Contoso kulcstárban. A parancs a kulcs és a jelszó helyét adja meg a $Password.
 
-### 6. példa: kulcs importálása és attribútumok hozzárendelése
+### 6. példa: Kulcs importálása és attribútumok hozzárendelése
 ```powershell
 PS C:\> $Password = ConvertTo-SecureString -String 'password' -AsPlainText -Force
 PS C:\> $Expires = (Get-Date).AddYears(2).ToUniversalTime()
@@ -212,24 +212,24 @@ Tags           : Name        Value
                  Accounting  true
 ```
 
-Az első parancs a karakterláncot egy biztonságos karakterláncba a **ConvertTo-SecureString** parancsmag használatával konvertálja, majd a karakterláncot a $Password változóban tárolja.
-A második parancs egy **datetime** típusú objektumot hoz létre a **Get-Date** parancsmag használatával, majd az objektumot az $Expires változóban tárolja.
-A harmadik parancs a $tags változót hozza létre a nagy súlyosságú és a címkék beállításához.
-A végleges parancs a megadott helyről importálja a kulcsot a HSM-kulcsként. A parancs a $Password tárolt $Expires és jelszóban tárolt elévülési időt adja meg, és a $tagsban tárolt címkéket alkalmazza.
+Az első parancs biztonságos karakterláncgé alakít egy karakterláncot a **ConvertTo-SecureString** parancsmag használatával, majd a karakterláncot a $Password tárolja.
+A második parancs a **Get-Date** parancsmag használatával **dateTime** objektumot hoz létre, majd az objektumot a $Expires tárolja.
+A harmadik parancs létrehozza a $tags változót a nagy súlyosságú és az it-it-címkék beállítására.
+A végleges parancs egy kulcsot HSM-kulcsként importál a megadott helyről. A parancs megadja a $Expires és a $Password-ban tárolt jelszóban tárolt lejárati időt, és alkalmazza a $tags.
 
-### 7. példa: kulcsos kulcscsere-kulcs (KEK) létrehozása a "saját kulcs" (BYOK) funkcióhoz
+### 7. példa: Kulcs exchange-kulcs (KEK) létrehozása a "hozza el a saját kulcsát" (BYOK) funkcióhoz
 
 ```powershell
 PS C:\> $key = Add-AzKeyVaultKey -VaultName $vaultName -Name $keyName -Destination HSM -Size 2048 -KeyOps "import"
 ```
 
-Kulcsot hoz létre (a továbbiakban: kulcs Exchange-kulcs (KEK)). A KEK-nek olyan RSA-HSM-kulcsnak kell lennie, amely csak az importálási kulcs művelettel rendelkezik. Csak a Key Vault Premium SKU támogatja az RSA-HSM-kulcsokat.
-További részletekért olvassa el a https://docs.microsoft.com/en-us/azure/key-vault/keys/hsm-protected-keys
+Létrehoz egy kulcsot (más néven kulcs exchange-kulcsot ).</b0> A KEK-nek olyan RSA-HSM kulcsnak kell lennie, amely csak az importálási kulcsművelettel rendelkezik. Csak a kulcstár prémium termékváltozata támogatja az RSA-HSM kulcsokat.
+További részletekért lásd: https://docs.microsoft.com/en-us/azure/key-vault/keys/hsm-protected-keys
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -243,13 +243,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Destination (cél)
-Itt adhatja meg, hogy a kulcsot szoftverrel védett kulcsként vagy HSM-védelemmel ellátott kulccsal szeretné-e hozzáadni a Key Vault szolgáltatásban.
-Érvényes értékek: HSM és szoftver.
-Megjegyzés: Ha a HSM-t célként szeretné használni, rendelkeznie kell a HSM támogató fő tárolóval. Az Azure Key Vault szolgáltatás szintjeiről és képességeiről további információt az [Azure Key Vault árképzési webhelyén](http://go.microsoft.com/fwlink/?linkid=512521)találhat.
-Ezt a paramétert új kulcs létrehozásakor kell megadni. Ha a *KeyFilePath* paraméterrel importál egy billentyűt, akkor ez a paraméter nem kötelező:
-- Ha nem adja meg ezt a paramétert, és ez a parancsmag olyan kulcsot importál, amely. byok fájlnév-kiterjesztéssel rendelkezik, a kulcsot HSM-védelemmel ellátott kulcsként importálja. A parancsmag nem tudja importálni a kulcsot szoftveres védelemmel ellátott kulcsként.
-- Ha nem adja meg ezt a paramétert, és ez a parancsmag a. pfx fájlnév-kiterjesztésű kulcsot importálja, az a kulcsot szoftveres védelemmel ellátott kulcsként importálja.
+### -Destination
+Megadja, hogy a kulcs hozzáadva legyen-e szoftveres vagy HSM által védett kulcsként a kulcstár szolgáltatásban.
+Érvényes értékek: HSM és Software.
+Megjegyzés: Ahhoz, hogy a HSM-et használni tudja célként, olyan kulcstárat kell használnia, amely támogatja a HSM-eket. Az Azure Key Vault szolgáltatásszintjéről és funkcióiról az [Azure Key Vault árazási](http://go.microsoft.com/fwlink/?linkid=512521)webhelyén talál további információt.
+Új kulcs létrehozásakor ez a paraméter szükséges. Ha a *KeyFilePath* paraméterrel importál egy kulcsot, a paraméter megadása nem kötelező:
+- Ha nem adja meg ezt a paramétert, és ez a parancsmag egy .byok fájlnévkiterjesztésű kulcsot importál, akkor a kulcsot HSM-védelem alatt lévő kulcsként importálja. A parancsmag nem tudja importálni a kulcsot szoftver által védett kulcsként.
+- Ha nem adja meg ezt a paramétert, és ez a parancsmag egy .pfx fájlnévkiterjesztésű kulcsot importál, a kulcsot szoftver által védett kulcsként importálja.
 
 ```yaml
 Type: System.String
@@ -277,8 +277,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Letiltása
-Azt jelzi, hogy a felvenni kívánt kulcs a letiltott állapotú eredeti állapotra van állítva. A billentyű használatát minden próbálkozás sikertelen lesz. Akkor használja ezt a paramétert, ha előre betöltődik a később engedélyezni kívánt billentyűk.
+### -Disable
+Azt jelzi, hogy a hozzáadott kulcs a letiltás kezdeti állapotára van állítva. A kulcs használatára tett minden kísérlet sikertelen lesz. Akkor használja ezt a paramétert, ha előre betölti a később engedélyezni kívánt kulcsokat.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -293,7 +293,7 @@ Accept wildcard characters: False
 ```
 
 ### -Lejár
-A lejárati idő **datetime** objektumként való megadása a parancsmag által hozzáadott kulcshoz. Ez a paraméter koordinált univerzális időpontot (UTC) használ. Ha egy **datetime** típusú objektumot szeretne beolvasni, használja a **Get-Date** parancsmagot. További információért írja be a következőt: `Get-Help Get-Date` . Ha nem adja meg ezt a paramétert, a kulcs nem jár le.
+A parancsmag által adott kulcs **Lejárati** idejét adja meg DateTime-objektumként. Ez a paraméter egyezményes világidőt (UTC) használ. **DateTime-objektum** beszerzéséhez használja a **Get-Date** parancsmagot. További információért írja be a `Get-Help Get-Date` . Ha nem adja meg ezt a paramétert, a kulcs nem jár le.
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -308,7 +308,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Boltozat objektum.
+Tárolóobjektum.
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
@@ -323,7 +323,7 @@ Accept wildcard characters: False
 ```
 
 ### -KeyFilePassword
-Az importált fájlhoz tartozó jelszót **SecureString** -objektumként adja meg. **SecureString** objektum beolvasásához használja a **ConvertTo-SecureString** parancsmagot. További információért írja be a következőt: `Get-Help ConvertTo-SecureString` . A. pfx fájlnév-kiterjesztésű fájlok importálásához meg kell adnia ezt a jelszót.
+Az importált fájl jelszavát adja meg **SecureString objektumként.** A **SecureString objektum** beszerzéséhez használja a **ConvertTo-SecureString** parancsmagot. További információért írja be a `Get-Help ConvertTo-SecureString` . A .pfx kiterjesztésű fájlok importálásához meg kell adnia ezt a jelszót.
 
 ```yaml
 Type: System.Security.SecureString
@@ -338,11 +338,11 @@ Accept wildcard characters: False
 ```
 
 ### -KeyFilePath
-A parancsmag által importált fontos anyagot tartalmazó helyi fájl elérési útját adja meg.
-Az érvényes fájlnév-kiterjesztések. byok és. pfx.
-- Ha a fájl. byok fájl, az importálás után a rendszer automatikusan védi a kulcsot, és nem tudja felülírni ezt az alapértelmezett HSM.
-- Ha a fájl. pfx fájl, a kulcs automatikusan védett a szoftverrel az importálás után. Az alapértelmezett beállítás felülbírálásához állítsa a *cél* paramétert a HSM értékre, hogy a kulcs HSM-védelemmel legyen ellátva.
-Ha ezt a paramétert adja meg, a *cél* paraméter nem kötelező.
+Egy olyan helyi fájl elérési útját adja meg, amely a parancsmag által importálni kívánt legfontosabb anyagot tartalmazza.
+Az érvényes fájlnévkiterjesztések a .byok és a .pfx.
+- Ha a fájl .byok fájl, a kulcs az importálás után automatikusan az HSM-ekkel lesz védve, és ez az alapértelmezett beállítás nem bírálható felül.
+- Ha a fájl .pfx fájl, a kulcsot az importálás után automatikusan szoftver védi. Az alapértelmezett beállítás felülbírálása érdekében állítsa a Cél paramétert HSM-nek, hogy a kulcs HSM-védelem alatt ússa meg. 
+Ha megadja ezt a paramétert, a *Cél* paraméter megadása nem kötelező.
 
 ```yaml
 Type: System.String
@@ -357,16 +357,16 @@ Accept wildcard characters: False
 ```
 
 ### -KeyOps
-Megadja azokat a műveleteket, amelyeket a parancsmag által hozzáadott kulccsal végezhet el.
-Ha nem adja meg ezt a paramétert, akkor az összes művelet elvégezhető.
-A paraméter elfogadható értékei: a [JSON-webkulcs (JWK) specifikációja](http://go.microsoft.com/fwlink/?LinkID=613300)által meghatározott főbb műveletek vesszővel elválasztott listája:
-- beavatkozik
+A parancsmag által hozzáadható billentyűvel elvégezhető műveletek tömbje.
+Ha nem adja meg ezt a paramétert, az összes művelet elvégezhető.
+A paraméter elfogadható értékei a [JSON Web Key (JWK)](http://go.microsoft.com/fwlink/?LinkID=613300)specifikációban meghatározott kulcsműveletek vesszővel elválasztott listája:
+- titkosítás
 - visszafejtése
 - wrapKey
 - unwrapKey
-- jel
-- Ellenőrizze
-- Importálás (csak KEK esetén: 7. példa)
+- aláírás
+- ellenőrzés
+- importálás (csak kEK esetén lásd a 7. példát)
 
 ```yaml
 Type: System.String[]
@@ -380,8 +380,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (név)
-Annak a kulcsnak a nevét adja meg, amelyet fel szeretne venni a kulcs boltozatához. Ez a parancsmag a kulcs teljes tartománynevét (FQDN) építi fel a paraméter által megadott név, a kulcsfájl neve és a jelenlegi környezet alapján. A névnek 0-9 csak az 1-es, a-z, A-z és A-(a kötőjel szimbólumot) tartalmazó 63-karakterből kell állnia.
+### -Name
+A kulcstárhoz hozzáadni megfelelő kulcs neve. Ez a parancsmag egy kulcs teljes tartománynevét (FQDN) építi fel a paraméter által megadott név, a kulcstár neve és az aktuális környezet alapján. A névnek egy 1 és 63 karakter hosszúságú karakterláncnak kell lennie, amely csak 0-9, a-z, A-Z és - (kötőjelet) tartalmaz.
 
 ```yaml
 Type: System.String
@@ -396,7 +396,7 @@ Accept wildcard characters: False
 ```
 
 ### -NotBefore
-Itt adhatja meg az időt **datetime** objektumként, amely előtt a kulcs nem használható. Ez a paraméter az UTC-t használja. Ha egy **datetime** típusú objektumot szeretne beolvasni, használja a **Get-Date** parancsmagot. Ha nem adja meg ezt a paramétert, akkor a billentyű azonnal használható.
+Azt az időt adja meg **DateTime-objektumként,** amely előtt a kulcs nem használható. Ez a paraméter az UTC-t használja. **DateTime-objektum** beszerzéséhez használja a **Get-Date** parancsmagot. Ha nem adja meg ezt a paramétert, a kulcs azonnal használható.
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -411,7 +411,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Vault-erőforrás azonosítója
+Tároló erőforrásazonosítója.
 
 ```yaml
 Type: System.String
@@ -425,8 +425,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Méret
-Az RSA-kulcs mérete a BITS lapon Ha nem adja meg, akkor a szolgáltatás biztonságos alapértelmezett értéket ad meg.
+### -Size
+RSA-billentyű mérete bitben. Ha nincs megadva, a szolgáltatás biztonságos alapértelmezett beállítást biztosít.
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -440,8 +440,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Címke
-A kulcs-érték párok a hash-táblázatok formájában. Például: @ {key0 = "value0"; key1 = $null; azonosító2 = "érték2"}
+### -Tag
+Kulcsérték-párok kivonattábla formájában. Például: @{key0="érték0";key1=$null;key2="érték2"}
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -456,7 +456,7 @@ Accept wildcard characters: False
 ```
 
 ### -VaultName
-Annak a kulcsnak a nevét adja meg, amelyre a parancsmag hozzáadja a kulcsot. Ez a parancsmag a kulcsfájl teljes tartománynevét a paraméter által megadott név és a jelenlegi környezet alapján építi fel.
+Annak a kulcstárnak a nevét adja meg, amelyhez ez a parancsmag hozzáadja a kulcsot. Ez a parancsmag egy kulcstár FQDN-ét építi fel a paraméter által megadott név és az aktuális környezet alapján.
 
 ```yaml
 Type: System.String
@@ -470,8 +470,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -486,7 +486,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik.
 A parancsmag nem fut.
 
 ```yaml
@@ -502,19 +502,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. Azure. Command. PSKeyVault. models.
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. PSKeyVaultKey. models.
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKey
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
@@ -524,4 +524,3 @@ Ez a parancsmag a következő általános paramétereket támogatja:-debug,-Erro
 
 [Remove-AzKeyVaultKey](./Remove-AzKeyVaultKey.md)
 
-[Set-AzKeyVaultKeyAttribute](./Set-AzKeyVaultKeyAttribute.md)
