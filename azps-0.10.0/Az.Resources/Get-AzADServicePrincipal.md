@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Get-AzADServicePrincipal.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Get-AzADServicePrincipal.md
-ms.openlocfilehash: a80e2b8603995ba57aada9639b3a6b45e08e2e55
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: 01f6b6d6ed119945af7d99bac9227c788976cbab
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93843473"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398699"
 ---
 # Get-AzADServicePrincipal
 
-## Áttekintés
-Szűri az Active Directory-szolgáltatási résztvevőket.
+## SYNOPSIS
+Szűri az active directory-szolgáltatásban használható egyszerű címtár-rendszereket.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### EmptyParameterSet (alapértelmezett)
 ```
@@ -62,55 +62,55 @@ Get-AzADServicePrincipal -ServicePrincipalName <String> [-DefaultProfile <IAzure
  [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-## Leírás
-Szűri az Active Directory-szolgáltatási résztvevőket.
+## LEÍRÁS
+Szűri az active directory-szolgáltatásnévben lévő egyszerű címtárat.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1 – az AD Service-résztvevők listája
+### 1. példa – Az AD szolgáltatásnévsőinek felsorolása
 
 ```
 PS C:\> Get-AzADServicePrincipal
 ```
 
-Felsorolja a bérlői webhelyhez tartozó összes HIRDETÉSCSOPORT-résztvevőt.
+A bérlő összes AD szolgáltatásnévvel rendelkezik.
 
-### Példa 2 – AD-résztvevők listázása a lapozással
+### 2. példa : Az AD szolgáltatásban használt egyszerű szolgáltatások listájának felsorolása lapozással
 
 ```
 PS C:\> Get-AzADServicePrincipal -First 100
 ```
 
-Felsorolja az első 100-ös AD-résztvevőket a bérlői webhelyeken.
+Egy bérlő első 100 AD szolgáltatásának egyszerű felhasználóját sorolja fel.
 
-### Példa: 3 – a listák egyszerű kézbesítése
+### 3. példa : Egyszerű szolgáltatásnévlista SPN szerint
 
 ```
 PS C:\> Get-AzADServicePrincipal -ServicePrincipalName 36f81fc3-b00f-48cd-8218-3879f51ff39f
 ```
 
-A "36f81fc3-b00f-48cd-8218-3879f51ff39f" SPN-es szolgáltatásnév listáját jeleníti meg.
+Az SPN "36f81fc3-b00f-48cd-8218-3879f51ff39f" szolgáltatásnévvel.
 
-### Példa 4 – egy keresési karakterlánccal listázhatja a szolgáltatási résztvevőket
+### 4. példa : A szolgáltatásnévnév felsorolása keresési karakterlánc alapján
 
 ```
 PS C:\> Get-AzADServicePrincipal -SearchString "Web"
 ```
 
-Felsorolja az összes olyan AD-szolgáltatót, amelynek a megjelenítendő neve "web"-val kezdődik.
+Felsorolja azokat az AD szolgáltatásneveket, amelyeknek a megjelenítendő neve "Web" kezdetekkel kezdődik.
 
-### Példa: 5 – a listákban szereplő szolgáltatási megbízók
+### 5. példa : Egyszerű szolgáltatásnév listázása pipázással
 
 ```
 PS C:\> Get-AzADApplication -ObjectId 39e64ec6-569b-4030-8e1c-c3c519a05d69 | Get-AzADServicePrincipal
 ```
 
-Megkapja az "39e64ec6-569b-4030-8e1c-c3c519a05d69" azonosítójú AD-alkalmazást, és a Get-AzADServicePrincipal parancsmaghoz illeszti az adott alkalmazáshoz tartozó összes szolgáltatásnevet.
+A (39e64ec6-569b-4030-8e1c-c3c519a05d69) objektumazonosítójú AD alkalmazást, és a Get-AzADServicePrincipal-parancsmagba beömlve felsorolja az adott alkalmazás összes szolgáltatásnévét.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -ApplicationId
-A Service Principal Application azonosító.
+Az egyszerű szolgáltatásalkalmazás azonosítója.
 
 ```yaml
 Type: System.Guid
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationObject
-Annak az alkalmazásobjektum-objektumnak a lekérése, amelynek a szolgáltatását beolvasták.
+Az az alkalmazásobjektum, amelynek a szolgáltatásnév beolvasása folyamatban van.
 
 ```yaml
 Type: Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADApplication
@@ -140,7 +140,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
@@ -155,7 +155,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-A szolgáltatás fő megjelenített neve.
+Az egyszerű szolgáltatásnév megjelenítendő neve.
 
 ```yaml
 Type: System.String
@@ -170,7 +170,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayNameBeginsWith
-A szolgáltatás egyszerű keresési karakterlánca.
+Az egyszerű szolgáltatásnév keresési karakterlánca.
 
 ```yaml
 Type: System.String
@@ -184,8 +184,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### – Első
-A visszaadni kívánt objektumok maximális száma.
+### -First
+A vissza nem térhet objektumok maximális száma.
 
 ```yaml
 Type: System.UInt64
@@ -200,7 +200,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeTotalCount
-Az adathalmaz objektumainak számát jelzi. Ez a paraméter jelenleg nem tesz semmit.
+Az adatkészletben lévő objektumok számát jelenti. Ez a paraméter jelenleg nem tesz semmit.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -215,7 +215,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-A szolgáltatás megbízójának objektumazonosító-azonosítója.
+A szolgáltatásnév objektumazonosítója.
 
 ```yaml
 Type: System.Guid
@@ -230,7 +230,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServicePrincipalName
-A szolgáltatás SPN-je.
+A szolgáltatás SPN-ét.
 
 ```yaml
 Type: System.String
@@ -244,8 +244,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Skip (kihagyás)
-Figyelmen kívül hagyja az első N objektumokat, és a fennmaradó objektumokat kapja.
+### -Skip
+Figyelmen kívül hagyja az első N objektumot, majd beveszi a fennmaradó objektumokat.
 
 ```yaml
 Type: System.UInt64
@@ -260,28 +260,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
-### System. GUID
+### System.Guid
 
-### Microsoft.Azure.Graph.RBAC.Version1_6. ActiveDirectory. PSADApplication
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADApplication
 Paraméterek: ApplicationObject (ByValue)
 
 ## KIMENETEK
 
-### Microsoft.Azure.Graph.RBAC.Version1_6. ActiveDirectory. PSADServicePrincipal
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADServicePrincipal
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Új – AzADServicePrincipal](./New-AzADServicePrincipal.md)
+[New-AzADServicePrincipal](./New-AzADServicePrincipal.md)
 
-[Set-AzADServicePrincipal](./Set-AzADServicePrincipal.md)
 
 [Remove-AzADServicePrincipal](./Remove-AzADServicePrincipal.md)
 

@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Get-AzADUser.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Get-AzADUser.md
-ms.openlocfilehash: 34a00ed29d40d8824ac0f2d24f5275bb7c0a0164
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: b5690dfc1d85483b10fc7cd08606c4555784e8e0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93843469"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398733"
 ---
 # Get-AzADUser
 
-## Áttekintés
-Szűri az Active Directory felhasználóit.
+## SYNOPSIS
+Szűri az active directory-felhasználókat.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### EmptyParameterSet (alapértelmezett)
 ```
@@ -56,47 +56,47 @@ Get-AzADUser -Mail <String> [-DefaultProfile <IAzureContextContainer>] [-Include
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-## Leírás
-Szűri az Active Directory felhasználóit.
+## LEÍRÁS
+Szűri az active directory-felhasználókat.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1 – minden felhasználó listázása
+### 1. példa – Az összes felhasználó felsorolása
 
 ```
 PS C:\> Get-AzADUser
 ```
 
-Felsorolja a bérlői fiók összes felhasználóját.
+Egy bérlő összes AD-felhasználóját felsorolja.
 
-### Példa 2 – a lapozófájlt használó összes felhasználó listázása
+### 2. példa: Az összes felhasználó felsorolása lapozás használatával
 
 ```
 PS C:\> Get-AzADUser -First 100
 ```
 
-Felsorolja az első 100 AD-felhasználókat a bérlői fiókban.
+A bérlői webhely első 100 AD-felhasználóját sorolja fel.
 
-### Példa 3 – az AD-felhasználó beolvasása a felhasználó egyszerű nevében
+### 3. példa: Az AD-felhasználó lekérte egyszerű felhasználónév alapján
 
 ```
 PS C:\> Get-AzADUser -UserPrincipalName foo@domain.com
 ```
 
-Beolvassa a felhasználó egyszerű felhasználónevét " foo@domain.com ".
+Az AD-felhasználót a következő felhasználónévvel kapja meg: " foo@domain.com ".
 
-### Példa 4 – keresés karakterlánc szerinti felsorolás
+### 4. példa – Lista keresési karakterlánc alapján
 
 ```
 PS C:\> Get-AzADUser -SearchString Joe
 ```
 
-Felsorolja azokat az AD-felhasználókat, akiknek a megjelenítendő neve "Joe"-val kezdődik.
+Azokat az AD-felhasználókat sorolja fel, akiknek a megjelenítendő neve "József" névvel kezdődik.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
@@ -125,8 +125,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### – Első
-A visszaadni kívánt objektumok maximális száma.
+### -First
+A vissza nem térhet objektumok maximális száma.
 
 ```yaml
 Type: System.UInt64
@@ -141,7 +141,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeTotalCount
-Az adathalmaz objektumainak számát jelzi. Ez a paraméter jelenleg nem tesz semmit.
+Az adatkészletben lévő objektumok számát jelenti. Ez a paraméter jelenleg nem tesz semmit.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -156,7 +156,7 @@ Accept wildcard characters: False
 ```
 
 ### -Mail
-A felhasználó e-mail-címe.
+A felhasználói e-mail.
 
 ```yaml
 Type: System.String
@@ -171,7 +171,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-A felhasználó objektum-azonosítója.
+A felhasználó objektumazonosítója.
 
 ```yaml
 Type: System.Guid
@@ -185,8 +185,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Skip (kihagyás)
-Figyelmen kívül hagyja az első N objektumokat, és a fennmaradó objektumokat kapja.
+### -Skip
+Figyelmen kívül hagyja az első N objektumot, majd beveszi a fennmaradó objektumokat.
 
 ```yaml
 Type: System.UInt64
@@ -201,7 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### -StartsWith
-A megadott karakterlánccal kezdődő felhasználók megkeresésére szolgál.
+Segítségével megkeresheti a megadott karakterláncot használó felhasználókat.
 
 ```yaml
 Type: System.String
@@ -216,7 +216,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserPrincipalName
-A felhasználó egyszerű felhasználóneve.
+A felhasználó upn-ját.
 
 ```yaml
 Type: System.String
@@ -243,25 +243,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
-### System. GUID
+### System.Guid
 
 ## KIMENETEK
 
-### Microsoft.Azure.Graph.RBAC.Version1_6. ActiveDirectory. PSADUser
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADUser
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Új – AzADUser](./New-AzADUser.md)
+[New-AzADUser](./New-AzADUser.md)
 
-[Set-AzADUser](./Set-AzADUser.md)
 
 [Remove-AzADUser](./Remove-AzADUser.md)
 
