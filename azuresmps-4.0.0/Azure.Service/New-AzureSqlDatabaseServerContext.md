@@ -3,19 +3,19 @@ external help file: Microsoft.WindowsAzure.Commands.SqlDatabase.dll-Help.xml
 ms.assetid: B7B29875-D2E5-4E96-AD4B-83032AB18D02
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: cdcd4788e3eefdce858cb88c0bf1885353f8a673
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 5312556cb49d02ea901b4cb2526a36f7237f66d1
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94015970"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100404173"
 ---
 # New-AzureSqlDatabaseServerContext
 
-## Áttekintés
-Kiszolgáló-kapcsolati környezetet hoz létre.
+## SYNOPSIS
+Kiszolgálókapcsolat környezetét hozza létre.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### ByServerNameWithSqlAuth (alapértelmezett)
 ```
@@ -47,35 +47,35 @@ New-AzureSqlDatabaseServerContext -FullyQualifiedServerName <String> [-UseSubscr
  [-SubscriptionName <String>] [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## Leírás
-A **New-AzureSqlDatabaseServerContext** parancsmag az Azure SQL Database Server kapcsolati környezetét hozza létre.
-SQL Server-hitelesítéssel kapcsolati környezetet hozhat létre egy SQL-adatbázis-kiszolgálóhoz a megadott hitelesítő adatokkal.
-Az SQL-adatbázis kiszolgálóját név szerint is megadhatja a teljesen minősített név vagy URL-cím alapján.
-A hitelesítő adatok megadásához használja a Get-Credential parancsmagot, amely a Felhasználónév és a jelszó megadását kéri.
+## LEÍRÁS
+A **New-AzureSqlDatabaseServerContext** parancsmag létrehoz egy Azure SQL Database Server-kapcsolatkörnyezetet.
+Az SQL Server-hitelesítéssel kapcsolatot hozhat létre egy SQL-adatbázis-kiszolgálóval a megadott hitelesítő adatokkal.
+Az SQL-adatbázis-kiszolgálót név, teljes név vagy URL-cím szerint is megadhatja.
+Hitelesítő adatok beszerzéséhez használja a Get-Credential parancsmagot, amely a felhasználónév és a jelszó megadására kéri.
 
-Használja a **New-AzureSqlDatabaseServerContext** parancsmagot tanúsítvány-alapú hitelesítéssel a megadott SQL-adatbázis-kiszolgálóhoz való kapcsolódási környezet létrehozásához a megadott Azure-előfizetési adatok használatával.
-Az SQL-adatbázis kiszolgálóját név vagy a teljesen minősített név szerint is megadhatja.
-Az előfizetési adattípusokat paraméterként adhatja meg, vagy az aktuális Azure-előfizetésből beolvashatja.
-Az https://msdn.microsoft.com/library/windowsazure/jj152833.aspx aktuális Azure-előfizetés kiválasztásához használja a Select-AzureSubscription parancsmagot.
+A **New-AzureSqlDatabaseServerContext** parancsmag tanúsítványalapú hitelesítéssel való használatával kapcsolatot hozhat létre a megadott SQL Database-kiszolgálóval a megadott Azure-előfizetési adatok használatával.
+Az SQL-adatbázis kiszolgálóját név vagy teljesen minősített név szerint is megadhatja.
+Az előfizetés adatait megadhatja paraméterként, vagy lekérheti az aktuális Azure-előfizetésből.
+Az aktuális Azure-előfizetés kiválasztásához használja a https://msdn.microsoft.com/library/windowsazure/jj152833.aspx Select-AzureSubscription parancsmagot.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: környezet létrehozása SQL Server-hitelesítés használatával
+### 1. példa: Környezet létrehozása SQL Server-hitelesítéssel
 ```
 PS C:\> $Credential = Get-Credential
 PS C:\> $Context = New-AzureSqlDatabaseServerContext -ServerName "lpqd0zbr8y" -Credential $Credential
 PS C:\> $Database17 = New-AzureSqlDatabase -ConnectionContext $Context -DatabaseName "Database17" -MaxSizeGB 50 -Collation "SQL_Latin1_General_CP1_CI_AS"
 ```
 
-Ez a példa az SQL Server-hitelesítést használja.
+Ez a példa SQL Server-hitelesítést használ.
 
-Az első parancs kéri a kiszolgáló-rendszergazdai hitelesítő adatok megadását, és a hitelesítő adatokat a $Credential változóban tárolja.
+Az első parancs a kiszolgáló rendszergazdájának hitelesítő adatait kéri, és a hitelesítő adatokat a $Credential tárolja.
 
-A második parancs a lpqd0zbr8y nevű SQL adatbázis-kiszolgálóhoz csatlakozik a $Credential használatával.
+A második parancs az lpqd0zbr8y nevű SQL Database-kiszolgálóhoz csatlakozik az $Credential.
 
-A végleges parancs létrehoz egy Database17 nevű adatbázist a kiszolgálón, amely az $Context környezet részét képezi.
+Az utolsó parancs létrehoz egy Adatbázis17 nevű adatbázist a kiszolgálón, amely a helyi környezet $Context.
 
-### 2. példa: környezet létrehozása tanúsítvány-alapú hitelesítés használatával
+### 2. példa: Környezet létrehozása tanúsítványalapú hitelesítéssel
 ```
 PS C:\> $SubscriptionId = <Subscription ID>
 PS C:\> $Thumbprint = <Certificate Thumbprint>
@@ -85,20 +85,20 @@ PS C:\> Select-AzureSubscription -SubscriptionName "Subscription07"
 PS C:\> $Context = New-AzureSqlDatabaseServerContext -ServerName "lpqd0zbr8y" -UseSubscription
 ```
 
-Ez a példa a tanúsítványon alapuló hitelesítést használja.
+Ez a példa a tanúsítványalapú hitelesítést használja.
 
-Az első két parancs az értékekhez rendeli az $SubscriptionId és $Thumbprint változókat.
+Az első két parancs értékeket rendel a $SubscriptionId és $Thumbprint változókhoz.
 
-A harmadik parancs a $Thumbprint ujjlenyomatával azonosított tanúsítványt kapja, és a $Certificate tárolja.
+A harmadik parancs a tanúsítványt a $Thumbprint azonosítja, és $Certificate.
 
-A negyedik parancs beállítja a Subscription07 előfizetést, és az ötödik parancs kiválasztja az előfizetést.
+A negyedik parancs az előfizetést Előfizetés07-re állítja, az ötödik parancs pedig az előfizetést választja ki.
 
-A végleges parancs létrehoz egy környezetet a lpqd0zbr8y nevű kiszolgálóhoz tartozó jelenlegi előfizetésben.
+Az utolsó parancs létrehoz egy kontextust az aktuális előfizetésben az lpqd0zbr8y nevű kiszolgálóhoz.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -Hitelesítő adatok
-Megadja azt a hitelesítőadat-objektumot, amely SQL Server-hitelesítést nyújt Önnek a kiszolgáló eléréséhez.
+Egy hitelesítőadat-objektumot ad meg, amely SQL Server-hitelesítést biztosít a kiszolgáló eléréséhez.
 
 ```yaml
 Type: PSCredential
@@ -113,8 +113,8 @@ Accept wildcard characters: False
 ```
 
 ### -FullyQualifiedServerName
-Az Azure SQL Server-kiszolgáló teljes tartománynevét (FQDN) tartalmazó nevet adja meg.
-Például Server02.database.windows.net.
+Az Azure SQL-adatbázis kiszolgálójának teljes tartománynevét (FQDN) adja meg.
+Például: Server02.database.windows.net.
 
 ```yaml
 Type: String
@@ -129,7 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -ManageUrl
-Megadja, hogy a parancsmag milyen URL-címet használ az Azure SQL DatabaseManagement-portál eléréséhez a kiszolgálón.
+A parancsmag által a kiszolgáló Azure SQL DatabaseManagement Portáljának eléréséhez használt URL-cím.
 
 ```yaml
 Type: Uri
@@ -144,8 +144,8 @@ Accept wildcard characters: False
 ```
 
 ### -Profil
-Azt az Azure-profilt adja meg, amelyből a parancsmag olvasható.
-Ha nem ad meg profilt, a parancsmag a helyi alapértelmezett profilból olvassa be a szöveget.
+Azt az Azure-profilt adja meg, amelyből a parancsmag olvas.
+Ha nem ad meg profilt, ez a parancsmag a helyi alapértelmezett profilból olvassa be.
 
 ```yaml
 Type: AzureSMProfile
@@ -159,7 +159,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Kiszolgálónév
+### -ServerName
 Az adatbázis-kiszolgáló nevét adja meg.
 
 ```yaml
@@ -187,9 +187,9 @@ Accept wildcard characters: False
 ```
 
 ### -SubscriptionName
-Megadja annak az Azure-előfizetésnek a nevét, amelyet a parancsmag a kapcsolati környezet létrehozásához használ.
+Megadja annak az Azure-előfizetésnek a nevét, amelyből a parancsmag létrehozza a kapcsolat kontextusát.
 Ha nem ad meg értéket ehhez a paraméterhez, a parancsmag az aktuális előfizetést használja.
-Az aktuális előfizetés módosításához futtassa az Select-AzureSubscription parancsmagot.
+Az aktuális előfizetés Select-AzureSubscription a Select-AzureSubscription parancsmag futtatásával.
 
 ```yaml
 Type: String
@@ -204,7 +204,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseSubscription
-Jelzi, hogy ez a parancsmag Azure-előfizetést használ a kapcsolati környezet létrehozásához.
+Azt jelzi, hogy ez a parancsmag Azure-előfizetést használ a kapcsolat környezetének létrehozására.
 
 ```yaml
 Type: SwitchParameter
@@ -219,27 +219,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
 ## KIMENETEK
 
-### Microsoft. WindowsAzure. Command. SqlDatabase. Services. Server. IServerDataServiceContext
+### Microsoft.WindowsAzure.Commands.SqlDatabase.Services.Server.IServerDataServiceContext
 
-## MEGJEGYZI
-* Ha tartomány megadása nélkül hitelesíti magát, és Windows PowerShell 2,0-t használ, a Get-Credential parancsmag a \\ felhasználónévhez tartozó fordított () egységprefixumokat ad eredményül, például \User. A Windows PowerShell 3,0 nem adja hozzá a fordított perjelet. Ezt a fordított perjelet a **New-AzureSqlDatabaseServerContext** parancsmag *hitelesítő* paramétere nem ismeri fel. Az eltávolításhoz az alábbihoz hasonló parancsok használhatók:
+## MEGJEGYZÉSEK
+* Ha tartomány megadása nélkül hitelesít, és Windows PowerShell 2.0-t használ, a Get-Credential-parancsmag egy, a felhasználónévhez előrendelt törtjelet () ad vissza, például \\ \user. A Windows PowerShell 3.0 nem adja hozzá a perjelet. A törtjelet nem ismeri  fel a **New-AzureSqlDatabaseServerContext** parancsmag hitelesítőadat-paramétere. Az eltávolításához az alábbihoz hasonló parancsokat kell használnia:
 
   `PS C:\\\> $Credential = Get-Credential`
 `PS C:\\\> $Credential = New-Object -TypeName 'System.Management.Automation.PSCredential' -ArgumentList $Credential.Username.Replace("\",""),$Credential.Password`
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Azure SQL-adatbázis-parancsmagok](./Azure.SQLDatabase.md)
+
 
 [Get-AzureSqlDatabase](./Get-AzureSqlDatabase.md)
 
-[Új – AzureSqlDatabase](./New-AzureSqlDatabase.md)
+[New-AzureSqlDatabase](./New-AzureSqlDatabase.md)
 
 [Remove-AzureSqlDatabase](./Remove-AzureSqlDatabase.md)
 
