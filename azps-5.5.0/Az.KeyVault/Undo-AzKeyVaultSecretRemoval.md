@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/u
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Undo-AzKeyVaultSecretRemoval.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Undo-AzKeyVaultSecretRemoval.md
-ms.openlocfilehash: 1eca5a380dc71a5bd801c21bb7e7f556fcff0d35
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 9513cba1532ec70acb77cdf97d19de25db36434f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100152659"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100416141"
 ---
 # Undo-AzKeyVaultSecretRemoval
 
@@ -55,7 +55,7 @@ Content Type :
 Tags         :
 ```
 
-Ez a parancs egy aktív és használható állapotba visszaállítja a korábban törölt "MySecret" titkos fájlt.
+Ez a parancs egy aktív és használható állapotba visszaállítja a korábban törölt MySecret titkos fájlt.
 
 ## PARAMETERS
 
@@ -169,6 +169,5 @@ Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, 
 
 [Remove-AzKeyVaultSecret](./Remove-AzKeyVaultSecret.md)
 
-[Add-AzKeyVaultSecret](./Add-AzKeyVaultSecret.md)
 
 [Get-AzKeyVaultSecret](./Get-AzKeyVaultSecret.md)
