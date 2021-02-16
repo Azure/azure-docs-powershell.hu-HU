@@ -6,58 +6,58 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCircuitConnectionConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCircuitConnectionConfig.md
-ms.openlocfilehash: 0e8a4eeaad1f033377ab11d7361d71c8a63a9dc2
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: fb82b00f998ed0c2b7473d4a3e0bcb9b3dc60630
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94184101"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100397849"
 ---
-# <span data-ttu-id="586a0-101">Remove-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="586a0-101">Remove-AzExpressRouteCircuitConnectionConfig</span></span>
+# <span data-ttu-id="65565-101">Remove-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="65565-101">Remove-AzExpressRouteCircuitConnectionConfig</span></span>
 
-## <span data-ttu-id="586a0-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="586a0-102">SYNOPSIS</span></span>
-<span data-ttu-id="586a0-103">ExpressRoute-áramköri kapcsolat konfigurációjának eltávolítása.</span><span class="sxs-lookup"><span data-stu-id="586a0-103">Removes an ExpressRoute circuit connection configuration.</span></span>
+## <span data-ttu-id="65565-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="65565-102">SYNOPSIS</span></span>
+<span data-ttu-id="65565-103">Eltávolítja az ExpressRoute-kapcsolat kapcsolatkonfigurációját.</span><span class="sxs-lookup"><span data-stu-id="65565-103">Removes an ExpressRoute circuit connection configuration.</span></span>
 
-## <span data-ttu-id="586a0-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="586a0-104">SYNTAX</span></span>
+## <span data-ttu-id="65565-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="65565-104">SYNTAX</span></span>
 
 ```
 Remove-AzExpressRouteCircuitConnectionConfig [-Name] <String> [-ExpressRouteCircuit] <PSExpressRouteCircuit>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="586a0-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="586a0-105">DESCRIPTION</span></span>
-<span data-ttu-id="586a0-106">A **Remove-AzExpressRouteCircuitConnectionConfig** parancsmag eltávolítja az adott Express útvonal-áramkörrel társított ExpressRoute-kapcsolat konfigurációját.</span><span class="sxs-lookup"><span data-stu-id="586a0-106">The **Remove-AzExpressRouteCircuitConnectionConfig** cmdlet removes an ExpressRoute circuit connection configuration associated with a given Express Route Circuit.</span></span>
+## <span data-ttu-id="65565-105">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="65565-105">DESCRIPTION</span></span>
+<span data-ttu-id="65565-106">A **Remove-AzExpressRouteCircuitConnectionConfig** parancsmag eltávolítja az Adott ExpressRoute-kapcsolat kapcsolatkonfigurációját.</span><span class="sxs-lookup"><span data-stu-id="65565-106">The **Remove-AzExpressRouteCircuitConnectionConfig** cmdlet removes an ExpressRoute circuit connection configuration associated with a given Express Route Circuit.</span></span>
 
-## <span data-ttu-id="586a0-107">Példák</span><span class="sxs-lookup"><span data-stu-id="586a0-107">EXAMPLES</span></span>
+## <span data-ttu-id="65565-107">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="65565-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="586a0-108">Példa 1: áramkör-kapcsolati konfiguráció eltávolítása ExpressRoute-áramkörről</span><span class="sxs-lookup"><span data-stu-id="586a0-108">Example 1: Remove a circuit connection configuration from an ExpressRoute circuit</span></span>
+### <span data-ttu-id="65565-108">1. példa: Kapcsolati kapcsolat konfigurációjának eltávolítása ExpressRoute-áramkörből</span><span class="sxs-lookup"><span data-stu-id="65565-108">Example 1: Remove a circuit connection configuration from an ExpressRoute circuit</span></span>
 ```
 $circuit_init = Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg
 Remove-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName -ExpressRouteCircuit $circuit_init
 Set-AzExpressRouteCircuit -ExpressRouteCircuit $circuit_init
 ```
 
-### <span data-ttu-id="586a0-109">2. példa: az áramköri kapcsolat konfigurációjának eltávolítása egy ExpressRoute-áramkörről csővezeték használatával</span><span class="sxs-lookup"><span data-stu-id="586a0-109">Example 2: Remove a circuit connection configuration using Piping from an ExpressRoute Circuit</span></span>
+### <span data-ttu-id="65565-109">2. példa: Áramköri kapcsolat konfigurációjának eltávolítása Egy ExpressRoute-áramkör pipázásával</span><span class="sxs-lookup"><span data-stu-id="65565-109">Example 2: Remove a circuit connection configuration using Piping from an ExpressRoute Circuit</span></span>
 ```
 Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg|Remove-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName|Set-AzExpressRouteCircuit
 ```
 
-### <span data-ttu-id="586a0-110">3. példa: az áramkör-kapcsolat konfigurációjának eltávolítása egy ExpressRoute-áramkörről egy adott cím család számára</span><span class="sxs-lookup"><span data-stu-id="586a0-110">Example 3: Remove a circuit connection configuration from an ExpressRoute circuit for a specific address family</span></span>
+### <span data-ttu-id="65565-110">3. példa: Kapcsolati kapcsolat konfigurációjának eltávolítása Egy adott cím családjához megadott ExpressRoute-áramkörből</span><span class="sxs-lookup"><span data-stu-id="65565-110">Example 3: Remove a circuit connection configuration from an ExpressRoute circuit for a specific address family</span></span>
 ```
 $circuit_init = Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg
 Remove-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName -ExpressRouteCircuit $circuit_init -AddressPrefixType IPv4
 Set-AzExpressRouteCircuit -ExpressRouteCircuit $circuit_init
 ```
 
-### <span data-ttu-id="586a0-111">Példa 4: az áramkör-kapcsolat konfigurációjának eltávolítása egy ExpressRoute-áramkörről egy adott cím család számára</span><span class="sxs-lookup"><span data-stu-id="586a0-111">Example 4: Remove a circuit connection configuration using Piping from an ExpressRoute Circuit for a specific address family</span></span>
+### <span data-ttu-id="65565-111">4. példa: Áramköri kapcsolat konfigurációjának eltávolítása a Piping használatával egy ExpressRoute-áramkörből egy adott cím családjához</span><span class="sxs-lookup"><span data-stu-id="65565-111">Example 4: Remove a circuit connection configuration using Piping from an ExpressRoute Circuit for a specific address family</span></span>
 ```
 Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg|Remove-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName -AddressPrefixType IPv6|Set-AzExpressRouteCircuit
 ```
 
-## <span data-ttu-id="586a0-112">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="586a0-112">PARAMETERS</span></span>
+## <span data-ttu-id="65565-112">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="65565-112">PARAMETERS</span></span>
 
-### <span data-ttu-id="586a0-113">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="586a0-113">-DefaultProfile</span></span>
-<span data-ttu-id="586a0-114">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="586a0-114">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="65565-113">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="65565-113">-DefaultProfile</span></span>
+<span data-ttu-id="65565-114">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="65565-114">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -71,8 +71,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="586a0-115">-ExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="586a0-115">-ExpressRouteCircuit</span></span>
-<span data-ttu-id="586a0-116">Az eltávolítani kívánt társközi konfigurációt tartalmazó ExpressRoute-áramkör</span><span class="sxs-lookup"><span data-stu-id="586a0-116">The ExpressRoute circuit containing the peering configuration to be removed.</span></span>
+### <span data-ttu-id="65565-115">-ExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="65565-115">-ExpressRouteCircuit</span></span>
+<span data-ttu-id="65565-116">Az eltávolítható társviszony-konfigurációt tartalmazó ExpressRoute-áramkör.</span><span class="sxs-lookup"><span data-stu-id="65565-116">The ExpressRoute circuit containing the peering configuration to be removed.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit
@@ -86,8 +86,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="586a0-117">-Name (név)</span><span class="sxs-lookup"><span data-stu-id="586a0-117">-Name</span></span>
-<span data-ttu-id="586a0-118">Az eltávolítandó áramkör-kapcsolat konfigurációjának neve.</span><span class="sxs-lookup"><span data-stu-id="586a0-118">The name of the circuit connection configuration to be removed.</span></span>
+### <span data-ttu-id="65565-117">-Name</span><span class="sxs-lookup"><span data-stu-id="65565-117">-Name</span></span>
+<span data-ttu-id="65565-118">Az eltávolítható kapcsolat kapcsolatkonfigurációjának neve.</span><span class="sxs-lookup"><span data-stu-id="65565-118">The name of the circuit connection configuration to be removed.</span></span>
 
 ```yaml
 Type: System.String
@@ -100,8 +100,8 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
-### <span data-ttu-id="586a0-119">-AddressPrefixType</span><span class="sxs-lookup"><span data-stu-id="586a0-119">-AddressPrefixType</span></span>
-<span data-ttu-id="586a0-120">Annak a címnek a családját adja meg, amelyet el kell távolítani a konfigból.</span><span class="sxs-lookup"><span data-stu-id="586a0-120">Specifies the address family that needs to be removed from the config</span></span> 
+### <span data-ttu-id="65565-119">-AddressPrefixType</span><span class="sxs-lookup"><span data-stu-id="65565-119">-AddressPrefixType</span></span>
+<span data-ttu-id="65565-120">Megadja, hogy a rendszer mely címeket távolítja el a konfigurációból.</span><span class="sxs-lookup"><span data-stu-id="65565-120">Specifies the address family that needs to be removed from the config</span></span> 
 
 ```yaml
 Type: System.String
@@ -116,8 +116,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="586a0-121">– Megerősítés</span><span class="sxs-lookup"><span data-stu-id="586a0-121">-Confirm</span></span>
-<span data-ttu-id="586a0-122">A parancsmag futtatása előtt kéri a megerősítést.</span><span class="sxs-lookup"><span data-stu-id="586a0-122">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="65565-121">-Confirm</span><span class="sxs-lookup"><span data-stu-id="65565-121">-Confirm</span></span>
+<span data-ttu-id="65565-122">A parancsmag futtatása előtt a rendszer megerősítést kér.</span><span class="sxs-lookup"><span data-stu-id="65565-122">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -131,8 +131,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="586a0-123">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="586a0-123">-WhatIf</span></span>
-<span data-ttu-id="586a0-124">Annak megjelenítése, hogy mi történik, ha a parancsmag fut.</span><span class="sxs-lookup"><span data-stu-id="586a0-124">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="586a0-125">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="586a0-125">The cmdlet is not run.</span></span>
+### <span data-ttu-id="65565-123">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="65565-123">-WhatIf</span></span>
+<span data-ttu-id="65565-124">A parancsmag futtatásakor a program megjeleníti, hogy mi történik.</span><span class="sxs-lookup"><span data-stu-id="65565-124">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="65565-125">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="65565-125">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -146,31 +146,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="586a0-126">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="586a0-126">CommonParameters</span></span>
-<span data-ttu-id="586a0-127">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="586a0-127">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="586a0-128">További információ: about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="586a0-128">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="65565-126">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="65565-126">CommonParameters</span></span>
+<span data-ttu-id="65565-127">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="65565-127">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="65565-128">További információt a about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="65565-128">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="586a0-129">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="586a0-129">INPUTS</span></span>
+## <span data-ttu-id="65565-129">INPUTS</span><span class="sxs-lookup"><span data-stu-id="65565-129">INPUTS</span></span>
 
-### <span data-ttu-id="586a0-130">Microsoft. Azure. commands. Network. models. PSExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="586a0-130">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit</span></span>
+### <span data-ttu-id="65565-130">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="65565-130">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit</span></span>
 
-## <span data-ttu-id="586a0-131">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="586a0-131">OUTPUTS</span></span>
+## <span data-ttu-id="65565-131">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="65565-131">OUTPUTS</span></span>
 
-### <span data-ttu-id="586a0-132">Microsoft. Azure. commands. Network. models. PSExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="586a0-132">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit</span></span>
+### <span data-ttu-id="65565-132">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="65565-132">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit</span></span>
 
-## <span data-ttu-id="586a0-133">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="586a0-133">NOTES</span></span>
+## <span data-ttu-id="65565-133">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="65565-133">NOTES</span></span>
 
-## <span data-ttu-id="586a0-134">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="586a0-134">RELATED LINKS</span></span>
+## <span data-ttu-id="65565-134">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="65565-134">RELATED LINKS</span></span>
 
-[<span data-ttu-id="586a0-135">Get-AzExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="586a0-135">Get-AzExpressRouteCircuit</span></span>](Get-AzExpressRouteCircuit.md)
+[<span data-ttu-id="65565-135">Get-AzExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="65565-135">Get-AzExpressRouteCircuit</span></span>](Get-AzExpressRouteCircuit.md)
 
-[<span data-ttu-id="586a0-136">Get-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="586a0-136">Get-AzExpressRouteCircuitConnectionConfig</span></span>](Get-AzExpressRouteCircuitConnectionConfig.md)
+[<span data-ttu-id="65565-136">Get-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="65565-136">Get-AzExpressRouteCircuitConnectionConfig</span></span>](Get-AzExpressRouteCircuitConnectionConfig.md)
 
-[<span data-ttu-id="586a0-137">Add-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="586a0-137">Add-AzExpressRouteCircuitConnectionConfig</span></span>](Add-AzExpressRouteCircuitConnectionConfig.md)
+[<span data-ttu-id="65565-137">Add-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="65565-137">Add-AzExpressRouteCircuitConnectionConfig</span></span>](Add-AzExpressRouteCircuitConnectionConfig.md)
 
-[<span data-ttu-id="586a0-138">Set-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="586a0-138">Set-AzExpressRouteCircuitConnectionConfig</span></span>](Set-AzExpressRouteCircuitConnectionConfig.md)
+[<span data-ttu-id="65565-138">Set-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="65565-138">Set-AzExpressRouteCircuitConnectionConfig</span></span>](Set-AzExpressRouteCircuitConnectionConfig.md)
 
-[<span data-ttu-id="586a0-139">Új – AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="586a0-139">New-AzExpressRouteCircuitConnectionConfig</span></span>](New-AzExpressRouteCircuitConnectionConfig.md)
 
-[<span data-ttu-id="586a0-140">Set-AzExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="586a0-140">Set-AzExpressRouteCircuit</span></span>](Set-AzExpressRouteCircuit.md)
 
-[<span data-ttu-id="586a0-141">Get-AzExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="586a0-141">Get-AzExpressRouteCircuit</span></span>](Get-AzExpressRouteCircuit.md)
+[<span data-ttu-id="65565-139">Set-AzExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="65565-139">Set-AzExpressRouteCircuit</span></span>](Set-AzExpressRouteCircuit.md)
+
+[<span data-ttu-id="65565-140">Get-AzExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="65565-140">Get-AzExpressRouteCircuit</span></span>](Get-AzExpressRouteCircuit.md)
