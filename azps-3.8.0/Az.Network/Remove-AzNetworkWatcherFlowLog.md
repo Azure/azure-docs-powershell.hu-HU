@@ -5,64 +5,64 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzNetworkWatcherFlowLog.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzNetworkWatcherFlowLog.md
-ms.openlocfilehash: 8a5f911529a4fc6f1ceb4e242b0e751e5f1a528f
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 5c8532502e4e74b94a9d0c1e252c8d1cea9ddad8
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94014062"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398596"
 ---
-# <span data-ttu-id="ed151-101">Remove-AzNetworkWatcherFlowLog</span><span class="sxs-lookup"><span data-stu-id="ed151-101">Remove-AzNetworkWatcherFlowLog</span></span>
+# <span data-ttu-id="10209-101">Remove-AzNetworkWatcherFlowLog</span><span class="sxs-lookup"><span data-stu-id="10209-101">Remove-AzNetworkWatcherFlowLog</span></span>
 
-## <span data-ttu-id="ed151-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="ed151-102">SYNOPSIS</span></span>
-<span data-ttu-id="ed151-103">Törli a megadott folyamatábra-erőforrást.</span><span class="sxs-lookup"><span data-stu-id="ed151-103">Deletes the specified flow log resource.</span></span>
+## <span data-ttu-id="10209-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="10209-102">SYNOPSIS</span></span>
+<span data-ttu-id="10209-103">Törli a megadott folyamatnapló-erőforrást.</span><span class="sxs-lookup"><span data-stu-id="10209-103">Deletes the specified flow log resource.</span></span>
 
-## <span data-ttu-id="ed151-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="ed151-104">SYNTAX</span></span>
+## <span data-ttu-id="10209-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="10209-104">SYNTAX</span></span>
 
-### <span data-ttu-id="ed151-105">SetByName (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="ed151-105">SetByName (Default)</span></span>
+### <span data-ttu-id="10209-105">SetByName (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="10209-105">SetByName (Default)</span></span>
 ```
 Remove-AzNetworkWatcherFlowLog -NetworkWatcherName <String> -ResourceGroupName <String> -Name <String>
  [-PassThru] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="ed151-106">SetByResource</span><span class="sxs-lookup"><span data-stu-id="ed151-106">SetByResource</span></span>
+### <span data-ttu-id="10209-106">SetByResource</span><span class="sxs-lookup"><span data-stu-id="10209-106">SetByResource</span></span>
 ```
 Remove-AzNetworkWatcherFlowLog -NetworkWatcher <PSNetworkWatcher> -Name <String> [-PassThru] [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="ed151-107">SetByLocation</span><span class="sxs-lookup"><span data-stu-id="ed151-107">SetByLocation</span></span>
+### <span data-ttu-id="10209-107">SetByLocation</span><span class="sxs-lookup"><span data-stu-id="10209-107">SetByLocation</span></span>
 ```
 Remove-AzNetworkWatcherFlowLog -Location <String> -Name <String> [-PassThru] [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="ed151-108">SetByResourceId</span><span class="sxs-lookup"><span data-stu-id="ed151-108">SetByResourceId</span></span>
+### <span data-ttu-id="10209-108">SetByResourceId</span><span class="sxs-lookup"><span data-stu-id="10209-108">SetByResourceId</span></span>
 ```
 Remove-AzNetworkWatcherFlowLog -ResourceId <String> [-PassThru] [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="ed151-109">SetByInputObject</span><span class="sxs-lookup"><span data-stu-id="ed151-109">SetByInputObject</span></span>
+### <span data-ttu-id="10209-109">SetByInputObject</span><span class="sxs-lookup"><span data-stu-id="10209-109">SetByInputObject</span></span>
 ```
 Remove-AzNetworkWatcherFlowLog -InputObject <PSFlowLogResource> [-PassThru] [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="ed151-110">Leírás</span><span class="sxs-lookup"><span data-stu-id="ed151-110">DESCRIPTION</span></span>
-<span data-ttu-id="ed151-111">Törli a megadott folyamatábra-erőforrást.</span><span class="sxs-lookup"><span data-stu-id="ed151-111">Deletes the specified flow log resource.</span></span>
+## <span data-ttu-id="10209-110">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="10209-110">DESCRIPTION</span></span>
+<span data-ttu-id="10209-111">Törli a megadott folyamatnapló-erőforrást.</span><span class="sxs-lookup"><span data-stu-id="10209-111">Deletes the specified flow log resource.</span></span>
 
-## <span data-ttu-id="ed151-112">Példák</span><span class="sxs-lookup"><span data-stu-id="ed151-112">EXAMPLES</span></span>
+## <span data-ttu-id="10209-112">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="10209-112">EXAMPLES</span></span>
 
-### <span data-ttu-id="ed151-113">Példa 1</span><span class="sxs-lookup"><span data-stu-id="ed151-113">Example 1</span></span>
+### <span data-ttu-id="10209-113">1. példa</span><span class="sxs-lookup"><span data-stu-id="10209-113">Example 1</span></span>
 ```powershell
 PS C:\> Remove-AzNetworkWatcherFlowLog -Location eastus -Name pstest
 ```
 
-## <span data-ttu-id="ed151-114">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="ed151-114">PARAMETERS</span></span>
+## <span data-ttu-id="10209-114">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="10209-114">PARAMETERS</span></span>
 
-### <span data-ttu-id="ed151-115">-AsJob</span><span class="sxs-lookup"><span data-stu-id="ed151-115">-AsJob</span></span>
-<span data-ttu-id="ed151-116">A parancsmag futtatása a háttérben</span><span class="sxs-lookup"><span data-stu-id="ed151-116">Run cmdlet in the background</span></span>
+### <span data-ttu-id="10209-115">-AsJob</span><span class="sxs-lookup"><span data-stu-id="10209-115">-AsJob</span></span>
+<span data-ttu-id="10209-116">Parancsmag futtatása a háttérben</span><span class="sxs-lookup"><span data-stu-id="10209-116">Run cmdlet in the background</span></span>
 
 ```yaml
 Type: SwitchParameter
@@ -76,8 +76,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ed151-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="ed151-117">-DefaultProfile</span></span>
-<span data-ttu-id="ed151-118">Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="ed151-118">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+### <span data-ttu-id="10209-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="10209-117">-DefaultProfile</span></span>
+<span data-ttu-id="10209-118">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="10209-118">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
 
 ```yaml
 Type: IAzureContextContainer
@@ -91,8 +91,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ed151-119">-InputObject</span><span class="sxs-lookup"><span data-stu-id="ed151-119">-InputObject</span></span>
-<span data-ttu-id="ed151-120">Flow log objektum.</span><span class="sxs-lookup"><span data-stu-id="ed151-120">Flow log object.</span></span>
+### <span data-ttu-id="10209-119">-InputObject</span><span class="sxs-lookup"><span data-stu-id="10209-119">-InputObject</span></span>
+<span data-ttu-id="10209-120">Folyamatnapló objektum.</span><span class="sxs-lookup"><span data-stu-id="10209-120">Flow log object.</span></span>
 
 ```yaml
 Type: PSFlowLogResource
@@ -106,8 +106,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ed151-121">-Hely</span><span class="sxs-lookup"><span data-stu-id="ed151-121">-Location</span></span>
-<span data-ttu-id="ed151-122">A Hálózatfigyelő helye.</span><span class="sxs-lookup"><span data-stu-id="ed151-122">Location of the network watcher.</span></span>
+### <span data-ttu-id="10209-121">-Location</span><span class="sxs-lookup"><span data-stu-id="10209-121">-Location</span></span>
+<span data-ttu-id="10209-122">A hálózati figyelő helye.</span><span class="sxs-lookup"><span data-stu-id="10209-122">Location of the network watcher.</span></span>
 
 ```yaml
 Type: String
@@ -121,8 +121,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ed151-123">-Name (név)</span><span class="sxs-lookup"><span data-stu-id="ed151-123">-Name</span></span>
-<span data-ttu-id="ed151-124">A folyamatábra neve.</span><span class="sxs-lookup"><span data-stu-id="ed151-124">The flow log name.</span></span>
+### <span data-ttu-id="10209-123">-Name</span><span class="sxs-lookup"><span data-stu-id="10209-123">-Name</span></span>
+<span data-ttu-id="10209-124">A folyamatnapló neve.</span><span class="sxs-lookup"><span data-stu-id="10209-124">The flow log name.</span></span>
 
 ```yaml
 Type: String
@@ -136,8 +136,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ed151-125">-NetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="ed151-125">-NetworkWatcher</span></span>
-<span data-ttu-id="ed151-126">A Hálózatfigyelő erőforrás.</span><span class="sxs-lookup"><span data-stu-id="ed151-126">The network watcher resource.</span></span>
+### <span data-ttu-id="10209-125">-NetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="10209-125">-NetworkWatcher</span></span>
+<span data-ttu-id="10209-126">A hálózati figyelő erőforrás.</span><span class="sxs-lookup"><span data-stu-id="10209-126">The network watcher resource.</span></span>
 
 ```yaml
 Type: PSNetworkWatcher
@@ -151,8 +151,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ed151-127">-NetworkWatcherName</span><span class="sxs-lookup"><span data-stu-id="ed151-127">-NetworkWatcherName</span></span>
-<span data-ttu-id="ed151-128">A Network Watcher neve.</span><span class="sxs-lookup"><span data-stu-id="ed151-128">The name of network watcher.</span></span>
+### <span data-ttu-id="10209-127">-NetworkWatcherName</span><span class="sxs-lookup"><span data-stu-id="10209-127">-NetworkWatcherName</span></span>
+<span data-ttu-id="10209-128">A hálózati figyelő neve.</span><span class="sxs-lookup"><span data-stu-id="10209-128">The name of network watcher.</span></span>
 
 ```yaml
 Type: String
@@ -166,8 +166,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ed151-129">-PassThru</span><span class="sxs-lookup"><span data-stu-id="ed151-129">-PassThru</span></span>
-<span data-ttu-id="ed151-130">{{Fill PassThru Description}}</span><span class="sxs-lookup"><span data-stu-id="ed151-130">{{ Fill PassThru Description }}</span></span>
+### <span data-ttu-id="10209-129">-PassThru</span><span class="sxs-lookup"><span data-stu-id="10209-129">-PassThru</span></span>
+<span data-ttu-id="10209-130">{{ Fill PassThru Description }}</span><span class="sxs-lookup"><span data-stu-id="10209-130">{{ Fill PassThru Description }}</span></span>
 
 ```yaml
 Type: SwitchParameter
@@ -181,8 +181,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ed151-131">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="ed151-131">-ResourceGroupName</span></span>
-<span data-ttu-id="ed151-132">A Network Watcher erőforráscsoport neve.</span><span class="sxs-lookup"><span data-stu-id="ed151-132">The name of the network watcher resource group.</span></span>
+### <span data-ttu-id="10209-131">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="10209-131">-ResourceGroupName</span></span>
+<span data-ttu-id="10209-132">A hálózatfigyelő erőforráscsoport neve.</span><span class="sxs-lookup"><span data-stu-id="10209-132">The name of the network watcher resource group.</span></span>
 
 ```yaml
 Type: String
@@ -196,8 +196,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ed151-133">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="ed151-133">-ResourceId</span></span>
-<span data-ttu-id="ed151-134">Erőforrás-azonosító.</span><span class="sxs-lookup"><span data-stu-id="ed151-134">Resource ID.</span></span>
+### <span data-ttu-id="10209-133">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="10209-133">-ResourceId</span></span>
+<span data-ttu-id="10209-134">Erőforrás-azonosító.</span><span class="sxs-lookup"><span data-stu-id="10209-134">Resource ID.</span></span>
 
 ```yaml
 Type: String
@@ -211,8 +211,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ed151-135">– Megerősítés</span><span class="sxs-lookup"><span data-stu-id="ed151-135">-Confirm</span></span>
-<span data-ttu-id="ed151-136">A parancsmag futtatása előtt kéri a megerősítést.</span><span class="sxs-lookup"><span data-stu-id="ed151-136">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="10209-135">-Confirm</span><span class="sxs-lookup"><span data-stu-id="10209-135">-Confirm</span></span>
+<span data-ttu-id="10209-136">A parancsmag futtatása előtt a rendszer megerősítést kér.</span><span class="sxs-lookup"><span data-stu-id="10209-136">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: SwitchParameter
@@ -226,9 +226,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ed151-137">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="ed151-137">-WhatIf</span></span>
-<span data-ttu-id="ed151-138">Annak megjelenítése, hogy mi történik, ha a parancsmag fut.</span><span class="sxs-lookup"><span data-stu-id="ed151-138">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="ed151-139">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="ed151-139">The cmdlet is not run.</span></span>
+### <span data-ttu-id="10209-137">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="10209-137">-WhatIf</span></span>
+<span data-ttu-id="10209-138">A parancsmag futtatásakor a program megjeleníti, hogy mi történik.</span><span class="sxs-lookup"><span data-stu-id="10209-138">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="10209-139">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="10209-139">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: SwitchParameter
@@ -242,81 +242,81 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ed151-140">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="ed151-140">CommonParameters</span></span>
-<span data-ttu-id="ed151-141">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="ed151-141">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="ed151-142">További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="ed151-142">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="10209-140">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="10209-140">CommonParameters</span></span>
+<span data-ttu-id="10209-141">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="10209-141">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="10209-142">További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="10209-142">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="ed151-143">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="ed151-143">INPUTS</span></span>
+## <span data-ttu-id="10209-143">INPUTS</span><span class="sxs-lookup"><span data-stu-id="10209-143">INPUTS</span></span>
 
-### <span data-ttu-id="ed151-144">Microsoft. Azure. commands. Network. models. PSNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="ed151-144">Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher</span></span>
+### <span data-ttu-id="10209-144">Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="10209-144">Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher</span></span>
 
-### <span data-ttu-id="ed151-145">System. String</span><span class="sxs-lookup"><span data-stu-id="ed151-145">System.String</span></span>
+### <span data-ttu-id="10209-145">System.String</span><span class="sxs-lookup"><span data-stu-id="10209-145">System.String</span></span>
 
-### <span data-ttu-id="ed151-146">Microsoft. Azure. commands. Network. models. PSFlowLogResource</span><span class="sxs-lookup"><span data-stu-id="ed151-146">Microsoft.Azure.Commands.Network.Models.PSFlowLogResource</span></span>
+### <span data-ttu-id="10209-146">Microsoft.Azure.Commands.Network.Models.PSFlowLogResource</span><span class="sxs-lookup"><span data-stu-id="10209-146">Microsoft.Azure.Commands.Network.Models.PSFlowLogResource</span></span>
 
-## <span data-ttu-id="ed151-147">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="ed151-147">OUTPUTS</span></span>
+## <span data-ttu-id="10209-147">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="10209-147">OUTPUTS</span></span>
 
-### <span data-ttu-id="ed151-148">System. Boolean</span><span class="sxs-lookup"><span data-stu-id="ed151-148">System.Boolean</span></span>
+### <span data-ttu-id="10209-148">System.Boolean</span><span class="sxs-lookup"><span data-stu-id="10209-148">System.Boolean</span></span>
 
-## <span data-ttu-id="ed151-149">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="ed151-149">NOTES</span></span>
+## <span data-ttu-id="10209-149">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="10209-149">NOTES</span></span>
 
-## <span data-ttu-id="ed151-150">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="ed151-150">RELATED LINKS</span></span>
+## <span data-ttu-id="10209-150">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="10209-150">RELATED LINKS</span></span>
 
-[<span data-ttu-id="ed151-151">Új – AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="ed151-151">New-AzNetworkWatcher</span></span>](./New-AzNetworkWatcher.md)
+[<span data-ttu-id="10209-151">New-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="10209-151">New-AzNetworkWatcher</span></span>](./New-AzNetworkWatcher.md)
 
-[<span data-ttu-id="ed151-152">Get-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="ed151-152">Get-AzNetworkWatcher</span></span>](./Get-AzNetworkWatcher.md)
+[<span data-ttu-id="10209-152">Get-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="10209-152">Get-AzNetworkWatcher</span></span>](./Get-AzNetworkWatcher.md)
 
-[<span data-ttu-id="ed151-153">Remove-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="ed151-153">Remove-AzNetworkWatcher</span></span>](./Remove-AzNetworkWatcher.md)
+[<span data-ttu-id="10209-153">Remove-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="10209-153">Remove-AzNetworkWatcher</span></span>](./Remove-AzNetworkWatcher.md)
 
-[<span data-ttu-id="ed151-154">Get-AzNetworkWatcherNextHop</span><span class="sxs-lookup"><span data-stu-id="ed151-154">Get-AzNetworkWatcherNextHop</span></span>](./Get-AzNetworkWatcherNextHop.md)
+[<span data-ttu-id="10209-154">Get-AzNetworkWatcherNextHop</span><span class="sxs-lookup"><span data-stu-id="10209-154">Get-AzNetworkWatcherNextHop</span></span>](./Get-AzNetworkWatcherNextHop.md)
 
-[<span data-ttu-id="ed151-155">Get-AzNetworkWatcherSecurityGroupView</span><span class="sxs-lookup"><span data-stu-id="ed151-155">Get-AzNetworkWatcherSecurityGroupView</span></span>](./Get-AzNetworkWatcherSecurityGroupView.md)
+[<span data-ttu-id="10209-155">Get-AzNetworkWatcherSecurityGroupView</span><span class="sxs-lookup"><span data-stu-id="10209-155">Get-AzNetworkWatcherSecurityGroupView</span></span>](./Get-AzNetworkWatcherSecurityGroupView.md)
 
-[<span data-ttu-id="ed151-156">Get-AzNetworkWatcherTopology</span><span class="sxs-lookup"><span data-stu-id="ed151-156">Get-AzNetworkWatcherTopology</span></span>](./Get-AzNetworkWatcherTopology.md)
+[<span data-ttu-id="10209-156">Get-AzNetworkWatcherTopology</span><span class="sxs-lookup"><span data-stu-id="10209-156">Get-AzNetworkWatcherTopology</span></span>](./Get-AzNetworkWatcherTopology.md)
 
-[<span data-ttu-id="ed151-157">Start-AzNetworkWatcherResourceTroubleshooting</span><span class="sxs-lookup"><span data-stu-id="ed151-157">Start-AzNetworkWatcherResourceTroubleshooting</span></span>](./Start-AzNetworkWatcherResourceTroubleshooting.md)
+[<span data-ttu-id="10209-157">Start-AzNetworkWatcherResourceTroubleshooting</span><span class="sxs-lookup"><span data-stu-id="10209-157">Start-AzNetworkWatcherResourceTroubleshooting</span></span>](./Start-AzNetworkWatcherResourceTroubleshooting.md)
 
-[<span data-ttu-id="ed151-158">Új – AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="ed151-158">New-AzNetworkWatcherPacketCapture</span></span>](./New-AzNetworkWatcherPacketCapture.md)
+[<span data-ttu-id="10209-158">New-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="10209-158">New-AzNetworkWatcherPacketCapture</span></span>](./New-AzNetworkWatcherPacketCapture.md)
 
-[<span data-ttu-id="ed151-159">Új – AzPacketCaptureFilterConfig</span><span class="sxs-lookup"><span data-stu-id="ed151-159">New-AzPacketCaptureFilterConfig</span></span>](./New-AzPacketCaptureFilterConfig.md)
+[<span data-ttu-id="10209-159">New-AzPacketCaptureFilterConfig</span><span class="sxs-lookup"><span data-stu-id="10209-159">New-AzPacketCaptureFilterConfig</span></span>](./New-AzPacketCaptureFilterConfig.md)
 
-[<span data-ttu-id="ed151-160">Get-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="ed151-160">Get-AzNetworkWatcherPacketCapture</span></span>](./Get-AzNetworkWatcherPacketCapture.md)
+[<span data-ttu-id="10209-160">Get-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="10209-160">Get-AzNetworkWatcherPacketCapture</span></span>](./Get-AzNetworkWatcherPacketCapture.md)
 
-[<span data-ttu-id="ed151-161">Remove-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="ed151-161">Remove-AzNetworkWatcherPacketCapture</span></span>](./Remove-AzNetworkWatcherPacketCapture.md)
+[<span data-ttu-id="10209-161">Remove-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="10209-161">Remove-AzNetworkWatcherPacketCapture</span></span>](./Remove-AzNetworkWatcherPacketCapture.md)
 
-[<span data-ttu-id="ed151-162">Stop-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="ed151-162">Stop-AzNetworkWatcherPacketCapture</span></span>](./Stop-AzNetworkWatcherPacketCapture.md)
+[<span data-ttu-id="10209-162">Stop-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="10209-162">Stop-AzNetworkWatcherPacketCapture</span></span>](./Stop-AzNetworkWatcherPacketCapture.md)
 
-[<span data-ttu-id="ed151-163">Új – AzNetworkWatcherProtocolConfiguration</span><span class="sxs-lookup"><span data-stu-id="ed151-163">New-AzNetworkWatcherProtocolConfiguration</span></span>](./New-AzNetworkWatcherProtocolConfiguration.md)
+[<span data-ttu-id="10209-163">New-AzNetworkWatcherProtocolConfiguration</span><span class="sxs-lookup"><span data-stu-id="10209-163">New-AzNetworkWatcherProtocolConfiguration</span></span>](./New-AzNetworkWatcherProtocolConfiguration.md)
 
-[<span data-ttu-id="ed151-164">Teszt-AzNetworkWatcherIPFlow</span><span class="sxs-lookup"><span data-stu-id="ed151-164">Test-AzNetworkWatcherIPFlow</span></span>](./Test-AzNetworkWatcherIPFlow.md)
+[<span data-ttu-id="10209-164">Test-AzNetworkWatcherIPFlow</span><span class="sxs-lookup"><span data-stu-id="10209-164">Test-AzNetworkWatcherIPFlow</span></span>](./Test-AzNetworkWatcherIPFlow.md)
 
-[<span data-ttu-id="ed151-165">Teszt-AzNetworkWatcherConnectivity</span><span class="sxs-lookup"><span data-stu-id="ed151-165">Test-AzNetworkWatcherConnectivity</span></span>](./Test-AzNetworkWatcherConnectivity.md)
+[<span data-ttu-id="10209-165">Test-AzNetworkWatcherConnectivity</span><span class="sxs-lookup"><span data-stu-id="10209-165">Test-AzNetworkWatcherConnectivity</span></span>](./Test-AzNetworkWatcherConnectivity.md)
 
-[<span data-ttu-id="ed151-166">Stop-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="ed151-166">Stop-AzNetworkWatcherConnectionMonitor</span></span>](./Stop-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="10209-166">Stop-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="10209-166">Stop-AzNetworkWatcherConnectionMonitor</span></span>](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="ed151-167">Start-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="ed151-167">Start-AzNetworkWatcherConnectionMonitor</span></span>](./Start-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="10209-167">Start-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="10209-167">Start-AzNetworkWatcherConnectionMonitor</span></span>](./Start-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="ed151-168">Set-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="ed151-168">Set-AzNetworkWatcherConnectionMonitor</span></span>](./Set-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="10209-168">Set-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="10209-168">Set-AzNetworkWatcherConnectionMonitor</span></span>](./Set-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="ed151-169">Set-AzNetworkWatcherConfigFlowLog</span><span class="sxs-lookup"><span data-stu-id="ed151-169">Set-AzNetworkWatcherConfigFlowLog</span></span>](./Set-AzNetworkWatcherConfigFlowLog.md)
+[<span data-ttu-id="10209-169">Set-AzNetworkWatcherConfigFlowLog</span><span class="sxs-lookup"><span data-stu-id="10209-169">Set-AzNetworkWatcherConfigFlowLog</span></span>](./Set-AzNetworkWatcherConfigFlowLog.md)
 
-[<span data-ttu-id="ed151-170">Remove-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="ed151-170">Remove-AzNetworkWatcherConnectionMonitor</span></span>](./Remove-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="10209-170">Remove-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="10209-170">Remove-AzNetworkWatcherConnectionMonitor</span></span>](./Remove-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="ed151-171">Új – AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="ed151-171">New-AzNetworkWatcherConnectionMonitor</span></span>](./New-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="10209-171">New-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="10209-171">New-AzNetworkWatcherConnectionMonitor</span></span>](./New-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="ed151-172">Get-AzNetworkWatcherTroubleshootingResult</span><span class="sxs-lookup"><span data-stu-id="ed151-172">Get-AzNetworkWatcherTroubleshootingResult</span></span>](./Get-AzNetworkWatcherTroubleshootingResult.md)
+[<span data-ttu-id="10209-172">Get-AzNetworkWatcherTroubleshootingResult</span><span class="sxs-lookup"><span data-stu-id="10209-172">Get-AzNetworkWatcherTroubleshootingResult</span></span>](./Get-AzNetworkWatcherTroubleshootingResult.md)
 
-[<span data-ttu-id="ed151-173">Get-AzNetworkWatcherReachabilityReport</span><span class="sxs-lookup"><span data-stu-id="ed151-173">Get-AzNetworkWatcherReachabilityReport</span></span>](./Get-AzNetworkWatcherReachabilityReport.md)
+[<span data-ttu-id="10209-173">Get-AzNetworkWatcherReachabilityReport</span><span class="sxs-lookup"><span data-stu-id="10209-173">Get-AzNetworkWatcherReachabilityReport</span></span>](./Get-AzNetworkWatcherReachabilityReport.md)
 
-[<span data-ttu-id="ed151-174">Get-AzNetworkWatcherReachabilityProvidersList</span><span class="sxs-lookup"><span data-stu-id="ed151-174">Get-AzNetworkWatcherReachabilityProvidersList</span></span>](./Get-AzNetworkWatcherReachabilityProvidersList.md)
+[<span data-ttu-id="10209-174">Get-AzNetworkWatcherReachabilityProvidersList</span><span class="sxs-lookup"><span data-stu-id="10209-174">Get-AzNetworkWatcherReachabilityProvidersList</span></span>](./Get-AzNetworkWatcherReachabilityProvidersList.md)
 
-[<span data-ttu-id="ed151-175">Get-AzNetworkWatcherFlowLogStatus</span><span class="sxs-lookup"><span data-stu-id="ed151-175">Get-AzNetworkWatcherFlowLogStatus</span></span>](./Get-AzNetworkWatcherFlowLogStatus.md)
+[<span data-ttu-id="10209-175">Get-AzNetworkWatcherFlowLogStatus</span><span class="sxs-lookup"><span data-stu-id="10209-175">Get-AzNetworkWatcherFlowLogStatus</span></span>](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[<span data-ttu-id="ed151-176">Get-AzNetworkWatcherConnectionMonitorReport</span><span class="sxs-lookup"><span data-stu-id="ed151-176">Get-AzNetworkWatcherConnectionMonitorReport</span></span>](./Get-AzNetworkWatcherConnectionMonitorReport)
+[<span data-ttu-id="10209-176">Get-AzNetworkWatcherConnectionMonitorReport</span><span class="sxs-lookup"><span data-stu-id="10209-176">Get-AzNetworkWatcherConnectionMonitorReport</span></span>](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[<span data-ttu-id="ed151-177">Get-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="ed151-177">Get-AzNetworkWatcherConnectionMonitor</span></span>](./Get-AzNetworkWatcherConnectionMonitor)
+[<span data-ttu-id="10209-177">Get-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="10209-177">Get-AzNetworkWatcherConnectionMonitor</span></span>](./Get-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="ed151-178">Új – AzNetworkWatcherFlowLog</span><span class="sxs-lookup"><span data-stu-id="ed151-178">New-AzNetworkWatcherFlowLog</span></span>](./New-AzNetworkWatcherFlowLog)
+[<span data-ttu-id="10209-178">New-AzNetworkWatcherFlowLog</span><span class="sxs-lookup"><span data-stu-id="10209-178">New-AzNetworkWatcherFlowLog</span></span>](./New-AzNetworkWatcherFlowLog.md)
 
-[<span data-ttu-id="ed151-179">Set-AzNetworkWatcherFlowLog</span><span class="sxs-lookup"><span data-stu-id="ed151-179">Set-AzNetworkWatcherFlowLog</span></span>](./Set-AzNetworkWatcherFlowLog)
+[<span data-ttu-id="10209-179">Set-AzNetworkWatcherFlowLog</span><span class="sxs-lookup"><span data-stu-id="10209-179">Set-AzNetworkWatcherFlowLog</span></span>](./Set-AzNetworkWatcherFlowLog.md)
 
-[<span data-ttu-id="ed151-180">Get-AzNetworkWatcherFlowLog</span><span class="sxs-lookup"><span data-stu-id="ed151-180">Get-AzNetworkWatcherFlowLog</span></span>](./Get-AzNetworkWatcherFlowLog)
+[<span data-ttu-id="10209-180">Get-AzNetworkWatcherFlowLog</span><span class="sxs-lookup"><span data-stu-id="10209-180">Get-AzNetworkWatcherFlowLog</span></span>](./Get-AzNetworkWatcherFlowLog.md)
