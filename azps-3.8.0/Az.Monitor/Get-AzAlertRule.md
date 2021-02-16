@@ -6,71 +6,71 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertRule.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertRule.md
-ms.openlocfilehash: f515d7db58e75cc916478e07edb4e34233201a4d
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 61c50e59dfb02a454c9f513f4f5dac277a4ee28d
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94015003"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100404105"
 ---
-# <span data-ttu-id="bfcc7-101">Get-AzAlertRule</span><span class="sxs-lookup"><span data-stu-id="bfcc7-101">Get-AzAlertRule</span></span>
+# <span data-ttu-id="0c74f-101">Get-AzAlertRule</span><span class="sxs-lookup"><span data-stu-id="0c74f-101">Get-AzAlertRule</span></span>
 
-## <span data-ttu-id="bfcc7-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="bfcc7-102">SYNOPSIS</span></span>
-<span data-ttu-id="bfcc7-103">Figyelmeztetési szabályokat kap.</span><span class="sxs-lookup"><span data-stu-id="bfcc7-103">Gets alert rules.</span></span>
+## <span data-ttu-id="0c74f-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="0c74f-102">SYNOPSIS</span></span>
+<span data-ttu-id="0c74f-103">Értesítési szabályokat kap.</span><span class="sxs-lookup"><span data-stu-id="0c74f-103">Gets alert rules.</span></span>
 
-## <span data-ttu-id="bfcc7-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="bfcc7-104">SYNTAX</span></span>
+## <span data-ttu-id="0c74f-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="0c74f-104">SYNTAX</span></span>
 
-### <span data-ttu-id="bfcc7-105">GetByResourceGroup</span><span class="sxs-lookup"><span data-stu-id="bfcc7-105">GetByResourceGroup</span></span>
+### <span data-ttu-id="0c74f-105">GetByResourceGroup</span><span class="sxs-lookup"><span data-stu-id="0c74f-105">GetByResourceGroup</span></span>
 ```
 Get-AzAlertRule -ResourceGroupName <String> [-DetailedOutput] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="bfcc7-106">GetByName</span><span class="sxs-lookup"><span data-stu-id="bfcc7-106">GetByName</span></span>
+### <span data-ttu-id="0c74f-106">GetByName</span><span class="sxs-lookup"><span data-stu-id="0c74f-106">GetByName</span></span>
 ```
 Get-AzAlertRule -ResourceGroupName <String> -Name <String> [-DetailedOutput]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="bfcc7-107">GetByResourceUri</span><span class="sxs-lookup"><span data-stu-id="bfcc7-107">GetByResourceUri</span></span>
+### <span data-ttu-id="0c74f-107">GetByResourceUri</span><span class="sxs-lookup"><span data-stu-id="0c74f-107">GetByResourceUri</span></span>
 ```
 Get-AzAlertRule -ResourceGroupName <String> -TargetResourceId <String> [-DetailedOutput]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="bfcc7-108">Leírás</span><span class="sxs-lookup"><span data-stu-id="bfcc7-108">DESCRIPTION</span></span>
-<span data-ttu-id="bfcc7-109">A **Get-AzAlertRule** parancsmag az adott erőforráscsoport nevével vagy URI-ja, vagy az összes figyelmeztetési szabály alapján értesítést kap.</span><span class="sxs-lookup"><span data-stu-id="bfcc7-109">The **Get-AzAlertRule** cmdlet gets an alert rule by its name or URI, or all alert rules from a specified resource group.</span></span>
+## <span data-ttu-id="0c74f-108">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="0c74f-108">DESCRIPTION</span></span>
+<span data-ttu-id="0c74f-109">A **Get-AzAlertRule** parancsmag egy riasztási szabályt kap név vagy URI alapján, illetve egy adott erőforráscsoport összes riasztási szabályát.</span><span class="sxs-lookup"><span data-stu-id="0c74f-109">The **Get-AzAlertRule** cmdlet gets an alert rule by its name or URI, or all alert rules from a specified resource group.</span></span>
 
-## <span data-ttu-id="bfcc7-110">Példák</span><span class="sxs-lookup"><span data-stu-id="bfcc7-110">EXAMPLES</span></span>
+## <span data-ttu-id="0c74f-110">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="0c74f-110">EXAMPLES</span></span>
 
-### <span data-ttu-id="bfcc7-111">1. példa: az erőforrás-csoportokra vonatkozó figyelmeztetési szabályok beszerzése</span><span class="sxs-lookup"><span data-stu-id="bfcc7-111">Example 1: Get alert rules for a resource group</span></span>
+### <span data-ttu-id="0c74f-111">1. példa: Értesítési szabályok lekérte egy erőforráscsoportra</span><span class="sxs-lookup"><span data-stu-id="0c74f-111">Example 1: Get alert rules for a resource group</span></span>
 ```
 PS C:\>Get-AzAlertRule -ResourceGroup "Default-Web-CentralUS"
 ```
 
-<span data-ttu-id="bfcc7-112">Ez a parancs a Default-Web-CentralUS nevű erőforráscsoport figyelmeztetési szabályait kapja meg.</span><span class="sxs-lookup"><span data-stu-id="bfcc7-112">This command gets all of the alert rules for the resource group named Default-Web-CentralUS.</span></span>
-<span data-ttu-id="bfcc7-113">A kimenet nem tartalmaz részleteket a szabályokról, mert a *DetailedOutput* paraméter nincs megadva.</span><span class="sxs-lookup"><span data-stu-id="bfcc7-113">The output does not contain details about the rules because the *DetailedOutput* parameter is not specified.</span></span>
+<span data-ttu-id="0c74f-112">Ez a parancs a Default-Web-CentralUS nevű erőforráscsoport összes riasztási szabályát beveszi.</span><span class="sxs-lookup"><span data-stu-id="0c74f-112">This command gets all of the alert rules for the resource group named Default-Web-CentralUS.</span></span>
+<span data-ttu-id="0c74f-113">A kimenet nem tartalmaz részleteket a szabályokról, mert a *DetailedOutput* paraméter nincs megadva.</span><span class="sxs-lookup"><span data-stu-id="0c74f-113">The output does not contain details about the rules because the *DetailedOutput* parameter is not specified.</span></span>
 
-### <span data-ttu-id="bfcc7-114">2. példa: figyelmeztetési szabály kérése név alapján</span><span class="sxs-lookup"><span data-stu-id="bfcc7-114">Example 2: Get an alert rule by name</span></span>
+### <span data-ttu-id="0c74f-114">2. példa: Értesítési szabály lekérte név szerint</span><span class="sxs-lookup"><span data-stu-id="0c74f-114">Example 2: Get an alert rule by name</span></span>
 ```
 PS C:\>Get-AzAlertRule -ResourceGroup "Default-Web-CentralUS" -Name "myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8"
 ```
 
-<span data-ttu-id="bfcc7-115">Ez a parancs a myalert-7da64548-214d-42CA-b12b-b245bb8f0ac8 nevű riasztási szabályt kapja meg.</span><span class="sxs-lookup"><span data-stu-id="bfcc7-115">This command gets the alert rule named myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8.</span></span>
-<span data-ttu-id="bfcc7-116">Mivel a *DetailedOutput* paraméter nincs megadva, a kimenet csak az értesítési szabályról tartalmaz alapvető információkat.</span><span class="sxs-lookup"><span data-stu-id="bfcc7-116">Because the *DetailedOutput* parameter is not specified, the output contains only basic information about the alert rule.</span></span>
+<span data-ttu-id="0c74f-115">Ez a parancs a myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8 riasztási szabályt kapja meg.</span><span class="sxs-lookup"><span data-stu-id="0c74f-115">This command gets the alert rule named myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8.</span></span>
+<span data-ttu-id="0c74f-116">Mivel a *DetailedOutput* paraméter nincs megadva, a kimenet csak alapvető információkat tartalmaz a riasztási szabályról.</span><span class="sxs-lookup"><span data-stu-id="0c74f-116">Because the *DetailedOutput* parameter is not specified, the output contains only basic information about the alert rule.</span></span>
 
-### <span data-ttu-id="bfcc7-117">3. példa: figyelmeztetési szabály beszerzése név szerint részletes kimenettel</span><span class="sxs-lookup"><span data-stu-id="bfcc7-117">Example 3: Get an alert rule by name with detailed output</span></span>
+### <span data-ttu-id="0c74f-117">3. példa: Riasztási szabály lekérte név szerint részletes kimenettel</span><span class="sxs-lookup"><span data-stu-id="0c74f-117">Example 3: Get an alert rule by name with detailed output</span></span>
 ```
 PS C:\>Get-AzAlertRule -ResourceGroup "Default-Web-CentralUS" -Name "myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8" -DetailedOutput
 ```
 
-<span data-ttu-id="bfcc7-118">Ez a parancs a myalert-7da64548-214d-42CA-b12b-b245bb8f0ac8 nevű riasztási szabályt kapja meg.</span><span class="sxs-lookup"><span data-stu-id="bfcc7-118">This command gets the alert rule named myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8.</span></span>
-<span data-ttu-id="bfcc7-119">A *DetailedOutput* paraméter meg van adva, így a kimenet részletezve van.</span><span class="sxs-lookup"><span data-stu-id="bfcc7-119">The *DetailedOutput* parameter is specified, so the output is detailed.</span></span>
+<span data-ttu-id="0c74f-118">Ez a parancs a myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8 riasztási szabályt kapja meg.</span><span class="sxs-lookup"><span data-stu-id="0c74f-118">This command gets the alert rule named myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8.</span></span>
+<span data-ttu-id="0c74f-119">A *DetailedOutput* paraméter meg van adva, így a kimenet részletes.</span><span class="sxs-lookup"><span data-stu-id="0c74f-119">The *DetailedOutput* parameter is specified, so the output is detailed.</span></span>
 
-## <span data-ttu-id="bfcc7-120">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="bfcc7-120">PARAMETERS</span></span>
+## <span data-ttu-id="0c74f-120">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="0c74f-120">PARAMETERS</span></span>
 
-### <span data-ttu-id="bfcc7-121">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="bfcc7-121">-DefaultProfile</span></span>
-<span data-ttu-id="bfcc7-122">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés</span><span class="sxs-lookup"><span data-stu-id="bfcc7-122">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="0c74f-121">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="0c74f-121">-DefaultProfile</span></span>
+<span data-ttu-id="0c74f-122">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés</span><span class="sxs-lookup"><span data-stu-id="0c74f-122">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -84,8 +84,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bfcc7-123">-DetailedOutput</span><span class="sxs-lookup"><span data-stu-id="bfcc7-123">-DetailedOutput</span></span>
-<span data-ttu-id="bfcc7-124">A kimenet minden részletét megjeleníti.</span><span class="sxs-lookup"><span data-stu-id="bfcc7-124">Displays full details in the output.</span></span>
+### <span data-ttu-id="0c74f-123">-DetailedOutput</span><span class="sxs-lookup"><span data-stu-id="0c74f-123">-DetailedOutput</span></span>
+<span data-ttu-id="0c74f-124">A kimenet minden részletét megjeleníti.</span><span class="sxs-lookup"><span data-stu-id="0c74f-124">Displays full details in the output.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -99,8 +99,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bfcc7-125">-Name (név)</span><span class="sxs-lookup"><span data-stu-id="bfcc7-125">-Name</span></span>
-<span data-ttu-id="bfcc7-126">A beolvasott figyelmeztetési szabály nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="bfcc7-126">Specifies the name of the alert rule to get.</span></span>
+### <span data-ttu-id="0c74f-125">-Name</span><span class="sxs-lookup"><span data-stu-id="0c74f-125">-Name</span></span>
+<span data-ttu-id="0c74f-126">A lekért értesítési szabály nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="0c74f-126">Specifies the name of the alert rule to get.</span></span>
 
 ```yaml
 Type: System.String
@@ -114,8 +114,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bfcc7-127">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="bfcc7-127">-ResourceGroupName</span></span>
-<span data-ttu-id="bfcc7-128">Az erőforráscsoport nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="bfcc7-128">Specifies the name of the resource group.</span></span>
+### <span data-ttu-id="0c74f-127">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="0c74f-127">-ResourceGroupName</span></span>
+<span data-ttu-id="0c74f-128">Az erőforráscsoport nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="0c74f-128">Specifies the name of the resource group.</span></span>
 
 ```yaml
 Type: System.String
@@ -129,8 +129,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bfcc7-129">-TargetResourceId</span><span class="sxs-lookup"><span data-stu-id="bfcc7-129">-TargetResourceId</span></span>
-<span data-ttu-id="bfcc7-130">A cél erőforrás AZONOSÍTÓját adja meg.</span><span class="sxs-lookup"><span data-stu-id="bfcc7-130">Specifies the ID of the target resource.</span></span>
+### <span data-ttu-id="0c74f-129">-TargetResourceId</span><span class="sxs-lookup"><span data-stu-id="0c74f-129">-TargetResourceId</span></span>
+<span data-ttu-id="0c74f-130">A célerőforrás azonosítója.</span><span class="sxs-lookup"><span data-stu-id="0c74f-130">Specifies the ID of the target resource.</span></span>
 
 ```yaml
 Type: System.String
@@ -144,31 +144,30 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bfcc7-131">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="bfcc7-131">CommonParameters</span></span>
-<span data-ttu-id="bfcc7-132">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="bfcc7-132">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="bfcc7-133">További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="bfcc7-133">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="0c74f-131">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="0c74f-131">CommonParameters</span></span>
+<span data-ttu-id="0c74f-132">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="0c74f-132">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="0c74f-133">További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="0c74f-133">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="bfcc7-134">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="bfcc7-134">INPUTS</span></span>
+## <span data-ttu-id="0c74f-134">INPUTS</span><span class="sxs-lookup"><span data-stu-id="0c74f-134">INPUTS</span></span>
 
-### <span data-ttu-id="bfcc7-135">System. String</span><span class="sxs-lookup"><span data-stu-id="bfcc7-135">System.String</span></span>
+### <span data-ttu-id="0c74f-135">System.String</span><span class="sxs-lookup"><span data-stu-id="0c74f-135">System.String</span></span>
 
-### <span data-ttu-id="bfcc7-136">System. Management. Automation. SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="bfcc7-136">System.Management.Automation.SwitchParameter</span></span>
+### <span data-ttu-id="0c74f-136">System.Management.Automation.SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="0c74f-136">System.Management.Automation.SwitchParameter</span></span>
 
-## <span data-ttu-id="bfcc7-137">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="bfcc7-137">OUTPUTS</span></span>
+## <span data-ttu-id="0c74f-137">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="0c74f-137">OUTPUTS</span></span>
 
-### <span data-ttu-id="bfcc7-138">Microsoft. Azure. commands. OutputClasses. PSAlertRule</span><span class="sxs-lookup"><span data-stu-id="bfcc7-138">Microsoft.Azure.Commands.Insights.OutputClasses.PSAlertRule</span></span>
+### <span data-ttu-id="0c74f-138">Microsoft.Azure.Commands.Insights.OutputClasses.PSAlertRule</span><span class="sxs-lookup"><span data-stu-id="0c74f-138">Microsoft.Azure.Commands.Insights.OutputClasses.PSAlertRule</span></span>
 
-## <span data-ttu-id="bfcc7-139">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="bfcc7-139">NOTES</span></span>
+## <span data-ttu-id="0c74f-139">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="0c74f-139">NOTES</span></span>
 
-## <span data-ttu-id="bfcc7-140">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="bfcc7-140">RELATED LINKS</span></span>
+## <span data-ttu-id="0c74f-140">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="0c74f-140">RELATED LINKS</span></span>
 
-[<span data-ttu-id="bfcc7-141">Add-AzLogAlertRule</span><span class="sxs-lookup"><span data-stu-id="bfcc7-141">Add-AzLogAlertRule</span></span>](./Add-AzLogAlertRule.md)
 
-[<span data-ttu-id="bfcc7-142">Add-AzMetricAlertRule</span><span class="sxs-lookup"><span data-stu-id="bfcc7-142">Add-AzMetricAlertRule</span></span>](./Add-AzMetricAlertRule.md)
+[<span data-ttu-id="0c74f-141">Add-AzMetricAlertRule</span><span class="sxs-lookup"><span data-stu-id="0c74f-141">Add-AzMetricAlertRule</span></span>](./Add-AzMetricAlertRule.md)
 
-[<span data-ttu-id="bfcc7-143">Add-AzWebtestAlertRule</span><span class="sxs-lookup"><span data-stu-id="bfcc7-143">Add-AzWebtestAlertRule</span></span>](./Add-AzWebtestAlertRule.md)
+[<span data-ttu-id="0c74f-142">Add-AzWebtestAlertRule</span><span class="sxs-lookup"><span data-stu-id="0c74f-142">Add-AzWebtestAlertRule</span></span>](./Add-AzWebtestAlertRule.md)
 
-[<span data-ttu-id="bfcc7-144">Get-AzAlertHistory</span><span class="sxs-lookup"><span data-stu-id="bfcc7-144">Get-AzAlertHistory</span></span>](./Get-AzAlertHistory.md)
+[<span data-ttu-id="0c74f-143">Get-AzAlertHistory</span><span class="sxs-lookup"><span data-stu-id="0c74f-143">Get-AzAlertHistory</span></span>](./Get-AzAlertHistory.md)
 
-[<span data-ttu-id="bfcc7-145">Remove-AzAlertRule</span><span class="sxs-lookup"><span data-stu-id="bfcc7-145">Remove-AzAlertRule</span></span>](./Remove-AzAlertRule.md)
+[<span data-ttu-id="0c74f-144">Remove-AzAlertRule</span><span class="sxs-lookup"><span data-stu-id="0c74f-144">Remove-AzAlertRule</span></span>](./Remove-AzAlertRule.md)
 
 
