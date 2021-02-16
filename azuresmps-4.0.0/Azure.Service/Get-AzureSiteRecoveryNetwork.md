@@ -3,30 +3,30 @@ external help file: Microsoft.Azure.Commands.RecoveryServicesRdfe.dll-Help.xml
 ms.assetid: 615D2C5D-AB31-45DB-9535-9B9C8E957322
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: 96b51b49d76093be96eeab26417f4a70f70c4627
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 4a5701fc6308f1884bbf0237887a223a62a58669
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94015592"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100411585"
 ---
 # Get-AzureSiteRecoveryNetwork
 
-## Áttekintés
-Információt kap a webhelyek helyreállítása által kezelt hálózatokról az aktuális boltozatra vonatkozóan.
+## SYNOPSIS
+Információkat kap a webhely-helyreállítás által kezelt hálózatokról az aktuális tárolóban.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 Get-AzureSiteRecoveryNetwork -Server <ASRServer> [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## Leírás
-A **Get-AzureSiteRecoveryNetwork** parancsmag információkat kap az Azure webhely-helyreállítási hálózatokról az aktuális webhely-helyreállítási boltozathoz.
+## LEÍRÁS
+A **Get-AzureSiteRecoveryNetwork** parancsmag információkat kap az aktuális webhely-helyreállítási tároló Azure Webhely-helyreállítási hálózatairól.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: webhely-helyreállítási hálózatok beszerzése
+### 1. példa: Webhely-helyreállítási hálózatok leszerzése
 ```
 PS C:\> $Servers = Get-AzureSiteRecoveryServer
 PS C:\> Get-AzureSiteRecoveryNetwork -Server $Servers[0]
@@ -47,16 +47,16 @@ FabricType          : VMM
 VmNetworkSubnetList : {}
 ```
 
-Az első Command parancsmag a **Get-AzureSiteRecoveryServer** parancsmaggal kapja meg az aktuális Azure-webhely helyreállítási boltozatának kiszolgálóit.
-A parancs a $Servers Array változóban tárolja a webhely-helyreállítási kiszolgálókat.
+Az első parancsmag a **Get-AzureSiteRecoveryServer** parancsmag használatával szerezze be az aktuális Azure Site Recovery tároló kiszolgálóit.
+A parancs a webhely-helyreállítási kiszolgálókat a $Servers tárolja.
 
-A második parancs a hely helyreállítási hálózatát kapja meg az első kiszolgálónak a $Servers tömbben.
+A második parancs a tömb első kiszolgálójának webhely-helyreállítási hálózatát $Servers le.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -Profil
-Azt az Azure-profilt adja meg, amelyből a parancsmag olvasható.
-Ha nem ad meg profilt, a parancsmag a helyi alapértelmezett profilból olvassa be a szöveget.
+Azt az Azure-profilt adja meg, amelyből a parancsmag olvas.
+Ha nem ad meg profilt, ez a parancsmag a helyi alapértelmezett profilból olvassa be.
 
 ```yaml
 Type: AzureSMProfile
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 ```
 
 ### -Server
-Webhely-helyreállítási kiszolgálót ad meg.
+Egy webhely-helyreállítási kiszolgálót ad meg.
 
 ```yaml
 Type: ASRServer
@@ -86,16 +86,16 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
 ## KIMENETEK
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Azure site Recovery Services-parancsmagok](./Azure.SiteRecoveryServices.md)
+
 
 

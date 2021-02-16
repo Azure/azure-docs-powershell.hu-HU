@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMBootDiagnosticsData.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMBootDiagnosticsData.md
-ms.openlocfilehash: c56c9e586b0089311477fc12b6624c74321f9a0b
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 96248492feac9997d1afdba83fdda943c75fa363
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94015057"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100397832"
 ---
 # Get-AzVMBootDiagnosticsData
 
-## Áttekintés
-Rendszerindítási diagnosztikai adatot kap egy virtuális géphez.
+## SYNOPSIS
+Indítási diagnosztikai adatokat kap egy virtuális géphez.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### WindowsParamSet (alapértelmezett)
 ```
@@ -32,24 +32,24 @@ Get-AzVMBootDiagnosticsData [-ResourceGroupName] <String> [-Name] <String> [-Lin
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-A **Get-AzVMBootDiagnosticsData** parancsmag rendszerindítási diagnosztikai adatot kap egy virtuális géphez.
+## LEÍRÁS
+A **Get-AzVMBootDiagnosticsData** parancsmag indítási diagnosztikai adatokat kap egy virtuális géphez.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: a rendszerindítási diagnosztika adatainak beolvasása
+### 1. példa: Indítási diagnosztikai adatok betöltése
 ```
 PS C:\> Get-AzVMBootDiagnosticsData -ResourceGroupName "ResourceGroup11" -Name "ContosoVM07" -Windows -LocalPath "C:\Contoso\BootDiagnostics"
 ```
 
-Ez a parancs a ContosoVM07 nevű virtuális gép rendszerindítási diagnosztikai értékeit kapja.
-Ez a virtuális gép futtatja a Windows operációs rendszert.
-A parancs a megadott helyi elérési utakban tárolja az adatforrást.
+Ez a parancs a ContosoVM07 nevű virtuális gép indítási diagnosztikai adatait kapja.
+Ez a virtuális gép a Windows operációs rendszert futtatja.
+A parancs a megadott helyi elérési úton tárolja az adatokat.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -64,7 +64,7 @@ Accept wildcard characters: False
 ```
 
 ### -Linux
-Azt jelzi, hogy a virtuális gép futtatja a Linux operációs rendszert.
+Azt jelzi, hogy a virtuális gép a Linux operációs rendszert futtatja.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -79,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -LocalPath
-A rendszerindítási diagnosztika adatainak helyi elérési útját adja meg.
+A rendszerindításkor használt diagnosztikai adatok helyi elérési útját adja meg.
 
 ```yaml
 Type: System.String
@@ -105,8 +105,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name (név)
-Annak a virtuális gépnek a neve, amelyhez ez a parancsmag diagnosztikai adatot kap.
+### -Name
+Annak a virtuális gépnek a neve, amelyhez ez a parancsmag diagnosztikai adatokat kap.
 
 ```yaml
 Type: System.String
@@ -121,7 +121,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-A virtuális gép erőforráscsoport-csoportjának nevét adja meg.
+A virtuális gép erőforráscsoportját adja meg.
 
 ```yaml
 Type: System.String
@@ -136,7 +136,7 @@ Accept wildcard characters: False
 ```
 
 ### -Windows
-Azt jelzi, hogy a virtuális gép futtatja a Windows operációs rendszert.
+Azt jelzi, hogy a virtuális gép a Windows operációs rendszert futtatja.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -151,22 +151,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. commands. kiszámítás. models. PSVirtualMachine
+### Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine
 
-### Microsoft. Azure. commands. kiszámítás. models. PSVirtualMachineInstanceView
+### Microsoft.Azure.Commands.Compute.Models.PSVirtualMachineInstanceView
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Set-AzVMBootDiagnostics](./Set-AzVMBootDiagnostics.md)
+[Set-AzVMBootDiagnostic](./Set-AzVMBootDiagnostic.md)
 
 

@@ -1,17 +1,17 @@
 ---
 title: Az Azure PowerShell Az modul bemutatása
 description: Bemutatkozik az új Azure PowerShell-modul, az Az, amely az AzureRM modult váltja le.
-ms.date: 05/10/2019
+ms.date: 02/12/2021
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 0856748290e2bdea79b9ef845f2c000e9fefcd62
-ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
-ms.translationtype: HT
+ms.openlocfilehash: f6ffd66d20943541c3591d41db7c72861f44204c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93408088"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100397815"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Az új Azure PowerShell Az modul bemutatása
 
@@ -45,7 +45,7 @@ Frissítés meglévő AzureRM-telepítésből:
 
 1. [Távolítsa el az Azure PowerShell AzureRM modult.](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module)
 2. [Telepítse az Azure PowerShell Az modult.](install-az-ps.md)
-3. **NEM KÖTELEZŐ** : Engedélyezze a kompatibilitási módot, hogy aliasokat adjon az AzureRM-parancsmagokhoz az [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias) paranccsal, amíg meg nem ismeri az új parancskészletet. További részleteket a következő szakaszban vagy az [az AzureRM modulból az Az modulba való áttelepítést](migrate-from-azurerm-to-az.md) ismertető cikkben talál.
+3. **NEM KÖTELEZŐ**: Engedélyezze a kompatibilitási módot, hogy aliasokat adjon az AzureRM-parancsmagokhoz az [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias) paranccsal, amíg meg nem ismeri az új parancskészletet. További részleteket a következő szakaszban vagy az [az AzureRM modulból az Az modulba való áttelepítést](migrate-from-azurerm-to-az.md) ismertető cikkben talál.
 
 ## <a name="migrate-existing-scripts-to-az"></a>Meglévő szkriptek áttelepítése az Az modulba
 
@@ -63,6 +63,8 @@ Az Az modul kompatibilitási módjával továbbra is használhatja a meglévő s
 > [!IMPORTANT]
 > Annak ellenére, hogy a parancsmagok aliasnévvel rendelkeznek, az Az-parancsmagoknak lehetnek új (vagy átnevezett) paraméterei, illetve módosított visszaadott értékei. Az aliasok engedélyezése nem elegendő a migrálás elvégzéséhez. Tekintse meg a [kompatibilitástörő változások teljes listáját](migrate-az-1.0.0.md), amelyből megtudhatja, hol lehet szükség a szkriptek frissítésére.
 
-## <a name="continued-support-for-azurerm"></a>Az AzureRM további támogatása
+## <a name="support-for-azurerm"></a>A AzureRM támogatása
 
-Az AzureRM modul nem bővül újabb parancsmagokkal vagy funkciókkal. Az AzureRM modul hivatalos karbantartása és hibajavítása azonban 2020 decemberéig nem szűnik meg.
+Mivel az az PowerShell-modulok már rendelkeznek a AzureRM PowerShell-modulok képességeivel, és így tovább, a AzureRM PowerShell-modulokat a 2024. február 29-én kivonják.
+
+A szolgáltatás megszakadásának elkerülése érdekében frissítse a AzureRM PowerShell-modulokat használó [parancsfájlokat](https://aka.ms/azpsmigrate) az az PowerShell-modulok 2024. február 29-én való használatára. A parancsfájlok automatikus frissítéséhez kövesse a gyors [üzembe helyezési útmutatót](/powershell/azure/quickstart-migrate-azurerm-to-az-automatically).

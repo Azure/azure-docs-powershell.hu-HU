@@ -6,58 +6,58 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCircuitConnectionConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCircuitConnectionConfig.md
-ms.openlocfilehash: 0e8a4eeaad1f033377ab11d7361d71c8a63a9dc2
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: fb82b00f998ed0c2b7473d4a3e0bcb9b3dc60630
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94184101"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100397849"
 ---
 # Remove-AzExpressRouteCircuitConnectionConfig
 
-## Áttekintés
-ExpressRoute-áramköri kapcsolat konfigurációjának eltávolítása.
+## SYNOPSIS
+Eltávolítja az ExpressRoute-kapcsolat kapcsolatkonfigurációját.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 Remove-AzExpressRouteCircuitConnectionConfig [-Name] <String> [-ExpressRouteCircuit] <PSExpressRouteCircuit>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Leírás
-A **Remove-AzExpressRouteCircuitConnectionConfig** parancsmag eltávolítja az adott Express útvonal-áramkörrel társított ExpressRoute-kapcsolat konfigurációját.
+## LEÍRÁS
+A **Remove-AzExpressRouteCircuitConnectionConfig** parancsmag eltávolítja az Adott ExpressRoute-kapcsolat kapcsolatkonfigurációját.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: áramkör-kapcsolati konfiguráció eltávolítása ExpressRoute-áramkörről
+### 1. példa: Kapcsolati kapcsolat konfigurációjának eltávolítása ExpressRoute-áramkörből
 ```
 $circuit_init = Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg
 Remove-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName -ExpressRouteCircuit $circuit_init
 Set-AzExpressRouteCircuit -ExpressRouteCircuit $circuit_init
 ```
 
-### 2. példa: az áramköri kapcsolat konfigurációjának eltávolítása egy ExpressRoute-áramkörről csővezeték használatával
+### 2. példa: Áramköri kapcsolat konfigurációjának eltávolítása Egy ExpressRoute-áramkör pipázásával
 ```
 Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg|Remove-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName|Set-AzExpressRouteCircuit
 ```
 
-### 3. példa: az áramkör-kapcsolat konfigurációjának eltávolítása egy ExpressRoute-áramkörről egy adott cím család számára
+### 3. példa: Kapcsolati kapcsolat konfigurációjának eltávolítása Egy adott cím családjához megadott ExpressRoute-áramkörből
 ```
 $circuit_init = Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg
 Remove-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName -ExpressRouteCircuit $circuit_init -AddressPrefixType IPv4
 Set-AzExpressRouteCircuit -ExpressRouteCircuit $circuit_init
 ```
 
-### Példa 4: az áramkör-kapcsolat konfigurációjának eltávolítása egy ExpressRoute-áramkörről egy adott cím család számára
+### 4. példa: Áramköri kapcsolat konfigurációjának eltávolítása a Piping használatával egy ExpressRoute-áramkörből egy adott cím családjához
 ```
 Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg|Remove-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName -AddressPrefixType IPv6|Set-AzExpressRouteCircuit
 ```
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -72,7 +72,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpressRouteCircuit
-Az eltávolítani kívánt társközi konfigurációt tartalmazó ExpressRoute-áramkör
+Az eltávolítható társviszony-konfigurációt tartalmazó ExpressRoute-áramkör.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit
@@ -86,8 +86,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name (név)
-Az eltávolítandó áramkör-kapcsolat konfigurációjának neve.
+### -Name
+Az eltávolítható kapcsolat kapcsolatkonfigurációjának neve.
 
 ```yaml
 Type: System.String
@@ -101,7 +101,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 ### -AddressPrefixType
-Annak a címnek a családját adja meg, amelyet el kell távolítani a konfigból. 
+Megadja, hogy a rendszer mely címeket távolítja el a konfigurációból. 
 
 ```yaml
 Type: System.String
@@ -116,8 +116,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut. A parancsmag nem fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik. A parancsmag nem fut.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -147,17 +147,17 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. Azure. commands. Network. models. PSExpressRouteCircuit
+### Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit
 
 ## KIMENETEK
 
-### Microsoft. Azure. commands. Network. models. PSExpressRouteCircuit
+### Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
@@ -169,7 +169,7 @@ Ez a parancsmag a következő általános paramétereket támogatja:-debug,-Erro
 
 [Set-AzExpressRouteCircuitConnectionConfig](Set-AzExpressRouteCircuitConnectionConfig.md)
 
-[Új – AzExpressRouteCircuitConnectionConfig](New-AzExpressRouteCircuitConnectionConfig.md)
+
 
 [Set-AzExpressRouteCircuit](Set-AzExpressRouteCircuit.md)
 
