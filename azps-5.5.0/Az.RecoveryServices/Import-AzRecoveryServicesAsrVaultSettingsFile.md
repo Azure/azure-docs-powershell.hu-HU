@@ -5,17 +5,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.recoveryse
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Import-AzRecoveryServicesAsrVaultSettingsFile.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Import-AzRecoveryServicesAsrVaultSettingsFile.md
-ms.openlocfilehash: de3604a4bf1f9c46bf88b2f3cda25982672e9096
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: f71f7e37e4864de10c5387d63c101cd66ed9fd34
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100160146"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398495"
 ---
 # Import-AzRecoveryServicesAsrVaultSettingsFile
 
 ## SYNOPSIS
-A megadott ASR tárolóbeállítási fájl importálva adja meg a tároló környezetét (PowerShell-munkamenet környezetét) a PowerShell-munkamenet későbbi ASR-műveleteihez. 
+Importálja a megadott ASR tárolóbeállítási fájlt a tároló környezetének (PowerShell-munkamenetkörnyezet) beállítására a PowerShell-munkamenet későbbi ASR-műveleteihez. 
 
 ## SZINTAXIS
 
@@ -115,4 +115,3 @@ Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, 
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Get-AzRecoveryServicesAsrVaultSettingsFile](./Get-AzRecoveryServicesAsrVaultSettingsFile.md)

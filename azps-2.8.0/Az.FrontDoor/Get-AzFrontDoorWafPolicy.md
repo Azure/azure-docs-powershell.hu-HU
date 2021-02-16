@@ -5,31 +5,31 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/Get-AzFrontDoorWafPolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/Get-AzFrontDoorWafPolicy.md
-ms.openlocfilehash: 60d6263d3fb074cf4795379ae28f1824dc81a4c0
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 5cc2a2e480044aa00c51a18dd116d33bd4c2f72a
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93666431"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398461"
 ---
 # Get-AzFrontDoorWafPolicy
 
-## Áttekintés
-A WAF házirend beszerzése
+## SYNOPSIS
+A waf-szabályzat lekérte
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 Get-AzFrontDoorWafPolicy -ResourceGroupName <String> [-Name <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-A **Get-AzFrontDoorWafPolicy** cmdletGet az aktuális előfizetés alatti erőforráscsoport WAF házirendjét kapja.
+## LEÍRÁS
+A **Get-AzFrontDoorWafPolicy** parancsmagGet a WAF-házirendet az aktuális előfizetés alatti erőforráscsoportba kapja
 
-## Példák
+## PÉLDÁK
 
-### Példa 1
+### 1. példa
 ```powershell
 PS C:\> Get-AzFrontDoorWafPolicy -Name $policyName -ResourceGroupName $resourceGroupName
 
@@ -38,7 +38,7 @@ Name         PolicyMode PolicyEnabledState CustomBlockResponseStatusCode Redirec
 {policyName} Prevention            Enabled                           403 https://www.bing.com/
 ```
 
-A $resourceGroupName $policyName nevű WAF-házirend beszerzése
+Az új $policyName waf$resourceGroupName
 
 ### 2. példa
 ```powershell
@@ -51,12 +51,12 @@ Name         PolicyMode PolicyEnabledState CustomBlockResponseStatusCode Redirec
 {policyName} Detection             Enabled                           404
 ```
 
-Az összes WAF-házirend beszerzése $resourceGroupName
+A WaF-házirendek $resourceGroupName
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -70,8 +70,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (név)
-FireWallPolicy neve
+### -Name
+FireWallPolicy neve.
 
 ```yaml
 Type: System.String
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Az erőforrás csoport neve.
+Az erőforráscsoport neve.
 
 ```yaml
 Type: System.String
@@ -101,20 +101,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
 ### Nincs
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. FrontDoor. models. PSPolicy
+### Microsoft.Azure.Commands.FrontDoor.Models.PSPolicy
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Új – AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md) 
- [Set-AzFrontDoorWafPolicy](./Set-AzFrontDoorWafPolicy.md) 
- [Remove-AzFrontDoorWafPolicy](./Remove-AzFrontDoorWafPolicy.md)
+[New-AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md) 
+ [Remove-AzFrontDoorWafPolicy](./Remove-AzFrontDoorWafPolicy.md) 
+ [Update-AzFrontDoorWafPolicy](./Update-AzFrontDoorWafPolicy.md)
