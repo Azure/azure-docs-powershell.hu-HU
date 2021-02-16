@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/Re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCrossConnectionPeering.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCrossConnectionPeering.md
-ms.openlocfilehash: eb90b668bf0466c44e3fde0ef0a8d6777074fb37
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 44a7dd8c0fbb3193ac514f9c1b447394b29574f3
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94014055"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400059"
 ---
 # Remove-AzExpressRouteCrossConnectionPeering
 
-## Áttekintés
-Eltávolít egy ExpressRoute-kapcsolatok közötti kapcsolat-összekapcsolási konfigurációt.
+## SYNOPSIS
+Eltávolít egy ExpressRoute-kapcsolatközi társviszony-konfigurációt.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 Remove-AzExpressRouteCrossConnectionPeering -ExpressRouteCrossConnection <PSExpressRouteCrossConnection>
@@ -26,22 +26,22 @@ Remove-AzExpressRouteCrossConnectionPeering -ExpressRouteCrossConnection <PSExpr
  [-Confirm] [<CommonParameters>]
 ```
 
-## Leírás
-A **Remove-AzExpressRouteCrossConnectionPeering** parancsmag eltávolítja a ExpressRoute-kapcsolatok közötti kapcsolati konfigurációt.
+## LEÍRÁS
+A **Remove-AzExpressRouteCrossConnectionPeering** parancsmag eltávolítja az ExpressRoute-kapcsolatközi társviszony-konfigurációt.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: társközi konfiguráció eltávolítása egy ExpressRoute-kapcsolaton keresztül
+### 1. példa: Társviszony-konfiguráció eltávolítása ExpressRoute-keresztkapcsolatból
 ```
 $cc = Get-AzExpressRouteCrossConnection -Name $CrossConnectionName -ResourceGroupName $rg
 Remove-AzExpressRouteCrossConnectionPeering -Name 'AzurePrivatePeering' -ExpressRouteCrossConnection $cc
 Set-AzExpressRouteCrossConnection -ExpressRouteCrossConnection $cc
 ```
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -56,7 +56,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpressRouteCrossConnection
-Az eltávolítani kívánt társközi konfigurációt tartalmazó ExpressRoute-kereszt kapcsolat.
+Az eltávolítható társviszony-konfigurációt tartalmazó ExpressRoute-keresztkapcsolat.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSExpressRouteCrossConnection
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Ha egy erőforrást felül szeretne írni, ne kérjen megerősítést.
+Ne kérjen megerősítést, ha felül szeretne írni egy erőforrást
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -85,8 +85,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (név)
-Az eltávolítandó társközi konfiguráció neve.
+### -Name
+Az eltávolítható társviszony-konfiguráció neve.
 
 ```yaml
 Type: System.String
@@ -101,7 +101,7 @@ Accept wildcard characters: False
 ```
 
 ### -PeerAddressType
-A társközi cím családja
+A társviszony címjegyzéke
 
 ```yaml
 Type: System.String
@@ -116,8 +116,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut. A parancsmag nem fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik. A parancsmag nem fut.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -147,24 +147,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
 ### PSExpressRouteCrossConnection
-A ' ExpressRouteCrossConnection ' paraméter az "PSExpressRouteCrossConnection" típusú értéket fogadja el a csővezetékről
+Az "ExpressRouteCrossConnection" paraméter a "PSExpressRouteCrossConnection" típusú értéket fogadja el a folyamatból.
 
 ## KIMENETEK
 
-### Microsoft. Azure. commands. Network. models. PSExpressRouteCrossConnection
+### Microsoft.Azure.Commands.Network.Models.PSExpressRouteCrossConnection
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
 [Add-AzExpressRouteCrossConnectionPeering](Add-AzExpressRouteCrossConnectionPeering.md)
 
-[Get-AzExpressRouteCrossConnectionPeering](New-AzExpressRouteCrossConnectionPeering.md)
+
 
 [Get-AzExpressRouteCrossConnection](Get-AzExpressRouteCrossConnection.md)
 

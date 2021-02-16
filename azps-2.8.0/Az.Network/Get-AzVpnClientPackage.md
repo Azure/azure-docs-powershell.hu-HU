@@ -6,45 +6,45 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzVpnClientPackage.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzVpnClientPackage.md
-ms.openlocfilehash: eb88be102f390d9e94ba938eeb6d116af6a79fab
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 50919ba7857a57039e2afcdcd5cc4b469f91e612
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93837262"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100397951"
 ---
 # Get-AzVpnClientPackage
 
-## Áttekintés
-Információt kap a VPN-ügyfél csomagról.
+## SYNOPSIS
+Információkat kap a VPN-ügyfélcsomagról.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 Get-AzVpnClientPackage -ResourceGroupName <String> -VirtualNetworkGatewayName <String>
  -ProcessorArchitecture <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-A **Get-AzVpnClientPackage** parancsmag információt kap a virtuális hálózati átjáróból elérhető VPN-ügyfél-csomagokról.
-Az ügyfél csomagjai olyan konfigurációs adatokat tartalmaznak, amelyek lehetővé teszik, hogy egy ügyfélszámítógép virtuális MAGÁNHÁLÓZATI kapcsolatot hozzon létre egy Azure virtuális hálózattal; a VPN-kapcsolat létrehozásához az ügyfélgépeknek telepítve kell lenniük a megfelelő konfigurációs csomagnak.
-Az ügyfélszámítógép Windows-verziójának (például a Windows 7 vagy a Windows 10) és az ügyfélszámítógép processzor-architektúrájának (AMD64 vagy x86) alapján is elérhetők a különféle konfigurációs csomagok.
+## LEÍRÁS
+A **Get-AzVpnClientPackage** parancsmag információkat kap a virtuális hálózati átjárókból elérhető VPN-ügyfélcsomagokkal kapcsolatban.
+Az ügyfélcsomagok olyan konfigurációs adatokat tartalmaznak, amelyek lehetővé teszik az ügyfélszámítógépnek, hogy VIRTUÁLIS VPN-kapcsolatot létesítsen egy Azure virtuális hálózattal; VPN-kapcsolat létrehozásához az ügyfélszámítógépeken telepítve kell lennie a megfelelő konfigurációs csomagnak.
+Különböző konfigurációs csomagok érhetők el az ügyfélszámítógép Windows-verziója (például Windows 7 vagy Windows 10) és az ügyfélszámítógép processzor architektúrája (AMD64 vagy x86) alapján.
 A **Get-AzVpnClientPackage** futtatásakor meg kell adnia az architektúra típusát.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: adatok beszerzése a processzor-architektúra VPN-csomagról
+### 1. példa: Információ a processzorarchitektúra VIRTUÁLIS magánhálózati ügyfélcsomagról
 ```
 PS C:\>Get-AzVpnClientPackage -ProcessorArchitecture -VirtualNetworkGatewayName "ContosoVirtualNetworkGateway" -ResourceGroupName "ContosoResourceGroup" -ProcessorArchitecture "Amd64"
 ```
 
-Ez a parancs információt kap a ContosoVirtualNetworkGateway nevű virtuális hálózati átjáróban tárolt AMD64 VPN-csomagokról.
-Ha információkat szeretne kapni az x86-os ügyfél-csomagokról, állítsa az *ProcessorArchitecture* paraméter értékét x86 értékre.
+Ez a parancs információkat kap a ContosoVirtualNetworkGateway nevű virtuális hálózati átjáróban tárolt AMD64 VPN-ügyfélcsomagról.
+Az x86-os ügyfélcsomagokkal kapcsolatos információk lekérdezése érdekében állítsa a *ProcessorArchitecture* paraméter értékét x86 értékre.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -59,8 +59,8 @@ Accept wildcard characters: False
 ```
 
 ### -ProcessorArchitecture
-Annak a CPU-architektúrának a típusát adja meg, amelyre az ügyfél-csomag van tervezve.
-Az érvényes értékek az Amd64 és az x86.
+Az ügyfélcsomag által tervezett processzorarchitektúra típusát határozza meg.
+Érvényes értékek: Amd64 és X86.
 
 ```yaml
 Type: System.String
@@ -76,8 +76,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Annak az erőforráscsoportnek a neve, amelyhez a virtuális hálózati átjáró van rendelve.
-Az erőforráscsoportok kategorizálják az elemeket, amelyek megkönnyítik a Készletkezelés és az Azure általános felügyelet egyszerűsítését.
+Annak az erőforráscsoportnak a nevét adja meg, amelyhez a virtuális hálózati átjáró hozzá van rendelve.
+Az erőforráscsoportok a készletkezelés és az általános Azure-felügyelet egyszerűsítése érdekében kategorizálják az elemeket.
 
 ```yaml
 Type: System.String
@@ -92,7 +92,7 @@ Accept wildcard characters: False
 ```
 
 ### -VirtualNetworkGatewayName
-Annak a virtuális hálózati átjárónak a neve, amelybe az ügyfél-csomag adatai vannak tárolva.
+Annak a virtuális hálózati átjárónak a nevét adja meg, amely az ügyfélcsomag adatait tárolja.
 
 ```yaml
 Type: System.String
@@ -107,22 +107,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### System. String
+### System.String
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Átméretezés-AzVirtualNetworkGateway](./Resize-AzVirtualNetworkGateway.md)
+[Resize-AzVirtualNetworkGateway](./Resize-AzVirtualNetworkGateway.md)
 
-[Set-AzVirtualNetworkGatewayVpnClientConfig](./Set-AzVirtualNetworkGatewayVpnClientConfig.md)
 
 

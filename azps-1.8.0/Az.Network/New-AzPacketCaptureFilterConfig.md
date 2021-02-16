@@ -5,31 +5,31 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzPacketCaptureFilterConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzPacketCaptureFilterConfig.md
-ms.openlocfilehash: 400b2b87576cf907802e831bc6272cadc5495e58
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 7e7b607d380d058ee6dfae0bd30585686f560b40
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93670292"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400127"
 ---
 # New-AzPacketCaptureFilterConfig
 
-## Áttekintés
-Új csomagkapcsolt rögzítési szűrő objektum létrehozása
+## SYNOPSIS
+Új csomagrögzítési szűrőobjektumot hoz létre.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 New-AzPacketCaptureFilterConfig [-Protocol <String>] [-RemoteIPAddress <String>] [-LocalIPAddress <String>]
  [-LocalPort <String>] [-RemotePort <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-Az New-AzPacketCaptureFilterConfig parancsmag létrehoz egy új csomagkapcsolt rögzítési szűrő objektumot. Ezzel az objektummal korlátozható, hogy milyen típusú csomagokat rögzít a program a csomag rögzítésekor a megadott feltételekkel. A New-AzNetworkWatcherPacketCapture parancsmag több szűrő objektumot is elfogadhat a komponált rögzítési munkamenetek engedélyezéséhez.
+## LEÍRÁS
+A New-AzPacketCaptureFilterConfig parancsmag létrehoz egy új csomagrögzítési szűrőobjektumot. Ezzel az objektummal korlátozható a csomagrögzítési munkamenet során rögzített csomagok típusa a megadott feltételekkel. A New-AzNetworkWatcherPacketCapture parancsmag több szűrőobjektumot is elfogadhat a kompatibilis rögzítési munkamenetek engedélyezéséhez.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: több szűrőből álló csomag létrehozása
+### 1. példa: Csomagrögzítés létrehozása több szűrővel
 ```
 $nw = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" } 
 $networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName 
@@ -41,12 +41,12 @@ $filter2 = New-AzPacketCaptureFilterConfig -Protocol UDP
 New-AzNetworkWatcherPacketCapture -NetworkWatcher $networkWatcher -TargetVirtualMachineId $vm.Id -PacketCaptureName "PacketCaptureTest" -StorageAccountId $storageAccount.id -TimeLimitInSeconds 60 -Filters $filter1, $filter2
 ```
 
-Ebben a példában a "PacketCaptureTest" nevű csomagot hozzuk létre több szűrővel és időkorlátozással. A munkamenet befejezésekor a program a megadott tárterület-fiókba menti a fájlt. Megjegyzés: az Azure Network Watcher bővítménynek telepítve kell lennie a cél virtuális gépen a csomag rögzítéséhez.
+Ebben a példában létrehozunk egy "PacketCaptureTest" nevű csomagrögzítést több szűrővel és egy időkorláttal. A munkamenet befejezése után a rendszer a megadott tárfiókba menti a munkamenetet. Megjegyzés: Csomagrögzítések létrehozásához az Azure Network Watcher bővítményt telepíteni kell a cél virtuális gépre.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -61,10 +61,10 @@ Accept wildcard characters: False
 ```
 
 ### -LocalIPAddress
-A szűrni kívánt helyi IP-címet adja meg.
-Példa bemenetekre: "127.0.0.1" az egyetlen cím bejegyzéshez.
-"127.0.0.1-127.0.0.255" a tartománnyal kapcsolatban.
-"127.0.0.1; 127.0.0.5;" több bejegyzéshez.
+Megadja azt a helyi IP-címet, amely alapján szűrni kell.
+Példa: "127.0.0.1" egyetlen címbejegyzéshez.
+"127.0.0.1-127.0.0.255" a tartományhoz.
+"127.0.0.1;127.0.0.5;" több bejegyzés esetén.
 
 ```yaml
 Type: System.String
@@ -79,10 +79,10 @@ Accept wildcard characters: False
 ```
 
 ### -LocalPort
-A szűrni kívánt helyi IP-címet adja meg.
-Példa bemenetekre: "127.0.0.1" az egyetlen cím bejegyzéshez.
-"127.0.0.1-127.0.0.255" a tartománnyal kapcsolatban.
-"127.0.0.1; 127.0.0.5;" több bejegyzéshez.
+Megadja azt a helyi IP-címet, amely alapján szűrni kell.
+Példa: "127.0.0.1" egyetlen címbejegyzéshez.
+"127.0.0.1-127.0.0.255" a tartományhoz.
+"127.0.0.1;127.0.0.5;" több bejegyzés esetén.
 
 ```yaml
 Type: System.String
@@ -97,7 +97,7 @@ Accept wildcard characters: False
 ```
 
 ### -Protocol
-A szűréshez használandó procotol adja meg. Elfogadható értékek "TCP", "UDP", "any"
+Megadja a procotolot, amely alapján szűrni kell. Elfogadható értékek: "TCP","UDP","Any"
 
 ```yaml
 Type: System.String
@@ -112,10 +112,10 @@ Accept wildcard characters: False
 ```
 
 ### -RemoteIPAddress
-A szűrni kívánt távoli IP-címet adja meg.
-Példa bemenetekre: "127.0.0.1" az egyetlen cím bejegyzéshez.
-"127.0.0.1-127.0.0.255" a tartománnyal kapcsolatban.
-"127.0.0.1; 127.0.0.5;" több bejegyzéshez.
+Megadja azt a távoli IP-címet, amely alapján szűrni kell.
+Példa: "127.0.0.1" egyetlen címbejegyzéshez.
+"127.0.0.1-127.0.0.255" a tartományhoz.
+"127.0.0.1;127.0.0.5;" több bejegyzés esetén.
 
 ```yaml
 Type: System.String
@@ -129,11 +129,11 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -TávoliPORT
-A szűrni kívánt távoli portot adja meg.
-Távoli port – például bemenetek: "80" egy portos bejegyzéshez.
-"80-85" a tartománnyal kapcsolatban.
-"80; 443;" több bejegyzéshez.
+### -RemotePort
+Megadja a távoli portot, amely alapján szűrni kell.
+Távoli port – Példa: "80" egyetlen port bejegyzéséhez.
+"80-85" a tartományhoz.
+"80;443;" több bejegyzés esetén.
 
 ```yaml
 Type: System.String
@@ -148,22 +148,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. commands. Network. models. PSPacketCaptureFilter
+### Microsoft.Azure.Commands.Network.Models.PSPacketCaptureFilter
 
-## MEGJEGYZI
-Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, hálózat, figyelő, csomag, rögzítés, forgalom, szűrő 
+## MEGJEGYZÉSEK
+Kulcsszavak: azure, azurerm, arm, erőforrás, kezelés, vezető, hálózat, hálózatkezelés, figyelő, csomag, rögzítés, forgalom, szűrés 
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Új – AzNetworkWatcher](./New-AzNetworkWatcher.md)
+[New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
 
 [Get-AzNetworkWatcher](./Get-AzNetworkWatcher.md)
 
@@ -177,9 +177,9 @@ Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, há
 
 [Start-AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
 
-[Új – AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
+[New-AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
 
-[Új – AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
+[New-AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
 
 [Get-AzNetworkWatcherPacketCapture](./Get-AzNetworkWatcherPacketCapture.md)
 
@@ -187,11 +187,11 @@ Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, há
 
 [Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
-[Új – AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
+[New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
 
-[Teszt-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
+[Test-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
 
-[Teszt-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
+[Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
 
 [Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
@@ -203,7 +203,7 @@ Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, há
 
 [Remove-AzNetworkWatcherConnectionMonitor](./Remove-AzNetworkWatcherConnectionMonitor.md)
 
-[Új – AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
+[New-AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
 
 [Get-AzNetworkWatcherTroubleshootingResult](./Get-AzNetworkWatcherTroubleshootingResult.md)
 
@@ -213,6 +213,6 @@ Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, há
 
 [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
