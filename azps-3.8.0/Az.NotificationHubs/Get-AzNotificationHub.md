@@ -6,47 +6,47 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.notificati
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHub.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHub.md
-ms.openlocfilehash: 6fc2cfd47d9b03fc02d935245d1ec87d6831d173
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 85dd5d73d2f0f4ce15dcffb2733f803cf6e67c0a
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94014507"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406281"
 ---
 # Get-AzNotificationHub
 
-## Áttekintés
-Információt kap az értesítési hubokról.
+## SYNOPSIS
+Információkat kap az értesítési központokról.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 Get-AzNotificationHub [-ResourceGroup] <String> [-Namespace] <String> [[-NotificationHub] <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-A **Get-AzNotificationHub** parancsmag információkat kap a megadott névtérben lévő értesítési hubokról, és egy adott erőforráscsoport számára van hozzárendelve.
-Információkat kaphat például az összes értesítési hubokról a névtér ContosoNamespace, és hozzárendelve a ContosoNotificationsGroup erőforráscsoporthoz.
-Másik lehetőségként a *NotificationHub* paraméterrel korlátozhatja a visszaadott adatokat az adott értesítési központra vonatkozó információkra.
-Az értesítési hubok a leküldéses értesítéseket több ügyfélnek küldik el, függetlenül attól, hogy milyen platformról, például iOS, Android, Windows Phone 8 vagy Windows áruházból, ezek az ügyfelek használják őket.
-Ezek a hubok nagyjából egyenértékűek az egyes alkalmazásokkal, és az egyes alkalmazások általában saját értesítési központtal rendelkeznek.
-Ez a parancsmag csak a hub adatait kapja meg.
-Más parancsmagok, például a Get-AzNotificationHubAuthorizationRules, a Get-AzNotificationHubListKeys és a Get-AzNotificationHubPNSCredentials szükségesek a hub engedélyezési szabályairól, a csatlakozási karakterláncokról és a platform értesítési szolgáltatásának hitelesítő adatairól.
+## LEÍRÁS
+A **Get-AzNotificationHub** parancsmag információt kap egy megadott névtér értesítési központjáról, és hozzárendel egy adott erőforráscsoporthoz.
+Információkat kaphat például a ContosoNamespace névtér összes értesítési központjáról, és hozzárendelheti őket a ContosoNotificationsGroup erőforráscsoporthoz.
+Másik lehetőségként az *NotificationHub* paraméterrel korlátozhatja a visszaadott adatokat egy adott értesítési központ információira.
+Az értesítési központokkal leküldéses értesítéseket lehet küldeni több ügyfélnek, függetlenül attól, hogy milyen platformot használnak (például iOS, Android, Windows Phone 8 és Windows Áruház).
+Ezek a központok nagyjából egyenértékűek az egyes alkalmazásokkal, és mindegyik alkalmazásnak általában saját értesítési központja lesz.
+Ez a parancsmag csak a központról kap információt.
+Más parancsmagokra, például a Get-AzNotificationHubAuthorizationRules, a Get-AzNotificationHubListKeys és a Get-AzNotificationHubPNSCredentials parancsmagra van szükség a központ engedélyezési szabályaival, kapcsolati karakterláncokkal és platformértesítési szolgáltatás hitelesítő adataival kapcsolatos információkhoz.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: információ kérése egy adott névtérben lévő összes értesítési hubokról
+### 1. példa: Információ lekérte az adott névtér összes értesítési központját
 ```
 PS C:\>Get-AzNotificationHub -Namespace "ContosoNamespace" -ResourceGroup "ContosoNotificationsGroup"
 ```
 
-Ez a parancs információkat kap az erőforráscsoport ContosoNotificationsGroup rendelt ContosoNamespace nevű névtérben található összes értesítési hubokról.
+Ez a parancs információkat kap a ContosoNamespace nevű névtér összes, a ContosoNotificationsGroup erőforráscsoporthoz hozzárendelt értesítési központról.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -61,8 +61,8 @@ Accept wildcard characters: False
 ```
 
 ### -Namespace
-Azt a névteret adja meg, amelyhez az értesítési hub hozzá van rendelve.
-A névterek lehetőséget nyújtanak az értesítési hubok csoportosítására és kategorizálására.
+Azt a névteret adja meg, amelyhez az értesítési központ hozzá van rendelve.
+A névterek lehetőséget nyújtanak az értesítési központok csoportosítására és kategorizálására.
 
 ```yaml
 Type: System.String
@@ -77,8 +77,8 @@ Accept wildcard characters: False
 ```
 
 ### -NotificationHub
-Annak az értesítési csomópontnak a nevét adja meg, amelyre a parancsmag beérkezik.
-Az értesítési hubok az ügyfelek által használt platformtól függetlenül több ügyfélnek küldenek leküldéses értesítéseket.
+A parancsmag értesítési központjának nevét adja meg.
+Az értesítési központokkal leküldéses értesítéseket lehet küldeni több ügyfélnek, függetlenül attól, hogy milyen platformot használnak az adott ügyfél által használt platformon.
 
 ```yaml
 Type: System.String
@@ -93,8 +93,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroup
-Azt az erőforráscsoport-csoportot adja meg, amelyhez az értesítési hub hozzá van rendelve.
-Az erőforráscsoportok elemek (például névterek, értesítési hubok és engedélyezési szabályok) rendszerezése olyan módon, hogy egyszerűen csak a Készletkezelés és az Azure felügyeletet segítse elő.
+Azt az erőforráscsoportot adja meg, amelyhez az értesítési központ hozzá van rendelve.
+Az erőforráscsoportok a készletkezelést és az Azure felügyeletét segítő módon rendszerezhetik az elemeket, például a névtereket, az értesítési központokat és az engedélyezési szabályokat.
 
 ```yaml
 Type: System.String
@@ -109,27 +109,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. NotificationHubs. models. NotificationHubAttributes
+### Microsoft.Azure.Commands.NotificationHubs.Models.NotificationHubAttributes
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Get-AzNotificationHubAuthorizationRules](./Get-AzNotificationHubAuthorizationRules.md)
 
-[Get-AzNotificationHubListKeys](./Get-AzNotificationHubListKeys.md)
 
-[Get-AzNotificationHubPNSCredentials](./Get-AzNotificationHubPNSCredentials.md)
 
-[Új – AzNotificationHub](./New-AzNotificationHub.md)
+[New-AzNotificationHub](./New-AzNotificationHub.md)
 
 [Remove-AzNotificationHub](./Remove-AzNotificationHub.md)
 

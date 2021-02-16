@@ -5,43 +5,43 @@ online version: https://docs.microsoft.com/en-us/powershell/module/Az.keyvault/u
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/KeyVault/KeyVault/help/Undo-AzKeyVaultSecretRemoval.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/KeyVault/KeyVault/help/Undo-AzKeyVaultSecretRemoval.md
-ms.openlocfilehash: e65bef4119c51b989287bbf0db2e7587fef50271
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: 9c240d3902aeba38af4281ba31bacea76bad0a58
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93843834"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399090"
 ---
 # Undo-AzKeyVaultSecretRemoval
 
-## Áttekintés
-Visszanyeri a törölt titkot egy fő boltozatba egy aktív állapotba.
+## SYNOPSIS
+Egy kulcstár törölt titkos kulcsát aktív állapotba helyreállítja.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 Undo-AzKeyVaultSecretRemoval [-VaultName] <String> [-Name] <String>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Leírás
-A **Visszavonás-AzKeyVaultSecretRemoval** parancsmag egy korábban törölt titkot fog helyreállítani.
-A helyreállított titok aktív lesz, és minden normális titkos művelethez használható.
-A művelet végrehajtásához a hívónak "vissza" engedéllyel kell rendelkeznie.
+## LEÍRÁS
+Az **Undo-AzKeyVaultSecretRemoval** parancsmag helyreállít egy korábban törölt titkos adatokat.
+A helyreállított titkos titkos művelet aktív lesz, és minden normál titkos művelethez használható.
+A művelet végrehajtásához a hívónak "helyreállítás" engedéllyel kell rendelkeznie.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1
+### 1. példa
 ```
 PS C:\> Undo-AzKeyVaultSecretRemoval -VaultName 'MyKeyVault' -Name 'MySecret'
 ```
 
-Ez a parancs a korábban törölt titkos "keresési kifejezésként" aktív és felhasználható állapotba helyezi.
+Ez a parancs egy aktív és használható állapotba visszaállítja a korábban törölt MySecret titkos fájlt.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: IAzureContextContainer
@@ -55,9 +55,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (név)
+### -Name
 Titkos név.
-A parancsmag a boltozat nevéből, az aktuálisan kijelölt környezetből és a titkos névvel elkészíti a titkos FQDN-t.
+A parancsmag a tárolónévből ( jelenleg kijelölt környezetből és titkos névből ) egy titkos kulcs teljes tartománynevét építi fel.
 
 ```yaml
 Type: String
@@ -72,8 +72,8 @@ Accept wildcard characters: False
 ```
 
 ### -VaultName
-Boltozat neve.
-A parancsmag a pince teljes tartománynevét a név és a jelenleg kijelölt környezet alapján építi fel.
+Tároló neve.
+A parancsmag a név és a jelenleg kijelölt környezet alapján építi fel egy tároló teljes tartománynevét.
 
 ```yaml
 Type: String
@@ -87,8 +87,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: SwitchParameter
@@ -103,7 +103,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik.
 A parancsmag nem fut.
 
 ```yaml
@@ -119,22 +119,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. kulccsal. modellek. Secret
+### Microsoft.Azure.Commands.KeyVault.Models.Secret
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
 [Remove-AzKeyVaultSecret](./Remove-AzKeyVaultSecret.md)
 
-[Add-AzKeyVaultSecret](./Add-AzKeyVaultSecret.md)
 
 [Get-AzKeyVaultSecret](./Get-AzKeyVaultSecret.md)
