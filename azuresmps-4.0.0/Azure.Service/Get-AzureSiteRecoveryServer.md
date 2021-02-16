@@ -3,19 +3,19 @@ external help file: Microsoft.Azure.Commands.RecoveryServicesRdfe.dll-Help.xml
 ms.assetid: 3EC274C9-9BF6-4B39-BC70-C7F9D780805D
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: a4081d6d072aadd6a4ae7d09ff57748a8f2cb697
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 79b61501a56913fedb2a003d7aea1a041bfab4d5
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94015580"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100412282"
 ---
 # Get-AzureSiteRecoveryServer
 
-## Áttekintés
-A webhely-helyreállítási kiszolgálók regisztrálták a webhely-helyreállítási boltozatot.
+## SYNOPSIS
+A webhely-helyreállítási kiszolgálóknak be kell regisztrálnia egy webhely-helyreállítási tárolót.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### Alapértelmezett (alapértelmezett)
 ```
@@ -32,12 +32,12 @@ Get-AzureSiteRecoveryServer -Id <String> [-Profile <AzureSMProfile>] [<CommonPar
 Get-AzureSiteRecoveryServer -Name <String> [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## Leírás
-A **Get-AzureSiteRecoveryServer** parancsmag a jelenlegi webhely-helyreállítási boltozathoz regisztrált Azure-webhelyek helyreállítási kiszolgálóiról tartalmaz információkat.
+## LEÍRÁS
+A **Get-AzureSiteRecoveryServer** parancsmag információkat kap az aktuális webhely-helyreállítási tárolóban regisztrált Azure Site Recovery-kiszolgálókról.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: információ kérése egy webhely-helyreállítási kiszolgálón
+### 1. példa: Információ a webhely-helyreállítási kiszolgálóról
 ```
 PS C:\> Get-AzureSiteRecoveryServer
 ID              : cd7dec80-1144-4531-9ab3-888b8ab39bee
@@ -53,12 +53,12 @@ ProviderVersion : 3.5
 ServerVersion   : 3.2.7510.0
 ```
 
-Ez a parancs információt kap az Azure webhely-helyreállítási kiszolgálóról.
+Ez a parancs információkat kap az Azure Webhely-helyreállítási kiszolgálóról.
 
-## PARAMÉTEREK
+## PARAMETERS
 
-### -Azonosító
-A kiszolgáló AZONOSÍTÓját adja meg.
+### -Id
+Egy kiszolgáló azonosítóját adja meg.
 
 ```yaml
 Type: String
@@ -72,7 +72,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (név)
+### -Name
 A kiszolgáló nevét adja meg.
 
 ```yaml
@@ -88,8 +88,8 @@ Accept wildcard characters: False
 ```
 
 ### -Profil
-Azt az Azure-profilt adja meg, amelyből a parancsmag olvasható.
-Ha nem ad meg profilt, a parancsmag a helyi alapértelmezett profilból olvassa be a szöveget.
+Azt az Azure-profilt adja meg, amelyből a parancsmag olvas.
+Ha nem ad meg profilt, ez a parancsmag a helyi alapértelmezett profilból olvassa be.
 
 ```yaml
 Type: AzureSMProfile
@@ -104,16 +104,16 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
 ## KIMENETEK
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Azure site Recovery Services-parancsmagok](./Azure.SiteRecoveryServices.md)
+
 
 

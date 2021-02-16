@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitARPTable.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitARPTable.md
-ms.openlocfilehash: ce1e05106350adda37ffa5877585ff37337dad87
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 04c4355caaa76776a96e2619a0080b9c32d8e98a
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93837610"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100412214"
 ---
 # Get-AzExpressRouteCircuitARPTable
 
-## Áttekintés
-Az ARP-táblázatot egy ExpressRoute-áramkörről kapja.
+## SYNOPSIS
+Az ARP táblázatot egy ExpressRoute-áramkörből kapja.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 Get-AzExpressRouteCircuitARPTable -ResourceGroupName <String> -ExpressRouteCircuitName <String>
@@ -26,20 +26,20 @@ Get-AzExpressRouteCircuitARPTable -ResourceGroupName <String> -ExpressRouteCircu
  [<CommonParameters>]
 ```
 
-## Leírás
-A **Get-AzExpressRouteCircuitARPTable** PARANCSMAG az ARP-táblázatot az ExpressRoute-áramkör mindkét felületéről lekérdezi. Az ARP-táblázat az IPv4-cím megfeleltetését adja meg a MAC-címnek egy adott társközi számára. Az ARP-táblázat segítségével ellenőrizheti a Layer 2 konfigurációt és a kapcsolódást.
+## LEÍRÁS
+A **Get-AzExpressRouteCircuitARPTable** parancsmag beolvassa az ARP táblázatot egy ExpressRoute-áramkör mindkét felületéről. Az ARP tábla az IPv4-cím MAC-címre való megfeleltetését biztosítja egy adott társviszonyhoz. Az ARP táblázattal ellenőrizheti a 2. réteg konfigurációját és csatlakozását.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: az ExpressRoute társközi ARP-táblázatának megjelenítése
+### 1. példa: ExpressRoute-társ ARP táblázatának megjelenítése
 ```
 Get-AzExpressRouteCircuitARPTable -ResourceGroupName $RG -ExpressRouteCircuitName $CircuitName -PeeringType MicrosoftPeering -DevicePath Primary
 ```
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -54,7 +54,7 @@ Accept wildcard characters: False
 ```
 
 ### -DevicePath
-A paraméter elfogadható értékei a következők: `Primary` vagy `Secondary`
+A paraméter elfogadható értékei a következőek: `Primary` vagy `Secondary`
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.DevicePathEnum
@@ -70,7 +70,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpressRouteCircuitName
-A vizsgált ExpressRoute-áramkör neve.
+Az ExpressRoute-áramkör neve.
 
 ```yaml
 Type: System.String
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -PeeringType
-A paraméter elfogadható értékei a következők: `AzurePrivatePeering` , `AzurePublicPeering` és `MicrosoftPeering`
+A paraméter elfogadható értékei a következőek: `AzurePrivatePeering` `AzurePublicPeering` , és `MicrosoftPeering`
 
 ```yaml
 Type: System.String
@@ -116,17 +116,17 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. commands. Network. models. PSExpressRouteCircuitArpTable
+### Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuitArpTable
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
@@ -134,4 +134,4 @@ Ez a parancsmag a következő általános paramétereket támogatja:-debug,-Erro
 
 [Get-AzExpressRouteCircuitRouteTableSummary](Get-AzExpressRouteCircuitRouteTableSummary.md)
 
-[Get-AzExpressRouteCircuitStats](Get-AzExpressRouteCircuitStats.md)
+[Get-AzExpressRouteCircuitStat](Get-AzExpressRouteCircuitStat.md)
