@@ -5,31 +5,31 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzPacketCaptureFilterConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzPacketCaptureFilterConfig.md
-ms.openlocfilehash: c81eada89865585ae56af2ed629ee17e43d57aa8
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: d7dac006abf09ec7c80d4a7e7659405936a8d20e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94011772"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100408542"
 ---
-# <span data-ttu-id="7ebdc-101">New-AzPacketCaptureFilterConfig</span><span class="sxs-lookup"><span data-stu-id="7ebdc-101">New-AzPacketCaptureFilterConfig</span></span>
+# <span data-ttu-id="6a53b-101">New-AzPacketCaptureFilterConfig</span><span class="sxs-lookup"><span data-stu-id="6a53b-101">New-AzPacketCaptureFilterConfig</span></span>
 
-## <span data-ttu-id="7ebdc-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="7ebdc-102">SYNOPSIS</span></span>
-<span data-ttu-id="7ebdc-103">Új csomagkapcsolt rögzítési szűrő objektum létrehozása</span><span class="sxs-lookup"><span data-stu-id="7ebdc-103">Creates a new packet capture filter object.</span></span>
+## <span data-ttu-id="6a53b-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="6a53b-102">SYNOPSIS</span></span>
+<span data-ttu-id="6a53b-103">Létrehoz egy új csomagrögzítési szűrőobjektumot.</span><span class="sxs-lookup"><span data-stu-id="6a53b-103">Creates a new packet capture filter object.</span></span>
 
-## <span data-ttu-id="7ebdc-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="7ebdc-104">SYNTAX</span></span>
+## <span data-ttu-id="6a53b-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="6a53b-104">SYNTAX</span></span>
 
 ```
 New-AzPacketCaptureFilterConfig [-Protocol <String>] [-RemoteIPAddress <String>] [-LocalIPAddress <String>]
  [-LocalPort <String>] [-RemotePort <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="7ebdc-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="7ebdc-105">DESCRIPTION</span></span>
-<span data-ttu-id="7ebdc-106">Az New-AzPacketCaptureFilterConfig parancsmag létrehoz egy új csomagkapcsolt rögzítési szűrő objektumot.</span><span class="sxs-lookup"><span data-stu-id="7ebdc-106">The New-AzPacketCaptureFilterConfig cmdlet creates a new packet capture filter object.</span></span> <span data-ttu-id="7ebdc-107">Ezzel az objektummal korlátozható, hogy milyen típusú csomagokat rögzít a program a csomag rögzítésekor a megadott feltételekkel.</span><span class="sxs-lookup"><span data-stu-id="7ebdc-107">This object is used to restrict the type of packets that are captured during a packet capture session using the specified criteria.</span></span> <span data-ttu-id="7ebdc-108">A New-AzNetworkWatcherPacketCapture parancsmag több szűrő objektumot is elfogadhat a komponált rögzítési munkamenetek engedélyezéséhez.</span><span class="sxs-lookup"><span data-stu-id="7ebdc-108">The New-AzNetworkWatcherPacketCapture cmdlet can accept multiple filter objects to enable composable capture sessions.</span></span>
+## <span data-ttu-id="6a53b-105">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="6a53b-105">DESCRIPTION</span></span>
+<span data-ttu-id="6a53b-106">A New-AzPacketCaptureFilterConfig parancsmag létrehoz egy új csomagrögzítési szűrőobjektumot.</span><span class="sxs-lookup"><span data-stu-id="6a53b-106">The New-AzPacketCaptureFilterConfig cmdlet creates a new packet capture filter object.</span></span> <span data-ttu-id="6a53b-107">Ezzel az objektummal korlátozható a csomagrögzítési munkamenet során rögzített csomagok típusa a megadott feltételekkel.</span><span class="sxs-lookup"><span data-stu-id="6a53b-107">This object is used to restrict the type of packets that are captured during a packet capture session using the specified criteria.</span></span> <span data-ttu-id="6a53b-108">A New-AzNetworkWatcherPacketCapture parancsmag több szűrőobjektumot is elfogadhat a kompatibilis rögzítési munkamenetek engedélyezéséhez.</span><span class="sxs-lookup"><span data-stu-id="6a53b-108">The New-AzNetworkWatcherPacketCapture cmdlet can accept multiple filter objects to enable composable capture sessions.</span></span>
 
-## <span data-ttu-id="7ebdc-109">Példák</span><span class="sxs-lookup"><span data-stu-id="7ebdc-109">EXAMPLES</span></span>
+## <span data-ttu-id="6a53b-109">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="6a53b-109">EXAMPLES</span></span>
 
-### <span data-ttu-id="7ebdc-110">Példa 1: több szűrőből álló csomag létrehozása</span><span class="sxs-lookup"><span data-stu-id="7ebdc-110">Example 1: Create a Packet Capture with multiple filters</span></span>
+### <span data-ttu-id="6a53b-110">1. példa: Csomagrögzítés létrehozása több szűrővel</span><span class="sxs-lookup"><span data-stu-id="6a53b-110">Example 1: Create a Packet Capture with multiple filters</span></span>
 ```
 $nw = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" } 
 $networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName 
@@ -41,12 +41,12 @@ $filter2 = New-AzPacketCaptureFilterConfig -Protocol UDP
 New-AzNetworkWatcherPacketCapture -NetworkWatcher $networkWatcher -TargetVirtualMachineId $vm.Id -PacketCaptureName "PacketCaptureTest" -StorageAccountId $storageAccount.id -TimeLimitInSeconds 60 -Filters $filter1, $filter2
 ```
 
-<span data-ttu-id="7ebdc-111">Ebben a példában a "PacketCaptureTest" nevű csomagot hozzuk létre több szűrővel és időkorlátozással.</span><span class="sxs-lookup"><span data-stu-id="7ebdc-111">In this example we create a packet capture named "PacketCaptureTest" with multiple filters and a time limit.</span></span> <span data-ttu-id="7ebdc-112">A munkamenet befejezésekor a program a megadott tárterület-fiókba menti a fájlt.</span><span class="sxs-lookup"><span data-stu-id="7ebdc-112">Once the session is complete, it will be saved to the specified storage account.</span></span> <span data-ttu-id="7ebdc-113">Megjegyzés: az Azure Network Watcher bővítménynek telepítve kell lennie a cél virtuális gépen a csomag rögzítéséhez.</span><span class="sxs-lookup"><span data-stu-id="7ebdc-113">Note: The Azure Network Watcher extension must be installed on the target virtual machine to create packet captures.</span></span>
+<span data-ttu-id="6a53b-111">Ebben a példában létrehozunk egy "PacketCaptureTest" nevű csomagrögzítést több szűrővel és egy időkorláttal.</span><span class="sxs-lookup"><span data-stu-id="6a53b-111">In this example we create a packet capture named "PacketCaptureTest" with multiple filters and a time limit.</span></span> <span data-ttu-id="6a53b-112">A munkamenet befejezése után a rendszer a megadott tárfiókba menti a munkamenetet.</span><span class="sxs-lookup"><span data-stu-id="6a53b-112">Once the session is complete, it will be saved to the specified storage account.</span></span> <span data-ttu-id="6a53b-113">Megjegyzés: Csomagrögzítések létrehozásához az Azure Network Watcher bővítményt telepíteni kell a cél virtuális gépre.</span><span class="sxs-lookup"><span data-stu-id="6a53b-113">Note: The Azure Network Watcher extension must be installed on the target virtual machine to create packet captures.</span></span>
 
-## <span data-ttu-id="7ebdc-114">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="7ebdc-114">PARAMETERS</span></span>
+## <span data-ttu-id="6a53b-114">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="6a53b-114">PARAMETERS</span></span>
 
-### <span data-ttu-id="7ebdc-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="7ebdc-115">-DefaultProfile</span></span>
-<span data-ttu-id="7ebdc-116">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="7ebdc-116">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="6a53b-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="6a53b-115">-DefaultProfile</span></span>
+<span data-ttu-id="6a53b-116">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="6a53b-116">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -60,11 +60,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7ebdc-117">-LocalIPAddress</span><span class="sxs-lookup"><span data-stu-id="7ebdc-117">-LocalIPAddress</span></span>
-<span data-ttu-id="7ebdc-118">A szűrni kívánt helyi IP-címet adja meg.</span><span class="sxs-lookup"><span data-stu-id="7ebdc-118">Specifies the Local IP Address to filter on.</span></span>
-<span data-ttu-id="7ebdc-119">Példa bemenetekre: "127.0.0.1" az egyetlen cím bejegyzéshez.</span><span class="sxs-lookup"><span data-stu-id="7ebdc-119">Example inputs: "127.0.0.1" for single address entry.</span></span>
-<span data-ttu-id="7ebdc-120">"127.0.0.1-127.0.0.255" a tartománnyal kapcsolatban.</span><span class="sxs-lookup"><span data-stu-id="7ebdc-120">"127.0.0.1-127.0.0.255" for range.</span></span>
-<span data-ttu-id="7ebdc-121">"127.0.0.1; 127.0.0.5;" több bejegyzéshez.</span><span class="sxs-lookup"><span data-stu-id="7ebdc-121">"127.0.0.1;127.0.0.5;" for multiple entries.</span></span>
+### <span data-ttu-id="6a53b-117">-LocalIPAddress</span><span class="sxs-lookup"><span data-stu-id="6a53b-117">-LocalIPAddress</span></span>
+<span data-ttu-id="6a53b-118">Megadja azt a helyi IP-címet, amely alapján szűrni kell.</span><span class="sxs-lookup"><span data-stu-id="6a53b-118">Specifies the Local IP Address to filter on.</span></span>
+<span data-ttu-id="6a53b-119">Példa: "127.0.0.1" egyetlen címbejegyzéshez.</span><span class="sxs-lookup"><span data-stu-id="6a53b-119">Example inputs: "127.0.0.1" for single address entry.</span></span>
+<span data-ttu-id="6a53b-120">"127.0.0.1-127.0.0.255" a tartományhoz.</span><span class="sxs-lookup"><span data-stu-id="6a53b-120">"127.0.0.1-127.0.0.255" for range.</span></span>
+<span data-ttu-id="6a53b-121">"127.0.0.1;127.0.0.5;" több bejegyzés esetén.</span><span class="sxs-lookup"><span data-stu-id="6a53b-121">"127.0.0.1;127.0.0.5;" for multiple entries.</span></span>
 
 ```yaml
 Type: System.String
@@ -78,11 +78,11 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7ebdc-122">-LocalPort</span><span class="sxs-lookup"><span data-stu-id="7ebdc-122">-LocalPort</span></span>
-<span data-ttu-id="7ebdc-123">A szűrni kívánt helyi IP-címet adja meg.</span><span class="sxs-lookup"><span data-stu-id="7ebdc-123">Specifies the Local IP Address to filter on.</span></span>
-<span data-ttu-id="7ebdc-124">Példa bemenetekre: "127.0.0.1" az egyetlen cím bejegyzéshez.</span><span class="sxs-lookup"><span data-stu-id="7ebdc-124">Example inputs: "127.0.0.1" for single address entry.</span></span>
-<span data-ttu-id="7ebdc-125">"127.0.0.1-127.0.0.255" a tartománnyal kapcsolatban.</span><span class="sxs-lookup"><span data-stu-id="7ebdc-125">"127.0.0.1-127.0.0.255" for range.</span></span>
-<span data-ttu-id="7ebdc-126">"127.0.0.1; 127.0.0.5;" több bejegyzéshez.</span><span class="sxs-lookup"><span data-stu-id="7ebdc-126">"127.0.0.1;127.0.0.5;" for multiple entries.</span></span>
+### <span data-ttu-id="6a53b-122">-LocalPort</span><span class="sxs-lookup"><span data-stu-id="6a53b-122">-LocalPort</span></span>
+<span data-ttu-id="6a53b-123">Megadja azt a helyi IP-címet, amely alapján szűrni kell.</span><span class="sxs-lookup"><span data-stu-id="6a53b-123">Specifies the Local IP Address to filter on.</span></span>
+<span data-ttu-id="6a53b-124">Példa: "127.0.0.1" egyetlen címbejegyzéshez.</span><span class="sxs-lookup"><span data-stu-id="6a53b-124">Example inputs: "127.0.0.1" for single address entry.</span></span>
+<span data-ttu-id="6a53b-125">"127.0.0.1-127.0.0.255" a tartományhoz.</span><span class="sxs-lookup"><span data-stu-id="6a53b-125">"127.0.0.1-127.0.0.255" for range.</span></span>
+<span data-ttu-id="6a53b-126">"127.0.0.1;127.0.0.5;" több bejegyzés esetén.</span><span class="sxs-lookup"><span data-stu-id="6a53b-126">"127.0.0.1;127.0.0.5;" for multiple entries.</span></span>
 
 ```yaml
 Type: System.String
@@ -96,8 +96,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7ebdc-127">-Protocol</span><span class="sxs-lookup"><span data-stu-id="7ebdc-127">-Protocol</span></span>
-<span data-ttu-id="7ebdc-128">Azt a protokollt adja meg, amelyre szűrni szeretne.</span><span class="sxs-lookup"><span data-stu-id="7ebdc-128">Specifies the Protocol to filter on.</span></span> <span data-ttu-id="7ebdc-129">Elfogadható értékek "TCP", "UDP", "any"</span><span class="sxs-lookup"><span data-stu-id="7ebdc-129">Acceptable values "TCP","UDP","Any"</span></span>
+### <span data-ttu-id="6a53b-127">-Protocol</span><span class="sxs-lookup"><span data-stu-id="6a53b-127">-Protocol</span></span>
+<span data-ttu-id="6a53b-128">Azt a protokollt adja meg, amely alapján szűrni kell.</span><span class="sxs-lookup"><span data-stu-id="6a53b-128">Specifies the Protocol to filter on.</span></span> <span data-ttu-id="6a53b-129">Elfogadható értékek: "TCP","UDP","Any"</span><span class="sxs-lookup"><span data-stu-id="6a53b-129">Acceptable values "TCP","UDP","Any"</span></span>
 
 ```yaml
 Type: System.String
@@ -111,11 +111,11 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7ebdc-130">-RemoteIPAddress</span><span class="sxs-lookup"><span data-stu-id="7ebdc-130">-RemoteIPAddress</span></span>
-<span data-ttu-id="7ebdc-131">A szűrni kívánt távoli IP-címet adja meg.</span><span class="sxs-lookup"><span data-stu-id="7ebdc-131">Specifies the remote IP address to filter on.</span></span>
-<span data-ttu-id="7ebdc-132">Példa bemenetekre: "127.0.0.1" az egyetlen cím bejegyzéshez.</span><span class="sxs-lookup"><span data-stu-id="7ebdc-132">Example inputs: "127.0.0.1" for single address entry.</span></span>
-<span data-ttu-id="7ebdc-133">"127.0.0.1-127.0.0.255" a tartománnyal kapcsolatban.</span><span class="sxs-lookup"><span data-stu-id="7ebdc-133">"127.0.0.1-127.0.0.255" for range.</span></span>
-<span data-ttu-id="7ebdc-134">"127.0.0.1; 127.0.0.5;" több bejegyzéshez.</span><span class="sxs-lookup"><span data-stu-id="7ebdc-134">"127.0.0.1;127.0.0.5;" for multiple entries.</span></span>
+### <span data-ttu-id="6a53b-130">-RemoteIPAddress</span><span class="sxs-lookup"><span data-stu-id="6a53b-130">-RemoteIPAddress</span></span>
+<span data-ttu-id="6a53b-131">Megadja azt a távoli IP-címet, amely alapján szűrni kell.</span><span class="sxs-lookup"><span data-stu-id="6a53b-131">Specifies the remote IP address to filter on.</span></span>
+<span data-ttu-id="6a53b-132">Példa: "127.0.0.1" egyetlen címbejegyzéshez.</span><span class="sxs-lookup"><span data-stu-id="6a53b-132">Example inputs: "127.0.0.1" for single address entry.</span></span>
+<span data-ttu-id="6a53b-133">"127.0.0.1-127.0.0.255" a tartományhoz.</span><span class="sxs-lookup"><span data-stu-id="6a53b-133">"127.0.0.1-127.0.0.255" for range.</span></span>
+<span data-ttu-id="6a53b-134">"127.0.0.1;127.0.0.5;" több bejegyzés esetén.</span><span class="sxs-lookup"><span data-stu-id="6a53b-134">"127.0.0.1;127.0.0.5;" for multiple entries.</span></span>
 
 ```yaml
 Type: System.String
@@ -129,11 +129,11 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7ebdc-135">-TávoliPORT</span><span class="sxs-lookup"><span data-stu-id="7ebdc-135">-RemotePort</span></span>
-<span data-ttu-id="7ebdc-136">A szűrni kívánt távoli portot adja meg.</span><span class="sxs-lookup"><span data-stu-id="7ebdc-136">Specifies the Remote Port to filter on.</span></span>
-<span data-ttu-id="7ebdc-137">Távoli port – például bemenetek: "80" egy portos bejegyzéshez.</span><span class="sxs-lookup"><span data-stu-id="7ebdc-137">Remote port Example inputs: "80" for single port entry.</span></span>
-<span data-ttu-id="7ebdc-138">"80-85" a tartománnyal kapcsolatban.</span><span class="sxs-lookup"><span data-stu-id="7ebdc-138">"80-85" for range.</span></span>
-<span data-ttu-id="7ebdc-139">"80; 443;" több bejegyzéshez.</span><span class="sxs-lookup"><span data-stu-id="7ebdc-139">"80;443;" for multiple entries.</span></span>
+### <span data-ttu-id="6a53b-135">-RemotePort</span><span class="sxs-lookup"><span data-stu-id="6a53b-135">-RemotePort</span></span>
+<span data-ttu-id="6a53b-136">Megadja a távoli portot, amely alapján szűrni kell.</span><span class="sxs-lookup"><span data-stu-id="6a53b-136">Specifies the Remote Port to filter on.</span></span>
+<span data-ttu-id="6a53b-137">Távoli port – Példa: "80" egyetlen port bejegyzéséhez.</span><span class="sxs-lookup"><span data-stu-id="6a53b-137">Remote port Example inputs: "80" for single port entry.</span></span>
+<span data-ttu-id="6a53b-138">"80-85" a tartományhoz.</span><span class="sxs-lookup"><span data-stu-id="6a53b-138">"80-85" for range.</span></span>
+<span data-ttu-id="6a53b-139">"80;443;" több bejegyzés esetén.</span><span class="sxs-lookup"><span data-stu-id="6a53b-139">"80;443;" for multiple entries.</span></span>
 
 ```yaml
 Type: System.String
@@ -147,72 +147,72 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7ebdc-140">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="7ebdc-140">CommonParameters</span></span>
-<span data-ttu-id="7ebdc-141">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="7ebdc-141">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="7ebdc-142">További információ: about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="7ebdc-142">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="6a53b-140">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="6a53b-140">CommonParameters</span></span>
+<span data-ttu-id="6a53b-141">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="6a53b-141">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="6a53b-142">További információt a about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="6a53b-142">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="7ebdc-143">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="7ebdc-143">INPUTS</span></span>
+## <span data-ttu-id="6a53b-143">INPUTS</span><span class="sxs-lookup"><span data-stu-id="6a53b-143">INPUTS</span></span>
 
-### <span data-ttu-id="7ebdc-144">System. String</span><span class="sxs-lookup"><span data-stu-id="7ebdc-144">System.String</span></span>
+### <span data-ttu-id="6a53b-144">System.String</span><span class="sxs-lookup"><span data-stu-id="6a53b-144">System.String</span></span>
 
-## <span data-ttu-id="7ebdc-145">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="7ebdc-145">OUTPUTS</span></span>
+## <span data-ttu-id="6a53b-145">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="6a53b-145">OUTPUTS</span></span>
 
-### <span data-ttu-id="7ebdc-146">Microsoft. Azure. commands. Network. models. PSPacketCaptureFilter</span><span class="sxs-lookup"><span data-stu-id="7ebdc-146">Microsoft.Azure.Commands.Network.Models.PSPacketCaptureFilter</span></span>
+### <span data-ttu-id="6a53b-146">Microsoft.Azure.Commands.Network.Models.PSPacketCaptureFilter</span><span class="sxs-lookup"><span data-stu-id="6a53b-146">Microsoft.Azure.Commands.Network.Models.PSPacketCaptureFilter</span></span>
 
-## <span data-ttu-id="7ebdc-147">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="7ebdc-147">NOTES</span></span>
-<span data-ttu-id="7ebdc-148">Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, hálózat, figyelő, csomag, rögzítés, forgalom, szűrő</span><span class="sxs-lookup"><span data-stu-id="7ebdc-148">Keywords: azure, azurerm, arm, resource, management, manager, network, networking, watcher, packet, capture, traffic, filter</span></span> 
+## <span data-ttu-id="6a53b-147">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="6a53b-147">NOTES</span></span>
+<span data-ttu-id="6a53b-148">Kulcsszavak: azure, azurerm, arm, erőforrás, kezelés, vezető, hálózat, hálózatkezelés, figyelő, csomag, rögzítés, forgalom, szűrés</span><span class="sxs-lookup"><span data-stu-id="6a53b-148">Keywords: azure, azurerm, arm, resource, management, manager, network, networking, watcher, packet, capture, traffic, filter</span></span> 
 
-## <span data-ttu-id="7ebdc-149">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="7ebdc-149">RELATED LINKS</span></span>
+## <span data-ttu-id="6a53b-149">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="6a53b-149">RELATED LINKS</span></span>
 
-[<span data-ttu-id="7ebdc-150">Új – AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="7ebdc-150">New-AzNetworkWatcher</span></span>](./New-AzNetworkWatcher.md)
+[<span data-ttu-id="6a53b-150">New-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="6a53b-150">New-AzNetworkWatcher</span></span>](./New-AzNetworkWatcher.md)
 
-[<span data-ttu-id="7ebdc-151">Get-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="7ebdc-151">Get-AzNetworkWatcher</span></span>](./Get-AzNetworkWatcher.md)
+[<span data-ttu-id="6a53b-151">Get-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="6a53b-151">Get-AzNetworkWatcher</span></span>](./Get-AzNetworkWatcher.md)
 
-[<span data-ttu-id="7ebdc-152">Remove-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="7ebdc-152">Remove-AzNetworkWatcher</span></span>](./Remove-AzNetworkWatcher.md)
+[<span data-ttu-id="6a53b-152">Remove-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="6a53b-152">Remove-AzNetworkWatcher</span></span>](./Remove-AzNetworkWatcher.md)
 
-[<span data-ttu-id="7ebdc-153">Get-AzNetworkWatcherNextHop</span><span class="sxs-lookup"><span data-stu-id="7ebdc-153">Get-AzNetworkWatcherNextHop</span></span>](./Get-AzNetworkWatcherNextHop.md)
+[<span data-ttu-id="6a53b-153">Get-AzNetworkWatcherNextHop</span><span class="sxs-lookup"><span data-stu-id="6a53b-153">Get-AzNetworkWatcherNextHop</span></span>](./Get-AzNetworkWatcherNextHop.md)
 
-[<span data-ttu-id="7ebdc-154">Get-AzNetworkWatcherSecurityGroupView</span><span class="sxs-lookup"><span data-stu-id="7ebdc-154">Get-AzNetworkWatcherSecurityGroupView</span></span>](./Get-AzNetworkWatcherSecurityGroupView.md)
+[<span data-ttu-id="6a53b-154">Get-AzNetworkWatcherSecurityGroupView</span><span class="sxs-lookup"><span data-stu-id="6a53b-154">Get-AzNetworkWatcherSecurityGroupView</span></span>](./Get-AzNetworkWatcherSecurityGroupView.md)
 
-[<span data-ttu-id="7ebdc-155">Get-AzNetworkWatcherTopology</span><span class="sxs-lookup"><span data-stu-id="7ebdc-155">Get-AzNetworkWatcherTopology</span></span>](./Get-AzNetworkWatcherTopology.md)
+[<span data-ttu-id="6a53b-155">Get-AzNetworkWatcherTopology</span><span class="sxs-lookup"><span data-stu-id="6a53b-155">Get-AzNetworkWatcherTopology</span></span>](./Get-AzNetworkWatcherTopology.md)
 
-[<span data-ttu-id="7ebdc-156">Start-AzNetworkWatcherResourceTroubleshooting</span><span class="sxs-lookup"><span data-stu-id="7ebdc-156">Start-AzNetworkWatcherResourceTroubleshooting</span></span>](./Start-AzNetworkWatcherResourceTroubleshooting.md)
+[<span data-ttu-id="6a53b-156">Start-AzNetworkWatcherResourceTroubleshooting</span><span class="sxs-lookup"><span data-stu-id="6a53b-156">Start-AzNetworkWatcherResourceTroubleshooting</span></span>](./Start-AzNetworkWatcherResourceTroubleshooting.md)
 
-[<span data-ttu-id="7ebdc-157">Új – AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="7ebdc-157">New-AzNetworkWatcherPacketCapture</span></span>](./New-AzNetworkWatcherPacketCapture.md)
+[<span data-ttu-id="6a53b-157">New-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="6a53b-157">New-AzNetworkWatcherPacketCapture</span></span>](./New-AzNetworkWatcherPacketCapture.md)
 
-[<span data-ttu-id="7ebdc-158">Új – AzPacketCaptureFilterConfig</span><span class="sxs-lookup"><span data-stu-id="7ebdc-158">New-AzPacketCaptureFilterConfig</span></span>](./New-AzPacketCaptureFilterConfig.md)
+[<span data-ttu-id="6a53b-158">New-AzPacketCaptureFilterConfig</span><span class="sxs-lookup"><span data-stu-id="6a53b-158">New-AzPacketCaptureFilterConfig</span></span>](./New-AzPacketCaptureFilterConfig.md)
 
-[<span data-ttu-id="7ebdc-159">Get-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="7ebdc-159">Get-AzNetworkWatcherPacketCapture</span></span>](./Get-AzNetworkWatcherPacketCapture.md)
+[<span data-ttu-id="6a53b-159">Get-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="6a53b-159">Get-AzNetworkWatcherPacketCapture</span></span>](./Get-AzNetworkWatcherPacketCapture.md)
 
-[<span data-ttu-id="7ebdc-160">Remove-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="7ebdc-160">Remove-AzNetworkWatcherPacketCapture</span></span>](./Remove-AzNetworkWatcherPacketCapture.md)
+[<span data-ttu-id="6a53b-160">Remove-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="6a53b-160">Remove-AzNetworkWatcherPacketCapture</span></span>](./Remove-AzNetworkWatcherPacketCapture.md)
 
-[<span data-ttu-id="7ebdc-161">Stop-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="7ebdc-161">Stop-AzNetworkWatcherPacketCapture</span></span>](./Stop-AzNetworkWatcherPacketCapture.md)
+[<span data-ttu-id="6a53b-161">Stop-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="6a53b-161">Stop-AzNetworkWatcherPacketCapture</span></span>](./Stop-AzNetworkWatcherPacketCapture.md)
 
-[<span data-ttu-id="7ebdc-162">Új – AzNetworkWatcherProtocolConfiguration</span><span class="sxs-lookup"><span data-stu-id="7ebdc-162">New-AzNetworkWatcherProtocolConfiguration</span></span>](./New-AzNetworkWatcherProtocolConfiguration.md)
+[<span data-ttu-id="6a53b-162">New-AzNetworkWatcherProtocolConfiguration</span><span class="sxs-lookup"><span data-stu-id="6a53b-162">New-AzNetworkWatcherProtocolConfiguration</span></span>](./New-AzNetworkWatcherProtocolConfiguration.md)
 
-[<span data-ttu-id="7ebdc-163">Teszt-AzNetworkWatcherIPFlow</span><span class="sxs-lookup"><span data-stu-id="7ebdc-163">Test-AzNetworkWatcherIPFlow</span></span>](./Test-AzNetworkWatcherIPFlow.md)
+[<span data-ttu-id="6a53b-163">Test-AzNetworkWatcherIPFlow</span><span class="sxs-lookup"><span data-stu-id="6a53b-163">Test-AzNetworkWatcherIPFlow</span></span>](./Test-AzNetworkWatcherIPFlow.md)
 
-[<span data-ttu-id="7ebdc-164">Teszt-AzNetworkWatcherConnectivity</span><span class="sxs-lookup"><span data-stu-id="7ebdc-164">Test-AzNetworkWatcherConnectivity</span></span>](./Test-AzNetworkWatcherConnectivity.md)
+[<span data-ttu-id="6a53b-164">Test-AzNetworkWatcherConnectivity</span><span class="sxs-lookup"><span data-stu-id="6a53b-164">Test-AzNetworkWatcherConnectivity</span></span>](./Test-AzNetworkWatcherConnectivity.md)
 
-[<span data-ttu-id="7ebdc-165">Stop-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="7ebdc-165">Stop-AzNetworkWatcherConnectionMonitor</span></span>](./Stop-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="6a53b-165">Stop-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="6a53b-165">Stop-AzNetworkWatcherConnectionMonitor</span></span>](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="7ebdc-166">Start-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="7ebdc-166">Start-AzNetworkWatcherConnectionMonitor</span></span>](./Start-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="6a53b-166">Start-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="6a53b-166">Start-AzNetworkWatcherConnectionMonitor</span></span>](./Start-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="7ebdc-167">Set-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="7ebdc-167">Set-AzNetworkWatcherConnectionMonitor</span></span>](./Set-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="6a53b-167">Set-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="6a53b-167">Set-AzNetworkWatcherConnectionMonitor</span></span>](./Set-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="7ebdc-168">Set-AzNetworkWatcherConfigFlowLog</span><span class="sxs-lookup"><span data-stu-id="7ebdc-168">Set-AzNetworkWatcherConfigFlowLog</span></span>](./Set-AzNetworkWatcherConfigFlowLog.md)
+[<span data-ttu-id="6a53b-168">Set-AzNetworkWatcherConfigFlowLog</span><span class="sxs-lookup"><span data-stu-id="6a53b-168">Set-AzNetworkWatcherConfigFlowLog</span></span>](./Set-AzNetworkWatcherConfigFlowLog.md)
 
-[<span data-ttu-id="7ebdc-169">Remove-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="7ebdc-169">Remove-AzNetworkWatcherConnectionMonitor</span></span>](./Remove-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="6a53b-169">Remove-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="6a53b-169">Remove-AzNetworkWatcherConnectionMonitor</span></span>](./Remove-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="7ebdc-170">Új – AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="7ebdc-170">New-AzNetworkWatcherConnectionMonitor</span></span>](./New-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="6a53b-170">New-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="6a53b-170">New-AzNetworkWatcherConnectionMonitor</span></span>](./New-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="7ebdc-171">Get-AzNetworkWatcherTroubleshootingResult</span><span class="sxs-lookup"><span data-stu-id="7ebdc-171">Get-AzNetworkWatcherTroubleshootingResult</span></span>](./Get-AzNetworkWatcherTroubleshootingResult.md)
+[<span data-ttu-id="6a53b-171">Get-AzNetworkWatcherTroubleshootingResult</span><span class="sxs-lookup"><span data-stu-id="6a53b-171">Get-AzNetworkWatcherTroubleshootingResult</span></span>](./Get-AzNetworkWatcherTroubleshootingResult.md)
 
-[<span data-ttu-id="7ebdc-172">Get-AzNetworkWatcherReachabilityReport</span><span class="sxs-lookup"><span data-stu-id="7ebdc-172">Get-AzNetworkWatcherReachabilityReport</span></span>](./Get-AzNetworkWatcherReachabilityReport.md)
+[<span data-ttu-id="6a53b-172">Get-AzNetworkWatcherReachabilityReport</span><span class="sxs-lookup"><span data-stu-id="6a53b-172">Get-AzNetworkWatcherReachabilityReport</span></span>](./Get-AzNetworkWatcherReachabilityReport.md)
 
-[<span data-ttu-id="7ebdc-173">Get-AzNetworkWatcherReachabilityProvidersList</span><span class="sxs-lookup"><span data-stu-id="7ebdc-173">Get-AzNetworkWatcherReachabilityProvidersList</span></span>](./Get-AzNetworkWatcherReachabilityProvidersList.md)
+[<span data-ttu-id="6a53b-173">Get-AzNetworkWatcherReachabilityProvidersList</span><span class="sxs-lookup"><span data-stu-id="6a53b-173">Get-AzNetworkWatcherReachabilityProvidersList</span></span>](./Get-AzNetworkWatcherReachabilityProvidersList.md)
 
-[<span data-ttu-id="7ebdc-174">Get-AzNetworkWatcherFlowLogStatus</span><span class="sxs-lookup"><span data-stu-id="7ebdc-174">Get-AzNetworkWatcherFlowLogStatus</span></span>](./Get-AzNetworkWatcherFlowLogStatus.md)
+[<span data-ttu-id="6a53b-174">Get-AzNetworkWatcherFlowLogStatus</span><span class="sxs-lookup"><span data-stu-id="6a53b-174">Get-AzNetworkWatcherFlowLogStatus</span></span>](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[<span data-ttu-id="7ebdc-175">Get-AzNetworkWatcherConnectionMonitorReport</span><span class="sxs-lookup"><span data-stu-id="7ebdc-175">Get-AzNetworkWatcherConnectionMonitorReport</span></span>](./Get-AzNetworkWatcherConnectionMonitorReport)
+[<span data-ttu-id="6a53b-175">Get-AzNetworkWatcherConnectionMonitorReport</span><span class="sxs-lookup"><span data-stu-id="6a53b-175">Get-AzNetworkWatcherConnectionMonitorReport</span></span>](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[<span data-ttu-id="7ebdc-176">Get-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="7ebdc-176">Get-AzNetworkWatcherConnectionMonitor</span></span>](./Get-AzNetworkWatcherConnectionMonitor)
+[<span data-ttu-id="6a53b-176">Get-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="6a53b-176">Get-AzNetworkWatcherConnectionMonitor</span></span>](./Get-AzNetworkWatcherConnectionMonitor.md)
