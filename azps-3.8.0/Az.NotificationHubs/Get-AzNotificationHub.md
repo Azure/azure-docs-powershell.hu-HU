@@ -6,47 +6,47 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.notificati
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHub.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHub.md
-ms.openlocfilehash: 6fc2cfd47d9b03fc02d935245d1ec87d6831d173
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 85dd5d73d2f0f4ce15dcffb2733f803cf6e67c0a
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94014507"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406281"
 ---
-# <span data-ttu-id="7bf75-101">Get-AzNotificationHub</span><span class="sxs-lookup"><span data-stu-id="7bf75-101">Get-AzNotificationHub</span></span>
+# <span data-ttu-id="a189b-101">Get-AzNotificationHub</span><span class="sxs-lookup"><span data-stu-id="a189b-101">Get-AzNotificationHub</span></span>
 
-## <span data-ttu-id="7bf75-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="7bf75-102">SYNOPSIS</span></span>
-<span data-ttu-id="7bf75-103">Információt kap az értesítési hubokról.</span><span class="sxs-lookup"><span data-stu-id="7bf75-103">Gets information about your notification hubs.</span></span>
+## <span data-ttu-id="a189b-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="a189b-102">SYNOPSIS</span></span>
+<span data-ttu-id="a189b-103">Információkat kap az értesítési központokról.</span><span class="sxs-lookup"><span data-stu-id="a189b-103">Gets information about your notification hubs.</span></span>
 
-## <span data-ttu-id="7bf75-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="7bf75-104">SYNTAX</span></span>
+## <span data-ttu-id="a189b-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="a189b-104">SYNTAX</span></span>
 
 ```
 Get-AzNotificationHub [-ResourceGroup] <String> [-Namespace] <String> [[-NotificationHub] <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="7bf75-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="7bf75-105">DESCRIPTION</span></span>
-<span data-ttu-id="7bf75-106">A **Get-AzNotificationHub** parancsmag információkat kap a megadott névtérben lévő értesítési hubokról, és egy adott erőforráscsoport számára van hozzárendelve.</span><span class="sxs-lookup"><span data-stu-id="7bf75-106">The **Get-AzNotificationHub** cmdlet gets information about the notification hubs in a specified namespace and assigned to a specified resource group.</span></span>
-<span data-ttu-id="7bf75-107">Információkat kaphat például az összes értesítési hubokról a névtér ContosoNamespace, és hozzárendelve a ContosoNotificationsGroup erőforráscsoporthoz.</span><span class="sxs-lookup"><span data-stu-id="7bf75-107">For example, you can get information for all the notification hubs in the namespace ContosoNamespace and assigned to the ContosoNotificationsGroup resource group.</span></span>
-<span data-ttu-id="7bf75-108">Másik lehetőségként a *NotificationHub* paraméterrel korlátozhatja a visszaadott adatokat az adott értesítési központra vonatkozó információkra.</span><span class="sxs-lookup"><span data-stu-id="7bf75-108">Alternatively, you can use the *NotificationHub* parameter to limit the returned data to information about a specific notification hub.</span></span>
-<span data-ttu-id="7bf75-109">Az értesítési hubok a leküldéses értesítéseket több ügyfélnek küldik el, függetlenül attól, hogy milyen platformról, például iOS, Android, Windows Phone 8 vagy Windows áruházból, ezek az ügyfelek használják őket.</span><span class="sxs-lookup"><span data-stu-id="7bf75-109">Notification hubs are used to send push notifications to multiple clients regardless of the platform, such as iOS, Android, Windows Phone 8, and Windows Store, used by those clients.</span></span>
-<span data-ttu-id="7bf75-110">Ezek a hubok nagyjából egyenértékűek az egyes alkalmazásokkal, és az egyes alkalmazások általában saját értesítési központtal rendelkeznek.</span><span class="sxs-lookup"><span data-stu-id="7bf75-110">These hubs are roughly equivalent to individual apps and each of your apps will typically have its own notification hub.</span></span>
-<span data-ttu-id="7bf75-111">Ez a parancsmag csak a hub adatait kapja meg.</span><span class="sxs-lookup"><span data-stu-id="7bf75-111">This cmdlet only gets information about the hub itself.</span></span>
-<span data-ttu-id="7bf75-112">Más parancsmagok, például a Get-AzNotificationHubAuthorizationRules, a Get-AzNotificationHubListKeys és a Get-AzNotificationHubPNSCredentials szükségesek a hub engedélyezési szabályairól, a csatlakozási karakterláncokról és a platform értesítési szolgáltatásának hitelesítő adatairól.</span><span class="sxs-lookup"><span data-stu-id="7bf75-112">Other cmdlets, such as Get-AzNotificationHubAuthorizationRules, Get-AzNotificationHubListKeys, and Get-AzNotificationHubPNSCredentials, are needed to get information about a hub's authorization rules, connection strings, and platform notification service credentials.</span></span>
+## <span data-ttu-id="a189b-105">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="a189b-105">DESCRIPTION</span></span>
+<span data-ttu-id="a189b-106">A **Get-AzNotificationHub** parancsmag információt kap egy megadott névtér értesítési központjáról, és hozzárendel egy adott erőforráscsoporthoz.</span><span class="sxs-lookup"><span data-stu-id="a189b-106">The **Get-AzNotificationHub** cmdlet gets information about the notification hubs in a specified namespace and assigned to a specified resource group.</span></span>
+<span data-ttu-id="a189b-107">Információkat kaphat például a ContosoNamespace névtér összes értesítési központjáról, és hozzárendelheti őket a ContosoNotificationsGroup erőforráscsoporthoz.</span><span class="sxs-lookup"><span data-stu-id="a189b-107">For example, you can get information for all the notification hubs in the namespace ContosoNamespace and assigned to the ContosoNotificationsGroup resource group.</span></span>
+<span data-ttu-id="a189b-108">Másik lehetőségként az *NotificationHub* paraméterrel korlátozhatja a visszaadott adatokat egy adott értesítési központ információira.</span><span class="sxs-lookup"><span data-stu-id="a189b-108">Alternatively, you can use the *NotificationHub* parameter to limit the returned data to information about a specific notification hub.</span></span>
+<span data-ttu-id="a189b-109">Az értesítési központokkal leküldéses értesítéseket lehet küldeni több ügyfélnek, függetlenül attól, hogy milyen platformot használnak (például iOS, Android, Windows Phone 8 és Windows Áruház).</span><span class="sxs-lookup"><span data-stu-id="a189b-109">Notification hubs are used to send push notifications to multiple clients regardless of the platform, such as iOS, Android, Windows Phone 8, and Windows Store, used by those clients.</span></span>
+<span data-ttu-id="a189b-110">Ezek a központok nagyjából egyenértékűek az egyes alkalmazásokkal, és mindegyik alkalmazásnak általában saját értesítési központja lesz.</span><span class="sxs-lookup"><span data-stu-id="a189b-110">These hubs are roughly equivalent to individual apps and each of your apps will typically have its own notification hub.</span></span>
+<span data-ttu-id="a189b-111">Ez a parancsmag csak a központról kap információt.</span><span class="sxs-lookup"><span data-stu-id="a189b-111">This cmdlet only gets information about the hub itself.</span></span>
+<span data-ttu-id="a189b-112">Más parancsmagokra, például a Get-AzNotificationHubAuthorizationRules, a Get-AzNotificationHubListKeys és a Get-AzNotificationHubPNSCredentials parancsmagra van szükség a központ engedélyezési szabályaival, kapcsolati karakterláncokkal és platformértesítési szolgáltatás hitelesítő adataival kapcsolatos információkhoz.</span><span class="sxs-lookup"><span data-stu-id="a189b-112">Other cmdlets, such as Get-AzNotificationHubAuthorizationRules, Get-AzNotificationHubListKeys, and Get-AzNotificationHubPNSCredentials, are needed to get information about a hub's authorization rules, connection strings, and platform notification service credentials.</span></span>
 
-## <span data-ttu-id="7bf75-113">Példák</span><span class="sxs-lookup"><span data-stu-id="7bf75-113">EXAMPLES</span></span>
+## <span data-ttu-id="a189b-113">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="a189b-113">EXAMPLES</span></span>
 
-### <span data-ttu-id="7bf75-114">1. példa: információ kérése egy adott névtérben lévő összes értesítési hubokról</span><span class="sxs-lookup"><span data-stu-id="7bf75-114">Example 1: Get information for all notification hubs in a specific namespace</span></span>
+### <span data-ttu-id="a189b-114">1. példa: Információ lekérte az adott névtér összes értesítési központját</span><span class="sxs-lookup"><span data-stu-id="a189b-114">Example 1: Get information for all notification hubs in a specific namespace</span></span>
 ```
 PS C:\>Get-AzNotificationHub -Namespace "ContosoNamespace" -ResourceGroup "ContosoNotificationsGroup"
 ```
 
-<span data-ttu-id="7bf75-115">Ez a parancs információkat kap az erőforráscsoport ContosoNotificationsGroup rendelt ContosoNamespace nevű névtérben található összes értesítési hubokról.</span><span class="sxs-lookup"><span data-stu-id="7bf75-115">This command gets information for all the notification hubs in the namespace named ContosoNamespace that have been assigned to the resource group ContosoNotificationsGroup.</span></span>
+<span data-ttu-id="a189b-115">Ez a parancs információkat kap a ContosoNamespace nevű névtér összes, a ContosoNotificationsGroup erőforráscsoporthoz hozzárendelt értesítési központról.</span><span class="sxs-lookup"><span data-stu-id="a189b-115">This command gets information for all the notification hubs in the namespace named ContosoNamespace that have been assigned to the resource group ContosoNotificationsGroup.</span></span>
 
-## <span data-ttu-id="7bf75-116">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="7bf75-116">PARAMETERS</span></span>
+## <span data-ttu-id="a189b-116">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="a189b-116">PARAMETERS</span></span>
 
-### <span data-ttu-id="7bf75-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="7bf75-117">-DefaultProfile</span></span>
-<span data-ttu-id="7bf75-118">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés</span><span class="sxs-lookup"><span data-stu-id="7bf75-118">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="a189b-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="a189b-117">-DefaultProfile</span></span>
+<span data-ttu-id="a189b-118">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés</span><span class="sxs-lookup"><span data-stu-id="a189b-118">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -60,9 +60,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7bf75-119">-Namespace</span><span class="sxs-lookup"><span data-stu-id="7bf75-119">-Namespace</span></span>
-<span data-ttu-id="7bf75-120">Azt a névteret adja meg, amelyhez az értesítési hub hozzá van rendelve.</span><span class="sxs-lookup"><span data-stu-id="7bf75-120">Specifies the namespace to which the notification hub is assigned.</span></span>
-<span data-ttu-id="7bf75-121">A névterek lehetőséget nyújtanak az értesítési hubok csoportosítására és kategorizálására.</span><span class="sxs-lookup"><span data-stu-id="7bf75-121">Namespaces provide a way to group and categorize notification hubs.</span></span>
+### <span data-ttu-id="a189b-119">-Namespace</span><span class="sxs-lookup"><span data-stu-id="a189b-119">-Namespace</span></span>
+<span data-ttu-id="a189b-120">Azt a névteret adja meg, amelyhez az értesítési központ hozzá van rendelve.</span><span class="sxs-lookup"><span data-stu-id="a189b-120">Specifies the namespace to which the notification hub is assigned.</span></span>
+<span data-ttu-id="a189b-121">A névterek lehetőséget nyújtanak az értesítési központok csoportosítására és kategorizálására.</span><span class="sxs-lookup"><span data-stu-id="a189b-121">Namespaces provide a way to group and categorize notification hubs.</span></span>
 
 ```yaml
 Type: System.String
@@ -76,9 +76,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7bf75-122">-NotificationHub</span><span class="sxs-lookup"><span data-stu-id="7bf75-122">-NotificationHub</span></span>
-<span data-ttu-id="7bf75-123">Annak az értesítési csomópontnak a nevét adja meg, amelyre a parancsmag beérkezik.</span><span class="sxs-lookup"><span data-stu-id="7bf75-123">Specifies the name of the notification hub that this cmdlet gets.</span></span>
-<span data-ttu-id="7bf75-124">Az értesítési hubok az ügyfelek által használt platformtól függetlenül több ügyfélnek küldenek leküldéses értesítéseket.</span><span class="sxs-lookup"><span data-stu-id="7bf75-124">Notification hubs are used to send push notifications to multiple clients regardless of the platform used by those clients.</span></span>
+### <span data-ttu-id="a189b-122">-NotificationHub</span><span class="sxs-lookup"><span data-stu-id="a189b-122">-NotificationHub</span></span>
+<span data-ttu-id="a189b-123">A parancsmag értesítési központjának nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="a189b-123">Specifies the name of the notification hub that this cmdlet gets.</span></span>
+<span data-ttu-id="a189b-124">Az értesítési központokkal leküldéses értesítéseket lehet küldeni több ügyfélnek, függetlenül attól, hogy milyen platformot használnak az adott ügyfél által használt platformon.</span><span class="sxs-lookup"><span data-stu-id="a189b-124">Notification hubs are used to send push notifications to multiple clients regardless of the platform used by those clients.</span></span>
 
 ```yaml
 Type: System.String
@@ -92,9 +92,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7bf75-125">-ResourceGroup</span><span class="sxs-lookup"><span data-stu-id="7bf75-125">-ResourceGroup</span></span>
-<span data-ttu-id="7bf75-126">Azt az erőforráscsoport-csoportot adja meg, amelyhez az értesítési hub hozzá van rendelve.</span><span class="sxs-lookup"><span data-stu-id="7bf75-126">Specifies the resource group to which the notification hub is assigned.</span></span>
-<span data-ttu-id="7bf75-127">Az erőforráscsoportok elemek (például névterek, értesítési hubok és engedélyezési szabályok) rendszerezése olyan módon, hogy egyszerűen csak a Készletkezelés és az Azure felügyeletet segítse elő.</span><span class="sxs-lookup"><span data-stu-id="7bf75-127">Resource groups organize items such as namespaces, notification hubs, and authorization rules in ways that help simply inventory management and Azure administration.</span></span>
+### <span data-ttu-id="a189b-125">-ResourceGroup</span><span class="sxs-lookup"><span data-stu-id="a189b-125">-ResourceGroup</span></span>
+<span data-ttu-id="a189b-126">Azt az erőforráscsoportot adja meg, amelyhez az értesítési központ hozzá van rendelve.</span><span class="sxs-lookup"><span data-stu-id="a189b-126">Specifies the resource group to which the notification hub is assigned.</span></span>
+<span data-ttu-id="a189b-127">Az erőforráscsoportok a készletkezelést és az Azure felügyeletét segítő módon rendszerezhetik az elemeket, például a névtereket, az értesítési központokat és az engedélyezési szabályokat.</span><span class="sxs-lookup"><span data-stu-id="a189b-127">Resource groups organize items such as namespaces, notification hubs, and authorization rules in ways that help simply inventory management and Azure administration.</span></span>
 
 ```yaml
 Type: System.String
@@ -108,31 +108,28 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7bf75-128">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="7bf75-128">CommonParameters</span></span>
-<span data-ttu-id="7bf75-129">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="7bf75-129">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="7bf75-130">További információ: about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="7bf75-130">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="a189b-128">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="a189b-128">CommonParameters</span></span>
+<span data-ttu-id="a189b-129">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="a189b-129">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="a189b-130">További információt a about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="a189b-130">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="7bf75-131">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="7bf75-131">INPUTS</span></span>
+## <span data-ttu-id="a189b-131">INPUTS</span><span class="sxs-lookup"><span data-stu-id="a189b-131">INPUTS</span></span>
 
-### <span data-ttu-id="7bf75-132">System. String</span><span class="sxs-lookup"><span data-stu-id="7bf75-132">System.String</span></span>
+### <span data-ttu-id="a189b-132">System.String</span><span class="sxs-lookup"><span data-stu-id="a189b-132">System.String</span></span>
 
-## <span data-ttu-id="7bf75-133">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="7bf75-133">OUTPUTS</span></span>
+## <span data-ttu-id="a189b-133">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="a189b-133">OUTPUTS</span></span>
 
-### <span data-ttu-id="7bf75-134">Microsoft. Azure. Command. NotificationHubs. models. NotificationHubAttributes</span><span class="sxs-lookup"><span data-stu-id="7bf75-134">Microsoft.Azure.Commands.NotificationHubs.Models.NotificationHubAttributes</span></span>
+### <span data-ttu-id="a189b-134">Microsoft.Azure.Commands.NotificationHubs.Models.NotificationHubAttributes</span><span class="sxs-lookup"><span data-stu-id="a189b-134">Microsoft.Azure.Commands.NotificationHubs.Models.NotificationHubAttributes</span></span>
 
-## <span data-ttu-id="7bf75-135">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="7bf75-135">NOTES</span></span>
+## <span data-ttu-id="a189b-135">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="a189b-135">NOTES</span></span>
 
-## <span data-ttu-id="7bf75-136">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="7bf75-136">RELATED LINKS</span></span>
+## <span data-ttu-id="a189b-136">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="a189b-136">RELATED LINKS</span></span>
 
-[<span data-ttu-id="7bf75-137">Get-AzNotificationHubAuthorizationRules</span><span class="sxs-lookup"><span data-stu-id="7bf75-137">Get-AzNotificationHubAuthorizationRules</span></span>](./Get-AzNotificationHubAuthorizationRules.md)
 
-[<span data-ttu-id="7bf75-138">Get-AzNotificationHubListKeys</span><span class="sxs-lookup"><span data-stu-id="7bf75-138">Get-AzNotificationHubListKeys</span></span>](./Get-AzNotificationHubListKeys.md)
 
-[<span data-ttu-id="7bf75-139">Get-AzNotificationHubPNSCredentials</span><span class="sxs-lookup"><span data-stu-id="7bf75-139">Get-AzNotificationHubPNSCredentials</span></span>](./Get-AzNotificationHubPNSCredentials.md)
 
-[<span data-ttu-id="7bf75-140">Új – AzNotificationHub</span><span class="sxs-lookup"><span data-stu-id="7bf75-140">New-AzNotificationHub</span></span>](./New-AzNotificationHub.md)
+[<span data-ttu-id="a189b-137">New-AzNotificationHub</span><span class="sxs-lookup"><span data-stu-id="a189b-137">New-AzNotificationHub</span></span>](./New-AzNotificationHub.md)
 
-[<span data-ttu-id="7bf75-141">Remove-AzNotificationHub</span><span class="sxs-lookup"><span data-stu-id="7bf75-141">Remove-AzNotificationHub</span></span>](./Remove-AzNotificationHub.md)
+[<span data-ttu-id="a189b-138">Remove-AzNotificationHub</span><span class="sxs-lookup"><span data-stu-id="a189b-138">Remove-AzNotificationHub</span></span>](./Remove-AzNotificationHub.md)
 
-[<span data-ttu-id="7bf75-142">Set-AzNotificationHub</span><span class="sxs-lookup"><span data-stu-id="7bf75-142">Set-AzNotificationHub</span></span>](./Set-AzNotificationHub.md)
+[<span data-ttu-id="a189b-139">Set-AzNotificationHub</span><span class="sxs-lookup"><span data-stu-id="a189b-139">Set-AzNotificationHub</span></span>](./Set-AzNotificationHub.md)
 
 
