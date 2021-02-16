@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkWatcherPacketCapture.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkWatcherPacketCapture.md
-ms.openlocfilehash: 348767f145c2dd407fc277549f89c44386c8a564
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 9825562ad5f0bec36da0efd14f2e06b93a3ad588
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94011780"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100408576"
 ---
 # New-AzNetworkWatcherPacketCapture
 
-## Áttekintés
-Létrehoz egy új csomagkapcsolt adatrögzítő erőforrást, és a csomag rögzítési munkamenetét egy VM-eszközön indítja el.
+## SYNOPSIS
+Létrehoz egy új csomagrögzítési erőforrást, és elindít egy csomagrögzítési munkamenetet egy VM-en.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### SetByResource (alapértelmezett)
 ```
@@ -46,14 +46,14 @@ New-AzNetworkWatcherPacketCapture -Location <String> -PacketCaptureName <String>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Leírás
-Az New-AzNetworkWatcherPacketCapture parancsmag létrehoz egy új csomagkapcsolt adatrögzítő erőforrást, és egy csomag-rögzítési munkamenetet indít a VM-ben.
-A csomag-rögzítési munkamenetek hosszát időkorlátozással vagy méret korlátozással lehet konfigurálni. Az egyes csomagokhoz rögzített adatmennyiség is konfigurálható.
-A szűrők alkalmazhatók az adott csomag-felvételi munkamenetre, így testre szabhatja a rögzített csomagok típusát. A szűrők a helyi és a távoli IP-címeken & a címtartomány, a helyi és távoli portok & a porttartomány, valamint a beragadni kívánt munkamenet-szintű protokoll korlátozását is korlátozhatja. A szűrők elérhetők, és több szűrő is alkalmazható a rögzítés részletességének biztosítására.
+## LEÍRÁS
+A New-AzNetworkWatcherPacketCapture parancsmag létrehoz egy új csomagrögzítési erőforrást, és elindít egy csomagrögzítési munkamenetet egy VM-en.
+A Csomagrögzítési munkamenetek hosszát időkényolhatja vagy méretkényolhatja. Az egyes csomagokhoz rögzített adatok mennyisége is konfigurálható.
+A szűrők egy adott csomagrögzítési munkamenetre alkalmazhatók, így testre szabhatja a rögzített csomagok típusát. A szűrőkkel korlátozható a helyi és távoli IP-címek & címtartományok, helyi és távoli portok & porttartományok és a rögzített munkamenetszintű protokoll. A szűrők kompatibilisek, és több szűrőt is alkalmazhat, hogy a felvétel részletes legyen.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: több szűrőből álló csomag létrehozása
+### 1. példa: Csomagrögzítés létrehozása több szűrővel
 ```
 $nw = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" } 
 $networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName 
@@ -65,12 +65,12 @@ $filter2 = New-AzPacketCaptureFilterConfig -Protocol UDP
 New-AzNetworkWatcherPacketCapture -NetworkWatcher $networkWatcher -TargetVirtualMachineId $vm.Id -PacketCaptureName "PacketCaptureTest" -StorageAccountId $storageAccount.id -TimeLimitInSeconds 60 -Filter $filter1, $filter2
 ```
 
-Ebben a példában a "PacketCaptureTest" nevű csomagot hozzuk létre több szűrővel és időkorlátozással. A munkamenet befejezésekor a program a megadott tárterület-fiókba menti a fájlt. Megjegyzés: az Azure Network Watcher bővítménynek telepítve kell lennie a cél virtuális gépen a csomag rögzítéséhez.
+Ebben a példában létrehozunk egy "PacketCaptureTest" nevű csomagrögzítést több szűrővel és egy időkorláttal. A munkamenet befejezése után a rendszer a megadott tárfiókba menti a munkamenetet. Megjegyzés: Csomagrögzítések létrehozásához az Azure Network Watcher bővítményt telepíteni kell a cél virtuális gépre.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -AsJob
-A parancsmag futtatása a háttérben
+Parancsmag futtatása a háttérben
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -BytesToCapturePerPacket
-A csomagokat rögzítő bájtok száma.
+Csomagonként rögzítend bájt.
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -114,8 +114,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Szűrő
-A csomagok rögzítési munkamenetének szűrői
+### -Filter
+A csomagrögzítési munkamenet szűrői.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSPacketCaptureFilter[]
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -LocalFilePath
-Helyi fájl elérési útja
+Helyi fájl elérési útja.
 
 ```yaml
 Type: System.String
@@ -144,8 +144,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Hely
-A Hálózatfigyelő helye.
+### -Location
+A hálózati figyelő helye.
 
 ```yaml
 Type: System.String
@@ -160,7 +160,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcher
-A Hálózatfigyelő erőforrás.
+A hálózati figyelő erőforrás.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -175,7 +175,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcherName
-A Network Watcher neve.
+A hálózati figyelő neve.
 
 ```yaml
 Type: System.String
@@ -190,7 +190,7 @@ Accept wildcard characters: False
 ```
 
 ### -PacketCaptureName
-A csomagot rögzítő név.
+A csomagrögzítés neve.
 
 ```yaml
 Type: System.String
@@ -205,7 +205,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-A Network Watcher erőforráscsoport neve.
+A hálózatfigyelő erőforráscsoport neve.
 
 ```yaml
 Type: System.String
@@ -220,7 +220,7 @@ Accept wildcard characters: False
 ```
 
 ### -StorageAccountId
-Tárolási fiók azonosítója.
+Tárfiók azonosítója.
 
 ```yaml
 Type: System.String
@@ -235,7 +235,7 @@ Accept wildcard characters: False
 ```
 
 ### -StoragePath
-Tárterület elérési útja
+Tárterület elérési útja.
 
 ```yaml
 Type: System.String
@@ -265,7 +265,7 @@ Accept wildcard characters: False
 ```
 
 ### -TimeLimitInSeconds
-Időkorlát másodpercben.
+Időkorlát másodpercben
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -294,8 +294,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -310,7 +310,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik.
 A parancsmag nem fut.
 
 ```yaml
@@ -326,26 +326,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. Azure. commands. Network. models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-### System. String
+### System.String
 
-### System. null ' 1 [[System. Int32, System. Private. CoreLib, Version = 4.0.0.0, Culture = semleges, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
 ## KIMENETEK
 
-### Microsoft. Azure. commands. Network. models. PSPacketCaptureResult
+### Microsoft.Azure.Commands.Network.Models.PSPacketCaptureResult
 
-## MEGJEGYZI
-Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, hálózat, Hálózatfigyelő, csomag, rögzítés, forgalom 
+## MEGJEGYZÉSEK
+Kulcsszavak: azure, azurerm, arm, erőforrás, kezelés, vezető, hálózat, hálózatkezelés, hálózati figyelő, csomag, rögzítés, forgalom 
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Új – AzNetworkWatcher](./New-AzNetworkWatcher.md)
+[New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
 
 [Get-AzNetworkWatcher](./Get-AzNetworkWatcher.md)
 
@@ -359,9 +359,9 @@ Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, há
 
 [Start-AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
 
-[Új – AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
+[New-AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
 
-[Új – AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
+[New-AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
 
 [Get-AzNetworkWatcherPacketCapture](./Get-AzNetworkWatcherPacketCapture.md)
 
@@ -369,11 +369,11 @@ Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, há
 
 [Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
-[Új – AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
+[New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
 
-[Teszt-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
+[Test-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
 
-[Teszt-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
+[Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
 
 [Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
@@ -385,7 +385,7 @@ Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, há
 
 [Remove-AzNetworkWatcherConnectionMonitor](./Remove-AzNetworkWatcherConnectionMonitor.md)
 
-[Új – AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
+[New-AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
 
 [Get-AzNetworkWatcherTroubleshootingResult](./Get-AzNetworkWatcherTroubleshootingResult.md)
 
@@ -395,8 +395,8 @@ Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, há
 
 [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
 
 
