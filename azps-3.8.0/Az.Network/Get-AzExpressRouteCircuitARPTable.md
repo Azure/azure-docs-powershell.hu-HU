@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitARPTable.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitARPTable.md
-ms.openlocfilehash: 12c920d0bacc6bd214e6ebe8d374a80d2b50a072
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 4b3f7e455d11696ca92ae8a2e8b530dc8d875123
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94011381"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100408270"
 ---
-# <span data-ttu-id="9ffb7-101">Get-AzExpressRouteCircuitARPTable</span><span class="sxs-lookup"><span data-stu-id="9ffb7-101">Get-AzExpressRouteCircuitARPTable</span></span>
+# <span data-ttu-id="b4447-101">Get-AzExpressRouteCircuitARPTable</span><span class="sxs-lookup"><span data-stu-id="b4447-101">Get-AzExpressRouteCircuitARPTable</span></span>
 
-## <span data-ttu-id="9ffb7-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="9ffb7-102">SYNOPSIS</span></span>
-<span data-ttu-id="9ffb7-103">Az ARP-táblázatot egy ExpressRoute-áramkörről kapja.</span><span class="sxs-lookup"><span data-stu-id="9ffb7-103">Gets the ARP table from an ExpressRoute circuit.</span></span>
+## <span data-ttu-id="b4447-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="b4447-102">SYNOPSIS</span></span>
+<span data-ttu-id="b4447-103">Az ARP táblázatot egy ExpressRoute-áramkörből kapja.</span><span class="sxs-lookup"><span data-stu-id="b4447-103">Gets the ARP table from an ExpressRoute circuit.</span></span>
 
-## <span data-ttu-id="9ffb7-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="9ffb7-104">SYNTAX</span></span>
+## <span data-ttu-id="b4447-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="b4447-104">SYNTAX</span></span>
 
 ```
 Get-AzExpressRouteCircuitARPTable -ResourceGroupName <String> -ExpressRouteCircuitName <String>
@@ -26,20 +26,20 @@ Get-AzExpressRouteCircuitARPTable -ResourceGroupName <String> -ExpressRouteCircu
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="9ffb7-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="9ffb7-105">DESCRIPTION</span></span>
-<span data-ttu-id="9ffb7-106">A **Get-AzExpressRouteCircuitARPTable** PARANCSMAG az ARP-táblázatot az ExpressRoute-áramkör mindkét felületéről lekérdezi.</span><span class="sxs-lookup"><span data-stu-id="9ffb7-106">The **Get-AzExpressRouteCircuitARPTable** cmdlet retrieves the ARP table from both interfaces of an ExpressRoute circuit.</span></span> <span data-ttu-id="9ffb7-107">Az ARP-táblázat az IPv4-cím megfeleltetését adja meg a MAC-címnek egy adott társközi számára.</span><span class="sxs-lookup"><span data-stu-id="9ffb7-107">The ARP table provides a mapping of the IPv4 address to MAC address for a particular peering.</span></span> <span data-ttu-id="9ffb7-108">Az ARP-táblázat segítségével ellenőrizheti a Layer 2 konfigurációt és a kapcsolódást.</span><span class="sxs-lookup"><span data-stu-id="9ffb7-108">You can use the ARP table to validate layer 2 configuration and connectivity.</span></span>
+## <span data-ttu-id="b4447-105">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="b4447-105">DESCRIPTION</span></span>
+<span data-ttu-id="b4447-106">A **Get-AzExpressRouteCircuitARPTable** parancsmag beolvassa az ARP táblázatot egy ExpressRoute-áramkör mindkét felületéről.</span><span class="sxs-lookup"><span data-stu-id="b4447-106">The **Get-AzExpressRouteCircuitARPTable** cmdlet retrieves the ARP table from both interfaces of an ExpressRoute circuit.</span></span> <span data-ttu-id="b4447-107">Az ARP táblázat az IPv4-cím MAC-címre való megfeleltetését biztosítja egy adott társviszonyhoz.</span><span class="sxs-lookup"><span data-stu-id="b4447-107">The ARP table provides a mapping of the IPv4 address to MAC address for a particular peering.</span></span> <span data-ttu-id="b4447-108">Az ARP táblázattal ellenőrizheti a 2. réteg konfigurációját és csatlakozását.</span><span class="sxs-lookup"><span data-stu-id="b4447-108">You can use the ARP table to validate layer 2 configuration and connectivity.</span></span>
 
-## <span data-ttu-id="9ffb7-109">Példák</span><span class="sxs-lookup"><span data-stu-id="9ffb7-109">EXAMPLES</span></span>
+## <span data-ttu-id="b4447-109">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="b4447-109">EXAMPLES</span></span>
 
-### <span data-ttu-id="9ffb7-110">Példa 1: az ExpressRoute társközi ARP-táblázatának megjelenítése</span><span class="sxs-lookup"><span data-stu-id="9ffb7-110">Example 1: Display the ARP table for an ExpressRoute peer</span></span>
+### <span data-ttu-id="b4447-110">1. példa: ExpressRoute-társ ARP táblázatának megjelenítése</span><span class="sxs-lookup"><span data-stu-id="b4447-110">Example 1: Display the ARP table for an ExpressRoute peer</span></span>
 ```
 Get-AzExpressRouteCircuitARPTable -ResourceGroupName $RG -ExpressRouteCircuitName $CircuitName -PeeringType MicrosoftPeering -DevicePath Primary
 ```
 
-## <span data-ttu-id="9ffb7-111">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="9ffb7-111">PARAMETERS</span></span>
+## <span data-ttu-id="b4447-111">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="b4447-111">PARAMETERS</span></span>
 
-### <span data-ttu-id="9ffb7-112">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="9ffb7-112">-DefaultProfile</span></span>
-<span data-ttu-id="9ffb7-113">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="9ffb7-113">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="b4447-112">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="b4447-112">-DefaultProfile</span></span>
+<span data-ttu-id="b4447-113">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="b4447-113">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -53,8 +53,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="9ffb7-114">-DevicePath</span><span class="sxs-lookup"><span data-stu-id="9ffb7-114">-DevicePath</span></span>
-<span data-ttu-id="9ffb7-115">A paraméter elfogadható értékei a következők: `Primary` vagy `Secondary`</span><span class="sxs-lookup"><span data-stu-id="9ffb7-115">The acceptable values for this parameter are: `Primary` or `Secondary`</span></span>
+### <span data-ttu-id="b4447-114">-DevicePath</span><span class="sxs-lookup"><span data-stu-id="b4447-114">-DevicePath</span></span>
+<span data-ttu-id="b4447-115">A paraméter elfogadható értékei a következőek: `Primary` vagy `Secondary`</span><span class="sxs-lookup"><span data-stu-id="b4447-115">The acceptable values for this parameter are: `Primary` or `Secondary`</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.DevicePathEnum
@@ -69,8 +69,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="9ffb7-116">-ExpressRouteCircuitName</span><span class="sxs-lookup"><span data-stu-id="9ffb7-116">-ExpressRouteCircuitName</span></span>
-<span data-ttu-id="9ffb7-117">A vizsgált ExpressRoute-áramkör neve.</span><span class="sxs-lookup"><span data-stu-id="9ffb7-117">The name of the ExpressRoute circuit being examined.</span></span>
+### <span data-ttu-id="b4447-116">-ExpressRouteCircuitName</span><span class="sxs-lookup"><span data-stu-id="b4447-116">-ExpressRouteCircuitName</span></span>
+<span data-ttu-id="b4447-117">Az ExpressRoute-áramkör neve.</span><span class="sxs-lookup"><span data-stu-id="b4447-117">The name of the ExpressRoute circuit being examined.</span></span>
 
 ```yaml
 Type: System.String
@@ -84,8 +84,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="9ffb7-118">-PeeringType</span><span class="sxs-lookup"><span data-stu-id="9ffb7-118">-PeeringType</span></span>
-<span data-ttu-id="9ffb7-119">A paraméter elfogadható értékei a következők: `AzurePrivatePeering` , `AzurePublicPeering` és `MicrosoftPeering`</span><span class="sxs-lookup"><span data-stu-id="9ffb7-119">The acceptable values for this parameter are: `AzurePrivatePeering`, `AzurePublicPeering`, and `MicrosoftPeering`</span></span>
+### <span data-ttu-id="b4447-118">-PeeringType</span><span class="sxs-lookup"><span data-stu-id="b4447-118">-PeeringType</span></span>
+<span data-ttu-id="b4447-119">A paraméter elfogadható értékei a következőek: `AzurePrivatePeering` `AzurePublicPeering` , és `MicrosoftPeering`</span><span class="sxs-lookup"><span data-stu-id="b4447-119">The acceptable values for this parameter are: `AzurePrivatePeering`, `AzurePublicPeering`, and `MicrosoftPeering`</span></span>
 
 ```yaml
 Type: System.String
@@ -100,8 +100,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="9ffb7-120">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="9ffb7-120">-ResourceGroupName</span></span>
-<span data-ttu-id="9ffb7-121">Az ExpressRoute-áramkört tartalmazó erőforráscsoport neve.</span><span class="sxs-lookup"><span data-stu-id="9ffb7-121">The name of the resource group containing the ExpressRoute circuit.</span></span>
+### <span data-ttu-id="b4447-120">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="b4447-120">-ResourceGroupName</span></span>
+<span data-ttu-id="b4447-121">Az ExpressRoute-áramkört tartalmazó erőforráscsoport neve.</span><span class="sxs-lookup"><span data-stu-id="b4447-121">The name of the resource group containing the ExpressRoute circuit.</span></span>
 
 ```yaml
 Type: System.String
@@ -115,23 +115,23 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="9ffb7-122">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="9ffb7-122">CommonParameters</span></span>
-<span data-ttu-id="9ffb7-123">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="9ffb7-123">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="9ffb7-124">További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="9ffb7-124">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="b4447-122">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="b4447-122">CommonParameters</span></span>
+<span data-ttu-id="b4447-123">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="b4447-123">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="b4447-124">További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="b4447-124">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="9ffb7-125">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="9ffb7-125">INPUTS</span></span>
+## <span data-ttu-id="b4447-125">INPUTS</span><span class="sxs-lookup"><span data-stu-id="b4447-125">INPUTS</span></span>
 
-### <span data-ttu-id="9ffb7-126">System. String</span><span class="sxs-lookup"><span data-stu-id="9ffb7-126">System.String</span></span>
+### <span data-ttu-id="b4447-126">System.String</span><span class="sxs-lookup"><span data-stu-id="b4447-126">System.String</span></span>
 
-## <span data-ttu-id="9ffb7-127">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="9ffb7-127">OUTPUTS</span></span>
+## <span data-ttu-id="b4447-127">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="b4447-127">OUTPUTS</span></span>
 
-### <span data-ttu-id="9ffb7-128">Microsoft. Azure. commands. Network. models. PSExpressRouteCircuitArpTable</span><span class="sxs-lookup"><span data-stu-id="9ffb7-128">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuitArpTable</span></span>
+### <span data-ttu-id="b4447-128">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuitArpTable</span><span class="sxs-lookup"><span data-stu-id="b4447-128">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuitArpTable</span></span>
 
-## <span data-ttu-id="9ffb7-129">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="9ffb7-129">NOTES</span></span>
+## <span data-ttu-id="b4447-129">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="b4447-129">NOTES</span></span>
 
-## <span data-ttu-id="9ffb7-130">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="9ffb7-130">RELATED LINKS</span></span>
+## <span data-ttu-id="b4447-130">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="b4447-130">RELATED LINKS</span></span>
 
-[<span data-ttu-id="9ffb7-131">Get-AzExpressRouteCircuitRouteTable</span><span class="sxs-lookup"><span data-stu-id="9ffb7-131">Get-AzExpressRouteCircuitRouteTable</span></span>](Get-AzExpressRouteCircuitRouteTable.md)
+[<span data-ttu-id="b4447-131">Get-AzExpressRouteCircuitRouteTable</span><span class="sxs-lookup"><span data-stu-id="b4447-131">Get-AzExpressRouteCircuitRouteTable</span></span>](Get-AzExpressRouteCircuitRouteTable.md)
 
-[<span data-ttu-id="9ffb7-132">Get-AzExpressRouteCircuitRouteTableSummary</span><span class="sxs-lookup"><span data-stu-id="9ffb7-132">Get-AzExpressRouteCircuitRouteTableSummary</span></span>](Get-AzExpressRouteCircuitRouteTableSummary.md)
+[<span data-ttu-id="b4447-132">Get-AzExpressRouteCircuitRouteTableSummary</span><span class="sxs-lookup"><span data-stu-id="b4447-132">Get-AzExpressRouteCircuitRouteTableSummary</span></span>](Get-AzExpressRouteCircuitRouteTableSummary.md)
 
-[<span data-ttu-id="9ffb7-133">Get-AzExpressRouteCircuitStats</span><span class="sxs-lookup"><span data-stu-id="9ffb7-133">Get-AzExpressRouteCircuitStats</span></span>](Get-AzExpressRouteCircuitStats.md)
+[<span data-ttu-id="b4447-133">Get-AzExpressRouteCircuitStat</span><span class="sxs-lookup"><span data-stu-id="b4447-133">Get-AzExpressRouteCircuitStat</span></span>](Get-AzExpressRouteCircuitStat.md)
