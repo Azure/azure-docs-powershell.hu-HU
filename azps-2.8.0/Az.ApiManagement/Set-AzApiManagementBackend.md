@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Set-AzApiManagementBackend.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Set-AzApiManagementBackend.md
-ms.openlocfilehash: f5cf0d9f80b15f178cb701b4474fa5dc13d957eb
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: cb7348e31ca80834836b27c97aa7f68e4207ed24
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93667944"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100404326"
 ---
 # Set-AzApiManagementBackend
 
-## Áttekintés
-A backend frissítése
+## SYNOPSIS
+Frissíti a backend-et.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### ContextParameterSet (alapértelmezett)
 ```
@@ -38,22 +38,22 @@ Set-AzApiManagementBackend -InputObject <PsApiManagementBackend> [-Protocol <Str
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Leírás
-Egy meglévő backend frissítése az API-kezelésben.
+## LEÍRÁS
+Frissíti a meglévő háttért az Api-kezelésben.
 
-## Példák
+## PÉLDÁK
 
-### A backend 123 leírásának frissítése
+### A Backend 123 leírásának frissítése
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Set-AzApiManagementBackend -Context $apimContext -BackendId 123 -Description "updated description" -PassThru
 ```
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -BackendId
-Új backend-azonosító.
-Ehhez a paraméterhez szükség van.
+Az új háttér-háttér azonosítója.
+Ezt a paramétert kötelező megadni.
 
 ```yaml
 Type: System.String
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 
 ### -Környezet
 A PsApiManagementContext példánya.
-Ehhez a paraméterhez szükség van.
+Ezt a paramétert kötelező megadni.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 ```
 
 ### -Hitelesítő adatok
-Hitelesítő adatok, amelyeket a háttérben való beszélgetés során használni kell.
+A háttéradatokkal való beszélgetéshez használt hitelesítő adatok.
 Ez a paraméter nem kötelező.
 
 ```yaml
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -Leírás
-A backend leírása.
+Háttér leírása.
 Ez a paraméter nem kötelező.
 
 ```yaml
@@ -131,7 +131,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-A PsApiManagementBackend példánya. Ehhez a paraméterhez szükség van.
+A PsApiManagementBackend példánya. Ezt a paramétert kötelező megadni.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackend
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Jelzi, hogy ez a parancsmag a parancsmag által módosított  **PsApiManagementBackend** adja eredményül.
+Azt jelzi, hogy ez a parancsmag a  **PsApiManagementBackend** értéket adja vissza, amely módosítja a parancsmagot.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -161,7 +161,7 @@ Accept wildcard characters: False
 ```
 
 ### -Protocol
-Backend kommunikációs protokoll (http vagy SOAP).
+Backend Communication protocol (http vagy soap).
 Ez a paraméter nem kötelező
 
 ```yaml
@@ -178,7 +178,7 @@ Accept wildcard characters: False
 ```
 
 ### -Proxy
-A munkaablakba való küldéskor használandó proxykiszolgáló-adatok.
+A proxykiszolgáló adatai, amelyek a kérés backendbe való elküldése közben használatosak.
 Ez a paraméter nem kötelező.
 
 ```yaml
@@ -194,9 +194,9 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Az erőforrás felügyeleti URI-ja külső rendszerben
+Az erőforrás felügyeleti uri-ja a külső rendszerben.
 Ez a paraméter nem kötelező.
-Ez az URL-cím lehet a logikai alkalmazások, a függvények és az API-alkalmazások ARM erőforrás-azonosítója.
+Ez az url lehet a logic appok, függvényalkalmazások vagy API-appok Arm Resource Id azonosítója.
 
 ```yaml
 Type: System.String
@@ -211,7 +211,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceFabricCluster
-A Service Fabric cluster backend részletei. Ez a paraméter nem kötelező.
+Service Fabric Cluster Backend details. Ez a paraméter nem kötelező.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementServiceFabric
@@ -226,7 +226,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipCertificateChainValidation
-Szeretné-e kihagyni a tanúsítványláncot az érvényesítést, ha a háttérrel beszél.
+Hogy kihagyja-e a tanúsítványlánc-ellenőrzést, amikor a backend-hez beszél.
 Ez a paraméter nem kötelező.
 
 ```yaml
@@ -242,7 +242,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipCertificateNameValidation
-Szeretné-e kihagyni a tanúsítvány nevének érvényesítését, amikor a háttérben beszél.
+Kihagyhatja-e a Tanúsítványnév érvényesítése érvénybe lépését a backend-hez való beszélgetés során.
 Ez a paraméter nem kötelező.
 
 ```yaml
@@ -257,8 +257,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Cím
-A backend címe.
+### -Title
+Háttércím.
 Ez a paraméter nem kötelező.
 
 ```yaml
@@ -273,8 +273,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -URL
-A backend futásidejű URL-címe.
+### -Url
+A Backend futásidejű URL-címe.
 Ez a paraméter nem kötelező.
 
 ```yaml
@@ -289,8 +289,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -305,7 +305,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut. A parancsmag nem fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik. A parancsmag nem fut.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -320,38 +320,38 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
-### System. null ' 1 [[System. Boolean, System. Private. CoreLib, Version = 4.0.0.0, Culture = semleges, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementBackendCredential
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendCredential
 
-### Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementBackendProxy
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendProxy
 
-### Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementServiceFabric
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementServiceFabric
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameter
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementBackend
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackend
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Get-AzApiManagementBackend](./Get-AzApiManagementBackend)
+[Get-AzApiManagementBackend](./Get-AzApiManagementBackend.md)
 
-[Új – AzApiManagementBackend](./New-AzApiManagementBackend.md)
+[New-AzApiManagementBackend](./New-AzApiManagementBackend.md)
 
-[Új – AzApiManagementBackendCredential](./New-AzApiManagementBackendCredential.md)
+[New-AzApiManagementBackendCredential](./New-AzApiManagementBackendCredential.md)
 
-[Új – AzApiManagementBackendProxy](./New-AzApiManagementBackendProxy.md)
+[New-AzApiManagementBackendProxy](./New-AzApiManagementBackendProxy.md)
 
 [Remove-AzApiManagementBackend](./Remove-AzApiManagementBackend.md)
