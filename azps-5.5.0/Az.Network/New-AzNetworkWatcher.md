@@ -1,71 +1,50 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
-online version: https://docs.microsoft.com/en-us/powershell/module/az.network/remove-aznetworkwatcherpacketcapture
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/new-aznetworkwatcher
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzNetworkWatcherPacketCapture.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzNetworkWatcherPacketCapture.md
-ms.openlocfilehash: d6d11590699b52bb7245222ddaa01fbc42938d22
-ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkWatcher.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkWatcher.md
+ms.openlocfilehash: 7c8f33d8339bb873b713acabd71ca57fe9107383
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100413999"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100202764"
 ---
-# Remove-AzNetworkWatcherPacketCapture
+# New-AzNetworkWatcher
 
 ## SYNOPSIS
-Eltávolít egy csomagrögzítési erőforrást.
+Létrehoz egy új Network Watcher erőforrást.
 
 ## SZINTAXIS
 
-### SetByResource (alapértelmezett)
 ```
-Remove-AzNetworkWatcherPacketCapture -NetworkWatcher <PSNetworkWatcher> -PacketCaptureName <String> [-PassThru]
- [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### SetByName
-```
-Remove-AzNetworkWatcherPacketCapture -NetworkWatcherName <String> -ResourceGroupName <String>
- -PacketCaptureName <String> [-PassThru] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
-```
-
-### SetByLocation
-```
-Remove-AzNetworkWatcherPacketCapture -Location <String> -PacketCaptureName <String> [-PassThru] [-AsJob]
+New-AzNetworkWatcher -Name <String> -ResourceGroupName <String> -Location <String> [-Tag <Hashtable>]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## LEÍRÁS
-A Remove-AzNetworkWatcherPacketCapture eltávolítja a csomagrögzítési erőforrást. Javasoljuk, hogy hívja fel Stop-AzNetworkWatcherPacketCapture Remove-AzNetworkWatcherPacketCapture hívást. Ha a csomagrögzítési munkamenet akkor fut, Remove-AzNetworkWatcherPacketCapture a rendszer nem menti a csomagrögzítést. Ha a munkamenet le van állítva a rögzítési adatokat tartalmazó .cap fájl eltávolítása előtt, a rendszer nem távolítja el. 
+A New-AzNetworkWatcher parancsmag létrehoz egy új Network Watcher erőforrást.
 
 ## PÉLDÁK
 
-### 1. példa: Csomagrögzítési munkamenet eltávolítása
+### 1. példa: Hálózatfigyelő létrehozása
 ```
-Remove-AzNetworkWatcherPacketCapture -NetworkWatcher $networkWatcher -PacketCaptureName "PacketCaptureTest"
+New-AzResourceGroup -Name NetworkWatcherRG -Location westcentralus
+New-AzNetworkWatcher -Name NetworkWatcher_westcentralus -ResourceGroup NetworkWatcherRG
+
+Name              : NetworkWatcher_westcentralus
+Id                : /subscriptions/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourceGroups/NetworkWatcherRG/providers/Microsoft.Network/networkWatchers/NetworkWatcher_westcentralus
+Etag              : W/"7cf1f2fe-8445-4aa7-9bf5-c15347282c39"
+Location          : westcentralus
+Tags              :
+ProvisioningState : Succeeded
 ```
 
-Ebben a példában eltávolítunk egy "PacketCaptureTest" nevű csomagrögzítési munkamenetet.
+Ebben a példában egy új Hálózatfigyelőt hoz létre egy újonnan létrehozott erőforráscsoporton belül. Felhívjuk a figyelmét arra, hogy előfizetésenként régiónként csak egy Hálózati figyelőt lehet létrehozni.
 
 ## PARAMETERS
-
-### -AsJob
-Parancsmag futtatása a háttérben
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -DefaultProfile
 Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
@@ -83,52 +62,7 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-A hálózati figyelő helye.
-
-```yaml
-Type: System.String
-Parameter Sets: SetByLocation
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -NetworkWatcher
-A hálózati figyelő erőforrás.
-
-```yaml
-Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
-Parameter Sets: SetByResource
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -NetworkWatcherName
-A hálózati figyelő neve.
-
-```yaml
-Type: System.String
-Parameter Sets: SetByName
-Aliases: Name
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PacketCaptureName
-A csomagrögzítés neve.
+Hely.
 
 ```yaml
 Type: System.String
@@ -142,30 +76,45 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -PassThru
-Egy objektumot ad vissza, amely azt az elemet tartalmazza, amellyel dolgozik.
+### -Name
+A hálózati figyelő neve.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: (All)
-Aliases:
+Aliases: ResourceName
 
-Required: False
+Required: True
 Position: Named
-Default value: False
-Accept pipeline input: False
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-A hálózatfigyelő erőforráscsoport neve.
+Az erőforráscsoport neve.
 
 ```yaml
 Type: System.String
-Parameter Sets: SetByName
+Parameter Sets: (All)
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Tag
+Kulcsérték-párok kivonattábla formájában. Például: @{key0="érték0";key1=$null;key2="érték2"}
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -204,20 +153,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
 ## INPUTS
 
-### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
-
 ### System.String
+
+### System.Collections.Hashtable
 
 ## KIMENETEK
 
-### System.Boolean
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
 ## MEGJEGYZÉSEK
-Kulcsszavak: azure, azurerm, arm, erőforrás, kezelés, vezető, hálózat, hálózatkezelés, hálózati figyelő, csomag, rögzítés, forgalom, eltávolítás
+Kulcsszavak: azure, azurerm, arm, erőforrás, kezelés, vezető, hálózat, hálózatkezelés, hálózati figyelő
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
@@ -273,4 +222,4 @@ Kulcsszavak: azure, azurerm, arm, erőforrás, kezelés, vezető, hálózat, há
 
 [Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)

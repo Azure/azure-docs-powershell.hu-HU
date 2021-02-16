@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzActionGroup.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzActionGroup.md
-ms.openlocfilehash: c297198a1e49b93d498c136d1cb099d2068d24db
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 90bd9c7943e6e788d81f8ddec85513676afade23
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94015006"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100414033"
 ---
 # Get-AzActionGroup
 
-## Áttekintés
-A műveleti csoport (ok) beolvasása
+## SYNOPSIS
+Műveletcsoport(ak) lekérte.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### BySubscriptionOrResourceGroup (alapértelmezett)
 ```
@@ -31,36 +31,36 @@ Get-AzActionGroup -ResourceGroupName <String> -Name <String> [-DefaultProfile <I
  [<CommonParameters>]
 ```
 
-## Leírás
-A **Get-AzActionGroup** parancsmag egy vagy több műveleti csoportot kap.
+## LEÍRÁS
+A **Get-AzActionGroup** parancsmag egy vagy több műveletcsoportot kap.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: műveletkérő csoport beszerzése előfizetés-AZONOSÍTÓval
+### 1. példa: Műveletcsoport lekérte előfizetésazonosító szerint
 ```
 PS C:\>Get-AzActionGroup
 ```
 
-Ez a parancs felsorolja az aktuális előfizetéshez tartozó összes Művelettípus-csoportot.
+Ez a parancs felsorolja az aktuális előfizetés összes műveletcsoportját.
 
-### 2. példa: az adott erőforráscsoport műveleti csoportjainak beolvasása
+### 2. példa: Az adott erőforráscsoporthoz szükséges műveletcsoportok lekérte
 ```
 PS C:\>Get-AzActionGroup -ResourceGroup "Default-activityLogAlerts"
 ```
 
-Ez a parancs megjeleníti a megadott erőforráscsoport műveleti csoportját.
+Ez a parancs felsorolja az adott erőforráscsoporthoz szükséges műveletcsoportokat.
 
-### 3. példa: művelet csoportjának beszerzése
+### 3. példa: Műveletcsoport lekérte.
 ```
 PS C:\>Get-AzActionGroup -ResourceGroup "Default-activityLogAlerts" -Name "actionGroup1"
 ```
 
-Ez a parancs egy (egyetlen elemből álló) műveleti csoporttal sorolja fel a listát.
+Ez a parancs felsorol egy (egyetlen elemet tartalmazó listát) műveletcsoportot.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -74,8 +74,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (név)
-A műveleti csoport neve.
+### -Name
+A műveletcsoport neve.
 
 ```yaml
 Type: System.String
@@ -117,20 +117,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. commands. OutputClasses. PSActionGroupResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
 [Set-AzActionGroup](./Set-AzActionGroup.md) 
  [Remove-AzActionGroup](./Remove-AzActionGroup.md) 
- [Új – AzActionGroupReceiver](./AzureRmActionGroupReceiver.md)
+ [New-AzActionGroupReceiver](./New-AzActionGroupReceiver.md)

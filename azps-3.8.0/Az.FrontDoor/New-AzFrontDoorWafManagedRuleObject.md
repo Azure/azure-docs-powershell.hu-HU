@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafManagedRuleObject.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafManagedRuleObject.md
-ms.openlocfilehash: 6e56ff9b174ec13d0844a1ac860d34043f8b73cf
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 7c9ace339da9639404072fd802782aee43d8ab37
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94013836"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403952"
 ---
 # New-AzFrontDoorWafManagedRuleObject
 
-## Áttekintés
-ManagedRule objektum létrehozása a WAF házirendek létrehozásához
+## SYNOPSIS
+FelügyeltRule-objektum létrehozása a WAF-házirendek létrehozásához
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 New-AzFrontDoorWafManagedRuleObject -Type <String> -Version <String>
@@ -25,12 +25,12 @@ New-AzFrontDoorWafManagedRuleObject -Type <String> -Version <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-ManagedRule objektum létrehozása a WAF házirendek létrehozásához
+## LEÍRÁS
+FelügyeltRule-objektum létrehozása a WAF-házirendek létrehozásához
 
-## Példák
+## PÉLDÁK
 
-### Példa 1
+### 1. példa
 ```powershell
 PS C:\> $ruleOverride1 = New-AzFrontDoorWafManagedRuleOverrideObject -RuleId "942250" -Action Log -EnabledState Enabled
 PS C:\> $ruleOverride2 = New-AzFrontDoorWafManagedRuleOverrideObject -RuleId "942251" -Action Log -EnabledState Enabled
@@ -46,12 +46,12 @@ RuleGroupOverrides RuleSetType    RuleSetVersion
 {SQLI, XSS}        DefaultRuleSet preview-0.1
 ```
 
-ManagedRule objektum létrehozása
+ManagedRule-objektum létrehozása
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -65,8 +65,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### – Kizárás
-Kirekesztés
+### -Exclusion
+Kivétel
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSManagedRuleExclusion[]
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 ```
 
 ### -RuleGroupOverride
-Az Azure felügyelt szolgáltatóinak listája felülbírálja a konfigurációt
+Az Azure felügyelt szolgáltató felülbírálási konfigurációjának listája
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSAzureRuleGroupOverride[]
@@ -95,8 +95,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Type (típus)
-A szabályrendszert típusa
+### -Type
+A szabálykészlet típusa
 
 ```yaml
 Type: System.String
@@ -110,8 +110,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Verzió
-A szabály verziószáma
+### -Version
+A szabálykészlet verziója
 
 ```yaml
 Type: System.String
@@ -126,20 +126,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
 ### Nincs
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. FrontDoor. models. PSAzureManagedRule
+### Microsoft.Azure.Commands.FrontDoor.Models.PSAzureManagedRule
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Új – AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md) 
- [Set-AzFrontDoorWafPolicy](./Set-AzFrontDoorWafPolicy.md) 
- [Új – AzFrontDoorWafRuleGroupOverrideObject](./New-AzFrontDoorWafRuleGroupOverrideObject.md)
+[New-AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md) 
+ [Update-AzFrontDoorWafPolicy](./Update-AzFrontDoorWafPolicy.md) 
+ [New-AzFrontDoorWafRuleGroupOverrideObject](./New-AzFrontDoorWafRuleGroupOverrideObject.md)
