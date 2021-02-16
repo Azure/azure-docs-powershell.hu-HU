@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/Update
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Update-AzSqlDatabaseAdvancedThreatProtectionSetting.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Update-AzSqlDatabaseAdvancedThreatProtectionSetting.md
-ms.openlocfilehash: 1bd5906ac4736fc2aace122070edfebe1e59fe3f
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: baa3e3d4b272bccab5fe33b9af05edc9ed254236
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94181288"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406706"
 ---
 # Update-AzSqlDatabaseAdvancedThreatProtectionSetting
 
-## Áttekintés
-Speciális veszélyforrások elleni védelemre vonatkozó beállításokat állít be az adatbázisokban.
+## SYNOPSIS
+Speciális veszélyforrás-védelmi beállításokat ad meg az adatbázisokban.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 Update-AzSqlDatabaseAdvancedThreatProtectionSetting [-PassThru] [-NotificationRecipientsEmails <String>]
@@ -27,25 +27,25 @@ Update-AzSqlDatabaseAdvancedThreatProtectionSetting [-PassThru] [-NotificationRe
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Leírás
-Az **Update-AzSqlDatabaseAdvancedThreatProtectionSetting** parancsmag az Azure SQL-adatbázisokban speciális veszélyforrások elleni védelemi beállításokat állít be.
-Az adatbázis speciális veszélyforrások elleni védelmének engedélyezéséhez a naplózási beállításokat engedélyeznie kell az adatbázisban.
-A parancsmag használatához adja meg a *ResourceGroupName* , a *kiszolgálónév* és a *databasename* paramétert az adatbázis meghatározásához.
-Ezt a parancsmagot az SQL Server stretch Database szolgáltatása is támogatja az Azure-ban.
+## LEÍRÁS
+Az **Update-AzSqlDatabaseAdvancedThreatProtectionSetting** parancsmag speciális veszélyforrás-védelmi beállításokat állít be egy Azure SQL-adatbázisban.
+A komplex veszélyforrások elleni védelem adatbázison való speciális védelméhez engedélyezni kell az adatbázis naplózási beállításait.
+A parancsmagot a *ResourceGroupName,* *a ServerName* és a *DatabaseName* paraméter megadásával azonosíthatja az adatbázist.
+Ezt a parancsmagot az Azure SQL Server Stretch Database szolgáltatása is támogatja.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: az adatbázis speciális veszélyforrásokkal kapcsolatos védelmi beállításainak megadása
+### 1. példa: Az adatbázisok komplex veszélyforrások elleni védelmi beállításainak megadása
 ```
 PS C:\>Update-AzSqlDatabaseAdvancedThreatProtectionSetting -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -DatabaseName "Database01" -NotificationRecipientsEmails "admin01@contoso.com;secadmin@contoso.com" -EmailAdmins $False -ExcludedDetectionType "Sql_Injection_Vulnerability", "SQL_Injection" -StorageAccountName "mystorageAccount"
 ```
 
-Ez a parancs a Server01 nevű kiszolgálón a Database01 nevű adatbázis speciális veszélyforrásokkal kapcsolatos védelmi beállításait állítja be.
+Ez a parancs a Database01 nevű adatbázis komplex veszélyforrás-védelmi beállításait állítja be a Server01 nevű kiszolgálón.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DatabaseName
-Annak az adatbázisnak a nevét adja meg, amelyben a beállítások be vannak állítva.
+Annak az adatbázisnak a nevét adja meg, amelyben a beállítások meg vannak állítva.
 
 ```yaml
 Type: System.String
@@ -60,7 +60,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -EmailAdmins
-Meghatározza, hogy a speciális veszélyforrások elleni védelem beállításai a rendszergazdák e-mailen keresztül kerülnek-e kapcsolatba.
+Azt adja meg, hogy a komplex veszélyforrások elleni védelem speciális beállításai e-mailben lépnek-e a rendszergazdákhoz.
 
 ```yaml
 Type: System.Nullable`1[System.Boolean]
@@ -90,11 +90,11 @@ Accept wildcard characters: False
 ```
 
 ### -ExcludedDetectionType
-A beállításokból kizárandó észlelési típusok tömbjét adja meg.
-A paraméter elfogadható értékei a következők:
-- Sql_Injection 
-- Sql_Injection_Vulnerability 
-- Access_Anomaly 
+A beállításokból kizárandó észlelési típusok tömbje.
+A paraméter elfogadható értékei a következőek:
+- Sql_Injection
+- Sql_Injection_Vulnerability
+- Access_Anomaly
 - Nincs
 
 ```yaml
@@ -110,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -NotificationRecipientsEmails
-Az e-mail-címek pontosvesszővel elválasztott listáját adja meg, amelyre a beállítások riasztásokat küldenek.
+Pontosvesszővel elválasztott listát ad meg azokról az e-mail-címekről, amelyekre a beállítások riasztásokat küld.
 
 ```yaml
 Type: System.String
@@ -125,8 +125,8 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Egy olyan objektumot ad eredményül, amely a munkaterületet jelképezi.
-Ez a parancsmag alapértelmezés szerint nem hoz létre semmilyen kimenetet.
+Egy objektumot ad vissza, amely azt az elemet tartalmazza, amellyel dolgozik.
+Ez a parancsmag alapértelmezés szerint nem hoz létre kimenetet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -141,7 +141,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Annak az erőforráscsoport-csoportnak a neve, amelyhez a kiszolgálót hozzárendelték.
+Annak az erőforráscsoportnak a neve, amelyhez a kiszolgáló hozzá van rendelve.
 
 ```yaml
 Type: System.String
@@ -170,7 +170,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Kiszolgálónév
+### -ServerName
 A kiszolgáló nevét adja meg.
 
 ```yaml
@@ -186,7 +186,7 @@ Accept wildcard characters: False
 ```
 
 ### -StorageAccountName
-A használandó tárterület-fiók nevét adja meg. A helyettesítő karakterek nem engedélyezettek. Ehhez a paraméterhez nincs szükség. Ha ez a paraméter nincs megadva, a parancsmag az adatbázis speciális veszélyforrások elleni védelmének részeként megadott tárolási fiókot fogja használni. Ha ez az első alkalom, hogy az adatbázis speciális veszélyforrások elleni védelme beállítás van megadva, és ez a paraméter nem jelenik meg, a parancsmag sikertelen lesz.
+A használni használt tárfiók nevét adja meg. A helyettesítő karakterek használata nem engedélyezett. Ez a paraméter nem kötelező. Ha ez a paraméter nincs megadva, a parancsmag az adatbázis komplex veszélyforrás-védelmi beállításainak részeként korábban definiált tárfiókot fogja használni. Ha első alkalommal határoz meg komplex veszélyforrások elleni védelemre vonatkozó adatbázis-beállításokat, és ez a paraméter nincs megadva, a parancsmag nem fog működni.
 
 ```yaml
 Type: System.String
@@ -200,8 +200,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -216,7 +216,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik.
 A parancsmag nem fut.
 
 ```yaml
@@ -232,30 +232,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
-### System. null ' 1 [[System. Boolean, System. Private. CoreLib, Version = 4.0.0.0, Culture = semleges, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### Microsoft. Azure. Command. SQL. ThreatDetection. Model. DetectionType []
+### Microsoft.Azure.Commands.Sql.ThreatDetection.Model.DetectionType[]
 
-### System. null ' 1 [[System. UInt32, System. Private. CoreLib, Version = 4.0.0.0, Culture = semleges, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.UInt32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. SQL. ThreatDetection. Model. DatabaseThreatDetectionsettingsModel
+### Microsoft.Azure.Commands.Sql.ThreatDetection.Model.DatabaseThreatDetectionsettingsModel
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Get-AzSqlDatabaseThreatDetectionsettings](./Get-AzSqlServerThreatDetectionsettings.md)
-
-[Remove-AzSqlDatabaseThreatDetectionsettings](./Remove-AzSqlDatabaseThreatDetectionsettings.md)
-
 [SQL-adatbázis dokumentációja](https://docs.microsoft.com/azure/sql-database/)
-
-

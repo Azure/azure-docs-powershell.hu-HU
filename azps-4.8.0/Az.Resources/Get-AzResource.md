@@ -6,20 +6,20 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzResource.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzResource.md
-ms.openlocfilehash: e1748bb3dbb5c2bb86f02ef9ec58d0d1eec55ba9
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 2926aa351e7e9f1f9251c5a6e6a2292b27ef93b0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94181947"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398189"
 ---
 # Get-AzResource
 
-## Áttekintés
+## SYNOPSIS
 
 Erőforrásokat kap.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### ByTagNameValueParameterSet (alapértelmezett)
 ```
@@ -41,13 +41,13 @@ Get-AzResource [-Name <String>] [-ResourceType <String>] [-ODataQuery <String>] 
  [<CommonParameters>]
 ```
 
-## Leírás
+## LEÍRÁS
 
 A **Get-AzResource** parancsmag Azure-erőforrásokat kap.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: a jelenlegi előfizetés összes erőforrásának lekérése
+### 1. példa: Az aktuális előfizetés összes erőforrásának lekérte
 
 ```
 PS C:\> Get-AzResource | ft
@@ -65,9 +65,9 @@ storage otherResourceGroup Microsoft.Storage/storageAccounts       eastus
 testVM2 otherResourceGroup Microsoft.Compute/virtualMachines       eastus
 ```
 
-Ez a parancs a jelenlegi előfizetés összes erőforrását megkapja.
+Ez a parancs az aktuális előfizetés összes erőforrását beveszi.
 
-### 2. példa: erőforráscsoport erőforrásainak beolvasása
+### 2. példa: Erőforráscsoport összes erőforrásának be szereznie
 
 ```
 PS C:\> Get-AzResource -ResourceGroupName testRG | ft
@@ -82,9 +82,9 @@ ip     testRG            Microsoft.Network/publicIPAddresses     westus
 vnet   testRG            Microsoft.Network/virtualNetworks       westus
 ```
 
-Ez a parancs a "testRG" erőforráscsoport összes erőforrását megkapja.
+Ez a parancs a "testRG" erőforráscsoport összes erőforrását beveszi.
 
-### 3. példa: az összes olyan erőforrás beszerzése, amelynek az erőforráscsoport megegyezik a megadott helyettesítő karakterrel
+### 3. példa: Az összes olyan erőforrás lekérte, amelynek erőforráscsoportja megfelel a megadott helyettesítő karakternek
 
 ```
 PS C:\> Get-AzResource -ResourceGroupName other* | ft
@@ -96,9 +96,9 @@ storage otherResourceGroup Microsoft.Storage/storageAccounts eastus
 testVM2 otherResourceGroup Microsoft.Compute/virtualMachines eastus
 ```
 
-Ez a parancs azokat az erőforrásokat kapja meg, amelyek erőforráscsoport az "egyéb" csoportjába tartozik.
+Ez a parancs az összes olyan erőforrást beveszi, amelynek erőforráscsoportja a "más" szóhoz tartozik.
 
-### Példa 4: az összes erőforrás beolvasása egy adott névvel
+### 4. példa: Az összes erőforrás lekérte egy megadott névvel
 
 ```
 PS C:\> Get-AzResource -Name testVM | fl
@@ -116,9 +116,9 @@ Tags              :
                     Status  Approved
 ```
 
-Ez a parancs minden olyan erőforrást visszanyer, amelynek az erőforrás neve "testVM".
+Ez a parancs az összes olyan erőforrást beveszi, amelynek az erőforrásneve "testVM".
 
-### Példa 5: az összes olyan erőforrás lekérése, akinek a neve megegyezik a megadott helyettesítő karakterrel
+### 5. példa: Az összes olyan erőforrás lekérte, amelynek a neve megegyezik a megadott helyettesítő karakterekkel
 
 ```
 PS C:\> Get-AzResource -Name test* | ft
@@ -130,9 +130,9 @@ testKV  otherRG            Microsoft.KeyVault/vaults         eastus
 testVM2 otherResourceGroup Microsoft.Compute/virtualMachines eastus
 ```
 
-Ez a parancs minden olyan erőforrást beolvas, amelynek az erőforrás neve "teszt"-val kezdődik.
+Ez a parancs az összes olyan erőforrást beveszi, amelynek az erőforrásneve "teszt" névvel kezdődik.
 
-### Példa 6: adott erőforrástípus összes erőforrásának lekérése
+### 6. példa: Egy adott erőforrástípus összes erőforrásának lekérte
 
 ```
 PS C:\> Get-AzResource -ResourceType Microsoft.Compute/virtualMachines | ft
@@ -143,9 +143,9 @@ testVM  testRG             Microsoft.Compute/virtualMachines westus
 testVM2 otherResourceGroup Microsoft.Compute/virtualMachines eastus
 ```
 
-Ez a parancs a virtuális gépek jelenlegi előfizetésében található összes erőforrást megkapja.
+Ez a parancs az aktuális előfizetések összes olyan erőforrását beveszi, amely virtuális gép.
 
-### 7. példa: erőforrás-erőforrás-azonosító beszerzése
+### 7. példa: Erőforrás lekérte erőforrás-azonosítója
 
 ```
 PS C:\> Get-AzResource -ResourceId /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testRG/providers/Microsoft.Compute/virtualMachines/testVM
@@ -163,9 +163,9 @@ Tags              :
                     Status  Approved
 ```
 
-Ez a parancs az erőforrást a megadott erőforrás-azonosítóval kapja meg, amely a "testRG" erőforráscsoport "testVM" nevű virtuális gép.
+Ez a parancs a megadott erőforrás-azonosítóval kapja meg az erőforrást, amely egy "testVM" nevű virtuális gép a "testRG" erőforráscsoportban.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -ApiVersion
 
@@ -182,7 +182,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -211,8 +211,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (név)
-A beolvasni kívánt erőforrás (ok) neve. Ez a paraméter a karakterlánc elején és/vagy végén támogatja a helyettesítő karaktereket.
+### -Name
+A visszakeresni szükséges erőforrás(ak) neve. Ez a paraméter a karakterlánc elején és/vagy végén támogatja a helyettesítő karaktereket.
 
 ```yaml
 Type: System.String
@@ -255,7 +255,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Az erőforráscsoport a beolvasott erőforrás (oka) t a beolvasott erőforrás csoportba tartozik. Ez a paraméter a karakterlánc elején és/vagy végén támogatja a helyettesítő karaktereket.
+Az erőforráscsoport, amelybe a beolvasott erőforrás(k)t beolvassa. Ez a paraméter a karakterlánc elején és/vagy végén támogatja a helyettesítő karaktereket.
 
 ```yaml
 Type: System.String
@@ -270,7 +270,7 @@ Accept wildcard characters: True
 ```
 
 ### -ResourceId
-A teljesen minősített erőforrás AZONOSÍTÓját adja meg, az alábbi példában látható módon. `/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.Compute/virtualMachines`
+A teljes erőforrás-azonosítót adja meg, az alábbi példában megadottak szerint. `/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.Compute/virtualMachines`
 
 ```yaml
 Type: System.String
@@ -285,7 +285,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceType
-A beolvasandó erőforrás (ok) erőforrás-típusa. Példa: Microsoft. számítási/virtualMachines
+A visszakeresni szükséges erőforrás(ak) erőforrástípusa. Például: Microsoft.Compute/virtualMachines
 
 ```yaml
 Type: System.String
@@ -299,9 +299,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Címke
+### -Tag
 
-A megadott Azure címkét tartalmazó erőforrásokat kapja meg. Írjon be egy, a név vagy a név és az érték kulcsú hash-táblázatot. A helyettesítő karakterek használata nem támogatott. A "címke" egy olyan név-érték páros, amelyet az erőforrásokra és az erőforrás-csoportokra lehet alkalmazni. Címkéket használhat az erőforrások (például részleg vagy költséghely) kategorizálásához, illetve az erőforrásokkal kapcsolatos megjegyzések és megjegyzések nyomon követéséhez. Ha hozzá szeretne adni egy címkét egy erőforráshoz, használja az New-AzResource vagy Set-AzResource parancsmagok címke paraméterét. Ha előre definiált címkét szeretne létrehozni, használja az New-AzTag parancsmagot. Ha segítségre van szüksége a Windows PowerShell kivonatoló tábláihoz, futtassa a "Get-Help about_Hashtables" parancsot.
+A megadott Azure-címkével rendelkezik erőforrásokat kap. Írjon be egy olyan kivonattáblát, amely tartalmazza a Név vagy a Név és az Érték billentyűt. A helyettesítő karakterek nem támogatottak. A "címke" egy névérték-pár, amely az erőforrásokra és az erőforráscsoportokra alkalmazható. Címkék használatával kategorizálhatja az erőforrásokat, például részlegek vagy költségközpontok szerint, illetve nyomon követheti az erőforrásokkal kapcsolatos jegyzeteket vagy megjegyzéseket. Ha címkét szeretne hozzáadni egy erőforráshoz, használja a New-AzResource vagy Set-AzResource címke paraméterét. Előre definiált címke létrehozásához használja a New-AzTag parancsmagot. Ha segítségre van szüksége a kivonattáblák Windows PowerShellben való futtatásához, futtassa a "Get-Help about_Hashtables" parancsot.
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -316,7 +316,7 @@ Accept wildcard characters: False
 ```
 
 ### -TagName
-A beolvasni kívánt erőforrás (ok) címkéjének a kulcsa.
+A visszakeresni szükséges erőforrások címkéje.
 
 ```yaml
 Type: System.String
@@ -331,7 +331,7 @@ Accept wildcard characters: False
 ```
 
 ### -TagValue
-A beolvasandó erőforrás (ok) címke értéke.
+A visszakeresni szükséges erőforrás(ak) címkében megadott érték.
 
 ```yaml
 Type: System.String
@@ -346,25 +346,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. ResourceManager. Parancsmags. SdkModels. PSResource
+### Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResource
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Keresés-AzResource](./Find-AzResource.md)
 
 [Move-AzResource](./Move-AzResource.md)
 
-[Új – AzResource](./New-AzResource.md)
+[New-AzResource](./New-AzResource.md)
 
 [Remove-AzResource](./Remove-AzResource.md)
 

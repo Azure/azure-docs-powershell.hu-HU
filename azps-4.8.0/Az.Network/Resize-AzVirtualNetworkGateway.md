@@ -6,49 +6,49 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Resize-AzVirtualNetworkGateway.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Resize-AzVirtualNetworkGateway.md
-ms.openlocfilehash: dd48af6a0f20cafea5911adb629a83323faa94a6
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 31ec0453b0ce64c27d1bb37d4bf6c0f100a8c760
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94184792"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100416192"
 ---
 # Resize-AzVirtualNetworkGateway
 
-## Áttekintés
-Egy meglévő virtuális hálózati átjáró átméretezése.
+## SYNOPSIS
+Átméretez egy meglévő virtuális hálózati átjárót.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 Resize-AzVirtualNetworkGateway -VirtualNetworkGateway <PSVirtualNetworkGateway> -GatewaySku <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-Az **átméretezés-AzVirtualNetworkGateway** parancsmag lehetővé teszi a virtuális hálózati átjáró készletezési egységének (SKU) módosítását.
-A SKU határozza meg az átjáró funkcióit, így például az átviteli sebességet és az engedélyezett IP-alagutak maximális számát.
-Az Azure támogatja az alapvető, normál, nagy teljesítményű, VpnGw1, VpnGw2, VpnGw3, VpnGw1AZ, VpnGw2AZ, VpnGw3AZ, ErGw1AZ, ErGw2AZ, ErGw3AZ, (néha kicsi, közepes és nagy méretű SKU) használatát.
-Az egyes SKU-típusok képességeiről további információt a című témakörben találhat https://azure.microsoft.com/en-us/documentation/articles/vpn-gateway-about-vpngateways/ .
-Tartsa szem előtt, hogy a SKU az árak és a funkciók között eltérő.
+## LEÍRÁS
+Az **Resize-AzVirtualNetworkGateway** parancsmag segítségével módosíthatja egy virtuális hálózati átjáró készletezési egységét.
+Az SKUs meghatározza az átjárók képességeit, többek között az átviteli sebességet és az engedélyezett IP-átjárók maximális számát.
+Az Azure alapszintű, szabványos, nagy teljesítményű, VpnGw1, VpnGw2, VpnGw3, VpnGw1AZ, VpnGw2AZ, VpnGw3AZ, ErGw1AZ, ErGw2AZ, ErGw3AZ SKUs (más néven Kis, Közepes és Nagy SKUs) támogatja.
+Az egyes termékváltozat-típusokkal kapcsolatos részletes információkért https://azure.microsoft.com/en-us/documentation/articles/vpn-gateway-about-vpngateways/ lásd: .
+Ne feledje, hogy a termékkódja az árazásban és a képességekben is különbözik.
 További információ: https://azure.microsoft.com/en-us/pricing/details/vpn-gateway/ .
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: virtuális hálózati átjáró méretének módosítása
+### 1. példa: Virtuális hálózati átjáró méretének módosítása
 ```
 PS C:\>$Gateway = Get-AzVirtualNetworkGateway -Name "ContosoVirtualGateway"
 PS C:\> Resize-AzVirtualNetworkGateway -VirtualNetworkGateway $Gateway -GatewaySku "Basic"
 ```
 
-Ez a példa a ContosoVirtualGateway nevű virtuális hálózati átjáró méretét módosítja.
-Az első parancs egy objektumra mutató hivatkozást hoz létre a ContosoVirtualGateway-hoz; Ez az objektum hivatkozás a $Gateway nevű változóban tárolódik.
-A második parancs ezt követően a **Resize-AzVirtualNetworkGateway** parancsmagot használja az *GatewaySku* tulajdonság egyszerű értékre való beállításához.
+Ez a példa módosítja a ContosoVirtualGateway nevű virtuális hálózati átjáró méretét.
+Az első parancs a ContosoVirtualGateway objektumhivatkozását hozza létre; Ezt az objektumhivatkozást egy $Gateway.
+A második parancs ezután az **Resize-AzVirtualNetworkGateway** parancsmagot használva alapszintűre állíthatja az *ÁtjáróKku* tulajdonságot.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -63,10 +63,10 @@ Accept wildcard characters: False
 ```
 
 ### -GatewaySku
-Az átjáró új típusú SKU-típusát adja meg.
-A paraméter elfogadható értékei a következők:
-- Egyszerű
-- Standard
+Az átjárók termékváltozatának új típusát határozza meg.
+A paraméter elfogadható értékei a következőek:
+- Alapszintű
+- Normál
 - Nagy teljesítmény
 - VpnGw1
 - VpnGw2
@@ -92,8 +92,8 @@ Accept wildcard characters: False
 ```
 
 ### -VirtualNetworkGateway
-Az átméretezni kívánt virtuális hálózati átjáróra mutató objektum hivatkozását adja meg.
-Az objektum hivatkozását létrehozhatja a Get-AzVirtualNetworkGateway használatával, és megadhatja az átjáró nevét.
+Az átméretezni szükséges virtuális hálózati átjáró objektumhivatkozását adja meg.
+Ezt az objektumhivatkozást a Get-AzVirtualNetworkGateway és az átjáró nevének megadásával hozhatja létre.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway
@@ -108,26 +108,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. Azure. commands. Network. models. PSVirtualNetworkGateway
+### Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. commands. Network. models. PSVirtualNetworkGateway
+### Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway
 
-## MEGJEGYZI
-Az alap/normál/HighPerformance SKU-ról nem lehet átméretezni az új VpnGw1/VpnGw2/VpnGw3 SKU-ra. A további átméretezés nem engedélyezett a VpnGw1AZ/VpnGw2AZ/VpnGw3AZ vagy a ErGw1AZ/ErGw2AZ/ErGw3AZ. Az átméretezés csak a SKU "sorozat"-ban engedélyezett, például a VpnGw1AZ átméretezhetők a VpnGw2AZ/VpnGw3AZ és a ErGw1AZ átméretezhetők a ErGw2AZ/ErGw3AZ. Lásd: https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways utasítások.
+## MEGJEGYZÉSEK
+Alapszintű/Standard/HighPerformance SKUs-ból nem lehet átméretezni az új VpnGw1/VpnGw2/VpnGw3-SKUs-ra. A vpnGw1AZ/VpnGw2AZ/VpnGw3AZ vagy ErGw1AZ/ErGw2AZ/ErGw2AZ/ErGw3AZ nem engedélyezett további átméretezések. Az átméretezés csak az SKU "adatsorában" engedélyezett, például a VpnGw1AZ átméretezhetők a VpnGw2AZ/VpnGw3AZ/VpnGw3AZ és az ErGw1AZ termékváltozatba vagy az ErGw2AZ/ErGw3AZ alkalmazásba. Útmutatást https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways itt láthat.
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
 [Get-AzVirtualNetworkGateway](./Get-AzVirtualNetworkGateway.md)
 
-[Új – AzVirtualNetworkGateway](./New-AzVirtualNetworkGateway.md)
+[New-AzVirtualNetworkGateway](./New-AzVirtualNetworkGateway.md)
 
 [Remove-AzVirtualNetworkGateway](./Remove-AzVirtualNetworkGateway.md)
 
@@ -137,4 +137,3 @@ Az alap/normál/HighPerformance SKU-ról nem lehet átméretezni az új VpnGw1/V
 
 [Get-AzVpnClientPackage](./Get-AzVpnClientPackage.md)
 
-[Set-AzVirtualNetworkGatewayVpnClientConfig](./Set-AzVirtualNetworkGatewayVpnClientConfig.md)

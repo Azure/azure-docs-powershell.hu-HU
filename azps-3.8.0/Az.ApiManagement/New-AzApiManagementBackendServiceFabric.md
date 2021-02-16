@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendServiceFabric.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendServiceFabric.md
-ms.openlocfilehash: ced4c9708d2ac7f82144e1965beb36a250bbe369
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 352e40aa64adf5eea98950ac9271f0237e634ab6
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94012247"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398138"
 ---
 # New-AzApiManagementBackendServiceFabric
 
-## Áttekintés
-Objektum létrehozása `PsApiManagementServiceFabric`
+## SYNOPSIS
+Objektum létrehozása: `PsApiManagementServiceFabric`
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 New-AzApiManagementBackendServiceFabric -ManagementEndpoint <String[]> -ClientCertificateThumbprint <String>
@@ -25,13 +25,13 @@ New-AzApiManagementBackendServiceFabric -ManagementEndpoint <String[]> -ClientCe
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
+## LEÍRÁS
 
-A **New-AzApiManagementBackendServiceFabric** parancsmag létrehoz egy olyan objektumot, amelyet `PsApiManagementServiceFabric` az **új AzApiManagementBackend** és a **set-AzApiManagementBackend**.
+A **New-AzApiManagementBackendServiceFabric** parancsmag létrehoz egy objektumot, amely a `PsApiManagementServiceFabric` **New-AzApiManagementBackend** és a **Set-AzApiManagementBackend** parancsmagban használható.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: a backend-szolgáltatás In-Memory objektum létrehozása
+### 1. példa: Backend Service Fabric In-Memory objektum létrehozása
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>$ManagementEndpoints = 'https://sfbackend-01.net:443', 'https://sfbackend-02.net:443'
@@ -41,13 +41,13 @@ PS C:\>$serviceFabric = New-AzApiManagementBackendServiceFabric -ManagementEndpo
 PS C:\>$backend = New-AzApiManagementBackend -Context  $apimContext -BackendId 123 -Url 'https://contoso.com/awesomeapi' -Protocol http -ServiceFabricCluster $serviceFabric -Description "service fabric backend" -PassThru
 ```
 
-A háttér-szolgáltatási szövet szerződés létrehozása
+Backend Service Fabric Contract (Backend Service Fabric Contract) hoz létre
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -ClientCertificateThumbprint
-Ügyféltanúsítvány-ujjlenyomat a kezelési végponthoz.
-Ehhez a paraméterhez szükség van.
+Client Certificate Thumbprint for the management endpoint.
+Ezt a paramétert kötelező megadni.
 
 ```yaml
 Type: System.String
@@ -62,7 +62,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -77,8 +77,8 @@ Accept wildcard characters: False
 ```
 
 ### -ManagementEndpoint
-Szolgáltatás szövet cluster Management végpontok.
-Ehhez a paraméterhez szükség van.
+Service Fabric Cluster management Endpoints.
+Ezt a paramétert kötelező megadni.
 
 ```yaml
 Type: System.String[]
@@ -93,8 +93,8 @@ Accept wildcard characters: False
 ```
 
 ### -MaxPartitionResolutionRetry
-Az újbóli próbálkozások maximális száma a Service Fabric-partíciók feloldásakor.
-Ez a paraméter nem kötelező, és az alapértelmezett érték 5.
+A Service Fabric partíciók feloldásakor a retries maximális száma.
+Ez a paraméter nem kötelező, az alapértelmezett érték pedig 5.
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -109,7 +109,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServerCertificateThumbprint
-A tanúsítványok fürtözési szolgáltatásának ujjlenyomata TLS-kommunikációt használ. Ez a paraméter nem kötelező.
+A tanúsítványok fürtkezelési szolgáltatásának thumbprint of certificates cluster management service uses for tls communication. Ez a paraméter nem kötelező.
 
 ```yaml
 Type: System.String[]
@@ -124,7 +124,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServerX509Name
-A kiszolgálói X509 a tanúsítványok neveinek gyűjteménye.
+Server X509 Certificate Names Collection.
 Ez a paraméter nem kötelező.
 
 ```yaml
@@ -140,25 +140,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementServiceFabric
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementServiceFabric
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Get-AzApiManagementBackend](./Get-AzApiManagementBackend)
+[Get-AzApiManagementBackend](./Get-AzApiManagementBackend.md)
 
-[Új – AzApiManagementBackend](./New-AzApiManagementBackend.md)
+[New-AzApiManagementBackend](./New-AzApiManagementBackend.md)
 
-[Új – AzApiManagementBackendProxy](./New-AzApiManagementBackendProxy.md)
+[New-AzApiManagementBackendProxy](./New-AzApiManagementBackendProxy.md)
 
 [Set-AzApiManagementBackend](./Set-AzApiManagementBackend.md)
 
