@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafPolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafPolicy.md
-ms.openlocfilehash: 2e78b132019b19725a5261d58a760b3eb9988bb2
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 2d3811b5605b6f4923abd58c64d8d870ede8d334
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94014355"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403850"
 ---
-# <span data-ttu-id="66fce-101">New-AzFrontDoorWafPolicy</span><span class="sxs-lookup"><span data-stu-id="66fce-101">New-AzFrontDoorWafPolicy</span></span>
+# <span data-ttu-id="e6d53-101">New-AzFrontDoorWafPolicy</span><span class="sxs-lookup"><span data-stu-id="e6d53-101">New-AzFrontDoorWafPolicy</span></span>
 
-## <span data-ttu-id="66fce-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="66fce-102">SYNOPSIS</span></span>
-<span data-ttu-id="66fce-103">WAF-házirend létrehozása</span><span class="sxs-lookup"><span data-stu-id="66fce-103">Create WAF policy</span></span>
+## <span data-ttu-id="e6d53-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="e6d53-102">SYNOPSIS</span></span>
+<span data-ttu-id="e6d53-103">WaF-házirend létrehozása</span><span class="sxs-lookup"><span data-stu-id="e6d53-103">Create WAF policy</span></span>
 
-## <span data-ttu-id="66fce-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="66fce-104">SYNTAX</span></span>
+## <span data-ttu-id="e6d53-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="e6d53-104">SYNTAX</span></span>
 
 ```
 New-AzFrontDoorWafPolicy -ResourceGroupName <String> -Name <String> [-EnabledState <PSEnabledState>]
@@ -26,12 +26,12 @@ New-AzFrontDoorWafPolicy -ResourceGroupName <String> -Name <String> [-EnabledSta
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="66fce-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="66fce-105">DESCRIPTION</span></span>
-<span data-ttu-id="66fce-106">A **New-AzFrontDoorWafPolicy** parancsmag új Azure WAF-házirendet hoz létre az aktuális előfizetés csoportban a megadott erőforrás csoportban.</span><span class="sxs-lookup"><span data-stu-id="66fce-106">The **New-AzFrontDoorWafPolicy** cmdlet creates a new Azure WAF policy in the specified resource group under current subscription</span></span>
+## <span data-ttu-id="e6d53-105">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="e6d53-105">DESCRIPTION</span></span>
+<span data-ttu-id="e6d53-106">A **New-AzFrontDoorWafPolicy** parancsmag létrehoz egy új Azure WAF-házirendet a megadott erőforráscsoportban az aktuális előfizetés alatt</span><span class="sxs-lookup"><span data-stu-id="e6d53-106">The **New-AzFrontDoorWafPolicy** cmdlet creates a new Azure WAF policy in the specified resource group under current subscription</span></span>
 
-## <span data-ttu-id="66fce-107">Példák</span><span class="sxs-lookup"><span data-stu-id="66fce-107">EXAMPLES</span></span>
+## <span data-ttu-id="e6d53-107">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="e6d53-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="66fce-108">1. példa: WAF-házirend létrehozása</span><span class="sxs-lookup"><span data-stu-id="66fce-108">Example 1: Create WAF policy</span></span>
+### <span data-ttu-id="e6d53-108">1. példa: WaF-házirend létrehozása</span><span class="sxs-lookup"><span data-stu-id="e6d53-108">Example 1: Create WAF policy</span></span>
 ```powershell
 PS C:\> New-AzFrontDoorWafPolicy -Name $policyName -ResourceGroupName $resourceGroupName -Customrule $customRule1,$customRule2 -ManagedRule $managedRule1 -EnabledState Enabled -Mode Prevention -RedirectUrl "https://www.bing.com/" -CustomBlockResponseStatusCode 405 -CustomBlockResponseBody "<html><head><title>You are blocked!</title></head><body></body></html>"
 
@@ -40,12 +40,12 @@ Name         PolicyMode PolicyEnabledState RedirectUrl
 {policyName} Prevention            Enabled https://www.bing.com/
 ```
 
-<span data-ttu-id="66fce-109">WAF-házirend létrehozása</span><span class="sxs-lookup"><span data-stu-id="66fce-109">Create WAF policy</span></span>
+<span data-ttu-id="e6d53-109">WaF-házirend létrehozása</span><span class="sxs-lookup"><span data-stu-id="e6d53-109">Create WAF policy</span></span>
 
-## <span data-ttu-id="66fce-110">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="66fce-110">PARAMETERS</span></span>
+## <span data-ttu-id="e6d53-110">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="e6d53-110">PARAMETERS</span></span>
 
-### <span data-ttu-id="66fce-111">-CustomBlockResponseBody</span><span class="sxs-lookup"><span data-stu-id="66fce-111">-CustomBlockResponseBody</span></span>
-<span data-ttu-id="66fce-112">Egyéni válasz törzse</span><span class="sxs-lookup"><span data-stu-id="66fce-112">Custom Response Body</span></span>
+### <span data-ttu-id="e6d53-111">-CustomBlockResponseBlock</span><span class="sxs-lookup"><span data-stu-id="e6d53-111">-CustomBlockResponseBody</span></span>
+<span data-ttu-id="e6d53-112">Egyéni válasz törzse</span><span class="sxs-lookup"><span data-stu-id="e6d53-112">Custom Response Body</span></span>
 
 ```yaml
 Type: System.String
@@ -59,8 +59,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="66fce-113">-CustomBlockResponseStatusCode</span><span class="sxs-lookup"><span data-stu-id="66fce-113">-CustomBlockResponseStatusCode</span></span>
-<span data-ttu-id="66fce-114">Egyéni válasz állapotkód</span><span class="sxs-lookup"><span data-stu-id="66fce-114">Custom Response Status Code</span></span>
+### <span data-ttu-id="e6d53-113">-CustomBlockResponseStatusCode</span><span class="sxs-lookup"><span data-stu-id="e6d53-113">-CustomBlockResponseStatusCode</span></span>
+<span data-ttu-id="e6d53-114">Egyéni válaszállapot-kód</span><span class="sxs-lookup"><span data-stu-id="e6d53-114">Custom Response Status Code</span></span>
 
 ```yaml
 Type: System.Int32
@@ -74,8 +74,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="66fce-115">-Customrule</span><span class="sxs-lookup"><span data-stu-id="66fce-115">-Customrule</span></span>
-<span data-ttu-id="66fce-116">A házirenden belüli egyéni szabályok</span><span class="sxs-lookup"><span data-stu-id="66fce-116">Custom rules inside the policy</span></span>
+### <span data-ttu-id="e6d53-115">-Customrule</span><span class="sxs-lookup"><span data-stu-id="e6d53-115">-Customrule</span></span>
+<span data-ttu-id="e6d53-116">Egyéni szabályok a házirenden belül</span><span class="sxs-lookup"><span data-stu-id="e6d53-116">Custom rules inside the policy</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSCustomRule[]
@@ -89,8 +89,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="66fce-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="66fce-117">-DefaultProfile</span></span>
-<span data-ttu-id="66fce-118">Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="66fce-118">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+### <span data-ttu-id="e6d53-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="e6d53-117">-DefaultProfile</span></span>
+<span data-ttu-id="e6d53-118">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="e6d53-118">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -104,9 +104,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="66fce-119">-EnabledState</span><span class="sxs-lookup"><span data-stu-id="66fce-119">-EnabledState</span></span>
-<span data-ttu-id="66fce-120">A házirend engedélyezett állapotú vagy letiltott állapotú-e.</span><span class="sxs-lookup"><span data-stu-id="66fce-120">Whether the policy is in enabled state or disabled state.</span></span>
-<span data-ttu-id="66fce-121">A lehetséges értékek a következők: "disabled", "engedélyezve"</span><span class="sxs-lookup"><span data-stu-id="66fce-121">Possible values include: 'Disabled', 'Enabled'</span></span>
+### <span data-ttu-id="e6d53-119">-EnabledState</span><span class="sxs-lookup"><span data-stu-id="e6d53-119">-EnabledState</span></span>
+<span data-ttu-id="e6d53-120">Hogy a házirend engedélyezett vagy letiltott állapotban van-e.</span><span class="sxs-lookup"><span data-stu-id="e6d53-120">Whether the policy is in enabled state or disabled state.</span></span>
+<span data-ttu-id="e6d53-121">Lehetséges értékek: "Letiltva", "Engedélyezve"</span><span class="sxs-lookup"><span data-stu-id="e6d53-121">Possible values include: 'Disabled', 'Enabled'</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSEnabledState
@@ -121,8 +121,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="66fce-122">-ManagedRule</span><span class="sxs-lookup"><span data-stu-id="66fce-122">-ManagedRule</span></span>
-<span data-ttu-id="66fce-123">Felügyelt szabályok a házirenden belül</span><span class="sxs-lookup"><span data-stu-id="66fce-123">Managed rules inside the policy</span></span>
+### <span data-ttu-id="e6d53-122">-ManagedRule</span><span class="sxs-lookup"><span data-stu-id="e6d53-122">-ManagedRule</span></span>
+<span data-ttu-id="e6d53-123">Felügyelt szabályok a házirenden belül</span><span class="sxs-lookup"><span data-stu-id="e6d53-123">Managed rules inside the policy</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSManagedRule[]
@@ -136,9 +136,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="66fce-124">Üzemmód</span><span class="sxs-lookup"><span data-stu-id="66fce-124">-Mode</span></span>
-<span data-ttu-id="66fce-125">Ez a cikk azt mutatja be, hogy az észlelési üzemmódban vagy a megelőzési módban van-e házirend szintű beállítás.</span><span class="sxs-lookup"><span data-stu-id="66fce-125">Describes if it is in detection mode  or prevention mode at policy level.</span></span>
-<span data-ttu-id="66fce-126">A lehetséges értékek a következők: "megelőzés", "észlelés"</span><span class="sxs-lookup"><span data-stu-id="66fce-126">Possible values include:'Prevention', 'Detection'</span></span>
+### <span data-ttu-id="e6d53-124">-Mód</span><span class="sxs-lookup"><span data-stu-id="e6d53-124">-Mode</span></span>
+<span data-ttu-id="e6d53-125">Ez a cikk azt ismerteti, hogy észlelési vagy megelőzési módban van-e házirendszinten.</span><span class="sxs-lookup"><span data-stu-id="e6d53-125">Describes if it is in detection mode  or prevention mode at policy level.</span></span>
+<span data-ttu-id="e6d53-126">Lehetséges értékek: "Megelőzés", "Észlelés"</span><span class="sxs-lookup"><span data-stu-id="e6d53-126">Possible values include:'Prevention', 'Detection'</span></span>
 
 ```yaml
 Type: System.String
@@ -152,8 +152,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="66fce-127">-Name (név)</span><span class="sxs-lookup"><span data-stu-id="66fce-127">-Name</span></span>
-<span data-ttu-id="66fce-128">WebApplicationFireWallPolicy neve</span><span class="sxs-lookup"><span data-stu-id="66fce-128">WebApplicationFireWallPolicy name.</span></span>
+### <span data-ttu-id="e6d53-127">-Name</span><span class="sxs-lookup"><span data-stu-id="e6d53-127">-Name</span></span>
+<span data-ttu-id="e6d53-128">WebApplicationFireWallPolicy neve.</span><span class="sxs-lookup"><span data-stu-id="e6d53-128">WebApplicationFireWallPolicy name.</span></span>
 
 ```yaml
 Type: System.String
@@ -167,8 +167,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="66fce-129">-RedirectUrl</span><span class="sxs-lookup"><span data-stu-id="66fce-129">-RedirectUrl</span></span>
-<span data-ttu-id="66fce-130">Átirányítás URL-címe</span><span class="sxs-lookup"><span data-stu-id="66fce-130">Redirect URL</span></span>
+### <span data-ttu-id="e6d53-129">-RedirectUrl</span><span class="sxs-lookup"><span data-stu-id="e6d53-129">-RedirectUrl</span></span>
+<span data-ttu-id="e6d53-130">Url-cím átirányítása</span><span class="sxs-lookup"><span data-stu-id="e6d53-130">Redirect URL</span></span>
 
 ```yaml
 Type: System.String
@@ -182,8 +182,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="66fce-131">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="66fce-131">-ResourceGroupName</span></span>
-<span data-ttu-id="66fce-132">Az erőforráscsoport neve</span><span class="sxs-lookup"><span data-stu-id="66fce-132">The resource group name</span></span>
+### <span data-ttu-id="e6d53-131">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="e6d53-131">-ResourceGroupName</span></span>
+<span data-ttu-id="e6d53-132">Az erőforráscsoport neve</span><span class="sxs-lookup"><span data-stu-id="e6d53-132">The resource group name</span></span>
 
 ```yaml
 Type: System.String
@@ -197,8 +197,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="66fce-133">– Megerősítés</span><span class="sxs-lookup"><span data-stu-id="66fce-133">-Confirm</span></span>
-<span data-ttu-id="66fce-134">A parancsmag futtatása előtt kéri a megerősítést.</span><span class="sxs-lookup"><span data-stu-id="66fce-134">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="e6d53-133">-Confirm</span><span class="sxs-lookup"><span data-stu-id="e6d53-133">-Confirm</span></span>
+<span data-ttu-id="e6d53-134">A parancsmag futtatása előtt a rendszer megerősítést kér.</span><span class="sxs-lookup"><span data-stu-id="e6d53-134">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -212,9 +212,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="66fce-135">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="66fce-135">-WhatIf</span></span>
-<span data-ttu-id="66fce-136">Annak megjelenítése, hogy mi történik, ha a parancsmag fut.</span><span class="sxs-lookup"><span data-stu-id="66fce-136">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="66fce-137">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="66fce-137">The cmdlet is not run.</span></span>
+### <span data-ttu-id="e6d53-135">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="e6d53-135">-WhatIf</span></span>
+<span data-ttu-id="e6d53-136">A parancsmag futtatásakor a program megjeleníti, hogy mi történik.</span><span class="sxs-lookup"><span data-stu-id="e6d53-136">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="e6d53-137">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="e6d53-137">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -228,27 +228,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="66fce-138">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="66fce-138">CommonParameters</span></span>
-<span data-ttu-id="66fce-139">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="66fce-139">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="66fce-140">További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="66fce-140">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="e6d53-138">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="e6d53-138">CommonParameters</span></span>
+<span data-ttu-id="e6d53-139">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="e6d53-139">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="e6d53-140">További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="e6d53-140">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="66fce-141">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="66fce-141">INPUTS</span></span>
+## <span data-ttu-id="e6d53-141">INPUTS</span><span class="sxs-lookup"><span data-stu-id="e6d53-141">INPUTS</span></span>
 
-### <span data-ttu-id="66fce-142">Nincs</span><span class="sxs-lookup"><span data-stu-id="66fce-142">None</span></span>
+### <span data-ttu-id="e6d53-142">Nincs</span><span class="sxs-lookup"><span data-stu-id="e6d53-142">None</span></span>
 
-## <span data-ttu-id="66fce-143">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="66fce-143">OUTPUTS</span></span>
+## <span data-ttu-id="e6d53-143">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="e6d53-143">OUTPUTS</span></span>
 
-### <span data-ttu-id="66fce-144">Microsoft. Azure. Command. FrontDoor. models. PSPolicy</span><span class="sxs-lookup"><span data-stu-id="66fce-144">Microsoft.Azure.Commands.FrontDoor.Models.PSPolicy</span></span>
+### <span data-ttu-id="e6d53-144">Microsoft.Azure.Commands.FrontDoor.Models.PSPolicy</span><span class="sxs-lookup"><span data-stu-id="e6d53-144">Microsoft.Azure.Commands.FrontDoor.Models.PSPolicy</span></span>
 
-## <span data-ttu-id="66fce-145">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="66fce-145">NOTES</span></span>
+## <span data-ttu-id="e6d53-145">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="e6d53-145">NOTES</span></span>
 
-## <span data-ttu-id="66fce-146">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="66fce-146">RELATED LINKS</span></span>
+## <span data-ttu-id="e6d53-146">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="e6d53-146">RELATED LINKS</span></span>
 
-<span data-ttu-id="66fce-147">[Set-AzFrontDoorWafPolicy](./Set-AzFrontDoorWafPolicy.md) 
- [Get-AzFrontDoorWafPolicy](./Get-AzFrontDoorWafPolicy.md) 
+<span data-ttu-id="e6d53-147">[Get-AzFrontDoorWafPolicy](./Get-AzFrontDoorWafPolicy.md) 
  [Remove-AzFrontDoorWafPolicy](./Remove-AzFrontDoorWafPolicy.md) 
- [Új – AzFrontDoorWafManagedRuleObject](./New-AzFrontDoorWafManagedRuleObject.md) 
- [Új – AzFrontDoorWafCustomRuleObject](./New-AzFrontDoorWafManagedRuleObject.md)</span><span class="sxs-lookup"><span data-stu-id="66fce-147">[Set-AzFrontDoorWafPolicy](./Set-AzFrontDoorWafPolicy.md)
-[Get-AzFrontDoorWafPolicy](./Get-AzFrontDoorWafPolicy.md)
+ [Update-AzFrontDoorWafPolicy](./Update-AzFrontDoorWafPolicy.md) 
+ [New-AzFrontDoorWafManagedRuleObject](./New-AzFrontDoorWafManagedRuleObject.md) 
+ [New-AzFrontDoorWafCustomRuleObject](./New-AzFrontDoorWafManagedRuleObject.md)</span><span class="sxs-lookup"><span data-stu-id="e6d53-147">[Get-AzFrontDoorWafPolicy](./Get-AzFrontDoorWafPolicy.md)
 [Remove-AzFrontDoorWafPolicy](./Remove-AzFrontDoorWafPolicy.md)
+[Update-AzFrontDoorWafPolicy](./Update-AzFrontDoorWafPolicy.md)
 [New-AzFrontDoorWafManagedRuleObject](./New-AzFrontDoorWafManagedRuleObject.md)
 [New-AzFrontDoorWafCustomRuleObject](./New-AzFrontDoorWafManagedRuleObject.md)</span></span>
