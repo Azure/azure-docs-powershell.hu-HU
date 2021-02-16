@@ -3,41 +3,41 @@ external help file: Microsoft.Azure.Commands.RecoveryServicesRdfe.dll-Help.xml
 ms.assetid: 3EC274C9-9BF6-4B39-BC70-C7F9D780805D
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: a4081d6d072aadd6a4ae7d09ff57748a8f2cb697
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 79b61501a56913fedb2a003d7aea1a041bfab4d5
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94015580"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100412282"
 ---
-# <span data-ttu-id="f21c8-101">Get-AzureSiteRecoveryServer</span><span class="sxs-lookup"><span data-stu-id="f21c8-101">Get-AzureSiteRecoveryServer</span></span>
+# <span data-ttu-id="25297-101">Get-AzureSiteRecoveryServer</span><span class="sxs-lookup"><span data-stu-id="25297-101">Get-AzureSiteRecoveryServer</span></span>
 
-## <span data-ttu-id="f21c8-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="f21c8-102">SYNOPSIS</span></span>
-<span data-ttu-id="f21c8-103">A webhely-helyreállítási kiszolgálók regisztrálták a webhely-helyreállítási boltozatot.</span><span class="sxs-lookup"><span data-stu-id="f21c8-103">Gets Site Recovery servers registered a Site Recovery vault.</span></span>
+## <span data-ttu-id="25297-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="25297-102">SYNOPSIS</span></span>
+<span data-ttu-id="25297-103">A webhely-helyreállítási kiszolgálóknak be kell regisztrálnia egy webhely-helyreállítási tárolót.</span><span class="sxs-lookup"><span data-stu-id="25297-103">Gets Site Recovery servers registered a Site Recovery vault.</span></span>
 
-## <span data-ttu-id="f21c8-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="f21c8-104">SYNTAX</span></span>
+## <span data-ttu-id="25297-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="25297-104">SYNTAX</span></span>
 
-### <span data-ttu-id="f21c8-105">Alapértelmezett (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="f21c8-105">Default (Default)</span></span>
+### <span data-ttu-id="25297-105">Alapértelmezett (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="25297-105">Default (Default)</span></span>
 ```
 Get-AzureSiteRecoveryServer [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="f21c8-106">ById</span><span class="sxs-lookup"><span data-stu-id="f21c8-106">ById</span></span>
+### <span data-ttu-id="25297-106">ById</span><span class="sxs-lookup"><span data-stu-id="25297-106">ById</span></span>
 ```
 Get-AzureSiteRecoveryServer -Id <String> [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="f21c8-107">ByName</span><span class="sxs-lookup"><span data-stu-id="f21c8-107">ByName</span></span>
+### <span data-ttu-id="25297-107">ByName</span><span class="sxs-lookup"><span data-stu-id="25297-107">ByName</span></span>
 ```
 Get-AzureSiteRecoveryServer -Name <String> [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="f21c8-108">Leírás</span><span class="sxs-lookup"><span data-stu-id="f21c8-108">DESCRIPTION</span></span>
-<span data-ttu-id="f21c8-109">A **Get-AzureSiteRecoveryServer** parancsmag a jelenlegi webhely-helyreállítási boltozathoz regisztrált Azure-webhelyek helyreállítási kiszolgálóiról tartalmaz információkat.</span><span class="sxs-lookup"><span data-stu-id="f21c8-109">The **Get-AzureSiteRecoveryServer** cmdlet gets information about Azure Site Recovery servers registered to the current Site Recovery vault.</span></span>
+## <span data-ttu-id="25297-108">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="25297-108">DESCRIPTION</span></span>
+<span data-ttu-id="25297-109">A **Get-AzureSiteRecoveryServer** parancsmag információkat kap az aktuális webhely-helyreállítási tárolóban regisztrált Azure Site Recovery-kiszolgálókról.</span><span class="sxs-lookup"><span data-stu-id="25297-109">The **Get-AzureSiteRecoveryServer** cmdlet gets information about Azure Site Recovery servers registered to the current Site Recovery vault.</span></span>
 
-## <span data-ttu-id="f21c8-110">Példák</span><span class="sxs-lookup"><span data-stu-id="f21c8-110">EXAMPLES</span></span>
+## <span data-ttu-id="25297-110">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="25297-110">EXAMPLES</span></span>
 
-### <span data-ttu-id="f21c8-111">1. példa: információ kérése egy webhely-helyreállítási kiszolgálón</span><span class="sxs-lookup"><span data-stu-id="f21c8-111">Example 1: Get information about a Site Recovery server</span></span>
+### <span data-ttu-id="25297-111">1. példa: Információ a webhely-helyreállítási kiszolgálóról</span><span class="sxs-lookup"><span data-stu-id="25297-111">Example 1: Get information about a Site Recovery server</span></span>
 ```
 PS C:\> Get-AzureSiteRecoveryServer
 ID              : cd7dec80-1144-4531-9ab3-888b8ab39bee
@@ -53,12 +53,12 @@ ProviderVersion : 3.5
 ServerVersion   : 3.2.7510.0
 ```
 
-<span data-ttu-id="f21c8-112">Ez a parancs információt kap az Azure webhely-helyreállítási kiszolgálóról.</span><span class="sxs-lookup"><span data-stu-id="f21c8-112">This command gets information about an Azure Site Recovery server.</span></span>
+<span data-ttu-id="25297-112">Ez a parancs információkat kap az Azure Webhely-helyreállítási kiszolgálóról.</span><span class="sxs-lookup"><span data-stu-id="25297-112">This command gets information about an Azure Site Recovery server.</span></span>
 
-## <span data-ttu-id="f21c8-113">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="f21c8-113">PARAMETERS</span></span>
+## <span data-ttu-id="25297-113">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="25297-113">PARAMETERS</span></span>
 
-### <span data-ttu-id="f21c8-114">-Azonosító</span><span class="sxs-lookup"><span data-stu-id="f21c8-114">-Id</span></span>
-<span data-ttu-id="f21c8-115">A kiszolgáló AZONOSÍTÓját adja meg.</span><span class="sxs-lookup"><span data-stu-id="f21c8-115">Specifies the ID of a server.</span></span>
+### <span data-ttu-id="25297-114">-Id</span><span class="sxs-lookup"><span data-stu-id="25297-114">-Id</span></span>
+<span data-ttu-id="25297-115">Egy kiszolgáló azonosítóját adja meg.</span><span class="sxs-lookup"><span data-stu-id="25297-115">Specifies the ID of a server.</span></span>
 
 ```yaml
 Type: String
@@ -72,8 +72,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f21c8-116">-Name (név)</span><span class="sxs-lookup"><span data-stu-id="f21c8-116">-Name</span></span>
-<span data-ttu-id="f21c8-117">A kiszolgáló nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="f21c8-117">Specifies the name of a server.</span></span>
+### <span data-ttu-id="25297-116">-Name</span><span class="sxs-lookup"><span data-stu-id="25297-116">-Name</span></span>
+<span data-ttu-id="25297-117">A kiszolgáló nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="25297-117">Specifies the name of a server.</span></span>
 
 ```yaml
 Type: String
@@ -87,9 +87,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f21c8-118">-Profil</span><span class="sxs-lookup"><span data-stu-id="f21c8-118">-Profile</span></span>
-<span data-ttu-id="f21c8-119">Azt az Azure-profilt adja meg, amelyből a parancsmag olvasható.</span><span class="sxs-lookup"><span data-stu-id="f21c8-119">Specifies the Azure profile from which this cmdlet reads.</span></span>
-<span data-ttu-id="f21c8-120">Ha nem ad meg profilt, a parancsmag a helyi alapértelmezett profilból olvassa be a szöveget.</span><span class="sxs-lookup"><span data-stu-id="f21c8-120">If you do not specify a profile, this cmdlet reads from the local default profile.</span></span>
+### <span data-ttu-id="25297-118">-Profil</span><span class="sxs-lookup"><span data-stu-id="25297-118">-Profile</span></span>
+<span data-ttu-id="25297-119">Azt az Azure-profilt adja meg, amelyből a parancsmag olvas.</span><span class="sxs-lookup"><span data-stu-id="25297-119">Specifies the Azure profile from which this cmdlet reads.</span></span>
+<span data-ttu-id="25297-120">Ha nem ad meg profilt, ez a parancsmag a helyi alapértelmezett profilból olvassa be.</span><span class="sxs-lookup"><span data-stu-id="25297-120">If you do not specify a profile, this cmdlet reads from the local default profile.</span></span>
 
 ```yaml
 Type: AzureSMProfile
@@ -103,17 +103,17 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f21c8-121">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="f21c8-121">CommonParameters</span></span>
-<span data-ttu-id="f21c8-122">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="f21c8-122">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="f21c8-123">További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="f21c8-123">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="25297-121">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="25297-121">CommonParameters</span></span>
+<span data-ttu-id="25297-122">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="25297-122">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="25297-123">További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="25297-123">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="f21c8-124">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="f21c8-124">INPUTS</span></span>
+## <span data-ttu-id="25297-124">INPUTS</span><span class="sxs-lookup"><span data-stu-id="25297-124">INPUTS</span></span>
 
-## <span data-ttu-id="f21c8-125">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="f21c8-125">OUTPUTS</span></span>
+## <span data-ttu-id="25297-125">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="25297-125">OUTPUTS</span></span>
 
-## <span data-ttu-id="f21c8-126">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="f21c8-126">NOTES</span></span>
+## <span data-ttu-id="25297-126">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="25297-126">NOTES</span></span>
 
-## <span data-ttu-id="f21c8-127">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="f21c8-127">RELATED LINKS</span></span>
+## <span data-ttu-id="25297-127">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="25297-127">RELATED LINKS</span></span>
 
-[<span data-ttu-id="f21c8-128">Azure site Recovery Services-parancsmagok</span><span class="sxs-lookup"><span data-stu-id="f21c8-128">Azure Site Recovery Services Cmdlets</span></span>](./Azure.SiteRecoveryServices.md)
+
 
 
