@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementCache.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementCache.md
-ms.openlocfilehash: 0e0fa81830264f550531a156260f3a4f2c7827ce
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: a95be9f18c00d72afb6117d1689f62a6bad053b4
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93667991"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398682"
 ---
 # Remove-AzApiManagementCache
 
-## Áttekintés
-Eltávolítja a gyorsítótár entitást.
+## SYNOPSIS
+Eltávolítja a gyorsítótárattitást.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### ContextParameterSetName (alapértelmezett)
 ```
@@ -37,24 +37,24 @@ Remove-AzApiManagementCache -ResourceId <String> [-PassThru] [-DefaultProfile <I
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Leírás
-A parancsmag **eltávolítása – AzApiManagementCache** eltávolítja a gyorsítótár entitást.
+## LEÍRÁS
+A **Remove-AzApiManagementCache** parancsmag eltávolítja a gyorsítótárattitást.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: a gyorsítótár-entitás eltávolítása
+### 1. példa: A gyorsítótárazási entitás eltávolítása
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Remove-AzApiManagementCache -Context $apimContext -CacheId "centralus"
 ```
 
-Ez a parancsmag eltávolítja a gyorsítótárat az `centralus` API-kezelési szolgáltatásból.
+Ez a parancsmag eltávolítja a gyorsítótárat `centralus` az Api Management szolgáltatásból.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -CacheId
 A meglévő cacheId azonosítója.
-Ehhez a paraméterhez szükség van.
+Ezt a paramétert kötelező megadni.
 
 ```yaml
 Type: System.String
@@ -70,7 +70,7 @@ Accept wildcard characters: False
 
 ### -Környezet
 A PsApiManagementContext példánya.
-Ehhez a paraméterhez szükség van.
+Ezt a paramétert kötelező megadni.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-A PsApiManagementCache példánya. Ehhez a paraméterhez szükség van.
+A PsApiManagementCache példánya. Ezt a paramétert kötelező megadni.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache
@@ -115,9 +115,9 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Ha a megadott művelet sikeres, akkor a True Write True értékre vált.
+Ha a megadott érték igaz értéket ad meg, akkor a művelet sikeres lesz.
 Ez a paraméter nem kötelező.
-Az alapértelmezett érték a hamis.
+Az alapértelmezett érték hamis.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-A kar ResourceId a gyorsítótárból. Ehhez a paraméterhez szükség van.
+Gyorsítótár erőforrásazonosítója arm. Ezt a paramétert kötelező megadni.
 
 ```yaml
 Type: System.String
@@ -146,8 +146,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -162,7 +162,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik.
 A parancsmag nem fut.
 
 ```yaml
@@ -178,26 +178,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameter
 
 ## KIMENETEK
 
-### System. Boolean
+### System.Boolean
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Új – AzApiManagementCache](./New-AzApiManagementCache)
-
-[Set-AzApiManagementCache](./Set-AzApiManagementCache.md)
-
 [Get-AzApiManagementCache](./Get-AzApiManagementCache.md)
+
+[New-AzApiManagementCache](./New-AzApiManagementCache.md)
+
+[Update-AzApiManagementCache](./Update-AzApiManagementCache.md)
