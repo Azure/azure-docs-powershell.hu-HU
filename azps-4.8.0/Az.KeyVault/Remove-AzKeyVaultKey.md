@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/r
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultKey.md
-ms.openlocfilehash: bfdd237ecadadae181d9e9dd3a201580537097f0
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 75d781527a9783c81eba5bd2aacf07d237ef4f8f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94181723"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398359"
 ---
 # Remove-AzKeyVaultKey
 
-## Áttekintés
-Billentyűt töröl a kulcs boltozatáról.
+## SYNOPSIS
+Kulcs törlése egy kulcstárban.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### ByVaultName (alapértelmezett)
 ```
@@ -32,14 +32,14 @@ Remove-AzKeyVaultKey [-InputObject] <PSKeyVaultKeyIdentityItem> [-Force] [-PassT
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Leírás
-A Remove-AzKeyVaultKey parancsmag egy billentyűt töröl a kulcs-boltozatban.
-Ha a kulcsot véletlenül töröltük, a kulcs visszaállítható a Undo-AzKeyVaultKeyRemoval felhasználó által speciális "helyreállítási" engedélyekkel.
-A parancsmag értéke magas a **ConfirmImpact** tulajdonság számára.
+## LEÍRÁS
+A Remove-AzKeyVaultKey parancsmag egy kulcstár kulcsát törli.
+Ha a kulcsot véletlenül törölték, a kulcsot a speciális "helyreállításUndo-AzKeyVaultKeyRemoval engedéllyel rendelkező felhasználó helyreállíthatja.
+Ez a parancsmag a **ConfirmImpact** tulajdonság értéke magas.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: kulcs eltávolítása a főboltozatról
+### 1. példa: Kulcs eltávolítása egy kulcstárból
 ```powershell
 PS C:\> Remove-AzKeyVaultKey -VaultName 'Contoso' -Name 'ITSoftware' -PassThru
 
@@ -57,37 +57,37 @@ Purge Disabled       : False
 Tags                 :
 ```
 
-Ez a parancs eltávolítja a ITSoftware nevű kulcsot a contoso nevű kulcsból.
+Ez a parancs eltávolítja az ITSoftware nevű kulcsot a Contoso nevű kulcstárból.
 
-### 2. példa: kulcs eltávolítása a felhasználó jóváhagyása nélkül
+### 2. példa: Kulcs eltávolítása a felhasználó jóváhagyása nélkül
 ```powershell
 PS C:\> Remove-AzKeyVaultKey -VaultName 'Contoso' -Name 'ITSoftware' -Force
 ```
 
-Ez a parancs eltávolítja a ITSoftware nevű kulcsot a contoso nevű kulcsból.
-A parancs az *erő* paramétert adja meg, ezért a parancsmag nem kér megerősítést.
+Ez a parancs eltávolítja az ITSoftware nevű kulcsot a Contoso nevű kulcstárból.
+A parancs megadja a *Force* paramétert, ezért a parancsmag nem kér megerősítést.
 
-### 3. példa: a törölt billentyűk végleges kiürítése a kulcs boltozatáról
+### 3. példa: Törölt kulcs végleges törlése a kulcstárból
 ```powershell
 PS C:\> Remove-AzKeyVaultKey -VaultName 'Contoso' -Name 'ITSoftware' -InRemovedState
 ```
 
-Ez a parancs eltávolítja a ITSoftware nevű kulcsot a contoso állandóról.
-A parancsmag végrehajtásához a "Purge" engedély szükséges, amelyet előzőleg és kifejezetten meg kell adni a felhasználónak a kulcs boltozatához.
+Ez a parancs véglegesen eltávolítja az ITSoftware nevű kulcsot a Contoso nevű kulcstárból.
+A parancsmag végrehajtatása "végleges végleges" engedélyt igényel, amelynek korábban és explicit módon meg kellett adni a felhasználónak ehhez a kulcstárhoz.
 
-### 4. példa: kulcsok eltávolítása a csővezeték-kezelő használatával
+### 4. példa: Kulcsok eltávolítása a folyamat műveleti operátorával
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'Contoso' | Where-Object {$_.Attributes.Enabled -eq $False} | Remove-AzKeyVaultKey
 ```
 
-Ez a parancs a contoso nevű kulcs-boltozat összes kulcsát beolvassa, és a pipeline operátor segítségével átadja őket a **Where-Object** parancsmagnak.
-Ez a parancsmag átadja azokat a kulcsokat, amelyek $False értékkel rendelkeznek az **engedélyezett** attribútumhoz az aktuális parancsmaghoz.
-A parancsmag eltávolítja ezeket a billentyűket.
+Ez a parancs begyűjte a Contoso nevű kulcstár összes kulcsát, és átadja őket a **Where-Object** parancsmagnak a folyamat műveleti operátorával.
+Ez a parancsmag átadja az Engedélyezett $False értékkel  rendelkező kulcsokat az aktuális parancsmagnak.
+Ez a parancsmag eltávolítja ezeket a kulcsokat.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -102,7 +102,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Kényszeríti a parancsot, hogy a felhasználó megerősítésének kérése nélkül fusson.
+A parancs futtatását kényszeríti felhasználói megerősítés kérése nélkül.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -117,7 +117,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Köteg objektum
+KeyBundle objektum
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -InRemovedState
-A korábban törölt kulcs végleges eltávolítása.
+Távolítsa el véglegesen a korábban törölt kulcsot.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -146,9 +146,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (név)
-Az eltávolítandó kulcs nevét adja meg.
-Ez a parancsmag a kulcs teljes tartománynevét (FQDN) építi fel a paraméter által megadott név, a kulcsfájl neve és a jelenlegi környezet alapján.
+### -Name
+Az eltávolítható kulcs neve.
+Ez a parancsmag egy kulcs teljes tartománynevét (FQDN) építi fel a paraméter által megadott név, a kulcstár neve és az aktuális környezet alapján.
 
 ```yaml
 Type: System.String
@@ -163,8 +163,8 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Jelzi, hogy ez a parancsmag a **Microsoft. Azure. Command. PSKeyVaultKey. models.** objektumot adja eredményül.
-Ez a parancsmag alapértelmezés szerint nem hoz létre semmilyen kimenetet.
+Azt jelzi, hogy ez a parancsmag **egy Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKey objektumot ad** vissza.
+Ez a parancsmag alapértelmezés szerint nem hoz létre kimenetet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -179,8 +179,8 @@ Accept wildcard characters: False
 ```
 
 ### -VaultName
-Annak a kulcsnak a nevét adja meg, amelyből el szeretné távolítani a billentyűt.
-Ez a parancsmag a kulcsfájl teljes tartománynevét a paraméter által megadott név és a jelenlegi környezet alapján építi fel.
+Annak a kulcstárnak a nevét adja meg, amelyből el szeretné távolítani a kulcsot.
+Ez a parancsmag egy kulcstár FQDN-ét építi fel a paraméter által megadott név és az aktuális környezet alapján.
 
 ```yaml
 Type: System.String
@@ -194,8 +194,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -210,8 +210,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
-A parancsmag nem fut. Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik.
+A parancsmag nem fut. A parancsmag futtatásakor a program megjeleníti, hogy mi történik.
 A parancsmag nem fut.
 
 ```yaml
@@ -227,17 +227,17 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. Azure. Command. PSKeyVaultKeyIdentityItem. models.
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem
 
 ## KIMENETEK
 
-### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKey
+### Microsoft.Azure.Commands.KeyVault.Models.PSDKeyVaultKey billentyű
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
@@ -245,7 +245,6 @@ Ez a parancsmag a következő általános paramétereket támogatja:-debug,-Erro
 
 [Get-AzKeyVaultKey](./Get-AzKeyVaultKey.md)
 
-[Set-AzKeyVaultKeyAttribute](./Set-AzKeyVaultKeyAttribute.md)
 
-[Visszavonás – AzKeyVaultKeyRemoval](./Undo-AzKeyVaultKeyRemoval.md)
+[Undo-AzKeyVaultKeyRemoval](./Undo-AzKeyVaultKeyRemoval.md)
 
