@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGateway.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGateway.md
-ms.openlocfilehash: 1bde6608f5dd87c2c102f3f2957832a2eb41e50a
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 1c4a7f2a46968f82d53408f28a42290255de6411
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93837527"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100402269"
 ---
-# <span data-ttu-id="a8e55-101">New-AzApplicationGateway</span><span class="sxs-lookup"><span data-stu-id="a8e55-101">New-AzApplicationGateway</span></span>
+# <span data-ttu-id="b936d-101">New-AzApplicationGateway</span><span class="sxs-lookup"><span data-stu-id="b936d-101">New-AzApplicationGateway</span></span>
 
-## <span data-ttu-id="a8e55-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="a8e55-102">SYNOPSIS</span></span>
-<span data-ttu-id="a8e55-103">Egy Application Gatewayt hoz létre.</span><span class="sxs-lookup"><span data-stu-id="a8e55-103">Creates an application gateway.</span></span>
+## <span data-ttu-id="b936d-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="b936d-102">SYNOPSIS</span></span>
+<span data-ttu-id="b936d-103">Alkalmazás-átjárót hoz létre.</span><span class="sxs-lookup"><span data-stu-id="b936d-103">Creates an application gateway.</span></span>
 
-## <span data-ttu-id="a8e55-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="a8e55-104">SYNTAX</span></span>
+## <span data-ttu-id="b936d-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="b936d-104">SYNTAX</span></span>
 
-### <span data-ttu-id="a8e55-105">IdentityByUserAssignedIdentityId (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="a8e55-105">IdentityByUserAssignedIdentityId (Default)</span></span>
+### <span data-ttu-id="b936d-105">IdentityByUserAssignedIdentityId (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="b936d-105">IdentityByUserAssignedIdentityId (Default)</span></span>
 ```
 New-AzApplicationGateway -Name <String> -ResourceGroupName <String> -Location <String>
  -Sku <PSApplicationGatewaySku> [-SslPolicy <PSApplicationGatewaySslPolicy>]
@@ -43,7 +43,7 @@ New-AzApplicationGateway -Name <String> -ResourceGroupName <String> -Location <S
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="a8e55-106">SetByResourceId</span><span class="sxs-lookup"><span data-stu-id="a8e55-106">SetByResourceId</span></span>
+### <span data-ttu-id="b936d-106">SetByResourceId</span><span class="sxs-lookup"><span data-stu-id="b936d-106">SetByResourceId</span></span>
 ```
 New-AzApplicationGateway -Name <String> -ResourceGroupName <String> -Location <String>
  -Sku <PSApplicationGatewaySku> [-SslPolicy <PSApplicationGatewaySslPolicy>]
@@ -66,7 +66,7 @@ New-AzApplicationGateway -Name <String> -ResourceGroupName <String> -Location <S
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="a8e55-107">SetByResource</span><span class="sxs-lookup"><span data-stu-id="a8e55-107">SetByResource</span></span>
+### <span data-ttu-id="b936d-107">SetByResource</span><span class="sxs-lookup"><span data-stu-id="b936d-107">SetByResource</span></span>
 ```
 New-AzApplicationGateway -Name <String> -ResourceGroupName <String> -Location <String>
  -Sku <PSApplicationGatewaySku> [-SslPolicy <PSApplicationGatewaySslPolicy>]
@@ -90,7 +90,7 @@ New-AzApplicationGateway -Name <String> -ResourceGroupName <String> -Location <S
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="a8e55-108">IdentityByIdentityObject</span><span class="sxs-lookup"><span data-stu-id="a8e55-108">IdentityByIdentityObject</span></span>
+### <span data-ttu-id="b936d-108">IdentityByIdentityObject</span><span class="sxs-lookup"><span data-stu-id="b936d-108">IdentityByIdentityObject</span></span>
 ```
 New-AzApplicationGateway -Name <String> -ResourceGroupName <String> -Location <String>
  -Sku <PSApplicationGatewaySku> [-SslPolicy <PSApplicationGatewaySslPolicy>]
@@ -113,21 +113,21 @@ New-AzApplicationGateway -Name <String> -ResourceGroupName <String> -Location <S
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="a8e55-109">Leírás</span><span class="sxs-lookup"><span data-stu-id="a8e55-109">DESCRIPTION</span></span>
-<span data-ttu-id="a8e55-110">A **New-AzApplicationGateway** parancsmag egy Azure Application Gatewayt hoz létre.</span><span class="sxs-lookup"><span data-stu-id="a8e55-110">The **New-AzApplicationGateway** cmdlet creates an Azure application gateway.</span></span>
-<span data-ttu-id="a8e55-111">Az alkalmazás-átjáró a következőket igényli:</span><span class="sxs-lookup"><span data-stu-id="a8e55-111">An application gateway requires the following:</span></span>
-- <span data-ttu-id="a8e55-112">Egy erőforráscsoport.</span><span class="sxs-lookup"><span data-stu-id="a8e55-112">A resource group.</span></span>
-- <span data-ttu-id="a8e55-113">Virtuális hálózat.</span><span class="sxs-lookup"><span data-stu-id="a8e55-113">A virtual network.</span></span>
-- <span data-ttu-id="a8e55-114">A back-end Server Pool a back-end-kiszolgálók IP-címeivel.</span><span class="sxs-lookup"><span data-stu-id="a8e55-114">A back-end server pool, containing the IP addresses of the back-end servers.</span></span>
-- <span data-ttu-id="a8e55-115">A back-end Server-készlet beállításai.</span><span class="sxs-lookup"><span data-stu-id="a8e55-115">Back-end server pool settings.</span></span> <span data-ttu-id="a8e55-116">Mindegyik készlethez tartozik egy beállítás, például a port, a protokoll és a cookie-alapú affinitás, amelyek a készleten belül minden kiszolgálón érvényesek.</span><span class="sxs-lookup"><span data-stu-id="a8e55-116">Each pool has settings such as port, protocol and cookie-based affinity, that are applied to all servers within the pool.</span></span>
-- <span data-ttu-id="a8e55-117">Az előtér IP-címei, amelyek az alkalmazás-átjárón megnyitott IP-címek.</span><span class="sxs-lookup"><span data-stu-id="a8e55-117">Front-end IP addresses, which are the IP addresses opened on the application gateway.</span></span> <span data-ttu-id="a8e55-118">Az előtér IP-címe lehet nyilvános IP-cím vagy belső IP-cím.</span><span class="sxs-lookup"><span data-stu-id="a8e55-118">A front-end IP address can be a public IP address or an internal IP address.</span></span>
-- <span data-ttu-id="a8e55-119">Előtér-portok, amelyek az alkalmazás-átjárón megnyitott nyilvános portok.</span><span class="sxs-lookup"><span data-stu-id="a8e55-119">Front-end ports, which are the public ports opened on the application gateway.</span></span> <span data-ttu-id="a8e55-120">Az ilyen portokat tartalmazó forgalom átirányítása a back-end-kiszolgálókra</span><span class="sxs-lookup"><span data-stu-id="a8e55-120">Traffic that hits these ports is redirected to the back-end servers.</span></span>
-- <span data-ttu-id="a8e55-121">Egy olyan Request útválasztási szabály, amely köti a figyelőt és a back-end Server-készletet.</span><span class="sxs-lookup"><span data-stu-id="a8e55-121">A request routing rule that binds the listener and the back-end server pool.</span></span> <span data-ttu-id="a8e55-122">A szabály meghatározza, hogy melyik back-end Server-készlet a forgalomra irányuljon, amikor egy adott figyelőt üt.</span><span class="sxs-lookup"><span data-stu-id="a8e55-122">The rule defines which back-end server pool the traffic should be directed to when it hits a particular listener.</span></span>
-<span data-ttu-id="a8e55-123">A figyelőhöz tartozik egy előtér-végpont, egy előtér-IP-cím, egy protokoll (HTTP vagy HTTPS) és a Secure Sockets Layer (SSL) tanúsítvány neve (ha az SSL tehermentesítése beállítással).</span><span class="sxs-lookup"><span data-stu-id="a8e55-123">A listener has a front-end port, front-end IP address, protocol (HTTP or HTTPS) and Secure Sockets Layer (SSL) certificate name (if configuring SSL offload).</span></span>
+## <span data-ttu-id="b936d-109">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="b936d-109">DESCRIPTION</span></span>
+<span data-ttu-id="b936d-110">A **New-AzApplicationGateway** parancsmag létrehoz egy Azure-alkalmazás-átjárót.</span><span class="sxs-lookup"><span data-stu-id="b936d-110">The **New-AzApplicationGateway** cmdlet creates an Azure application gateway.</span></span>
+<span data-ttu-id="b936d-111">Az alkalmazás-átjárókhoz az alábbiakra van szükség:</span><span class="sxs-lookup"><span data-stu-id="b936d-111">An application gateway requires the following:</span></span>
+- <span data-ttu-id="b936d-112">Erőforráscsoport.</span><span class="sxs-lookup"><span data-stu-id="b936d-112">A resource group.</span></span>
+- <span data-ttu-id="b936d-113">Egy virtuális hálózat.</span><span class="sxs-lookup"><span data-stu-id="b936d-113">A virtual network.</span></span>
+- <span data-ttu-id="b936d-114">Egy háttérkiszolgáló-készlet, amely a háttérkiszolgálók IP-címét tartalmazza.</span><span class="sxs-lookup"><span data-stu-id="b936d-114">A back-end server pool, containing the IP addresses of the back-end servers.</span></span>
+- <span data-ttu-id="b936d-115">A háttérkiszolgáló készletének beállításai.</span><span class="sxs-lookup"><span data-stu-id="b936d-115">Back-end server pool settings.</span></span> <span data-ttu-id="b936d-116">Minden készletnek vannak olyan beállításai, mint a port, a protokoll és a cookie-alapú affinitás, amely a készleten belül minden kiszolgálóra érvényes.</span><span class="sxs-lookup"><span data-stu-id="b936d-116">Each pool has settings such as port, protocol and cookie-based affinity, that are applied to all servers within the pool.</span></span>
+- <span data-ttu-id="b936d-117">Front-end IP addresses, which are the IP addresses opened on the application gateway.</span><span class="sxs-lookup"><span data-stu-id="b936d-117">Front-end IP addresses, which are the IP addresses opened on the application gateway.</span></span> <span data-ttu-id="b936d-118">Az előlapi IP-címek nyilvános IP-címek vagy belső IP-címek is lehetek.</span><span class="sxs-lookup"><span data-stu-id="b936d-118">A front-end IP address can be a public IP address or an internal IP address.</span></span>
+- <span data-ttu-id="b936d-119">Előlapi portok, amelyek az alkalmazás-átjárón megnyitott nyilvános portok.</span><span class="sxs-lookup"><span data-stu-id="b936d-119">Front-end ports, which are the public ports opened on the application gateway.</span></span> <span data-ttu-id="b936d-120">Az ilyen portokat át lehet irányítani a háttérkiszolgálókra.</span><span class="sxs-lookup"><span data-stu-id="b936d-120">Traffic that hits these ports is redirected to the back-end servers.</span></span>
+- <span data-ttu-id="b936d-121">Egy kéréstovábbító szabály, amely összeköti a figyelőt és a háttérkiszolgáló-készletet.</span><span class="sxs-lookup"><span data-stu-id="b936d-121">A request routing rule that binds the listener and the back-end server pool.</span></span> <span data-ttu-id="b936d-122">A szabály azt határozza meg, hogy melyik háttérkiszolgáló készletbe kell irányítani a forgalmat, amikor egy adott hallgatóhoz ér.</span><span class="sxs-lookup"><span data-stu-id="b936d-122">The rule defines which back-end server pool the traffic should be directed to when it hits a particular listener.</span></span>
+<span data-ttu-id="b936d-123">A hallgató rendelkezik előlapi porttal, előlapi IP-címmel, protokollal (HTTP vagy HTTPS) és SSL-tanúsítványnévvel (ha konfigurálja az SSL-t a betöltéskor).</span><span class="sxs-lookup"><span data-stu-id="b936d-123">A listener has a front-end port, front-end IP address, protocol (HTTP or HTTPS) and Secure Sockets Layer (SSL) certificate name (if configuring SSL offload).</span></span>
 
-## <span data-ttu-id="a8e55-124">Példák</span><span class="sxs-lookup"><span data-stu-id="a8e55-124">EXAMPLES</span></span>
+## <span data-ttu-id="b936d-124">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="b936d-124">EXAMPLES</span></span>
 
-### <span data-ttu-id="a8e55-125">1. példa: alkalmazás-átjáró létrehozása</span><span class="sxs-lookup"><span data-stu-id="a8e55-125">Example 1: Create an application gateway</span></span>
+### <span data-ttu-id="b936d-125">1. példa: Alkalmazás-átjáró létrehozása</span><span class="sxs-lookup"><span data-stu-id="b936d-125">Example 1: Create an application gateway</span></span>
 ```
 PS C:\> $ResourceGroup = New-AzResourceGroup -Name "ResourceGroup01" -Location "West US" -Tag @{Name = "Department"; Value = "Marketing"} 
 PS C:\> $Subnet = New-AzVirtualNetworkSubnetConfig -Name "Subnet01" -AddressPrefix 10.0.0.0/24
@@ -147,28 +147,28 @@ PS C:\> $Sku = New-AzApplicationGatewaySku -Name "Standard_Small" -Tier Standard
 PS C:\> $Gateway = New-AzApplicationGateway -Name "AppGateway01" -ResourceGroupName "ResourceGroup01" -Location "West US" -BackendAddressPools $Pool -BackendHttpSettingsCollection $PoolSetting -FrontendIpConfigurations $FrontEndIpConfig  -GatewayIpConfigurations $GatewayIpConfig -FrontendPorts $FrontEndPort -HttpListeners $Listener -RequestRoutingRules $Rule -Sku $Sku
 ```
 
-<span data-ttu-id="a8e55-126">Az alábbi példa létrehoz egy Application Gatewayt, ha először létrehoz egy erőforráscsoportot és egy virtuális hálózatot, valamint az alábbiakat:</span><span class="sxs-lookup"><span data-stu-id="a8e55-126">The following example creates an application gateway by first creating a resource group and a virtual network, as well as the following:</span></span>
-- <span data-ttu-id="a8e55-127">Egy back-end Server-készlet</span><span class="sxs-lookup"><span data-stu-id="a8e55-127">A back-end server pool</span></span>
-- <span data-ttu-id="a8e55-128">A kiszolgálói készlet back-end beállításai</span><span class="sxs-lookup"><span data-stu-id="a8e55-128">Back-end server pool settings</span></span>
-- <span data-ttu-id="a8e55-129">Előtér-portok</span><span class="sxs-lookup"><span data-stu-id="a8e55-129">Front-end ports</span></span>
-- <span data-ttu-id="a8e55-130">Előtér IP-címei</span><span class="sxs-lookup"><span data-stu-id="a8e55-130">Front-end IP addresses</span></span>
-- <span data-ttu-id="a8e55-131">A kérések útválasztási szabálya az alábbi négy parancs virtuális hálózatot hoz létre.</span><span class="sxs-lookup"><span data-stu-id="a8e55-131">A request routing rule These four commands create a virtual network.</span></span>
-<span data-ttu-id="a8e55-132">Az első parancs alhálózati konfigurációt hoz létre.</span><span class="sxs-lookup"><span data-stu-id="a8e55-132">The first command creates a subnet configuration.</span></span>
-<span data-ttu-id="a8e55-133">A második parancs virtuális hálózatot hoz létre.</span><span class="sxs-lookup"><span data-stu-id="a8e55-133">The second command creates a virtual network.</span></span>
-<span data-ttu-id="a8e55-134">A harmadik parancs ellenőrzi az alhálózati konfigurációt, és a negyedik parancs ellenőrzi, hogy a virtuális hálózat sikeresen létrejön-e.</span><span class="sxs-lookup"><span data-stu-id="a8e55-134">The third command verifies the subnet configuration and the fourth command verifies that the virtual network is created successfully.</span></span>
-<span data-ttu-id="a8e55-135">Az alábbi parancsok létrehozzák az Application Gatewayt.</span><span class="sxs-lookup"><span data-stu-id="a8e55-135">The following commands create the application gateway.</span></span>
-<span data-ttu-id="a8e55-136">Az első parancs létrehoz egy GatewayIp01 nevű IP-konfigurációt a korábban létrehozott alhálózathoz.</span><span class="sxs-lookup"><span data-stu-id="a8e55-136">The first command creates an IP configuration named GatewayIp01 for the subnet created previously.</span></span>
-<span data-ttu-id="a8e55-137">A második parancs létrehoz egy Pool01 nevű back-end Server-készletet a back-end IP-címek listájával, és a készletet a $Pool változóban tárolja.</span><span class="sxs-lookup"><span data-stu-id="a8e55-137">The second command creates a back-end server pool named Pool01 with a list of back-end IP addresses and stores the pool in the $Pool variable.</span></span>
-<span data-ttu-id="a8e55-138">A harmadik parancs létrehozza a back-end Server-készlet beállításait, és a $PoolSetting változóban tárolja a beállításokat.</span><span class="sxs-lookup"><span data-stu-id="a8e55-138">The third command creates the settings for the back-end server pool and stores the settings in the $PoolSetting variable.</span></span>
-<span data-ttu-id="a8e55-139">A Forth parancs létrehoz egy előtér-portot a 80-on, megnevezi a FrontEndPort01-ot, és a $FrontEndPort változóban tárolja a portot.</span><span class="sxs-lookup"><span data-stu-id="a8e55-139">The forth command creates a front-end port on port 80, names it FrontEndPort01, and stores the port in the $FrontEndPort variable.</span></span>
-<span data-ttu-id="a8e55-140">Az ötödik parancs az új AzPublicIpAddress segítségével nyilvános IP-címet hoz létre.</span><span class="sxs-lookup"><span data-stu-id="a8e55-140">The fifth command creates a public IP address by using New-AzPublicIpAddress.</span></span>
-<span data-ttu-id="a8e55-141">A hatodik parancs létrehozza az előtér IP-konfigurációját a $PublicIp, a FrontEndPortConfig01, és a $FrontEndIpConfig változóban tárolja.</span><span class="sxs-lookup"><span data-stu-id="a8e55-141">The sixth command creates a front-end IP configuration using $PublicIp, names it FrontEndPortConfig01, and stores it in the $FrontEndIpConfig variable.</span></span>
-<span data-ttu-id="a8e55-142">A hetedik parancs egy figyelőt hoz létre a korábban létrehozott $FrontEndIpConfig $FrontEndPort segítségével.</span><span class="sxs-lookup"><span data-stu-id="a8e55-142">The seventh command creates a listener using the previously created $FrontEndIpConfig $FrontEndPort.</span></span>
-<span data-ttu-id="a8e55-143">A nyolcadik parancs létrehoz egy szabályt a figyelőhöz.</span><span class="sxs-lookup"><span data-stu-id="a8e55-143">The eighth command creates a rule for the listener.</span></span>
-<span data-ttu-id="a8e55-144">A kilencedik parancs a SKU-ot állítja be.</span><span class="sxs-lookup"><span data-stu-id="a8e55-144">The ninth command sets the SKU.</span></span>
-<span data-ttu-id="a8e55-145">A tizedik parancs az átjárót az előző parancsok által beállított objektumokkal hozza létre.</span><span class="sxs-lookup"><span data-stu-id="a8e55-145">The tenth command creates the gateway using the objects set by the previous commands.</span></span>
+<span data-ttu-id="b936d-126">Az alábbi példa először létrehoz egy alkalmazás-átjárót egy erőforráscsoport és egy virtuális hálózat létrehozásával, valamint az alábbiakkal:</span><span class="sxs-lookup"><span data-stu-id="b936d-126">The following example creates an application gateway by first creating a resource group and a virtual network, as well as the following:</span></span>
+- <span data-ttu-id="b936d-127">Háttérkiszolgáló-készlet</span><span class="sxs-lookup"><span data-stu-id="b936d-127">A back-end server pool</span></span>
+- <span data-ttu-id="b936d-128">Back-end server pool settings</span><span class="sxs-lookup"><span data-stu-id="b936d-128">Back-end server pool settings</span></span>
+- <span data-ttu-id="b936d-129">Előlapi portok</span><span class="sxs-lookup"><span data-stu-id="b936d-129">Front-end ports</span></span>
+- <span data-ttu-id="b936d-130">Előlapi IP-címek</span><span class="sxs-lookup"><span data-stu-id="b936d-130">Front-end IP addresses</span></span>
+- <span data-ttu-id="b936d-131">Kéréstovábbítási szabály Ez a négy parancs virtuális hálózatot hoz létre.</span><span class="sxs-lookup"><span data-stu-id="b936d-131">A request routing rule These four commands create a virtual network.</span></span>
+<span data-ttu-id="b936d-132">Az első parancs létrehoz egy alhálózati konfigurációt.</span><span class="sxs-lookup"><span data-stu-id="b936d-132">The first command creates a subnet configuration.</span></span>
+<span data-ttu-id="b936d-133">A második parancs virtuális hálózatot hoz létre.</span><span class="sxs-lookup"><span data-stu-id="b936d-133">The second command creates a virtual network.</span></span>
+<span data-ttu-id="b936d-134">A harmadik parancs ellenőrzi az alhálózat konfigurációját, a negyedik pedig ellenőrzi, hogy a virtuális hálózat létrehozása sikerült-e.</span><span class="sxs-lookup"><span data-stu-id="b936d-134">The third command verifies the subnet configuration and the fourth command verifies that the virtual network is created successfully.</span></span>
+<span data-ttu-id="b936d-135">Az alábbi parancsokkal hozhatja létre az alkalmazás átjáróját.</span><span class="sxs-lookup"><span data-stu-id="b936d-135">The following commands create the application gateway.</span></span>
+<span data-ttu-id="b936d-136">Az első parancs létrehoz egy GatewayIp01 nevű IP-konfigurációt a korábban létrehozott alhálózathoz.</span><span class="sxs-lookup"><span data-stu-id="b936d-136">The first command creates an IP configuration named GatewayIp01 for the subnet created previously.</span></span>
+<span data-ttu-id="b936d-137">A második parancs létrehoz egy Pool01 nevű háttérkiszolgáló-készletet a háttér-IP-címek listájával, és a készletet a $Pool tárolja.</span><span class="sxs-lookup"><span data-stu-id="b936d-137">The second command creates a back-end server pool named Pool01 with a list of back-end IP addresses and stores the pool in the $Pool variable.</span></span>
+<span data-ttu-id="b936d-138">A harmadik parancs létrehozza a háttérkiszolgáló-készlet beállításait, és a beállításokat a $PoolSetting tárolja.</span><span class="sxs-lookup"><span data-stu-id="b936d-138">The third command creates the settings for the back-end server pool and stores the settings in the $PoolSetting variable.</span></span>
+<span data-ttu-id="b936d-139">A oda parancs előtűnő portot hoz létre a 80-as porton, frontEndPort01 névvel, és a portot a $FrontEndPort változóban tárolja.</span><span class="sxs-lookup"><span data-stu-id="b936d-139">The forth command creates a front-end port on port 80, names it FrontEndPort01, and stores the port in the $FrontEndPort variable.</span></span>
+<span data-ttu-id="b936d-140">Az ötödik parancs nyilvános IP-címet hoz létre a New-AzPublicIpAddress paranccsal.</span><span class="sxs-lookup"><span data-stu-id="b936d-140">The fifth command creates a public IP address by using New-AzPublicIpAddress.</span></span>
+<span data-ttu-id="b936d-141">A hatodik parancs előlapi IP-konfigurációt hoz létre a $PublicIp segítségével, frontEndPortConfig01 nevet ad neki, és a $FrontEndIpConfig tárolja.</span><span class="sxs-lookup"><span data-stu-id="b936d-141">The sixth command creates a front-end IP configuration using $PublicIp, names it FrontEndPortConfig01, and stores it in the $FrontEndIpConfig variable.</span></span>
+<span data-ttu-id="b936d-142">A hetedik parancs létrehoz egy hallgatót a korábban létrehozott $FrontEndIpConfig $FrontEndPort.</span><span class="sxs-lookup"><span data-stu-id="b936d-142">The seventh command creates a listener using the previously created $FrontEndIpConfig $FrontEndPort.</span></span>
+<span data-ttu-id="b936d-143">A nyolcadik parancs létrehoz egy szabályt a hallgató számára.</span><span class="sxs-lookup"><span data-stu-id="b936d-143">The eighth command creates a rule for the listener.</span></span>
+<span data-ttu-id="b936d-144">A kilencedik parancs beállítja a termékváltozatot.</span><span class="sxs-lookup"><span data-stu-id="b936d-144">The ninth command sets the SKU.</span></span>
+<span data-ttu-id="b936d-145">A tízedik parancs az előző parancsok által beállított objektumok használatával hozza létre az átjárót.</span><span class="sxs-lookup"><span data-stu-id="b936d-145">The tenth command creates the gateway using the objects set by the previous commands.</span></span>
 
-### <span data-ttu-id="a8e55-146">2. példa: UserAssigned-identitással rendelkező alkalmazásobjektum létrehozása</span><span class="sxs-lookup"><span data-stu-id="a8e55-146">Example 2: Create an application gateway with UserAssigned Identity</span></span>
+### <span data-ttu-id="b936d-146">2. példa: Alkalmazás-átjáró létrehozása UserAssigned Identity azonosítóval</span><span class="sxs-lookup"><span data-stu-id="b936d-146">Example 2: Create an application gateway with UserAssigned Identity</span></span>
 ```
 PS C:\> $ResourceGroup = New-AzResourceGroup -Name "ResourceGroup01" -Location "West US" -Tag @{Name = "Department"; Value = "Marketing"} 
 PS C:\> $Subnet = New-AzVirtualNetworkSubnetConfig -Name "Subnet01" -AddressPrefix 10.0.0.0/24
@@ -190,10 +190,10 @@ PS C:\> $AppgwIdentity = New-AzApplicationGatewayIdentity -UserAssignedIdentity 
 PS C:\> $Gateway = New-AzApplicationGateway -Name "AppGateway01" -ResourceGroupName "ResourceGroup01" -Location "West US" -Identity $AppgwIdentity -BackendAddressPools $Pool -BackendHttpSettingsCollection $PoolSetting -FrontendIpConfigurations $FrontEndIpConfig  -GatewayIpConfigurations $GatewayIpConfig -FrontendPorts $FrontEndPort -HttpListeners $Listener -RequestRoutingRules $Rule -Sku $Sku
 ```
 
-## <span data-ttu-id="a8e55-147">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="a8e55-147">PARAMETERS</span></span>
+## <span data-ttu-id="b936d-147">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="b936d-147">PARAMETERS</span></span>
 
-### <span data-ttu-id="a8e55-148">-AsJob</span><span class="sxs-lookup"><span data-stu-id="a8e55-148">-AsJob</span></span>
-<span data-ttu-id="a8e55-149">A parancsmag futtatása a háttérben</span><span class="sxs-lookup"><span data-stu-id="a8e55-149">Run cmdlet in the background</span></span>
+### <span data-ttu-id="b936d-148">-AsJob</span><span class="sxs-lookup"><span data-stu-id="b936d-148">-AsJob</span></span>
+<span data-ttu-id="b936d-149">Parancsmag futtatása a háttérben</span><span class="sxs-lookup"><span data-stu-id="b936d-149">Run cmdlet in the background</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -207,8 +207,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-150">-AuthenticationCertificates</span><span class="sxs-lookup"><span data-stu-id="a8e55-150">-AuthenticationCertificates</span></span>
-<span data-ttu-id="a8e55-151">Az Application Gateway hitelesítési tanúsítványait adja meg.</span><span class="sxs-lookup"><span data-stu-id="a8e55-151">Specifies authentication certificates for the application gateway.</span></span>
+### <span data-ttu-id="b936d-150">-AuthenticationCertificates</span><span class="sxs-lookup"><span data-stu-id="b936d-150">-AuthenticationCertificates</span></span>
+<span data-ttu-id="b936d-151">Az alkalmazás-átjáró hitelesítési tanúsítványait adja meg.</span><span class="sxs-lookup"><span data-stu-id="b936d-151">Specifies authentication certificates for the application gateway.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayAuthenticationCertificate[]
@@ -222,8 +222,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-152">-AutoscaleConfiguration</span><span class="sxs-lookup"><span data-stu-id="a8e55-152">-AutoscaleConfiguration</span></span>
-<span data-ttu-id="a8e55-153">Automatikus méretezés beállítása</span><span class="sxs-lookup"><span data-stu-id="a8e55-153">Autoscale Configuration</span></span>
+### <span data-ttu-id="b936d-152">-AutoscaleConfiguration</span><span class="sxs-lookup"><span data-stu-id="b936d-152">-AutoscaleConfiguration</span></span>
+<span data-ttu-id="b936d-153">Automatikus méretezés beállítása</span><span class="sxs-lookup"><span data-stu-id="b936d-153">Autoscale Configuration</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayAutoscaleConfiguration
@@ -237,8 +237,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-154">-BackendAddressPools</span><span class="sxs-lookup"><span data-stu-id="a8e55-154">-BackendAddressPools</span></span>
-<span data-ttu-id="a8e55-155">Az alkalmazás-átjáróhoz tartozó back-end-címkészlet listáját adja meg.</span><span class="sxs-lookup"><span data-stu-id="a8e55-155">Specifies the list of back-end address pools for the application gateway.</span></span>
+### <span data-ttu-id="b936d-154">-BackendAddressPools</span><span class="sxs-lookup"><span data-stu-id="b936d-154">-BackendAddressPools</span></span>
+<span data-ttu-id="b936d-155">Az alkalmazás-átjáró háttércímkészletek listáját adja meg.</span><span class="sxs-lookup"><span data-stu-id="b936d-155">Specifies the list of back-end address pools for the application gateway.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendAddressPool[]
@@ -252,8 +252,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-156">-BackendHttpSettingsCollection</span><span class="sxs-lookup"><span data-stu-id="a8e55-156">-BackendHttpSettingsCollection</span></span>
-<span data-ttu-id="a8e55-157">Itt adhatja meg az alkalmazás átjárójának back-end HTTP-beállításainak listáját.</span><span class="sxs-lookup"><span data-stu-id="a8e55-157">Specifies the list of back-end HTTP settings for the application gateway.</span></span>
+### <span data-ttu-id="b936d-156">-BackendHttpSettingsCollection</span><span class="sxs-lookup"><span data-stu-id="b936d-156">-BackendHttpSettingsCollection</span></span>
+<span data-ttu-id="b936d-157">Az alkalmazás-átjáró háttér-HTTP-beállításainak listáját adja meg.</span><span class="sxs-lookup"><span data-stu-id="b936d-157">Specifies the list of back-end HTTP settings for the application gateway.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHttpSettings[]
@@ -267,8 +267,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-158">-CustomErrorConfiguration</span><span class="sxs-lookup"><span data-stu-id="a8e55-158">-CustomErrorConfiguration</span></span>
-<span data-ttu-id="a8e55-159">Az alkalmazás-átjáró ügyfél-hibája</span><span class="sxs-lookup"><span data-stu-id="a8e55-159">Customer error of an application gateway</span></span>
+### <span data-ttu-id="b936d-158">-CustomErrorConfiguration</span><span class="sxs-lookup"><span data-stu-id="b936d-158">-CustomErrorConfiguration</span></span>
+<span data-ttu-id="b936d-159">Ügyfélhiba egy alkalmazás-átjáróban</span><span class="sxs-lookup"><span data-stu-id="b936d-159">Customer error of an application gateway</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayCustomError[]
@@ -282,8 +282,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-160">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="a8e55-160">-DefaultProfile</span></span>
-<span data-ttu-id="a8e55-161">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="a8e55-161">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="b936d-160">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="b936d-160">-DefaultProfile</span></span>
+<span data-ttu-id="b936d-161">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="b936d-161">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -297,8 +297,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-162">-EnableFIPS</span><span class="sxs-lookup"><span data-stu-id="a8e55-162">-EnableFIPS</span></span>
-<span data-ttu-id="a8e55-163">Engedélyezve van-e a FIPS.</span><span class="sxs-lookup"><span data-stu-id="a8e55-163">Whether FIPS is enabled.</span></span>
+### <span data-ttu-id="b936d-162">-EnableFIPS</span><span class="sxs-lookup"><span data-stu-id="b936d-162">-EnableFIPS</span></span>
+<span data-ttu-id="b936d-163">Hogy a FIPS engedélyezve van-e.</span><span class="sxs-lookup"><span data-stu-id="b936d-163">Whether FIPS is enabled.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -312,8 +312,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-164">-EnableHttp2</span><span class="sxs-lookup"><span data-stu-id="a8e55-164">-EnableHttp2</span></span>
-<span data-ttu-id="a8e55-165">Hogy engedélyezve van-e a HTTP2.</span><span class="sxs-lookup"><span data-stu-id="a8e55-165">Whether HTTP2 is enabled.</span></span>
+### <span data-ttu-id="b936d-164">-EnableHttp2</span><span class="sxs-lookup"><span data-stu-id="b936d-164">-EnableHttp2</span></span>
+<span data-ttu-id="b936d-165">Hogy a HTTP2 engedélyezve van-e.</span><span class="sxs-lookup"><span data-stu-id="b936d-165">Whether HTTP2 is enabled.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -327,8 +327,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-166">-FirewallPolicy</span><span class="sxs-lookup"><span data-stu-id="a8e55-166">-FirewallPolicy</span></span>
-<span data-ttu-id="a8e55-167">Tűzfal-konfiguráció</span><span class="sxs-lookup"><span data-stu-id="a8e55-167">Firewall configuration</span></span>
+### <span data-ttu-id="b936d-166">-FirewallPolicy</span><span class="sxs-lookup"><span data-stu-id="b936d-166">-FirewallPolicy</span></span>
+<span data-ttu-id="b936d-167">Tűzfal-konfiguráció</span><span class="sxs-lookup"><span data-stu-id="b936d-167">Firewall configuration</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayWebApplicationFirewallPolicy
@@ -342,8 +342,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-168">-FirewallPolicyId</span><span class="sxs-lookup"><span data-stu-id="a8e55-168">-FirewallPolicyId</span></span>
-<span data-ttu-id="a8e55-169">FirewallPolicyId</span><span class="sxs-lookup"><span data-stu-id="a8e55-169">FirewallPolicyId</span></span>
+### <span data-ttu-id="b936d-168">-FirewallPolicyId</span><span class="sxs-lookup"><span data-stu-id="b936d-168">-FirewallPolicyId</span></span>
+<span data-ttu-id="b936d-169">FirewallPolicyId</span><span class="sxs-lookup"><span data-stu-id="b936d-169">FirewallPolicyId</span></span>
 
 ```yaml
 Type: System.String
@@ -357,8 +357,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-170">-Force</span><span class="sxs-lookup"><span data-stu-id="a8e55-170">-Force</span></span>
-<span data-ttu-id="a8e55-171">Kényszeríti a parancsot, hogy a felhasználó megerősítésének kérése nélkül fusson.</span><span class="sxs-lookup"><span data-stu-id="a8e55-171">Forces the command to run without asking for user confirmation.</span></span>
+### <span data-ttu-id="b936d-170">-Force</span><span class="sxs-lookup"><span data-stu-id="b936d-170">-Force</span></span>
+<span data-ttu-id="b936d-171">A parancs futtatását kényszeríti felhasználói megerősítés kérése nélkül.</span><span class="sxs-lookup"><span data-stu-id="b936d-171">Forces the command to run without asking for user confirmation.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -372,8 +372,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-172">-FrontendIPConfigurations</span><span class="sxs-lookup"><span data-stu-id="a8e55-172">-FrontendIPConfigurations</span></span>
-<span data-ttu-id="a8e55-173">Az alkalmazás átjárójának előtér IP-konfigurációinak listáját adja meg.</span><span class="sxs-lookup"><span data-stu-id="a8e55-173">Specifies a list of front-end IP configurations for the application gateway.</span></span>
+### <span data-ttu-id="b936d-172">-FrontendIPConfigurations</span><span class="sxs-lookup"><span data-stu-id="b936d-172">-FrontendIPConfigurations</span></span>
+<span data-ttu-id="b936d-173">Az előlapi IP-konfigurációk listáját adja meg az alkalmazás-átjáróhoz.</span><span class="sxs-lookup"><span data-stu-id="b936d-173">Specifies a list of front-end IP configurations for the application gateway.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayFrontendIPConfiguration[]
@@ -387,8 +387,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-174">-FrontendPorts</span><span class="sxs-lookup"><span data-stu-id="a8e55-174">-FrontendPorts</span></span>
-<span data-ttu-id="a8e55-175">Az alkalmazás-átjáróhoz tartozó előtér-portok listáját adja meg.</span><span class="sxs-lookup"><span data-stu-id="a8e55-175">Specifies a list of front-end ports for the application gateway.</span></span>
+### <span data-ttu-id="b936d-174">-FrontendPorts</span><span class="sxs-lookup"><span data-stu-id="b936d-174">-FrontendPorts</span></span>
+<span data-ttu-id="b936d-175">Az alkalmazás átjárója előlapi portjainak listáját adja meg.</span><span class="sxs-lookup"><span data-stu-id="b936d-175">Specifies a list of front-end ports for the application gateway.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayFrontendPort[]
@@ -402,8 +402,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-176">-GatewayIPConfigurations</span><span class="sxs-lookup"><span data-stu-id="a8e55-176">-GatewayIPConfigurations</span></span>
-<span data-ttu-id="a8e55-177">Az Application Gateway IP-konfigurációinak listáját adja meg.</span><span class="sxs-lookup"><span data-stu-id="a8e55-177">Specifies a list of IP configurations for the application gateway.</span></span>
+### <span data-ttu-id="b936d-176">-GatewayIPConfigurations</span><span class="sxs-lookup"><span data-stu-id="b936d-176">-GatewayIPConfigurations</span></span>
+<span data-ttu-id="b936d-177">Az alkalmazás-átjáró IP-konfigurációjának listáját adja meg.</span><span class="sxs-lookup"><span data-stu-id="b936d-177">Specifies a list of IP configurations for the application gateway.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayIPConfiguration[]
@@ -417,8 +417,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-178">-HttpListeners</span><span class="sxs-lookup"><span data-stu-id="a8e55-178">-HttpListeners</span></span>
-<span data-ttu-id="a8e55-179">Az alkalmazás-átjáróhoz tartozó HTTP-figyelők listáját adja meg.</span><span class="sxs-lookup"><span data-stu-id="a8e55-179">Specifies a list of HTTP listeners for the application gateway.</span></span>
+### <span data-ttu-id="b936d-178">-HttpListeners</span><span class="sxs-lookup"><span data-stu-id="b936d-178">-HttpListeners</span></span>
+<span data-ttu-id="b936d-179">Az alkalmazás-átjáró HTTP-hallgatóinak listáját adja meg.</span><span class="sxs-lookup"><span data-stu-id="b936d-179">Specifies a list of HTTP listeners for the application gateway.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayHttpListener[]
@@ -432,8 +432,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-180">– Identitás</span><span class="sxs-lookup"><span data-stu-id="a8e55-180">-Identity</span></span>
-<span data-ttu-id="a8e55-181">Az alkalmazás-átjáróhoz hozzárendelt alkalmazásobjektum-identitás.</span><span class="sxs-lookup"><span data-stu-id="a8e55-181">Application Gateway Identity to be assigned to Application Gateway.</span></span>
+### <span data-ttu-id="b936d-180">-Identity</span><span class="sxs-lookup"><span data-stu-id="b936d-180">-Identity</span></span>
+<span data-ttu-id="b936d-181">Application Gateway Identity to be assigned to Application Gateway.</span><span class="sxs-lookup"><span data-stu-id="b936d-181">Application Gateway Identity to be assigned to Application Gateway.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSManagedServiceIdentity
@@ -447,8 +447,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-182">-Hely</span><span class="sxs-lookup"><span data-stu-id="a8e55-182">-Location</span></span>
-<span data-ttu-id="a8e55-183">Azt a régiót adja meg, amelybe az alkalmazás-átjárót létre szeretné hozni.</span><span class="sxs-lookup"><span data-stu-id="a8e55-183">Specifies the region in which to create the application gateway.</span></span>
+### <span data-ttu-id="b936d-182">-Location</span><span class="sxs-lookup"><span data-stu-id="b936d-182">-Location</span></span>
+<span data-ttu-id="b936d-183">Azt a régiót adja meg, amelyben létre kell hoznia az alkalmazás-átjárót.</span><span class="sxs-lookup"><span data-stu-id="b936d-183">Specifies the region in which to create the application gateway.</span></span>
 
 ```yaml
 Type: System.String
@@ -462,8 +462,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-184">-Name (név)</span><span class="sxs-lookup"><span data-stu-id="a8e55-184">-Name</span></span>
-<span data-ttu-id="a8e55-185">Az alkalmazás-átjáró nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="a8e55-185">Specifies the name of application gateway.</span></span>
+### <span data-ttu-id="b936d-184">-Name</span><span class="sxs-lookup"><span data-stu-id="b936d-184">-Name</span></span>
+<span data-ttu-id="b936d-185">Az alkalmazás-átjáró nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="b936d-185">Specifies the name of application gateway.</span></span>
 
 ```yaml
 Type: System.String
@@ -477,8 +477,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-186">– Szondák</span><span class="sxs-lookup"><span data-stu-id="a8e55-186">-Probes</span></span>
-<span data-ttu-id="a8e55-187">Az Application Gateway szondáit adja meg.</span><span class="sxs-lookup"><span data-stu-id="a8e55-187">Specifies probes for the application gateway.</span></span>
+### <span data-ttu-id="b936d-186">-Fogarasok</span><span class="sxs-lookup"><span data-stu-id="b936d-186">-Probes</span></span>
+<span data-ttu-id="b936d-187">Az alkalmazás-átjárónál megadott értékeket határozza meg.</span><span class="sxs-lookup"><span data-stu-id="b936d-187">Specifies probes for the application gateway.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayProbe[]
@@ -492,8 +492,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-188">-RedirectConfigurations</span><span class="sxs-lookup"><span data-stu-id="a8e55-188">-RedirectConfigurations</span></span>
-<span data-ttu-id="a8e55-189">Az átirányítási konfiguráció listája</span><span class="sxs-lookup"><span data-stu-id="a8e55-189">The list of redirect configuration</span></span>
+### <span data-ttu-id="b936d-188">-RedirectConfigurations</span><span class="sxs-lookup"><span data-stu-id="b936d-188">-RedirectConfigurations</span></span>
+<span data-ttu-id="b936d-189">Az átirányítási konfiguráció listája</span><span class="sxs-lookup"><span data-stu-id="b936d-189">The list of redirect configuration</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRedirectConfiguration[]
@@ -507,8 +507,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-190">-RequestRoutingRules</span><span class="sxs-lookup"><span data-stu-id="a8e55-190">-RequestRoutingRules</span></span>
-<span data-ttu-id="a8e55-191">A kérések útválasztási szabályainak listáját adja meg az alkalmazás átjárójában.</span><span class="sxs-lookup"><span data-stu-id="a8e55-191">Specifies a list of request routing rules for the application gateway.</span></span>
+### <span data-ttu-id="b936d-190">-RequestRoutingRules</span><span class="sxs-lookup"><span data-stu-id="b936d-190">-RequestRoutingRules</span></span>
+<span data-ttu-id="b936d-191">Az alkalmazás-átjáró kéréstovábbító szabályainak listáját adja meg.</span><span class="sxs-lookup"><span data-stu-id="b936d-191">Specifies a list of request routing rules for the application gateway.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRequestRoutingRule[]
@@ -522,8 +522,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-192">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="a8e55-192">-ResourceGroupName</span></span>
-<span data-ttu-id="a8e55-193">Annak az erőforrás-csoportnak a nevét adja meg, amelyben létre szeretné hozni az alkalmazás-átjárót.</span><span class="sxs-lookup"><span data-stu-id="a8e55-193">Specifies the name of the resource group in which to create the application gateway.</span></span>
+### <span data-ttu-id="b936d-192">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="b936d-192">-ResourceGroupName</span></span>
+<span data-ttu-id="b936d-193">Annak az erőforráscsoportnak a nevét adja meg, amelyben létre kell hoznia az alkalmazás-átjárót.</span><span class="sxs-lookup"><span data-stu-id="b936d-193">Specifies the name of the resource group in which to create the application gateway.</span></span>
 
 ```yaml
 Type: System.String
@@ -537,8 +537,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-194">-RewriteRuleSet</span><span class="sxs-lookup"><span data-stu-id="a8e55-194">-RewriteRuleSet</span></span>
-<span data-ttu-id="a8e55-195">A RewriteRuleSet listája</span><span class="sxs-lookup"><span data-stu-id="a8e55-195">The list of RewriteRuleSet</span></span>
+### <span data-ttu-id="b936d-194">-RewriteRuleSet</span><span class="sxs-lookup"><span data-stu-id="b936d-194">-RewriteRuleSet</span></span>
+<span data-ttu-id="b936d-195">The list of RewriteRuleSet</span><span class="sxs-lookup"><span data-stu-id="b936d-195">The list of RewriteRuleSet</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRewriteRuleSet[]
@@ -552,8 +552,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-196">-SKU</span><span class="sxs-lookup"><span data-stu-id="a8e55-196">-Sku</span></span>
-<span data-ttu-id="a8e55-197">Az alkalmazás-átjáró készletezési egységét adja meg.</span><span class="sxs-lookup"><span data-stu-id="a8e55-197">Specifies the stock keeping unit (SKU) of the application gateway.</span></span>
+### <span data-ttu-id="b936d-196">-Termékváltozat</span><span class="sxs-lookup"><span data-stu-id="b936d-196">-Sku</span></span>
+<span data-ttu-id="b936d-197">Az alkalmazás-átjáró készletkészletét (SKU) adja meg.</span><span class="sxs-lookup"><span data-stu-id="b936d-197">Specifies the stock keeping unit (SKU) of the application gateway.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySku
@@ -567,8 +567,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-198">-SslCertificates</span><span class="sxs-lookup"><span data-stu-id="a8e55-198">-SslCertificates</span></span>
-<span data-ttu-id="a8e55-199">Az Application Gateway SSL-tanúsítványainak listáját adja meg.</span><span class="sxs-lookup"><span data-stu-id="a8e55-199">Specifies the list of Secure Sockets Layer (SSL) certificates for the application gateway.</span></span>
+### <span data-ttu-id="b936d-198">-SslCertificates</span><span class="sxs-lookup"><span data-stu-id="b936d-198">-SslCertificates</span></span>
+<span data-ttu-id="b936d-199">Az ssl-tanúsítványok listájának megadása az alkalmazás átjáróhoz.</span><span class="sxs-lookup"><span data-stu-id="b936d-199">Specifies the list of Secure Sockets Layer (SSL) certificates for the application gateway.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslCertificate[]
@@ -582,8 +582,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-200">-SslPolicy</span><span class="sxs-lookup"><span data-stu-id="a8e55-200">-SslPolicy</span></span>
-<span data-ttu-id="a8e55-201">Az alkalmazás-átjáró SSL-házirendjét adja meg.</span><span class="sxs-lookup"><span data-stu-id="a8e55-201">Specifies an SSL policy for the application gateway.</span></span>
+### <span data-ttu-id="b936d-200">-SslPolicy</span><span class="sxs-lookup"><span data-stu-id="b936d-200">-SslPolicy</span></span>
+<span data-ttu-id="b936d-201">Ssl-házirendet ad meg az alkalmazás-átjáróhoz.</span><span class="sxs-lookup"><span data-stu-id="b936d-201">Specifies an SSL policy for the application gateway.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslPolicy
@@ -597,8 +597,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-202">-Címke</span><span class="sxs-lookup"><span data-stu-id="a8e55-202">-Tag</span></span>
-<span data-ttu-id="a8e55-203">A kulcs-érték párok a hash-táblázatok formájában.</span><span class="sxs-lookup"><span data-stu-id="a8e55-203">Key-value pairs in the form of a hash table.</span></span> <span data-ttu-id="a8e55-204">Például: @ {key0 = "value0"; key1 = $null; azonosító2 = "érték2"}</span><span class="sxs-lookup"><span data-stu-id="a8e55-204">For example: @{key0="value0";key1=$null;key2="value2"}</span></span>
+### <span data-ttu-id="b936d-202">-Tag</span><span class="sxs-lookup"><span data-stu-id="b936d-202">-Tag</span></span>
+<span data-ttu-id="b936d-203">Kulcsérték-párok kivonattábla formájában.</span><span class="sxs-lookup"><span data-stu-id="b936d-203">Key-value pairs in the form of a hash table.</span></span> <span data-ttu-id="b936d-204">Például: @{key0="érték0";key1=$null;key2="érték2"}</span><span class="sxs-lookup"><span data-stu-id="b936d-204">For example: @{key0="value0";key1=$null;key2="value2"}</span></span>
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -612,8 +612,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-205">-TrustedRootCertificate</span><span class="sxs-lookup"><span data-stu-id="a8e55-205">-TrustedRootCertificate</span></span>
-<span data-ttu-id="a8e55-206">A megbízható legfelső szintű tanúsítványok listája</span><span class="sxs-lookup"><span data-stu-id="a8e55-206">The list of trusted root certificates</span></span>
+### <span data-ttu-id="b936d-205">-TrustedRootCertificate</span><span class="sxs-lookup"><span data-stu-id="b936d-205">-TrustedRootCertificate</span></span>
+<span data-ttu-id="b936d-206">A megbízható legfelső szintű tanúsítványok listája</span><span class="sxs-lookup"><span data-stu-id="b936d-206">The list of trusted root certificates</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayTrustedRootCertificate[]
@@ -627,8 +627,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-207">-UrlPathMaps</span><span class="sxs-lookup"><span data-stu-id="a8e55-207">-UrlPathMaps</span></span>
-<span data-ttu-id="a8e55-208">Az URL-cím elérési útvonalát adja meg az alkalmazás-átjáróhoz.</span><span class="sxs-lookup"><span data-stu-id="a8e55-208">Specifies URL path maps for the application gateway.</span></span>
+### <span data-ttu-id="b936d-207">-UrlPathMaps</span><span class="sxs-lookup"><span data-stu-id="b936d-207">-UrlPathMaps</span></span>
+<span data-ttu-id="b936d-208">Az alkalmazás-átjáró URL-útvonaltérképét adja meg.</span><span class="sxs-lookup"><span data-stu-id="b936d-208">Specifies URL path maps for the application gateway.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayUrlPathMap[]
@@ -642,8 +642,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-209">-UserAssignedIdentityId</span><span class="sxs-lookup"><span data-stu-id="a8e55-209">-UserAssignedIdentityId</span></span>
-<span data-ttu-id="a8e55-210">Az ResourceId hozzárendelendő felhasználó által hozzárendelt identitás.</span><span class="sxs-lookup"><span data-stu-id="a8e55-210">ResourceId of the user assigned identity to be assigned to Application Gateway.</span></span>
+### <span data-ttu-id="b936d-209">-UserAssignedIdentityId</span><span class="sxs-lookup"><span data-stu-id="b936d-209">-UserAssignedIdentityId</span></span>
+<span data-ttu-id="b936d-210">Az Alkalmazás átjáróhoz hozzárendelni szükséges felhasználó által hozzárendelt identitás Erőforrásazonosítója.</span><span class="sxs-lookup"><span data-stu-id="b936d-210">ResourceId of the user assigned identity to be assigned to Application Gateway.</span></span>
 
 ```yaml
 Type: System.String
@@ -657,8 +657,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-211">-WebApplicationFirewallConfiguration</span><span class="sxs-lookup"><span data-stu-id="a8e55-211">-WebApplicationFirewallConfiguration</span></span>
-<span data-ttu-id="a8e55-212">Egy webalkalmazás-tűzfal (WAF) konfigurációját adja meg.</span><span class="sxs-lookup"><span data-stu-id="a8e55-212">Specifies a web application firewall (WAF) configuration.</span></span> <span data-ttu-id="a8e55-213">A WAF a Get-AzApplicationGatewayWebApplicationFirewallConfiguration parancsmaggal is elérheti.</span><span class="sxs-lookup"><span data-stu-id="a8e55-213">You can use the Get-AzApplicationGatewayWebApplicationFirewallConfiguration cmdlet to get a WAF.</span></span>
+### <span data-ttu-id="b936d-211">-WebApplicationFirewallConfiguration</span><span class="sxs-lookup"><span data-stu-id="b936d-211">-WebApplicationFirewallConfiguration</span></span>
+<span data-ttu-id="b936d-212">A webalkalmazás tűzfalának (WAF) konfigurációját adja meg.</span><span class="sxs-lookup"><span data-stu-id="b936d-212">Specifies a web application firewall (WAF) configuration.</span></span> <span data-ttu-id="b936d-213">A Get-AzApplicationGatewayWebApplicationFirewallConfiguration parancsmagot is használhatja.</span><span class="sxs-lookup"><span data-stu-id="b936d-213">You can use the Get-AzApplicationGatewayWebApplicationFirewallConfiguration cmdlet to get a WAF.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayWebApplicationFirewallConfiguration
@@ -672,8 +672,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-214">-Zone (zóna)</span><span class="sxs-lookup"><span data-stu-id="a8e55-214">-Zone</span></span>
-<span data-ttu-id="a8e55-215">Az elérhetőségi zónák listája, amely azt jelzi, hogy az alkalmazás átjárójának honnan kell származnia.</span><span class="sxs-lookup"><span data-stu-id="a8e55-215">A list of availability zones denoting where the application gateway needs to come from.</span></span>
+### <span data-ttu-id="b936d-214">-Zone</span><span class="sxs-lookup"><span data-stu-id="b936d-214">-Zone</span></span>
+<span data-ttu-id="b936d-215">A rendelkezésre állási zónák listája, amely azt sorolja fel, hogy az alkalmazás-átjárónak honnan kell átjönni.</span><span class="sxs-lookup"><span data-stu-id="b936d-215">A list of availability zones denoting where the application gateway needs to come from.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -687,8 +687,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-216">– Megerősítés</span><span class="sxs-lookup"><span data-stu-id="a8e55-216">-Confirm</span></span>
-<span data-ttu-id="a8e55-217">A parancsmag futtatása előtt kéri a megerősítést.</span><span class="sxs-lookup"><span data-stu-id="a8e55-217">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="b936d-216">-Confirm</span><span class="sxs-lookup"><span data-stu-id="b936d-216">-Confirm</span></span>
+<span data-ttu-id="b936d-217">A parancsmag futtatása előtt a rendszer megerősítést kér.</span><span class="sxs-lookup"><span data-stu-id="b936d-217">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -702,9 +702,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-218">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="a8e55-218">-WhatIf</span></span>
-<span data-ttu-id="a8e55-219">Annak megjelenítése, hogy mi történik, ha a parancsmag fut.</span><span class="sxs-lookup"><span data-stu-id="a8e55-219">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="a8e55-220">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="a8e55-220">The cmdlet is not run.</span></span>
+### <span data-ttu-id="b936d-218">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="b936d-218">-WhatIf</span></span>
+<span data-ttu-id="b936d-219">A parancsmag futtatásakor a program megjeleníti, hogy mi történik.</span><span class="sxs-lookup"><span data-stu-id="b936d-219">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="b936d-220">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="b936d-220">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -718,75 +718,74 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a8e55-221">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="a8e55-221">CommonParameters</span></span>
-<span data-ttu-id="a8e55-222">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="a8e55-222">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="a8e55-223">További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="a8e55-223">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="b936d-221">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="b936d-221">CommonParameters</span></span>
+<span data-ttu-id="b936d-222">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="b936d-222">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="b936d-223">További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="b936d-223">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="a8e55-224">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="a8e55-224">INPUTS</span></span>
+## <span data-ttu-id="b936d-224">INPUTS</span><span class="sxs-lookup"><span data-stu-id="b936d-224">INPUTS</span></span>
 
-### <span data-ttu-id="a8e55-225">System. String</span><span class="sxs-lookup"><span data-stu-id="a8e55-225">System.String</span></span>
+### <span data-ttu-id="b936d-225">System.String</span><span class="sxs-lookup"><span data-stu-id="b936d-225">System.String</span></span>
 
-### <span data-ttu-id="a8e55-226">Microsoft. Azure. commands. Network. models. PSApplicationGatewaySku</span><span class="sxs-lookup"><span data-stu-id="a8e55-226">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySku</span></span>
+### <span data-ttu-id="b936d-226">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySku</span><span class="sxs-lookup"><span data-stu-id="b936d-226">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySku</span></span>
 
-### <span data-ttu-id="a8e55-227">Microsoft. Azure. commands. Network. models. PSApplicationGatewaySslPolicy</span><span class="sxs-lookup"><span data-stu-id="a8e55-227">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslPolicy</span></span>
+### <span data-ttu-id="b936d-227">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslPolicy</span><span class="sxs-lookup"><span data-stu-id="b936d-227">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslPolicy</span></span>
 
-### <span data-ttu-id="a8e55-228">Microsoft. Azure. commands. Network. models. PSApplicationGatewayIPConfiguration []</span><span class="sxs-lookup"><span data-stu-id="a8e55-228">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayIPConfiguration[]</span></span>
+### <span data-ttu-id="b936d-228">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayIPConfiguration[]</span><span class="sxs-lookup"><span data-stu-id="b936d-228">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayIPConfiguration[]</span></span>
 
-### <span data-ttu-id="a8e55-229">Microsoft. Azure. commands. Network. models. PSApplicationGatewaySslCertificate []</span><span class="sxs-lookup"><span data-stu-id="a8e55-229">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslCertificate[]</span></span>
+### <span data-ttu-id="b936d-229">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslCertificate[]</span><span class="sxs-lookup"><span data-stu-id="b936d-229">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslCertificate[]</span></span>
 
-### <span data-ttu-id="a8e55-230">Microsoft. Azure. commands. Network. models. PSApplicationGatewayAuthenticationCertificate []</span><span class="sxs-lookup"><span data-stu-id="a8e55-230">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayAuthenticationCertificate[]</span></span>
+### <span data-ttu-id="b936d-230">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayAuthenticationCertificate[]</span><span class="sxs-lookup"><span data-stu-id="b936d-230">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayAuthenticationCertificate[]</span></span>
 
-### <span data-ttu-id="a8e55-231">Microsoft. Azure. commands. Network. models. PSApplicationGatewayTrustedRootCertificate []</span><span class="sxs-lookup"><span data-stu-id="a8e55-231">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayTrustedRootCertificate[]</span></span>
+### <span data-ttu-id="b936d-231">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayTrustedRootCertificate[]</span><span class="sxs-lookup"><span data-stu-id="b936d-231">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayTrustedRootCertificate[]</span></span>
 
-### <span data-ttu-id="a8e55-232">Microsoft. Azure. commands. Network. models. PSApplicationGatewayFrontendIPConfiguration []</span><span class="sxs-lookup"><span data-stu-id="a8e55-232">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayFrontendIPConfiguration[]</span></span>
+### <span data-ttu-id="b936d-232">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayFrontendIPConfiguration[]</span><span class="sxs-lookup"><span data-stu-id="b936d-232">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayFrontendIPConfiguration[]</span></span>
 
-### <span data-ttu-id="a8e55-233">Microsoft. Azure. commands. Network. models. PSApplicationGatewayFrontendPort []</span><span class="sxs-lookup"><span data-stu-id="a8e55-233">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayFrontendPort[]</span></span>
+### <span data-ttu-id="b936d-233">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayFrontendPort[]</span><span class="sxs-lookup"><span data-stu-id="b936d-233">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayFrontendPort[]</span></span>
 
-### <span data-ttu-id="a8e55-234">Microsoft. Azure. commands. Network. models. PSApplicationGatewayProbe []</span><span class="sxs-lookup"><span data-stu-id="a8e55-234">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayProbe[]</span></span>
+### <span data-ttu-id="b936d-234">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayProbe[]</span><span class="sxs-lookup"><span data-stu-id="b936d-234">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayProbe[]</span></span>
 
-### <span data-ttu-id="a8e55-235">Microsoft. Azure. commands. Network. models. PSApplicationGatewayBackendAddressPool []</span><span class="sxs-lookup"><span data-stu-id="a8e55-235">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendAddressPool[]</span></span>
+### <span data-ttu-id="b936d-235">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendAddressPool[]</span><span class="sxs-lookup"><span data-stu-id="b936d-235">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendAddressPool[]</span></span>
 
-### <span data-ttu-id="a8e55-236">Microsoft. Azure. commands. Network. models. PSApplicationGatewayBackendHttpSettings []</span><span class="sxs-lookup"><span data-stu-id="a8e55-236">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHttpSettings[]</span></span>
+### <span data-ttu-id="b936d-236">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHttpSettings[]</span><span class="sxs-lookup"><span data-stu-id="b936d-236">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHttpSettings[]</span></span>
 
-### <span data-ttu-id="a8e55-237">Microsoft. Azure. commands. Network. models. PSApplicationGatewayHttpListener []</span><span class="sxs-lookup"><span data-stu-id="a8e55-237">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayHttpListener[]</span></span>
+### <span data-ttu-id="b936d-237">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayHttpListener[]</span><span class="sxs-lookup"><span data-stu-id="b936d-237">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayHttpListener[]</span></span>
 
-### <span data-ttu-id="a8e55-238">Microsoft. Azure. commands. Network. models. PSApplicationGatewayUrlPathMap []</span><span class="sxs-lookup"><span data-stu-id="a8e55-238">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayUrlPathMap[]</span></span>
+### <span data-ttu-id="b936d-238">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayUrlPathMap[]</span><span class="sxs-lookup"><span data-stu-id="b936d-238">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayUrlPathMap[]</span></span>
 
-### <span data-ttu-id="a8e55-239">Microsoft. Azure. commands. Network. models. PSApplicationGatewayRequestRoutingRule []</span><span class="sxs-lookup"><span data-stu-id="a8e55-239">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRequestRoutingRule[]</span></span>
+### <span data-ttu-id="b936d-239">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRequestRoutingRule[]</span><span class="sxs-lookup"><span data-stu-id="b936d-239">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRequestRoutingRule[]</span></span>
 
-### <span data-ttu-id="a8e55-240">Microsoft. Azure. commands. Network. models. PSApplicationGatewayRewriteRuleSet []</span><span class="sxs-lookup"><span data-stu-id="a8e55-240">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRewriteRuleSet[]</span></span>
+### <span data-ttu-id="b936d-240">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRewriteRuleSet[]</span><span class="sxs-lookup"><span data-stu-id="b936d-240">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRewriteRuleSet[]</span></span>
 
-### <span data-ttu-id="a8e55-241">Microsoft. Azure. commands. Network. models. PSApplicationGatewayRedirectConfiguration []</span><span class="sxs-lookup"><span data-stu-id="a8e55-241">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRedirectConfiguration[]</span></span>
+### <span data-ttu-id="b936d-241">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRedirectConfiguration[]</span><span class="sxs-lookup"><span data-stu-id="b936d-241">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRedirectConfiguration[]</span></span>
 
-### <span data-ttu-id="a8e55-242">Microsoft. Azure. commands. Network. models. PSApplicationGatewayWebApplicationFirewallConfiguration</span><span class="sxs-lookup"><span data-stu-id="a8e55-242">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayWebApplicationFirewallConfiguration</span></span>
+### <span data-ttu-id="b936d-242">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayWebApplicationFirewallConfiguration</span><span class="sxs-lookup"><span data-stu-id="b936d-242">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayWebApplicationFirewallConfiguration</span></span>
 
-### <span data-ttu-id="a8e55-243">Microsoft. Azure. commands. Network. models. PSApplicationGatewayAutoscaleConfiguration</span><span class="sxs-lookup"><span data-stu-id="a8e55-243">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayAutoscaleConfiguration</span></span>
+### <span data-ttu-id="b936d-243">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayAutoscaleConfiguration</span><span class="sxs-lookup"><span data-stu-id="b936d-243">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayAutoscaleConfiguration</span></span>
 
-### <span data-ttu-id="a8e55-244">System. Collections. Hashtable</span><span class="sxs-lookup"><span data-stu-id="a8e55-244">System.Collections.Hashtable</span></span>
+### <span data-ttu-id="b936d-244">System.Collections.Hashtable</span><span class="sxs-lookup"><span data-stu-id="b936d-244">System.Collections.Hashtable</span></span>
 
-## <span data-ttu-id="a8e55-245">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="a8e55-245">OUTPUTS</span></span>
+## <span data-ttu-id="b936d-245">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="b936d-245">OUTPUTS</span></span>
 
-### <span data-ttu-id="a8e55-246">Microsoft. Azure. commands. Network. models. PSApplicationGateway</span><span class="sxs-lookup"><span data-stu-id="a8e55-246">Microsoft.Azure.Commands.Network.Models.PSApplicationGateway</span></span>
+### <span data-ttu-id="b936d-246">Microsoft.Azure.Commands.Network.Models.PSApplicationGateway</span><span class="sxs-lookup"><span data-stu-id="b936d-246">Microsoft.Azure.Commands.Network.Models.PSApplicationGateway</span></span>
 
-## <span data-ttu-id="a8e55-247">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="a8e55-247">NOTES</span></span>
+## <span data-ttu-id="b936d-247">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="b936d-247">NOTES</span></span>
 
-## <span data-ttu-id="a8e55-248">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="a8e55-248">RELATED LINKS</span></span>
+## <span data-ttu-id="b936d-248">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="b936d-248">RELATED LINKS</span></span>
 
-[<span data-ttu-id="a8e55-249">Új – AzApplicationGatewayBackendAddressPool</span><span class="sxs-lookup"><span data-stu-id="a8e55-249">New-AzApplicationGatewayBackendAddressPool</span></span>](./New-AzApplicationGatewayBackendAddressPool.md)
+[<span data-ttu-id="b936d-249">New-AzApplicationGatewayBackendAddressPool</span><span class="sxs-lookup"><span data-stu-id="b936d-249">New-AzApplicationGatewayBackendAddressPool</span></span>](./New-AzApplicationGatewayBackendAddressPool.md)
 
-[<span data-ttu-id="a8e55-250">Új – AzApplicationGatewayBackendHttpSettings</span><span class="sxs-lookup"><span data-stu-id="a8e55-250">New-AzApplicationGatewayBackendHttpSettings</span></span>](./New-AzApplicationGatewayBackendHttpSettings.md)
 
-[<span data-ttu-id="a8e55-251">Új – AzApplicationGatewayFrontendIPConfig</span><span class="sxs-lookup"><span data-stu-id="a8e55-251">New-AzApplicationGatewayFrontendIPConfig</span></span>](./New-AzApplicationGatewayFrontendIPConfig.md)
+[<span data-ttu-id="b936d-250">New-AzApplicationGatewayFrontendIPConfig</span><span class="sxs-lookup"><span data-stu-id="b936d-250">New-AzApplicationGatewayFrontendIPConfig</span></span>](./New-AzApplicationGatewayFrontendIPConfig.md)
 
-[<span data-ttu-id="a8e55-252">Új – AzApplicationGatewayFrontendPort</span><span class="sxs-lookup"><span data-stu-id="a8e55-252">New-AzApplicationGatewayFrontendPort</span></span>](./New-AzApplicationGatewayFrontendPort.md)
+[<span data-ttu-id="b936d-251">New-AzApplicationGatewayFrontendPort</span><span class="sxs-lookup"><span data-stu-id="b936d-251">New-AzApplicationGatewayFrontendPort</span></span>](./New-AzApplicationGatewayFrontendPort.md)
 
-[<span data-ttu-id="a8e55-253">Új – AzApplicationGatewayHttpListener</span><span class="sxs-lookup"><span data-stu-id="a8e55-253">New-AzApplicationGatewayHttpListener</span></span>](./New-AzApplicationGatewayHttpListener.md)
+[<span data-ttu-id="b936d-252">New-AzApplicationGatewayHttpListener</span><span class="sxs-lookup"><span data-stu-id="b936d-252">New-AzApplicationGatewayHttpListener</span></span>](./New-AzApplicationGatewayHttpListener.md)
 
-[<span data-ttu-id="a8e55-254">Új – AzApplicationGatewayIPConfiguration</span><span class="sxs-lookup"><span data-stu-id="a8e55-254">New-AzApplicationGatewayIPConfiguration</span></span>](./New-AzApplicationGatewayIPConfiguration.md)
+[<span data-ttu-id="b936d-253">New-AzApplicationGatewayIPConfiguration</span><span class="sxs-lookup"><span data-stu-id="b936d-253">New-AzApplicationGatewayIPConfiguration</span></span>](./New-AzApplicationGatewayIPConfiguration.md)
 
-[<span data-ttu-id="a8e55-255">Új – AzApplicationGatewayRequestRoutingRule</span><span class="sxs-lookup"><span data-stu-id="a8e55-255">New-AzApplicationGatewayRequestRoutingRule</span></span>](./New-AzApplicationGatewayRequestRoutingRule.md)
+[<span data-ttu-id="b936d-254">New-AzApplicationGatewayRequestRoutingRule</span><span class="sxs-lookup"><span data-stu-id="b936d-254">New-AzApplicationGatewayRequestRoutingRule</span></span>](./New-AzApplicationGatewayRequestRoutingRule.md)
 
-[<span data-ttu-id="a8e55-256">Új – AzApplicationGatewaySku</span><span class="sxs-lookup"><span data-stu-id="a8e55-256">New-AzApplicationGatewaySku</span></span>](./New-AzApplicationGatewaySku.md)
+[<span data-ttu-id="b936d-255">New-AzApplicationGatewaySku</span><span class="sxs-lookup"><span data-stu-id="b936d-255">New-AzApplicationGatewaySku</span></span>](./New-AzApplicationGatewaySku.md)
 
-[<span data-ttu-id="a8e55-257">Új – AzVirtualNetwork</span><span class="sxs-lookup"><span data-stu-id="a8e55-257">New-AzVirtualNetwork</span></span>](./New-AzVirtualNetwork.md)
+[<span data-ttu-id="b936d-256">New-AzVirtualNetwork</span><span class="sxs-lookup"><span data-stu-id="b936d-256">New-AzVirtualNetwork</span></span>](./New-AzVirtualNetwork.md)
 
-[<span data-ttu-id="a8e55-258">Új – AzVirtualNetworkSubnetConfig</span><span class="sxs-lookup"><span data-stu-id="a8e55-258">New-AzVirtualNetworkSubnetConfig</span></span>](./New-AzVirtualNetworkSubnetConfig.md)
+[<span data-ttu-id="b936d-257">New-AzVirtualNetworkSubnetConfig</span><span class="sxs-lookup"><span data-stu-id="b936d-257">New-AzVirtualNetworkSubnetConfig</span></span>](./New-AzVirtualNetworkSubnetConfig.md)
