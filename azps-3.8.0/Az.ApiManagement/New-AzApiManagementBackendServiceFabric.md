@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendServiceFabric.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendServiceFabric.md
-ms.openlocfilehash: ced4c9708d2ac7f82144e1965beb36a250bbe369
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 352e40aa64adf5eea98950ac9271f0237e634ab6
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94012247"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398138"
 ---
-# <span data-ttu-id="7e561-101">New-AzApiManagementBackendServiceFabric</span><span class="sxs-lookup"><span data-stu-id="7e561-101">New-AzApiManagementBackendServiceFabric</span></span>
+# <span data-ttu-id="3aa87-101">New-AzApiManagementBackendServiceFabric</span><span class="sxs-lookup"><span data-stu-id="3aa87-101">New-AzApiManagementBackendServiceFabric</span></span>
 
-## <span data-ttu-id="7e561-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="7e561-102">SYNOPSIS</span></span>
-<span data-ttu-id="7e561-103">Objektum létrehozása `PsApiManagementServiceFabric`</span><span class="sxs-lookup"><span data-stu-id="7e561-103">Creates an object of `PsApiManagementServiceFabric`</span></span>
+## <span data-ttu-id="3aa87-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="3aa87-102">SYNOPSIS</span></span>
+<span data-ttu-id="3aa87-103">Objektum létrehozása: `PsApiManagementServiceFabric`</span><span class="sxs-lookup"><span data-stu-id="3aa87-103">Creates an object of `PsApiManagementServiceFabric`</span></span>
 
-## <span data-ttu-id="7e561-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="7e561-104">SYNTAX</span></span>
+## <span data-ttu-id="3aa87-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="3aa87-104">SYNTAX</span></span>
 
 ```
 New-AzApiManagementBackendServiceFabric -ManagementEndpoint <String[]> -ClientCertificateThumbprint <String>
@@ -25,13 +25,13 @@ New-AzApiManagementBackendServiceFabric -ManagementEndpoint <String[]> -ClientCe
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="7e561-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="7e561-105">DESCRIPTION</span></span>
+## <span data-ttu-id="3aa87-105">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="3aa87-105">DESCRIPTION</span></span>
 
-<span data-ttu-id="7e561-106">A **New-AzApiManagementBackendServiceFabric** parancsmag létrehoz egy olyan objektumot, amelyet `PsApiManagementServiceFabric` az **új AzApiManagementBackend** és a **set-AzApiManagementBackend**.</span><span class="sxs-lookup"><span data-stu-id="7e561-106">The **New-AzApiManagementBackendServiceFabric** cmdlet creates an object of `PsApiManagementServiceFabric` to be used in cmdlet **New-AzApiManagementBackend** and **Set-AzApiManagementBackend**.</span></span>
+<span data-ttu-id="3aa87-106">A **New-AzApiManagementBackendServiceFabric** parancsmag létrehoz egy objektumot, amely a `PsApiManagementServiceFabric` **New-AzApiManagementBackend** és a **Set-AzApiManagementBackend** parancsmagban használható.</span><span class="sxs-lookup"><span data-stu-id="3aa87-106">The **New-AzApiManagementBackendServiceFabric** cmdlet creates an object of `PsApiManagementServiceFabric` to be used in cmdlet **New-AzApiManagementBackend** and **Set-AzApiManagementBackend**.</span></span>
 
-## <span data-ttu-id="7e561-107">Példák</span><span class="sxs-lookup"><span data-stu-id="7e561-107">EXAMPLES</span></span>
+## <span data-ttu-id="3aa87-107">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="3aa87-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="7e561-108">1. példa: a backend-szolgáltatás In-Memory objektum létrehozása</span><span class="sxs-lookup"><span data-stu-id="7e561-108">Example 1: Create a Backend Service Fabric In-Memory Object</span></span>
+### <span data-ttu-id="3aa87-108">1. példa: Backend Service Fabric In-Memory objektum létrehozása</span><span class="sxs-lookup"><span data-stu-id="3aa87-108">Example 1: Create a Backend Service Fabric In-Memory Object</span></span>
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>$ManagementEndpoints = 'https://sfbackend-01.net:443', 'https://sfbackend-02.net:443'
@@ -41,13 +41,13 @@ PS C:\>$serviceFabric = New-AzApiManagementBackendServiceFabric -ManagementEndpo
 PS C:\>$backend = New-AzApiManagementBackend -Context  $apimContext -BackendId 123 -Url 'https://contoso.com/awesomeapi' -Protocol http -ServiceFabricCluster $serviceFabric -Description "service fabric backend" -PassThru
 ```
 
-<span data-ttu-id="7e561-109">A háttér-szolgáltatási szövet szerződés létrehozása</span><span class="sxs-lookup"><span data-stu-id="7e561-109">Creates a Backend Service Fabric Contract</span></span>
+<span data-ttu-id="3aa87-109">Backend Service Fabric Contract (Backend Service Fabric Contract) hoz létre</span><span class="sxs-lookup"><span data-stu-id="3aa87-109">Creates a Backend Service Fabric Contract</span></span>
 
-## <span data-ttu-id="7e561-110">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="7e561-110">PARAMETERS</span></span>
+## <span data-ttu-id="3aa87-110">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="3aa87-110">PARAMETERS</span></span>
 
-### <span data-ttu-id="7e561-111">-ClientCertificateThumbprint</span><span class="sxs-lookup"><span data-stu-id="7e561-111">-ClientCertificateThumbprint</span></span>
-<span data-ttu-id="7e561-112">Ügyféltanúsítvány-ujjlenyomat a kezelési végponthoz.</span><span class="sxs-lookup"><span data-stu-id="7e561-112">Client Certificate Thumbprint for the management endpoint.</span></span>
-<span data-ttu-id="7e561-113">Ehhez a paraméterhez szükség van.</span><span class="sxs-lookup"><span data-stu-id="7e561-113">This parameter is required.</span></span>
+### <span data-ttu-id="3aa87-111">-ClientCertificateThumbprint</span><span class="sxs-lookup"><span data-stu-id="3aa87-111">-ClientCertificateThumbprint</span></span>
+<span data-ttu-id="3aa87-112">Client Certificate Thumbprint for the management endpoint.</span><span class="sxs-lookup"><span data-stu-id="3aa87-112">Client Certificate Thumbprint for the management endpoint.</span></span>
+<span data-ttu-id="3aa87-113">Ezt a paramétert kötelező megadni.</span><span class="sxs-lookup"><span data-stu-id="3aa87-113">This parameter is required.</span></span>
 
 ```yaml
 Type: System.String
@@ -61,8 +61,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7e561-114">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="7e561-114">-DefaultProfile</span></span>
-<span data-ttu-id="7e561-115">Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="7e561-115">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+### <span data-ttu-id="3aa87-114">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="3aa87-114">-DefaultProfile</span></span>
+<span data-ttu-id="3aa87-115">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="3aa87-115">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -76,9 +76,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7e561-116">-ManagementEndpoint</span><span class="sxs-lookup"><span data-stu-id="7e561-116">-ManagementEndpoint</span></span>
-<span data-ttu-id="7e561-117">Szolgáltatás szövet cluster Management végpontok.</span><span class="sxs-lookup"><span data-stu-id="7e561-117">Service Fabric Cluster management Endpoints.</span></span>
-<span data-ttu-id="7e561-118">Ehhez a paraméterhez szükség van.</span><span class="sxs-lookup"><span data-stu-id="7e561-118">This parameter is required.</span></span>
+### <span data-ttu-id="3aa87-116">-ManagementEndpoint</span><span class="sxs-lookup"><span data-stu-id="3aa87-116">-ManagementEndpoint</span></span>
+<span data-ttu-id="3aa87-117">Service Fabric Cluster management Endpoints.</span><span class="sxs-lookup"><span data-stu-id="3aa87-117">Service Fabric Cluster management Endpoints.</span></span>
+<span data-ttu-id="3aa87-118">Ezt a paramétert kötelező megadni.</span><span class="sxs-lookup"><span data-stu-id="3aa87-118">This parameter is required.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -92,9 +92,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7e561-119">-MaxPartitionResolutionRetry</span><span class="sxs-lookup"><span data-stu-id="7e561-119">-MaxPartitionResolutionRetry</span></span>
-<span data-ttu-id="7e561-120">Az újbóli próbálkozások maximális száma a Service Fabric-partíciók feloldásakor.</span><span class="sxs-lookup"><span data-stu-id="7e561-120">Maximum number of retries when resolving a Service Fabric partition.</span></span>
-<span data-ttu-id="7e561-121">Ez a paraméter nem kötelező, és az alapértelmezett érték 5.</span><span class="sxs-lookup"><span data-stu-id="7e561-121">This parameter is optional and default value is 5.</span></span>
+### <span data-ttu-id="3aa87-119">-MaxPartitionResolutionRetry</span><span class="sxs-lookup"><span data-stu-id="3aa87-119">-MaxPartitionResolutionRetry</span></span>
+<span data-ttu-id="3aa87-120">A Service Fabric partíciók feloldásakor a retries maximális száma.</span><span class="sxs-lookup"><span data-stu-id="3aa87-120">Maximum number of retries when resolving a Service Fabric partition.</span></span>
+<span data-ttu-id="3aa87-121">Ez a paraméter nem kötelező, az alapértelmezett érték pedig 5.</span><span class="sxs-lookup"><span data-stu-id="3aa87-121">This parameter is optional and default value is 5.</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -108,8 +108,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7e561-122">-ServerCertificateThumbprint</span><span class="sxs-lookup"><span data-stu-id="7e561-122">-ServerCertificateThumbprint</span></span>
-<span data-ttu-id="7e561-123">A tanúsítványok fürtözési szolgáltatásának ujjlenyomata TLS-kommunikációt használ. Ez a paraméter nem kötelező.</span><span class="sxs-lookup"><span data-stu-id="7e561-123">Thumbprint of certificates cluster management service uses for tls communication.This parameter is optional.</span></span>
+### <span data-ttu-id="3aa87-122">-ServerCertificateThumbprint</span><span class="sxs-lookup"><span data-stu-id="3aa87-122">-ServerCertificateThumbprint</span></span>
+<span data-ttu-id="3aa87-123">A tanúsítványok fürtkezelési szolgáltatásának thumbprint of certificates cluster management service uses for tls communication. Ez a paraméter nem kötelező.</span><span class="sxs-lookup"><span data-stu-id="3aa87-123">Thumbprint of certificates cluster management service uses for tls communication.This parameter is optional.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -123,9 +123,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7e561-124">-ServerX509Name</span><span class="sxs-lookup"><span data-stu-id="7e561-124">-ServerX509Name</span></span>
-<span data-ttu-id="7e561-125">A kiszolgálói X509 a tanúsítványok neveinek gyűjteménye.</span><span class="sxs-lookup"><span data-stu-id="7e561-125">Server X509 Certificate Names Collection.</span></span>
-<span data-ttu-id="7e561-126">Ez a paraméter nem kötelező.</span><span class="sxs-lookup"><span data-stu-id="7e561-126">This parameter is optional.</span></span>
+### <span data-ttu-id="3aa87-124">-ServerX509Name</span><span class="sxs-lookup"><span data-stu-id="3aa87-124">-ServerX509Name</span></span>
+<span data-ttu-id="3aa87-125">Server X509 Certificate Names Collection.</span><span class="sxs-lookup"><span data-stu-id="3aa87-125">Server X509 Certificate Names Collection.</span></span>
+<span data-ttu-id="3aa87-126">Ez a paraméter nem kötelező.</span><span class="sxs-lookup"><span data-stu-id="3aa87-126">This parameter is optional.</span></span>
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -139,27 +139,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7e561-127">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="7e561-127">CommonParameters</span></span>
-<span data-ttu-id="7e561-128">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="7e561-128">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="7e561-129">További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="7e561-129">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="3aa87-127">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="3aa87-127">CommonParameters</span></span>
+<span data-ttu-id="3aa87-128">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="3aa87-128">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="3aa87-129">További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="3aa87-129">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="7e561-130">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="7e561-130">INPUTS</span></span>
+## <span data-ttu-id="3aa87-130">INPUTS</span><span class="sxs-lookup"><span data-stu-id="3aa87-130">INPUTS</span></span>
 
-### <span data-ttu-id="7e561-131">System. String</span><span class="sxs-lookup"><span data-stu-id="7e561-131">System.String</span></span>
+### <span data-ttu-id="3aa87-131">System.String</span><span class="sxs-lookup"><span data-stu-id="3aa87-131">System.String</span></span>
 
-## <span data-ttu-id="7e561-132">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="7e561-132">OUTPUTS</span></span>
+## <span data-ttu-id="3aa87-132">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="3aa87-132">OUTPUTS</span></span>
 
-### <span data-ttu-id="7e561-133">Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementServiceFabric</span><span class="sxs-lookup"><span data-stu-id="7e561-133">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementServiceFabric</span></span>
+### <span data-ttu-id="3aa87-133">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementServiceFabric</span><span class="sxs-lookup"><span data-stu-id="3aa87-133">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementServiceFabric</span></span>
 
-## <span data-ttu-id="7e561-134">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="7e561-134">NOTES</span></span>
+## <span data-ttu-id="3aa87-134">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="3aa87-134">NOTES</span></span>
 
-## <span data-ttu-id="7e561-135">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="7e561-135">RELATED LINKS</span></span>
+## <span data-ttu-id="3aa87-135">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="3aa87-135">RELATED LINKS</span></span>
 
-[<span data-ttu-id="7e561-136">Get-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="7e561-136">Get-AzApiManagementBackend</span></span>](./Get-AzApiManagementBackend)
+[<span data-ttu-id="3aa87-136">Get-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="3aa87-136">Get-AzApiManagementBackend</span></span>](./Get-AzApiManagementBackend.md)
 
-[<span data-ttu-id="7e561-137">Új – AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="7e561-137">New-AzApiManagementBackend</span></span>](./New-AzApiManagementBackend.md)
+[<span data-ttu-id="3aa87-137">New-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="3aa87-137">New-AzApiManagementBackend</span></span>](./New-AzApiManagementBackend.md)
 
-[<span data-ttu-id="7e561-138">Új – AzApiManagementBackendProxy</span><span class="sxs-lookup"><span data-stu-id="7e561-138">New-AzApiManagementBackendProxy</span></span>](./New-AzApiManagementBackendProxy.md)
+[<span data-ttu-id="3aa87-138">New-AzApiManagementBackendProxy</span><span class="sxs-lookup"><span data-stu-id="3aa87-138">New-AzApiManagementBackendProxy</span></span>](./New-AzApiManagementBackendProxy.md)
 
-[<span data-ttu-id="7e561-139">Set-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="7e561-139">Set-AzApiManagementBackend</span></span>](./Set-AzApiManagementBackend.md)
+[<span data-ttu-id="3aa87-139">Set-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="3aa87-139">Set-AzApiManagementBackend</span></span>](./Set-AzApiManagementBackend.md)
 
-[<span data-ttu-id="7e561-140">Remove-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="7e561-140">Remove-AzApiManagementBackend</span></span>](./Remove-AzApiManagementBackend.md)
+[<span data-ttu-id="3aa87-140">Remove-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="3aa87-140">Remove-AzApiManagementBackend</span></span>](./Remove-AzApiManagementBackend.md)

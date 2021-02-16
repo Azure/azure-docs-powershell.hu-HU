@@ -1,0 +1,246 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ContainerRegistry.dll-Help.xml
+Module Name: Az.ContainerRegistry
+online version: https://docs.microsoft.com/en-us/powershell/module/az.containerregistry/update-azcontainerregistrymanifest
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ContainerRegistry/ContainerRegistry/help/Update-AzContainerRegistryManifest.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ContainerRegistry/ContainerRegistry/help/Update-AzContainerRegistryManifest.md
+ms.openlocfilehash: 85623106a932ba9419da0c07cc4bcb6c52e5e838
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100144562"
+---
+# <span data-ttu-id="f9a86-101">Update-AzContainerRegistryManifest</span><span class="sxs-lookup"><span data-stu-id="f9a86-101">Update-AzContainerRegistryManifest</span></span>
+
+## <span data-ttu-id="f9a86-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="f9a86-102">SYNOPSIS</span></span>
+<span data-ttu-id="f9a86-103">ACR jegyzékfájl frissítése.</span><span class="sxs-lookup"><span data-stu-id="f9a86-103">Update ACR manifest.</span></span> 
+
+## <span data-ttu-id="f9a86-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="f9a86-104">SYNTAX</span></span>
+
+### <span data-ttu-id="f9a86-105">ByManifestParameterSet (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="f9a86-105">ByManifestParameterSet (Default)</span></span>
+```
+Update-AzContainerRegistryManifest -RepositoryName <String> -Manifest <String> [-DeleteEnabled <Boolean>]
+ [-WriteEnabled <Boolean>] [-ListEnabled <Boolean>] [-ReadEnabled <Boolean>] -RegistryName <String>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="f9a86-106">ByTagParameterSet</span><span class="sxs-lookup"><span data-stu-id="f9a86-106">ByTagParameterSet</span></span>
+```
+Update-AzContainerRegistryManifest -RepositoryName <String> -Tag <String> [-DeleteEnabled <Boolean>]
+ [-WriteEnabled <Boolean>] [-ListEnabled <Boolean>] [-ReadEnabled <Boolean>] -RegistryName <String>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="f9a86-107">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="f9a86-107">DESCRIPTION</span></span>
+<span data-ttu-id="f9a86-108">ACR jegyzékfájl frissítése.</span><span class="sxs-lookup"><span data-stu-id="f9a86-108">Update ACR manifest.</span></span>
+<span data-ttu-id="f9a86-109">A parancsmag futtatásához futtassa a `Update-AzContainerRegistryRepository -RegistryName XXX -Repository XXX -WriteEnable $true`</span><span class="sxs-lookup"><span data-stu-id="f9a86-109">To use this cmdlet please run `Update-AzContainerRegistryRepository -RegistryName XXX -Repository XXX -WriteEnable $true`</span></span>
+<span data-ttu-id="f9a86-110">először.</span><span class="sxs-lookup"><span data-stu-id="f9a86-110">first.</span></span>
+
+## <span data-ttu-id="f9a86-111">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="f9a86-111">EXAMPLES</span></span>
+
+### <span data-ttu-id="f9a86-112">1. példa</span><span class="sxs-lookup"><span data-stu-id="f9a86-112">Example 1</span></span>
+```powershell
+Update-AzContainerRegistryManifest -RegistryName registry -RepositoryName alpine -Manifest sha256:185518070891758909c9f839cf4ca393ee977ac378609f700f60a771a2dfe321 -DeleteEnabled $false -WriteEnabled $true -ListEnabled $true -ReadEnabled $true
+
+Registry                    ImageName Attributes
+--------                    --------- ----------
+registry.azurecr.io alpine    Microsoft.Azure.Commands.ContainerRegistry.Models.PSManifestAttributeBase
+```
+
+<span data-ttu-id="f9a86-113">A jegyzékfájl sha256:185518070891758909c9f839cf4ca393ee977ac378609f700f60a771a2dfe321 beállításjegyzékben.</span><span class="sxs-lookup"><span data-stu-id="f9a86-113">Update attributes for manifest sha256:185518070891758909c9f839cf4ca393ee977ac378609f700f60a771a2dfe321 under registry.</span></span>
+
+### <span data-ttu-id="f9a86-114">2. példa</span><span class="sxs-lookup"><span data-stu-id="f9a86-114">Example 2</span></span>
+```powershell
+Update-AzContainerRegistryManifest -RegistryName registry -RepositoryName alpine -Tag latest -DeleteEnabled $false -WriteEnabled $true -ListEnabled $true -ReadEnabled $true
+
+Registry                    ImageName Attributes
+--------                    --------- ----------
+registry.azurecr.io alpine    Microsoft.Azure.Commands.ContainerRegistry.Models.PSManifestAttributeBase
+```
+
+<span data-ttu-id="f9a86-115">A jegyzékfájl attribútumainak frissítése a beállításjegyzékben a legújabb címkével.</span><span class="sxs-lookup"><span data-stu-id="f9a86-115">Update attributes for manifest with tag latest under registry.</span></span>
+
+## <span data-ttu-id="f9a86-116">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="f9a86-116">PARAMETERS</span></span>
+
+### <span data-ttu-id="f9a86-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="f9a86-117">-DefaultProfile</span></span>
+<span data-ttu-id="f9a86-118">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="f9a86-118">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f9a86-119">-DeleteEnabled</span><span class="sxs-lookup"><span data-stu-id="f9a86-119">-DeleteEnabled</span></span>
+<span data-ttu-id="f9a86-120">Engedélyezés törlése gombra.</span><span class="sxs-lookup"><span data-stu-id="f9a86-120">Delete enable.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Boolean]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f9a86-121">-ListEnabled</span><span class="sxs-lookup"><span data-stu-id="f9a86-121">-ListEnabled</span></span>
+<span data-ttu-id="f9a86-122">Lista engedélyezése.</span><span class="sxs-lookup"><span data-stu-id="f9a86-122">List enable.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Boolean]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f9a86-123">-Manifest</span><span class="sxs-lookup"><span data-stu-id="f9a86-123">-Manifest</span></span>
+<span data-ttu-id="f9a86-124">Jegyzékfájlra vonatkozó hivatkozás.</span><span class="sxs-lookup"><span data-stu-id="f9a86-124">Manifest reference.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByManifestParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f9a86-125">-ReadEnabled</span><span class="sxs-lookup"><span data-stu-id="f9a86-125">-ReadEnabled</span></span>
+<span data-ttu-id="f9a86-126">Engedélyezés elolvasva.</span><span class="sxs-lookup"><span data-stu-id="f9a86-126">Read enable.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Boolean]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f9a86-127">-RegistryName</span><span class="sxs-lookup"><span data-stu-id="f9a86-127">-RegistryName</span></span>
+<span data-ttu-id="f9a86-128">Azure Container Registry Name.</span><span class="sxs-lookup"><span data-stu-id="f9a86-128">Azure Container Registry Name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f9a86-129">-RepositoryName</span><span class="sxs-lookup"><span data-stu-id="f9a86-129">-RepositoryName</span></span>
+<span data-ttu-id="f9a86-130">Tárnév.</span><span class="sxs-lookup"><span data-stu-id="f9a86-130">Repository Name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f9a86-131">-Tag</span><span class="sxs-lookup"><span data-stu-id="f9a86-131">-Tag</span></span>
+<span data-ttu-id="f9a86-132">Címke jelölőt.</span><span class="sxs-lookup"><span data-stu-id="f9a86-132">Tag.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByTagParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f9a86-133">-WriteEnabled</span><span class="sxs-lookup"><span data-stu-id="f9a86-133">-WriteEnabled</span></span>
+<span data-ttu-id="f9a86-134">Írási engedélyezés.</span><span class="sxs-lookup"><span data-stu-id="f9a86-134">Write enable.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Boolean]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f9a86-135">-Confirm</span><span class="sxs-lookup"><span data-stu-id="f9a86-135">-Confirm</span></span>
+<span data-ttu-id="f9a86-136">A parancsmag futtatása előtt a rendszer megerősítést kér.</span><span class="sxs-lookup"><span data-stu-id="f9a86-136">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f9a86-137">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="f9a86-137">-WhatIf</span></span>
+<span data-ttu-id="f9a86-138">A parancsmag futtatásakor a program megjeleníti, hogy mi történik.</span><span class="sxs-lookup"><span data-stu-id="f9a86-138">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="f9a86-139">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="f9a86-139">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f9a86-140">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="f9a86-140">CommonParameters</span></span>
+<span data-ttu-id="f9a86-141">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="f9a86-141">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="f9a86-142">További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="f9a86-142">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="f9a86-143">INPUTS</span><span class="sxs-lookup"><span data-stu-id="f9a86-143">INPUTS</span></span>
+
+### <span data-ttu-id="f9a86-144">System.String</span><span class="sxs-lookup"><span data-stu-id="f9a86-144">System.String</span></span>
+
+## <span data-ttu-id="f9a86-145">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="f9a86-145">OUTPUTS</span></span>
+
+### <span data-ttu-id="f9a86-146">Microsoft.Azure.Commands.ContainerRegistry.Models.PSManifestAttribute</span><span class="sxs-lookup"><span data-stu-id="f9a86-146">Microsoft.Azure.Commands.ContainerRegistry.Models.PSManifestAttribute</span></span>
+
+## <span data-ttu-id="f9a86-147">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="f9a86-147">NOTES</span></span>
+
+## <span data-ttu-id="f9a86-148">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="f9a86-148">RELATED LINKS</span></span>
