@@ -6,40 +6,40 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteServiceProvider.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteServiceProvider.md
-ms.openlocfilehash: 639e438a2ff3eb63282ba4f79aa984581128a082
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 7871625f9313179523fd4fad146107690f68a826
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94013352"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100412520"
 ---
 # Get-AzExpressRouteServiceProvider
 
-## Áttekintés
-Beolvassa a List ExpressRoute szolgáltatókat és attribútumaikat.
+## SYNOPSIS
+Listát kap az ExpressRoute-szolgáltatókról és jellemzőikről.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 Get-AzExpressRouteServiceProvider [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-A **Get-AzExpressRouteServiceProvider** parancsmag kikeresi a ExpressRoute-szolgáltatókat és a hozzájuk tartozó attribútumokat. Az attribútum a hely és a sávszélesség beállítását is tartalmazza.
+## LEÍRÁS
+A **Get-AzExpressRouteServiceProvider** parancsmag beolvassa az ExpressRoute-szolgáltatók listáját és attribútumát. Az attribútum tartalmazza a hely- és sávszélesség-beállításokat.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: szolgáltató listája a "Silicon Valley" helyekkel
+### 1. példa: A "Silicon Valley" helyen található szolgáltatólista lekérte
 ```
 Get-AzExpressRouteServiceProvider |
    Where-Object PeeringLocations -Contains "Silicon Valley" |
    Select-Object Name
 ```
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -54,17 +54,17 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
 ### Nincs
 
 ## KIMENETEK
 
-### Microsoft. Azure. commands. Network. models. PSExpressRouteServiceProvider
+### Microsoft.Azure.Commands.Network.Models.PSExpressRouteServiceProvider
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
@@ -74,4 +74,4 @@ Ez a parancsmag a következő általános paramétereket támogatja:-debug,-Erro
 
 [Get-AzExpressRouteCircuitRouteTableSummary](Get-AzExpressRouteCircuitRouteTableSummary.md)
 
-[Get-AzExpressRouteCircuitStats](Get-AzExpressRouteCircuitStats.md)
+[Get-AzExpressRouteCircuitStat](Get-AzExpressRouteCircuitStat.md)
