@@ -3,19 +3,19 @@ external help file: Microsoft.Azure.Commands.RecoveryServicesRdfe.dll-Help.xml
 ms.assetid: 2957C0DE-3A2F-4337-A778-2B95654972E7
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: d0b272732cf6c1e1b2025c8e7f48b58e4807cdb3
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 8a7c99e2ce307d700e43094ffa9be47e5449acc0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94015595"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100411653"
 ---
 # Get-AzureSiteRecoveryJob
 
-## Áttekintés
-A webhely-helyreállítási boltozat üzemeltetési adatait kapja meg.
+## SYNOPSIS
+A webhely-helyreállítási tároló műveleti adatait kapja meg.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### ByParam (alapértelmezett)
 ```
@@ -33,13 +33,13 @@ Get-AzureSiteRecoveryJob -Id <String> [-Profile <AzureSMProfile>] [<CommonParame
 Get-AzureSiteRecoveryJob -Job <ASRJob> [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## Leírás
-A **Get-AzureSiteRecoveryJob** parancsmag Azure webhely-helyreállítási feladatokat kap.
-Ezzel a parancsmaggal megtekintheti az aktuális webhely-helyreállítási boltozat üzemeltetési adatait.
+## LEÍRÁS
+A **Get-AzureSiteRecoveryCm** parancsmag azure-webhely-helyreállítási feladatokat kap.
+Ezzel a parancsmagkal megtekintheti az aktuális webhely-helyreállítási tároló műveleti adatait.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: egy azonosító megadásával munka beszerzése
+### 1. példa: Feladat lehozása azonosító megadásával
 ```
 PS C:\> Get-AzureSiteRecoveryJob -Id "033785cc-9f72-4f07-8e78-e4d1e942a7ae" 
 Name             : SaveRecoveryPlan
@@ -57,9 +57,9 @@ Tasks            : {Save a recovery plan task}
 Errors           : {}
 ```
 
-Ez a parancs a megadott AZONOSÍTÓJÚ Azure webhely-helyreállítási feladatot kapja.
+Ez a parancs lekérte az Azure-webhely-helyreállítási feladatot, amely a megadott azonosítót használja.
 
-### 2. példa: a munka időben alapul
+### 2. példa: Munkát kap az idő alapján
 ```
 PS C:\> Get-AzureSiteRecoveryJob -StartTime "20-02-2015 01:00:00" -EndTime "21-02-2015 01:00:00"
 Name             : SaveRecoveryPlan
@@ -77,15 +77,15 @@ Tasks            : {Save a recovery plan task}
 Errors           : {}
 ```
 
-Ez a parancs a megadott kezdési és befejezési időpontot tartalmazó webhely-helyreállítási feladatokat kap.
+Ez a parancs a megadott kezdési és záró időpont közé eső webhely-helyreállítási feladatokat kapja meg.
 
-## PARAMÉTEREK
+## PARAMETERS
 
-### -A befejezési időpont
-A feladatok befejezési időpontját adja meg.
-Ez a parancsmag a megadott időpontig kezdődő összes feladatot beilleszti.
-Ha egy **datetime** típusú objektumot szeretne beolvasni, használja a **Get-Date** parancsmagot.
-További információért írja be a következőt: `Get-Help Get-Date` .
+### -EndTime
+A feladatok záró idejét adja meg.
+Ez a parancsmag az összes olyan munkát begyakorlja, amely a megadott időpont előtt kezdődött.
+**DateTime-objektum** beszerzéséhez használja a **Get-Date** parancsmagot.
+További információért írja be a `Get-Help Get-Date` .
 
 ```yaml
 Type: DateTime
@@ -99,8 +99,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Azonosító
-A beolvasott feladat AZONOSÍTÓját adja meg.
+### -Id
+A be szereznie kell egy feladat azonosítóját adja meg.
 
 ```yaml
 Type: String
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -Job
-A beolvasott feladatot adja meg.
+Meg kell kapnia egy feladatot.
 
 ```yaml
 Type: ASRJob
@@ -130,8 +130,8 @@ Accept wildcard characters: False
 ```
 
 ### -Profil
-Azt az Azure-profilt adja meg, amelyből a parancsmag olvasható.
-Ha nem ad meg profilt, a parancsmag a helyi alapértelmezett profilból olvassa be a szöveget.
+Azt az Azure-profilt adja meg, amelyből a parancsmag olvas.
+Ha nem ad meg profilt, ez a parancsmag a helyi alapértelmezett profilból olvassa be.
 
 ```yaml
 Type: AzureSMProfile
@@ -145,9 +145,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Kezdő időpont
-A feladatok kezdési időpontját adja meg.
-Ez a parancsmag minden olyan feladatra bekerül, amely a megadott idő után elindult.
+### -StartTime
+A feladatok kezdési idejét adja meg.
+Ez a parancsmag az összes olyan munkát begyakorlja, amely a megadott idő után kezdődött.
 
 ```yaml
 Type: DateTime
@@ -161,17 +161,17 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -State (állami)
-A webhely-helyreállítási feladatok beviteli állapotát adja meg.
-Ez a parancsmag minden olyan feladatra bekerül, amely megfelel a megadott állapotnak.
-A paraméter elfogadható értékei a következők:
+### -State
+A webhely-helyreállítási feladat bemeneti állapotát adja meg.
+Ez a parancsmag a megadott állapotnak megfelelő összes munkakört beveszi.
+A paraméter elfogadható értékei a következőek:
 
 - NotStarted
-- Előrehaladás
-- Sikerességéről
-- Más
+- InProgress
+- Sikeres
+- Egyéb
 - Sikertelen
-- Lemondott
+- Megszakítva
 - Felfüggesztve
 
 ```yaml
@@ -187,7 +187,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetObjectId
-A feladat által célzott objektum AZONOSÍTÓját adja meg.
+A feladat által megcélzott objektum azonosítója.
 
 ```yaml
 Type: String
@@ -202,22 +202,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
 ## KIMENETEK
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Azure site Recovery Services-parancsmagok](./Azure.SiteRecoveryServices.md)
 
-[Újraindítás – AzureSiteRecoveryJob](./Restart-AzureSiteRecoveryJob.md)
 
-[Önéletrajz – AzureSiteRecoveryJob](./Resume-AzureSiteRecoveryJob.md)
+[Restart-AzureSiteRecoveryÚt](./Restart-AzureSiteRecoveryJob.md)
 
-[Stop-AzureSiteRecoveryJob](./Stop-AzureSiteRecoveryJob.md)
+[Resume-AzureSiteRecoveryÚt](./Resume-AzureSiteRecoveryJob.md)
+
+[Stop-AzureSiteRecoveryÚt](./Stop-AzureSiteRecoveryJob.md)
 
 
