@@ -1,0 +1,243 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.CosmosDB.dll-Help.xml
+Module Name: Az.CosmosDB
+online version: https://docs.microsoft.com/en-us/powershell/module/az.cosmosdb/update-azcosmosdbsqlstoredprocedure
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CosmosDB/CosmosDB/help/Update-AzCosmosDBSqlStoredProcedure.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CosmosDB/CosmosDB/help/Update-AzCosmosDBSqlStoredProcedure.md
+ms.openlocfilehash: b7a709cf7ce9aca894f19229cc2d13d4c30f8744
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100148451"
+---
+# <span data-ttu-id="b3c3c-101">Update-AzCosmosDBSqlStoredProcedure</span><span class="sxs-lookup"><span data-stu-id="b3c3c-101">Update-AzCosmosDBSqlStoredProcedure</span></span>
+
+## <span data-ttu-id="b3c3c-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="b3c3c-102">SYNOPSIS</span></span>
+<span data-ttu-id="b3c3c-103">Frissíti aFrissítésekDB Sql StoredProcedure.</span><span class="sxs-lookup"><span data-stu-id="b3c3c-103">Updates the CosmosDB Sql StoredProcedure.</span></span> <span data-ttu-id="b3c3c-104">Ügyféloldali javítást hajt végre a meglévő StoredProcedure olvasással.</span><span class="sxs-lookup"><span data-stu-id="b3c3c-104">Performs a client side patch operation by reading the existing StoredProcedure.</span></span>
+
+## <span data-ttu-id="b3c3c-105">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="b3c3c-105">SYNTAX</span></span>
+
+### <span data-ttu-id="b3c3c-106">ByNameParameterSet (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="b3c3c-106">ByNameParameterSet (Default)</span></span>
+```
+Update-AzCosmosDBSqlStoredProcedure -ResourceGroupName <String> -AccountName <String> -DatabaseName <String>
+ -ContainerName <String> [-Name <String>] [-Body <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="b3c3c-107">ByParentObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="b3c3c-107">ByParentObjectParameterSet</span></span>
+```
+Update-AzCosmosDBSqlStoredProcedure [-Name <String>] [-Body <String>] -ParentObject <PSSqlContainerGetResults>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="b3c3c-108">ByObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="b3c3c-108">ByObjectParameterSet</span></span>
+```
+Update-AzCosmosDBSqlStoredProcedure [-Name <String>] [-Body <String>]
+ -InputObject <PSSqlStoredProcedureGetResults> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="b3c3c-109">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="b3c3c-109">DESCRIPTION</span></span>
+<span data-ttu-id="b3c3c-110">Frissíti aFrissítésekDB Sql StoredProcedure.</span><span class="sxs-lookup"><span data-stu-id="b3c3c-110">Updates the CosmosDB Sql StoredProcedure.</span></span> <span data-ttu-id="b3c3c-111">Ügyféloldali javítást hajt végre a meglévő StoredProcedure olvasással.</span><span class="sxs-lookup"><span data-stu-id="b3c3c-111">Performs a client side patch operation by reading the existing StoredProcedure.</span></span>
+
+## <span data-ttu-id="b3c3c-112">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="b3c3c-112">EXAMPLES</span></span>
+
+### <span data-ttu-id="b3c3c-113">1. példa</span><span class="sxs-lookup"><span data-stu-id="b3c3c-113">Example 1</span></span>
+```powershell
+PS C:\> Update-AzCosmosDBSqlStoredProcedure -AccountName MyAccountName -ResourceGroupName MyRgName -DatabaseName MyDatabaseName -ContainerName MyContainerName -Name mySprocrName -Body myBody 
+Name     : mySprocName
+Id       : /subscriptions/mySubId/resourceGroups/MyRgName/providers/Microsoft.DocumentDB/databaseAccounts/MyAccountName/sqlDatabases/MyDatabaseName/contain
+           ers/MyContainerName/storedProcedures/mySprocName
+Location :
+Tags     :
+Resource : Microsoft.Azure.Commands.CosmosDB.Models.PSSqlStoredProcedureGetPropertiesResource
+```
+
+## <span data-ttu-id="b3c3c-114">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="b3c3c-114">PARAMETERS</span></span>
+
+### <span data-ttu-id="b3c3c-115">-AccountName</span><span class="sxs-lookup"><span data-stu-id="b3c3c-115">-AccountName</span></span>
+<span data-ttu-id="b3c3c-116">A Külön db-adatbázisfiók neve.</span><span class="sxs-lookup"><span data-stu-id="b3c3c-116">Name of the Cosmos DB database account.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: ByNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b3c3c-117">-Body</span><span class="sxs-lookup"><span data-stu-id="b3c3c-117">-Body</span></span>
+<span data-ttu-id="b3c3c-118">A tárolt eljárás törzse.</span><span class="sxs-lookup"><span data-stu-id="b3c3c-118">The body of the Stored Procedure.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b3c3c-119">-Confirm</span><span class="sxs-lookup"><span data-stu-id="b3c3c-119">-Confirm</span></span>
+<span data-ttu-id="b3c3c-120">A parancsmag futtatása előtt a rendszer megerősítést kér.</span><span class="sxs-lookup"><span data-stu-id="b3c3c-120">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b3c3c-121">-ContainerName</span><span class="sxs-lookup"><span data-stu-id="b3c3c-121">-ContainerName</span></span>
+<span data-ttu-id="b3c3c-122">Tároló neve.</span><span class="sxs-lookup"><span data-stu-id="b3c3c-122">Container name.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: ByNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b3c3c-123">-DatabaseName</span><span class="sxs-lookup"><span data-stu-id="b3c3c-123">-DatabaseName</span></span>
+<span data-ttu-id="b3c3c-124">Adatbázis neve.</span><span class="sxs-lookup"><span data-stu-id="b3c3c-124">Database name.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: ByNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b3c3c-125">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="b3c3c-125">-DefaultProfile</span></span>
+<span data-ttu-id="b3c3c-126">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="b3c3c-126">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b3c3c-127">-InputObject</span><span class="sxs-lookup"><span data-stu-id="b3c3c-127">-InputObject</span></span>
+<span data-ttu-id="b3c3c-128">Sql Tárolt eljárás objektum</span><span class="sxs-lookup"><span data-stu-id="b3c3c-128">Sql Stored Procedure Object</span></span>
+
+```yaml
+Type: PSSqlStoredProcedureGetResults
+Parameter Sets: ByObjectParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b3c3c-129">-Name</span><span class="sxs-lookup"><span data-stu-id="b3c3c-129">-Name</span></span>
+<span data-ttu-id="b3c3c-130">Tárolt Prcodecure-név.</span><span class="sxs-lookup"><span data-stu-id="b3c3c-130">Stored Prcodecure Name.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b3c3c-131">-ParentObject</span><span class="sxs-lookup"><span data-stu-id="b3c3c-131">-ParentObject</span></span>
+<span data-ttu-id="b3c3c-132">Sql Container objektum.</span><span class="sxs-lookup"><span data-stu-id="b3c3c-132">Sql Container object.</span></span>
+
+```yaml
+Type: PSSqlContainerGetResults
+Parameter Sets: ByParentObjectParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b3c3c-133">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="b3c3c-133">-ResourceGroupName</span></span>
+<span data-ttu-id="b3c3c-134">Az erőforráscsoport neve.</span><span class="sxs-lookup"><span data-stu-id="b3c3c-134">Name of resource group.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: ByNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b3c3c-135">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="b3c3c-135">-WhatIf</span></span>
+<span data-ttu-id="b3c3c-136">A parancsmag futtatásakor a program megjeleníti, hogy mi történik.</span><span class="sxs-lookup"><span data-stu-id="b3c3c-136">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="b3c3c-137">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="b3c3c-137">The cmdlet is not run.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b3c3c-138">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="b3c3c-138">CommonParameters</span></span>
+<span data-ttu-id="b3c3c-139">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="b3c3c-139">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="b3c3c-140">További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="b3c3c-140">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="b3c3c-141">INPUTS</span><span class="sxs-lookup"><span data-stu-id="b3c3c-141">INPUTS</span></span>
+
+### <span data-ttu-id="b3c3c-142">Microsoft.Azure.Commands.CossDB.Models.PSSqlContainerGetResults</span><span class="sxs-lookup"><span data-stu-id="b3c3c-142">Microsoft.Azure.Commands.CosmosDB.Models.PSSqlContainerGetResults</span></span>
+
+### <span data-ttu-id="b3c3c-143">Microsoft.Azure.Commands.EzresDB.Models.PSSqlStoredProcedureGetResults</span><span class="sxs-lookup"><span data-stu-id="b3c3c-143">Microsoft.Azure.Commands.CosmosDB.Models.PSSqlStoredProcedureGetResults</span></span>
+
+## <span data-ttu-id="b3c3c-144">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="b3c3c-144">OUTPUTS</span></span>
+
+### <span data-ttu-id="b3c3c-145">Microsoft.Azure.Commands.EzresDB.Models.PSSqlStoredProcedureGetResults</span><span class="sxs-lookup"><span data-stu-id="b3c3c-145">Microsoft.Azure.Commands.CosmosDB.Models.PSSqlStoredProcedureGetResults</span></span>
+
+### <span data-ttu-id="b3c3c-146">Microsoft.Azure.Commands.CossDB.Exceptions.ResourceNotFoundException</span><span class="sxs-lookup"><span data-stu-id="b3c3c-146">Microsoft.Azure.Commands.CosmosDB.Exceptions.ResourceNotFoundException</span></span>
+
+## <span data-ttu-id="b3c3c-147">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="b3c3c-147">NOTES</span></span>
+
+## <span data-ttu-id="b3c3c-148">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="b3c3c-148">RELATED LINKS</span></span>

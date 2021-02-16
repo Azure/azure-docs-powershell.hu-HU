@@ -6,61 +6,61 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzActionGroup.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzActionGroup.md
-ms.openlocfilehash: da277d72dfd0e1ec2a31d0727047368da100b233
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: fe85fd3d3fd2638933097f73fdc06e6ff2b43460
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93665867"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406451"
 ---
-# <span data-ttu-id="5598b-101">Get-AzActionGroup</span><span class="sxs-lookup"><span data-stu-id="5598b-101">Get-AzActionGroup</span></span>
+# <span data-ttu-id="04302-101">Get-AzActionGroup</span><span class="sxs-lookup"><span data-stu-id="04302-101">Get-AzActionGroup</span></span>
 
-## <span data-ttu-id="5598b-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="5598b-102">SYNOPSIS</span></span>
-<span data-ttu-id="5598b-103">A műveleti csoport (ok) beolvasása</span><span class="sxs-lookup"><span data-stu-id="5598b-103">Gets action group(s).</span></span>
+## <span data-ttu-id="04302-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="04302-102">SYNOPSIS</span></span>
+<span data-ttu-id="04302-103">Műveletcsoport(ak) lekérte.</span><span class="sxs-lookup"><span data-stu-id="04302-103">Gets action group(s).</span></span>
 
-## <span data-ttu-id="5598b-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="5598b-104">SYNTAX</span></span>
+## <span data-ttu-id="04302-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="04302-104">SYNTAX</span></span>
 
-### <span data-ttu-id="5598b-105">BySubscriptionOrResourceGroup (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="5598b-105">BySubscriptionOrResourceGroup (Default)</span></span>
+### <span data-ttu-id="04302-105">BySubscriptionOrResourceGroup (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="04302-105">BySubscriptionOrResourceGroup (Default)</span></span>
 ```
 Get-AzActionGroup [-ResourceGroupName <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="5598b-106">ByName</span><span class="sxs-lookup"><span data-stu-id="5598b-106">ByName</span></span>
+### <span data-ttu-id="04302-106">ByName</span><span class="sxs-lookup"><span data-stu-id="04302-106">ByName</span></span>
 ```
 Get-AzActionGroup -ResourceGroupName <String> -Name <String> [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="5598b-107">Leírás</span><span class="sxs-lookup"><span data-stu-id="5598b-107">DESCRIPTION</span></span>
-<span data-ttu-id="5598b-108">A **Get-AzActionGroup** parancsmag egy vagy több műveleti csoportot kap.</span><span class="sxs-lookup"><span data-stu-id="5598b-108">The **Get-AzActionGroup** cmdlet gets one or more action groups.</span></span>
+## <span data-ttu-id="04302-107">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="04302-107">DESCRIPTION</span></span>
+<span data-ttu-id="04302-108">A **Get-AzActionGroup** parancsmag egy vagy több műveletcsoportot kap.</span><span class="sxs-lookup"><span data-stu-id="04302-108">The **Get-AzActionGroup** cmdlet gets one or more action groups.</span></span>
 
-## <span data-ttu-id="5598b-109">Példák</span><span class="sxs-lookup"><span data-stu-id="5598b-109">EXAMPLES</span></span>
+## <span data-ttu-id="04302-109">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="04302-109">EXAMPLES</span></span>
 
-### <span data-ttu-id="5598b-110">1. példa: műveletkérő csoport beszerzése előfizetés-AZONOSÍTÓval</span><span class="sxs-lookup"><span data-stu-id="5598b-110">Example 1: Get an action group by subscription ID</span></span>
+### <span data-ttu-id="04302-110">1. példa: Műveletcsoport lekérte előfizetésazonosító szerint</span><span class="sxs-lookup"><span data-stu-id="04302-110">Example 1: Get an action group by subscription ID</span></span>
 ```
 PS C:\>Get-AzActionGroup
 ```
 
-<span data-ttu-id="5598b-111">Ez a parancs felsorolja az aktuális előfizetéshez tartozó összes Művelettípus-csoportot.</span><span class="sxs-lookup"><span data-stu-id="5598b-111">This command lists all the action group for the current subscription.</span></span>
+<span data-ttu-id="04302-111">Ez a parancs felsorolja az aktuális előfizetés összes műveletcsoportját.</span><span class="sxs-lookup"><span data-stu-id="04302-111">This command lists all the action group for the current subscription.</span></span>
 
-### <span data-ttu-id="5598b-112">2. példa: az adott erőforráscsoport műveleti csoportjainak beolvasása</span><span class="sxs-lookup"><span data-stu-id="5598b-112">Example 2: Get action groups for the given resource group</span></span>
+### <span data-ttu-id="04302-112">2. példa: Az adott erőforráscsoporthoz szükséges műveletcsoportok lekérte</span><span class="sxs-lookup"><span data-stu-id="04302-112">Example 2: Get action groups for the given resource group</span></span>
 ```
 PS C:\>Get-AzActionGroup -ResourceGroup "Default-activityLogAlerts"
 ```
 
-<span data-ttu-id="5598b-113">Ez a parancs megjeleníti a megadott erőforráscsoport műveleti csoportját.</span><span class="sxs-lookup"><span data-stu-id="5598b-113">This command lists action groups for the given resource group.</span></span>
+<span data-ttu-id="04302-113">Ez a parancs felsorolja az adott erőforráscsoporthoz szükséges műveletcsoportokat.</span><span class="sxs-lookup"><span data-stu-id="04302-113">This command lists action groups for the given resource group.</span></span>
 
-### <span data-ttu-id="5598b-114">3. példa: művelet csoportjának beszerzése</span><span class="sxs-lookup"><span data-stu-id="5598b-114">Example 3: Get an action group.</span></span>
+### <span data-ttu-id="04302-114">3. példa: Műveletcsoport lekérte.</span><span class="sxs-lookup"><span data-stu-id="04302-114">Example 3: Get an action group.</span></span>
 ```
 PS C:\>Get-AzActionGroup -ResourceGroup "Default-activityLogAlerts" -Name "actionGroup1"
 ```
 
-<span data-ttu-id="5598b-115">Ez a parancs egy (egyetlen elemből álló) műveleti csoporttal sorolja fel a listát.</span><span class="sxs-lookup"><span data-stu-id="5598b-115">This command lists one (a list with a single element) action group.</span></span>
+<span data-ttu-id="04302-115">Ez a parancs felsorol egy (egyetlen elemet tartalmazó listát) műveletcsoportot.</span><span class="sxs-lookup"><span data-stu-id="04302-115">This command lists one (a list with a single element) action group.</span></span>
 
-## <span data-ttu-id="5598b-116">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="5598b-116">PARAMETERS</span></span>
+## <span data-ttu-id="04302-116">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="04302-116">PARAMETERS</span></span>
 
-### <span data-ttu-id="5598b-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="5598b-117">-DefaultProfile</span></span>
-<span data-ttu-id="5598b-118">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés</span><span class="sxs-lookup"><span data-stu-id="5598b-118">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="04302-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="04302-117">-DefaultProfile</span></span>
+<span data-ttu-id="04302-118">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés</span><span class="sxs-lookup"><span data-stu-id="04302-118">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -74,8 +74,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="5598b-119">-Name (név)</span><span class="sxs-lookup"><span data-stu-id="5598b-119">-Name</span></span>
-<span data-ttu-id="5598b-120">A műveleti csoport neve.</span><span class="sxs-lookup"><span data-stu-id="5598b-120">The name of the action group.</span></span>
+### <span data-ttu-id="04302-119">-Name</span><span class="sxs-lookup"><span data-stu-id="04302-119">-Name</span></span>
+<span data-ttu-id="04302-120">A műveletcsoport neve.</span><span class="sxs-lookup"><span data-stu-id="04302-120">The name of the action group.</span></span>
 
 ```yaml
 Type: System.String
@@ -89,8 +89,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="5598b-121">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="5598b-121">-ResourceGroupName</span></span>
-<span data-ttu-id="5598b-122">Az erőforráscsoport neve</span><span class="sxs-lookup"><span data-stu-id="5598b-122">The resource group name</span></span>
+### <span data-ttu-id="04302-121">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="04302-121">-ResourceGroupName</span></span>
+<span data-ttu-id="04302-122">Az erőforráscsoport neve</span><span class="sxs-lookup"><span data-stu-id="04302-122">The resource group name</span></span>
 
 ```yaml
 Type: System.String
@@ -116,23 +116,23 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="5598b-123">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="5598b-123">CommonParameters</span></span>
-<span data-ttu-id="5598b-124">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="5598b-124">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="5598b-125">További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="5598b-125">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="04302-123">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="04302-123">CommonParameters</span></span>
+<span data-ttu-id="04302-124">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="04302-124">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="04302-125">További információt a [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="04302-125">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="5598b-126">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="5598b-126">INPUTS</span></span>
+## <span data-ttu-id="04302-126">INPUTS</span><span class="sxs-lookup"><span data-stu-id="04302-126">INPUTS</span></span>
 
-### <span data-ttu-id="5598b-127">System. String</span><span class="sxs-lookup"><span data-stu-id="5598b-127">System.String</span></span>
+### <span data-ttu-id="04302-127">System.String</span><span class="sxs-lookup"><span data-stu-id="04302-127">System.String</span></span>
 
-## <span data-ttu-id="5598b-128">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="5598b-128">OUTPUTS</span></span>
+## <span data-ttu-id="04302-128">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="04302-128">OUTPUTS</span></span>
 
-### <span data-ttu-id="5598b-129">Microsoft. Azure. commands. OutputClasses. PSActionGroupResource</span><span class="sxs-lookup"><span data-stu-id="5598b-129">Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource</span></span>
+### <span data-ttu-id="04302-129">Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource</span><span class="sxs-lookup"><span data-stu-id="04302-129">Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource</span></span>
 
-## <span data-ttu-id="5598b-130">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="5598b-130">NOTES</span></span>
+## <span data-ttu-id="04302-130">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="04302-130">NOTES</span></span>
 
-## <span data-ttu-id="5598b-131">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="5598b-131">RELATED LINKS</span></span>
+## <span data-ttu-id="04302-131">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="04302-131">RELATED LINKS</span></span>
 
-<span data-ttu-id="5598b-132">[Set-AzActionGroup](./Set-AzActionGroup.md) 
+<span data-ttu-id="04302-132">[Set-AzActionGroup](./Set-AzActionGroup.md) 
  [Remove-AzActionGroup](./Remove-AzActionGroup.md) 
- [Új – AzActionGroupReceiver](./AzureRmActionGroupReceiver.md)</span><span class="sxs-lookup"><span data-stu-id="5598b-132">[Set-AzActionGroup](./Set-AzActionGroup.md)
+ [New-AzActionGroupReceiver](./New-AzActionGroupReceiver.md)</span><span class="sxs-lookup"><span data-stu-id="04302-132">[Set-AzActionGroup](./Set-AzActionGroup.md)
 [Remove-AzActionGroup](./Remove-AzActionGroup.md)
-[New-AzActionGroupReceiver](./AzureRmActionGroupReceiver.md)</span></span>
+[New-AzActionGroupReceiver](./New-AzActionGroupReceiver.md)</span></span>
