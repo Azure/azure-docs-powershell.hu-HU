@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementApiRelease.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementApiRelease.md
-ms.openlocfilehash: 784480b56a868f84f8f79a35bf7ab2c1ba2e9fbf
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 5a5d155b8c9127d330a1f53d1fe53d42d60d46a8
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93668073"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406604"
 ---
-# <span data-ttu-id="f8426-101">New-AzApiManagementApiRelease</span><span class="sxs-lookup"><span data-stu-id="f8426-101">New-AzApiManagementApiRelease</span></span>
+# <span data-ttu-id="8f624-101">New-AzApiManagementApiRelease</span><span class="sxs-lookup"><span data-stu-id="8f624-101">New-AzApiManagementApiRelease</span></span>
 
-## <span data-ttu-id="f8426-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="f8426-102">SYNOPSIS</span></span>
-<span data-ttu-id="f8426-103">API-kiadás API-változatának létrehozása</span><span class="sxs-lookup"><span data-stu-id="f8426-103">Creates an API Release of an API Revision</span></span>
+## <span data-ttu-id="8f624-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="8f624-102">SYNOPSIS</span></span>
+<span data-ttu-id="8f624-103">API-változat API-kiadását hozza létre</span><span class="sxs-lookup"><span data-stu-id="8f624-103">Creates an API Release of an API Revision</span></span>
 
-## <span data-ttu-id="f8426-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="f8426-104">SYNTAX</span></span>
+## <span data-ttu-id="8f624-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="8f624-104">SYNTAX</span></span>
 
 ```
 New-AzApiManagementApiRelease -Context <PsApiManagementContext> -ApiId <String> -ApiRevision <String>
@@ -25,13 +25,13 @@ New-AzApiManagementApiRelease -Context <PsApiManagementContext> -ApiId <String> 
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="f8426-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="f8426-105">DESCRIPTION</span></span>
+## <span data-ttu-id="8f624-105">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="8f624-105">DESCRIPTION</span></span>
 
-<span data-ttu-id="f8426-106">A **New-AzApiManagementApiRelease** parancsmag API-kiadást hoz létre az API-kezelési környezet API-verziójában.</span><span class="sxs-lookup"><span data-stu-id="f8426-106">The **New-AzApiManagementApiRelease** cmdlet creates an API Release for an API Revision in API Management context.</span></span> <span data-ttu-id="f8426-107">A kiadás segítségével az API-t a jelenlegi Átdolgozásként végezheti el.</span><span class="sxs-lookup"><span data-stu-id="f8426-107">A Release is used to make the Api Revision as Current Revision.</span></span>
+<span data-ttu-id="8f624-106">A **New-AzApiManagementApiRelease** parancsmag létrehoz egy API-kiadást egy API-változathoz AZ API-kezelés környezetben.</span><span class="sxs-lookup"><span data-stu-id="8f624-106">The **New-AzApiManagementApiRelease** cmdlet creates an API Release for an API Revision in API Management context.</span></span> <span data-ttu-id="8f624-107">A kiadás az Api változatának aktuális változatként való alkalmazásához használatos.</span><span class="sxs-lookup"><span data-stu-id="8f624-107">A Release is used to make the Api Revision as Current Revision.</span></span>
 
-## <span data-ttu-id="f8426-108">Példák</span><span class="sxs-lookup"><span data-stu-id="f8426-108">EXAMPLES</span></span>
+## <span data-ttu-id="8f624-108">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="8f624-108">EXAMPLES</span></span>
 
-### <span data-ttu-id="f8426-109">1. példa: API-kiadás létrehozása API-verzióhoz</span><span class="sxs-lookup"><span data-stu-id="f8426-109">Example 1: Create an API Release for an API Revision</span></span>
+### <span data-ttu-id="8f624-109">1. példa: API-kiadás létrehozása API-változathoz</span><span class="sxs-lookup"><span data-stu-id="8f624-109">Example 1: Create an API Release for an API Revision</span></span>
 ```powershell
 PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>New-AzApiManagementApiRelease -Context $context  -ApiId 5adf6fbf0faadf3ad8558065 -ApiRevision 6 -Note "Releasing version 6"
@@ -49,27 +49,12 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-<span data-ttu-id="f8426-110">Ez a parancs API-kiadást hoz létre `2` a módosítások számára `echo-api` .</span><span class="sxs-lookup"><span data-stu-id="f8426-110">This command creates an API Release of Revision `2` of the `echo-api`.</span></span>
+<span data-ttu-id="8f624-110">Ez a parancs létrehozza a `2` `echo-api` .</span><span class="sxs-lookup"><span data-stu-id="8f624-110">This command creates an API Release of Revision `2` of the `echo-api`.</span></span>
 
-## <span data-ttu-id="f8426-111">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="f8426-111">PARAMETERS</span></span>
+## <span data-ttu-id="8f624-111">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="8f624-111">PARAMETERS</span></span>
 
-### <span data-ttu-id="f8426-112">-ApiId</span><span class="sxs-lookup"><span data-stu-id="f8426-112">-ApiId</span></span>
-<span data-ttu-id="f8426-113">Azonosítót az új API-hoz.</span><span class="sxs-lookup"><span data-stu-id="f8426-113">Identifier for new API.</span></span>
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="f8426-114">-ApiRevision</span><span class="sxs-lookup"><span data-stu-id="f8426-114">-ApiRevision</span></span>
-<span data-ttu-id="f8426-115">Az API-módosítás azonosítója.</span><span class="sxs-lookup"><span data-stu-id="f8426-115">Identifier for the Api Revision.</span></span>
+### <span data-ttu-id="8f624-112">-ApiId</span><span class="sxs-lookup"><span data-stu-id="8f624-112">-ApiId</span></span>
+<span data-ttu-id="8f624-113">Az új API azonosítója.</span><span class="sxs-lookup"><span data-stu-id="8f624-113">Identifier for new API.</span></span>
 
 ```yaml
 Type: System.String
@@ -83,9 +68,24 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f8426-116">-Környezet</span><span class="sxs-lookup"><span data-stu-id="f8426-116">-Context</span></span>
-<span data-ttu-id="f8426-117">A PsApiManagementContext példánya.</span><span class="sxs-lookup"><span data-stu-id="f8426-117">Instance of PsApiManagementContext.</span></span>
-<span data-ttu-id="f8426-118">Ehhez a paraméterhez szükség van.</span><span class="sxs-lookup"><span data-stu-id="f8426-118">This parameter is required.</span></span>
+### <span data-ttu-id="8f624-114">-ApiRevision</span><span class="sxs-lookup"><span data-stu-id="8f624-114">-ApiRevision</span></span>
+<span data-ttu-id="8f624-115">Az Api-változat azonosítója.</span><span class="sxs-lookup"><span data-stu-id="8f624-115">Identifier for the Api Revision.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8f624-116">-Környezet</span><span class="sxs-lookup"><span data-stu-id="8f624-116">-Context</span></span>
+<span data-ttu-id="8f624-117">A PsApiManagementContext példánya.</span><span class="sxs-lookup"><span data-stu-id="8f624-117">Instance of PsApiManagementContext.</span></span>
+<span data-ttu-id="8f624-118">Ezt a paramétert kötelező megadni.</span><span class="sxs-lookup"><span data-stu-id="8f624-118">This parameter is required.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -99,8 +99,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f8426-119">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="f8426-119">-DefaultProfile</span></span>
-<span data-ttu-id="f8426-120">Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="f8426-120">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+### <span data-ttu-id="8f624-119">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="8f624-119">-DefaultProfile</span></span>
+<span data-ttu-id="8f624-120">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="8f624-120">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -114,8 +114,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f8426-121">-Megjegyzés</span><span class="sxs-lookup"><span data-stu-id="f8426-121">-Note</span></span>
-<span data-ttu-id="f8426-122">API-kibocsátási megjegyzések.</span><span class="sxs-lookup"><span data-stu-id="f8426-122">Api Release Notes.</span></span> <span data-ttu-id="f8426-123">Ez a paraméter nem kötelező</span><span class="sxs-lookup"><span data-stu-id="f8426-123">This parameter is optional</span></span>
+### <span data-ttu-id="8f624-121">-Note</span><span class="sxs-lookup"><span data-stu-id="8f624-121">-Note</span></span>
+<span data-ttu-id="8f624-122">Api kibocsátási megjegyzései.</span><span class="sxs-lookup"><span data-stu-id="8f624-122">Api Release Notes.</span></span> <span data-ttu-id="8f624-123">Ez a paraméter nem kötelező</span><span class="sxs-lookup"><span data-stu-id="8f624-123">This parameter is optional</span></span>
 
 ```yaml
 Type: System.String
@@ -129,10 +129,10 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f8426-124">-ReleaseId</span><span class="sxs-lookup"><span data-stu-id="f8426-124">-ReleaseId</span></span>
-<span data-ttu-id="f8426-125">Az API-kiadás azonosítója.</span><span class="sxs-lookup"><span data-stu-id="f8426-125">Identifier for the Api Release.</span></span>
-<span data-ttu-id="f8426-126">Ez a paraméter nem kötelező.</span><span class="sxs-lookup"><span data-stu-id="f8426-126">This parameter is optional.</span></span>
-<span data-ttu-id="f8426-127">Ha a program nem hoz létre megadott azonosítót.</span><span class="sxs-lookup"><span data-stu-id="f8426-127">If not specified identifier will be generated.</span></span>
+### <span data-ttu-id="8f624-124">-ReleaseId</span><span class="sxs-lookup"><span data-stu-id="8f624-124">-ReleaseId</span></span>
+<span data-ttu-id="8f624-125">Az Api-kiadás azonosítója.</span><span class="sxs-lookup"><span data-stu-id="8f624-125">Identifier for the Api Release.</span></span>
+<span data-ttu-id="8f624-126">Ez a paraméter nem kötelező.</span><span class="sxs-lookup"><span data-stu-id="8f624-126">This parameter is optional.</span></span>
+<span data-ttu-id="8f624-127">Ha nincs megadva azonosító, a rendszer létrehoz egy azonosítót.</span><span class="sxs-lookup"><span data-stu-id="8f624-127">If not specified identifier will be generated.</span></span>
 
 ```yaml
 Type: System.String
@@ -146,8 +146,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f8426-128">– Megerősítés</span><span class="sxs-lookup"><span data-stu-id="f8426-128">-Confirm</span></span>
-<span data-ttu-id="f8426-129">A parancsmag futtatása előtt kéri a megerősítést.</span><span class="sxs-lookup"><span data-stu-id="f8426-129">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="8f624-128">-Confirm</span><span class="sxs-lookup"><span data-stu-id="8f624-128">-Confirm</span></span>
+<span data-ttu-id="8f624-129">A parancsmag futtatása előtt a rendszer megerősítést kér.</span><span class="sxs-lookup"><span data-stu-id="8f624-129">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -161,8 +161,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f8426-130">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="f8426-130">-WhatIf</span></span>
-<span data-ttu-id="f8426-131">Annak megjelenítése, hogy mi történik, ha a parancsmag fut.</span><span class="sxs-lookup"><span data-stu-id="f8426-131">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="f8426-132">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="f8426-132">The cmdlet is not run.</span></span>
+### <span data-ttu-id="8f624-130">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="8f624-130">-WhatIf</span></span>
+<span data-ttu-id="8f624-131">A parancsmag futtatásakor a program megjeleníti, hogy mi történik.</span><span class="sxs-lookup"><span data-stu-id="8f624-131">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="8f624-132">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="8f624-132">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -176,25 +176,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f8426-133">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="f8426-133">CommonParameters</span></span>
-<span data-ttu-id="f8426-134">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="f8426-134">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="f8426-135">További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="f8426-135">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="8f624-133">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="8f624-133">CommonParameters</span></span>
+<span data-ttu-id="8f624-134">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="8f624-134">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="8f624-135">További információt a [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="8f624-135">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="f8426-136">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="f8426-136">INPUTS</span></span>
+## <span data-ttu-id="8f624-136">INPUTS</span><span class="sxs-lookup"><span data-stu-id="8f624-136">INPUTS</span></span>
 
-### <span data-ttu-id="f8426-137">Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementContext</span><span class="sxs-lookup"><span data-stu-id="f8426-137">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span></span>
+### <span data-ttu-id="8f624-137">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span><span class="sxs-lookup"><span data-stu-id="8f624-137">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span></span>
 
-### <span data-ttu-id="f8426-138">System. String</span><span class="sxs-lookup"><span data-stu-id="f8426-138">System.String</span></span>
+### <span data-ttu-id="8f624-138">System.String</span><span class="sxs-lookup"><span data-stu-id="8f624-138">System.String</span></span>
 
-## <span data-ttu-id="f8426-139">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="f8426-139">OUTPUTS</span></span>
+## <span data-ttu-id="8f624-139">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="8f624-139">OUTPUTS</span></span>
 
-### <span data-ttu-id="f8426-140">Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementApiRelease</span><span class="sxs-lookup"><span data-stu-id="f8426-140">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiRelease</span></span>
+### <span data-ttu-id="8f624-140">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiRelease</span><span class="sxs-lookup"><span data-stu-id="8f624-140">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiRelease</span></span>
 
-## <span data-ttu-id="f8426-141">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="f8426-141">NOTES</span></span>
+## <span data-ttu-id="8f624-141">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="8f624-141">NOTES</span></span>
 
-## <span data-ttu-id="f8426-142">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="f8426-142">RELATED LINKS</span></span>
+## <span data-ttu-id="8f624-142">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="8f624-142">RELATED LINKS</span></span>
 
-[<span data-ttu-id="f8426-143">Get-AzApiManagementApiRelease</span><span class="sxs-lookup"><span data-stu-id="f8426-143">Get-AzApiManagementApiRelease</span></span>](./Get-AzApiManagementApiRelease.md)
+[<span data-ttu-id="8f624-143">Get-AzApiManagementApiRelease</span><span class="sxs-lookup"><span data-stu-id="8f624-143">Get-AzApiManagementApiRelease</span></span>](./Get-AzApiManagementApiRelease.md)
 
-[<span data-ttu-id="f8426-144">Remove-AzApiManagementApiRelease</span><span class="sxs-lookup"><span data-stu-id="f8426-144">Remove-AzApiManagementApiRelease</span></span>](./Remove-AzApiManagementApiRelease.md)
+[<span data-ttu-id="8f624-144">Remove-AzApiManagementApiRelease</span><span class="sxs-lookup"><span data-stu-id="8f624-144">Remove-AzApiManagementApiRelease</span></span>](./Remove-AzApiManagementApiRelease.md)
 
-[<span data-ttu-id="f8426-145">Set-AzApiManagementApiRelease</span><span class="sxs-lookup"><span data-stu-id="f8426-145">Set-AzApiManagementApiRelease</span></span>](./Set-AzApiManagementApiRelease.md)
+[<span data-ttu-id="8f624-145">Update-AzApiManagementApiRelease</span><span class="sxs-lookup"><span data-stu-id="8f624-145">Update-AzApiManagementApiRelease</span></span>](./Update-AzApiManagementApiRelease.md)
