@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.kusto/get-
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Kusto/Kusto/help/Get-AzKustoCluster.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Kusto/Kusto/help/Get-AzKustoCluster.md
-ms.openlocfilehash: a68604e9701a6ae2c251edf3f2a0935df5ffa94f
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: c5c7cdffc8b329fdff426f48f60869ca6821f32d
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93835582"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399226"
 ---
 # Get-AzKustoCluster
 
-## Áttekintés
-Megtekintheti egy erőforráscsoport összes Kusto-szektorcsoportját, vagy egy bizonyos Kusto-fürtöt.
+## SYNOPSIS
+List all Kusto clusters in a resource group or get a specific Kusto cluster.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### ByClusterOrResourceGroupOrSubscription (alapértelmezett)
 ```
@@ -30,25 +30,25 @@ Get-AzKustoCluster -ResourceGroupName <String> [-Name <String>] [-DefaultProfile
 Get-AzKustoCluster -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-Megtekintheti egy erőforráscsoport összes Kusto-szektorcsoportját, vagy egy bizonyos Kusto-fürtöt.
+## LEÍRÁS
+List all Kusto clusters in a resource group or get a specific Kusto cluster.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1 – egy erőforráscsoport összes Kusto listája
+### 1. példa : Egy erőforráscsoport összes Kusto-fürtének felsorolása
 
-Írja be a következőt: Microsoft. Kusto/Clusters ID:/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster1 ResourceGroup: testrg név: mykustocluster1 hely: Közép-amerikai kapacitás: 3 SKU: D13_v2 ProvisioningState: sikeres állapot: futó címke: {} URI: https://mykustocluster1.centralus.kusto.windows.net DataIngestionUri: https://ingest-mykustocluster1.centralus.kusto.windows.net
+Típus: Microsoft.Kusto/Clusters Id : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster1 ResourceGroup: testrg Name: mykustocluster1 Location: Central US Capacity: 3 Termékváltozat: D13_v2 ProvisioningState: Sikeres állam: Running Tag : {} Uri : `https://mykustocluster1.centralus.kusto.windows.net` DataIngestionUri : `https://ingest-mykustocluster1.centralus.kusto.windows.net`
 
-Írja be a következőt: Microsoft. Kusto/Clusters ID:/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster2 ResourceGroup: testrg név: mykustocluster2 hely: Közép-amerikai kapacitás: 5 SKU: D13_v2 ProvisioningState: sikeres állapot: futó címke: {} URI: https://mykustocluster2.centralus.kusto.windows.net DataIngestionUri: https://ingest-mykustocluster2.centralus.kusto.windows.net
+Típus: Microsoft.Kusto/Clusters Id : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster2 ResourceGroup: testrg Name: mykustocluster2 Location: Central US Capacity: 5 Termékváltozat: D13_v2 ProvisioningState: Sikeres állam: Running Tag : {} Uri : `https://mykustocluster2.centralus.kusto.windows.net` DataIngestionUri : `https://ingest-mykustocluster2.centralus.kusto.windows.net`
 
 
 ```
 PS C:\> Get-AzKustoCluster -ResourceGroupName testrg
 ```
 
-A fenti parancs felsorolja az összes Kusto-szektorcsoportot az "testrg" erőforráscsoport csoportjában.
+A fenti parancs felsorolja a "testrg" erőforráscsoport összes Kusto-fürtöt.
 
-### 2 példa – adott Kusto-fürt beszerzése név alapján
+### 2. példa: Adott Kusto-fürt lekérte név szerint
 
 ```
 PS C:\> Get-AzKustoCluster -ResourceGroupName testrg -Name mykustocluster
@@ -67,9 +67,9 @@ Uri               : https://mykustocluster.centralus.kusto.windows.net
 DataIngestionUri  : https://ingest-mykustocluster.centralus.kusto.windows.net
 ```
 
-A fenti parancs az "testrg" erőforráscsoport "mykustocluster" nevű Kusto-fürtöt számítja ki.
+A fenti parancs a "testrg" erőforráscsoportban a "mykustocluster" nevű Kusto-fürtöt adja vissza.
 
-### 3 példa – adott Kusto-fürt beszerzése erőforrás-azonosítóval
+### 3. példa: Adott Kusto-fürt lekérte erőforrás-azonosító szerint
 
 ```
 PS C:\> Get-AzKustoCluster -ResourceId /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/clusters/mykustocluster
@@ -87,12 +87,12 @@ Uri               : https://mykustocluster.centralus.kusto.windows.net
 DataIngestionUri  : https://ingest-mykustocluster.centralus.kusto.windows.net
 ```
 
-A fenti parancs az "testrg" erőforráscsoport "mykustocluster" nevű Kusto-fürtöt számítja ki.
+A fenti parancs a "testrg" erőforráscsoportban a "mykustocluster" nevű Kusto-fürtöt adja vissza.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -106,7 +106,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (név)
+### -Name
 Egy adott fürt neve.
 
 ```yaml
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Annak az erőforráscsoportnek a neve, amelyben a felhasználó a fürtöt szeretné beolvasni.
+Annak az erőforráscsoportnak a neve, amely alatt a felhasználó le szeretné kéri a fürtöt.
 
 ```yaml
 Type: System.String
@@ -137,7 +137,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Kusto a cluster ResourceID.
+Kusto cluster ResourceID.
 
 ```yaml
 Type: System.String
@@ -152,16 +152,16 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. Kusto. models. PSKustoCluster
+### Microsoft.Azure.Commands.Kusto.Models.PSKustoCluster
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
