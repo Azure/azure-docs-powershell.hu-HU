@@ -3,19 +3,19 @@ external help file: Microsoft.WindowsAzure.Commands.SqlDatabase.dll-Help.xml
 ms.assetid: 5AEF7D44-624D-4794-86FF-156E6729BB56
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: f8752766572975ef97094a3915446086c903a7fd
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 95e276bf6af11698a4b3b82077175ec2ede2d7dc
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94016295"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100402422"
 ---
 # Get-AzureSqlDatabaseCopy
 
-## Áttekintés
-A kapcsolatok másolási állapotának ellenőrzése
+## SYNOPSIS
+A másolási kapcsolatok állapotát ellenőrzi.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### ByServerNameOnly (alapértelmezett)
 ```
@@ -29,47 +29,47 @@ Get-AzureSqlDatabaseCopy -ServerName <String> -DatabaseCopy <DatabaseCopy> [-Pro
  [<CommonParameters>]
 ```
 
-### ByDatabase
+### Adatbázis-adatbázis
 ```
 Get-AzureSqlDatabaseCopy -ServerName <String> -Database <Database> [-PartnerServer <String>]
  [-PartnerDatabase <String>] [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## Leírás
+## LEÍRÁS
 A **Get-AzureSqlDatabaseCopy** parancsmag egy vagy több aktív másolási kapcsolat állapotát ellenőrzi.
-Futtassa ezt a parancsmagot a Start-AzureSqlDatabaseCopy vagy Stop-AzureSqlDatabaseCopy parancsmag futtatása után.
-Ellenőrizheti a másolati viszonyokat, az összes másolt kapcsolatot, illetve a másolt kapcsolatok szűrt listáját, például egy adott célkiszolgáló összes példányát.
-Ezt a parancsmagot a forrás-vagy céladatbázis-kiszolgálót futtató kiszolgálón futtathatja.
+Futtassa ezt a parancsmagot a Start-AzureSqlDatabaseCopy vagy Stop-AzureSqlDatabaseCopy futtatása után.
+Ellenőrizheti egy adott másolási kapcsolatot, az összes másolási kapcsolatot vagy a másolási kapcsolatok szűrt listáját, például egy adott célkiszolgáló összes példányát.
+Ezt a parancsmagot a forrás- vagy céladatbázist tároló kiszolgálón futtathatja.
 
-Ez a parancsmag szinkronban van.
-A parancsmag megakadályozza az Azure PowerShell-konzolt, amíg az nem egy állapotsort ad.
+Ez a parancsmag szinkron.
+A parancsmag letiltja az Azure PowerShell-konzolt, amíg egy állapotobjektumot nem ad vissza.
 
-A *PartnerServer* és a *PartnerDatabase* paraméter nem kötelező.
-Ha nem ad meg paramétert, ez a parancsmag a találatok táblázatát adja eredményül.
-Ha csak egy adott adatbázis állapotát szeretné látni, adja meg mindkét paramétert.
+A *PartnerServer* és *a PartnerDatabase* paraméter megadása nem kötelező.
+Ha egyik paramétert sem adja meg, ez a parancsmag eredménytáblát ad eredményül.
+Ha csak egy adott adatbázis állapotát látni, adja meg mindkét paramétert.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: adatbázis másolati állapotának beszerzése
+### 1. példa: Adatbázis másolási állapotának ellenőrzése
 ```
 PS C:\> Get-AzureSqlDatabaseCopy -ServerName "lpqd0zbr8y" -DatabaseName "Orders" -PartnerServer "bk0b8kf658"
 ```
 
-Ez a parancs megkapja a lpqd0zbr8y nevű kiszolgálón a rendelések nevű adatbázis állapotát.
-A *PartnerServer* paraméter korlátozza ezt a parancsot az bk0b8kf658-kiszolgálóra.
+Ez a parancs az Orders (Rendelések) nevű adatbázis állapotát kapja meg az lpqd0zbr8y nevű kiszolgálón.
+A *PartnerServer* paraméter a parancsot a bk0b8kf658-kiszolgálóra korlátozza.
 
-### 2. példa: a serverGet lévő összes példány állapotának lekérése
+### 2. példa: A kiszolgálón található összes példány állapotának ellenőrzéseA kiszolgálón található összes példány állapotának megtekintése
 ```
 PS C:\> Get-AzureSqlDatabaseCopy -ServerName "lpqd0zbr8y"
 ```
 
-Ez a parancs a lpqd0zbr8y nevű kiszolgálón minden aktív másolat állapotát megkapja.
+Ez a parancs az lpqd0zbr8y nevű kiszolgálón lévő összes aktív példány állapotát kapja meg.
 
-## PARAMÉTEREK
+## PARAMETERS
 
-### -Database (adatbázis)
-Egy olyan objektumot ad meg, amely a Source Azure SQL-adatbázist jelöli.
-Ez a parancsmag a paraméter által megadott adatbázis másolati állapotát kapja meg.
+### -Database
+A forrás Azure SQL-adatbázist képviselő objektumot ad meg.
+Ez a parancsmag a paraméter által megadott adatbázis másolási állapotát kapja meg.
 
 ```yaml
 Type: Database
@@ -84,9 +84,9 @@ Accept wildcard characters: False
 ```
 
 ### -DatabaseCopy
-Egy adatbázist jelképező objektumot ad meg.
-Ez a parancsmag a paraméter által megadott adatbázis másolati állapotát kapja meg.
-Ez a paraméter elfogadja a csővezeték-bevitelt.
+Egy adatbázist képviselő objektumot ad meg.
+Ez a parancsmag a paraméter által megadott adatbázis másolási állapotát kapja meg.
+Ez a paraméter elfogadja a folyamatbemenetet.
 
 ```yaml
 Type: DatabaseCopy
@@ -101,8 +101,8 @@ Accept wildcard characters: False
 ```
 
 ### -DatabaseName
-A forrás adatbázis nevét adja meg.
-Ez a parancsmag a paraméter által megadott adatbázis másolati állapotát kapja meg.
+A forrásadatbázis nevét adja meg.
+Ez a parancsmag a paraméter által megadott adatbázis másolási állapotát kapja meg.
 
 ```yaml
 Type: String
@@ -118,7 +118,7 @@ Accept wildcard characters: False
 
 ### -PartnerDatabase
 A másodlagos adatbázis nevét adja meg.
-Ha az adatbázis nem található meg a sys.dm_database_copies dinamikus kezelés nézetében, ez a parancsmag üres állapot-objektumot ad eredményül.
+Ha ez az adatbázis nem található meg a sys.dm_database_copies dinamikus kezelési nézetben, ez a parancsmag üres állapotobjektumot ad vissza.
 
 ```yaml
 Type: String
@@ -133,8 +133,8 @@ Accept wildcard characters: False
 ```
 
 ### -PartnerServer
-A célként megadott adatbázist tároló kiszolgáló neve.
-Ha a kiszolgáló nem található meg a sys.dm_database_copies dinamikus kezelés nézetében, ez a parancsmag üres állapot-objektumot ad eredményül.
+A céladatbázist tároló kiszolgáló neve.
+Ha ez a kiszolgáló nem található meg a sys.dm_database_copies dinamikus kezelési nézetben, ez a parancsmag üres állapotobjektumot ad vissza.
 
 ```yaml
 Type: String
@@ -149,8 +149,8 @@ Accept wildcard characters: False
 ```
 
 ### -Profil
-Azt az Azure-profilt adja meg, amelyből a parancsmag olvasható.
-Ha nem ad meg profilt, a parancsmag a helyi alapértelmezett profilból olvassa be a szöveget.
+Azt az Azure-profilt adja meg, amelyből a parancsmag olvas.
+Ha nem ad meg profilt, ez a parancsmag a helyi alapértelmezett profilból olvassa be.
 
 ```yaml
 Type: AzureSMProfile
@@ -164,8 +164,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Kiszolgálónév
-Annak a kiszolgálónak a nevét adja meg, amelyen az adatbázis-másolat található.
+### -ServerName
+Annak a kiszolgálónak a nevét adja meg, amelyen az adatbázis másolata található.
 
 ```yaml
 Type: String
@@ -180,28 +180,28 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. WindowsAzure. Command. SqlDatabase. Model. DatabaseCopy
+### Microsoft.WindowsAzure.Commands.SqlDatabase.Model.DatabaseCopy
 
-### Microsoft. WindowsAzure. Command. SqlDatabase. Services. Server. Database
+### Microsoft.WindowsAzure.Commands.SqlDatabase.Services.Server.Database
 
 ## KIMENETEK
 
-### Microsoft. WindowsAzure. Command. SqlDatabase. Model. DatabaseCopy
+### Microsoft.WindowsAzure.Commands.SqlDatabase.Model.DatabaseCopy
 
-## MEGJEGYZI
-* Hitelesítés: Ez a parancsmag tanúsítvány-alapú hitelesítést követel meg. Példa arra, hogy hogyan állíthatja be a jelenlegi előfizetést tanúsítványalapú hitelesítéssel, ha az New-AzureSqlDatabaseServerContext parancsmagot használja.
+## MEGJEGYZÉSEK
+* Hitelesítés: Ez a parancsmag tanúsítványalapú hitelesítést igényel. Ha például tanúsítványalapú hitelesítéssel állíthatja be az aktuális előfizetést, tekintse meg a New-AzureSqlDatabaseServerContext parancsmagot.
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
 [Azure SQL-adatbázis](https://azure.microsoft.com/en-us/services/sql-database/)
 
-[Azure SQL-adatbázisok műveletei](https://msdn.microsoft.com/en-us/library/azure/dn505719.aspx)
+[Műveletek az Azure SQL-adatbázisokban](https://msdn.microsoft.com/en-us/library/azure/dn505719.aspx)
 
-[Azure SQL-adatbázis-parancsmagok](./Azure.SQLDatabase.md)
+
 
 [Start-AzureSqlDatabaseCopy](./Start-AzureSqlDatabaseCopy.md)
 

@@ -5,17 +5,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzDataCollectionRuleAssociation.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzDataCollectionRuleAssociation.md
-ms.openlocfilehash: bdfc576c64b56d11ecf30f32e34f80b0ef6de866
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: b174fdec51ece178b2e49a8e6e33d1e74f62c61f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100203424"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100402439"
 ---
 # New-AzDataCollectionRuleAssociation
 
 ## SYNOPSIS
-Adatgyűjtési szabályok társítása
+Adatgyűjtési szabály társításának létrehozása
 
 ## SZINTAXIS
 
@@ -70,7 +70,7 @@ Type                 : Microsoft.Insights/dataCollectionRuleAssociations
 
 Ez a parancs egy adatgyűjtési szabály társítását hozza létre az adott szabályhoz és célerőforrás-azonosítóhoz.
 
-### 2. példa: Adatgyűjtési szabály társításának létrehozása DCR-objektumból
+### 2. példa: Adatgyűjtési szabály társítása DCR-objektumból
 ```
 PS C:\>$dcr = Get-AzDataCollectionRule -ResourceGroupName $rg -RuleName $dcrName
 PS C:\>$vmId = '/subscriptions/{subId}/resourceGroups/{resourcegroup}/providers/Microsoft.Compute/virtualMachines/{vmName}'
@@ -210,7 +210,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## INPUTS
 
@@ -224,6 +224,5 @@ Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, 
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Set-AzDataCollectionRuleAssociation](./Set-AzDataCollectionRuleAssociation.md) 
- [Remove-AzDataCollectionRuleAssociation](./Remove-AzDataCollectionRuleAssociation.md) 
+[Remove-AzDataCollectionRuleAssociation](./Remove-AzDataCollectionRuleAssociation.md) 
  [Get-AzDataCollectionRuleAssociation](./Get-AzDataCollectionRuleAssociation.md)

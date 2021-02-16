@@ -6,48 +6,48 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.media/set-
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Media/Media/help/Set-AzMediaServiceKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Media/Media/help/Set-AzMediaServiceKey.md
-ms.openlocfilehash: e9d117e9e81ee1189031b9e1f2f0a4094e9b9fcf
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: c80c9b411d360de0b46cd051a3f786bb740b26f2
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93835166"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100402354"
 ---
 # Set-AzMediaServiceKey
 
-## Áttekintés
-A Media szolgáltatáshoz társított REST-végpont eléréséhez használt kulcs újragenerálása.
+## SYNOPSIS
+A médiaszolgáltatáshoz társított REST-végpont eléréséhez használt kulcs újragenerálásával.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 Set-AzMediaServiceKey [-ResourceGroupName] <String> [-AccountName] <String> [-KeyType] <KeyType>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Leírás
-A **set-AzMediaServiceKey** parancsmag újragenerálja a médiaszolgáltató által társított reprezentációs State Transfer (REST) végpont eléréséhez használt kulcsot.
+## LEÍRÁS
+A **Set-AzMediaServiceKey** parancsmag a médiaszolgáltatáshoz társított Representational State Transfer (REST) végpont eléréséhez használt kulcsot újragenerálja.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: a médiaszolgáltató eléréséhez használt elsődleges kulcs újragenerálása
+### 1. példa: A médiaszolgáltatás eléréséhez használt elsődleges kulcs újragenerálása
 ```
 PS C:\>Set-AzMediaServiceKey -ResourceGroupName "ResourceGroup004" -AccountName "MediaService001" -KeyType Primary
 ```
 
-Ez a parancs újra létrehozta a MediaService001 nevű, a ResourceGroup004 nevű erőforráscsoport csoportjába tartozó elsődleges kulcsot.
+Ez a parancs a MediaService001 nevű médiaszolgáltatás elsődleges kulcsát újra létrehozza, amely az ResourceGroup004 nevű erőforráscsoporthoz tartozik.
 
-### 2. példa: a Media szolgáltatáshoz való hozzáféréshez használt másodlagos kulcs újragenerálása
+### 2. példa: A médiaszolgáltatás eléréséhez használt másodlagos kulcs újragenerálása
 ```
 PS C:\>Set-AzMediaServiceKey -ResourceGroupName "Resourcegroup123" -AccountName "MediaService002" -KeyType Secondary
 ```
 
-Ez a parancs újra létrehozta a MediaService002 nevű, az Resourcegroup123 nevű erőforráscsoporthoz tartozó másodlagos kulcsot.
+Ez a parancs újra létrehozza a MediaService002 nevű médiaszolgáltatás másodlagos kulcsát, amely az Resourcegroup123 nevű erőforráscsoporthoz tartozik.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -AccountName
-Annak a médiafájlnak a nevét adja meg, amelyre a parancsmag újra létrehozta.
+A parancsmag által újragenerált médiaszolgáltatás nevét adja meg.
 
 ```yaml
 Type: System.String
@@ -62,7 +62,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -76,9 +76,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Típus
-A médiaadatfolyam-szolgáltatás kulcsának típusát adja meg.
-A paraméter elfogadható értékei a következők: elsődleges vagy másodlagos.
+### -KeyType
+Az médiaszolgáltatás kulcstípusát határozza meg.
+A paraméter elfogadható értékei a következőek: Elsődleges vagy Másodlagos.
 
 ```yaml
 Type: Microsoft.Azure.Management.Media.Models.KeyType
@@ -94,7 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-A Media-szolgáltatást tartalmazó erőforráscsoport nevét adja meg.
+Annak az erőforráscsoportnak a neve, amely az médiaszolgáltatást tartalmazza.
 
 ```yaml
 Type: System.String
@@ -108,8 +108,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -124,7 +124,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik.
 A parancsmag nem fut.
 
 ```yaml
@@ -140,20 +140,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. commands. Media. models. PSServiceKey
+### Microsoft.Azure.Commands.Media.Models.PSServiceKey
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Get-AzMediaServiceKeys](./Get-AzMediaServiceKeys.md)
 
 
