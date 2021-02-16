@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGateway.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGateway.md
-ms.openlocfilehash: 1bde6608f5dd87c2c102f3f2957832a2eb41e50a
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 1c4a7f2a46968f82d53408f28a42290255de6411
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93837527"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100402269"
 ---
 # New-AzApplicationGateway
 
-## Áttekintés
-Egy Application Gatewayt hoz létre.
+## SYNOPSIS
+Alkalmazás-átjárót hoz létre.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### IdentityByUserAssignedIdentityId (alapértelmezett)
 ```
@@ -113,21 +113,21 @@ New-AzApplicationGateway -Name <String> -ResourceGroupName <String> -Location <S
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Leírás
-A **New-AzApplicationGateway** parancsmag egy Azure Application Gatewayt hoz létre.
-Az alkalmazás-átjáró a következőket igényli:
-- Egy erőforráscsoport.
-- Virtuális hálózat.
-- A back-end Server Pool a back-end-kiszolgálók IP-címeivel.
-- A back-end Server-készlet beállításai. Mindegyik készlethez tartozik egy beállítás, például a port, a protokoll és a cookie-alapú affinitás, amelyek a készleten belül minden kiszolgálón érvényesek.
-- Az előtér IP-címei, amelyek az alkalmazás-átjárón megnyitott IP-címek. Az előtér IP-címe lehet nyilvános IP-cím vagy belső IP-cím.
-- Előtér-portok, amelyek az alkalmazás-átjárón megnyitott nyilvános portok. Az ilyen portokat tartalmazó forgalom átirányítása a back-end-kiszolgálókra
-- Egy olyan Request útválasztási szabály, amely köti a figyelőt és a back-end Server-készletet. A szabály meghatározza, hogy melyik back-end Server-készlet a forgalomra irányuljon, amikor egy adott figyelőt üt.
-A figyelőhöz tartozik egy előtér-végpont, egy előtér-IP-cím, egy protokoll (HTTP vagy HTTPS) és a Secure Sockets Layer (SSL) tanúsítvány neve (ha az SSL tehermentesítése beállítással).
+## LEÍRÁS
+A **New-AzApplicationGateway** parancsmag létrehoz egy Azure-alkalmazás-átjárót.
+Az alkalmazás-átjárókhoz az alábbiakra van szükség:
+- Erőforráscsoport.
+- Egy virtuális hálózat.
+- Egy háttérkiszolgáló-készlet, amely a háttérkiszolgálók IP-címét tartalmazza.
+- A háttérkiszolgáló készletének beállításai. Minden készletnek vannak olyan beállításai, mint a port, a protokoll és a cookie-alapú affinitás, amely a készleten belül minden kiszolgálóra érvényes.
+- Front-end IP addresses, which are the IP addresses opened on the application gateway. Az előlapi IP-címek nyilvános IP-címek vagy belső IP-címek is lehetek.
+- Előlapi portok, amelyek az alkalmazás-átjárón megnyitott nyilvános portok. Az ilyen portokat át lehet irányítani a háttérkiszolgálókra.
+- Egy kéréstovábbító szabály, amely összeköti a figyelőt és a háttérkiszolgáló-készletet. A szabály azt határozza meg, hogy melyik háttérkiszolgáló készletbe kell irányítani a forgalmat, amikor egy adott hallgatóhoz ér.
+A hallgató rendelkezik előlapi porttal, előlapi IP-címmel, protokollal (HTTP vagy HTTPS) és SSL-tanúsítványnévvel (ha konfigurálja az SSL-t a betöltéskor).
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: alkalmazás-átjáró létrehozása
+### 1. példa: Alkalmazás-átjáró létrehozása
 ```
 PS C:\> $ResourceGroup = New-AzResourceGroup -Name "ResourceGroup01" -Location "West US" -Tag @{Name = "Department"; Value = "Marketing"} 
 PS C:\> $Subnet = New-AzVirtualNetworkSubnetConfig -Name "Subnet01" -AddressPrefix 10.0.0.0/24
@@ -147,28 +147,28 @@ PS C:\> $Sku = New-AzApplicationGatewaySku -Name "Standard_Small" -Tier Standard
 PS C:\> $Gateway = New-AzApplicationGateway -Name "AppGateway01" -ResourceGroupName "ResourceGroup01" -Location "West US" -BackendAddressPools $Pool -BackendHttpSettingsCollection $PoolSetting -FrontendIpConfigurations $FrontEndIpConfig  -GatewayIpConfigurations $GatewayIpConfig -FrontendPorts $FrontEndPort -HttpListeners $Listener -RequestRoutingRules $Rule -Sku $Sku
 ```
 
-Az alábbi példa létrehoz egy Application Gatewayt, ha először létrehoz egy erőforráscsoportot és egy virtuális hálózatot, valamint az alábbiakat:
-- Egy back-end Server-készlet
-- A kiszolgálói készlet back-end beállításai
-- Előtér-portok
-- Előtér IP-címei
-- A kérések útválasztási szabálya az alábbi négy parancs virtuális hálózatot hoz létre.
-Az első parancs alhálózati konfigurációt hoz létre.
+Az alábbi példa először létrehoz egy alkalmazás-átjárót egy erőforráscsoport és egy virtuális hálózat létrehozásával, valamint az alábbiakkal:
+- Háttérkiszolgáló-készlet
+- Back-end server pool settings
+- Előlapi portok
+- Előlapi IP-címek
+- Kéréstovábbítási szabály Ez a négy parancs virtuális hálózatot hoz létre.
+Az első parancs létrehoz egy alhálózati konfigurációt.
 A második parancs virtuális hálózatot hoz létre.
-A harmadik parancs ellenőrzi az alhálózati konfigurációt, és a negyedik parancs ellenőrzi, hogy a virtuális hálózat sikeresen létrejön-e.
-Az alábbi parancsok létrehozzák az Application Gatewayt.
+A harmadik parancs ellenőrzi az alhálózat konfigurációját, a negyedik pedig ellenőrzi, hogy a virtuális hálózat létrehozása sikerült-e.
+Az alábbi parancsokkal hozhatja létre az alkalmazás átjáróját.
 Az első parancs létrehoz egy GatewayIp01 nevű IP-konfigurációt a korábban létrehozott alhálózathoz.
-A második parancs létrehoz egy Pool01 nevű back-end Server-készletet a back-end IP-címek listájával, és a készletet a $Pool változóban tárolja.
-A harmadik parancs létrehozza a back-end Server-készlet beállításait, és a $PoolSetting változóban tárolja a beállításokat.
-A Forth parancs létrehoz egy előtér-portot a 80-on, megnevezi a FrontEndPort01-ot, és a $FrontEndPort változóban tárolja a portot.
-Az ötödik parancs az új AzPublicIpAddress segítségével nyilvános IP-címet hoz létre.
-A hatodik parancs létrehozza az előtér IP-konfigurációját a $PublicIp, a FrontEndPortConfig01, és a $FrontEndIpConfig változóban tárolja.
-A hetedik parancs egy figyelőt hoz létre a korábban létrehozott $FrontEndIpConfig $FrontEndPort segítségével.
-A nyolcadik parancs létrehoz egy szabályt a figyelőhöz.
-A kilencedik parancs a SKU-ot állítja be.
-A tizedik parancs az átjárót az előző parancsok által beállított objektumokkal hozza létre.
+A második parancs létrehoz egy Pool01 nevű háttérkiszolgáló-készletet a háttér-IP-címek listájával, és a készletet a $Pool tárolja.
+A harmadik parancs létrehozza a háttérkiszolgáló-készlet beállításait, és a beállításokat a $PoolSetting tárolja.
+A oda parancs előtűnő portot hoz létre a 80-as porton, frontEndPort01 névvel, és a portot a $FrontEndPort változóban tárolja.
+Az ötödik parancs nyilvános IP-címet hoz létre a New-AzPublicIpAddress paranccsal.
+A hatodik parancs előlapi IP-konfigurációt hoz létre a $PublicIp segítségével, frontEndPortConfig01 nevet ad neki, és a $FrontEndIpConfig tárolja.
+A hetedik parancs létrehoz egy hallgatót a korábban létrehozott $FrontEndIpConfig $FrontEndPort.
+A nyolcadik parancs létrehoz egy szabályt a hallgató számára.
+A kilencedik parancs beállítja a termékváltozatot.
+A tízedik parancs az előző parancsok által beállított objektumok használatával hozza létre az átjárót.
 
-### 2. példa: UserAssigned-identitással rendelkező alkalmazásobjektum létrehozása
+### 2. példa: Alkalmazás-átjáró létrehozása UserAssigned Identity azonosítóval
 ```
 PS C:\> $ResourceGroup = New-AzResourceGroup -Name "ResourceGroup01" -Location "West US" -Tag @{Name = "Department"; Value = "Marketing"} 
 PS C:\> $Subnet = New-AzVirtualNetworkSubnetConfig -Name "Subnet01" -AddressPrefix 10.0.0.0/24
@@ -190,10 +190,10 @@ PS C:\> $AppgwIdentity = New-AzApplicationGatewayIdentity -UserAssignedIdentity 
 PS C:\> $Gateway = New-AzApplicationGateway -Name "AppGateway01" -ResourceGroupName "ResourceGroup01" -Location "West US" -Identity $AppgwIdentity -BackendAddressPools $Pool -BackendHttpSettingsCollection $PoolSetting -FrontendIpConfigurations $FrontEndIpConfig  -GatewayIpConfigurations $GatewayIpConfig -FrontendPorts $FrontEndPort -HttpListeners $Listener -RequestRoutingRules $Rule -Sku $Sku
 ```
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -AsJob
-A parancsmag futtatása a háttérben
+Parancsmag futtatása a háttérben
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -208,7 +208,7 @@ Accept wildcard characters: False
 ```
 
 ### -AuthenticationCertificates
-Az Application Gateway hitelesítési tanúsítványait adja meg.
+Az alkalmazás-átjáró hitelesítési tanúsítványait adja meg.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayAuthenticationCertificate[]
@@ -238,7 +238,7 @@ Accept wildcard characters: False
 ```
 
 ### -BackendAddressPools
-Az alkalmazás-átjáróhoz tartozó back-end-címkészlet listáját adja meg.
+Az alkalmazás-átjáró háttércímkészletek listáját adja meg.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendAddressPool[]
@@ -253,7 +253,7 @@ Accept wildcard characters: False
 ```
 
 ### -BackendHttpSettingsCollection
-Itt adhatja meg az alkalmazás átjárójának back-end HTTP-beállításainak listáját.
+Az alkalmazás-átjáró háttér-HTTP-beállításainak listáját adja meg.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHttpSettings[]
@@ -268,7 +268,7 @@ Accept wildcard characters: False
 ```
 
 ### -CustomErrorConfiguration
-Az alkalmazás-átjáró ügyfél-hibája
+Ügyfélhiba egy alkalmazás-átjáróban
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayCustomError[]
@@ -283,7 +283,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -298,7 +298,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableFIPS
-Engedélyezve van-e a FIPS.
+Hogy a FIPS engedélyezve van-e.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -313,7 +313,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableHttp2
-Hogy engedélyezve van-e a HTTP2.
+Hogy a HTTP2 engedélyezve van-e.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -358,7 +358,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Kényszeríti a parancsot, hogy a felhasználó megerősítésének kérése nélkül fusson.
+A parancs futtatását kényszeríti felhasználói megerősítés kérése nélkül.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -373,7 +373,7 @@ Accept wildcard characters: False
 ```
 
 ### -FrontendIPConfigurations
-Az alkalmazás átjárójának előtér IP-konfigurációinak listáját adja meg.
+Az előlapi IP-konfigurációk listáját adja meg az alkalmazás-átjáróhoz.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayFrontendIPConfiguration[]
@@ -388,7 +388,7 @@ Accept wildcard characters: False
 ```
 
 ### -FrontendPorts
-Az alkalmazás-átjáróhoz tartozó előtér-portok listáját adja meg.
+Az alkalmazás átjárója előlapi portjainak listáját adja meg.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayFrontendPort[]
@@ -403,7 +403,7 @@ Accept wildcard characters: False
 ```
 
 ### -GatewayIPConfigurations
-Az Application Gateway IP-konfigurációinak listáját adja meg.
+Az alkalmazás-átjáró IP-konfigurációjának listáját adja meg.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayIPConfiguration[]
@@ -418,7 +418,7 @@ Accept wildcard characters: False
 ```
 
 ### -HttpListeners
-Az alkalmazás-átjáróhoz tartozó HTTP-figyelők listáját adja meg.
+Az alkalmazás-átjáró HTTP-hallgatóinak listáját adja meg.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayHttpListener[]
@@ -432,8 +432,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### – Identitás
-Az alkalmazás-átjáróhoz hozzárendelt alkalmazásobjektum-identitás.
+### -Identity
+Application Gateway Identity to be assigned to Application Gateway.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSManagedServiceIdentity
@@ -447,8 +447,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Hely
-Azt a régiót adja meg, amelybe az alkalmazás-átjárót létre szeretné hozni.
+### -Location
+Azt a régiót adja meg, amelyben létre kell hoznia az alkalmazás-átjárót.
 
 ```yaml
 Type: System.String
@@ -462,7 +462,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name (név)
+### -Name
 Az alkalmazás-átjáró nevét adja meg.
 
 ```yaml
@@ -477,8 +477,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### – Szondák
-Az Application Gateway szondáit adja meg.
+### -Fogarasok
+Az alkalmazás-átjárónál megadott értékeket határozza meg.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayProbe[]
@@ -508,7 +508,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequestRoutingRules
-A kérések útválasztási szabályainak listáját adja meg az alkalmazás átjárójában.
+Az alkalmazás-átjáró kéréstovábbító szabályainak listáját adja meg.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRequestRoutingRule[]
@@ -523,7 +523,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Annak az erőforrás-csoportnak a nevét adja meg, amelyben létre szeretné hozni az alkalmazás-átjárót.
+Annak az erőforráscsoportnak a nevét adja meg, amelyben létre kell hoznia az alkalmazás-átjárót.
 
 ```yaml
 Type: System.String
@@ -538,7 +538,7 @@ Accept wildcard characters: False
 ```
 
 ### -RewriteRuleSet
-A RewriteRuleSet listája
+The list of RewriteRuleSet
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRewriteRuleSet[]
@@ -552,8 +552,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SKU
-Az alkalmazás-átjáró készletezési egységét adja meg.
+### -Termékváltozat
+Az alkalmazás-átjáró készletkészletét (SKU) adja meg.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySku
@@ -568,7 +568,7 @@ Accept wildcard characters: False
 ```
 
 ### -SslCertificates
-Az Application Gateway SSL-tanúsítványainak listáját adja meg.
+Az ssl-tanúsítványok listájának megadása az alkalmazás átjáróhoz.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslCertificate[]
@@ -583,7 +583,7 @@ Accept wildcard characters: False
 ```
 
 ### -SslPolicy
-Az alkalmazás-átjáró SSL-házirendjét adja meg.
+Ssl-házirendet ad meg az alkalmazás-átjáróhoz.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslPolicy
@@ -597,8 +597,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Címke
-A kulcs-érték párok a hash-táblázatok formájában. Például: @ {key0 = "value0"; key1 = $null; azonosító2 = "érték2"}
+### -Tag
+Kulcsérték-párok kivonattábla formájában. Például: @{key0="érték0";key1=$null;key2="érték2"}
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -628,7 +628,7 @@ Accept wildcard characters: False
 ```
 
 ### -UrlPathMaps
-Az URL-cím elérési útvonalát adja meg az alkalmazás-átjáróhoz.
+Az alkalmazás-átjáró URL-útvonaltérképét adja meg.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayUrlPathMap[]
@@ -643,7 +643,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserAssignedIdentityId
-Az ResourceId hozzárendelendő felhasználó által hozzárendelt identitás.
+Az Alkalmazás átjáróhoz hozzárendelni szükséges felhasználó által hozzárendelt identitás Erőforrásazonosítója.
 
 ```yaml
 Type: System.String
@@ -658,7 +658,7 @@ Accept wildcard characters: False
 ```
 
 ### -WebApplicationFirewallConfiguration
-Egy webalkalmazás-tűzfal (WAF) konfigurációját adja meg. A WAF a Get-AzApplicationGatewayWebApplicationFirewallConfiguration parancsmaggal is elérheti.
+A webalkalmazás tűzfalának (WAF) konfigurációját adja meg. A Get-AzApplicationGatewayWebApplicationFirewallConfiguration parancsmagot is használhatja.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayWebApplicationFirewallConfiguration
@@ -672,8 +672,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Zone (zóna)
-Az elérhetőségi zónák listája, amely azt jelzi, hogy az alkalmazás átjárójának honnan kell származnia.
+### -Zone
+A rendelkezésre állási zónák listája, amely azt sorolja fel, hogy az alkalmazás-átjárónak honnan kell átjönni.
 
 ```yaml
 Type: System.String[]
@@ -687,8 +687,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -703,7 +703,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik.
 A parancsmag nem fut.
 
 ```yaml
@@ -719,74 +719,73 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
-### Microsoft. Azure. commands. Network. models. PSApplicationGatewaySku
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySku
 
-### Microsoft. Azure. commands. Network. models. PSApplicationGatewaySslPolicy
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslPolicy
 
-### Microsoft. Azure. commands. Network. models. PSApplicationGatewayIPConfiguration []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayIPConfiguration[]
 
-### Microsoft. Azure. commands. Network. models. PSApplicationGatewaySslCertificate []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslCertificate[]
 
-### Microsoft. Azure. commands. Network. models. PSApplicationGatewayAuthenticationCertificate []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayAuthenticationCertificate[]
 
-### Microsoft. Azure. commands. Network. models. PSApplicationGatewayTrustedRootCertificate []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayTrustedRootCertificate[]
 
-### Microsoft. Azure. commands. Network. models. PSApplicationGatewayFrontendIPConfiguration []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayFrontendIPConfiguration[]
 
-### Microsoft. Azure. commands. Network. models. PSApplicationGatewayFrontendPort []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayFrontendPort[]
 
-### Microsoft. Azure. commands. Network. models. PSApplicationGatewayProbe []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayProbe[]
 
-### Microsoft. Azure. commands. Network. models. PSApplicationGatewayBackendAddressPool []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendAddressPool[]
 
-### Microsoft. Azure. commands. Network. models. PSApplicationGatewayBackendHttpSettings []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHttpSettings[]
 
-### Microsoft. Azure. commands. Network. models. PSApplicationGatewayHttpListener []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayHttpListener[]
 
-### Microsoft. Azure. commands. Network. models. PSApplicationGatewayUrlPathMap []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayUrlPathMap[]
 
-### Microsoft. Azure. commands. Network. models. PSApplicationGatewayRequestRoutingRule []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRequestRoutingRule[]
 
-### Microsoft. Azure. commands. Network. models. PSApplicationGatewayRewriteRuleSet []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRewriteRuleSet[]
 
-### Microsoft. Azure. commands. Network. models. PSApplicationGatewayRedirectConfiguration []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRedirectConfiguration[]
 
-### Microsoft. Azure. commands. Network. models. PSApplicationGatewayWebApplicationFirewallConfiguration
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayWebApplicationFirewallConfiguration
 
-### Microsoft. Azure. commands. Network. models. PSApplicationGatewayAutoscaleConfiguration
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayAutoscaleConfiguration
 
-### System. Collections. Hashtable
+### System.Collections.Hashtable
 
 ## KIMENETEK
 
-### Microsoft. Azure. commands. Network. models. PSApplicationGateway
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGateway
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Új – AzApplicationGatewayBackendAddressPool](./New-AzApplicationGatewayBackendAddressPool.md)
+[New-AzApplicationGatewayBackendAddressPool](./New-AzApplicationGatewayBackendAddressPool.md)
 
-[Új – AzApplicationGatewayBackendHttpSettings](./New-AzApplicationGatewayBackendHttpSettings.md)
 
-[Új – AzApplicationGatewayFrontendIPConfig](./New-AzApplicationGatewayFrontendIPConfig.md)
+[New-AzApplicationGatewayFrontendIPConfig](./New-AzApplicationGatewayFrontendIPConfig.md)
 
-[Új – AzApplicationGatewayFrontendPort](./New-AzApplicationGatewayFrontendPort.md)
+[New-AzApplicationGatewayFrontendPort](./New-AzApplicationGatewayFrontendPort.md)
 
-[Új – AzApplicationGatewayHttpListener](./New-AzApplicationGatewayHttpListener.md)
+[New-AzApplicationGatewayHttpListener](./New-AzApplicationGatewayHttpListener.md)
 
-[Új – AzApplicationGatewayIPConfiguration](./New-AzApplicationGatewayIPConfiguration.md)
+[New-AzApplicationGatewayIPConfiguration](./New-AzApplicationGatewayIPConfiguration.md)
 
-[Új – AzApplicationGatewayRequestRoutingRule](./New-AzApplicationGatewayRequestRoutingRule.md)
+[New-AzApplicationGatewayRequestRoutingRule](./New-AzApplicationGatewayRequestRoutingRule.md)
 
-[Új – AzApplicationGatewaySku](./New-AzApplicationGatewaySku.md)
+[New-AzApplicationGatewaySku](./New-AzApplicationGatewaySku.md)
 
-[Új – AzVirtualNetwork](./New-AzVirtualNetwork.md)
+[New-AzVirtualNetwork](./New-AzVirtualNetwork.md)
 
-[Új – AzVirtualNetworkSubnetConfig](./New-AzVirtualNetworkSubnetConfig.md)
+[New-AzVirtualNetworkSubnetConfig](./New-AzVirtualNetworkSubnetConfig.md)
