@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafManagedRuleObject.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafManagedRuleObject.md
-ms.openlocfilehash: bde2d2edd48edf83efaf7f548daf4f97d6cffbaa
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 44fe7da11f3a06d7938f084b0edf6a6a39bb30f5
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93666411"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100412758"
 ---
-# <span data-ttu-id="98f72-101">New-AzFrontDoorWafManagedRuleObject</span><span class="sxs-lookup"><span data-stu-id="98f72-101">New-AzFrontDoorWafManagedRuleObject</span></span>
+# <span data-ttu-id="7f877-101">New-AzFrontDoorWafManagedRuleObject</span><span class="sxs-lookup"><span data-stu-id="7f877-101">New-AzFrontDoorWafManagedRuleObject</span></span>
 
-## <span data-ttu-id="98f72-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="98f72-102">SYNOPSIS</span></span>
-<span data-ttu-id="98f72-103">ManagedRule objektum létrehozása a WAF házirendek létrehozásához</span><span class="sxs-lookup"><span data-stu-id="98f72-103">Create ManagedRule Object for WAF policy creation</span></span>
+## <span data-ttu-id="7f877-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="7f877-102">SYNOPSIS</span></span>
+<span data-ttu-id="7f877-103">FelügyeltRule-objektum létrehozása a WAF-házirendek létrehozásához</span><span class="sxs-lookup"><span data-stu-id="7f877-103">Create ManagedRule Object for WAF policy creation</span></span>
 
-## <span data-ttu-id="98f72-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="98f72-104">SYNTAX</span></span>
+## <span data-ttu-id="7f877-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="7f877-104">SYNTAX</span></span>
 
 ```
 New-AzFrontDoorWafManagedRuleObject -Type <String> -Version <String>
@@ -25,12 +25,12 @@ New-AzFrontDoorWafManagedRuleObject -Type <String> -Version <String>
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="98f72-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="98f72-105">DESCRIPTION</span></span>
-<span data-ttu-id="98f72-106">ManagedRule objektum létrehozása a WAF házirendek létrehozásához</span><span class="sxs-lookup"><span data-stu-id="98f72-106">Create ManagedRule Object for WAF policy creation</span></span>
+## <span data-ttu-id="7f877-105">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="7f877-105">DESCRIPTION</span></span>
+<span data-ttu-id="7f877-106">FelügyeltRule-objektum létrehozása a WAF-házirendek létrehozásához</span><span class="sxs-lookup"><span data-stu-id="7f877-106">Create ManagedRule Object for WAF policy creation</span></span>
 
-## <span data-ttu-id="98f72-107">Példák</span><span class="sxs-lookup"><span data-stu-id="98f72-107">EXAMPLES</span></span>
+## <span data-ttu-id="7f877-107">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="7f877-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="98f72-108">Példa 1</span><span class="sxs-lookup"><span data-stu-id="98f72-108">Example 1</span></span>
+### <span data-ttu-id="7f877-108">1. példa</span><span class="sxs-lookup"><span data-stu-id="7f877-108">Example 1</span></span>
 ```powershell
 PS C:\> $ruleOverride1 = New-AzFrontDoorWafManagedRuleOverrideObject -RuleId "942250" -Action Log -EnabledState Enabled
 PS C:\> $ruleOverride2 = New-AzFrontDoorWafManagedRuleOverrideObject -RuleId "942251" -Action Log -EnabledState Enabled
@@ -46,12 +46,12 @@ RuleGroupOverrides RuleSetType    RuleSetVersion
 {SQLI, XSS}        DefaultRuleSet preview-0.1
 ```
 
-<span data-ttu-id="98f72-109">ManagedRule objektum létrehozása</span><span class="sxs-lookup"><span data-stu-id="98f72-109">Create a ManagedRule Object</span></span>
+<span data-ttu-id="7f877-109">ManagedRule-objektum létrehozása</span><span class="sxs-lookup"><span data-stu-id="7f877-109">Create a ManagedRule Object</span></span>
 
-## <span data-ttu-id="98f72-110">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="98f72-110">PARAMETERS</span></span>
+## <span data-ttu-id="7f877-110">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="7f877-110">PARAMETERS</span></span>
 
-### <span data-ttu-id="98f72-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="98f72-111">-DefaultProfile</span></span>
-<span data-ttu-id="98f72-112">Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="98f72-112">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+### <span data-ttu-id="7f877-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="7f877-111">-DefaultProfile</span></span>
+<span data-ttu-id="7f877-112">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="7f877-112">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -65,8 +65,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="98f72-113">-RuleGroupOverride</span><span class="sxs-lookup"><span data-stu-id="98f72-113">-RuleGroupOverride</span></span>
-<span data-ttu-id="98f72-114">Az Azure felügyelt szolgáltatóinak listája felülbírálja a konfigurációt</span><span class="sxs-lookup"><span data-stu-id="98f72-114">List of azure managed provider override configuration</span></span>
+### <span data-ttu-id="7f877-113">-RuleGroupOverride</span><span class="sxs-lookup"><span data-stu-id="7f877-113">-RuleGroupOverride</span></span>
+<span data-ttu-id="7f877-114">Az Azure felügyelt szolgáltató felülbírálási konfigurációjának listája</span><span class="sxs-lookup"><span data-stu-id="7f877-114">List of azure managed provider override configuration</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSAzureRuleGroupOverride[]
@@ -80,8 +80,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="98f72-115">-Type (típus)</span><span class="sxs-lookup"><span data-stu-id="98f72-115">-Type</span></span>
-<span data-ttu-id="98f72-116">A szabályrendszert típusa</span><span class="sxs-lookup"><span data-stu-id="98f72-116">Type of the ruleset</span></span>
+### <span data-ttu-id="7f877-115">-Type</span><span class="sxs-lookup"><span data-stu-id="7f877-115">-Type</span></span>
+<span data-ttu-id="7f877-116">A szabálykészlet típusa</span><span class="sxs-lookup"><span data-stu-id="7f877-116">Type of the ruleset</span></span>
 
 ```yaml
 Type: System.String
@@ -95,8 +95,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="98f72-117">-Verzió</span><span class="sxs-lookup"><span data-stu-id="98f72-117">-Version</span></span>
-<span data-ttu-id="98f72-118">A szabály verziószáma</span><span class="sxs-lookup"><span data-stu-id="98f72-118">Version of the ruleset</span></span>
+### <span data-ttu-id="7f877-117">-Version</span><span class="sxs-lookup"><span data-stu-id="7f877-117">-Version</span></span>
+<span data-ttu-id="7f877-118">A szabálykészlet verziója</span><span class="sxs-lookup"><span data-stu-id="7f877-118">Version of the ruleset</span></span>
 
 ```yaml
 Type: System.String
@@ -110,23 +110,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="98f72-119">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="98f72-119">CommonParameters</span></span>
-<span data-ttu-id="98f72-120">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="98f72-120">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="98f72-121">További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="98f72-121">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="7f877-119">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="7f877-119">CommonParameters</span></span>
+<span data-ttu-id="7f877-120">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="7f877-120">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="7f877-121">További információt a [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="7f877-121">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="98f72-122">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="98f72-122">INPUTS</span></span>
+## <span data-ttu-id="7f877-122">INPUTS</span><span class="sxs-lookup"><span data-stu-id="7f877-122">INPUTS</span></span>
 
-### <span data-ttu-id="98f72-123">Nincs</span><span class="sxs-lookup"><span data-stu-id="98f72-123">None</span></span>
+### <span data-ttu-id="7f877-123">Nincs</span><span class="sxs-lookup"><span data-stu-id="7f877-123">None</span></span>
 
-## <span data-ttu-id="98f72-124">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="98f72-124">OUTPUTS</span></span>
+## <span data-ttu-id="7f877-124">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="7f877-124">OUTPUTS</span></span>
 
-### <span data-ttu-id="98f72-125">Microsoft. Azure. Command. FrontDoor. models. PSAzureManagedRule</span><span class="sxs-lookup"><span data-stu-id="98f72-125">Microsoft.Azure.Commands.FrontDoor.Models.PSAzureManagedRule</span></span>
+### <span data-ttu-id="7f877-125">Microsoft.Azure.Commands.FrontDoor.Models.PSAzureManagedRule</span><span class="sxs-lookup"><span data-stu-id="7f877-125">Microsoft.Azure.Commands.FrontDoor.Models.PSAzureManagedRule</span></span>
 
-## <span data-ttu-id="98f72-126">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="98f72-126">NOTES</span></span>
+## <span data-ttu-id="7f877-126">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="7f877-126">NOTES</span></span>
 
-## <span data-ttu-id="98f72-127">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="98f72-127">RELATED LINKS</span></span>
+## <span data-ttu-id="7f877-127">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="7f877-127">RELATED LINKS</span></span>
 
-<span data-ttu-id="98f72-128">[Új – AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md) 
- [Set-AzFrontDoorWafPolicy](./Set-AzFrontDoorWafPolicy.md) 
- [Új – AzFrontDoorWafRuleGroupOverrideObject](./New-AzFrontDoorWafRuleGroupOverrideObject.md)</span><span class="sxs-lookup"><span data-stu-id="98f72-128">[New-AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md)
-[Set-AzFrontDoorWafPolicy](./Set-AzFrontDoorWafPolicy.md)
+<span data-ttu-id="7f877-128">[New-AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md) 
+ [Update-AzFrontDoorWafPolicy](./Update-AzFrontDoorWafPolicy.md) 
+ [New-AzFrontDoorWafRuleGroupOverrideObject](./New-AzFrontDoorWafRuleGroupOverrideObject.md)</span><span class="sxs-lookup"><span data-stu-id="7f877-128">[New-AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md)
+[Update-AzFrontDoorWafPolicy](./Update-AzFrontDoorWafPolicy.md)
 [New-AzFrontDoorWafRuleGroupOverrideObject](./New-AzFrontDoorWafRuleGroupOverrideObject.md)</span></span>
