@@ -5,51 +5,51 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.recoveryse
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesAsrProtectableItem.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesAsrProtectableItem.md
-ms.openlocfilehash: c9c50e26e99493fb693b8bded693bceb24f5a40f
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: da9dd3d7b1ed0a54a34fdf5c8a0c9d65b507a07b
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100160266"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100411840"
 ---
-# <span data-ttu-id="aa56f-101">Get-AzRecoveryServicesAsrProtectableItem</span><span class="sxs-lookup"><span data-stu-id="aa56f-101">Get-AzRecoveryServicesAsrProtectableItem</span></span>
+# <span data-ttu-id="4a254-101">Get-AzRecoveryServicesAsrProtectableItem</span><span class="sxs-lookup"><span data-stu-id="4a254-101">Get-AzRecoveryServicesAsrProtectableItem</span></span>
 
-## <span data-ttu-id="aa56f-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="aa56f-102">SYNOPSIS</span></span>
-<span data-ttu-id="aa56f-103">Szerezze be a védett elemeket egy ASR védelmi tárolóban.</span><span class="sxs-lookup"><span data-stu-id="aa56f-103">Get the protectable items in an ASR protection container.</span></span>
+## <span data-ttu-id="4a254-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="4a254-102">SYNOPSIS</span></span>
+<span data-ttu-id="4a254-103">Szerezze be a védett elemeket egy ASR védelmi tárolóban.</span><span class="sxs-lookup"><span data-stu-id="4a254-103">Get the protectable items in an ASR protection container.</span></span>
 
-## <span data-ttu-id="aa56f-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="aa56f-104">SYNTAX</span></span>
+## <span data-ttu-id="4a254-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="4a254-104">SYNTAX</span></span>
 
-### <span data-ttu-id="aa56f-105">ByObject (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="aa56f-105">ByObject (Default)</span></span>
+### <span data-ttu-id="4a254-105">ByObject (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="4a254-105">ByObject (Default)</span></span>
 ```
 Get-AzRecoveryServicesAsrProtectableItem -ProtectionContainer <ASRProtectionContainer>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="aa56f-106">ByObjectWithName</span><span class="sxs-lookup"><span data-stu-id="aa56f-106">ByObjectWithName</span></span>
+### <span data-ttu-id="4a254-106">ByObjectWithName</span><span class="sxs-lookup"><span data-stu-id="4a254-106">ByObjectWithName</span></span>
 ```
 Get-AzRecoveryServicesAsrProtectableItem -Name <String> -ProtectionContainer <ASRProtectionContainer>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="aa56f-107">ByObjectWithFriendlyName</span><span class="sxs-lookup"><span data-stu-id="aa56f-107">ByObjectWithFriendlyName</span></span>
+### <span data-ttu-id="4a254-107">ByObjectWithFriendlyName</span><span class="sxs-lookup"><span data-stu-id="4a254-107">ByObjectWithFriendlyName</span></span>
 ```
 Get-AzRecoveryServicesAsrProtectableItem -FriendlyName <String> -ProtectionContainer <ASRProtectionContainer>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="aa56f-108">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="aa56f-108">DESCRIPTION</span></span>
-<span data-ttu-id="aa56f-109">A **Get-AzRecoveryServicesAsrProtectableItem** parancsmag egy Azure-webhely-helyreállítási védelmi tárolóban kapja meg a védett elemeket.</span><span class="sxs-lookup"><span data-stu-id="aa56f-109">The **Get-AzRecoveryServicesAsrProtectableItem** cmdlet gets the protectable items in an Azure Site Recovery Protection Container.</span></span>
+## <span data-ttu-id="4a254-108">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="4a254-108">DESCRIPTION</span></span>
+<span data-ttu-id="4a254-109">A **Get-AzRecoveryServicesAsrProtectableItem** parancsmag egy Azure-webhely-helyreállítási védelmi tárolóban kapja meg a védett elemeket.</span><span class="sxs-lookup"><span data-stu-id="4a254-109">The **Get-AzRecoveryServicesAsrProtectableItem** cmdlet gets the protectable items in an Azure Site Recovery Protection Container.</span></span>
 
-## <span data-ttu-id="aa56f-110">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="aa56f-110">EXAMPLES</span></span>
+## <span data-ttu-id="4a254-110">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="4a254-110">EXAMPLES</span></span>
 
-### <span data-ttu-id="aa56f-111">1. példa</span><span class="sxs-lookup"><span data-stu-id="aa56f-111">Example 1</span></span>
+### <span data-ttu-id="4a254-111">1. példa</span><span class="sxs-lookup"><span data-stu-id="4a254-111">Example 1</span></span>
 ```
 PS C:\> $ProtectableItems = Get-AzRecoveryServicesAsrProtectableItem -ProtectionContainer $Container
 ```
 
-<span data-ttu-id="aa56f-112">Beveszi a megadott ASR védelmi tárolóban lévő összes védett elemet.</span><span class="sxs-lookup"><span data-stu-id="aa56f-112">Gets all the protectable items in specified ASR protection container.</span></span>
+<span data-ttu-id="4a254-112">Beveszi a megadott ASR védelmi tárolóban lévő összes védett elemet.</span><span class="sxs-lookup"><span data-stu-id="4a254-112">Gets all the protectable items in specified ASR protection container.</span></span>
 
-### <span data-ttu-id="aa56f-113">2. példa</span><span class="sxs-lookup"><span data-stu-id="aa56f-113">Example 2</span></span>
+### <span data-ttu-id="4a254-113">2. példa</span><span class="sxs-lookup"><span data-stu-id="4a254-113">Example 2</span></span>
 ```
 PS C:\> Get-ASRProtectableItem -ProtectionContainer $pc -FriendlyName $piFriendlyName
 
@@ -70,9 +70,9 @@ ReplicationProtectedItemId    :
 SupportedReplicationProviders : {InMage, InMageAzureV2}
 ```
 
-<span data-ttu-id="aa56f-114">Szerezze be a védett elemeket a megadott ASR védelmi tárolóban, és a megadott rövid névvel.</span><span class="sxs-lookup"><span data-stu-id="aa56f-114">Get the protectable items in specified ASR protection container and with given friendly name.</span></span>
+<span data-ttu-id="4a254-114">Szerezze be a védett elemeket a megadott ASR védelmi tárolóban, és a megadott rövid névvel.</span><span class="sxs-lookup"><span data-stu-id="4a254-114">Get the protectable items in specified ASR protection container and with given friendly name.</span></span>
 
-### <span data-ttu-id="aa56f-115">3. példa</span><span class="sxs-lookup"><span data-stu-id="aa56f-115">Example 3</span></span>
+### <span data-ttu-id="4a254-115">3. példa</span><span class="sxs-lookup"><span data-stu-id="4a254-115">Example 3</span></span>
 ```
 PS C:\> Get-ASRProtectableItem -ProtectionContainer $pc -Name $piName
 
@@ -93,12 +93,12 @@ ReplicationProtectedItemId    :
 SupportedReplicationProviders : {InMage, InMageAzureV2}
 ```
 
-<span data-ttu-id="aa56f-116">Beveszi a megadott ASR védelmi tárolóban lévő összes védett elemet.</span><span class="sxs-lookup"><span data-stu-id="aa56f-116">Gets all the protectable items in specified ASR protection container.</span></span>
+<span data-ttu-id="4a254-116">Beveszi a megadott ASR védelmi tárolóban lévő összes védett elemet.</span><span class="sxs-lookup"><span data-stu-id="4a254-116">Gets all the protectable items in specified ASR protection container.</span></span>
 
-## <span data-ttu-id="aa56f-117">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="aa56f-117">PARAMETERS</span></span>
+## <span data-ttu-id="4a254-117">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="4a254-117">PARAMETERS</span></span>
 
-### <span data-ttu-id="aa56f-118">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="aa56f-118">-DefaultProfile</span></span>
-<span data-ttu-id="aa56f-119">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="aa56f-119">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+### <span data-ttu-id="4a254-118">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="4a254-118">-DefaultProfile</span></span>
+<span data-ttu-id="4a254-119">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="4a254-119">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
 
 
 ```yaml
@@ -113,8 +113,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="aa56f-120">-FriendlyName</span><span class="sxs-lookup"><span data-stu-id="aa56f-120">-FriendlyName</span></span>
-<span data-ttu-id="aa56f-121">Az ASR által védett elem rövid nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="aa56f-121">Specifies the friendly name of the ASR protectable item.</span></span>
+### <span data-ttu-id="4a254-120">-FriendlyName</span><span class="sxs-lookup"><span data-stu-id="4a254-120">-FriendlyName</span></span>
+<span data-ttu-id="4a254-121">Az ASR által védett elem rövid nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="4a254-121">Specifies the friendly name of the ASR protectable item.</span></span>
 
 ```yaml
 Type: System.String
@@ -128,8 +128,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="aa56f-122">-Name</span><span class="sxs-lookup"><span data-stu-id="aa56f-122">-Name</span></span>
-<span data-ttu-id="aa56f-123">Az ASR által védett elem nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="aa56f-123">Specifies the name of the ASR protectable item.</span></span>
+### <span data-ttu-id="4a254-122">-Name</span><span class="sxs-lookup"><span data-stu-id="4a254-122">-Name</span></span>
+<span data-ttu-id="4a254-123">Az ASR által védett elem nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="4a254-123">Specifies the name of the ASR protectable item.</span></span>
 
 ```yaml
 Type: System.String
@@ -143,8 +143,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="aa56f-124">-ProtectionContainer</span><span class="sxs-lookup"><span data-stu-id="aa56f-124">-ProtectionContainer</span></span>
-<span data-ttu-id="aa56f-125">Az Azure Site Recovery Protection Container objektum megadása.</span><span class="sxs-lookup"><span data-stu-id="aa56f-125">Specifies the Azure Site Recovery Protection Container object.</span></span>
+### <span data-ttu-id="4a254-124">-ProtectionContainer</span><span class="sxs-lookup"><span data-stu-id="4a254-124">-ProtectionContainer</span></span>
+<span data-ttu-id="4a254-125">Az Azure Site Recovery Protection Container objektum megadása.</span><span class="sxs-lookup"><span data-stu-id="4a254-125">Specifies the Azure Site Recovery Protection Container object.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectionContainer
@@ -158,21 +158,19 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="aa56f-126">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="aa56f-126">CommonParameters</span></span>
-<span data-ttu-id="aa56f-127">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="aa56f-127">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="aa56f-128">További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="aa56f-128">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="4a254-126">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="4a254-126">CommonParameters</span></span>
+<span data-ttu-id="4a254-127">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="4a254-127">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="4a254-128">További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="4a254-128">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="aa56f-129">INPUTS</span><span class="sxs-lookup"><span data-stu-id="aa56f-129">INPUTS</span></span>
+## <span data-ttu-id="4a254-129">INPUTS</span><span class="sxs-lookup"><span data-stu-id="4a254-129">INPUTS</span></span>
 
-### <span data-ttu-id="aa56f-130">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectionContainer</span><span class="sxs-lookup"><span data-stu-id="aa56f-130">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectionContainer</span></span>
+### <span data-ttu-id="4a254-130">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectionContainer</span><span class="sxs-lookup"><span data-stu-id="4a254-130">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectionContainer</span></span>
 
-## <span data-ttu-id="aa56f-131">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="aa56f-131">OUTPUTS</span></span>
+## <span data-ttu-id="4a254-131">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="4a254-131">OUTPUTS</span></span>
 
-### <span data-ttu-id="aa56f-132">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectableItem</span><span class="sxs-lookup"><span data-stu-id="aa56f-132">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectableItem</span></span>
+### <span data-ttu-id="4a254-132">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectableItem</span><span class="sxs-lookup"><span data-stu-id="4a254-132">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectableItem</span></span>
 
-## <span data-ttu-id="aa56f-133">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="aa56f-133">NOTES</span></span>
+## <span data-ttu-id="4a254-133">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="4a254-133">NOTES</span></span>
 
-## <span data-ttu-id="aa56f-134">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="aa56f-134">RELATED LINKS</span></span>
+## <span data-ttu-id="4a254-134">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="4a254-134">RELATED LINKS</span></span>
 
-[<span data-ttu-id="aa56f-135">Get-AzRecoveryServicesAsrProtectionEntity</span><span class="sxs-lookup"><span data-stu-id="aa56f-135">Get-AzRecoveryServicesAsrProtectionEntity</span></span>](./Get-AzRecoveryServicesAsrProtectionEntity.md)
 
-[<span data-ttu-id="aa56f-136">Set-AzRecoveryServicesAsrProtectionEntity</span><span class="sxs-lookup"><span data-stu-id="aa56f-136">Set-AzRecoveryServicesAsrProtectionEntity</span></span>](./Set-AzRecoveryServicesAsrProtectionEntity.md)
