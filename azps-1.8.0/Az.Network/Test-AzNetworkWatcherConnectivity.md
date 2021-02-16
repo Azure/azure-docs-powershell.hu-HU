@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/te
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Test-AzNetworkWatcherConnectivity.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Test-AzNetworkWatcherConnectivity.md
-ms.openlocfilehash: 4661d35a6eab40a469c2fd3752056081e7d0180d
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 6b689a96a4f737b2f92b4146f71faff7a09d8d36
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93669930"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100402711"
 ---
 # Test-AzNetworkWatcherConnectivity
 
-## Áttekintés
-A megadott forrású VM és rendeltetési hely kapcsolati adatait adja eredményül.
+## SYNOPSIS
+Visszaadja egy adott forrás virtuális gép és egy célhely csatlakozási adatait.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### SetByResource (alapértelmezett)
 ```
@@ -43,12 +43,12 @@ Test-AzNetworkWatcherConnectivity -Location <String> -SourceId <String> [-Source
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-A Test-AzNetworkWatcherConnectivity parancsmag a megadott forrású VM és a célhely kapcsolati adatait adja eredményül. Ha a forrás és a cél közötti kapcsolat nem hozható létre, a parancsmag részleteket ad meg a problémáról.
+## LEÍRÁS
+A Test-AzNetworkWatcherConnectivity parancsmag kapcsolódási adatokat ad vissza egy adott forrás VM-hez és egy célhelyhez. Ha nem lehet kapcsolatot létrehozni a forrás és a cél között, a parancsmag részletes információkat ad a problémáról.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: a Hálózatfigyelő-kapcsolat tesztelése VM-ről egy webhelyre
+### 1. példa: Hálózati figyelő csatlakoztatásának tesztelése virtuális gépről egy webhelyre
 ```
 Test-AzNetworkWatcherConnectivity -NetworkWatcherName NetworkWatcher -ResourceGroupName NetworkWatcherRG -SourceId "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/ContosoRG/providers/Microsoft.Compute/virtualMachines/MultiTierApp0" -DestinationAddress "bing.com" -DestinationPort 80
 
@@ -81,12 +81,12 @@ Hops             : [
                    ]
 ```
 
-Ebben a példában a VM-től az Azure-www.bing.com való kapcsolatot teszteljük.
+Ebben a példában teszteljük az Azure virtuális gép és a www.bing.com.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -AsJob
-A parancsmag futtatása a háttérben
+Parancsmag futtatása a háttérben
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -101,7 +101,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -116,7 +116,7 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationAddress
-Annak az erőforrásnak az IP-címe vagy URI-azonosítója, amelyhez csatlakozási kísérletet tesz.
+Az az IP-cím vagy URI-cím, amelyhez csatlakozási kísérletet fog tenni.
 
 ```yaml
 Type: System.String
@@ -131,7 +131,7 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationId
-Annak az erőforrásnak az azonosítója, amelyhez csatlakozási kísérletet fog tenni.
+Annak az erőforrásnak az azonosítója, amelyhez csatlakozási kísérlet készül.
 
 ```yaml
 Type: System.String
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationPort
-Annak a portnak a végrehajtása, amelyen ellenőrizni fogja a kapcsolatot.
+Port, amelyen a kapcsolat ellenőrzése történik.
 
 ```yaml
 Type: System.Int32
@@ -160,8 +160,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Hely
-A Hálózatfigyelő helye.
+### -Location
+A hálózati figyelő helye.
 
 ```yaml
 Type: System.String
@@ -176,7 +176,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcher
-A Hálózatfigyelő erőforrás.
+A hálózati figyelő erőforrás.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -191,7 +191,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcherName
-A Network Watcher neve.
+A hálózati figyelő neve.
 
 ```yaml
 Type: System.String
@@ -206,7 +206,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProtocolConfiguration
-Annak a protokollnak a beállításai, amelyen a kapcsolat ellenőrzése történik.
+Protocal configuration on which check connectivity will be performed.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcherProtocolConfiguration
@@ -221,7 +221,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-A Network Watcher erőforráscsoport neve.
+A hálózatfigyelő erőforráscsoport neve.
 
 ```yaml
 Type: System.String
@@ -235,8 +235,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SourceId forrásazonosító
-Annak az erőforrásnak az azonosítója, amelyből a kapcsolódási ellenőrzést kezdeményezni kívánja.
+### -SourceId
+Annak az erőforrásnak az azonosítója, amelyből a kapcsolatellenőrzést kezdeményezni fogja.
 
 ```yaml
 Type: System.String
@@ -251,7 +251,7 @@ Accept wildcard characters: False
 ```
 
 ### -SourcePort
-Annak a forrásnak a portja, amelyből a kapcsolódási ellenőrzést végrehajtja.
+Az a forrásport, amelyről a kapcsolat ellenőrzése történik.
 
 ```yaml
 Type: System.Int32
@@ -266,26 +266,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. Azure. commands. Network. models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-### System. String
+### System.String
 
-### System. Int32
+### System.Int32
 
 ## KIMENETEK
 
-### Microsoft. Azure. commands. Network. models. PSConnectivityInformation
+### Microsoft.Azure.Commands.Network.Models.PSConnectivityInformation
 
-## MEGJEGYZI
-Kulcsszavak: Azure, azurerm, ARM, erőforrás, kapcsolat, kezelés, vezető, hálózat, hálózat, hálózati figyelő
+## MEGJEGYZÉSEK
+Kulcsszavak: azure, azurerm, arm, erőforrás, kapcsolat, kezelés, vezető, hálózat, hálózatkezelés, hálózati figyelő
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Új – AzNetworkWatcher](./New-AzNetworkWatcher.md) 
+[New-AzNetworkWatcher](./New-AzNetworkWatcher.md) 
  [Get-AzNetworkWatcher](./Get-AzNetworkWatcher.md) 
  [Remove-AzNetworkWatcher](./Remove-AzNetworkWatcher.md)
 
@@ -294,25 +294,25 @@ Kulcsszavak: Azure, azurerm, ARM, erőforrás, kapcsolat, kezelés, vezető, há
  [Get-AzNetworkWatcherTopology](./Get-AzNetworkWatcherTopology.md) 
  [Get-AzNetworkWatcherTroubleshootingResult](./Get-AzNetworkWatcherTroubleshootingResult.md)
 
-[Új – AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md) 
- [Új – AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md) 
+[New-AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md) 
+ [New-AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md) 
  [Get-AzNetworkWatcherPacketCapture](./Get-AzNetworkWatcherPacketCapture.md) 
  [Remove-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md) 
  [Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
 
 [Start-AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md) 
- [Új – AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md) 
- [Teszt-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md) 
- [Teszt-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md) 
+ [New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md) 
+ [Test-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md) 
+ [Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md) 
  [Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md) 
  [Start-AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md) 
  [Set-AzNetworkWatcherConnectionMonitor](./Set-AzNetworkWatcherConnectionMonitor.md) 
  [Set-AzNetworkWatcherConfigFlowLog](./Set-AzNetworkWatcherConfigFlowLog.md) 
  [Remove-AzNetworkWatcherConnectionMonitor](./Remove-AzNetworkWatcherConnectionMonitor.md) 
- [Új – AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md) 
+ [New-AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md) 
  [Get-AzNetworkWatcherReachabilityReport](./Get-AzNetworkWatcherReachabilityReport.md) 
  [Get-AzNetworkWatcherReachabilityProvidersList](./Get-AzNetworkWatcherReachabilityProvidersList.md) 
  [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md) 
- [Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport) 
- [Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+ [Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md) 
+ [Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
