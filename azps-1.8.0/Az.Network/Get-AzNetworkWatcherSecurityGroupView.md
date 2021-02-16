@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherSecurityGroupView.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherSecurityGroupView.md
-ms.openlocfilehash: f40b7e28bce34ef9e4cc289bed7f8c4524ef49d4
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: e1b6b0339b093a048d6d74998ac6b0eb276e81cd
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93670517"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400293"
 ---
 # Get-AzNetworkWatcherSecurityGroupView
 
-## Áttekintés
-Megtekintheti a virtuális gépre telepített, konfigurált és hatékony hálózatbiztonsági csoport szabályait.
+## SYNOPSIS
+Tekintse meg a virtuális gépre alkalmazott konfigurált és hatékony hálózatbiztonsági csoportszabályokat.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### SetByResource (alapértelmezett)
 ```
@@ -37,12 +37,12 @@ Get-AzNetworkWatcherSecurityGroupView -Location <String> -TargetVirtualMachineId
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-A Get-AzNetworkWatcherSecurityGroupView lehetővé teszi, hogy megtekintse a VM-re konfigurált, konfigurált és hatékony hálózati biztonsági csoportok szabályait.
+## LEÍRÁS
+A Get-AzNetworkWatcherSecurityGroupView lehetővé teszi a virtuális gépre alkalmazott konfigurált és hatékony hálózatbiztonsági csoportszabályok megtekintését.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: biztonsági csoport nézetbe Hívás kezdeményezése VM-en
+### 1. példa: Biztonsági csoportnézeti hívás hívása VM-en
 ```
 $nw = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" } 
 $networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName 
@@ -50,12 +50,12 @@ $VM = Get-AzVM -ResourceGroupName ContosoResourceGroup -Name VM0
 Get-AzNetworkWatcherSecurityGroupView -NetworkWatcher $networkWatcher -TargetVirtualMachineId $VM.Id
 ```
 
-A fenti példában először a regionális hálózati figyelőt, majd egy VM-et kaptunk a régióban. Ezután egy biztonsági csoport nézetet készítünk a megadott VM-ről.
+A fenti példában először a regionális Hálózatfigyelőt, majd egy VM-et szerezni a régióban. Ezután biztonsági csoportnézeti hívást hozunk létre a megadott virtuális gépen.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -AsJob
-A parancsmag futtatása a háttérben
+Parancsmag futtatása a háttérben
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -70,7 +70,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -84,8 +84,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Hely
-A Hálózatfigyelő helye.
+### -Location
+A hálózati figyelő helye.
 
 ```yaml
 Type: System.String
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcher
-A Hálózatfigyelő erőforrás.
+A hálózati figyelő erőforrás.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcherName
-A Network Watcher neve.
+A hálózati figyelő neve.
 
 ```yaml
 Type: System.String
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-A Network Watcher erőforráscsoport neve.
+A hálózatfigyelő erőforráscsoport neve.
 
 ```yaml
 Type: System.String
@@ -160,24 +160,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. Azure. commands. Network. models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. commands. Network. models. PSSecurityGroupViewResult
+### Microsoft.Azure.Commands.Network.Models.PSSecurityGroupViewResult
 
-## MEGJEGYZI
-Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, hálózat, Hálózatfigyelő, adatfolyam, IP 
+## MEGJEGYZÉSEK
+Kulcsszavak: azure, azurerm, arm, erőforrás, kezelés, vezető, hálózat, hálózatkezelés, hálózati figyelő, folyamat, ip 
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Új – AzNetworkWatcher](./New-AzNetworkWatcher.md)
+[New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
 
 [Get-AzNetworkWatcher](./Get-AzNetworkWatcher.md)
 
@@ -191,9 +191,9 @@ Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, há
 
 [Start-AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
 
-[Új – AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
+[New-AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
 
-[Új – AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
+[New-AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
 
 [Get-AzNetworkWatcherPacketCapture](./Get-AzNetworkWatcherPacketCapture.md)
 
@@ -201,11 +201,11 @@ Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, há
 
 [Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
-[Új – AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
+[New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
 
-[Teszt-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
+[Test-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
 
-[Teszt-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
+[Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
 
 [Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
@@ -217,7 +217,7 @@ Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, há
 
 [Remove-AzNetworkWatcherConnectionMonitor](./Remove-AzNetworkWatcherConnectionMonitor.md)
 
-[Új – AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
+[New-AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
 
 [Get-AzNetworkWatcherTroubleshootingResult](./Get-AzNetworkWatcherTroubleshootingResult.md)
 
@@ -227,6 +227,6 @@ Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, há
 
 [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
