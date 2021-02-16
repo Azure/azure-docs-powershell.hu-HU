@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile.md
-ms.openlocfilehash: 10345f867f05a9873c664bd12d31305b0df17a55
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: fe3438e43bc623da0ba69b3b1224a47df8b15f1f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93837930"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100414679"
 ---
-# <span data-ttu-id="ab3d0-101">New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile</span><span class="sxs-lookup"><span data-stu-id="ab3d0-101">New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile</span></span>
+# <span data-ttu-id="33305-101">New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile</span><span class="sxs-lookup"><span data-stu-id="33305-101">New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile</span></span>
 
-## <span data-ttu-id="ab3d0-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="ab3d0-102">SYNOPSIS</span></span>
-<span data-ttu-id="ab3d0-103">Új hálózati konfigurációs diagnosztikai profil objektum létrehozása</span><span class="sxs-lookup"><span data-stu-id="ab3d0-103">Creates a new network configuration diagnostic profile object.</span></span> <span data-ttu-id="ab3d0-104">Ezzel az objektummal korlátozható a hálózati konfiguráció a megadott feltételeknek megfelelő diagnosztikai munkamenet során.</span><span class="sxs-lookup"><span data-stu-id="ab3d0-104">This object is used to restrict the network configuration during a diagnostic session using the specified criteria.</span></span>
+## <span data-ttu-id="33305-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="33305-102">SYNOPSIS</span></span>
+<span data-ttu-id="33305-103">Létrehoz egy új hálózati konfigurációs diagnosztikai profilobjektumot.</span><span class="sxs-lookup"><span data-stu-id="33305-103">Creates a new network configuration diagnostic profile object.</span></span> <span data-ttu-id="33305-104">Ezzel az objektummal korlátozhatja a hálózati konfigurációt egy diagnosztikai munkamenet során a megadott feltételek alapján.</span><span class="sxs-lookup"><span data-stu-id="33305-104">This object is used to restrict the network configuration during a diagnostic session using the specified criteria.</span></span>
 
-## <span data-ttu-id="ab3d0-105">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="ab3d0-105">SYNTAX</span></span>
+## <span data-ttu-id="33305-105">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="33305-105">SYNTAX</span></span>
 
 ```
 New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile -Direction <String> -Protocol <String>
@@ -25,12 +25,12 @@ New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile -Direction <String> -P
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="ab3d0-106">Leírás</span><span class="sxs-lookup"><span data-stu-id="ab3d0-106">DESCRIPTION</span></span>
-<span data-ttu-id="ab3d0-107">Az New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile parancsmag új diagnosztikai profil-objektumot hoz létre.</span><span class="sxs-lookup"><span data-stu-id="ab3d0-107">The New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile cmdlet creates a new diagnostic profile object.</span></span> <span data-ttu-id="ab3d0-108">Ez az objektum a hálózati konfiguráció korlátozására szolgál a hálózati konfigurációs diagnosztikai munkamenet során a megadott feltételekkel.</span><span class="sxs-lookup"><span data-stu-id="ab3d0-108">This object is used to restrict the network configuration during a network configuration diagnostic session using the specified criteria.</span></span>
+## <span data-ttu-id="33305-106">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="33305-106">DESCRIPTION</span></span>
+<span data-ttu-id="33305-107">A New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile parancsmag létrehoz egy új diagnosztikai profilobjektumot.</span><span class="sxs-lookup"><span data-stu-id="33305-107">The New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile cmdlet creates a new diagnostic profile object.</span></span> <span data-ttu-id="33305-108">Ezzel az objektummal korlátozható a hálózati konfiguráció egy hálózati konfigurációs diagnosztikai munkamenet során a megadott feltételekkel.</span><span class="sxs-lookup"><span data-stu-id="33305-108">This object is used to restrict the network configuration during a network configuration diagnostic session using the specified criteria.</span></span>
 
-## <span data-ttu-id="ab3d0-109">Példák</span><span class="sxs-lookup"><span data-stu-id="ab3d0-109">EXAMPLES</span></span>
+## <span data-ttu-id="33305-109">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="33305-109">EXAMPLES</span></span>
 
-### <span data-ttu-id="ab3d0-110">1. példa: hálózati konfigurációs diagnosztikai munkamenet meghívása VM-hez és a megadott hálózati profilhoz</span><span class="sxs-lookup"><span data-stu-id="ab3d0-110">Example 1: Invoke network configuration diagnostic session for VM and specified network profile</span></span>
+### <span data-ttu-id="33305-110">1. példa: A virtuális géphez és a megadott hálózati profilhoz szükséges hálózati konfigurációs diagnosztikai munkamenet meghívása</span><span class="sxs-lookup"><span data-stu-id="33305-110">Example 1: Invoke network configuration diagnostic session for VM and specified network profile</span></span>
 ```
 PS C:\> $profile = New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile -Direction Inbound -Protocol Tcp -Source 10.1.1.4 -Destination * -DestinationPort 50
 PS C:\> Invoke-AzNetworkWatcherNetworkConfigurationDiagnostic -Location eastus -TargetResourceId /subscriptions/61cc8a98-a8be-4bfe-a04e-0b461f93fe35/resourceGroups/NwRgEastUS/providers/Microsoft.Compute/virtualMachines/vm1 -Profile $profile
@@ -65,10 +65,10 @@ Results : [
                       },
 ```
 
-## <span data-ttu-id="ab3d0-111">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="ab3d0-111">PARAMETERS</span></span>
+## <span data-ttu-id="33305-111">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="33305-111">PARAMETERS</span></span>
 
-### <span data-ttu-id="ab3d0-112">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="ab3d0-112">-DefaultProfile</span></span>
-<span data-ttu-id="ab3d0-113">Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="ab3d0-113">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+### <span data-ttu-id="33305-112">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="33305-112">-DefaultProfile</span></span>
+<span data-ttu-id="33305-113">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="33305-113">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -82,9 +82,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ab3d0-114">-Destination (cél)</span><span class="sxs-lookup"><span data-stu-id="ab3d0-114">-Destination</span></span>
-<span data-ttu-id="ab3d0-115">Forgalmi cél.</span><span class="sxs-lookup"><span data-stu-id="ab3d0-115">Traffic destination.</span></span>
-<span data-ttu-id="ab3d0-116">Az elfogadott értékek a következők: "\*", IP-cím/CIDR, szolgáltatás címke.</span><span class="sxs-lookup"><span data-stu-id="ab3d0-116">Accepted values are: '\*', IP Address/CIDR, Service Tag.</span></span>
+### <span data-ttu-id="33305-114">-Destination</span><span class="sxs-lookup"><span data-stu-id="33305-114">-Destination</span></span>
+<span data-ttu-id="33305-115">Forgalom célhelye.</span><span class="sxs-lookup"><span data-stu-id="33305-115">Traffic destination.</span></span>
+<span data-ttu-id="33305-116">Az elfogadott értékek: '\*', IP Address/CIDR, Service Tag.</span><span class="sxs-lookup"><span data-stu-id="33305-116">Accepted values are: '\*', IP Address/CIDR, Service Tag.</span></span>
 
 ```yaml
 Type: System.String
@@ -98,9 +98,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ab3d0-117">-DestinationPort</span><span class="sxs-lookup"><span data-stu-id="ab3d0-117">-DestinationPort</span></span>
-<span data-ttu-id="ab3d0-118">Forgalom szerinti célport</span><span class="sxs-lookup"><span data-stu-id="ab3d0-118">Traffic destination port.</span></span>
-<span data-ttu-id="ab3d0-119">Az elfogadott értékek "\*", port (például 3389) és porttartomány (például 80-100).</span><span class="sxs-lookup"><span data-stu-id="ab3d0-119">Accepted values are '\*', port (for example, 3389) and port range (for example, 80-100).</span></span>
+### <span data-ttu-id="33305-117">-DestinationPort</span><span class="sxs-lookup"><span data-stu-id="33305-117">-DestinationPort</span></span>
+<span data-ttu-id="33305-118">Forgalom célportja.</span><span class="sxs-lookup"><span data-stu-id="33305-118">Traffic destination port.</span></span>
+<span data-ttu-id="33305-119">Az elfogadott értékek : '\*', port (például 3389) és porttartomány (például 80-100).</span><span class="sxs-lookup"><span data-stu-id="33305-119">Accepted values are '\*', port (for example, 3389) and port range (for example, 80-100).</span></span>
 
 ```yaml
 Type: System.String
@@ -114,9 +114,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ab3d0-120">-Irány</span><span class="sxs-lookup"><span data-stu-id="ab3d0-120">-Direction</span></span>
-<span data-ttu-id="ab3d0-121">A forgalom iránya.</span><span class="sxs-lookup"><span data-stu-id="ab3d0-121">The direction of the traffic.</span></span>
-<span data-ttu-id="ab3d0-122">Az elfogadott értékek "Beérkezők" és "kimenő"</span><span class="sxs-lookup"><span data-stu-id="ab3d0-122">Accepted values are 'Inbound' and 'Outbound'</span></span>
+### <span data-ttu-id="33305-120">-Irány</span><span class="sxs-lookup"><span data-stu-id="33305-120">-Direction</span></span>
+<span data-ttu-id="33305-121">A forgalom iránya.</span><span class="sxs-lookup"><span data-stu-id="33305-121">The direction of the traffic.</span></span>
+<span data-ttu-id="33305-122">Az elfogadott értékek a "Bejövő" és a "Kimenő" érték.</span><span class="sxs-lookup"><span data-stu-id="33305-122">Accepted values are 'Inbound' and 'Outbound'</span></span>
 
 ```yaml
 Type: System.String
@@ -130,9 +130,9 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ab3d0-123">-Protocol</span><span class="sxs-lookup"><span data-stu-id="ab3d0-123">-Protocol</span></span>
-<span data-ttu-id="ab3d0-124">Ellenőrizendő protokoll.</span><span class="sxs-lookup"><span data-stu-id="ab3d0-124">Protocol to be verified on.</span></span>
-<span data-ttu-id="ab3d0-125">Az elfogadott értékek "\*", TCP, UDP.</span><span class="sxs-lookup"><span data-stu-id="ab3d0-125">Accepted values are '\*', TCP, UDP.</span></span>
+### <span data-ttu-id="33305-123">-Protocol</span><span class="sxs-lookup"><span data-stu-id="33305-123">-Protocol</span></span>
+<span data-ttu-id="33305-124">A igazolható protokoll.</span><span class="sxs-lookup"><span data-stu-id="33305-124">Protocol to be verified on.</span></span>
+<span data-ttu-id="33305-125">Az elfogadott értékek: '\*', TCP, UDP.</span><span class="sxs-lookup"><span data-stu-id="33305-125">Accepted values are '\*', TCP, UDP.</span></span>
 
 ```yaml
 Type: System.String
@@ -146,9 +146,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ab3d0-126">-Forrás</span><span class="sxs-lookup"><span data-stu-id="ab3d0-126">-Source</span></span>
-<span data-ttu-id="ab3d0-127">Forgalom forrása.</span><span class="sxs-lookup"><span data-stu-id="ab3d0-127">Traffic source.</span></span>
-<span data-ttu-id="ab3d0-128">Az elfogadott értékek: ' \* ', IP-cím/CIDR, szolgáltatás címke.</span><span class="sxs-lookup"><span data-stu-id="ab3d0-128">Accepted values are '\*', IP Address/CIDR, Service Tag.</span></span>
+### <span data-ttu-id="33305-126">-Source</span><span class="sxs-lookup"><span data-stu-id="33305-126">-Source</span></span>
+<span data-ttu-id="33305-127">Forgalomforrás.</span><span class="sxs-lookup"><span data-stu-id="33305-127">Traffic source.</span></span>
+<span data-ttu-id="33305-128">Az elfogadott értékek: '\*', IP Address/CIDR, Service Tag.</span><span class="sxs-lookup"><span data-stu-id="33305-128">Accepted values are '\*', IP Address/CIDR, Service Tag.</span></span>
 
 ```yaml
 Type: System.String
@@ -162,72 +162,72 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ab3d0-129">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="ab3d0-129">CommonParameters</span></span>
-<span data-ttu-id="ab3d0-130">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="ab3d0-130">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="ab3d0-131">További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="ab3d0-131">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="33305-129">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="33305-129">CommonParameters</span></span>
+<span data-ttu-id="33305-130">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="33305-130">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="33305-131">További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="33305-131">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="ab3d0-132">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="ab3d0-132">INPUTS</span></span>
+## <span data-ttu-id="33305-132">INPUTS</span><span class="sxs-lookup"><span data-stu-id="33305-132">INPUTS</span></span>
 
-### <span data-ttu-id="ab3d0-133">System. String</span><span class="sxs-lookup"><span data-stu-id="ab3d0-133">System.String</span></span>
+### <span data-ttu-id="33305-133">System.String</span><span class="sxs-lookup"><span data-stu-id="33305-133">System.String</span></span>
 
-## <span data-ttu-id="ab3d0-134">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="ab3d0-134">OUTPUTS</span></span>
+## <span data-ttu-id="33305-134">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="33305-134">OUTPUTS</span></span>
 
-### <span data-ttu-id="ab3d0-135">Microsoft. Azure. commands. Network. models. PSNetworkConfigurationDiagnosticProfile</span><span class="sxs-lookup"><span data-stu-id="ab3d0-135">Microsoft.Azure.Commands.Network.Models.PSNetworkConfigurationDiagnosticProfile</span></span>
+### <span data-ttu-id="33305-135">Microsoft.Azure.Commands.Network.Models.PSNetworkConfigurationDiagnosticProfile</span><span class="sxs-lookup"><span data-stu-id="33305-135">Microsoft.Azure.Commands.Network.Models.PSNetworkConfigurationDiagnosticProfile</span></span>
 
-## <span data-ttu-id="ab3d0-136">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="ab3d0-136">NOTES</span></span>
-<span data-ttu-id="ab3d0-137">Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, hálózat, figyelő, diagnosztikai, profil</span><span class="sxs-lookup"><span data-stu-id="ab3d0-137">Keywords: azure, azurerm, arm, resource, management, manager, network, networking, watcher, diagnostic, profile</span></span>
+## <span data-ttu-id="33305-136">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="33305-136">NOTES</span></span>
+<span data-ttu-id="33305-137">Kulcsszavak: azure, azurerm, arm, erőforrás, kezelés, vezető, hálózat, hálózatkezelés, figyelő, diagnosztikai, profil</span><span class="sxs-lookup"><span data-stu-id="33305-137">Keywords: azure, azurerm, arm, resource, management, manager, network, networking, watcher, diagnostic, profile</span></span>
 
-## <span data-ttu-id="ab3d0-138">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="ab3d0-138">RELATED LINKS</span></span>
+## <span data-ttu-id="33305-138">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="33305-138">RELATED LINKS</span></span>
 
-[<span data-ttu-id="ab3d0-139">Új – AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="ab3d0-139">New-AzNetworkWatcher</span></span>](./New-AzNetworkWatcher.md)
+[<span data-ttu-id="33305-139">New-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="33305-139">New-AzNetworkWatcher</span></span>](./New-AzNetworkWatcher.md)
 
-[<span data-ttu-id="ab3d0-140">Get-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="ab3d0-140">Get-AzNetworkWatcher</span></span>](./Get-AzNetworkWatcher.md)
+[<span data-ttu-id="33305-140">Get-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="33305-140">Get-AzNetworkWatcher</span></span>](./Get-AzNetworkWatcher.md)
 
-[<span data-ttu-id="ab3d0-141">Remove-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="ab3d0-141">Remove-AzNetworkWatcher</span></span>](./Remove-AzNetworkWatcher.md)
+[<span data-ttu-id="33305-141">Remove-AzNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="33305-141">Remove-AzNetworkWatcher</span></span>](./Remove-AzNetworkWatcher.md)
 
-[<span data-ttu-id="ab3d0-142">Get-AzNetworkWatcherNextHop</span><span class="sxs-lookup"><span data-stu-id="ab3d0-142">Get-AzNetworkWatcherNextHop</span></span>](./Get-AzNetworkWatcherNextHop.md)
+[<span data-ttu-id="33305-142">Get-AzNetworkWatcherNextHop</span><span class="sxs-lookup"><span data-stu-id="33305-142">Get-AzNetworkWatcherNextHop</span></span>](./Get-AzNetworkWatcherNextHop.md)
 
-[<span data-ttu-id="ab3d0-143">Get-AzNetworkWatcherSecurityGroupView</span><span class="sxs-lookup"><span data-stu-id="ab3d0-143">Get-AzNetworkWatcherSecurityGroupView</span></span>](./Get-AzNetworkWatcherSecurityGroupView.md)
+[<span data-ttu-id="33305-143">Get-AzNetworkWatcherSecurityGroupView</span><span class="sxs-lookup"><span data-stu-id="33305-143">Get-AzNetworkWatcherSecurityGroupView</span></span>](./Get-AzNetworkWatcherSecurityGroupView.md)
 
-[<span data-ttu-id="ab3d0-144">Get-AzNetworkWatcherTopology</span><span class="sxs-lookup"><span data-stu-id="ab3d0-144">Get-AzNetworkWatcherTopology</span></span>](./Get-AzNetworkWatcherTopology.md)
+[<span data-ttu-id="33305-144">Get-AzNetworkWatcherTopology</span><span class="sxs-lookup"><span data-stu-id="33305-144">Get-AzNetworkWatcherTopology</span></span>](./Get-AzNetworkWatcherTopology.md)
 
-[<span data-ttu-id="ab3d0-145">Start-AzNetworkWatcherResourceTroubleshooting</span><span class="sxs-lookup"><span data-stu-id="ab3d0-145">Start-AzNetworkWatcherResourceTroubleshooting</span></span>](./Start-AzNetworkWatcherResourceTroubleshooting.md)
+[<span data-ttu-id="33305-145">Start-AzNetworkWatcherResourceTroubleshooting</span><span class="sxs-lookup"><span data-stu-id="33305-145">Start-AzNetworkWatcherResourceTroubleshooting</span></span>](./Start-AzNetworkWatcherResourceTroubleshooting.md)
 
-[<span data-ttu-id="ab3d0-146">Új – AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="ab3d0-146">New-AzNetworkWatcherPacketCapture</span></span>](./New-AzNetworkWatcherPacketCapture.md)
+[<span data-ttu-id="33305-146">New-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="33305-146">New-AzNetworkWatcherPacketCapture</span></span>](./New-AzNetworkWatcherPacketCapture.md)
 
-[<span data-ttu-id="ab3d0-147">Új – AzPacketCaptureFilterConfig</span><span class="sxs-lookup"><span data-stu-id="ab3d0-147">New-AzPacketCaptureFilterConfig</span></span>](./New-AzPacketCaptureFilterConfig.md)
+[<span data-ttu-id="33305-147">New-AzPacketCaptureFilterConfig</span><span class="sxs-lookup"><span data-stu-id="33305-147">New-AzPacketCaptureFilterConfig</span></span>](./New-AzPacketCaptureFilterConfig.md)
 
-[<span data-ttu-id="ab3d0-148">Get-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="ab3d0-148">Get-AzNetworkWatcherPacketCapture</span></span>](./Get-AzNetworkWatcherPacketCapture.md)
+[<span data-ttu-id="33305-148">Get-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="33305-148">Get-AzNetworkWatcherPacketCapture</span></span>](./Get-AzNetworkWatcherPacketCapture.md)
 
-[<span data-ttu-id="ab3d0-149">Remove-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="ab3d0-149">Remove-AzNetworkWatcherPacketCapture</span></span>](./Remove-AzNetworkWatcherPacketCapture.md)
+[<span data-ttu-id="33305-149">Remove-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="33305-149">Remove-AzNetworkWatcherPacketCapture</span></span>](./Remove-AzNetworkWatcherPacketCapture.md)
 
-[<span data-ttu-id="ab3d0-150">Stop-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="ab3d0-150">Stop-AzNetworkWatcherPacketCapture</span></span>](./Stop-AzNetworkWatcherPacketCapture.md)
+[<span data-ttu-id="33305-150">Stop-AzNetworkWatcherPacketCapture</span><span class="sxs-lookup"><span data-stu-id="33305-150">Stop-AzNetworkWatcherPacketCapture</span></span>](./Stop-AzNetworkWatcherPacketCapture.md)
 
-[<span data-ttu-id="ab3d0-151">Új – AzNetworkWatcherProtocolConfiguration</span><span class="sxs-lookup"><span data-stu-id="ab3d0-151">New-AzNetworkWatcherProtocolConfiguration</span></span>](./New-AzNetworkWatcherProtocolConfiguration.md)
+[<span data-ttu-id="33305-151">New-AzNetworkWatcherProtocolConfiguration</span><span class="sxs-lookup"><span data-stu-id="33305-151">New-AzNetworkWatcherProtocolConfiguration</span></span>](./New-AzNetworkWatcherProtocolConfiguration.md)
 
-[<span data-ttu-id="ab3d0-152">Teszt-AzNetworkWatcherIPFlow</span><span class="sxs-lookup"><span data-stu-id="ab3d0-152">Test-AzNetworkWatcherIPFlow</span></span>](./Test-AzNetworkWatcherIPFlow.md)
+[<span data-ttu-id="33305-152">Test-AzNetworkWatcherIPFlow</span><span class="sxs-lookup"><span data-stu-id="33305-152">Test-AzNetworkWatcherIPFlow</span></span>](./Test-AzNetworkWatcherIPFlow.md)
 
-[<span data-ttu-id="ab3d0-153">Teszt-AzNetworkWatcherConnectivity</span><span class="sxs-lookup"><span data-stu-id="ab3d0-153">Test-AzNetworkWatcherConnectivity</span></span>](./Test-AzNetworkWatcherConnectivity.md)
+[<span data-ttu-id="33305-153">Test-AzNetworkWatcherConnectivity</span><span class="sxs-lookup"><span data-stu-id="33305-153">Test-AzNetworkWatcherConnectivity</span></span>](./Test-AzNetworkWatcherConnectivity.md)
 
-[<span data-ttu-id="ab3d0-154">Stop-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="ab3d0-154">Stop-AzNetworkWatcherConnectionMonitor</span></span>](./Stop-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="33305-154">Stop-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="33305-154">Stop-AzNetworkWatcherConnectionMonitor</span></span>](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="ab3d0-155">Start-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="ab3d0-155">Start-AzNetworkWatcherConnectionMonitor</span></span>](./Start-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="33305-155">Start-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="33305-155">Start-AzNetworkWatcherConnectionMonitor</span></span>](./Start-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="ab3d0-156">Set-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="ab3d0-156">Set-AzNetworkWatcherConnectionMonitor</span></span>](./Set-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="33305-156">Set-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="33305-156">Set-AzNetworkWatcherConnectionMonitor</span></span>](./Set-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="ab3d0-157">Set-AzNetworkWatcherConfigFlowLog</span><span class="sxs-lookup"><span data-stu-id="ab3d0-157">Set-AzNetworkWatcherConfigFlowLog</span></span>](./Set-AzNetworkWatcherConfigFlowLog.md)
+[<span data-ttu-id="33305-157">Set-AzNetworkWatcherConfigFlowLog</span><span class="sxs-lookup"><span data-stu-id="33305-157">Set-AzNetworkWatcherConfigFlowLog</span></span>](./Set-AzNetworkWatcherConfigFlowLog.md)
 
-[<span data-ttu-id="ab3d0-158">Remove-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="ab3d0-158">Remove-AzNetworkWatcherConnectionMonitor</span></span>](./Remove-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="33305-158">Remove-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="33305-158">Remove-AzNetworkWatcherConnectionMonitor</span></span>](./Remove-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="ab3d0-159">Új – AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="ab3d0-159">New-AzNetworkWatcherConnectionMonitor</span></span>](./New-AzNetworkWatcherConnectionMonitor.md)
+[<span data-ttu-id="33305-159">New-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="33305-159">New-AzNetworkWatcherConnectionMonitor</span></span>](./New-AzNetworkWatcherConnectionMonitor.md)
 
-[<span data-ttu-id="ab3d0-160">Get-AzNetworkWatcherTroubleshootingResult</span><span class="sxs-lookup"><span data-stu-id="ab3d0-160">Get-AzNetworkWatcherTroubleshootingResult</span></span>](./Get-AzNetworkWatcherTroubleshootingResult.md)
+[<span data-ttu-id="33305-160">Get-AzNetworkWatcherTroubleshootingResult</span><span class="sxs-lookup"><span data-stu-id="33305-160">Get-AzNetworkWatcherTroubleshootingResult</span></span>](./Get-AzNetworkWatcherTroubleshootingResult.md)
 
-[<span data-ttu-id="ab3d0-161">Get-AzNetworkWatcherReachabilityReport</span><span class="sxs-lookup"><span data-stu-id="ab3d0-161">Get-AzNetworkWatcherReachabilityReport</span></span>](./Get-AzNetworkWatcherReachabilityReport.md)
+[<span data-ttu-id="33305-161">Get-AzNetworkWatcherReachabilityReport</span><span class="sxs-lookup"><span data-stu-id="33305-161">Get-AzNetworkWatcherReachabilityReport</span></span>](./Get-AzNetworkWatcherReachabilityReport.md)
 
-[<span data-ttu-id="ab3d0-162">Get-AzNetworkWatcherReachabilityProvidersList</span><span class="sxs-lookup"><span data-stu-id="ab3d0-162">Get-AzNetworkWatcherReachabilityProvidersList</span></span>](./Get-AzNetworkWatcherReachabilityProvidersList.md)
+[<span data-ttu-id="33305-162">Get-AzNetworkWatcherReachabilityProvidersList</span><span class="sxs-lookup"><span data-stu-id="33305-162">Get-AzNetworkWatcherReachabilityProvidersList</span></span>](./Get-AzNetworkWatcherReachabilityProvidersList.md)
 
-[<span data-ttu-id="ab3d0-163">Get-AzNetworkWatcherFlowLogStatus</span><span class="sxs-lookup"><span data-stu-id="ab3d0-163">Get-AzNetworkWatcherFlowLogStatus</span></span>](./Get-AzNetworkWatcherFlowLogStatus.md)
+[<span data-ttu-id="33305-163">Get-AzNetworkWatcherFlowLogStatus</span><span class="sxs-lookup"><span data-stu-id="33305-163">Get-AzNetworkWatcherFlowLogStatus</span></span>](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[<span data-ttu-id="ab3d0-164">Get-AzNetworkWatcherConnectionMonitorReport</span><span class="sxs-lookup"><span data-stu-id="ab3d0-164">Get-AzNetworkWatcherConnectionMonitorReport</span></span>](./Get-AzNetworkWatcherConnectionMonitorReport)
+[<span data-ttu-id="33305-164">Get-AzNetworkWatcherConnectionMonitorReport</span><span class="sxs-lookup"><span data-stu-id="33305-164">Get-AzNetworkWatcherConnectionMonitorReport</span></span>](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[<span data-ttu-id="ab3d0-165">Get-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="ab3d0-165">Get-AzNetworkWatcherConnectionMonitor</span></span>](./Get-AzNetworkWatcherConnectionMonitor)
+[<span data-ttu-id="33305-165">Get-AzNetworkWatcherConnectionMonitor</span><span class="sxs-lookup"><span data-stu-id="33305-165">Get-AzNetworkWatcherConnectionMonitor</span></span>](./Get-AzNetworkWatcherConnectionMonitor.md)
