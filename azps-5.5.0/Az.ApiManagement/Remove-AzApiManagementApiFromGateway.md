@@ -1,44 +1,46 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.ApiManagement.ServiceManagement.dll-Help.xml
 Module Name: Az.ApiManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagement/remove-azapimanagementbackend
+online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagement/remove-azapimanagementapifromgateway
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementBackend.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementBackend.md
-ms.openlocfilehash: 35a6731848c7695a8c649d344abaf466437a34f9
-ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementApiFromGateway.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementApiFromGateway.md
+ms.openlocfilehash: 506287812f684a778fdb96e750aac34049912b58
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100401580"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100210343"
 ---
-# Remove-AzApiManagementBackend
+# Remove-AzApiManagementApiFromGateway
 
 ## SYNOPSIS
-A Háttér eltávolítása gombra.
+API-t csatol egy átjáróhoz.
 
 ## SZINTAXIS
 
 ```
-Remove-AzApiManagementBackend -Context <PsApiManagementContext> -BackendId <String> [-PassThru]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzApiManagementApiFromGateway -Context <PsApiManagementContext> -GatewayId <String> -ApiId <String>
+ [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## LEÍRÁS
-Eltávolítja az Azonosító által megadott háttért az Api-kezelésből.
+A **Remove-AzApiManagementApiFromGateway** parancsmag egy API-t csatol egy átjáróhoz.
 
 ## PÉLDÁK
 
-### 1. példa: A Backend 123 eltávolítása
-```powershell
-PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-PS C:\>Remove-AzApiManagementBackend -Context $apimContext -BackendId 123 -PassThru
+### 1. példa: API eltávolítása átjáróból
 ```
+PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Remove-AzApiManagementApiFromGateway -Context $ApiMgmtContext -GatewayId "0123456789" -ApiId "0001" -PassThru
+```
+
+Ez a parancs eltávolítja a megadott API-t egy átjáróból.
 
 ## PARAMETERS
 
-### -BackendId
-A meglévő háttéren lévő azonosító.
+### -ApiId
+Az átjáróból eltávolítható meglévő API-k azonosítója.
 Ezt a paramétert kötelező megadni.
 
 ```yaml
@@ -81,6 +83,22 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -GatewayId
+Annak a meglévő átjárónak az azonosítója, amelyből el szeretné távolítani az API-t.
+Ezt a paramétert kötelező megadni.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -132,7 +150,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## INPUTS
 
@@ -149,13 +167,3 @@ Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, 
 ## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
-
-[Get-AzApiManagementBackend](./Get-AzApiManagementBackend.md)
-
-[New-AzApiManagementBackend](./New-AzApiManagementBackend.md)
-
-[New-AzApiManagementBackendCredential](./New-AzApiManagementBackendCredential.md)
-
-[New-AzApiManagementBackendProxy](./New-AzApiManagementBackendProxy.md)
-
-[Set-AzApiManagementBackend](./Set-AzApiManagementBackend.md)

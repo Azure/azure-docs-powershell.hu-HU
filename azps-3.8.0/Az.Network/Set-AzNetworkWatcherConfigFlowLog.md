@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzNetworkWatcherConfigFlowLog.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzNetworkWatcherConfigFlowLog.md
-ms.openlocfilehash: 7212c3cbfad4c3f6cd3c3dfee778645156da288c
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: afa73cab1f0e66ecc9388b9fb2c536ca50bc609d
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94013101"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401606"
 ---
 # Set-AzNetworkWatcherConfigFlowLog
 
-## Áttekintés
-Beállítja a folyamatábra erőforrás-naplózását.
+## SYNOPSIS
+Folyamatnaplózás beállítása célerőforráshoz.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### SetFlowlogByResourceWithoutTA (alapértelmezett)
 ```
@@ -99,12 +99,12 @@ Set-AzNetworkWatcherConfigFlowLog -Location <String> -TargetResourceId <String> 
  [<CommonParameters>]
 ```
 
-## Leírás
-A Set-AzNetworkWatcherConfigFlowLog beállítja a cél erőforráshoz tartozó folyamatábra naplózását. A megadható tulajdonságok: az adott erőforrásra vonatkozóan engedélyezve van-e a forgalom naplózása, a konfigurált tárterület-fiók a naplók küldéséhez, a forgalom naplózásához és a naplók adatmegőrzési házirendjéhez tartozik. Jelenleg hálózati biztonsági csoportok támogatottak a forgalom naplózásához. 
+## LEÍRÁS
+A Set-AzNetworkWatcherConfigFlowLog konfigurálja a folyamatnaplózást egy célerőforráshoz. Konfigurálható tulajdonságok: engedélyezve van-e a folyamatnaplózás az erőforráshoz, a konfigurált tárfiók naplók küldésekor, a folyamatnaplózási formátum és a naplók adatmegőrzési házirende. A hálózati biztonsági csoportok jelenleg a folyamatnaplózásban támogatottak. 
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: a forgalom naplózásának beállítása megadott NSG
+### 1. példa: Folyamatnaplózás konfigurálása egy megadott NSG-hez
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -126,9 +126,9 @@ Format           : {
                    }
 ```
 
-Ebben a példában a naplózási állapotot egy hálózati biztonsági csoporthoz konfiguráltuk. A válaszban láthatja, hogy a megadott NSG van forgalom naplózás engedélyezve, alapértelmezett formátum és nincs adatmegőrzési házirend beállítása.
+Ebben a példában egy hálózati biztonsági csoport folyamatnaplózási állapotát konfiguráljuk. A válaszban azt látjuk, hogy a megadott NSG-hez engedélyezve van a folyamatnaplózás, az alapértelmezett formátum, és nincs beállítva adatmegőrzési házirend.
 
-### 2. példa: a forgalom naplózásának beállítása egy megadott NSG, és a forgalom naplózási verziójának beállítása a 2 értékre.
+### 2. példa: A folyamatnaplózás konfigurálása egy megadott NSG-hez, és a folyamatnaplózás verziójának beállítása 2-re.
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -150,9 +150,9 @@ Format           : {
                    }
 ```
 
-Ebben a példában a flow naplózást egy hálózati biztonsági csoportban (NSG) konfiguráltuk, amelyen a 2-es verziójú naplók van megadva. A válaszban láthatja, hogy a megadott NSG engedélyezve van a forgalom naplózása, a formátum be van állítva, és nincs beállítva adatmegőrzési szabály. Ha a régió nem támogatja a megadott verziót, a Hálózatfigyelő az alapértelmezett támogatott verziót fogja írni a régióban.
+Ebben a példában egy 2-es verziójú naplók beállításával konfiguráljuk egy hálózati biztonsági csoport (NSG) folyamatnaplózását. A válaszban azt látjuk, hogy a megadott NSG-nek engedélyezve van a folyamatnaplózása, be van állítva a formátum, és nincs konfigurálva adatmegőrzési házirend. Ha a régió nem támogatja az Ön által megadott verziót, a Hálózati figyelő az alapértelmezett támogatott verziót fogja írni a régióban.
 
-### 3. példa: a forgalmi naplózás és a forgalmi elemzés beállítása egy megadott NSG
+### 3. példa: Folyamatnaplózás és forgalomelemzés konfigurálása egy megadott NSG-hez
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -184,9 +184,9 @@ FlowAnalyticsConfiguration : {
           }
 ```
 
-Ebben a példában a folyamat naplózási állapotát és a forgalmi elemzést egy hálózati biztonsági csoporthoz konfiguráltuk. A válaszban láthatja, hogy a megadott NSG folyik a naplózás és a forgalmi statisztika, az alapértelmezett formátum és a nincs adatmegőrzési házirend beállítása.
+Ebben a példában egy hálózati biztonsági csoport folyamatnaplózási állapotát és forgalomelemzését konfiguráljuk. A válaszban azt látjuk, hogy a megadott NSG-nek engedélyezve van a folyamatnaplózása, és engedélyezve van a Forgalomelemzés, az alapértelmezett formátum, és nincs beállítva adatmegőrzési házirend.
 
-### 4. példa: a forgalmi statisztika letiltása a megadott NSG, amelyen a forgalom naplózása és a forgalmi statisztika konfigurálva van
+### 4. példa: A forgalomelemzés letiltása egy megadott NSG-hez úgy, hogy a Folyamatnaplózás és a Forgalomelemzés be van állítva
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -219,12 +219,12 @@ FlowAnalyticsConfiguration : {
           }
 ```
 
-Ebben a példában letiltjuk a forgalmi elemzést egy olyan hálózati biztonsági csoportnál, amely korábban beállította a forgalom naplózását és a forgalmi elemzést. A válaszban láthatja, hogy a megadott NSG engedélyezve van a forgalom naplózása, de a forgalmi elemzés le van tiltva.
+Ebben a példában letiltjuk a Forgalomelemzés funkciót egy olyan hálózatbiztonsági csoportban, amely korábban konfigurált folyamatnaplózást és forgalomelemzést használ. A válaszban azt látjuk, hogy a megadott NSG-nek engedélyezve van a folyamatnaplózása, de a Forgalomelemzés le van tiltva.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -AsJob
-A parancsmag futtatása a háttérben
+Parancsmag futtatása a háttérben
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -239,7 +239,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -254,7 +254,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableFlowLog
-A forgalom naplózásának engedélyezésére/letiltására szolgáló jelölő
+Jelölő a folyamatnaplózás engedélyezéséhez/letiltásához.
 
 ```yaml
 Type: System.Boolean
@@ -269,7 +269,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableRetention
-Jelölő az adatmegőrzés engedélyezéséhez vagy letiltásához.
+Jelölő a megőrzés engedélyezéséhez/letiltásához.
 
 ```yaml
 Type: System.Boolean
@@ -284,7 +284,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableTrafficAnalytics
-Jelölő az adatmegőrzés engedélyezéséhez vagy letiltásához.
+Jelölő a megőrzés engedélyezéséhez/letiltásához.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -299,7 +299,7 @@ Accept wildcard characters: False
 ```
 
 ### -FormatType
-A flow log formátum típusa.
+A folyamatnapló formátumának típusa.
 
 ```yaml
 Type: System.String
@@ -314,7 +314,7 @@ Accept wildcard characters: False
 ```
 
 ### -FormatVersion
-A flow log formátum verziója.
+A folyamatnapló formátumának verziója.
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -328,8 +328,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Hely
-A Hálózatfigyelő helye.
+### -Location
+A hálózati figyelő helye.
 
 ```yaml
 Type: System.String
@@ -344,7 +344,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcher
-A Hálózatfigyelő erőforrás.
+A hálózati figyelő erőforrás.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -359,7 +359,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcherName
-A Network Watcher neve.
+A hálózati figyelő neve.
 
 ```yaml
 Type: System.String
@@ -374,7 +374,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-A Network Watcher erőforráscsoport neve.
+A hálózatfigyelő erőforráscsoport neve.
 
 ```yaml
 Type: System.String
@@ -389,7 +389,7 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionInDays
-A átfolyási napló rekordjainak megtartására szolgáló napok száma.
+A folyamatnaplórekordok megőrzésének napjainak száma.
 
 ```yaml
 Type: System.Int32
@@ -404,7 +404,7 @@ Accept wildcard characters: False
 ```
 
 ### -StorageAccountId
-Annak a tárolási fióknak az azonosítója, amely a folyamatábra tárolására szolgál.
+A folyamatnapló tárolásához használt tárfiók azonosítója.
 
 ```yaml
 Type: System.String
@@ -419,7 +419,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetResourceId
-A cél erőforrás-azonosító.
+A célerőforrás azonosítója.
 
 ```yaml
 Type: System.String
@@ -434,7 +434,7 @@ Accept wildcard characters: False
 ```
 
 ### -TrafficAnalyticsInterval
-Beadja vagy beállítja azt az intervallumot (percben), amelynek alapján a TA-s szolgáltatásnak a forgalom-elemzést meg kell tennie.
+Beállítja vagy beállítja az intervallumot (percben), amely meghatározza, hogy a TA-szolgáltatás milyen gyakran használja a folyamatelemzést.
 
 ```yaml
 Type: System.Int32
@@ -448,8 +448,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Munkaterület
-Az a WS objektum, amely a forgalmi statisztika adatainak tárolására szolgál.
+### -Workspace
+A forgalomelemzési adatok tárolására használt WS-objektum.
 
 ```yaml
 Type: Microsoft.Azure.Management.Internal.Network.Common.IOperationalInsightWorkspace
@@ -476,7 +476,7 @@ Accept wildcard characters: False
 ```
 
 ### -WorkspaceGUID
-Annak a WS-nek a GUID-azonosítója, amely a forgalmi statisztika adatainak tárolására szolgál.
+A forgalomelemzési adatok tárolására használt WS GUID azonosítója.
 
 ```yaml
 Type: System.String
@@ -491,7 +491,7 @@ Accept wildcard characters: False
 ```
 
 ### -WorkspaceLocation
-A WS Azure-területe, amely a forgalmi statisztika adatainak tárolására szolgál.
+A WS Azure-régiója, amely a forgalomelemzési adatok tárolására szolgál.
 
 ```yaml
 Type: System.String
@@ -506,7 +506,7 @@ Accept wildcard characters: False
 ```
 
 ### -WorkspaceResourceId
-A forgalom-elemzési adatokat tároló WS előfizetése.
+A forgalomelemzési adatok tárolására használt WS előfizetése.
 
 ```yaml
 Type: System.String
@@ -520,8 +520,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -536,7 +536,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut. A parancsmag nem fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik. A parancsmag nem fut.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -551,32 +551,32 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. Azure. commands. Network. models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-### System. String
+### System.String
 
-### System. Boolean
+### System.Boolean
 
-### System. Int32
+### System.Int32
 
-### System. null ' 1 [[System. Int32, System. Private. CoreLib, Version = 4.0.0.0, Culture = semleges, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### Microsoft. Azure. Management. internal. Network. Common. IOperationalInsightWorkspace
+### Microsoft.Azure.Management.Internal.Network.Common.IOperationalInsightWorkspace
 
 ## KIMENETEK
 
-### Microsoft. Azure. commands. Network. models. PSFlowLog
+### Microsoft.Azure.Commands.Network.Models.PSFlowLog
 
-## MEGJEGYZI
-Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, hálózat, figyelő, flow, naplók, flowlog, naplózás
+## MEGJEGYZÉSEK
+Kulcsszavak: azure, azurerm, arm, erőforrás, kezelés, vezető, hálózat, hálózatkezelés, figyelő, folyamat, naplók, folyamatábra, naplózás
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Új – AzNetworkWatcher](./New-AzNetworkWatcher.md)
+[New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
 
 [Get-AzNetworkWatcher](./Get-AzNetworkWatcher.md)
 
@@ -590,9 +590,9 @@ Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, há
 
 [Start-AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
 
-[Új – AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
+[New-AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
 
-[Új – AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
+[New-AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
 
 [Get-AzNetworkWatcherPacketCapture](./Get-AzNetworkWatcherPacketCapture.md)
 
@@ -600,11 +600,11 @@ Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, há
 
 [Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
-[Új – AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
+[New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
 
-[Teszt-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
+[Test-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
 
-[Teszt-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
+[Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
 
 [Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
@@ -616,7 +616,7 @@ Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, há
 
 [Remove-AzNetworkWatcherConnectionMonitor](./Remove-AzNetworkWatcherConnectionMonitor.md)
 
-[Új – AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
+[New-AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
 
 [Get-AzNetworkWatcherTroubleshootingResult](./Get-AzNetworkWatcherTroubleshootingResult.md)
 
@@ -626,6 +626,6 @@ Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, há
 
 [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
