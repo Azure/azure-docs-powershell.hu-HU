@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Move-AzResource.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Move-AzResource.md
-ms.openlocfilehash: 4f21ce7a14873d201fa18f45c96d508dcd38cb8e
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 561b19f7eb09d9addfda2b7f3c66c66f2d9f759d
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94184677"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415597"
 ---
 # Move-AzResource
 
-## Áttekintés
-Erőforrás áthelyezése egy másik erőforrás-csoportba vagy előfizetésbe
+## SYNOPSIS
+Áthelyez egy erőforrást egy másik erőforráscsoportba vagy -előfizetésbe.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 Move-AzResource -DestinationResourceGroupName <String> [-DestinationSubscriptionId <Guid>]
@@ -26,26 +26,26 @@ Move-AzResource -DestinationResourceGroupName <String> [-DestinationSubscription
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Leírás
-A **Move-AzResource** parancsmag a meglévő erőforrásokat egy másik erőforráscsoport-csoportba helyezi át.
-Az erőforráscsoport más előfizetésben lehet.
+## LEÍRÁS
+A **Move-AzResource** parancsmag áthelyezi a meglévő erőforrásokat egy másik erőforráscsoportba.
+Az erőforráscsoport másik előfizetésben is lehet.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: erőforrás áthelyezése egy erőforrás-csoportba
+### 1. példa: Erőforrás áthelyezése erőforráscsoportba
 ```
 PS C:\>$Resource = Get-AzResource -ResourceType "Microsoft.ClassicCompute/storageAccounts" -ResourceName "ContosoStorageAccount"
 PS C:\> Move-AzResource -ResourceId $Resource.ResourceId -DestinationResourceGroupName "ResourceGroup14"
 ```
 
-Az első parancs az Get-AzResource parancsmag segítségével a ContosoStorageAccount nevű erőforrást kapja, majd az erőforrást a $Resource változóban tárolja.
-A második parancs áthelyezi ezt az erőforrást a ResourceGroup14 nevű erőforráscsoport-csoportba.
-A parancs a $Resource **ResourceId** tulajdonságával azonosítja az áthelyezni kívánt erőforrást.
+Az első parancs egy ContosoStorageAccount nevű erőforrást kap a Get-AzResource parancsmag használatával, majd az erőforrást a $Resource változóban tárolja.
+A második parancs áthelyezi az erőforrást az Erőforráscsoport14 nevű erőforráscsoportba.
+A parancs azonosítja az áthelyezni  szükséges erőforrást a $Resource.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -ApiVersion
-Az erőforrás-szolgáltató API-nak a verziószámát adja meg.
+Az erőforrás-szolgáltató API-jának használnia kell verzióját adja meg.
 Ha nem ad meg verziót, ez a parancsmag a legújabb elérhető verziót használja.
 
 ```yaml
@@ -61,7 +61,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -76,7 +76,7 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationResourceGroupName
-Annak az erőforrás-csoportnak a nevét adja meg, amelybe a parancsmag az erőforrásokat áthelyezi.
+Annak az erőforráscsoportnak a neve, amelybe ez a parancsmag áthelyezi az erőforrásokat.
 
 ```yaml
 Type: System.String
@@ -91,7 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationSubscriptionId
-Annak az előfizetésnek az AZONOSÍTÓját adja meg, amelybe a parancsmag erőforrásokat helyez.
+Annak az előfizetésnek az azonosítója, amelybe ez a parancsmag áthelyezi az erőforrásokat.
 
 ```yaml
 Type: System.Nullable`1[System.Guid]
@@ -106,7 +106,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Kényszeríti a parancsot, hogy a felhasználó megerősítésének kérése nélkül fusson.
+A parancs futtatását kényszeríti felhasználói megerősítés kérése nélkül.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -121,7 +121,7 @@ Accept wildcard characters: False
 ```
 
 ### -Pre
-Jelzi, hogy ez a parancsmag az előzetes verziójú API-verziókat veszi figyelembe, amikor az automatikusan meghatározza, hogy melyik verziót használja.
+Azt jelzi, hogy ez a parancsmag figyelembe veszi a megjelenés előtt ható API-verziókat, amikor automatikusan meghatározza, hogy melyik verziót kell használni.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -136,7 +136,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-A parancsmag által áthelyezett erőforrás-azonosítók tömbjét adja meg.
+A parancsmag által áthelyezett erőforrásokat tartalmazó tömböt ad meg.
 
 ```yaml
 Type: System.String[]
@@ -150,8 +150,8 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -166,7 +166,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik.
 A parancsmag nem fut.
 
 ```yaml
@@ -182,27 +182,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### System. null ' 1 [[System. GUID, System. Private. CoreLib, Version = 4.0.0.0, Culture = semleges, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Guid, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### System. string []
+### System.String[]
 
 ## KIMENETEK
 
-### System. Boolean
+### System.Boolean
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Keresés-AzResource](./Find-AzResource.md)
 
 [Get-AzResource](./Get-AzResource.md)
 
-[Új – AzResource](./New-AzResource.md)
+[New-AzResource](./New-AzResource.md)
 
 [Remove-AzResource](./Remove-AzResource.md)
 

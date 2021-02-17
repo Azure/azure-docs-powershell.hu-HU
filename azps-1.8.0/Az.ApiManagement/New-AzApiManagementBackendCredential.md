@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendCredential.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendCredential.md
-ms.openlocfilehash: 246b465c64242913fb0d05981b0f221605c6a0d0
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: d1f82a3f51f5f33fe4240a7327aa333b64d4fdd5
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93665643"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400960"
 ---
 # New-AzApiManagementBackendCredential
 
-## Áttekintés
-Létrehoz egy új backend hitelesítő adatokat tartalmazó szerződést.
+## SYNOPSIS
+Létrehoz egy új backend hitelesítőadat-szerződést.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 New-AzApiManagementBackendCredential [-CertificateThumbprint <String[]>] [-Query <Hashtable>]
@@ -25,12 +25,12 @@ New-AzApiManagementBackendCredential [-CertificateThumbprint <String[]>] [-Query
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-Létrehoz egy új backend hitelesítő adatokat tartalmazó szerződést.
+## LEÍRÁS
+Új backend hitelesítőadat-szerződést hoz létre.
 
-## Példák
+## PÉLDÁK
 
-### Backend-hitelesítő adatok In-Memory objektum létrehozása
+### Backend Credentials In-Memory objektum
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>$credential = New-AzApiManagementBackendCredential -AuthorizationHeaderScheme basic -AuthorizationHeaderParameter opensesame -Query @{"sv" = @('xx', 'bb'); "sr" = @('cc')} -Header @{"x-my-1" = @('val1', 'val2')}
@@ -38,12 +38,12 @@ PS C:\>$credential = New-AzApiManagementBackendCredential -AuthorizationHeaderSc
 PS C:\>$backend = New-AzApiManagementBackend -Context  $apimContext -BackendId 123 -Url 'https://contoso.com/awesomeapi' -Protocol http -Title "first backend" -SkipCertificateChainValidation $true -Credential $credential -Description "my backend"
 ```
 
-A backend-hitelesítő adatokkal rendelkező szerződés létrehozása
+Háttéradat-hitelesítő adatokra vonatkozó szerződést hoz létre
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -AuthorizationHeaderParameter
-A backendhez használt engedélyezési fejléc.
+A Backendhez használt engedélyezési fejléc.
 Ez a paraméter nem kötelező.
 
 ```yaml
@@ -59,7 +59,7 @@ Accept wildcard characters: False
 ```
 
 ### -AuthorizationHeaderScheme
-A backendhez használt engedélyezési séma.
+A Backendhez használt engedélyezési séma.
 Ez a paraméter nem kötelező.
 
 ```yaml
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateThumbprint
-Ügyféltanúsítvány-Thumbprints
+Ügyfél tanúsítványának thumbprints.
 Ez a paraméter nem kötelező.
 
 ```yaml
@@ -91,7 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -106,7 +106,7 @@ Accept wildcard characters: False
 ```
 
 ### -Header
-A backend által elfogadott fejléc paraméter-értékek
+A Backend által elfogadott fejlécparaméter-értékek.
 Ez a paraméter nem kötelező.
 
 ```yaml
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -Query
-A lekérdezés paramétereit a backend által elfogadott értékekkel.
+A Backend által elfogadott lekérdezési paraméterértékek.
 Ez a paraméter nem kötelező.
 
 ```yaml
@@ -138,25 +138,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
 ### Nincs
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementBackendCredential
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendCredential
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Get-AzApiManagementBackend](./Get-AzApiManagementBackend)
+[Get-AzApiManagementBackend](./Get-AzApiManagementBackend.md)
 
-[Új – AzApiManagementBackend](./New-AzApiManagementBackend.md)
+[New-AzApiManagementBackend](./New-AzApiManagementBackend.md)
 
-[Új – AzApiManagementBackendProxy](./New-AzApiManagementBackendProxy.md)
+[New-AzApiManagementBackendProxy](./New-AzApiManagementBackendProxy.md)
 
 [Set-AzApiManagementBackend](./Set-AzApiManagementBackend.md)
 

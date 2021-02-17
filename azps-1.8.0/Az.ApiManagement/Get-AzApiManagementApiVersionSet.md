@@ -5,33 +5,33 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementApiVersionSet.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementApiVersionSet.md
-ms.openlocfilehash: 16fea88f5a5a1ad8a0e39f62b26d918ca7a64dbd
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 5b7c06e9ed75cf973a3b9e375ff888477b9a96d7
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93665695"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400977"
 ---
 # Get-AzApiManagementApiVersionSet
 
-## Áttekintés
-Az API-készletek részleteinek beszerzése
+## SYNOPSIS
+Az API verziókészletek részleteinek lekérte
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 Get-AzApiManagementApiVersionSet -Context <PsApiManagementContext> [-ApiVersionSetId <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-A **Get-AzApiManagementApiVersionSet** parancsmag az API-kezelés kontextusában konfigurált API-verziók adatait kapja meg.
+## LEÍRÁS
+A **Get-AzApiManagementApiVersionSet** parancsmag api-kezelési környezetben konfigurált API-verziókészletek részleteit kapja meg.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1
+### 1. példa
 
-### 1. példa: az összes API-verzió beszerzése
+### 1. példa: Az összes API-verziókészlet lekérte
 ```powershell
 PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementApiVersionSet -Context $ApiMgmtContext
@@ -68,9 +68,9 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-Ez a parancs a megadott környezetben az összes API-verzió halmazát beolvassa.
+Ez a parancs a megadott környezethez az összes API-verziókészletet beállítja.
 
-### 2. példa: az API-verzió beszerzése AZONOSÍTÓval
+### 2. példa: API verzióazonosító szerint beállítva
 ```powershell
 PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementApiVersionSet -Context $ApiMgmtContext -ApiVersionSetId $ApiVersionSetId
@@ -86,13 +86,13 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-Ez a parancs a megadott AZONOSÍTÓJÚ API-verziót kapja meg.
+Ez a parancs a megadott azonosítójú API-verziókészletet kapja meg.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -ApiVersionSetId
-A keresni kívánt API-azonosító.
-Ha meg van adva az API-t, az azonosítóval is próbálkozhat.
+Keresend meg az API-azonosítót.
+Ha meg van adva, az API-t az azonosító próbálja meg lehozni.
 
 ```yaml
 Type: System.String
@@ -108,7 +108,7 @@ Accept wildcard characters: False
 
 ### -Környezet
 A PsApiManagementContext példánya.
-Ehhez a paraméterhez szükség van.
+Ezt a paramétert kötelező megadni.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -123,7 +123,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -138,24 +138,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementApiVersionSet
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiVersionSet
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Új – AzApiManagementApiVersionSet](./New-AzApiManagementApiVersionSet.md)
+[New-AzApiManagementApiVersionSet](./New-AzApiManagementApiVersionSet.md)
 
 [Remove-AzApiManagementApiSet](./Remove-AzApiManagementApiVersionSet.md)
 
-[Set-AzApiManagementApiVersionSet](./Set-AzApiManagementApiSet.md)
+[Set-AzApiManagementApiVersionSet](./Set-AzApiManagementApiVersionSet.md)

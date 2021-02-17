@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementApiRelease.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementApiRelease.md
-ms.openlocfilehash: 0ff4f0cbf8cd2825c05ef30fa4bcb16a10e04a81
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 301de93ba72aff800a963034df422b6a4e4061f9
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93836969"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400875"
 ---
 # Remove-AzApiManagementApiRelease
 
-## Áttekintés
+## SYNOPSIS
 Egy adott API-kiadás eltávolítása
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### ByApiReleaseId (alapértelmezett)
 ```
@@ -31,11 +31,11 @@ Remove-AzApiManagementApiRelease -InputObject <PsApiManagementApiRelease> [-Pass
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Leírás
+## LEÍRÁS
 
-A **Remove-AzAzureRmApiManagementApiRelease** parancsmag eltávolítja a meglévő API-kiadásokat.
+A **Remove-AzAzureRmApiManagementApiRelease** parancsmag eltávolít egy meglévő API-kiadást.
 
-## Példák
+## PÉLDÁK
 
 ### 1. példa: API-kiadás eltávolítása
 ```powershell
@@ -43,13 +43,13 @@ PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default
 PS C:\>Remove-AzAzureRmApiManagementApiRelease -Context $apimContext -ApiId "echo-api" -ReleaseId "2"
 ```
 
-Ez a parancs eltávolítja az API-kiadást a megadott ApiId és ReleaseId.
+Ez a parancs eltávolítja az API Release-t a megadott ApiId és ReleaseId értékekkel.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -ApiId
-Az API-azonosító.
-Ehhez a paraméterhez szükség van.
+Az API azonosítója.
+Ezt a paramétert kötelező megadni.
 
 ```yaml
 Type: System.String
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 
 ### -Környezet
 A PsApiManagementContext példánya.
-Ehhez a paraméterhez szükség van.
+Ezt a paramétert kötelező megadni.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -80,7 +80,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -95,7 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-A PsApiManagementApiRelease példánya. Ehhez a paraméterhez szükség van.
+A PsApiManagementApiRelease példánya. Ezt a paramétert kötelező megadni.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiRelease
@@ -110,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Ha a megadott művelet sikeres, akkor a True Write True értékre vált.
+Ha a megadott érték igaz értéket ad meg, akkor a művelet sikeres lesz.
 Ez a paraméter nem kötelező.
 
 ```yaml
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 
 ### -ReleaseId
 Az API-kiadás azonosítója.
-Ehhez a paraméterhez szükség van.
+Ezt a paramétert kötelező megadni.
 
 ```yaml
 Type: System.String
@@ -141,8 +141,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -157,7 +157,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik.
 A parancsmag nem fut.
 
 ```yaml
@@ -173,26 +173,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementApiRelease
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiRelease
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### System. Boolean
+### System.Boolean
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
 [Get-AzApiManagementApiRelease](./Get-AzApiManagementApiRelease.md)
 
-[Új – AzApiManagementApiRelease](./New-AzApiManagementApiRelease.md)
+[New-AzApiManagementApiRelease](./New-AzApiManagementApiRelease.md)
 
-[Set-AzApiManagementApiRelease](./Set-AzApiManagementApiRelease.md)
+[Update-AzApiManagementApiRelease](./Update-AzApiManagementApiRelease.md)

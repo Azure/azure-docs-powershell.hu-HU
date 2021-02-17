@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Add-AzApiManagementRegion.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Add-AzApiManagementRegion.md
-ms.openlocfilehash: b180dabec976164eac70106b49378d832fb00db8
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: aebcb8be906811607aefee7dbdc2c7630b9e391e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93665708"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401181"
 ---
 # Add-AzApiManagementRegion
 
-## Áttekintés
-Új központi terjesztési régiók felvétele egy PsApiManagement-példányba.
+## SYNOPSIS
+Új telepítési régiók hozzáadása a PsApiManagement-példányhoz.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 Add-AzApiManagementRegion -ApiManagement <PsApiManagement> -Location <String> [-Sku <PsApiManagementSku>]
@@ -26,31 +26,31 @@ Add-AzApiManagementRegion -ApiManagement <PsApiManagement> -Location <String> [-
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-Az **Add-AzApiManagementRegion** parancsmag a **PsApiManagementRegion** új példányát adja a **Microsoft. Azure. commands. ApiManagement. models. PsApiManagement** **AdditionalRegions** példányának.
-Ez a parancsmag nem telepíti magát semmit, de a memória **PsApiManagement** példányát frissíti.
-Az API-menedzsment telepített példányának frissítéséhez a módosított **PsApiManagement** -példányt a Update-AzApiManagementDeployment-ra kell átadni.
+## LEÍRÁS
+Az **Add-AzApiManagementRegion** parancsmag hozzáadja a **PsApiManagementRegion** új példányát a **Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement** típusú megadott példány **AdditionalRegions** gyűjteményéhez.
+Ez a parancsmag nem telepít semmit önmagában, de frissíti a **PsApiManagement** in-memory példányát.
+Egy API-kezelés telepítésének frissítéséhez át kell adni a **módosított PsApiManagement-példányt** a Set-AzApiManagementnek.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: új központi terjesztési régiók felvétele PsApiManagement-példányba
+### 1. példa: Új telepítési régiók hozzáadása a PsApiManagement-példányhoz
 ```
 PS C:\>Add-AzApiManagementRegion -ApiManagement $ApiManagement -Location "East US" -Sku "Premium" -Capacity 2
 ```
 
-Ez a parancs két prémium SKU-egységet és a kelet-amerikai régiót a **PsApiManagement** -példányra helyezi.
+Ez a parancs hozzáad két prémium termékváltozatot és a Kelet-US régiót a **PsApiManagement példányhoz.**
 
-### 2. példa: új üzembe állítási régiók felvétele PsApiManagement-példányba, majd a központi telepítő frissítése
+### 2. példa: Új telepítési régiók hozzáadása a PsApiManagement-példányhoz, majd a telepítés frissítése
 ```
-PS C:\>Get-AzApiManagement -ResourceGroupName "Contoso" -Name "ContosoApi" | Add-AzApiManagementRegion -Location "East US" -Sku "Premium" -Capacity 2 | Update-AzApiManagementDeployment
+PS C:\>Get-AzApiManagement -ResourceGroupName "Contoso" -Name "ContosoApi" | Add-AzApiManagementRegion -Location "East US" -Sku "Premium" -Capacity 2 | Set-AzApiManagement
 ```
 
-Ez a parancs **PsApiManagement** objektumot kap, és két prémium SKU-egységet ad hozzá a kelet-amerikai régióhoz, majd frissíti a központi üzembe helyezést.
+Ez a parancs egy **PsApiManagement** objektumot kap, hozzáad két prémium termékváltozatot az EGYESÜLT Államok keleti régiója számára, majd frissíti az üzembe helyezést.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -ApiManagement
-Azt a **PsApiManagement** -példányt adja meg, amelyre a parancsmag további központi terjesztési területeket ad.
+Azt a **PsApiManagement-példányt** adja meg, amelybe ez a parancsmag további telepítési régiókat ad hozzá.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 ```
 
 ### -Kapacitás
-A központi telepítő terület SKU-kapacitását adja meg.
+A telepítési régió termékváltozatának kapacitását határozza meg.
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -80,7 +80,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -94,9 +94,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Hely
-Megadja az új központi üzembe helyezési terület helyét az API-kezelési szolgáltatás támogatott területe között.
-Ha érvényes helyeket szeretne beolvasni, használja a "Microsoft. ApiManagement" ProviderNamespace Get-AzResourceProvider parancsmagot. where {$ _. ResourceTypes [0]. ResourceTypeName-EQ "szolgáltatás"} | Select-Object helyek
+### -Location
+Megadja az új telepítési régió helyét az Api Management szolgáltatás által támogatott régió között.
+Érvényes helyek beszerzéséhez használja a Get-AzResourceProvider -ProviderNamespace "Microsoft.ApiManagement" | ahol {$_. ResourceTypes[0]. ResourceTypeName -eq "service"} | Select-Object helyek
 
 ```yaml
 Type: System.String
@@ -110,12 +110,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SKU
-A központi telepítő terület küszöbértékét adja meg.
-Az érvényes értékek a következők: 
+### -Termékváltozat
+Az üzembe helyezési régió rétegét határozza meg.
+Érvényes értékek:
 - Fejlesztő
-- Standard
-- Prémium verzió
+- Normál
+- Prémium
 
 ```yaml
 Type: System.Nullable`1[Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementSku]
@@ -146,18 +146,18 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. Azure. Command. ApiManagement. models. PsApiManagement
+### Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. ApiManagement. models. PsApiManagement
+### Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement
 
-## MEGJEGYZI
-* A parancsmag frissített **PsApiManagement** -példányt ír a pipeline-ra.
+## MEGJEGYZÉSEK
+* A parancsmag a frissített **PsApiManagement-példányt** folyamatba írja.
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
@@ -165,6 +165,6 @@ Ez a parancsmag a következő általános paramétereket támogatja:-debug,-Erro
 
 [Update-AzApiManagementRegion](./Update-AzApiManagementRegion.md)
 
-[Update-AzApiManagementDeployment](./Update-AzApiManagementDeployment.md)
+[Set-AzApiManagement](./Set-AzApiManagement.md)
 
 
