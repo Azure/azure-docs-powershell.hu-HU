@@ -3,19 +3,19 @@ external help file: Microsoft.WindowsAzure.Commands.SqlDatabase.dll-Help.xml
 ms.assetid: B7F07494-FBCA-4A77-92BF-E0A2D7ACCD21
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: fc350cdf117ebbf72b023f64895f4c563e73566b
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 35e29655e8447644b6c5449309424595e45ca187
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94015845"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413064"
 ---
 # Start-AzureSqlDatabaseCopy
 
-## Áttekintés
-Egy Azure SQL-adatbázis másolási műveletét indítja el.
+## SYNOPSIS
+Egy Azure SQL-adatbázis másolási műveletének indítása.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### ByInputObject
 ```
@@ -43,59 +43,59 @@ Start-AzureSqlDatabaseCopy -ServerName <String> -DatabaseName <String> -PartnerS
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Leírás
-A **Start-AzureSqlDatabaseCopy** parancsmag egyszeres másolási műveletet vagy egy bizonyos Azure SQL-adatbázis folyamatos másolási műveletét indítja el.
+## LEÍRÁS
+A **Start-AzureSqlDatabaseCopy** parancsmag egy egyszeres másolási műveletet vagy egy adott Azure SQL-adatbázis folyamatos másolási műveletét indítja el.
 Ez a parancsmag nem tranzakciós.
 
-Az eredeti adatbázis a forrás adatbázis.
-A másolat a másodlagos vagy a cél adatbázis.
-Folyamatos másolás esetén a forrás-és a célként megadott adatbázis nem használható ugyanazon a kiszolgálón, és a forrás-és a célként megadott adatbázisokat tároló kiszolgálók ugyanahhoz az előfizetéshez tartoznak.
+Az eredeti adatbázis a forrásadatbázis.
+A másolat a másodlagos vagy céladatbázis.
+Folyamatos másolat esetén a forrás- és céladatbázisok nem ugyanazon a kiszolgálón találhatók, és a forrás- és céladatbázisokat tároló kiszolgálóknak ugyanannak az előfizetésnek a részeinek kell lennie.
 
-Ha nem adja meg a *ContinuousCopy* paramétert, ez a parancsmag a forrásadatbázis egyszer használatos példányát hozza létre.
-A válasz fogadásakor a művelet továbbra is folyamatban van.
-A műveletet a Get-AzureSqlDatabaseCopy vagy Get-AzureSqlDatabaseOperation parancsmag használatával figyelheti.
+Ha nem adja meg a *ContinuousCopy* paramétert, ez a parancsmag a forrásadatbázis egy egyszer használható másolatát hozza létre.
+Amikor a válasz érkezik, a művelet továbbra is folyamatban lehet.
+A műveletet figyelheti a Get-AzureSqlDatabaseCopy vagy Get-AzureSqlDatabaseOperation parancsmag használatával.
 
-Ha megad egy *ContinuousCopy* , ez a parancsmag létrehoz egy folytonos másolatot a forrás adatbázisról.
-Ha a válasz érkezik, a művelet folyamatban lesz.
-A műveletet a **Get-AzureSqlDatabaseCopy** vagy a **Get-AzureSqlDatabaseOperation** segítségével is figyelheti.
+Ha a *ContinuousCopy* értéket adja meg, ez a parancsmag a forrásadatbázis folyamatos másolatát hozza létre.
+Amikor a válasz érkezik, a művelet folyamatban lesz.
+A műveletet a **Get-AzureSqlDatabaseCopy** vagy **a Get-AzureSqlDatabaseOperation segítségével figyelheti.**
 
-Folyamatos másolatot hozhat létre online vagy offline adatbázisként.
-Az online folytonos másolat az aktív Geo-Replication Azure SQL-adatbázis konfigurálására szolgál https://azure.microsoft.com/en-us/documentation/articles/sql-database-geo-replication-overview/ .
-A kapcsolat nélküli folyamatos másolat az Azure SQL-adatbázis normál Geo-Replicationének konfigurálására szolgál https://azure.microsoft.com/en-us/documentation/articles/sql-database-business-continuity-scenarios/ .
+Folyamatos másolatot online vagy offline adatbázisként is létrehozhat.
+Az online folyamatos másolat az Azure SQLGeo-Replication-adatbázis aktív címtárának beállításához https://azure.microsoft.com/en-us/documentation/articles/sql-database-geo-replication-overview/ használható.
+Az offline folyamatos másolat az Azure SQLGeo-Replication-adatbázis standard Geo-Replication beállításához https://azure.microsoft.com/en-us/documentation/articles/sql-database-business-continuity-scenarios/ használatos.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: folytonos adatbázis-példány ütemezése
+### 1. példa: Folyamatos adatbázis-másolat ütemezése
 ```
 PS C:\> Start-AzureSqlDatabaseCopy -ServerName "lpqd0zbr8y" -DatabaseName "Orders" -PartnerServer "bk0b8kf65" -ContinuousCopy
 ```
 
-Ez a parancs a lpqd0zbr8y nevű kiszolgálón a rendelések nevű adatbázis folyamatos másolatát ütemezi.
-A parancs létrehoz egy céladatbáziset a bk0b8kf658 nevű kiszolgálón.
+Ez a parancs az Orders (Rendelések) adatbázis folyamatos másolatát ütemezi az lpqd0zbr8y nevű kiszolgálón.
+A parancs létrehoz egy céladatbázist a bk0b8kf658 nevű kiszolgálón.
 
-### 2. példa: egyidejű másolat létrehozása ugyanazon a kiszolgálón
+### 2. példa: Egyszeres példány létrehozása ugyanazon a kiszolgálón
 ```
 PS C:\> Start-AzureSqlDatabaseCopy -ServerName "lpqd0zbr8y" -DatabaseName "Orders" -PartnerDatabase "OrdersCopy"
 ```
 
-Ezzel a paranccsal létrehozhatja a lpqd0zbr8y nevű kiszolgálón a rendelések nevű adatbázis egyszeres másolatát.
+Ez a parancs létrehozza az Orders (Rendelések) adatbázis egy egyszeres másolatát az lpqd0zbr8y nevű kiszolgálón.
 A parancs létrehoz egy OrdersCopy nevű példányt ugyanazon a kiszolgálón.
 
-### 3. példa: folyamatos Offline adatbázis-példány ütemezése
+### 3. példa: Folyamatos offline adatbázis-példány ütemezése
 ```
 PS C:\> Start-AzureSqlDatabaseCopy -ServerName "lpqd0zbr8y" -DatabaseName "Orders" -PartnerServer "bk0b8kf65" -ContinuousCopy -OfflineSecondary
 ```
 
-Ez a parancs a lpqd0zbr8y nevű kiszolgálón a rendelések nevű adatbázis folyamatos másolatát ütemezi.
-Ez a parancs létrehoz egy offline céladatbázis-adatbázist a bk0b8kf658 nevű kiszolgálón.
+Ez a parancs az Orders (Rendelések) adatbázis folyamatos másolatát ütemezi az lpqd0zbr8y nevű kiszolgálón.
+Ez a parancs létrehoz egy offline céladatbázist a bk0b8kf658 nevű kiszolgálón.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -ContinuousCopy
-Azt jelzi, hogy az adatbázis másolása folyamatos másolatként (replika-adatbázis) fog szerepelni.
-A folyamatos másolás nem támogatott ugyanazon a kiszolgálón belül.
-Ha ez a paraméter nincs megadva, az alkalmazás egyszeres másolatot hajt végre.
-Egyszeres másolat esetén a forrás-és a partner adatbázisnak ugyanazon a kiszolgálón kell lennie.
+Azt jelzi, hogy az adatbázis másolata folyamatos másolat lesz (egy replika-adatbázis).
+A folyamatos másolás nem támogatott ugyanazon a kiszolgálón.
+Ha ez a paraméter nincs megadva, akkor a program egy egyszeres példányt hajt végre.
+Az egyszeres példányban a forrás- és partneradatbázisnak ugyanazon a kiszolgálón kell lennie.
 
 ```yaml
 Type: SwitchParameter
@@ -109,9 +109,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Database (adatbázis)
-Egy olyan objektumot ad meg, amely a Source Azure SQL-adatbázist jelöli.
-Ez a paraméter elfogadja a csővezeték-bevitelt.
+### -Database
+A forrás Azure SQL-adatbázist képviselő objektumot ad meg.
+Ez a paraméter elfogadja a folyamatbemenetet.
 
 ```yaml
 Type: Database
@@ -126,7 +126,7 @@ Accept wildcard characters: False
 ```
 
 ### -DatabaseName
-A forrás adatbázis nevét adja meg.
+A forrásadatbázis nevét adja meg.
 
 ```yaml
 Type: String
@@ -141,7 +141,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Kényszeríti a parancsot, hogy a felhasználó megerősítésének kérése nélkül fusson.
+A parancs futtatását kényszeríti felhasználói megerősítés kérése nélkül.
 
 ```yaml
 Type: SwitchParameter
@@ -156,9 +156,9 @@ Accept wildcard characters: False
 ```
 
 ### -OfflineSecondary
-Azt adja meg, hogy egy folytonos másolat nem aktív másolat, hanem passzív másolat.
-Ha a forrásadatbázis normál kiadású adatbázis, akkor ez a paraméter szükséges.
-Ha ezt a paramétert adja meg, akkor a *ContinuousCopy* is meg kell adni.
+Azt adja meg, hogy a folyamatos másolat aktív másolat helyett passzív másolat.
+Ha a forrásadatbázis standard kiadású adatbázis, akkor ezt a paramétert kell megadni.
+Ha ez a paraméter meg van adva, akkor *a ContinuousCopy* paramétert is meg kell adni.
 
 ```yaml
 Type: SwitchParameter
@@ -174,8 +174,8 @@ Accept wildcard characters: False
 
 ### -PartnerDatabase
 A céladatbázis nevét adja meg.
-Ha a *ContinuousCopy* paramétert adja meg, a *PartnerDatabase* értékének egyeznie kell a forrás adatbázis nevével.
-Ha nem adja meg a *ContinuousCopy* , meg kell adnia a céladatbázis nevét, amely a forrás adatbázis nevétől eltérő lehet.
+Ha a *ContinuousCopy* paramétert adja meg, a *PartnerDatabase* értékének meg kell egyeznie a forrásadatbázis nevével.
+Ha nem a *ContinuousCopy* nevet adja meg, meg kell adnia a céladatbázis nevét, amely nem lehet más, mint a forrásadatbázis neve.
 
 ```yaml
 Type: String
@@ -202,8 +202,8 @@ Accept wildcard characters: False
 ```
 
 ### -PartnerServer
-A célként megadott adatbázist tároló kiszolgáló neve.
-A kiszolgálónak ugyanazon az Azure-előfizetésben kell lennie, mint a forrás adatbázis-kiszolgáló.
+A céladatbázist tároló kiszolgáló neve.
+Ennek a kiszolgálónak ugyanabban az Azure-előfizetésben kell lennie, mint a forrásadatbázis-kiszolgálónak.
 
 ```yaml
 Type: String
@@ -230,8 +230,8 @@ Accept wildcard characters: False
 ```
 
 ### -Profil
-Azt az Azure-profilt adja meg, amelyből a parancsmag olvasható.
-Ha nem ad meg profilt, a parancsmag a helyi alapértelmezett profilból olvassa be a szöveget.
+Azt az Azure-profilt adja meg, amelyből a parancsmag olvas.
+Ha nem ad meg profilt, ez a parancsmag a helyi alapértelmezett profilból olvassa be.
 
 ```yaml
 Type: AzureSMProfile
@@ -245,8 +245,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Kiszolgálónév
-Annak a kiszolgálónak a nevét adja meg, amelyen a forrás adatbázis található.
+### -ServerName
+Annak a kiszolgálónak a nevét adja meg, amelyen a forrásadatbázis található.
 
 ```yaml
 Type: String
@@ -260,8 +260,8 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: SwitchParameter
@@ -276,7 +276,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik.
 A parancsmag nem fut.
 
 ```yaml
@@ -292,29 +292,29 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. WindowsAzure. Command. SqlDatabase. Services. Server. Database
+### Microsoft.WindowsAzure.Commands.SqlDatabase.Services.Server.Database
 
 ## KIMENETEK
 
-### Microsoft. WindowsAzure. Command. SqlDatabase. Model. DatabaseCopy
+### Microsoft.WindowsAzure.Commands.SqlDatabase.Model.DatabaseCopy
 
-## MEGJEGYZI
-* Hitelesítés: Ez a parancsmag tanúsítvány-alapú hitelesítést követel meg. Ha egy példa arra, hogy hogyan állíthatja be az aktuális előfizetést tanúsítványalapú hitelesítéssel, olvassa el New-AzureSqlDatabaseServerContext parancsmagot.
-* Figyelés: Ha a kiszolgálón aktív egy vagy több folyamatos másolási kapcsolat állapotát szeretné ellenőrizni, használja a **Get-AzureSqlDatabaseCopy** parancsmagot. Ha ellenőrizni szeretné a műveletek állapotát a folyamatos másolási kapcsolat forrása és célja között, használja a **Get-AzureSqlDatabaseOperation** parancsmagot.
+## MEGJEGYZÉSEK
+* Hitelesítés: Ez a parancsmag tanúsítványalapú hitelesítést igényel. Ha például tanúsítványalapú hitelesítéssel állíthatja be az aktuális előfizetést, tekintse meg a New-AzureSqlDatabaseServerContext parancsmagot.
+* Figyelés: A kiszolgálón aktív egy vagy több folyamatos másolási kapcsolat állapotának ellenőrzéséhez használja a **Get-AzureSqlDatabaseCopy** parancsmagot. Ha a folyamatos másolási kapcsolat forrásán és célértékénél is ellenőriznie kell a műveletek állapotát, használja a **Get-AzureSqlDatabaseOperation** parancsmagot.
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
 [Azure SQL-adatbázis](https://azure.microsoft.com/en-us/services/sql-database/)
 
-[Azure SQL-adatbázisok műveletei](https://msdn.microsoft.com/en-us/library/azure/dn505719.aspx)
+[Műveletek az Azure SQL-adatbázisokban](https://msdn.microsoft.com/en-us/library/azure/dn505719.aspx)
 
-[Adatbázis-másolat indítása](https://msdn.microsoft.com/en-us/library/azure/dn509576.aspx)
+[Adatbázis-másolás létrehozása](https://msdn.microsoft.com/en-us/library/azure/dn509576.aspx)
 
-[Azure SQL-adatbázis-parancsmagok](./Azure.SQLDatabase.md)
+
 
 [Get-AzureSqlDatabaseCopy](./Get-AzureSqlDatabaseCopy.md)
 
