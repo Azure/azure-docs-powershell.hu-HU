@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafCustomRuleObject.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafCustomRuleObject.md
-ms.openlocfilehash: 6c40a54dd230bc4c7e45f97b4fa6f969940e1673
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: c59e0f90ae8b6d7839c7bb845b56e31a42b2d033
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93666416"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100412792"
 ---
 # New-AzFrontDoorWafCustomRuleObject
 
-## Áttekintés
-CustomRule objektum létrehozása a WAF házirendek létrehozásához
+## SYNOPSIS
+Create CustomRule Object for WAF policy creation
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 New-AzFrontDoorWafCustomRuleObject -Name <String> -RuleType <String> -MatchCondition <PSMatchCondition[]>
@@ -25,12 +25,12 @@ New-AzFrontDoorWafCustomRuleObject -Name <String> -RuleType <String> -MatchCondi
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-CustomRule objektum létrehozása a WAF házirendek létrehozásához
+## LEÍRÁS
+Create CustomRule Object for WAF policy creation
 
-## Példák
+## PÉLDÁK
 
-### Példa 1
+### 1. példa
 ```powershell
 PS C:\> New-AzFrontDoorWafCustomRuleObject -Name "Rule1" -RuleType MatchRule -MatchCondition $matchCondition1 -Action Block -Priority 2
 
@@ -39,13 +39,13 @@ Name   RuleType Action Priority RateLimitDurationInMinutes
 Rule1 MatchRule  Block        2                          1
 ```
 
-CustomRule objektum létrehozása
+CustomRule-objektum létrehozása
 
-## PARAMÉTEREK
+## PARAMETERS
 
-### -Műveletek
+### -Művelet
 A műveletek típusa.
-A lehetséges értékek a következők: "Allow", "blokk", "log"
+Lehetséges értékek: "Megengedve", "Blokk", "Napló"
 
 ```yaml
 Type: System.String
@@ -60,7 +60,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -MatchCondition
-A egyeztetési feltételek listája.
+Az egyezések feltételeinek listája.
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSMatchCondition[]
@@ -89,7 +89,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (név)
+### -Name
 A szabály neve
 
 ```yaml
@@ -104,8 +104,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### – Prioritás
-A szabály prioritását ismerteti.
+### -Priority
+Ismerteti a szabály prioritását.
 
 ```yaml
 Type: System.Int32
@@ -120,7 +120,7 @@ Accept wildcard characters: False
 ```
 
 ### -RateLimitDurationInMinutes
-A mérték korlátjának időtartama. Default-1 perc
+Díjkorlát időtartama. Alapértelmezett – 1 perc
 
 ```yaml
 Type: System.Int32
@@ -135,7 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -RateLimitThreshold
-Ráta korlátozási küszöbértéke
+Díjkorlát küszöbértéke
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -151,7 +151,7 @@ Accept wildcard characters: False
 
 ### -RuleType
 A szabály típusa.
-A lehetséges értékek a következők: "MatchRule", "RateLimitRule"
+Lehetséges értékek: "MatchRule", 'RateLimitRule'
 
 ```yaml
 Type: System.String
@@ -166,19 +166,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
 ### Nincs
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. FrontDoor. models. PSCustomRule
+### Microsoft.Azure.Commands.FrontDoor.Models.PSCustomRule
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Új – AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md) 
- [Set-AzFrontDoorWafPolicy](./Set-AzFrontDoorWafPolicy.md)
+[New-AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md) 
+ [Update-AzFrontDoorWafPolicy](./Update-AzFrontDoorWafPolicy.md)

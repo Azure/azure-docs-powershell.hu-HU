@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/06/2017
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 2860d5c7642b137c1cb14a38fa13d59ec2a4123c
-ms.sourcegitcommit: 038cb42a3bd8c009bc57c8c1c252e66fa170c84b
-ms.translationtype: HT
+ms.openlocfilehash: 23ea4bcbd182cf1b063f2ae90921217de74a7044
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92523206"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401521"
 ---
 # <a name="installing-the-azure-powershell-service-management-module"></a>Az Azure PowerShell Service Management moduljának telepítése
 
@@ -70,7 +70,7 @@ Az Azure-ba való bejelentkezés után az Azure PowerShell létrehoz egy környe
 
 Az Azure PowerShell-modulok rendszeresen frissülnek. Ha a parancsmagokat tárgyaló online súgóban olyan parancsmagokról vagy paraméterekről olvas, amelyek az Ön moduljában nem szerepelnek, töltse le és telepítse a modul legújabb verzióját. A saját modulverziójának az azonosításához írja be a következőt: `(Get-InstalledModule Azure).Version`.
 
-Az Azure-ban gyakran előforduló feladatok némelyikének automatizálását segítő mintaszkripteket lásd a [Microsoft Azure Script Centerben](http://www.windowsazure.com/documentation/scripts/).
+Az Azure-ban gyakran előforduló feladatok némelyikének automatizálását segítő mintaszkripteket lásd a [Microsoft Azure Script Centerben](https://www.windowsazure.com/documentation/scripts/).
 
 Általános információk a Windows PowerShell telepítéséről, megismeréséről, használatáról és testreszabásáról: [Szkriptek használata a Windows PowerShell-lel](/powershell/scripting/learn/ps101/00-introduction).
 

@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorFireWallPolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorFireWallPolicy.md
-ms.openlocfilehash: 67caf6c97c493ad1d19b95ef00c896cb96a47582
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 9b1339d138087207b84a7f515c66bd9964420dcd
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93836165"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401487"
 ---
 # New-AzFrontDoorFireWallPolicy
 
-## Áttekintés
-WAF-házirend létrehozása
+## SYNOPSIS
+WaF-házirend létrehozása
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 New-AzFrontDoorFireWallPolicy -ResourceGroupName <String> -Name <String> [-EnabledState <PSEnabledState>]
@@ -26,12 +26,12 @@ New-AzFrontDoorFireWallPolicy -ResourceGroupName <String> -Name <String> [-Enabl
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Leírás
-A **New-AzFrontDoorFireWallPolicy** parancsmag új Azure WAF-házirendet hoz létre az aktuális előfizetés csoportban a megadott erőforrás csoportban.
+## LEÍRÁS
+A **New-AzFrontDoorFireWallPolicy** parancsmag létrehoz egy új Azure WAF-házirendet a megadott erőforráscsoportban az aktuális előfizetés alatt
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: WAF-házirend létrehozása
+### 1. példa: WaF-házirend létrehozása
 ```powershell
 PS C:\> New-AzFrontDoorFireWallPolicy -Name $policyName -ResourceGroupName $resourceGroupName -Customrule $customRule1,$customRule2 -ManagedRule $managedRule1 -EnabledState Enabled -Mode Prevention -RedirectUrl "https://www.bing.com/" -CustomBlockResponseStatusCode 405 -CustomBlockResponseBody "<html><head><title>You are blocked!</title></head><body></body></html>"
 
@@ -40,11 +40,11 @@ Name         PolicyMode PolicyEnabledState RedirectUrl
 {policyName} Prevention            Enabled https://www.bing.com/
 ```
 
-WAF-házirend létrehozása
+WaF-házirend létrehozása
 
-## PARAMÉTEREK
+## PARAMETERS
 
-### -CustomBlockResponseBody
+### -CustomBlockResponseBlock
 Egyéni válasz törzse
 
 ```yaml
@@ -60,7 +60,7 @@ Accept wildcard characters: False
 ```
 
 ### -CustomBlockResponseStatusCode
-Egyéni válasz állapotkód
+Egyéni válaszállapot-kód
 
 ```yaml
 Type: System.Int32
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -Customrule
-A házirenden belüli egyéni szabályok
+Egyéni szabályok a házirenden belül
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSCustomRule[]
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -105,8 +105,8 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledState
-A házirend engedélyezett állapotú vagy letiltott állapotú-e.
-A lehetséges értékek a következők: "disabled", "engedélyezve"
+Hogy a házirend engedélyezett vagy letiltott állapotban van-e.
+Lehetséges értékek: "Letiltva", "Engedélyezve"
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSEnabledState
@@ -136,9 +136,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### Üzemmód
-Ez a cikk azt mutatja be, hogy az észlelési üzemmódban vagy a megelőzési módban van-e házirend szintű beállítás.
-A lehetséges értékek a következők: "megelőzés", "észlelés"
+### -Mód
+Ez a cikk azt ismerteti, hogy észlelési vagy megelőzési módban van-e házirendszinten.
+Lehetséges értékek: "Megelőzés", "Észlelés"
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSMode
@@ -153,8 +153,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (név)
-WebApplicationFireWallPolicy neve
+### -Name
+WebApplicationFireWallPolicy neve.
 
 ```yaml
 Type: System.String
@@ -169,7 +169,7 @@ Accept wildcard characters: False
 ```
 
 ### -RedirectUrl
-Átirányítás URL-címe
+Url-cím átirányítása
 
 ```yaml
 Type: System.String
@@ -198,8 +198,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -214,7 +214,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik.
 A parancsmag nem fut.
 
 ```yaml
@@ -230,22 +230,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
 ### Nincs
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. FrontDoor. models. PSPolicy
+### Microsoft.Azure.Commands.FrontDoor.Models.PSPolicy
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Set-AzFrontDoorFireWallPolicy](./Set-AzFrontDoorFireWallPolicy.md) 
- [Get-AzFrontDoorFireWallPolicy](./Get-AzFrontDoorFireWallPolicy.md) 
+[Get-AzFrontDoorFireWallPolicy](./Get-AzFrontDoorFireWallPolicy.md) 
  [Remove-AzFrontDoorFireWallPolicy](./Remove-AzFrontDoorFireWallPolicy.md) 
- [Új – AzFrontDoorManagedRuleObject](./New-AzFrontDoorManagedRuleObject.md) 
- [Új – AzFrontDoorCustomRuleObject](./New-AzFrontDoorManagedRuleObject.md)
+ [Update-AzFrontDoorFireWallPolicy](./Update-AzFrontDoorFireWallPolicy.md) 
+ [New-AzFrontDoorManagedRuleObject](./New-AzFrontDoorManagedRuleObject.md) 
+ [New-AzFrontDoorCustomRuleObject](./New-AzFrontDoorManagedRuleObject.md)
