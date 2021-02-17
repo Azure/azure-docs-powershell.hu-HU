@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzADApplication.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzADApplication.md
-ms.openlocfilehash: 7b66dff3f59e3ad186bfc559343aebf484ff2bc2
-ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
+ms.openlocfilehash: e27dcc838499e742c887f60a30021d8ac99277f4
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100399618"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100208422"
 ---
 # Remove-AzADApplication
 
@@ -51,7 +51,7 @@ Törli az Azure Active Directory-alkalmazást.
 
 ### 1. példa: Alkalmazás eltávolítása objektumazonosító alapján
 
-```
+```powershell
 PS C:\> Remove-AzADApplication -ObjectId b4cd1619-80b3-4cfb-9f8f-9f2333425738
 ```
 
@@ -59,19 +59,19 @@ Eltávolítja a bérlői webhelyről a "b4cd1619-80b3-4cfb-9f8f-9f233425738" obj
 
 ### 2. példa: Alkalmazás eltávolítása alkalmazásazonosító alapján
 
-```
+```powershell
 PS C:\> Remove-AzADApplication -ApplicationId f9c5ea4f-28f0-401a-a491-491a037fa346
 ```
 
 Eltávolítja az "f9c5ea4f-28f0-401a-a491-491a037fa346" azonosítójú alkalmazást a bérlőből.
 
-### 3. példa: Alkalmazás eltávolítása pipázással
+### 3. példa: Alkalmazás eltávolítása pipával
 
-```
+```powershell
 PS C:\> Get-AzADApplication -ObjectId b4cd1619-80b3-4cfb-9f8f-9f2333425738 | Remove-AzADApplication
 ```
 
-A (b4cd1619-80b3-4cfb-9f8f-9f233425738) objektumazonosítót, valamint a Remove-AzADApplication-parancsmagnak az alkalmazást a bérlői webhelyről való eltávolításához szükségescsövekkel együtt kapja meg.
+A (b4cd1619-80b3-4cfb-9f8f-9f233425738) objektumazonosítóval és a Remove-AzADApplication-parancsmaghoz az alkalmazás bérlői webhelyről való eltávolításához szükségescsövekkel együtt jut el az alkalmazáshoz.
 
 ## PARAMETERS
 
@@ -212,7 +212,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## INPUTS
 
@@ -235,6 +235,7 @@ Kulcsszavak: azure, azurerm, arm, erőforrás, kezelés, vezető, erőforrás, c
 
 [Get-AzADApplication](./Get-AzADApplication.md)
 
+[Update-AzADApplication](./Update-AzADApplication.md)
 
 [Remove-AzADAppCredential](./Remove-AzADAppCredential.md)
 

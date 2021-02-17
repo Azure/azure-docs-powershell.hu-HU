@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzADUser.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzADUser.md
-ms.openlocfilehash: cd8834dd329ab82e98316cb0d94b554eb3bb6c13
-ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
+ms.openlocfilehash: c7863e62330dc26d9733d21eb8e4d11753e06d1c
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100399651"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100208471"
 ---
 # New-AzADUser
 
@@ -33,12 +33,12 @@ További információ: https://msdn.microsoft.com/en-us/library/azure/ad/graph/a
 ## PÉLDÁK
 
 ### 1. példa: Új AD-felhasználó létrehozása
-```
+```powershell
 PS C:\> $SecureStringPassword = ConvertTo-SecureString -String "password" -AsPlainText -Force
 PS C:\> New-AzADUser -DisplayName "MyDisplayName" -UserPrincipalName "myemail@domain.com" -Password $SecureStringPassword -MailNickname "MyMailNickName"
 ```
 
-Létrehoz egy új AD-felhasználót a "MyDisplayName" és az egyszerű felhasználónév " névvel myemail@domain.com egy bérlőben.
+Létrehoz egy új AD-felhasználót a "MyDisplayName" és az egyszerű felhasználónév myemail@domain.com " névvel a bérlői fiókban.
 
 ## PARAMETERS
 
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -ImmutableId
-Ezt a tulajdonságot csak akkor kell megadni, ha a felhasználó egyszerű felhasználónevének (upn) tulajdonságában összevont tartományt használ.
+Ezt a tulajdonságot csak akkor kell megadni, ha összevont tartományt használ a felhasználó egyszerű felhasználónév (upn) tulajdonságában.
 
 ```yaml
 Type: System.String
@@ -184,7 +184,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## INPUTS
 
@@ -204,5 +204,6 @@ Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, 
 
 [Get-AzADUser](./Get-AzADUser.md)
 
+[Update-AzADUser](./Update-AzADUser.md)
 
 [Remove-AzADUser](./Remove-AzADUser.md)
