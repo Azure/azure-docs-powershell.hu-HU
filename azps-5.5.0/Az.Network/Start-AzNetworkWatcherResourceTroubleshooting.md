@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/st
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Start-AzNetworkWatcherResourceTroubleshooting.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Start-AzNetworkWatcherResourceTroubleshooting.md
-ms.openlocfilehash: 0776b10a14236ac4806ccc166f24b1dd5a3ee3de
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 5f707b4e6a2610f8a62ce807c5549ee03e6697d8
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100160562"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100407896"
 ---
 # Start-AzNetworkWatcherResourceTroubleshooting
 
@@ -39,7 +39,7 @@ Start-AzNetworkWatcherResourceTroubleshooting -Location <String> -TargetResource
 ```
 
 ## LEÍRÁS
-A Start-AzNetworkWatcherResourceTroubleshooting parancsmag megkezdi egy hálózati erőforrás hibaelhárítását az Azure-ban, és a lehetséges problémákról és megoldásokról ad információkat. Jelenleg a virtuális hálózati átjárók és kapcsolatok támogatottak.
+A Start-AzNetworkWatcherResourceTroubleshooting parancsmag megkezdi egy hálózati erőforrás hibaelhárítását az Azure-ban, és információkat ad a lehetséges problémákról és megoldásokról. Jelenleg a virtuális hálózati átjárók és kapcsolatok támogatottak.
 
 ## PÉLDÁK
 
@@ -249,4 +249,4 @@ Kulcsszavak: azure, azurerm, arm, erőforrás, kezelés, vezető, hálózat, há
 
 [Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)

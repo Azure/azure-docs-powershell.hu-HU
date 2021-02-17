@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzApplicationGatewaySslProfilePolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzApplicationGatewaySslProfilePolicy.md
-ms.openlocfilehash: 344be8b71bc74f3620ca90dd60b61f9a59026ea0
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 7d04d73905bde7ab008c6910cab708e209125316
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100160619"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100407998"
 ---
 # Set-AzApplicationGatewaySslProfilePolicy
 
@@ -38,7 +38,7 @@ PS C:\> $profile  = Get-AzApplicationGatewaySslProfile -Name "SslProfile01" -App
 PS C:\> $profile = Set-AzApplicationGatewaySslProfilePolicy -SslProfile $profile -PolicyType Predefined -PolicyName AppGwSslPolicy20170401
 ```
 
-Az első parancs az ApplicationGateway01 nevű alkalmazás-átjárót az ResourceGroup01 nevű erőforráscsoportban tárolja a $AppGw változóban. A második parancs az SslProfile01 nevű ssl-profilt kapja $AppGw a beállításokat a $profile változóban. Az utolsó parancs módosítja a böngészőben tárolt ssl-profilobjektum ssl-házirend $profile.
+Az első parancs az ApplicationGateway01 nevű alkalmazás-átjárót az ResourceGroup01 nevű erőforráscsoportban tárolja a $AppGw változóban. A második parancs az SslProfile01 nevű ssl-profilt kapja $AppGw a beállításokat a $profile változóban. Az utolsó parancs módosítja a böngészőben tárolt ssl-profilobjektum ssl-$profile.
 
 ## PARAMETERS
 
@@ -196,9 +196,7 @@ Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, 
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Add-AzApplicationGatewaySslProfilePolicy](./Add-AzApplicationGatewaySslProfilePolicy.md)
 
-[New-AzApplicationGatewaySslProfilePolicy](./New-AzApplicationGatewaySslProfilePolicy.md)
 
 [Get-AzApplicationGatewaySslProfilePolicy](./Get-AzApplicationGatewaySslProfilePolicy.md)
 
