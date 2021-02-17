@@ -6,50 +6,50 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMBootDiagnosticsData.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMBootDiagnosticsData.md
-ms.openlocfilehash: 94e5a1087f870f8dbbe099962e69d83b64f52ed3
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: ee210b5b9408f3de2b9e92213fafe4846ea8c3e1
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93667453"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100407097"
 ---
-# <span data-ttu-id="484be-101">Get-AzVMBootDiagnosticsData</span><span class="sxs-lookup"><span data-stu-id="484be-101">Get-AzVMBootDiagnosticsData</span></span>
+# <span data-ttu-id="cffe4-101">Get-AzVMBootDiagnosticsData</span><span class="sxs-lookup"><span data-stu-id="cffe4-101">Get-AzVMBootDiagnosticsData</span></span>
 
-## <span data-ttu-id="484be-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="484be-102">SYNOPSIS</span></span>
-<span data-ttu-id="484be-103">Rendszerindítási diagnosztikai adatot kap egy virtuális géphez.</span><span class="sxs-lookup"><span data-stu-id="484be-103">Gets boot diagnostics data for a virtual machine.</span></span>
+## <span data-ttu-id="cffe4-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="cffe4-102">SYNOPSIS</span></span>
+<span data-ttu-id="cffe4-103">Indítási diagnosztikai adatokat kap egy virtuális géphez.</span><span class="sxs-lookup"><span data-stu-id="cffe4-103">Gets boot diagnostics data for a virtual machine.</span></span>
 
-## <span data-ttu-id="484be-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="484be-104">SYNTAX</span></span>
+## <span data-ttu-id="cffe4-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="cffe4-104">SYNTAX</span></span>
 
-### <span data-ttu-id="484be-105">WindowsParamSet (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="484be-105">WindowsParamSet (Default)</span></span>
+### <span data-ttu-id="cffe4-105">WindowsParamSet (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="cffe4-105">WindowsParamSet (Default)</span></span>
 ```
 Get-AzVMBootDiagnosticsData [-ResourceGroupName] <String> [-Name] <String> [-Windows] [-LocalPath] <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="484be-106">LinuxParamSet</span><span class="sxs-lookup"><span data-stu-id="484be-106">LinuxParamSet</span></span>
+### <span data-ttu-id="cffe4-106">LinuxParamSet</span><span class="sxs-lookup"><span data-stu-id="cffe4-106">LinuxParamSet</span></span>
 ```
 Get-AzVMBootDiagnosticsData [-ResourceGroupName] <String> [-Name] <String> [-Linux] [[-LocalPath] <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="484be-107">Leírás</span><span class="sxs-lookup"><span data-stu-id="484be-107">DESCRIPTION</span></span>
-<span data-ttu-id="484be-108">A **Get-AzVMBootDiagnosticsData** parancsmag rendszerindítási diagnosztikai adatot kap egy virtuális géphez.</span><span class="sxs-lookup"><span data-stu-id="484be-108">The **Get-AzVMBootDiagnosticsData** cmdlet gets boot diagnostics data for a virtual machine.</span></span>
+## <span data-ttu-id="cffe4-107">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="cffe4-107">DESCRIPTION</span></span>
+<span data-ttu-id="cffe4-108">A **Get-AzVMBootDiagnosticsData** parancsmag indítási diagnosztikai adatokat kap egy virtuális géphez.</span><span class="sxs-lookup"><span data-stu-id="cffe4-108">The **Get-AzVMBootDiagnosticsData** cmdlet gets boot diagnostics data for a virtual machine.</span></span>
 
-## <span data-ttu-id="484be-109">Példák</span><span class="sxs-lookup"><span data-stu-id="484be-109">EXAMPLES</span></span>
+## <span data-ttu-id="cffe4-109">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="cffe4-109">EXAMPLES</span></span>
 
-### <span data-ttu-id="484be-110">1. példa: a rendszerindítási diagnosztika adatainak beolvasása</span><span class="sxs-lookup"><span data-stu-id="484be-110">Example 1: Get boot diagnostics data</span></span>
+### <span data-ttu-id="cffe4-110">1. példa: Indítási diagnosztikai adatok betöltése</span><span class="sxs-lookup"><span data-stu-id="cffe4-110">Example 1: Get boot diagnostics data</span></span>
 ```
 PS C:\> Get-AzVMBootDiagnosticsData -ResourceGroupName "ResourceGroup11" -Name "ContosoVM07" -Windows -LocalPath "C:\Contoso\BootDiagnostics"
 ```
 
-<span data-ttu-id="484be-111">Ez a parancs a ContosoVM07 nevű virtuális gép rendszerindítási diagnosztikai értékeit kapja.</span><span class="sxs-lookup"><span data-stu-id="484be-111">This command gets boot diagnostics data for the virtual machine named ContosoVM07.</span></span>
-<span data-ttu-id="484be-112">Ez a virtuális gép futtatja a Windows operációs rendszert.</span><span class="sxs-lookup"><span data-stu-id="484be-112">This virtual machine runs the Windows operating system.</span></span>
-<span data-ttu-id="484be-113">A parancs a megadott helyi elérési utakban tárolja az adatforrást.</span><span class="sxs-lookup"><span data-stu-id="484be-113">The command stores the data in specified local path.</span></span>
+<span data-ttu-id="cffe4-111">Ez a parancs a ContosoVM07 nevű virtuális gép indítási diagnosztikai adatait kapja.</span><span class="sxs-lookup"><span data-stu-id="cffe4-111">This command gets boot diagnostics data for the virtual machine named ContosoVM07.</span></span>
+<span data-ttu-id="cffe4-112">Ez a virtuális gép a Windows operációs rendszert futtatja.</span><span class="sxs-lookup"><span data-stu-id="cffe4-112">This virtual machine runs the Windows operating system.</span></span>
+<span data-ttu-id="cffe4-113">A parancs a megadott helyi elérési úton tárolja az adatokat.</span><span class="sxs-lookup"><span data-stu-id="cffe4-113">The command stores the data in specified local path.</span></span>
 
-## <span data-ttu-id="484be-114">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="484be-114">PARAMETERS</span></span>
+## <span data-ttu-id="cffe4-114">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="cffe4-114">PARAMETERS</span></span>
 
-### <span data-ttu-id="484be-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="484be-115">-DefaultProfile</span></span>
-<span data-ttu-id="484be-116">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="484be-116">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="cffe4-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="cffe4-115">-DefaultProfile</span></span>
+<span data-ttu-id="cffe4-116">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="cffe4-116">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -63,8 +63,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="484be-117">-Linux</span><span class="sxs-lookup"><span data-stu-id="484be-117">-Linux</span></span>
-<span data-ttu-id="484be-118">Azt jelzi, hogy a virtuális gép futtatja a Linux operációs rendszert.</span><span class="sxs-lookup"><span data-stu-id="484be-118">Indicates that the virtual machine runs the Linux operating system.</span></span>
+### <span data-ttu-id="cffe4-117">-Linux</span><span class="sxs-lookup"><span data-stu-id="cffe4-117">-Linux</span></span>
+<span data-ttu-id="cffe4-118">Azt jelzi, hogy a virtuális gép a Linux operációs rendszert futtatja.</span><span class="sxs-lookup"><span data-stu-id="cffe4-118">Indicates that the virtual machine runs the Linux operating system.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -78,8 +78,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="484be-119">-LocalPath</span><span class="sxs-lookup"><span data-stu-id="484be-119">-LocalPath</span></span>
-<span data-ttu-id="484be-120">A rendszerindítási diagnosztika adatainak helyi elérési útját adja meg.</span><span class="sxs-lookup"><span data-stu-id="484be-120">Specifies the local path for the boot diagnostics data.</span></span>
+### <span data-ttu-id="cffe4-119">-LocalPath</span><span class="sxs-lookup"><span data-stu-id="cffe4-119">-LocalPath</span></span>
+<span data-ttu-id="cffe4-120">A rendszerindításkor használt diagnosztikai adatok helyi elérési útját adja meg.</span><span class="sxs-lookup"><span data-stu-id="cffe4-120">Specifies the local path for the boot diagnostics data.</span></span>
 
 ```yaml
 Type: System.String
@@ -105,8 +105,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="484be-121">-Name (név)</span><span class="sxs-lookup"><span data-stu-id="484be-121">-Name</span></span>
-<span data-ttu-id="484be-122">Annak a virtuális gépnek a neve, amelyhez ez a parancsmag diagnosztikai adatot kap.</span><span class="sxs-lookup"><span data-stu-id="484be-122">Specifies the name of the virtual machine for which this cmdlet gets diagnostics data.</span></span>
+### <span data-ttu-id="cffe4-121">-Name</span><span class="sxs-lookup"><span data-stu-id="cffe4-121">-Name</span></span>
+<span data-ttu-id="cffe4-122">Annak a virtuális gépnek a neve, amelyhez ez a parancsmag diagnosztikai adatokat kap.</span><span class="sxs-lookup"><span data-stu-id="cffe4-122">Specifies the name of the virtual machine for which this cmdlet gets diagnostics data.</span></span>
 
 ```yaml
 Type: System.String
@@ -120,8 +120,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="484be-123">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="484be-123">-ResourceGroupName</span></span>
-<span data-ttu-id="484be-124">A virtuális gép erőforráscsoport-csoportjának nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="484be-124">Specifies the name of the resource group of the virtual machine.</span></span>
+### <span data-ttu-id="cffe4-123">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="cffe4-123">-ResourceGroupName</span></span>
+<span data-ttu-id="cffe4-124">A virtuális gép erőforráscsoportját adja meg.</span><span class="sxs-lookup"><span data-stu-id="cffe4-124">Specifies the name of the resource group of the virtual machine.</span></span>
 
 ```yaml
 Type: System.String
@@ -135,8 +135,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="484be-125">-Windows</span><span class="sxs-lookup"><span data-stu-id="484be-125">-Windows</span></span>
-<span data-ttu-id="484be-126">Azt jelzi, hogy a virtuális gép futtatja a Windows operációs rendszert.</span><span class="sxs-lookup"><span data-stu-id="484be-126">Indicates that the virtual machine runs the Windows operating system.</span></span>
+### <span data-ttu-id="cffe4-125">-Windows</span><span class="sxs-lookup"><span data-stu-id="cffe4-125">-Windows</span></span>
+<span data-ttu-id="cffe4-126">Azt jelzi, hogy a virtuális gép a Windows operációs rendszert futtatja.</span><span class="sxs-lookup"><span data-stu-id="cffe4-126">Indicates that the virtual machine runs the Windows operating system.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -150,23 +150,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="484be-127">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="484be-127">CommonParameters</span></span>
-<span data-ttu-id="484be-128">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="484be-128">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="484be-129">További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="484be-129">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="cffe4-127">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="cffe4-127">CommonParameters</span></span>
+<span data-ttu-id="cffe4-128">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="cffe4-128">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="cffe4-129">További információt a [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="cffe4-129">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="484be-130">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="484be-130">INPUTS</span></span>
+## <span data-ttu-id="cffe4-130">INPUTS</span><span class="sxs-lookup"><span data-stu-id="cffe4-130">INPUTS</span></span>
 
-### <span data-ttu-id="484be-131">System. String</span><span class="sxs-lookup"><span data-stu-id="484be-131">System.String</span></span>
+### <span data-ttu-id="cffe4-131">System.String</span><span class="sxs-lookup"><span data-stu-id="cffe4-131">System.String</span></span>
 
-## <span data-ttu-id="484be-132">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="484be-132">OUTPUTS</span></span>
+## <span data-ttu-id="cffe4-132">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="cffe4-132">OUTPUTS</span></span>
 
-### <span data-ttu-id="484be-133">Microsoft. Azure. commands. kiszámítás. models. PSVirtualMachine</span><span class="sxs-lookup"><span data-stu-id="484be-133">Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine</span></span>
+### <span data-ttu-id="cffe4-133">Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine</span><span class="sxs-lookup"><span data-stu-id="cffe4-133">Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine</span></span>
 
-### <span data-ttu-id="484be-134">Microsoft. Azure. commands. kiszámítás. models. PSVirtualMachineInstanceView</span><span class="sxs-lookup"><span data-stu-id="484be-134">Microsoft.Azure.Commands.Compute.Models.PSVirtualMachineInstanceView</span></span>
+### <span data-ttu-id="cffe4-134">Microsoft.Azure.Commands.Compute.Models.PSVirtualMachineInstanceView</span><span class="sxs-lookup"><span data-stu-id="cffe4-134">Microsoft.Azure.Commands.Compute.Models.PSVirtualMachineInstanceView</span></span>
 
-## <span data-ttu-id="484be-135">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="484be-135">NOTES</span></span>
+## <span data-ttu-id="cffe4-135">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="cffe4-135">NOTES</span></span>
 
-## <span data-ttu-id="484be-136">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="484be-136">RELATED LINKS</span></span>
+## <span data-ttu-id="cffe4-136">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="cffe4-136">RELATED LINKS</span></span>
 
-[<span data-ttu-id="484be-137">Set-AzVMBootDiagnostics</span><span class="sxs-lookup"><span data-stu-id="484be-137">Set-AzVMBootDiagnostics</span></span>](./Set-AzVMBootDiagnostics.md)
+[<span data-ttu-id="cffe4-137">Set-AzVMBootDiagnostic</span><span class="sxs-lookup"><span data-stu-id="cffe4-137">Set-AzVMBootDiagnostic</span></span>](./Set-AzVMBootDiagnostic.md)
 
 
