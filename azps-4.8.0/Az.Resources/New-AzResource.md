@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzResource.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzResource.md
-ms.openlocfilehash: 0c4f351ca224991862e6b050462270fd64fd2a33
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: eea8d72285e478f9eecb0a34f80cae5787ecec83
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94025051"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405295"
 ---
 # New-AzResource
 
-## Áttekintés
+## SYNOPSIS
 Létrehoz egy erőforrást.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### ByResourceId (alapértelmezett)
 ```
@@ -46,19 +46,19 @@ New-AzResource [-Location <String>] [-Kind <String>] [-Properties <PSObject>] [-
  [<CommonParameters>]
 ```
 
-## Leírás
-A **New-AzResource** parancsmag Azure-erőforrást hoz létre, például egy webhelyet, az Azure SQL-adatbázis kiszolgálóját vagy az Azure SQL-adatbázist egy erőforráscsoport számára.
+## LEÍRÁS
+A **New-AzResource** parancsmag létrehoz egy Azure-erőforrást, például egy webhelyet, egy Azure SQL-adatbázis-kiszolgálót vagy egy Azure SQL-adatbázist egy erőforráscsoportban.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: erőforrás létrehozása
+### 1. példa: Erőforrás létrehozása
 ```
 PS> New-AzResource -Location "West US" -Properties @{test="test"} -ResourceName TestSite06 -ResourceType microsoft.web/sites -ResourceGroupName ResourceGroup11 -Force
 ```
 
-Ez a parancs olyan erőforrást hoz létre, amely a ResourceGroup11 webhelye.
+Ez a parancs olyan erőforrást hoz létre, amely egy webhely az ResourceGroup11-ben.
 
-### 2. példa: erőforrás létrehozása a splatting használatával
+### 2. példa: Erőforrás létrehozása splatting használatával
 ```
 PS> $prop = @{
     Location          = "West US" 
@@ -72,12 +72,12 @@ PS> $prop = @{
 PS> New-AzResource @prop
 ```
 
-Ez a parancs olyan erőforrást hoz létre, amely a ResourceGroup11 webhelye.
+Ez a parancs olyan erőforrást hoz létre, amely egy webhely az ResourceGroup11-ben.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -ApiVersion
-Az erőforrás-szolgáltató API-nak a verziószámát adja meg. Ha nem ad meg verziót, ez a parancsmag a legújabb elérhető verziót használja.
+Az erőforrás-szolgáltató API-jának használnia kell verzióját adja meg. Ha nem ad meg verziót, ez a parancsmag a legújabb elérhető verziót használja.
 
 ```yaml
 Type: System.String
@@ -92,7 +92,7 @@ Accept wildcard characters: False
 ```
 
 ### -AsJob
-A parancsmag futtatása a háttérben
+Parancsmag futtatása a háttérben
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -107,7 +107,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExtensionResourceName
-Az erőforráshoz tartozó mellék-erőforrás nevét adja meg. Ha például egy adatbázist szeretne megadni, használja a következő formátumot: kiszolgálónév- `/` adatbázis neve
+Az erőforrás bővítményerőforrásának nevét adja meg. Adatbázis megadásához például használja a következő formátumot: kiszolgálónév `/` adatbázis neve
 
 ```yaml
 Type: System.String
@@ -137,8 +137,8 @@ Accept wildcard characters: False
 ```
 
 ### -ExtensionResourceType
-A bővítmény-erőforrás erőforrás-típusát adja meg.
-Ha például a bővítmény erőforrása adatbázis, adja meg az alábbi típust: `Microsoft.Sql/Servers/Databases`
+Egy bővítményerőforrás erőforrástípusát adja meg.
+Ha például a bővítményerőforrás egy adatbázis, adja meg a következő típust: `Microsoft.Sql/Servers/Databases`
 
 ```yaml
 Type: System.String
@@ -153,7 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Kényszeríti a parancsot, hogy a felhasználó megerősítésének kérése nélkül fusson.
+A parancs futtatását kényszeríti felhasználói megerősítés kérése nélkül.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -168,7 +168,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsFullObject
-Azt jelzi, hogy a *Tulajdonságok* paramétert megadó objektum a teljes objektum.
+Azt jelzi, hogy a *Properties* paraméterben megadott objektum a teljes objektum.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -183,7 +183,7 @@ Accept wildcard characters: False
 ```
 
 ### -Kind
-Az erőforráshoz tartozó erőforrás-típust adja meg.
+Az erőforrás erőforrástípusát határozza meg.
 
 ```yaml
 Type: System.String
@@ -197,10 +197,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Hely
+### -Location
 Az erőforrás helyét adja meg.
-Adja meg az adatközpont helyét (például Közép-amerikai vagy Délkelet-ázsiai).
-Az erőforrást tetszőleges helyre helyezheti, amely támogatja az adott típusú erőforrásokat. Az erőforráscsoportok különböző helyekről származó erőforrásokat tartalmazhatnak. Ha meg szeretné állapítani, hogy mely helyek támogatják az egyes erőforrás-típusokat, használja az Get-AzLocation parancsmagot.
+Adja meg az adatközpont helyét, például Közép-Egyesült Államok vagy Délkelet-Ázsia.
+Az erőforrásokat bármely olyan helyen el lehet helyezése, amely támogatja az adott típusú erőforrásokat. Az erőforráscsoportok különböző helyekről tartalmazhatnak erőforrásokat. Ha meg szeretné állapítani, hogy mely helyek támogatják az egyes erőforrástípusokat, használja a Get-AzLocation parancsmagot.
 
 ```yaml
 Type: System.String
@@ -215,7 +215,7 @@ Accept wildcard characters: False
 ```
 
 ### -ODataQuery
-Egy Open Data Protocol (OData) stílusú szűrőt ad meg. Ez a parancsmag minden más szűrőn kívül hozzáfűzi ezt az értéket a kéréshez.
+OData-stílusszűrőt ad meg. Ez a parancsmag minden más szűrő mellett hozzáfűzi ezt az értéket a kérelemhez.
 
 ```yaml
 Type: System.String
@@ -229,8 +229,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Terv
-Az erőforrásterv tulajdonságait jelképező kivonatoló táblázat.
+### -Plan
+Az erőforrásterv tulajdonságait képviselő kivonattábla.
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -245,7 +245,7 @@ Accept wildcard characters: False
 ```
 
 ### -Pre
-Jelzi, hogy ez a parancsmag az előzetes verziójú API-verziókat veszi figyelembe, amikor az automatikusan meghatározza, hogy melyik verziót használja.
+Azt jelzi, hogy ez a parancsmag figyelembe veszi a megjelenés előtt ható API-verziókat, amikor automatikusan meghatározza, hogy melyik verziót kell használni.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -259,8 +259,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Tulajdonságok
-Az erőforrás erőforrás-tulajdonságait adja meg. Ezzel a paraméterrel megadhatja az erőforrás típusára jellemző tulajdonságok értékét.
+### -Properties
+Megadja az erőforrás erőforrás-tulajdonságait. Ezzel a paraméterrel megadhatja az erőforrástípusra jellemző tulajdonságok értékeit.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -275,7 +275,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Annak az erőforráscsoport a nevét adja meg, amelyben a parancsmag létrehozta az erőforrást.
+Annak az erőforráscsoportnak a nevét adja meg, amelyben ez a parancsmag létrehozza az erőforrást.
 
 ```yaml
 Type: System.String
@@ -290,7 +290,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-A teljes értékű erőforrás-azonosítót adja meg, az előfizetéssel együtt, ahogy az alábbi példában: `/subscriptions/` előfizetés azonosítója`/providers/Microsoft.Sql/servers/ContosoServer/databases/ContosoDatabase`
+A teljes erőforrás-azonosítót adja meg az előfizetéssel együtt, az alábbi `/subscriptions/` példának megfelelően: előfizetés azonosítója`/providers/Microsoft.Sql/servers/ContosoServer/databases/ContosoDatabase`
 
 ```yaml
 Type: System.String
@@ -305,7 +305,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceName
-Az erőforrás nevét adja meg. Ha például egy adatbázist szeretne megadni, használja az alábbi formátumot: `ContosoServer/ContosoDatabase`
+Az erőforrás nevét adja meg. Adatbázis megadásához például használja az alábbi formátumot: `ContosoServer/ContosoDatabase`
 
 ```yaml
 Type: System.String
@@ -320,8 +320,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceType
-Az erőforrás típusát adja meg.
-Adatbázis esetén például az erőforrás típusa az alábbi: `Microsoft.Sql/Servers/Databases`
+Az erőforrás típusát határozza meg.
+Adatbázis például az alábbi erőforrástípust követi: `Microsoft.Sql/Servers/Databases`
 
 ```yaml
 Type: System.String
@@ -335,8 +335,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SKU
-Egy olyan kivonatoló táblázat, amely a SKU tulajdonságát képviseli.
+### -Sku
+A termékváltozat tulajdonságait képviselő kivonattábla.
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -350,8 +350,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Címke
-A kulcs-érték párok a hash-táblázatok formájában. Például: @ {key0 = "value0"; key1 = $null; azonosító2 = "érték2"}
+### -Tag
+Kulcsérték-párok kivonattábla formájában. Például: @{key0="érték0";key1=$null;key2="érték2"}
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -366,7 +366,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantLevel
-Jelzi, hogy ez a parancsmag a bérlői szinten működik.
+Azt jelzi, hogy ez a parancsmag a bérlői szinten működik.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -380,8 +380,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -396,7 +396,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik.
 A parancsmag nem fut.
 
 ```yaml
@@ -412,23 +412,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### System. Collections. Hashtable
+### System.Collections.Hashtable
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### System. Management. Automation. PSObject
+### System.Management.Automation.PSObject
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Keresés-AzResource](./Find-AzResource.md)
 
 [Get-AzResource](./Get-AzResource.md)
 
