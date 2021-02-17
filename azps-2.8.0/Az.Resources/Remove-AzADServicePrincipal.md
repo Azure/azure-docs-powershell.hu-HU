@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzADServicePrincipal.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzADServicePrincipal.md
-ms.openlocfilehash: 0fa6dde8584eb003bd479e9a73ec96176282d83c
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 2658e5ff70603cb9bbe3aa3a7ccd47713249c726
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93838902"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413489"
 ---
 # Remove-AzADServicePrincipal
 
-## Áttekintés
-Az Azure Active Directory Service Principal törlése
+## SYNOPSIS
+Az Azure Active Directory szolgáltatásnév törlése.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### ObjectIdParameterSet (alapértelmezett)
 ```
@@ -56,55 +56,55 @@ Remove-AzADServicePrincipal -ApplicationObject <PSADApplication> [-PassThru] [-F
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Leírás
-Az Azure Active Directory Service Principal törlése
+## LEÍRÁS
+Az Azure Active Directory szolgáltatásnév törlése.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1 – objektumazonosítók eltávolítása objektum-azonosítóval
+### 1. példa : Egyszerű szolgáltatásnév eltávolítása objektumazonosító alapján
 
 ```
 PS C:\> Remove-AzADServicePrincipal -ObjectId 61b5d8ea-fdc6-40a2-8d5b-ad447c678d45
 ```
 
-Eltávolítja a "61b5d8ea-fdc6-40a2-8d5b-ad447c678d45" azonosítójú szolgáltatásnevet.
+A (61b5d8ea-fdc6-40a2-8d5b-ad447c678d45) objektumazonosítójú egyszerű szolgáltatásnév eltávolítása.
 
-### 2. példa – a szolgáltatás megbízójának eltávolítása alkalmazás-azonosítóval
+### 2. példa : Egyszerű szolgáltatásnév eltávolítása alkalmazásazonosító alapján
 
 ```
 PS C:\> Remove-AzADServicePrincipal -ApplicationId 9263469e-d328-4321-8646-3e3e75d20e76
 ```
 
-Eltávolítja a "9263469e-d328-4321-8646-3e3e75d20e76" azonosítójú szolgáltatásnevet.
+A (9263469e-d328-4321-8646-3e3e75d20e76) azonosítójú egyszerű szolgáltatásnév eltávolítása.
 
-### 3 példa – egy egyszerű szolgáltatásnév eltávolítása
+### 3. példa: Egyszerű szolgáltatásnév eltávolítása SPN-ről
 
 ```
 PS C:\> Remove-AzADServicePrincipal -ServicePrincipalName MyServicePrincipal
 ```
 
-A Service Principal "MyServicePrincipal" nevű szolgáltatásnév eltávolítása
+A szolgáltatásnév eltávolítása a "MyServicePrincipal" egyszerű szolgáltatásnévvel
 
-### 4. példa – a szolgáltatási tőkeösszeg eltávolítása csővezetékről
+### 4. példa : Egyszerű szolgáltatásnév eltávolítása pipázással
 
 ```
 PS C:\> Get-AzADServicePrincipal -ObjectId 61b5d8ea-fdc6-40a2-8d5b-ad447c678d45 | Remove-AzADServicePrincipal
 ```
 
-A "61b5d8ea-fdc6-40a2-8d5b-ad447c678d45" azonosítójú szolgáltatásnevet és az Remove-AzADServicePrincipal parancsmagot tartalmazó csöveket kapja meg, így eltávolítja a szolgáltatást a megbízótól.
+A (61b5d8ea-fdc6-40a2-8d5b-ad447c678d45) azonosítójú egyszerű szolgáltatásnév és a Remove-AzADServicePrincipal-parancsmagot a szolgáltatásnév eltávolításához vezető vezetékek segítségével.
 
-### Példa: 5 – a szolgáltatásnév eltávolítása egy alkalmazással
+### 5. példa: Egyszerű szolgáltatásnév eltávolítása egy alkalmazással
 
 ```
 PS C:\> Get-AzApplication -ApplicationId 9263469e-d328-4321-8646-3e3e75d20e76 | Remove-AzADServicePrincipal
 ```
 
-Beilleszti az alkalmazást a "9263469e-d328-4321-8646-3e3e75d20e76" azonosítójú alkalmazás-azonosítóval, és a Remove-AzADServicePrincipal parancsmagot tartalmazó csöveket az alkalmazáshoz társított szolgáltató eltávolításához.
+A (9263469e-d328-4321-8646-3e3e75d20e76) azonosítójú alkalmazást és az Remove-AzADServicePrincipal-parancsmaghoz tartozó, az adott alkalmazáshoz társított szolgáltatásnév eltávolításához szükségescsöveket használja.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -ApplicationId
-A Service Principal Application azonosító.
+Az egyszerű szolgáltatásalkalmazás azonosítója.
 
 ```yaml
 Type: System.Guid
@@ -119,7 +119,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationObject
-Annak az alkalmazásobjektum-objektumnak a törlése, amelynek a szolgáltatását el kell távolítani.
+Az az alkalmazásobjektum, amelynek egyszerű szolgáltatását eltávolítja.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADApplication
@@ -134,7 +134,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -149,7 +149,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-A szolgáltatás megbízójának megjelenített neve.
+A szolgáltatásnév megjelenítendő neve.
 
 ```yaml
 Type: System.String
@@ -164,7 +164,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Váltás a szolgáltatás megbízójának törlésére megerősítés nélkül.
+Váltás egyszerű szolgáltatásnév törlésére megerősítés nélkül.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -179,7 +179,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-A Service Principal objektum.
+A szolgáltatásnévobjektum.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADServicePrincipal
@@ -194,7 +194,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-A törlendő szolgáltató objektum azonosítója.
+A törölni kívánt egyszerű szolgáltatásnév objektumazonosítója.
 
 ```yaml
 Type: System.String
@@ -209,7 +209,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Ha meg van adva, akkor a törölt szolgáltatási megbízót adja eredményül.
+Ha meg van adva, akkor a törölt egyszerű szolgáltatásnév lesz az eredmény.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -224,7 +224,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServicePrincipalName
-A szolgáltatás egyszerű neve.
+A szolgáltatásnév.
 
 ```yaml
 Type: System.String
@@ -238,8 +238,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -254,7 +254,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik.
 A parancsmag nem fut.
 
 ```yaml
@@ -270,32 +270,31 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
-### System. GUID
+### System.Guid
 
-### Microsoft. Azure. Command. ActiveDirectory. PSADServicePrincipal
+### Microsoft.Azure.Commands.ActiveDirectory.PSADServicePrincipal
 
-### Microsoft. Azure. Command. ActiveDirectory. PSADApplication
+### Microsoft.Azure.Commands.ActiveDirectory.PSADApplication
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. ActiveDirectory. PSADServicePrincipal
+### Microsoft.Azure.Commands.ActiveDirectory.PSADServicePrincipal
 
-## MEGJEGYZI
-Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, erőforrás, csoport, sablon, központi telepítő
+## MEGJEGYZÉSEK
+Kulcsszavak: azure, azurerm, arm, erőforrás, kezelés, vezető, erőforrás, csoport, sablon, telepítés
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Új – AzADServicePrincipal](./New-AzADServicePrincipal.md)
+[New-AzADServicePrincipal](./New-AzADServicePrincipal.md)
 
 [Get-AzADServicePrincipal](./Get-AzADServicePrincipal.md)
 
-[Set-AzADServicePrincipal](./Set-AzADServicePrincipal.md)
 
 [Remove-AzADApplication](./Remove-AzADApplication.md)
 

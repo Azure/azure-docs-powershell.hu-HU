@@ -1,17 +1,17 @@
 ---
 title: Az Azure PowerShell Az modul bemutatása
 description: Bemutatkozik az új Azure PowerShell-modul, az Az, amely az AzureRM modult váltja le.
-ms.date: 05/20/2020
+ms.date: 02/12/2021
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: de95b2e32a6b99a3978a3c8db9d12a6563b02e4b
-ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
-ms.translationtype: HT
+ms.openlocfilehash: 1f20f0aa4c1381e8bc1428f5cd9e9f68d76ce716
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96427666"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413574"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Az új Azure PowerShell Az modul bemutatása
 
@@ -66,6 +66,8 @@ Az Az modul kompatibilitási módjával továbbra is használhatja a meglévő s
 > [!IMPORTANT]
 > Annak ellenére, hogy a parancsmagok aliasnévvel rendelkeznek, az Az-parancsmagoknak lehetnek új (vagy átnevezett) paraméterei, illetve módosított visszaadott értékei. Az aliasok engedélyezése nem elegendő a migrálás elvégzéséhez. Tekintse meg a [kompatibilitástörő változások teljes listáját](migrate-az-1.0.0.md), amelyből megtudhatja, hol lehet szükség a szkriptek frissítésére.
 
-## <a name="continued-support-for-azurerm"></a>Az AzureRM további támogatása
+## <a name="support-for-azurerm"></a>A AzureRM támogatása
 
-Az AzureRM modul nem bővül újabb parancsmagokkal vagy funkciókkal. Az AzureRM modul hivatalos karbantartása és hibajavítása azonban 2020 decemberéig nem szűnik meg.
+Mivel az az PowerShell-modulok már rendelkeznek a AzureRM PowerShell-modulok képességeivel, és így tovább, a AzureRM PowerShell-modulokat a 2024. február 29-én kivonják.
+
+A szolgáltatás megszakadásának elkerülése érdekében frissítse a AzureRM PowerShell-modulokat használó [parancsfájlokat](https://aka.ms/azpsmigrate) az az PowerShell-modulok 2024. február 29-én való használatára. A parancsfájlok automatikus frissítéséhez kövesse a gyors [üzembe helyezési útmutatót](/powershell/azure/quickstart-migrate-azurerm-to-az-automatically).

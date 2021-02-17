@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/new-az
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlSyncGroup.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlSyncGroup.md
-ms.openlocfilehash: 7dc408b757c2bce197fcc6dd366c4ef64484eccf
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 5d4f8daa123b0bf90283eb29407ee3a47459dd47
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93845181"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413268"
 ---
 # New-AzSqlSyncGroup
 
-## Áttekintés
-Azure SQL-adatbázis szinkronizálási csoportját hozza létre.
+## SYNOPSIS
+Létrehoz egy Azure SQL Database Sync-csoportot.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 New-AzSqlSyncGroup [-Name] <String> -SyncDatabaseName <String> -SyncDatabaseServerName <String>
@@ -27,12 +27,12 @@ New-AzSqlSyncGroup [-Name] <String> -SyncDatabaseName <String> -SyncDatabaseServ
  [<CommonParameters>]
 ```
 
-## Leírás
-A **New-AzSqlSyncGroup** parancsmag egy Azure SQL-adatbázis szinkronizálási csoportját hozza létre.
+## LEÍRÁS
+A **New-AzSqlSyncGroup** parancsmag létrehoz egy Azure SQL Database Sync-csoportot.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: szinkronizálási csoport létrehozása Azure SQL-adatbázishoz.
+### 1. példa: Szinkronizálási csoport létrehozása Azure SQL-adatbázishoz.
 ```
 PS C:\> $credential = Get-Credential
 PS C:\> New-AzSqlSyncGroup -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -Name "SyncGroup01" -ConflictResolutionPolicy "HubWin"
@@ -53,12 +53,12 @@ LastSyncTime                : 1/1/0001 12:00:00 AM
 Schema                      :
 ```
 
-Ez a parancs létrehoz egy szinkronizálási csoportot egy Azure SQL-adatbázishoz. A "schema.jsbe" szó a helyi lemezen lévő fájl. A séma tartalma JSON formátumban található. A JSON-as séma példája: {"Tables": [{"Columns": [{"QuotedName": "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column1"}, {"QuotedName": "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column2"}]; "QuotedName": "MayQuotedTable1"}; {"Columns": [{"QuotedName": "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column1"}; {"QuotedName": "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column2"
+Ez a parancs szinkronizálási csoportot hoz létre egy Azure SQL-adatbázishoz. A "schema.jsbe" egy helyi lemezen lévő fájl. A séma hasznos terhelését tartalmazza json formátumban. A json séma példája a következő: {"Tables": [{"Columns": [{"QuotedName": "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column1"}, {"QuotedName": "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column2"}], "QuotedName": "MayQuotedTable1"}, {"Oszlopok": [{"QuotedName": "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column1"}, {"QuotedName": "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column2"}], "QuotedName": "MayQuotedTable2"}], "MasterSyncMemberName": null }
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -ConflictResolutionPolicy
-A szinkronizálás csoport központi és tagsági adatbázisa közötti ütközések feloldására szolgáló házirend.
+A szinkronizálási csoport központi és tagadatbázisa közötti ütközések feloldására vonatkozó házirend.
 
 ```yaml
 Type: System.String
@@ -74,7 +74,7 @@ Accept wildcard characters: False
 ```
 
 ### -DatabaseCredential
-A hub-adatbázis SQL-hitelesítési hitelesítő adatai.
+A központi adatbázis SQL-hitelesítési hitelesítő adatai.
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -104,7 +104,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -119,8 +119,8 @@ Accept wildcard characters: False
 ```
 
 ### -IntervalInSeconds
-Az adatok szinkronizálásának gyakorisága (másodpercben).
-Az alapértelmezett érték a-1, ami azt jelenti, hogy az automatikus szinkronizálás nincs engedélyezve.
+Az adatszinkronizálás gyakorisága (másodpercben).
+Az alapértelmezett érték -1, ami azt jelenti, hogy az automatikus szinkronizálás nincs engedélyezve.
 
 ```yaml
 Type: System.Int32
@@ -134,7 +134,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (név)
+### -Name
 A szinkronizálási csoport neve.
 
 ```yaml
@@ -179,7 +179,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Kiszolgálónév
+### -ServerName
 Az Azure SQL Server neve.
 
 ```yaml
@@ -195,7 +195,7 @@ Accept wildcard characters: False
 ```
 
 ### -SyncDatabaseName
-A szinkronizáláshoz kapcsolódó metaadatok tárolására szolgáló adatbázis.
+A szinkronizálással kapcsolatos metaadatok tárolására használt adatbázis.
 
 ```yaml
 Type: System.String
@@ -210,7 +210,7 @@ Accept wildcard characters: False
 ```
 
 ### -SyncDatabaseResourceGroupName
-Az erőforráscsoport, amelyre a szinkronizálási metaadat-adatbázis tartozik.
+Az erőforráscsoport, amelyhez a szinkronizálási metaadat-adatbázis tartozik.
 
 ```yaml
 Type: System.String
@@ -239,8 +239,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -255,7 +255,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik.
 A parancsmag nem fut.
 
 ```yaml
@@ -271,21 +271,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. SQL. DataSync. Model. AzureSqlSyncGroupModel
+### Microsoft.Azure.Commands.Sql.DataSync.Model.AzureSqlSyncGroupModel
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Set-AzSqlSyncGroup](./Set-AzSqlSyncGroup.md)
 
 [Remove-AzSqlSyncGroup](./Remove-AzSqlSyncGroup.md)
 
