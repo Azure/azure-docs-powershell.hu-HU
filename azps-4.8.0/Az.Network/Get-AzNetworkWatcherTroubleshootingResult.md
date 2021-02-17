@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherTroubleshootingResult.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherTroubleshootingResult.md
-ms.openlocfilehash: db3e3e529fd5c056acf793cd14280ef688c58a81
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 871509fc03a7cb80735b6f011a7103350fd945ac
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94181065"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100404598"
 ---
 # Get-AzNetworkWatcherTroubleshootingResult
 
-## Áttekintés
-A korábban futtatott vagy a jelenleg futó hibaelhárítási művelettől kapott hibaelhárítási eredményt kapja.
+## SYNOPSIS
+A korábban futtatott vagy jelenleg futó hibaelhárítási művelet hibaelhárítási eredményét kapja.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### SetByResource (alapértelmezett)
 ```
@@ -37,12 +37,12 @@ Get-AzNetworkWatcherTroubleshootingResult -Location <String> -TargetResourceId <
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-A Get-AzNetworkWatcherTroubleshootingResult parancsmag a korábban futtatott vagy a jelenleg futó Start-AzNetworkWatcherResourceTroubleshooting műveletből kapja meg a hibaelhárítási találatokat. Ha a hibaelhárítási művelet jelenleg folyamatban van, előfordulhat, hogy a művelet elvégzéséhez néhány percet is igénybe vehet. Jelenleg a virtuális hálózati átjárók és a kapcsolatok támogatottak.
+## LEÍRÁS
+A Get-AzNetworkWatcherTroubleshootingResult parancsmag megkapja a hibaelhárítási eredményt a korábban futtatott vagy jelenleg futó Start-AzNetworkWatcherResourceTroubleshooting műveletből. Ha a hibaelhárítási művelet folyamatban van, akkor a művelet néhány percig is eltarthat. Jelenleg a virtuális hálózati átjárók és kapcsolatok támogatottak.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: hibaelhárítás indítása virtuális hálózati átjárón és az eredmény visszanyerése
+### 1. példa: Hibaelhárítás kezdése virtuális hálózati átjárón és az eredmény lekérése
 ```
 $nw = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" } 
 $networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName 
@@ -56,13 +56,13 @@ Start-AzNetworkWatcherResourceTroubleshooting -NetworkWatcher $networkWatcher -T
 Get-AzNetworkWatcherTroubleshootingResult -NetworkWatcher $NW -TargetResourceId $target
 ```
 
-A fenti példa egy virtuális hálózati átjáró hibaelhárítását indítja el. A művelet elvégzéséhez néhány percet is igénybe vehet.
-A hibaelhárítást követően a hívás eredményének beolvasásához Get-AzNetworkWatcherTroubleshootingResult hívást kell kezdeményezni az erőforrásra. 
+A fenti minta megkezdi a hibaelhárítást egy virtuális hálózati átjárón. A művelet néhány percig is eltarthat.
+A hibaelhárítás elkezdődött, Get-AzNetworkWatcherTroubleshootingResult egy hívás az erőforráshoz, hogy beolvassa a hívás eredményét. 
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -76,8 +76,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Hely
-A Hálózatfigyelő helye.
+### -Location
+A hálózati figyelő helye.
 
 ```yaml
 Type: System.String
@@ -92,7 +92,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcher
-A Hálózatfigyelő erőforrás.
+A hálózati figyelő erőforrás.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -107,7 +107,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcherName
-A Network Watcher neve.
+A hálózati figyelő neve.
 
 ```yaml
 Type: System.String
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-A Network Watcher erőforráscsoport neve.
+A hálózatfigyelő erőforráscsoport neve.
 
 ```yaml
 Type: System.String
@@ -137,7 +137,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetResourceId
-A cél erőforrás-azonosító.
+A célerőforrás azonosítója.
 
 ```yaml
 Type: System.String
@@ -152,24 +152,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. Azure. commands. Network. models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. commands. Network. models. PSTroubleshootingResult
+### Microsoft.Azure.Commands.Network.Models.PSTroubleshootingResult
 
-## MEGJEGYZI
-Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, hálózat, Hálózatfigyelő, hibaelhárítás, VPN, kapcsolat
+## MEGJEGYZÉSEK
+Kulcsszavak: azure, azurerm, arm, erőforrás, kezelés, vezető, hálózat, hálózatkezelés, hálózati figyelő, hibaelhárítás, VPN, kapcsolat
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Új – AzNetworkWatcher](./New-AzNetworkWatcher.md)
+[New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
 
 [Get-AzNetworkWatcher](./Get-AzNetworkWatcher.md)
 
@@ -183,9 +183,9 @@ Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, há
 
 [Start-AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
 
-[Új – AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
+[New-AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
 
-[Új – AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
+[New-AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
 
 [Get-AzNetworkWatcherPacketCapture](./Get-AzNetworkWatcherPacketCapture.md)
 
@@ -193,11 +193,11 @@ Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, há
 
 [Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
-[Új – AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
+[New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
 
-[Teszt-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
+[Test-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
 
-[Teszt-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
+[Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
 
 [Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
@@ -209,7 +209,7 @@ Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, há
 
 [Remove-AzNetworkWatcherConnectionMonitor](./Remove-AzNetworkWatcherConnectionMonitor.md)
 
-[Új – AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
+[New-AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
 
 [Get-AzNetworkWatcherTroubleshootingResult](./Get-AzNetworkWatcherTroubleshootingResult.md)
 
@@ -221,4 +221,4 @@ Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, há
 
 [Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)

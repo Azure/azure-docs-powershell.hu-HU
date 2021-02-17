@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementCache.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementCache.md
-ms.openlocfilehash: 8fd29b7ecbfda5115973b038a6560ad38d22f376
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 7f1913b5debcbe3ebd5ae436c3c30529b1fdc9d5
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93668121"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100404734"
 ---
 # Get-AzApiManagementCache
 
-## Áttekintés
-A gyorsítótár részleteinek beszerzése.
+## SYNOPSIS
+A gyorsítótár részleteinek megtekintése.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### ContextParameterSet (alapértelmezett)
 ```
@@ -30,12 +30,12 @@ Get-AzApiManagementCache -Context <PsApiManagementContext> [-CacheId <String>]
 Get-AzApiManagementCache -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-Ismerje meg az API-kezelési szolgáltatásban konfigurált gyorsítótár adatait.
+## LEÍRÁS
+Az Api Management szolgáltatásban konfigurált gyorsítótár részleteinek megtekintése.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: az összes gyorsítótár beolvasása
+### 1. példa: Az összes gyorsítótár lekérte
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementCache -Context $apimContext
@@ -51,9 +51,9 @@ ResourceGroupName : Api-Default-West-US
 ServiceName       : contoso
 ```
 
-Az API-kezelési szolgáltatásban konfigurált összes gyorsítótár listáját kapja.
+Az Api Management szolgáltatásban konfigurált összes gyorsítótár listáját lekérte.
 
-### 2. példa: az azonosító westus megadott gyorsítótár beolvasása
+### 2. példa: A westus azonosító által megadott gyorsítótár lekérte
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementCache -Context $apimContext -cacheId westus
@@ -69,13 +69,13 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-A westus-ra konfigurált megadott gyorsítótár részleteinek beszerzése
+A westushoz konfigurált gyorsítótár részleteinek megtekintése
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -CacheId
 A gyorsítótár azonosítója.
-Ha meg van adva a gyorsítótár megkeresése az azonosítóval, a program megpróbálja megkeresni.
+Ha meg van adva, a rendszer megpróbálja megtalálni a gyorsítótárat az azonosító alapján.
 Ez a paraméter nem kötelező.
 
 ```yaml
@@ -92,7 +92,7 @@ Accept wildcard characters: False
 
 ### -Környezet
 A PsApiManagementContext példánya.
-Ehhez a paraméterhez szükség van.
+Ezt a paramétert kötelező megadni.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -107,7 +107,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-A gyorsítótár ARM erőforrás-azonosítója. Ha meg van adva a gyorsítótár megkeresése az azonosítóval, a program megpróbálja megkeresni. Ehhez a paraméterhez szükség van.
+Gyorsítótár erőforrás-azonosítójának felkarazása. Ha meg van adva, a rendszer megpróbálja megtalálni a gyorsítótárat az azonosító alapján. Ezt a paramétert kötelező megadni.
 
 ```yaml
 Type: System.String
@@ -137,24 +137,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementCache
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Get-AzApiManagementCache](./Get-AzApiManagementCache)
-
-[Set-AzApiManagementCache](./Set-AzApiManagementCache.md)
+[New-AzApiManagementCache](./New-AzApiManagementCache.md)
 
 [Remove-AzApiManagementCache](./Remove-AzApiManagementCache.md)
+
+[Update-AzApiManagementCache](./Update-AzApiManagementCache.md)

@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/stop-a
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Stop-AzSqlDatabaseExecuteIndexRecommendation.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Stop-AzSqlDatabaseExecuteIndexRecommendation.md
-ms.openlocfilehash: 9b21c290b2d5e5b6056297bba7d4196dd68d68d2
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 7f13b1a1a5daad4e7c97de962943bb859f6a09df
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93668735"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399481"
 ---
 # Stop-AzSqlDatabaseExecuteIndexRecommendation
 
-## Áttekintés
-Leállítja az ajánlott indexelési műveletet futtató munkafolyamatot.
+## SYNOPSIS
+Leállítja az ajánlott indexműveletet futtató munkafolyamatot.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 Stop-AzSqlDatabaseExecuteIndexRecommendation -ServerName <String> -DatabaseName <String>
@@ -26,22 +26,22 @@ Stop-AzSqlDatabaseExecuteIndexRecommendation -ServerName <String> -DatabaseName 
  [<CommonParameters>]
 ```
 
-## Leírás
-A **stop-AzSqlDatabaseExecuteIndexRecommendation** parancsmag leállítja a javasolt indexelési műveletet futtató munkafolyamatot.
+## LEÍRÁS
+A **Stop-AzSqlDatabaseExecuteIndexRecommendation** parancsmag leállítja az ajánlott indexműveletet futtató munkafolyamatot.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: az index-ajánlás futásának leállítása
+### 1. példa: Index-javaslat futtatásának leállítása
 ```
 PS C:\>Stop-AzSqlDatabaseExecuteIndexRecommendation -ResourceGroup "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -IndexRecommendationName "INDEX_NAME"
 ```
 
-Ez a parancs tárgymutató-ajánlást futtat.
+Ez a parancs nem futtatja a tárgymutató-javaslatot.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DatabaseName
-Annak az adatbázisnak a nevét adja meg, amelyhez ez a parancsmag leállítja a munkafolyamatot.
+Annak az adatbázisnak a nevét adja meg, amelynek a parancsmagja leállítja a munkafolyamatot.
 
 ```yaml
 Type: System.String
@@ -56,7 +56,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 ```
 
 ### -IndexRecommendationName
-Annak a tárgymutató-ajánlásnak a nevét adja meg, amelyre a parancsmag leáll.
+A parancsmag által leállítható index-javaslat nevét adja meg.
 
 ```yaml
 Type: System.String
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Annak az erőforráscsoport-csoportnak a neve, amelyhez a kiszolgálót hozzárendelték.
+Annak az erőforráscsoportnak a neve, amelyhez a kiszolgáló hozzá van rendelve.
 
 ```yaml
 Type: System.String
@@ -100,8 +100,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Kiszolgálónév
-Azt a kiszolgálót adja meg, amelyen az az adatbázis található, amelynek a parancsmagja leállítja a munkafolyamatot.
+### -ServerName
+Azt az adatbázist tartalmazó kiszolgálót adja meg, amelynek a parancsmagja leállít egy munkafolyamatot.
 
 ```yaml
 Type: System.String
@@ -116,21 +116,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. SQL. Model. IndexRecommendation
+### Microsoft.Azure.Commands.Sql.Model.IndexRecommendation
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Get-AzSqlDatabaseIndexRecommendations](./Get-AzSqlDatabaseIndexRecommendations.md)
 
 [Start-AzSqlDatabaseExecuteIndexRecommendation](./Start-AzSqlDatabaseExecuteIndexRecommendation.md)
 

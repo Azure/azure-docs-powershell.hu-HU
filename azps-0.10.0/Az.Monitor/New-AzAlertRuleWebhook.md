@@ -6,48 +6,48 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Monitor/Monitor/help/New-AzAlertRuleWebhook.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Monitor/Monitor/help/New-AzAlertRuleWebhook.md
-ms.openlocfilehash: 420bfd3536c9bbf8bcfe075eb7ed56320788d3b3
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: 03a1ca397fb67daf4b7cf73700f54d6642dd9f2d
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93842005"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399362"
 ---
 # New-AzAlertRuleWebhook
 
-## Áttekintés
-Figyelmeztetési szabályt hoz létre.
+## SYNOPSIS
+Riasztási szabályt hoz létre webhook.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 New-AzAlertRuleWebhook [-ServiceUri] <String> [[-Property] <Hashtable>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-A **New-AzAlertRuleWebhook** parancsmag figyelmeztetési szabályt hoz létre.
+## LEÍRÁS
+A **New-AzAlertRuleWebhook** parancsmag létrehoz egy webhook riasztási szabályt.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: figyelmeztetési szabály létrehozása – webhook
+### 1. példa: Értesítési szabály létrehozása webhook
 ```
 PS C:\>New-AzAlertRuleWebhook -ServiceUri "http://contoso.com"
 ```
 
-Ez a parancs csak a szolgáltatás URI-azonosítójának megadásával hoz létre figyelmeztetési szabályt webhooktal.
+Ez a parancs csak a szolgáltatás URI-ját megadásával hoz létre webhook riasztási szabályt.
 
-### 2. példa: webkampó létrehozása egy tulajdonsággal
+### 2. példa: Webhook létrehozása egyetlen tulajdonsággal
 ```
 PS C:\>$Actual = New-AzAlertRuleWebhook -ServiceUri "http://contoso.com" -Property @{prop1 = 'value1'}
 ```
 
-Ez a parancs figyelmeztetési szabályt hoz létre a Contoso.com, amely egy tulajdonsággal rendelkezik, majd a $Actual változóban tárolja.
+Ez a parancs egy webhook riasztási szabályt hoz létre egy olyan Contoso.com, amely egyetlen tulajdonsággal rendelkezik, majd azt a $Actual változóban tárolja.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -62,7 +62,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tulajdonság
-A @ formátum @ (property1 = "érték1",....) tulajdonságainak listáját adja meg.
+A @(tulajdonság1 = 'érték1',....) formátumban adja meg a tulajdonságok listáját.
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -77,7 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceUri
-A szolgáltatás URI-jét adja meg.
+A szolgáltatás URI-ját adja meg.
 
 ```yaml
 Type: System.String
@@ -92,30 +92,29 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
-### System. Collections. Hashtable
+### System.Collections.Hashtable
 
 ## KIMENETEK
 
-### Microsoft. Azure. Management. monitor. Management. models. RuleWebhookAction
+### Microsoft.Azure.Management.Monitor.Management.Models.RuleWebhookAction
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Add-AzLogAlertRule](./Add-AzLogAlertRule.md)
 
 [Add-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
 
 [Add-AzWebtestAlertRule](./Add-AzWebtestAlertRule.md)
 
-[Új – AzAlertRuleEmail](./New-AzAlertRuleEmail.md)
+[New-AzAlertRuleEmail](./New-AzAlertRuleEmail.md)
 
-[Új – AzAutoscaleWebhook](./New-AzAutoscaleWebhook.md)
+[New-AzAutoscaleWebhook](./New-AzAutoscaleWebhook.md)
 
 

@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/g
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultKey.md
-ms.openlocfilehash: 0de3582d9a5cbdaba8555cf53bd9038d3eaf15b2
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: e0601285bf2adc7204cd5a946e07d032579e080b
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94181739"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100404717"
 ---
 # Get-AzKeyVaultKey
 
-## Áttekintés
-Beolvassa a kulcsok kulcsát.
+## SYNOPSIS
+Lekérte a kulcstár kulcsait.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### ByVaultName (alapértelmezett)
 ```
@@ -74,13 +74,13 @@ Get-AzKeyVaultKey [-ResourceId] <String> [-Name] <String> [-IncludeVersions] [-O
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-A **Get-AzKeyVaultKey** parancsmag Azure Key Vault-kulcsokat kap.
-Ez a parancsmag a **Microsoft. Azure. commands. kulcskezelő. models.** vagy a kulcsfájl vagy **az összes kulcskezelő** objektum listáját adja meg egy kulcs-boltozatban vagy egy verzióban.
+## LEÍRÁS
+A **Get-AzKeyVaultKey** parancsmag azure-kulcstár-kulcsokat kap.
+Ez a parancsmag egy adott **Microsoft.Azure.Commands.KeyVault.Models.KeyBundle** parancsot vagy egy kulcstárban vagy verziók szerint az összes **KeyBundle-objektum** listáját kapja.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: a billentyűk lekérése a fő boltozaton
+### 1. példa: Az összes kulcs lekérte a kulcstárban található összes kulcsot
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso'
 
@@ -109,9 +109,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-Ez a parancs a contoso nevű fő boltozat összes kulcsát kinyeri.
+Ez a parancs a Contoso nevű kulcstár összes kulcsát megkapja.
 
-### 2. példa: a kulcs aktuális verziójának beszerzése
+### 2. példa: Kulcs aktuális verziójának lekérte
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1'
 
@@ -128,9 +128,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-Ez a parancs beolvassa a test1 nevű kulcs aktuális verzióját a contoso nevű kulcs boltozatában.
+Ez a parancs a Contoso nevű kulcstárban a Test1 nevű kulcs aktuális verzióját kapja meg.
 
-### 3. példa: a kulcsok minden verziójának beolvasása
+### 3. példa: Kulcs összes verziójának lekérte
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1' -IncludeVersions
 
@@ -159,9 +159,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-Ez a parancs a ITPfx nevű kulcsot a contoso vaultnamed kulcsában kapja meg.
+Ez a parancs az ITPfx nevű összes verziót megkapja a Contoso nevű kulcstárban.
 
-### Példa 4: a kulcs meghatározott verziójának beszerzése
+### 4. példa: Kulcs adott verziójának lekérte
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1' -Version 'e4e95940e669407fbdb4298bc21a3e1d'
 
@@ -178,10 +178,10 @@ Purge Disabled : False
 Tags           :
 ```
 
-Ez a parancs beolvassa a test1 nevű kulcs egy bizonyos verzióját a contoso nevű kulcs boltozatában.
-Miután futtatta ezt a parancsot, a $Key objektumban való navigálással ellenőrizheti a billentyűk különböző tulajdonságait.
+Ez a parancs a Contoso nevű kulcstárban lekérte a test1 nevű kulcs egy adott verzióját.
+A parancs futtatása után a kulcs különféle tulajdonságainak vizsgálatához navigálhat a $Key objektumban.
 
-### 5. példa: a kulcsfájl által törölt, de nem törölt billentyűk beolvasása.
+### 5. példa: Szerezze be az összes olyan kulcsot, amely törlődött, de nem lett véglegesen törölve ehhez a kulcstárhoz.
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -InRemovedState
 
@@ -199,9 +199,9 @@ Purge Disabled       : False
 Tags                 :
 ```
 
-Ez a parancs az összes korábban törölt, de nem törölt billentyűt beilleszti a contoso nevű billentyűvel.
+Ez a parancs a Korábban törölt, de nem véglegesen törölt összes kulcsot a Contoso nevű kulcstárba kapja.
 
-### 6. példa: a kulcsfájl a ITPfx, amelyet töröltek, de nem tisztítják meg.
+### 6. példa: A kulcstár törölt, de nem véglegesen törölt ITPfx kulcsát kapja meg.
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test3' -InRemovedState
 
@@ -219,10 +219,10 @@ Purge Disabled       : False
 Tags                 :
 ```
 
-Ez a parancs a contoso nevű kulcsfájl által korábban törölt, de el nem távolított kulcs test3 kapja meg.
-Ez a parancs metaadatokat ad vissza, például a törlési dátumot, valamint a törölt kulcs ütemezett leöblítési dátumát.
+Ez a parancs a Korábban törölt, de nem véglegesen törölt kulcstesztet kapja meg a Contoso nevű kulcstárban.
+Ez a parancs metaadatokat, például törlési dátumot és a törölt kulcs ütemezett végleges törlési dátumát adja vissza.
 
-### 7. példa: a billentyűk lekérése szűréssel
+### 7. példa: Az összes kulcs behozása egy kulcstárba szűrés használatával
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName "test*"
 
@@ -251,22 +251,22 @@ Purge Disabled : False
 Tags           :
 ```
 
-Ez a parancs az összes olyan billentyűt megkapja a contoso nevű kulcsban, amely a "teszt" kifejezéssel kezdődik.
+Ez a parancs a Contoso nevű kulcstárban található összes olyan kulcsot lekérte, amelyek a "teszt" kezdetűvel kezdődnek.
 
-### 8. példa: nyilvános kulcs letöltése. PEM fájlként
+### 8. példa: Nyilvános kulcs letöltése .pem fájlként
 
 ```powershell
 PS C:\> $path = "D:\public.pem"
 PS C:\> Get-AzKeyVaultKey -VaultName $vaultName -KeyName $keyName -OutFile $path
 ```
 
-Az RSA-kulcsok nyilvános kulcsát a paraméter megadásával töltheti le `-OutFile` .
-Ez egy lépés a HSM-védelemmel ellátott kulcsok az Azure Key Vault-ba történő importálásához. Olvassa el https://docs.microsoft.com/en-us/azure/key-vault/keys/hsm-protected-keys
+Az RSA-kulcs nyilvános kulcsát a paraméter megadásával töltheti `-OutFile` le.
+Ez a lépés a HSM által védett kulcsok importálása az Azure-kulcstárba. Lásd: https://docs.microsoft.com/en-us/azure/key-vault/keys/hsm-protected-keys
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -281,10 +281,10 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeVersions
-Azt jelzi, hogy ez a parancsmag a kulcsok minden verzióját bekapja.
-A kulcsok jelenlegi verziója az első a listán.
-Ha ezt a paramétert adja meg, a *nevet* és a *VaultName* paramétereket is meg kell adnia.
-Ha nem adja meg a *IncludeVersions* paramétert, ez a parancsmag a megadott *nevű* kulcs aktuális verzióját kapja meg.
+Azt jelzi, hogy ez a parancsmag a kulcs összes verzióját megkapja.
+A kulcs aktuális verziója az első a listában.
+Ha ezt a paramétert adja meg, a *Name* és *a VaultName* paramétert is meg kell adnia.
+Ha nem adja meg az *IncludeVersions* paramétert, ez a parancsmag a kulcs aktuális verzióját kapja meg a megadott *névvel.*
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -299,7 +299,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-A boltozat objektum.
+KeyVault objektum.
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
@@ -314,7 +314,7 @@ Accept wildcard characters: False
 ```
 
 ### -InRemovedState
-Annak megadása, hogy a kimenetben a korábban törölt billentyűk jelenjenek-e meg
+Megadja, hogy a korábban törölt billentyűket a kimenetben is meg kell-e mutatni.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -328,8 +328,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (név)
-A beolvasott kulcs kötegének nevét adja meg.
+### -Name
+A lekért kulcscsomag nevét adja meg.
 
 ```yaml
 Type: System.String
@@ -355,8 +355,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Fájl kilépése
-Azt a kimeneti fájlt adja meg, amelyre a parancsmag menti a kulcsot. A nyilvános kulcs alapértelmezés szerint PEM formátumban lett mentve.
+### -OutFile
+Azt a kimeneti fájlt adja meg, amelybe ez a parancsmag menti a kulcsot. A nyilvános kulcsot a rendszer alapértelmezés szerint PEM formátumban menti.
 
 ```yaml
 Type: System.String
@@ -371,7 +371,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-A főkészlet erőforrás-azonosítója.
+KeyVault-erőforrás azonosítója.
 
 ```yaml
 Type: System.String
@@ -386,8 +386,8 @@ Accept wildcard characters: False
 ```
 
 ### -VaultName
-Annak a kulcsnak a nevét adja meg, amelyből a parancsmag kulcsokat kap.
-Ez a parancsmag a kulcsfájl teljesen minősített tartománynevét (FQDN) építi fel a paraméter által megadott név és a kijelölt környezet alapján.
+Annak a kulcstárnak a neve, amelyből a parancsmag kulcsokat kap.
+Ez a parancsmag egy kulcstár teljes tartománynevét (FQDN) építi fel a paraméter által megadott név és a kiválasztott környezet alapján.
 
 ```yaml
 Type: System.String
@@ -401,9 +401,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Verzió
-A kulcs verziószámát adja meg.
-Ez a parancsmag a kulcs teljes tartománynevét, az aktuálisan kijelölt környezetet, a kulcs nevét és a kulcs verziószámát építi fel.
+### -Version
+A kulcsverziót adja meg.
+Ez a parancsmag egy kulcs FQDN-ét építi fel a kulcs tárolóneve, az aktuálisan kiválasztott környezet, a kulcs neve és a kulcsverzió alapján.
 
 ```yaml
 Type: System.String
@@ -418,25 +418,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. Azure. Command. PSKeyVault. models.
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. PSKeyVaultKeyIdentityItem. models.
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem
 
-### Microsoft. Azure. Command. PSKeyVaultKey. models.
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKey
 
-### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKeyIdentityItem
+### Microsoft.Azure.Commands.KeyVault.Models.PSDKeyVaultKeyIdentityItem
 
-### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKey
+### Microsoft.Azure.Commands.KeyVault.Models.PSDKeyVaultKey billentyű
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
@@ -444,7 +444,6 @@ Ez a parancsmag a következő általános paramétereket támogatja:-debug,-Erro
 
 [Remove-AzKeyVaultKey](./Remove-AzKeyVaultKey.md)
 
-[Visszavonás – AzKeyVaultKeyRemoval](./Undo-AzKeyVaultKeyRemoval.md)
+[Undo-AzKeyVaultKeyRemoval](./Undo-AzKeyVaultKeyRemoval.md)
 
-[Set-AzKeyVaultKeyAttribute](./Set-AzKeyVaultKeyAttribute.md)
 
