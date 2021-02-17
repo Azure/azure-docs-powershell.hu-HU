@@ -5,45 +5,45 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.datafactor
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Remove-AzDataFactoryV2DataFlow.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Remove-AzDataFactoryV2DataFlow.md
-ms.openlocfilehash: 8b5b9e8cfd1909b0d91627a2c0600620f264da78
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: b441c354214775f3f6aad425513a953fbefe7810
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94002924"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410973"
 ---
-# <span data-ttu-id="1089a-101">Remove-AzDataFactoryV2DataFlow</span><span class="sxs-lookup"><span data-stu-id="1089a-101">Remove-AzDataFactoryV2DataFlow</span></span>
+# <span data-ttu-id="649bb-101">Remove-AzDataFactoryV2DataFlow</span><span class="sxs-lookup"><span data-stu-id="649bb-101">Remove-AzDataFactoryV2DataFlow</span></span>
 
-## <span data-ttu-id="1089a-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="1089a-102">SYNOPSIS</span></span>
-<span data-ttu-id="1089a-103">Adatforgalom eltávolítása az adatgyárból.</span><span class="sxs-lookup"><span data-stu-id="1089a-103">Removes a data flow from Data Factory.</span></span>
+## <span data-ttu-id="649bb-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="649bb-102">SYNOPSIS</span></span>
+<span data-ttu-id="649bb-103">Eltávolít egy adatfolyamot a Data Factoryból.</span><span class="sxs-lookup"><span data-stu-id="649bb-103">Removes a data flow from Data Factory.</span></span>
 
-## <span data-ttu-id="1089a-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="1089a-104">SYNTAX</span></span>
+## <span data-ttu-id="649bb-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="649bb-104">SYNTAX</span></span>
 
-### <span data-ttu-id="1089a-105">ByFactoryName (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="1089a-105">ByFactoryName (Default)</span></span>
+### <span data-ttu-id="649bb-105">ByFactoryName (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="649bb-105">ByFactoryName (Default)</span></span>
 ```
 Remove-AzDataFactoryV2DataFlow [-Name] <String> [-Force] [-ResourceGroupName] <String>
  [-DataFactoryName] <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="1089a-106">ByInputObject</span><span class="sxs-lookup"><span data-stu-id="1089a-106">ByInputObject</span></span>
+### <span data-ttu-id="649bb-106">ByInputObject</span><span class="sxs-lookup"><span data-stu-id="649bb-106">ByInputObject</span></span>
 ```
 Remove-AzDataFactoryV2DataFlow [-InputObject] <PSDataset> [-Force] [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="1089a-107">ByResourceId</span><span class="sxs-lookup"><span data-stu-id="1089a-107">ByResourceId</span></span>
+### <span data-ttu-id="649bb-107">ByResourceId</span><span class="sxs-lookup"><span data-stu-id="649bb-107">ByResourceId</span></span>
 ```
 Remove-AzDataFactoryV2DataFlow [-Force] [-ResourceId] <String> [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="1089a-108">Leírás</span><span class="sxs-lookup"><span data-stu-id="1089a-108">DESCRIPTION</span></span>
-<span data-ttu-id="1089a-109">A Remove-AzDataFactoryV2DataFlow parancsmag eltávolítja az adatáramlást az Azure Data Factory szolgáltatásból.</span><span class="sxs-lookup"><span data-stu-id="1089a-109">The Remove-AzDataFactoryV2DataFlow cmdlet removes a data flow from Azure Data Factory.</span></span>
+## <span data-ttu-id="649bb-108">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="649bb-108">DESCRIPTION</span></span>
+<span data-ttu-id="649bb-109">A Remove-AzDataFactoryV2DataFlow parancsmag eltávolítja az adatfolyamot az Azure Data Factoryból.</span><span class="sxs-lookup"><span data-stu-id="649bb-109">The Remove-AzDataFactoryV2DataFlow cmdlet removes a data flow from Azure Data Factory.</span></span>
 
-## <span data-ttu-id="1089a-110">Példák</span><span class="sxs-lookup"><span data-stu-id="1089a-110">EXAMPLES</span></span>
+## <span data-ttu-id="649bb-110">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="649bb-110">EXAMPLES</span></span>
 
-### <span data-ttu-id="1089a-111">Példa 1</span><span class="sxs-lookup"><span data-stu-id="1089a-111">Example 1</span></span>
+### <span data-ttu-id="649bb-111">1. példa</span><span class="sxs-lookup"><span data-stu-id="649bb-111">Example 1</span></span>
 ```powershell
 PS C:\WINDOWS\system32> Remove-AzDataFactoryV2DataFlow -ResourceGroupName adf -DataFactoryName WikiADF -DataFlowName "dataflow5"
 
@@ -53,12 +53,12 @@ Are you sure you want to remove data flow 'dataflow5' in data factory 'WikiADF'?
 PS C:\WINDOWS\system32>
 ```
 
-<span data-ttu-id="1089a-112">Ez a parancs eltávolítja a dataflow5 nevű adatfolyamot az WikiADF nevű adatgyárból.</span><span class="sxs-lookup"><span data-stu-id="1089a-112">This command removes the data flow named dataflow5 from the data factory named WikiADF.</span></span>
+<span data-ttu-id="649bb-112">Ez a parancs eltávolítja az Adatfolyam5 nevű adatfolyamot a WikiADF nevű adatüzemből.</span><span class="sxs-lookup"><span data-stu-id="649bb-112">This command removes the data flow named dataflow5 from the data factory named WikiADF.</span></span>
 
-## <span data-ttu-id="1089a-113">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="1089a-113">PARAMETERS</span></span>
+## <span data-ttu-id="649bb-113">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="649bb-113">PARAMETERS</span></span>
 
-### <span data-ttu-id="1089a-114">-DataFactoryName</span><span class="sxs-lookup"><span data-stu-id="1089a-114">-DataFactoryName</span></span>
-<span data-ttu-id="1089a-115">Az adatgyári név.</span><span class="sxs-lookup"><span data-stu-id="1089a-115">The data factory name.</span></span>
+### <span data-ttu-id="649bb-114">-DataFactoryName</span><span class="sxs-lookup"><span data-stu-id="649bb-114">-DataFactoryName</span></span>
+<span data-ttu-id="649bb-115">Az adatüzem neve.</span><span class="sxs-lookup"><span data-stu-id="649bb-115">The data factory name.</span></span>
 
 ```yaml
 Type: System.String
@@ -72,8 +72,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1089a-116">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="1089a-116">-DefaultProfile</span></span>
-<span data-ttu-id="1089a-117">Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="1089a-117">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+### <span data-ttu-id="649bb-116">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="649bb-116">-DefaultProfile</span></span>
+<span data-ttu-id="649bb-117">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="649bb-117">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -87,8 +87,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1089a-118">-Force</span><span class="sxs-lookup"><span data-stu-id="1089a-118">-Force</span></span>
-<span data-ttu-id="1089a-119">Ne kérjen megerősítést.</span><span class="sxs-lookup"><span data-stu-id="1089a-119">Don't ask for confirmation.</span></span>
+### <span data-ttu-id="649bb-118">-Force</span><span class="sxs-lookup"><span data-stu-id="649bb-118">-Force</span></span>
+<span data-ttu-id="649bb-119">Ne kérjen megerősítést.</span><span class="sxs-lookup"><span data-stu-id="649bb-119">Don't ask for confirmation.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -102,8 +102,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1089a-120">-InputObject</span><span class="sxs-lookup"><span data-stu-id="1089a-120">-InputObject</span></span>
-<span data-ttu-id="1089a-121">Az adatfolyam-objektum.</span><span class="sxs-lookup"><span data-stu-id="1089a-121">The data flow object.</span></span>
+### <span data-ttu-id="649bb-120">-InputObject</span><span class="sxs-lookup"><span data-stu-id="649bb-120">-InputObject</span></span>
+<span data-ttu-id="649bb-121">Az adatfolyam-objektum.</span><span class="sxs-lookup"><span data-stu-id="649bb-121">The data flow object.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataset
@@ -117,8 +117,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1089a-122">-Name (név)</span><span class="sxs-lookup"><span data-stu-id="1089a-122">-Name</span></span>
-<span data-ttu-id="1089a-123">Az adatforgalom neve.</span><span class="sxs-lookup"><span data-stu-id="1089a-123">The data flow name.</span></span>
+### <span data-ttu-id="649bb-122">-Name</span><span class="sxs-lookup"><span data-stu-id="649bb-122">-Name</span></span>
+<span data-ttu-id="649bb-123">Az adatfolyam neve.</span><span class="sxs-lookup"><span data-stu-id="649bb-123">The data flow name.</span></span>
 
 ```yaml
 Type: System.String
@@ -132,8 +132,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1089a-124">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="1089a-124">-ResourceGroupName</span></span>
-<span data-ttu-id="1089a-125">Az erőforrás csoport neve.</span><span class="sxs-lookup"><span data-stu-id="1089a-125">The resource group name.</span></span>
+### <span data-ttu-id="649bb-124">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="649bb-124">-ResourceGroupName</span></span>
+<span data-ttu-id="649bb-125">Az erőforráscsoport neve.</span><span class="sxs-lookup"><span data-stu-id="649bb-125">The resource group name.</span></span>
 
 ```yaml
 Type: System.String
@@ -147,8 +147,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1089a-126">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="1089a-126">-ResourceId</span></span>
-<span data-ttu-id="1089a-127">Az Azure Resource ID.</span><span class="sxs-lookup"><span data-stu-id="1089a-127">The Azure resource ID.</span></span>
+### <span data-ttu-id="649bb-126">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="649bb-126">-ResourceId</span></span>
+<span data-ttu-id="649bb-127">Az Azure-erőforrásazonosító.</span><span class="sxs-lookup"><span data-stu-id="649bb-127">The Azure resource ID.</span></span>
 
 ```yaml
 Type: System.String
@@ -162,8 +162,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1089a-128">-PassThru</span><span class="sxs-lookup"><span data-stu-id="1089a-128">-PassThru</span></span>
-<span data-ttu-id="1089a-129">Ha a megadott művelet sikeres, akkor a True Write True értékre vált.</span><span class="sxs-lookup"><span data-stu-id="1089a-129">If specified will write true in case operation succeeds.</span></span> <span data-ttu-id="1089a-130">Ez a paraméter nem kötelező.</span><span class="sxs-lookup"><span data-stu-id="1089a-130">This parameter is optional.</span></span>
+### <span data-ttu-id="649bb-128">-PassThru</span><span class="sxs-lookup"><span data-stu-id="649bb-128">-PassThru</span></span>
+<span data-ttu-id="649bb-129">Ha a megadott érték igaz értéket ad meg, akkor a művelet sikeres lesz.</span><span class="sxs-lookup"><span data-stu-id="649bb-129">If specified will write true in case operation succeeds.</span></span> <span data-ttu-id="649bb-130">Ez a paraméter nem kötelező.</span><span class="sxs-lookup"><span data-stu-id="649bb-130">This parameter is optional.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -177,8 +177,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1089a-131">– Megerősítés</span><span class="sxs-lookup"><span data-stu-id="1089a-131">-Confirm</span></span>
-<span data-ttu-id="1089a-132">A parancsmag futtatása előtt kéri a megerősítést.</span><span class="sxs-lookup"><span data-stu-id="1089a-132">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="649bb-131">-Confirm</span><span class="sxs-lookup"><span data-stu-id="649bb-131">-Confirm</span></span>
+<span data-ttu-id="649bb-132">A parancsmag futtatása előtt a rendszer megerősítést kér.</span><span class="sxs-lookup"><span data-stu-id="649bb-132">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -192,9 +192,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1089a-133">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="1089a-133">-WhatIf</span></span>
-<span data-ttu-id="1089a-134">Annak megjelenítése, hogy mi történik, ha a parancsmag fut.</span><span class="sxs-lookup"><span data-stu-id="1089a-134">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="1089a-135">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="1089a-135">The cmdlet is not run.</span></span>
+### <span data-ttu-id="649bb-133">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="649bb-133">-WhatIf</span></span>
+<span data-ttu-id="649bb-134">A parancsmag futtatásakor a program megjeleníti, hogy mi történik.</span><span class="sxs-lookup"><span data-stu-id="649bb-134">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="649bb-135">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="649bb-135">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -208,27 +208,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1089a-136">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="1089a-136">CommonParameters</span></span>
-<span data-ttu-id="1089a-137">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="1089a-137">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="1089a-138">További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="1089a-138">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="649bb-136">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="649bb-136">CommonParameters</span></span>
+<span data-ttu-id="649bb-137">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="649bb-137">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="649bb-138">További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="649bb-138">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="1089a-139">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="1089a-139">INPUTS</span></span>
+## <span data-ttu-id="649bb-139">INPUTS</span><span class="sxs-lookup"><span data-stu-id="649bb-139">INPUTS</span></span>
 
-### <span data-ttu-id="1089a-140">Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataset</span><span class="sxs-lookup"><span data-stu-id="1089a-140">Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataset</span></span>
+### <span data-ttu-id="649bb-140">Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataset</span><span class="sxs-lookup"><span data-stu-id="649bb-140">Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataset</span></span>
 
-### <span data-ttu-id="1089a-141">System. String</span><span class="sxs-lookup"><span data-stu-id="1089a-141">System.String</span></span>
+### <span data-ttu-id="649bb-141">System.String</span><span class="sxs-lookup"><span data-stu-id="649bb-141">System.String</span></span>
 
-## <span data-ttu-id="1089a-142">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="1089a-142">OUTPUTS</span></span>
+## <span data-ttu-id="649bb-142">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="649bb-142">OUTPUTS</span></span>
 
-### <span data-ttu-id="1089a-143">System. Void</span><span class="sxs-lookup"><span data-stu-id="1089a-143">System.Void</span></span>
+### <span data-ttu-id="649bb-143">System.Void</span><span class="sxs-lookup"><span data-stu-id="649bb-143">System.Void</span></span>
 
-### <span data-ttu-id="1089a-144">System. Boolean</span><span class="sxs-lookup"><span data-stu-id="1089a-144">System.Boolean</span></span>
+### <span data-ttu-id="649bb-144">System.Boolean</span><span class="sxs-lookup"><span data-stu-id="649bb-144">System.Boolean</span></span>
 
-## <span data-ttu-id="1089a-145">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="1089a-145">NOTES</span></span>
-<span data-ttu-id="1089a-146">Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, Data, gyárak</span><span class="sxs-lookup"><span data-stu-id="1089a-146">Keywords: azure, azurerm, arm, resource, management, manager, data, factories</span></span>
+## <span data-ttu-id="649bb-145">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="649bb-145">NOTES</span></span>
+<span data-ttu-id="649bb-146">Kulcsszavak: azure, azurerm, arm, erőforrás, kezelés, vezető, adatok, faktorok</span><span class="sxs-lookup"><span data-stu-id="649bb-146">Keywords: azure, azurerm, arm, resource, management, manager, data, factories</span></span>
 
-## <span data-ttu-id="1089a-147">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="1089a-147">RELATED LINKS</span></span>
+## <span data-ttu-id="649bb-147">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="649bb-147">RELATED LINKS</span></span>
 
-[<span data-ttu-id="1089a-148">Get-AzDataFactoryDataFlow</span><span class="sxs-lookup"><span data-stu-id="1089a-148">Get-AzDataFactoryDataFlow</span></span>](./Get-AzDataFactoryDataFlow.md)
 
-[<span data-ttu-id="1089a-149">Set-AzDataFactoryDataFlow</span><span class="sxs-lookup"><span data-stu-id="1089a-149">Set-AzDataFactoryDataFlow</span></span>](./Set-AzDataFactoryDataFlow.md)
 

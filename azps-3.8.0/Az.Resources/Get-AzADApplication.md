@@ -6,99 +6,99 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADApplication.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADApplication.md
-ms.openlocfilehash: afcb95eca70c005023bacc2b2d71d9fda54c9259
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: f693fbc0ae4809f287e954babea0188c9d1d23b8
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94012031"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413387"
 ---
-# <span data-ttu-id="77630-101">Get-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="77630-101">Get-AzADApplication</span></span>
+# <span data-ttu-id="16e44-101">Get-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="16e44-101">Get-AzADApplication</span></span>
 
-## <span data-ttu-id="77630-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="77630-102">SYNOPSIS</span></span>
-<span data-ttu-id="77630-103">Felsorolja a meglévő Azure Active Directory-alkalmazásokat.</span><span class="sxs-lookup"><span data-stu-id="77630-103">Lists existing azure active directory applications.</span></span>
+## <span data-ttu-id="16e44-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="16e44-102">SYNOPSIS</span></span>
+<span data-ttu-id="16e44-103">A meglévő Azure Active Directory-alkalmazások listája.</span><span class="sxs-lookup"><span data-stu-id="16e44-103">Lists existing azure active directory applications.</span></span>
 
-## <span data-ttu-id="77630-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="77630-104">SYNTAX</span></span>
+## <span data-ttu-id="16e44-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="16e44-104">SYNTAX</span></span>
 
-### <span data-ttu-id="77630-105">EmptyParameterSet (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="77630-105">EmptyParameterSet (Default)</span></span>
+### <span data-ttu-id="16e44-105">EmptyParameterSet (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="16e44-105">EmptyParameterSet (Default)</span></span>
 ```
 Get-AzADApplication [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount] [-Skip <UInt64>]
  [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="77630-106">ApplicationObjectIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="77630-106">ApplicationObjectIdParameterSet</span></span>
+### <span data-ttu-id="16e44-106">ApplicationObjectIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="16e44-106">ApplicationObjectIdParameterSet</span></span>
 ```
 Get-AzADApplication -ObjectId <String> [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount]
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="77630-107">ApplicationIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="77630-107">ApplicationIdParameterSet</span></span>
+### <span data-ttu-id="16e44-107">ApplicationIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="16e44-107">ApplicationIdParameterSet</span></span>
 ```
 Get-AzADApplication -ApplicationId <Guid> [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount]
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="77630-108">SearchStringParameterSet</span><span class="sxs-lookup"><span data-stu-id="77630-108">SearchStringParameterSet</span></span>
+### <span data-ttu-id="16e44-108">SearchStringParameterSet</span><span class="sxs-lookup"><span data-stu-id="16e44-108">SearchStringParameterSet</span></span>
 ```
 Get-AzADApplication -DisplayNameStartWith <String> [-DefaultProfile <IAzureContextContainer>]
  [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="77630-109">DisplayNameParameterSet</span><span class="sxs-lookup"><span data-stu-id="77630-109">DisplayNameParameterSet</span></span>
+### <span data-ttu-id="16e44-109">DisplayNameParameterSet</span><span class="sxs-lookup"><span data-stu-id="16e44-109">DisplayNameParameterSet</span></span>
 ```
 Get-AzADApplication -DisplayName <String> [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount]
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="77630-110">ApplicationIdentifierUriParameterSet</span><span class="sxs-lookup"><span data-stu-id="77630-110">ApplicationIdentifierUriParameterSet</span></span>
+### <span data-ttu-id="16e44-110">ApplicationIdentifierUriParameterSet</span><span class="sxs-lookup"><span data-stu-id="16e44-110">ApplicationIdentifierUriParameterSet</span></span>
 ```
 Get-AzADApplication -IdentifierUri <String> [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount]
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="77630-111">Leírás</span><span class="sxs-lookup"><span data-stu-id="77630-111">DESCRIPTION</span></span>
-<span data-ttu-id="77630-112">Felsorolja a meglévő Azure Active Directory-alkalmazásokat.</span><span class="sxs-lookup"><span data-stu-id="77630-112">Lists existing azure active directory applications.</span></span>
-<span data-ttu-id="77630-113">Az alkalmazások keresése a ObjectId, az ApplicationId, a IdentifierUri vagy a DisplayName segítségével végezhető el.</span><span class="sxs-lookup"><span data-stu-id="77630-113">Application lookup can be done by ObjectId, ApplicationId, IdentifierUri or DisplayName.</span></span>
-<span data-ttu-id="77630-114">Ha nincs megadva paraméter, a program az összes alkalmazást beolvassa a bérlői webhelyre.</span><span class="sxs-lookup"><span data-stu-id="77630-114">If no parameter is provided, it fetches all applications under the tenant.</span></span>
+## <span data-ttu-id="16e44-111">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="16e44-111">DESCRIPTION</span></span>
+<span data-ttu-id="16e44-112">A meglévő Azure Active Directory-alkalmazások listája.</span><span class="sxs-lookup"><span data-stu-id="16e44-112">Lists existing azure active directory applications.</span></span>
+<span data-ttu-id="16e44-113">Az alkalmazáskeresést az ObjectId, az ApplicationId, az IdentifierUri vagy a DisplayName segítségével lehet.</span><span class="sxs-lookup"><span data-stu-id="16e44-113">Application lookup can be done by ObjectId, ApplicationId, IdentifierUri or DisplayName.</span></span>
+<span data-ttu-id="16e44-114">Ha nincs megadva paraméter, akkor a bérlő alatti összes alkalmazást lehívja.</span><span class="sxs-lookup"><span data-stu-id="16e44-114">If no parameter is provided, it fetches all applications under the tenant.</span></span>
 
-## <span data-ttu-id="77630-115">Példák</span><span class="sxs-lookup"><span data-stu-id="77630-115">EXAMPLES</span></span>
+## <span data-ttu-id="16e44-115">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="16e44-115">EXAMPLES</span></span>
 
-### <span data-ttu-id="77630-116">Példa 1 – az összes alkalmazás listázása</span><span class="sxs-lookup"><span data-stu-id="77630-116">Example 1 - List all applications</span></span>
+### <span data-ttu-id="16e44-116">1. példa – Az összes alkalmazás felsorolása</span><span class="sxs-lookup"><span data-stu-id="16e44-116">Example 1 - List all applications</span></span>
 
 ```
 PS C:\> Get-AzADApplication
 ```
 
-<span data-ttu-id="77630-117">Felsorolja az összes alkalmazást bérlői fiókban.</span><span class="sxs-lookup"><span data-stu-id="77630-117">Lists all the applications under a tenant.</span></span>
+<span data-ttu-id="16e44-117">A bérlői webhely összes alkalmazását felsorolja.</span><span class="sxs-lookup"><span data-stu-id="16e44-117">Lists all the applications under a tenant.</span></span>
 
-### <span data-ttu-id="77630-118">Példa 2 – a lapozást használó alkalmazások listázása</span><span class="sxs-lookup"><span data-stu-id="77630-118">Example 2 - List applications using paging</span></span>
+### <span data-ttu-id="16e44-118">2. példa: Lapozást használó alkalmazások felsorolása</span><span class="sxs-lookup"><span data-stu-id="16e44-118">Example 2 - List applications using paging</span></span>
 
 ```
 PS C:\> Get-AzADApplication -First 100
 ```
 
-<span data-ttu-id="77630-119">Felsorolja az első 100-alkalmazásokat bérlői fiókban.</span><span class="sxs-lookup"><span data-stu-id="77630-119">Lists the first 100 applications under a tenant.</span></span>
+<span data-ttu-id="16e44-119">A bérlői webhely alatt található első 100 alkalmazás listája.</span><span class="sxs-lookup"><span data-stu-id="16e44-119">Lists the first 100 applications under a tenant.</span></span>
 
-### <span data-ttu-id="77630-120">Példa: 3 – az alkalmazás beolvasása azonosító URI azonosítóval</span><span class="sxs-lookup"><span data-stu-id="77630-120">Example 3 - Get application by identifier URI</span></span>
+### <span data-ttu-id="16e44-120">3. példa : Alkalmazás lekérte azonosító alapján URI</span><span class="sxs-lookup"><span data-stu-id="16e44-120">Example 3 - Get application by identifier URI</span></span>
 
 ```
 PS C:\> Get-AzADApplication -IdentifierUri http://mySecretApp1
 ```
 
-<span data-ttu-id="77630-121">A "" azonosítóval kapja meg az alkalmazást http://mySecretApp1 .</span><span class="sxs-lookup"><span data-stu-id="77630-121">Gets the application with identifier uri as "http://mySecretApp1".</span></span>
+<span data-ttu-id="16e44-121">Az alkalmazás uri azonosítóját "" "- ként http://mySecretApp1 kapja meg.</span><span class="sxs-lookup"><span data-stu-id="16e44-121">Gets the application with identifier uri as "http://mySecretApp1".</span></span>
 
-### <span data-ttu-id="77630-122">Példa 4 – alkalmazásobjektum-azonosító beszerzése</span><span class="sxs-lookup"><span data-stu-id="77630-122">Example 4 - Get application by object id</span></span>
+### <span data-ttu-id="16e44-122">4. példa : Alkalmazás be szerezni objektumazonosító alapján</span><span class="sxs-lookup"><span data-stu-id="16e44-122">Example 4 - Get application by object id</span></span>
 
 ```
 PS C:\> Get-AzADApplication -ObjectId 39e64ec6-569b-4030-8e1c-c3c519a05d69
 ```
 
-<span data-ttu-id="77630-123">A ' 39e64ec6-569b-4030-8e1c-c3c519a05d69 ' azonosítójú objektummal kapja meg az alkalmazást.</span><span class="sxs-lookup"><span data-stu-id="77630-123">Gets the application with the object id '39e64ec6-569b-4030-8e1c-c3c519a05d69'.</span></span>
+<span data-ttu-id="16e44-123">A (39e64ec6-569b-4030-8e1c-c3c519a05d69) objektumazonosítót használja.</span><span class="sxs-lookup"><span data-stu-id="16e44-123">Gets the application with the object id '39e64ec6-569b-4030-8e1c-c3c519a05d69'.</span></span>
 
-## <span data-ttu-id="77630-124">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="77630-124">PARAMETERS</span></span>
+## <span data-ttu-id="16e44-124">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="16e44-124">PARAMETERS</span></span>
 
-### <span data-ttu-id="77630-125">-ApplicationId</span><span class="sxs-lookup"><span data-stu-id="77630-125">-ApplicationId</span></span>
-<span data-ttu-id="77630-126">A lekérni kívánt alkalmazás azonosítója.</span><span class="sxs-lookup"><span data-stu-id="77630-126">The application id of the application to fetch.</span></span>
+### <span data-ttu-id="16e44-125">-ApplicationId</span><span class="sxs-lookup"><span data-stu-id="16e44-125">-ApplicationId</span></span>
+<span data-ttu-id="16e44-126">A lehívni szükséges alkalmazás alkalmazásazonosítója.</span><span class="sxs-lookup"><span data-stu-id="16e44-126">The application id of the application to fetch.</span></span>
 
 ```yaml
 Type: System.Guid
@@ -112,8 +112,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="77630-127">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="77630-127">-DefaultProfile</span></span>
-<span data-ttu-id="77630-128">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés</span><span class="sxs-lookup"><span data-stu-id="77630-128">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="16e44-127">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="16e44-127">-DefaultProfile</span></span>
+<span data-ttu-id="16e44-128">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés</span><span class="sxs-lookup"><span data-stu-id="16e44-128">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -127,8 +127,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="77630-129">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="77630-129">-DisplayName</span></span>
-<span data-ttu-id="77630-130">Az alkalmazás megjelenítendő neve.</span><span class="sxs-lookup"><span data-stu-id="77630-130">The display name of the application.</span></span>
+### <span data-ttu-id="16e44-129">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="16e44-129">-DisplayName</span></span>
+<span data-ttu-id="16e44-130">Az alkalmazás megjelenítendő neve.</span><span class="sxs-lookup"><span data-stu-id="16e44-130">The display name of the application.</span></span>
 
 ```yaml
 Type: System.String
@@ -142,8 +142,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="77630-131">-DisplayNameStartWith</span><span class="sxs-lookup"><span data-stu-id="77630-131">-DisplayNameStartWith</span></span>
-<span data-ttu-id="77630-132">A megjelenítendő névvel kezdődő összes alkalmazás beolvasása</span><span class="sxs-lookup"><span data-stu-id="77630-132">Fetch all applications starting with the display name.</span></span>
+### <span data-ttu-id="16e44-131">-DisplayNameStartWith</span><span class="sxs-lookup"><span data-stu-id="16e44-131">-DisplayNameStartWith</span></span>
+<span data-ttu-id="16e44-132">Az összes alkalmazás lehívása a megjelenítendő névvel kezdve.</span><span class="sxs-lookup"><span data-stu-id="16e44-132">Fetch all applications starting with the display name.</span></span>
 
 ```yaml
 Type: System.String
@@ -157,8 +157,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="77630-133">-IdentifierUri</span><span class="sxs-lookup"><span data-stu-id="77630-133">-IdentifierUri</span></span>
-<span data-ttu-id="77630-134">A beolvasni kívánt alkalmazás egyedi azonosítójának URI azonosítója.</span><span class="sxs-lookup"><span data-stu-id="77630-134">Unique identifier Uri of the application to fetch.</span></span>
+### <span data-ttu-id="16e44-133">-IdentifierUri</span><span class="sxs-lookup"><span data-stu-id="16e44-133">-IdentifierUri</span></span>
+<span data-ttu-id="16e44-134">A lehívni szükséges alkalmazás egyedi azonosítója Uri.</span><span class="sxs-lookup"><span data-stu-id="16e44-134">Unique identifier Uri of the application to fetch.</span></span>
 
 ```yaml
 Type: System.String
@@ -172,8 +172,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="77630-135">-ObjectId</span><span class="sxs-lookup"><span data-stu-id="77630-135">-ObjectId</span></span>
-<span data-ttu-id="77630-136">A beolvasni kívánt alkalmazás objektum-azonosítója.</span><span class="sxs-lookup"><span data-stu-id="77630-136">The object id of the application to fetch.</span></span>
+### <span data-ttu-id="16e44-135">-ObjectId</span><span class="sxs-lookup"><span data-stu-id="16e44-135">-ObjectId</span></span>
+<span data-ttu-id="16e44-136">A lehívni szükséges alkalmazás objektumazonosítója.</span><span class="sxs-lookup"><span data-stu-id="16e44-136">The object id of the application to fetch.</span></span>
 
 ```yaml
 Type: System.String
@@ -187,8 +187,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="77630-137">-IncludeTotalCount</span><span class="sxs-lookup"><span data-stu-id="77630-137">-IncludeTotalCount</span></span>
-<span data-ttu-id="77630-138">Az adathalmaz objektumainak számát jelzi.</span><span class="sxs-lookup"><span data-stu-id="77630-138">Reports the number of objects in the data set.</span></span> <span data-ttu-id="77630-139">Ez a paraméter jelenleg nem tesz semmit.</span><span class="sxs-lookup"><span data-stu-id="77630-139">Currently, this parameter does nothing.</span></span>
+### <span data-ttu-id="16e44-137">-IncludeTotalCount</span><span class="sxs-lookup"><span data-stu-id="16e44-137">-IncludeTotalCount</span></span>
+<span data-ttu-id="16e44-138">Az adatkészletben lévő objektumok számát jelenti.</span><span class="sxs-lookup"><span data-stu-id="16e44-138">Reports the number of objects in the data set.</span></span> <span data-ttu-id="16e44-139">Ez a paraméter jelenleg nem tesz semmit.</span><span class="sxs-lookup"><span data-stu-id="16e44-139">Currently, this parameter does nothing.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -202,8 +202,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="77630-140">-Skip (kihagyás)</span><span class="sxs-lookup"><span data-stu-id="77630-140">-Skip</span></span>
-<span data-ttu-id="77630-141">Figyelmen kívül hagyja az első N objektumokat, és a fennmaradó objektumokat kapja.</span><span class="sxs-lookup"><span data-stu-id="77630-141">Ignores the first N objects and then gets the remaining objects.</span></span>
+### <span data-ttu-id="16e44-140">-Skip</span><span class="sxs-lookup"><span data-stu-id="16e44-140">-Skip</span></span>
+<span data-ttu-id="16e44-141">Figyelmen kívül hagyja az első N objektumot, majd beveszi a fennmaradó objektumokat.</span><span class="sxs-lookup"><span data-stu-id="16e44-141">Ignores the first N objects and then gets the remaining objects.</span></span>
 
 ```yaml
 Type: System.UInt64
@@ -217,8 +217,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="77630-142">– Első</span><span class="sxs-lookup"><span data-stu-id="77630-142">-First</span></span>
-<span data-ttu-id="77630-143">A visszaadni kívánt objektumok maximális száma.</span><span class="sxs-lookup"><span data-stu-id="77630-143">The maximum number of objects to return.</span></span>
+### <span data-ttu-id="16e44-142">-First</span><span class="sxs-lookup"><span data-stu-id="16e44-142">-First</span></span>
+<span data-ttu-id="16e44-143">A vissza nem térhet objektumok maximális száma.</span><span class="sxs-lookup"><span data-stu-id="16e44-143">The maximum number of objects to return.</span></span>
 
 ```yaml
 Type: System.UInt64
@@ -232,32 +232,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="77630-144">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="77630-144">CommonParameters</span></span>
-<span data-ttu-id="77630-145">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="77630-145">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="77630-146">További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="77630-146">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="16e44-144">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="16e44-144">CommonParameters</span></span>
+<span data-ttu-id="16e44-145">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="16e44-145">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="16e44-146">További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="16e44-146">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="77630-147">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="77630-147">INPUTS</span></span>
+## <span data-ttu-id="16e44-147">INPUTS</span><span class="sxs-lookup"><span data-stu-id="16e44-147">INPUTS</span></span>
 
-### <span data-ttu-id="77630-148">System. String</span><span class="sxs-lookup"><span data-stu-id="77630-148">System.String</span></span>
+### <span data-ttu-id="16e44-148">System.String</span><span class="sxs-lookup"><span data-stu-id="16e44-148">System.String</span></span>
 
-### <span data-ttu-id="77630-149">System. GUID</span><span class="sxs-lookup"><span data-stu-id="77630-149">System.Guid</span></span>
+### <span data-ttu-id="16e44-149">System.Guid</span><span class="sxs-lookup"><span data-stu-id="16e44-149">System.Guid</span></span>
 
-## <span data-ttu-id="77630-150">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="77630-150">OUTPUTS</span></span>
+## <span data-ttu-id="16e44-150">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="16e44-150">OUTPUTS</span></span>
 
-### <span data-ttu-id="77630-151">Microsoft. Azure. Command. ActiveDirectory. PSADApplication</span><span class="sxs-lookup"><span data-stu-id="77630-151">Microsoft.Azure.Commands.ActiveDirectory.PSADApplication</span></span>
+### <span data-ttu-id="16e44-151">Microsoft.Azure.Commands.ActiveDirectory.PSADApplication</span><span class="sxs-lookup"><span data-stu-id="16e44-151">Microsoft.Azure.Commands.ActiveDirectory.PSADApplication</span></span>
 
-## <span data-ttu-id="77630-152">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="77630-152">NOTES</span></span>
+## <span data-ttu-id="16e44-152">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="16e44-152">NOTES</span></span>
 
-## <span data-ttu-id="77630-153">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="77630-153">RELATED LINKS</span></span>
+## <span data-ttu-id="16e44-153">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="16e44-153">RELATED LINKS</span></span>
 
-[<span data-ttu-id="77630-154">Remove-AzADAppCredential</span><span class="sxs-lookup"><span data-stu-id="77630-154">Remove-AzADAppCredential</span></span>](./Remove-AzADAppCredential.md)
+[<span data-ttu-id="16e44-154">Remove-AzADAppCredential</span><span class="sxs-lookup"><span data-stu-id="16e44-154">Remove-AzADAppCredential</span></span>](./Remove-AzADAppCredential.md)
 
-[<span data-ttu-id="77630-155">Új – AzADAppCredential</span><span class="sxs-lookup"><span data-stu-id="77630-155">New-AzADAppCredential</span></span>](./New-AzADAppCredential.md)
+[<span data-ttu-id="16e44-155">New-AzADAppCredential</span><span class="sxs-lookup"><span data-stu-id="16e44-155">New-AzADAppCredential</span></span>](./New-AzADAppCredential.md)
 
-[<span data-ttu-id="77630-156">Get-AzADAppCredential</span><span class="sxs-lookup"><span data-stu-id="77630-156">Get-AzADAppCredential</span></span>](./Get-AzADAppCredential.md)
+[<span data-ttu-id="16e44-156">Get-AzADAppCredential</span><span class="sxs-lookup"><span data-stu-id="16e44-156">Get-AzADAppCredential</span></span>](./Get-AzADAppCredential.md)
 
-[<span data-ttu-id="77630-157">Remove-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="77630-157">Remove-AzADApplication</span></span>](./Remove-AzADApplication.md)
+[<span data-ttu-id="16e44-157">Remove-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="16e44-157">Remove-AzADApplication</span></span>](./Remove-AzADApplication.md)
 
-[<span data-ttu-id="77630-158">Set-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="77630-158">Set-AzADApplication</span></span>](./Set-AzADApplication.md)
 
-[<span data-ttu-id="77630-159">Új – AzADApplication</span><span class="sxs-lookup"><span data-stu-id="77630-159">New-AzADApplication</span></span>](./New-AzADApplication.md)
+[<span data-ttu-id="16e44-158">New-AzADApplication</span><span class="sxs-lookup"><span data-stu-id="16e44-158">New-AzADApplication</span></span>](./New-AzADApplication.md)
 
