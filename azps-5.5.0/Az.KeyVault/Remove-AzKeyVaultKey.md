@@ -6,17 +6,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/r
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultKey.md
-ms.openlocfilehash: e78b6729061efe5a83f31bd25b9e542c09627ca3
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 3c5435d1a472341d0447ead2f384fa892d6e1202
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100152770"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100404479"
 ---
 # Remove-AzKeyVaultKey
 
 ## SYNOPSIS
-Kulcs törlése a kulcstárból.
+Kulcs törlése egy kulcstárban.
 
 ## SZINTAXIS
 
@@ -79,14 +79,14 @@ PS C:\> Remove-AzKeyVaultKey -VaultName 'Contoso' -Name 'ITSoftware' -InRemovedS
 ```
 
 Ez a parancs véglegesen eltávolítja az ITSoftware nevű kulcsot a Contoso nevű kulcstárból.
-A parancsmag végrehajtatása "végleges végleges" engedélyt igényel, amelynek korábban és explicit módon meg kellett adni a felhasználónak ehhez a kulcstárhoz.
+A parancsmag végrehajtatása "végleges végleges" engedélyt igényel, amelyet korábban és kifejezetten a felhasználónak adott meg ehhez a kulcstárhoz.
 
 ### 4. példa: Kulcsok eltávolítása a folyamat műveleti operátorával
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'Contoso' | Where-Object {$_.Attributes.Enabled -eq $False} | Remove-AzKeyVaultKey
 ```
 
-Ez a parancs begyűjte a Contoso nevű kulcstár összes kulcsát, és átadja őket a **Where-Object** parancsmagnak a folyamat műveleti operátorával.
+Ez a parancs a Contoso nevű kulcstár összes kulcsát beveszi, és a folyamat műveleti operátorával átadja őket a **Where-Object** parancsmagnak.
 Ez a parancsmag átadja az Engedélyezett $False értékkel  rendelkező kulcsokat az aktuális parancsmagnak.
 Ez a parancsmag eltávolítja ezeket a kulcsokat.
 
@@ -266,7 +266,6 @@ Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, 
 
 [Get-AzKeyVaultKey](./Get-AzKeyVaultKey.md)
 
-[Set-AzKeyVaultKeyAttribute](./Set-AzKeyVaultKeyAttribute.md)
 
 [Undo-AzKeyVaultKeyRemoval](./Undo-AzKeyVaultKeyRemoval.md)
 
