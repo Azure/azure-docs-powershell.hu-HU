@@ -6,80 +6,80 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/g
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultCertificate.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultCertificate.md
-ms.openlocfilehash: f41e15a01a667576ee8f045d94bcb6b6dfee1e7b
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 3824f2c0366063dfc453fff2291ae78845917aaa
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94018223"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100407658"
 ---
-# <span data-ttu-id="cf7ea-101">Get-AzKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="cf7ea-101">Get-AzKeyVaultCertificate</span></span>
+# <span data-ttu-id="f7e94-101">Get-AzKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="f7e94-101">Get-AzKeyVaultCertificate</span></span>
 
-## <span data-ttu-id="cf7ea-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="cf7ea-102">SYNOPSIS</span></span>
-<span data-ttu-id="cf7ea-103">Egy kulcsos boltozattól kapja a tanúsítványt.</span><span class="sxs-lookup"><span data-stu-id="cf7ea-103">Gets a certificate from a key vault.</span></span>
+## <span data-ttu-id="f7e94-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="f7e94-102">SYNOPSIS</span></span>
+<span data-ttu-id="f7e94-103">Tanúsítványt kap egy kulcstárolóból.</span><span class="sxs-lookup"><span data-stu-id="f7e94-103">Gets a certificate from a key vault.</span></span>
 
-## <span data-ttu-id="cf7ea-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="cf7ea-104">SYNTAX</span></span>
+## <span data-ttu-id="f7e94-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="f7e94-104">SYNTAX</span></span>
 
-### <span data-ttu-id="cf7ea-105">ByName (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="cf7ea-105">ByName (Default)</span></span>
+### <span data-ttu-id="f7e94-105">ByName (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="f7e94-105">ByName (Default)</span></span>
 ```
 Get-AzKeyVaultCertificate [-VaultName] <String> [[-Name] <String>] [-InRemovedState] [-IncludePending]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="cf7ea-106">ByCertificateNameAndVersion</span><span class="sxs-lookup"><span data-stu-id="cf7ea-106">ByCertificateNameAndVersion</span></span>
+### <span data-ttu-id="f7e94-106">ByCertificateNameAndVersion</span><span class="sxs-lookup"><span data-stu-id="f7e94-106">ByCertificateNameAndVersion</span></span>
 ```
 Get-AzKeyVaultCertificate [-VaultName] <String> [-Name] <String> [-Version] <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="cf7ea-107">ByCertificateAllVersions</span><span class="sxs-lookup"><span data-stu-id="cf7ea-107">ByCertificateAllVersions</span></span>
+### <span data-ttu-id="f7e94-107">ByCertificateAllVersions</span><span class="sxs-lookup"><span data-stu-id="f7e94-107">ByCertificateAllVersions</span></span>
 ```
 Get-AzKeyVaultCertificate [-VaultName] <String> [-Name] <String> [-IncludeVersions]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="cf7ea-108">ByNameInputObject</span><span class="sxs-lookup"><span data-stu-id="cf7ea-108">ByNameInputObject</span></span>
+### <span data-ttu-id="f7e94-108">ByNameInputObject</span><span class="sxs-lookup"><span data-stu-id="f7e94-108">ByNameInputObject</span></span>
 ```
 Get-AzKeyVaultCertificate [-InputObject] <PSKeyVault> [[-Name] <String>] [-InRemovedState] [-IncludePending]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="cf7ea-109">ByCertificateNameAndVersionInputObject</span><span class="sxs-lookup"><span data-stu-id="cf7ea-109">ByCertificateNameAndVersionInputObject</span></span>
+### <span data-ttu-id="f7e94-109">ByCertificateNameAndVersionInputObject</span><span class="sxs-lookup"><span data-stu-id="f7e94-109">ByCertificateNameAndVersionInputObject</span></span>
 ```
 Get-AzKeyVaultCertificate [-InputObject] <PSKeyVault> [-Name] <String> [-Version] <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="cf7ea-110">ByCertificateAllVersionsInputObject</span><span class="sxs-lookup"><span data-stu-id="cf7ea-110">ByCertificateAllVersionsInputObject</span></span>
+### <span data-ttu-id="f7e94-110">ByCertificateAllVersionsInputObject</span><span class="sxs-lookup"><span data-stu-id="f7e94-110">ByCertificateAllVersionsInputObject</span></span>
 ```
 Get-AzKeyVaultCertificate [-InputObject] <PSKeyVault> [-Name] <String> [-IncludeVersions]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="cf7ea-111">ByNameResourceId</span><span class="sxs-lookup"><span data-stu-id="cf7ea-111">ByNameResourceId</span></span>
+### <span data-ttu-id="f7e94-111">ByNameResourceId</span><span class="sxs-lookup"><span data-stu-id="f7e94-111">ByNameResourceId</span></span>
 ```
 Get-AzKeyVaultCertificate [-ResourceId] <String> [[-Name] <String>] [-InRemovedState] [-IncludePending]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="cf7ea-112">ByCertificateNameAndVersionResourceId</span><span class="sxs-lookup"><span data-stu-id="cf7ea-112">ByCertificateNameAndVersionResourceId</span></span>
+### <span data-ttu-id="f7e94-112">ByCertificateNameAndVersionResourceId</span><span class="sxs-lookup"><span data-stu-id="f7e94-112">ByCertificateNameAndVersionResourceId</span></span>
 ```
 Get-AzKeyVaultCertificate [-ResourceId] <String> [-Name] <String> [-Version] <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="cf7ea-113">ByCertificateAllVersionsResourceId</span><span class="sxs-lookup"><span data-stu-id="cf7ea-113">ByCertificateAllVersionsResourceId</span></span>
+### <span data-ttu-id="f7e94-113">ByCertificateAllVersionsResourceId</span><span class="sxs-lookup"><span data-stu-id="f7e94-113">ByCertificateAllVersionsResourceId</span></span>
 ```
 Get-AzKeyVaultCertificate [-ResourceId] <String> [-Name] <String> [-IncludeVersions]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="cf7ea-114">Leírás</span><span class="sxs-lookup"><span data-stu-id="cf7ea-114">DESCRIPTION</span></span>
-<span data-ttu-id="cf7ea-115">A **Get-AzKeyVaultCertificate** parancsmag az Azure Key Vault-ban a megadott tanúsítványt vagy egy tanúsítvány verziószámát kapja.</span><span class="sxs-lookup"><span data-stu-id="cf7ea-115">The **Get-AzKeyVaultCertificate** cmdlet gets the specified certificate or the versions of a certificate from a key vault in Azure Key Vault.</span></span>
+## <span data-ttu-id="f7e94-114">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="f7e94-114">DESCRIPTION</span></span>
+<span data-ttu-id="f7e94-115">A **Get-AzKeyVaultCertificate** parancsmag a megadott tanúsítványt vagy egy tanúsítvány verzióit kapja meg egy kulcstárolóból az Azure Key Vaultban.</span><span class="sxs-lookup"><span data-stu-id="f7e94-115">The **Get-AzKeyVaultCertificate** cmdlet gets the specified certificate or the versions of a certificate from a key vault in Azure Key Vault.</span></span>
 
-## <span data-ttu-id="cf7ea-116">Példák</span><span class="sxs-lookup"><span data-stu-id="cf7ea-116">EXAMPLES</span></span>
+## <span data-ttu-id="f7e94-116">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="f7e94-116">EXAMPLES</span></span>
 
-### <span data-ttu-id="cf7ea-117">Példa 1: tanúsítvány beszerzése</span><span class="sxs-lookup"><span data-stu-id="cf7ea-117">Example 1: Get a certificate</span></span>
+### <span data-ttu-id="f7e94-117">1. példa: Tanúsítvány lekérve</span><span class="sxs-lookup"><span data-stu-id="f7e94-117">Example 1: Get a certificate</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "TestCert01"
 Name        : testCert01
@@ -110,8 +110,8 @@ Created     : 2/8/2016 11:21:45 PM
 Updated     : 2/8/2016 11:21:45 PM
 ```
 
-### <span data-ttu-id="cf7ea-118">2. példa: a tanúsítvány beszerzése és mentése pfx-ként</span><span class="sxs-lookup"><span data-stu-id="cf7ea-118">Example 2: Get cert and save it as pfx</span></span>
-<span data-ttu-id="cf7ea-119">Ez a parancs a TestCert01 nevű tanúsítványt a ContosoKV01 nevű kulcs-boltozattal kapja meg.</span><span class="sxs-lookup"><span data-stu-id="cf7ea-119">This command gets the certificate named TestCert01 from the key vault named ContosoKV01.</span></span> <span data-ttu-id="cf7ea-120">A tanúsítvány PFX-fájlként való letöltéséhez futtassa az alábbi parancsot.</span><span class="sxs-lookup"><span data-stu-id="cf7ea-120">To download the certificate as pfx file, run following command.</span></span> <span data-ttu-id="cf7ea-121">Ezek a parancsok az Access SecretId, majd a tartalmat pfx-fájlként menti.</span><span class="sxs-lookup"><span data-stu-id="cf7ea-121">These commands access SecretId and then save the content as a pfx file.</span></span>
+### <span data-ttu-id="f7e94-118">2. példa: A tanúsítvány lekérte és pfx fájlként való mentését</span><span class="sxs-lookup"><span data-stu-id="f7e94-118">Example 2: Get cert and save it as pfx</span></span>
+<span data-ttu-id="f7e94-119">Ez a parancs a ContosoKV01 nevű kulcstárolóból kapja meg a TestCert01 nevű tanúsítványt.</span><span class="sxs-lookup"><span data-stu-id="f7e94-119">This command gets the certificate named TestCert01 from the key vault named ContosoKV01.</span></span> <span data-ttu-id="f7e94-120">A tanúsítvány pfx fájlként való letöltéséhez futtassa a következő parancsot.</span><span class="sxs-lookup"><span data-stu-id="f7e94-120">To download the certificate as pfx file, run following command.</span></span> <span data-ttu-id="f7e94-121">Ezek a parancsok hozzáférnek a SecretId fájlhoz, majd a tartalmat pfx fájlként mentik.</span><span class="sxs-lookup"><span data-stu-id="f7e94-121">These commands access SecretId and then save the content as a pfx file.</span></span>
 
 ```powershell
 $cert = Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "TestCert01"
@@ -127,7 +127,7 @@ $pfxFileByte = $x509Cert.Export($type, $password)
 [System.IO.File]::WriteAllBytes("KeyVault.pfx", $pfxFileByte)
 ```
 
-### <span data-ttu-id="cf7ea-122">3. példa: az összes olyan tanúsítvány beszerzése, amelyet töröltek, de ez a kulcsfájl nem törlődik.</span><span class="sxs-lookup"><span data-stu-id="cf7ea-122">Example 3: Get all the certificates that have been deleted but not purged for this key vault.</span></span>
+### <span data-ttu-id="f7e94-122">3. példa: Szerezze be az összes olyan tanúsítványt, amely törölt, de nem lett véglegesen törölve ehhez a kulcstárhoz.</span><span class="sxs-lookup"><span data-stu-id="f7e94-122">Example 3: Get all the certificates that have been deleted but not purged for this key vault.</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName 'contoso' -InRemovedState
 
@@ -157,9 +157,9 @@ Version            :
 Id                 : https://contoso.vault.azure.net:443/certificates/test2
 ```
 
-<span data-ttu-id="cf7ea-123">Ez a parancs beilleszti a korábban törölt, de el nem távolított tanúsítványokat a contoso nevű fő boltozatba.</span><span class="sxs-lookup"><span data-stu-id="cf7ea-123">This command gets all the certificates that have been previously deleted, but not purged, in the key vault named Contoso.</span></span>
+<span data-ttu-id="f7e94-123">Ez a parancs a Korábban törölt, de nem véglegesen törölt összes tanúsítványt a Contoso nevű kulcstárba kapja.</span><span class="sxs-lookup"><span data-stu-id="f7e94-123">This command gets all the certificates that have been previously deleted, but not purged, in the key vault named Contoso.</span></span>
 
-### <span data-ttu-id="cf7ea-124">Példa 4: beolvassa a MyCert, amelyet töröltek, de erre a gombra nincs kitisztítva.</span><span class="sxs-lookup"><span data-stu-id="cf7ea-124">Example 4: Gets the certificate MyCert that has been deleted but not purged for this key vault.</span></span>
+### <span data-ttu-id="f7e94-124">4. példa: Annak a MyCertnek a tanúsítványát kapja meg, amely törölve lett, de nem lett véglegesen törölve ehhez a kulcstárolóhoz.</span><span class="sxs-lookup"><span data-stu-id="f7e94-124">Example 4: Gets the certificate MyCert that has been deleted but not purged for this key vault.</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName 'contoso' -Name 'test1' -InRemovedState
 
@@ -199,10 +199,10 @@ Version            : 7fe415d5518240c1a6fce89986b8d334
 Id                 : https://contoso.vault.azure.net:443/certificates/test1/7fe415d5518240c1a6fce89986b8d334
 ```
 
-<span data-ttu-id="cf7ea-125">Ez a parancs a contoso nevű kulcsfájl "MyCert" nevű tanúsítványát kapja meg, amelyet korábban törölt, de nem.</span><span class="sxs-lookup"><span data-stu-id="cf7ea-125">This command gets the certificate named 'MyCert' that has been previously deleted, but not purged, in the key vault named Contoso.</span></span>
-<span data-ttu-id="cf7ea-126">Ez a parancs metaadatokat ad vissza, például a törlési dátumot, valamint a törölt tanúsítvány ütemezett végleges dátumát.</span><span class="sxs-lookup"><span data-stu-id="cf7ea-126">This command will return metadata such as the deletion date, and the scheduled purging date of this deleted certificate.</span></span>
+<span data-ttu-id="f7e94-125">Ez a parancs a Korábban törölt, de nem véglegesen törölt MyCert tanúsítványt kapja a Contoso nevű kulcstárolóban.</span><span class="sxs-lookup"><span data-stu-id="f7e94-125">This command gets the certificate named 'MyCert' that has been previously deleted, but not purged, in the key vault named Contoso.</span></span>
+<span data-ttu-id="f7e94-126">Ez a parancs metaadatokat, például törlési dátumot és a törölt tanúsítvány ütemezett végleges végleges törlésének dátumát adja vissza.</span><span class="sxs-lookup"><span data-stu-id="f7e94-126">This command will return metadata such as the deletion date, and the scheduled purging date of this deleted certificate.</span></span>
 
-### <span data-ttu-id="cf7ea-127">Példa 5: szűrést használó tanúsítványok listázása</span><span class="sxs-lookup"><span data-stu-id="cf7ea-127">Example 5: List certificates using filtering</span></span>
+### <span data-ttu-id="f7e94-127">5. példa: Tanúsítványok felsorolása szűrés használatával</span><span class="sxs-lookup"><span data-stu-id="f7e94-127">Example 5: List certificates using filtering</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "test*"
 
@@ -231,10 +231,10 @@ Id        : https://ContosoKV01.vault.azure.net:443/certificates/test2
 This command gets all certificates starting with "test" from the key vault named ContosoKV01.
 ```
 
-## <span data-ttu-id="cf7ea-128">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="cf7ea-128">PARAMETERS</span></span>
+## <span data-ttu-id="f7e94-128">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="f7e94-128">PARAMETERS</span></span>
 
-### <span data-ttu-id="cf7ea-129">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="cf7ea-129">-DefaultProfile</span></span>
-<span data-ttu-id="cf7ea-130">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés</span><span class="sxs-lookup"><span data-stu-id="cf7ea-130">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="f7e94-129">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="f7e94-129">-DefaultProfile</span></span>
+<span data-ttu-id="f7e94-130">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés</span><span class="sxs-lookup"><span data-stu-id="f7e94-130">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -248,8 +248,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="cf7ea-131">-IncludePending</span><span class="sxs-lookup"><span data-stu-id="cf7ea-131">-IncludePending</span></span>
-<span data-ttu-id="cf7ea-132">Annak megadása, hogy függőben lévő tanúsítványokat szeretne-e szerepeltetni a kimenetben</span><span class="sxs-lookup"><span data-stu-id="cf7ea-132">Specifies whether to include pending certificates in the output</span></span>
+### <span data-ttu-id="f7e94-131">-IncludePending</span><span class="sxs-lookup"><span data-stu-id="f7e94-131">-IncludePending</span></span>
+<span data-ttu-id="f7e94-132">Megadja, hogy a függőben lévő tanúsítványok szerepeljenek-e a kimenetben</span><span class="sxs-lookup"><span data-stu-id="f7e94-132">Specifies whether to include pending certificates in the output</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -263,8 +263,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="cf7ea-133">-IncludeVersions</span><span class="sxs-lookup"><span data-stu-id="cf7ea-133">-IncludeVersions</span></span>
-<span data-ttu-id="cf7ea-134">Azt jelzi, hogy ez a művelet a tanúsítvány minden változatát bekapja.</span><span class="sxs-lookup"><span data-stu-id="cf7ea-134">Indicates that this operation gets all versions of the certificate.</span></span>
+### <span data-ttu-id="f7e94-133">-IncludeVersions</span><span class="sxs-lookup"><span data-stu-id="f7e94-133">-IncludeVersions</span></span>
+<span data-ttu-id="f7e94-134">Azt jelzi, hogy ez a művelet a tanúsítvány összes verzióját lekéri.</span><span class="sxs-lookup"><span data-stu-id="f7e94-134">Indicates that this operation gets all versions of the certificate.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -278,8 +278,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="cf7ea-135">-InputObject</span><span class="sxs-lookup"><span data-stu-id="cf7ea-135">-InputObject</span></span>
-<span data-ttu-id="cf7ea-136">A boltozat objektum.</span><span class="sxs-lookup"><span data-stu-id="cf7ea-136">KeyVault object.</span></span>
+### <span data-ttu-id="f7e94-135">-InputObject</span><span class="sxs-lookup"><span data-stu-id="f7e94-135">-InputObject</span></span>
+<span data-ttu-id="f7e94-136">KeyVault objektum.</span><span class="sxs-lookup"><span data-stu-id="f7e94-136">KeyVault object.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
@@ -293,8 +293,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="cf7ea-137">-InRemovedState</span><span class="sxs-lookup"><span data-stu-id="cf7ea-137">-InRemovedState</span></span>
-<span data-ttu-id="cf7ea-138">Annak megadása, hogy a kimenetben a korábban törölt tanúsítványokat szeretné-e szerepeltetni</span><span class="sxs-lookup"><span data-stu-id="cf7ea-138">Specifies whether to include previously deleted certificates in the output</span></span>
+### <span data-ttu-id="f7e94-137">-InRemovedState</span><span class="sxs-lookup"><span data-stu-id="f7e94-137">-InRemovedState</span></span>
+<span data-ttu-id="f7e94-138">Megadja, hogy a korábban törölt tanúsítványok szerepeljenek-e a kimenetben</span><span class="sxs-lookup"><span data-stu-id="f7e94-138">Specifies whether to include previously deleted certificates in the output</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -308,8 +308,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="cf7ea-139">-Name (név)</span><span class="sxs-lookup"><span data-stu-id="cf7ea-139">-Name</span></span>
-<span data-ttu-id="cf7ea-140">A beolvasott tanúsítvány nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="cf7ea-140">Specifies the name of the certificate to get.</span></span>
+### <span data-ttu-id="f7e94-139">-Name</span><span class="sxs-lookup"><span data-stu-id="f7e94-139">-Name</span></span>
+<span data-ttu-id="f7e94-140">A lekérni szükséges tanúsítvány neve.</span><span class="sxs-lookup"><span data-stu-id="f7e94-140">Specifies the name of the certificate to get.</span></span>
 
 ```yaml
 Type: System.String
@@ -335,8 +335,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="cf7ea-141">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="cf7ea-141">-ResourceId</span></span>
-<span data-ttu-id="cf7ea-142">A főkészlet erőforrás-azonosítója.</span><span class="sxs-lookup"><span data-stu-id="cf7ea-142">KeyVault Resource Id.</span></span>
+### <span data-ttu-id="f7e94-141">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="f7e94-141">-ResourceId</span></span>
+<span data-ttu-id="f7e94-142">KeyVault-erőforrás azonosítója.</span><span class="sxs-lookup"><span data-stu-id="f7e94-142">KeyVault Resource Id.</span></span>
 
 ```yaml
 Type: System.String
@@ -350,8 +350,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="cf7ea-143">-VaultName</span><span class="sxs-lookup"><span data-stu-id="cf7ea-143">-VaultName</span></span>
-<span data-ttu-id="cf7ea-144">A kulcsfájl nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="cf7ea-144">Specifies the name of a key vault.</span></span>
+### <span data-ttu-id="f7e94-143">-VaultName</span><span class="sxs-lookup"><span data-stu-id="f7e94-143">-VaultName</span></span>
+<span data-ttu-id="f7e94-144">Egy kulcstár nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="f7e94-144">Specifies the name of a key vault.</span></span>
 
 ```yaml
 Type: System.String
@@ -365,8 +365,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="cf7ea-145">-Verzió</span><span class="sxs-lookup"><span data-stu-id="cf7ea-145">-Version</span></span>
-<span data-ttu-id="cf7ea-146">A tanúsítvány verziószámát adja meg.</span><span class="sxs-lookup"><span data-stu-id="cf7ea-146">Specifies the version of a certificate.</span></span>
+### <span data-ttu-id="f7e94-145">-Verzió</span><span class="sxs-lookup"><span data-stu-id="f7e94-145">-Version</span></span>
+<span data-ttu-id="f7e94-146">A tanúsítvány verzióját határozza meg.</span><span class="sxs-lookup"><span data-stu-id="f7e94-146">Specifies the version of a certificate.</span></span>
 
 ```yaml
 Type: System.String
@@ -380,33 +380,32 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="cf7ea-147">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="cf7ea-147">CommonParameters</span></span>
-<span data-ttu-id="cf7ea-148">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="cf7ea-148">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="cf7ea-149">További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="cf7ea-149">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="f7e94-147">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="f7e94-147">CommonParameters</span></span>
+<span data-ttu-id="f7e94-148">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="f7e94-148">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="f7e94-149">További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="f7e94-149">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="cf7ea-150">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="cf7ea-150">INPUTS</span></span>
+## <span data-ttu-id="f7e94-150">INPUTS</span><span class="sxs-lookup"><span data-stu-id="f7e94-150">INPUTS</span></span>
 
-### <span data-ttu-id="cf7ea-151">Microsoft. Azure. Command. PSKeyVault. models.</span><span class="sxs-lookup"><span data-stu-id="cf7ea-151">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault</span></span>
+### <span data-ttu-id="f7e94-151">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault</span><span class="sxs-lookup"><span data-stu-id="f7e94-151">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault</span></span>
 
-### <span data-ttu-id="cf7ea-152">System. String</span><span class="sxs-lookup"><span data-stu-id="cf7ea-152">System.String</span></span>
+### <span data-ttu-id="f7e94-152">System.String</span><span class="sxs-lookup"><span data-stu-id="f7e94-152">System.String</span></span>
 
-## <span data-ttu-id="cf7ea-153">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="cf7ea-153">OUTPUTS</span></span>
+## <span data-ttu-id="f7e94-153">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="f7e94-153">OUTPUTS</span></span>
 
-### <span data-ttu-id="cf7ea-154">Microsoft. Azure. Command. PSKeyVaultCertificateIdentityItem. models.</span><span class="sxs-lookup"><span data-stu-id="cf7ea-154">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificateIdentityItem</span></span>
+### <span data-ttu-id="f7e94-154">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificateIdentityItem</span><span class="sxs-lookup"><span data-stu-id="f7e94-154">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificateIdentityItem</span></span>
 
-### <span data-ttu-id="cf7ea-155">Microsoft. Azure. Command. PSKeyVaultCertificate. models.</span><span class="sxs-lookup"><span data-stu-id="cf7ea-155">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificate</span></span>
+### <span data-ttu-id="f7e94-155">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="f7e94-155">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificate</span></span>
 
-### <span data-ttu-id="cf7ea-156">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="cf7ea-156">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificate</span></span>
+### <span data-ttu-id="f7e94-156">Microsoft.Azure.Commands.KeyVault.Models.PSDKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="f7e94-156">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificate</span></span>
 
-### <span data-ttu-id="cf7ea-157">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificateIdentityItem</span><span class="sxs-lookup"><span data-stu-id="cf7ea-157">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificateIdentityItem</span></span>
+### <span data-ttu-id="f7e94-157">Microsoft.Azure.Commands.KeyVault.Models.PSDKeyVaultCertificateIdentityItem</span><span class="sxs-lookup"><span data-stu-id="f7e94-157">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificateIdentityItem</span></span>
 
-## <span data-ttu-id="cf7ea-158">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="cf7ea-158">NOTES</span></span>
+## <span data-ttu-id="f7e94-158">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="f7e94-158">NOTES</span></span>
 
-## <span data-ttu-id="cf7ea-159">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="cf7ea-159">RELATED LINKS</span></span>
+## <span data-ttu-id="f7e94-159">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="f7e94-159">RELATED LINKS</span></span>
 
-[<span data-ttu-id="cf7ea-160">Add-AzKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="cf7ea-160">Add-AzKeyVaultCertificate</span></span>](./Add-AzKeyVaultCertificate.md)
+[<span data-ttu-id="f7e94-160">Add-AzKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="f7e94-160">Add-AzKeyVaultCertificate</span></span>](./Add-AzKeyVaultCertificate.md)
 
-[<span data-ttu-id="cf7ea-161">Importálás – AzKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="cf7ea-161">Import-AzKeyVaultCertificate</span></span>](./Import-AzKeyVaultCertificate.md)
+[<span data-ttu-id="f7e94-161">Import-AzKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="f7e94-161">Import-AzKeyVaultCertificate</span></span>](./Import-AzKeyVaultCertificate.md)
 
-[<span data-ttu-id="cf7ea-162">Remove-AzKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="cf7ea-162">Remove-AzKeyVaultCertificate</span></span>](./Remove-AzKeyVaultCertificate.md)
+[<span data-ttu-id="f7e94-162">Remove-AzKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="f7e94-162">Remove-AzKeyVaultCertificate</span></span>](./Remove-AzKeyVaultCertificate.md)
 
-[<span data-ttu-id="cf7ea-163">Visszavonás – AzKeyVaultSecretCertificate</span><span class="sxs-lookup"><span data-stu-id="cf7ea-163">Undo-AzKeyVaultSecretCertificate</span></span>](./Undo-AzKeyVaultSecretCertificate.md)
