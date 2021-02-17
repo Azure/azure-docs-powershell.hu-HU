@@ -6,32 +6,32 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementVirtualNetwork.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementVirtualNetwork.md
-ms.openlocfilehash: 67020f99129dfa920aa1bbc5e22ac59c16affb32
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 496e65438a2c0ef5f09bbf961535eaa842062f25
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93836976"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400892"
 ---
-# <span data-ttu-id="37161-101">New-AzApiManagementVirtualNetwork</span><span class="sxs-lookup"><span data-stu-id="37161-101">New-AzApiManagementVirtualNetwork</span></span>
+# <span data-ttu-id="645ba-101">New-AzApiManagementVirtualNetwork</span><span class="sxs-lookup"><span data-stu-id="645ba-101">New-AzApiManagementVirtualNetwork</span></span>
 
-## <span data-ttu-id="37161-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="37161-102">SYNOPSIS</span></span>
-<span data-ttu-id="37161-103">Létrehozza a PsApiManagementVirtualNetwork példányát.</span><span class="sxs-lookup"><span data-stu-id="37161-103">Creates an instance of PsApiManagementVirtualNetwork.</span></span>
+## <span data-ttu-id="645ba-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="645ba-102">SYNOPSIS</span></span>
+<span data-ttu-id="645ba-103">Létrehozza a PsApiManagementVirtualNetwork példányát.</span><span class="sxs-lookup"><span data-stu-id="645ba-103">Creates an instance of PsApiManagementVirtualNetwork.</span></span>
 
-## <span data-ttu-id="37161-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="37161-104">SYNTAX</span></span>
+## <span data-ttu-id="645ba-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="645ba-104">SYNTAX</span></span>
 
 ```
 New-AzApiManagementVirtualNetwork -SubnetResourceId <String> [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="37161-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="37161-105">DESCRIPTION</span></span>
-<span data-ttu-id="37161-106">A **New-AzApiManagementVirtualNetwork** parancsmag a **PsApiManagementVirtualNetwork** példányának létrehozására szolgáló segítő parancs.</span><span class="sxs-lookup"><span data-stu-id="37161-106">The **New-AzApiManagementVirtualNetwork** cmdlet is a helper command to create an instance of **PsApiManagementVirtualNetwork**.</span></span>
-<span data-ttu-id="37161-107">Ez a parancs a **Update-AzApiManagementDeployment** parancsmagtal használható.</span><span class="sxs-lookup"><span data-stu-id="37161-107">This command is used with **Update-AzApiManagementDeployment** cmdlet.</span></span>
+## <span data-ttu-id="645ba-105">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="645ba-105">DESCRIPTION</span></span>
+<span data-ttu-id="645ba-106">A **New-AzApiManagementVirtualNetwork** parancsmag egy segítő parancs a **PsApiManagementVirtualNetwork** példányának létrehozásához.</span><span class="sxs-lookup"><span data-stu-id="645ba-106">The **New-AzApiManagementVirtualNetwork** cmdlet is a helper command to create an instance of **PsApiManagementVirtualNetwork**.</span></span>
+<span data-ttu-id="645ba-107">Ez a parancs a **Set-AzApiManagement parancsmaggal** használható.</span><span class="sxs-lookup"><span data-stu-id="645ba-107">This command is used with **Set-AzApiManagement** cmdlet.</span></span>
 
-## <span data-ttu-id="37161-108">Példák</span><span class="sxs-lookup"><span data-stu-id="37161-108">EXAMPLES</span></span>
+## <span data-ttu-id="645ba-108">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="645ba-108">EXAMPLES</span></span>
 
-### <span data-ttu-id="37161-109">Példa 1: virtuális hálózat létrehozása</span><span class="sxs-lookup"><span data-stu-id="37161-109">Example 1: Create a virtual network</span></span>
+### <span data-ttu-id="645ba-109">1. példa: Virtuális hálózat létrehozása</span><span class="sxs-lookup"><span data-stu-id="645ba-109">Example 1: Create a virtual network</span></span>
 ```
 PS C:\>$vnetName = "myvnet"
 PS C:\>$subnetName = "default"
@@ -42,20 +42,20 @@ PS C:\>$vnet = New-AzvirtualNetwork -Name $vnetName -ResourceGroupName $resource
 PS C:\>$virtualNetwork = New-AzApiManagementVirtualNetwork -Location $location -SubnetResourceId $vnet.Subnets[0].Id
 
 # Get the service
-PS C:\>$service = Get-AzApiManagement -ResourceGroupName $resourceGroupName -Name $apiManagementName    
+PS C:\>$service = Get-AzApiManagement -ResourceGroupName $resourceGroupName -Name $apiManagementName
 PS C:\>$service.VirtualNetwork = $virtualNetwork
 PS C:\>$service.VpnType = "External"
 
 # Update the Deployment with Virtual Network
-PS C:\>Update-AzApiManagementDeployment -ApiManagement $service
+PS C:\>Set-AzApiManagement -ApiManagement $service
 ```
 
-<span data-ttu-id="37161-110">Ez a példa virtuális hálózatot hoz létre, majd felhívja az **Update-AzApiManagementDeployment** parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="37161-110">This example creates a virtual network and then calls the **Update-AzApiManagementDeployment** cmdlet.</span></span>
+<span data-ttu-id="645ba-110">Ez a példa létrehoz egy virtuális hálózatot, majd felhívja a **Set-AzApiManagement** parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="645ba-110">This example creates a virtual network and then calls the **Set-AzApiManagement** cmdlet.</span></span>
 
-## <span data-ttu-id="37161-111">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="37161-111">PARAMETERS</span></span>
+## <span data-ttu-id="645ba-111">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="645ba-111">PARAMETERS</span></span>
 
-### <span data-ttu-id="37161-112">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="37161-112">-DefaultProfile</span></span>
-<span data-ttu-id="37161-113">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="37161-113">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="645ba-112">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="645ba-112">-DefaultProfile</span></span>
+<span data-ttu-id="645ba-113">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="645ba-113">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -69,8 +69,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="37161-114">-SubnetResourceId</span><span class="sxs-lookup"><span data-stu-id="37161-114">-SubnetResourceId</span></span>
-<span data-ttu-id="37161-115">A virtuális hálózat alhálózati erőforrás-AZONOSÍTÓját adja meg.</span><span class="sxs-lookup"><span data-stu-id="37161-115">Specifies the subnet resource ID of the virtual network.</span></span>
+### <span data-ttu-id="645ba-114">-SubnetResourceId</span><span class="sxs-lookup"><span data-stu-id="645ba-114">-SubnetResourceId</span></span>
+<span data-ttu-id="645ba-115">A virtuális hálózat alhálózati erőforrás-azonosítóját adja meg.</span><span class="sxs-lookup"><span data-stu-id="645ba-115">Specifies the subnet resource ID of the virtual network.</span></span>
 
 ```yaml
 Type: System.String
@@ -84,20 +84,20 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="37161-116">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="37161-116">CommonParameters</span></span>
-<span data-ttu-id="37161-117">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="37161-117">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="37161-118">További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="37161-118">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="645ba-116">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="645ba-116">CommonParameters</span></span>
+<span data-ttu-id="645ba-117">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="645ba-117">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="645ba-118">További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="645ba-118">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="37161-119">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="37161-119">INPUTS</span></span>
+## <span data-ttu-id="645ba-119">INPUTS</span><span class="sxs-lookup"><span data-stu-id="645ba-119">INPUTS</span></span>
 
-### <span data-ttu-id="37161-120">Nincs</span><span class="sxs-lookup"><span data-stu-id="37161-120">None</span></span>
+### <span data-ttu-id="645ba-120">Nincs</span><span class="sxs-lookup"><span data-stu-id="645ba-120">None</span></span>
 
-## <span data-ttu-id="37161-121">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="37161-121">OUTPUTS</span></span>
+## <span data-ttu-id="645ba-121">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="645ba-121">OUTPUTS</span></span>
 
-### <span data-ttu-id="37161-122">Microsoft. Azure. Command. ApiManagement. models. PsApiManagementVirtualNetwork</span><span class="sxs-lookup"><span data-stu-id="37161-122">Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementVirtualNetwork</span></span>
+### <span data-ttu-id="645ba-122">Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementVirtualNetwork</span><span class="sxs-lookup"><span data-stu-id="645ba-122">Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementVirtualNetwork</span></span>
 
-## <span data-ttu-id="37161-123">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="37161-123">NOTES</span></span>
+## <span data-ttu-id="645ba-123">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="645ba-123">NOTES</span></span>
 
-## <span data-ttu-id="37161-124">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="37161-124">RELATED LINKS</span></span>
+## <span data-ttu-id="645ba-124">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="645ba-124">RELATED LINKS</span></span>
 
-[<span data-ttu-id="37161-125">Update-AzApiManagementDeployment</span><span class="sxs-lookup"><span data-stu-id="37161-125">Update-AzApiManagementDeployment</span></span>](./Update-AzApiManagementDeployment.md)
+[<span data-ttu-id="645ba-125">Set-AzApiManagement</span><span class="sxs-lookup"><span data-stu-id="645ba-125">Set-AzApiManagement</span></span>](./Set-AzApiManagement.md)
 

@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Add-AzApiManagementRegion.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Add-AzApiManagementRegion.md
-ms.openlocfilehash: b180dabec976164eac70106b49378d832fb00db8
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: aebcb8be906811607aefee7dbdc2c7630b9e391e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93665708"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401181"
 ---
-# <span data-ttu-id="84392-101">Add-AzApiManagementRegion</span><span class="sxs-lookup"><span data-stu-id="84392-101">Add-AzApiManagementRegion</span></span>
+# <span data-ttu-id="a209b-101">Add-AzApiManagementRegion</span><span class="sxs-lookup"><span data-stu-id="a209b-101">Add-AzApiManagementRegion</span></span>
 
-## <span data-ttu-id="84392-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="84392-102">SYNOPSIS</span></span>
-<span data-ttu-id="84392-103">Új központi terjesztési régiók felvétele egy PsApiManagement-példányba.</span><span class="sxs-lookup"><span data-stu-id="84392-103">Adds new deployment regions to a PsApiManagement instance.</span></span>
+## <span data-ttu-id="a209b-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="a209b-102">SYNOPSIS</span></span>
+<span data-ttu-id="a209b-103">Új telepítési régiók hozzáadása a PsApiManagement-példányhoz.</span><span class="sxs-lookup"><span data-stu-id="a209b-103">Adds new deployment regions to a PsApiManagement instance.</span></span>
 
-## <span data-ttu-id="84392-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="84392-104">SYNTAX</span></span>
+## <span data-ttu-id="a209b-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="a209b-104">SYNTAX</span></span>
 
 ```
 Add-AzApiManagementRegion -ApiManagement <PsApiManagement> -Location <String> [-Sku <PsApiManagementSku>]
@@ -26,31 +26,31 @@ Add-AzApiManagementRegion -ApiManagement <PsApiManagement> -Location <String> [-
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="84392-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="84392-105">DESCRIPTION</span></span>
-<span data-ttu-id="84392-106">Az **Add-AzApiManagementRegion** parancsmag a **PsApiManagementRegion** új példányát adja a **Microsoft. Azure. commands. ApiManagement. models. PsApiManagement** **AdditionalRegions** példányának.</span><span class="sxs-lookup"><span data-stu-id="84392-106">The **Add-AzApiManagementRegion** cmdlet adds new instance of type **PsApiManagementRegion** to the collection of **AdditionalRegions** of provided instance of type **Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement**.</span></span>
-<span data-ttu-id="84392-107">Ez a parancsmag nem telepíti magát semmit, de a memória **PsApiManagement** példányát frissíti.</span><span class="sxs-lookup"><span data-stu-id="84392-107">This cmdlet does not deploy anything by itself but updates instance of **PsApiManagement** in-memory.</span></span>
-<span data-ttu-id="84392-108">Az API-menedzsment telepített példányának frissítéséhez a módosított **PsApiManagement** -példányt a Update-AzApiManagementDeployment-ra kell átadni.</span><span class="sxs-lookup"><span data-stu-id="84392-108">To update a deployment of an API Management pass the modified **PsApiManagement** Instance to Update-AzApiManagementDeployment.</span></span>
+## <span data-ttu-id="a209b-105">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="a209b-105">DESCRIPTION</span></span>
+<span data-ttu-id="a209b-106">Az **Add-AzApiManagementRegion** parancsmag hozzáadja a **PsApiManagementRegion** új példányát a **Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement** típusú megadott példány **AdditionalRegions** gyűjteményéhez.</span><span class="sxs-lookup"><span data-stu-id="a209b-106">The **Add-AzApiManagementRegion** cmdlet adds new instance of type **PsApiManagementRegion** to the collection of **AdditionalRegions** of provided instance of type **Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement**.</span></span>
+<span data-ttu-id="a209b-107">Ez a parancsmag nem telepít semmit önmagában, de frissíti a **PsApiManagement** in-memory példányát.</span><span class="sxs-lookup"><span data-stu-id="a209b-107">This cmdlet does not deploy anything by itself but updates instance of **PsApiManagement** in-memory.</span></span>
+<span data-ttu-id="a209b-108">Egy API-kezelés telepítésének frissítéséhez át kell adni a **módosított PsApiManagement-példányt** a Set-AzApiManagementnek.</span><span class="sxs-lookup"><span data-stu-id="a209b-108">To update a deployment of an API Management pass the modified **PsApiManagement** Instance to Set-AzApiManagement.</span></span>
 
-## <span data-ttu-id="84392-109">Példák</span><span class="sxs-lookup"><span data-stu-id="84392-109">EXAMPLES</span></span>
+## <span data-ttu-id="a209b-109">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="a209b-109">EXAMPLES</span></span>
 
-### <span data-ttu-id="84392-110">1. példa: új központi terjesztési régiók felvétele PsApiManagement-példányba</span><span class="sxs-lookup"><span data-stu-id="84392-110">Example 1: Add new deployment regions to a PsApiManagement instance</span></span>
+### <span data-ttu-id="a209b-110">1. példa: Új telepítési régiók hozzáadása a PsApiManagement-példányhoz</span><span class="sxs-lookup"><span data-stu-id="a209b-110">Example 1: Add new deployment regions to a PsApiManagement instance</span></span>
 ```
 PS C:\>Add-AzApiManagementRegion -ApiManagement $ApiManagement -Location "East US" -Sku "Premium" -Capacity 2
 ```
 
-<span data-ttu-id="84392-111">Ez a parancs két prémium SKU-egységet és a kelet-amerikai régiót a **PsApiManagement** -példányra helyezi.</span><span class="sxs-lookup"><span data-stu-id="84392-111">This command adds two premium SKU units and the region named East US to the **PsApiManagement** instance.</span></span>
+<span data-ttu-id="a209b-111">Ez a parancs hozzáad két prémium termékváltozatot és a Kelet-US régiót a **PsApiManagement példányhoz.**</span><span class="sxs-lookup"><span data-stu-id="a209b-111">This command adds two premium SKU units and the region named East US to the **PsApiManagement** instance.</span></span>
 
-### <span data-ttu-id="84392-112">2. példa: új üzembe állítási régiók felvétele PsApiManagement-példányba, majd a központi telepítő frissítése</span><span class="sxs-lookup"><span data-stu-id="84392-112">Example 2: Add new deployment regions to a PsApiManagement instance and then update deployment</span></span>
+### <span data-ttu-id="a209b-112">2. példa: Új telepítési régiók hozzáadása a PsApiManagement-példányhoz, majd a telepítés frissítése</span><span class="sxs-lookup"><span data-stu-id="a209b-112">Example 2: Add new deployment regions to a PsApiManagement instance and then update deployment</span></span>
 ```
-PS C:\>Get-AzApiManagement -ResourceGroupName "Contoso" -Name "ContosoApi" | Add-AzApiManagementRegion -Location "East US" -Sku "Premium" -Capacity 2 | Update-AzApiManagementDeployment
+PS C:\>Get-AzApiManagement -ResourceGroupName "Contoso" -Name "ContosoApi" | Add-AzApiManagementRegion -Location "East US" -Sku "Premium" -Capacity 2 | Set-AzApiManagement
 ```
 
-<span data-ttu-id="84392-113">Ez a parancs **PsApiManagement** objektumot kap, és két prémium SKU-egységet ad hozzá a kelet-amerikai régióhoz, majd frissíti a központi üzembe helyezést.</span><span class="sxs-lookup"><span data-stu-id="84392-113">This command gets a **PsApiManagement** object, adds two premium SKU units for the region named East US, and then updates deployment.</span></span>
+<span data-ttu-id="a209b-113">Ez a parancs egy **PsApiManagement** objektumot kap, hozzáad két prémium termékváltozatot az EGYESÜLT Államok keleti régiója számára, majd frissíti az üzembe helyezést.</span><span class="sxs-lookup"><span data-stu-id="a209b-113">This command gets a **PsApiManagement** object, adds two premium SKU units for the region named East US, and then updates deployment.</span></span>
 
-## <span data-ttu-id="84392-114">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="84392-114">PARAMETERS</span></span>
+## <span data-ttu-id="a209b-114">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="a209b-114">PARAMETERS</span></span>
 
-### <span data-ttu-id="84392-115">-ApiManagement</span><span class="sxs-lookup"><span data-stu-id="84392-115">-ApiManagement</span></span>
-<span data-ttu-id="84392-116">Azt a **PsApiManagement** -példányt adja meg, amelyre a parancsmag további központi terjesztési területeket ad.</span><span class="sxs-lookup"><span data-stu-id="84392-116">Specifies the **PsApiManagement** instance that this cmdlet adds additional deployment regions to.</span></span>
+### <span data-ttu-id="a209b-115">-ApiManagement</span><span class="sxs-lookup"><span data-stu-id="a209b-115">-ApiManagement</span></span>
+<span data-ttu-id="a209b-116">Azt a **PsApiManagement-példányt** adja meg, amelybe ez a parancsmag további telepítési régiókat ad hozzá.</span><span class="sxs-lookup"><span data-stu-id="a209b-116">Specifies the **PsApiManagement** instance that this cmdlet adds additional deployment regions to.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement
@@ -64,8 +64,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="84392-117">-Kapacitás</span><span class="sxs-lookup"><span data-stu-id="84392-117">-Capacity</span></span>
-<span data-ttu-id="84392-118">A központi telepítő terület SKU-kapacitását adja meg.</span><span class="sxs-lookup"><span data-stu-id="84392-118">Specifies the SKU capacity of the deployment region.</span></span>
+### <span data-ttu-id="a209b-117">-Kapacitás</span><span class="sxs-lookup"><span data-stu-id="a209b-117">-Capacity</span></span>
+<span data-ttu-id="a209b-118">A telepítési régió termékváltozatának kapacitását határozza meg.</span><span class="sxs-lookup"><span data-stu-id="a209b-118">Specifies the SKU capacity of the deployment region.</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -79,8 +79,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="84392-119">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="84392-119">-DefaultProfile</span></span>
-<span data-ttu-id="84392-120">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="84392-120">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="a209b-119">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="a209b-119">-DefaultProfile</span></span>
+<span data-ttu-id="a209b-120">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="a209b-120">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -94,9 +94,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="84392-121">-Hely</span><span class="sxs-lookup"><span data-stu-id="84392-121">-Location</span></span>
-<span data-ttu-id="84392-122">Megadja az új központi üzembe helyezési terület helyét az API-kezelési szolgáltatás támogatott területe között.</span><span class="sxs-lookup"><span data-stu-id="84392-122">Specifies the location of the new deployment region amongst the supported region for Api Management service.</span></span>
-<span data-ttu-id="84392-123">Ha érvényes helyeket szeretne beolvasni, használja a "Microsoft. ApiManagement" ProviderNamespace Get-AzResourceProvider parancsmagot. where {$ _. ResourceTypes [0]. ResourceTypeName-EQ "szolgáltatás"} | Select-Object helyek</span><span class="sxs-lookup"><span data-stu-id="84392-123">To obtain valid locations, use the cmdlet Get-AzResourceProvider -ProviderNamespace "Microsoft.ApiManagement" | where {$_.ResourceTypes[0].ResourceTypeName -eq "service"} | Select-Object Locations</span></span>
+### <span data-ttu-id="a209b-121">-Location</span><span class="sxs-lookup"><span data-stu-id="a209b-121">-Location</span></span>
+<span data-ttu-id="a209b-122">Megadja az új telepítési régió helyét az Api Management szolgáltatás által támogatott régió között.</span><span class="sxs-lookup"><span data-stu-id="a209b-122">Specifies the location of the new deployment region amongst the supported region for Api Management service.</span></span>
+<span data-ttu-id="a209b-123">Érvényes helyek beszerzéséhez használja a Get-AzResourceProvider -ProviderNamespace "Microsoft.ApiManagement" | ahol {$_. ResourceTypes[0]. ResourceTypeName -eq "service"} | Select-Object helyek</span><span class="sxs-lookup"><span data-stu-id="a209b-123">To obtain valid locations, use the cmdlet Get-AzResourceProvider -ProviderNamespace "Microsoft.ApiManagement" | where {$_.ResourceTypes[0].ResourceTypeName -eq "service"} | Select-Object Locations</span></span>
 
 ```yaml
 Type: System.String
@@ -110,12 +110,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="84392-124">-SKU</span><span class="sxs-lookup"><span data-stu-id="84392-124">-Sku</span></span>
-<span data-ttu-id="84392-125">A központi telepítő terület küszöbértékét adja meg.</span><span class="sxs-lookup"><span data-stu-id="84392-125">Specifies the tier of the deployment region.</span></span>
-<span data-ttu-id="84392-126">Az érvényes értékek a következők:</span><span class="sxs-lookup"><span data-stu-id="84392-126">Valid values are:</span></span> 
-- <span data-ttu-id="84392-127">Fejlesztő</span><span class="sxs-lookup"><span data-stu-id="84392-127">Developer</span></span>
-- <span data-ttu-id="84392-128">Standard</span><span class="sxs-lookup"><span data-stu-id="84392-128">Standard</span></span>
-- <span data-ttu-id="84392-129">Prémium verzió</span><span class="sxs-lookup"><span data-stu-id="84392-129">Premium</span></span>
+### <span data-ttu-id="a209b-124">-Termékváltozat</span><span class="sxs-lookup"><span data-stu-id="a209b-124">-Sku</span></span>
+<span data-ttu-id="a209b-125">Az üzembe helyezési régió rétegét határozza meg.</span><span class="sxs-lookup"><span data-stu-id="a209b-125">Specifies the tier of the deployment region.</span></span>
+<span data-ttu-id="a209b-126">Érvényes értékek:</span><span class="sxs-lookup"><span data-stu-id="a209b-126">Valid values are:</span></span>
+- <span data-ttu-id="a209b-127">Fejlesztő</span><span class="sxs-lookup"><span data-stu-id="a209b-127">Developer</span></span>
+- <span data-ttu-id="a209b-128">Normál</span><span class="sxs-lookup"><span data-stu-id="a209b-128">Standard</span></span>
+- <span data-ttu-id="a209b-129">Prémium</span><span class="sxs-lookup"><span data-stu-id="a209b-129">Premium</span></span>
 
 ```yaml
 Type: System.Nullable`1[Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementSku]
@@ -130,8 +130,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="84392-130">-VirtualNetwork</span><span class="sxs-lookup"><span data-stu-id="84392-130">-VirtualNetwork</span></span>
-<span data-ttu-id="84392-131">Virtuális hálózati konfigurációt ad meg.</span><span class="sxs-lookup"><span data-stu-id="84392-131">Specifies a virtual network configuration.</span></span>
+### <span data-ttu-id="a209b-130">-VirtualNetwork</span><span class="sxs-lookup"><span data-stu-id="a209b-130">-VirtualNetwork</span></span>
+<span data-ttu-id="a209b-131">Virtuális hálózati konfigurációt ad meg.</span><span class="sxs-lookup"><span data-stu-id="a209b-131">Specifies a virtual network configuration.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementVirtualNetwork
@@ -145,26 +145,26 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="84392-132">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="84392-132">CommonParameters</span></span>
-<span data-ttu-id="84392-133">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="84392-133">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="84392-134">További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="84392-134">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="a209b-132">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="a209b-132">CommonParameters</span></span>
+<span data-ttu-id="a209b-133">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="a209b-133">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="a209b-134">További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="a209b-134">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="84392-135">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="84392-135">INPUTS</span></span>
+## <span data-ttu-id="a209b-135">INPUTS</span><span class="sxs-lookup"><span data-stu-id="a209b-135">INPUTS</span></span>
 
-### <span data-ttu-id="84392-136">Microsoft. Azure. Command. ApiManagement. models. PsApiManagement</span><span class="sxs-lookup"><span data-stu-id="84392-136">Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement</span></span>
+### <span data-ttu-id="a209b-136">Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement</span><span class="sxs-lookup"><span data-stu-id="a209b-136">Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement</span></span>
 
-## <span data-ttu-id="84392-137">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="84392-137">OUTPUTS</span></span>
+## <span data-ttu-id="a209b-137">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="a209b-137">OUTPUTS</span></span>
 
-### <span data-ttu-id="84392-138">Microsoft. Azure. Command. ApiManagement. models. PsApiManagement</span><span class="sxs-lookup"><span data-stu-id="84392-138">Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement</span></span>
+### <span data-ttu-id="a209b-138">Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement</span><span class="sxs-lookup"><span data-stu-id="a209b-138">Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement</span></span>
 
-## <span data-ttu-id="84392-139">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="84392-139">NOTES</span></span>
-* <span data-ttu-id="84392-140">A parancsmag frissített **PsApiManagement** -példányt ír a pipeline-ra.</span><span class="sxs-lookup"><span data-stu-id="84392-140">The cmdlet writes updated **PsApiManagement** instance to pipeline.</span></span>
+## <span data-ttu-id="a209b-139">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="a209b-139">NOTES</span></span>
+* <span data-ttu-id="a209b-140">A parancsmag a frissített **PsApiManagement-példányt** folyamatba írja.</span><span class="sxs-lookup"><span data-stu-id="a209b-140">The cmdlet writes updated **PsApiManagement** instance to pipeline.</span></span>
 
-## <span data-ttu-id="84392-141">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="84392-141">RELATED LINKS</span></span>
+## <span data-ttu-id="a209b-141">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="a209b-141">RELATED LINKS</span></span>
 
-[<span data-ttu-id="84392-142">Remove-AzApiManagementRegion</span><span class="sxs-lookup"><span data-stu-id="84392-142">Remove-AzApiManagementRegion</span></span>](./Remove-AzApiManagementRegion.md)
+[<span data-ttu-id="a209b-142">Remove-AzApiManagementRegion</span><span class="sxs-lookup"><span data-stu-id="a209b-142">Remove-AzApiManagementRegion</span></span>](./Remove-AzApiManagementRegion.md)
 
-[<span data-ttu-id="84392-143">Update-AzApiManagementRegion</span><span class="sxs-lookup"><span data-stu-id="84392-143">Update-AzApiManagementRegion</span></span>](./Update-AzApiManagementRegion.md)
+[<span data-ttu-id="a209b-143">Update-AzApiManagementRegion</span><span class="sxs-lookup"><span data-stu-id="a209b-143">Update-AzApiManagementRegion</span></span>](./Update-AzApiManagementRegion.md)
 
-[<span data-ttu-id="84392-144">Update-AzApiManagementDeployment</span><span class="sxs-lookup"><span data-stu-id="84392-144">Update-AzApiManagementDeployment</span></span>](./Update-AzApiManagementDeployment.md)
+[<span data-ttu-id="a209b-144">Set-AzApiManagement</span><span class="sxs-lookup"><span data-stu-id="a209b-144">Set-AzApiManagement</span></span>](./Set-AzApiManagement.md)
 
 

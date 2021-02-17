@@ -5,31 +5,31 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendProxy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendProxy.md
-ms.openlocfilehash: aa681d48330755137b9c9687be6c40adc12295f2
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 8b4b93e734c64e3b46b4ba9488a24f2d7f442d8e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93665641"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400926"
 ---
-# <span data-ttu-id="0d115-101">New-AzApiManagementBackendProxy</span><span class="sxs-lookup"><span data-stu-id="0d115-101">New-AzApiManagementBackendProxy</span></span>
+# <span data-ttu-id="9a5b1-101">New-AzApiManagementBackendProxy</span><span class="sxs-lookup"><span data-stu-id="9a5b1-101">New-AzApiManagementBackendProxy</span></span>
 
-## <span data-ttu-id="0d115-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="0d115-102">SYNOPSIS</span></span>
-<span data-ttu-id="0d115-103">Új backend-proxy objektum létrehozása</span><span class="sxs-lookup"><span data-stu-id="0d115-103">Creates a new Backend Proxy Object.</span></span>
+## <span data-ttu-id="9a5b1-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="9a5b1-102">SYNOPSIS</span></span>
+<span data-ttu-id="9a5b1-103">Létrehoz egy új backend proxyobjektumot.</span><span class="sxs-lookup"><span data-stu-id="9a5b1-103">Creates a new Backend Proxy Object.</span></span>
 
-## <span data-ttu-id="0d115-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="0d115-104">SYNTAX</span></span>
+## <span data-ttu-id="9a5b1-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="9a5b1-104">SYNTAX</span></span>
 
 ```
 New-AzApiManagementBackendProxy -Url <String> [-ProxyCredential <PSCredential>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="0d115-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="0d115-105">DESCRIPTION</span></span>
-<span data-ttu-id="0d115-106">Új backend-proxy objektumot hoz létre, melyet egy új backend-entitás létrehozásakor lehet átirányítani.</span><span class="sxs-lookup"><span data-stu-id="0d115-106">Creates a new Backend Proxy Object which can be piped when creating a new Backend entity.</span></span>
+## <span data-ttu-id="9a5b1-105">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="9a5b1-105">DESCRIPTION</span></span>
+<span data-ttu-id="9a5b1-106">Létrehoz egy új backend proxyobjektumot, amely be lehet ásni egy új backend entitás létrehozásakor.</span><span class="sxs-lookup"><span data-stu-id="9a5b1-106">Creates a new Backend Proxy Object which can be piped when creating a new Backend entity.</span></span>
 
-## <span data-ttu-id="0d115-107">Példák</span><span class="sxs-lookup"><span data-stu-id="0d115-107">EXAMPLES</span></span>
+## <span data-ttu-id="9a5b1-107">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="9a5b1-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="0d115-108">Backend-proxy In-Memory objektum létrehozása</span><span class="sxs-lookup"><span data-stu-id="0d115-108">Create a Backend Proxy In-Memory Object</span></span>
+### <span data-ttu-id="9a5b1-108">Backend Proxy In-Memory objektum létrehozása</span><span class="sxs-lookup"><span data-stu-id="9a5b1-108">Create a Backend Proxy In-Memory Object</span></span>
 ```powershell
 PS C:\>$secpassword = ConvertTo-SecureString "PlainTextPassword" -AsPlainText -Force
 PS C:\>$proxyCreds = New-Object System.Management.Automation.PSCredential ("foo", $secpassword)
@@ -40,12 +40,12 @@ PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default
 PS C:\>$backend = New-AzApiManagementBackend -Context  $apimContext -BackendId 123 -Url 'https://contoso.com/awesomeapi' -Protocol http -Title "first backend" -SkipCertificateChainValidation $true -Proxy $credential -Description "backend with proxy server"
 ```
 
-<span data-ttu-id="0d115-109">Backend-proxy objektum létrehozása és a backend beállítása</span><span class="sxs-lookup"><span data-stu-id="0d115-109">Creates a Backend Proxy Object and sets up Backend</span></span>
+<span data-ttu-id="9a5b1-109">Backend proxyobjektum létrehozása és a Backend beállítása</span><span class="sxs-lookup"><span data-stu-id="9a5b1-109">Creates a Backend Proxy Object and sets up Backend</span></span>
 
-## <span data-ttu-id="0d115-110">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="0d115-110">PARAMETERS</span></span>
+## <span data-ttu-id="9a5b1-110">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="9a5b1-110">PARAMETERS</span></span>
 
-### <span data-ttu-id="0d115-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="0d115-111">-DefaultProfile</span></span>
-<span data-ttu-id="0d115-112">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="0d115-112">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="9a5b1-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="9a5b1-111">-DefaultProfile</span></span>
+<span data-ttu-id="9a5b1-112">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="9a5b1-112">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -59,8 +59,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="0d115-113">-ProxyCredential</span><span class="sxs-lookup"><span data-stu-id="0d115-113">-ProxyCredential</span></span>
-<span data-ttu-id="0d115-114">A backend-proxyhoz való csatlakozáshoz használt hitelesítő adatok.</span><span class="sxs-lookup"><span data-stu-id="0d115-114">Credentials used to connect to Backend Proxy.</span></span> <span data-ttu-id="0d115-115">Ez a paraméter nem kötelező.</span><span class="sxs-lookup"><span data-stu-id="0d115-115">This parameter is optional.</span></span>
+### <span data-ttu-id="9a5b1-113">-ProxyCredential</span><span class="sxs-lookup"><span data-stu-id="9a5b1-113">-ProxyCredential</span></span>
+<span data-ttu-id="9a5b1-114">A backend proxyhoz való csatlakozáshoz használt hitelesítő adatok.</span><span class="sxs-lookup"><span data-stu-id="9a5b1-114">Credentials used to connect to Backend Proxy.</span></span> <span data-ttu-id="9a5b1-115">Ez a paraméter nem kötelező.</span><span class="sxs-lookup"><span data-stu-id="9a5b1-115">This parameter is optional.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -74,9 +74,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="0d115-116">-URL</span><span class="sxs-lookup"><span data-stu-id="0d115-116">-Url</span></span>
-<span data-ttu-id="0d115-117">A hívásoknak a backend-be való továbbításakor használandó proxykiszolgáló URL-címe.</span><span class="sxs-lookup"><span data-stu-id="0d115-117">Url of the Proxy server to be used when forwarding calls to Backend.</span></span>
-<span data-ttu-id="0d115-118">Ehhez a paraméterhez szükség van.</span><span class="sxs-lookup"><span data-stu-id="0d115-118">This parameter is required.</span></span>
+### <span data-ttu-id="9a5b1-116">-Url</span><span class="sxs-lookup"><span data-stu-id="9a5b1-116">-Url</span></span>
+<span data-ttu-id="9a5b1-117">A hívások backendbe való továbbító proxykiszolgálójának URL-címe.</span><span class="sxs-lookup"><span data-stu-id="9a5b1-117">Url of the Proxy server to be used when forwarding calls to Backend.</span></span>
+<span data-ttu-id="9a5b1-118">Ezt a paramétert kötelező megadni.</span><span class="sxs-lookup"><span data-stu-id="9a5b1-118">This parameter is required.</span></span>
 
 ```yaml
 Type: System.String
@@ -90,27 +90,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="0d115-119">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="0d115-119">CommonParameters</span></span>
-<span data-ttu-id="0d115-120">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="0d115-120">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="0d115-121">További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="0d115-121">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="9a5b1-119">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="9a5b1-119">CommonParameters</span></span>
+<span data-ttu-id="9a5b1-120">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="9a5b1-120">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="9a5b1-121">További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="9a5b1-121">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="0d115-122">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="0d115-122">INPUTS</span></span>
+## <span data-ttu-id="9a5b1-122">INPUTS</span><span class="sxs-lookup"><span data-stu-id="9a5b1-122">INPUTS</span></span>
 
-### <span data-ttu-id="0d115-123">Nincs</span><span class="sxs-lookup"><span data-stu-id="0d115-123">None</span></span>
+### <span data-ttu-id="9a5b1-123">Nincs</span><span class="sxs-lookup"><span data-stu-id="9a5b1-123">None</span></span>
 
-## <span data-ttu-id="0d115-124">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="0d115-124">OUTPUTS</span></span>
+## <span data-ttu-id="9a5b1-124">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="9a5b1-124">OUTPUTS</span></span>
 
-### <span data-ttu-id="0d115-125">Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementBackendProxy</span><span class="sxs-lookup"><span data-stu-id="0d115-125">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendProxy</span></span>
+### <span data-ttu-id="9a5b1-125">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendProxy</span><span class="sxs-lookup"><span data-stu-id="9a5b1-125">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendProxy</span></span>
 
-## <span data-ttu-id="0d115-126">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="0d115-126">NOTES</span></span>
+## <span data-ttu-id="9a5b1-126">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="9a5b1-126">NOTES</span></span>
 
-## <span data-ttu-id="0d115-127">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="0d115-127">RELATED LINKS</span></span>
+## <span data-ttu-id="9a5b1-127">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="9a5b1-127">RELATED LINKS</span></span>
 
-[<span data-ttu-id="0d115-128">Get-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="0d115-128">Get-AzApiManagementBackend</span></span>](./Get-AzApiManagementBackend)
+[<span data-ttu-id="9a5b1-128">Get-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="9a5b1-128">Get-AzApiManagementBackend</span></span>](./Get-AzApiManagementBackend.md)
 
-[<span data-ttu-id="0d115-129">Új – AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="0d115-129">New-AzApiManagementBackend</span></span>](./New-AzApiManagementBackend.md)
+[<span data-ttu-id="9a5b1-129">New-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="9a5b1-129">New-AzApiManagementBackend</span></span>](./New-AzApiManagementBackend.md)
 
-[<span data-ttu-id="0d115-130">Új – AzApiManagementBackendCredential</span><span class="sxs-lookup"><span data-stu-id="0d115-130">New-AzApiManagementBackendCredential</span></span>](./New-AzApiManagementBackendCredential.md)
+[<span data-ttu-id="9a5b1-130">New-AzApiManagementBackendCredential</span><span class="sxs-lookup"><span data-stu-id="9a5b1-130">New-AzApiManagementBackendCredential</span></span>](./New-AzApiManagementBackendCredential.md)
 
-[<span data-ttu-id="0d115-131">Set-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="0d115-131">Set-AzApiManagementBackend</span></span>](./Set-AzApiManagementBackend.md)
+[<span data-ttu-id="9a5b1-131">Set-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="9a5b1-131">Set-AzApiManagementBackend</span></span>](./Set-AzApiManagementBackend.md)
 
-[<span data-ttu-id="0d115-132">Remove-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="0d115-132">Remove-AzApiManagementBackend</span></span>](./Remove-AzApiManagementBackend.md)
+[<span data-ttu-id="9a5b1-132">Remove-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="9a5b1-132">Remove-AzApiManagementBackend</span></span>](./Remove-AzApiManagementBackend.md)
