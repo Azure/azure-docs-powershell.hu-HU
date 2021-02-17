@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.datafactor
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Get-AzDataFactoryV2DataFlow.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Get-AzDataFactoryV2DataFlow.md
-ms.openlocfilehash: ad27587e52533af1ef7989d4b52de3319137640d
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 369540a80ec6ffdc02f96783de5e86cc50f0c8f3
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93667071"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100407063"
 ---
 # Get-AzDataFactoryV2DataFlow
 
-## Áttekintés
-Információkat kaphat az adatáramlással kapcsolatos adatokról.
+## SYNOPSIS
+Információkat kap a Data Factoryban folyó adatfolyamok adatairól.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### ByFactoryName (alapértelmezett)
 ```
@@ -37,13 +37,13 @@ Get-AzDataFactoryV2DataFlow [-ResourceId] <String> [-DefaultProfile <IAzureConte
  [<CommonParameters>]
 ```
 
-## Leírás
-Az Get-AzDataFactoryV2DataFlow parancsmag információkat kap az Azure Data Factory adatforgalmáról.
-Ha megadja az adatfolyam nevét, ez a parancsmag információkat kap az adatáramlásról.
-Ha nem ad meg nevet, ez a parancsmag információkat kap az adatfeldolgozó adatforgalmáról.
+## LEÍRÁS
+A Get-AzDataFactoryV2DataFlow parancsmag információkat kap az Azure Data Factorybeli adatfolyamokkal kapcsolatban.
+Ha megadja egy adatfolyam nevét, ez a parancsmag információt kap az adatfolyamról.
+Ha nem ad meg nevet, ez a parancsmag információt kap az adat factoryban található összes adatfolyamról.
 
-## Példák
-### 1. példa: adatok beolvasása az összes adatforgalomról
+## PÉLDÁK
+### 1. példa: Információ az összes adatfolyamról
 ```powershell
 PS C:\> Get-AzDataFactoryV2DataFlow -ResourceGroupName "ADF" -DataFactoryName "WikiADF"
 
@@ -54,9 +54,9 @@ dataflow1                      WikiADF               adf Microsoft.Azure.Managem
 dataflow3                      WikiADF               adf Microsoft.Azure.Management.DataFactory.Models.MappingDataFlow
 ```
 
-Ez a parancs információt kap a WikiADF nevű adatfeldolgozóban található összes adatforgalomról.
+Ez a parancs információkat kap a WikiADF nevű adat factoryban folyó összes adatfolyamról.
 
-### 2. példa: adatok beolvasása egy adott adatfolyamról
+### 2. példa: Információ lekérte egy adott adatfolyamról
 ```powershell
 PS C:\> Get-AzDataFactoryV2DataFlow -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "dataflow1"
 
@@ -65,12 +65,12 @@ DataFlowName           DataFactoryName ResourceGroupName                        
 TaxiDemo1                      WikiADF               adf Microsoft.Azure.Management.DataFactory.Models.MappingDataFlow
 ```
 
-Ez a parancs információt kap a dataflow1 nevű adatforgalomról az WikiADF nevű Data Factory nevű adatforgalomról.
+Ez a parancs információkat kap a WikiADF nevű adat factory dataflow1 nevű adatfolyamról.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DataFactory
-Az Data Factory objektum.
+A data factory objektum.
 
 ```yaml
 Type: Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataFactory
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -DataFactoryName
-Az adatgyári név.
+Az adatüzem neve.
 
 ```yaml
 Type: System.String
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -114,8 +114,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (név)
-Az adatforgalom neve.
+### -Name
+Az adatfolyam neve.
 
 ```yaml
 Type: System.String
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Az erőforrás csoport neve.
+Az erőforráscsoport neve.
 
 ```yaml
 Type: System.String
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Az Azure Resource ID.
+Az Azure-erőforrásazonosító.
 
 ```yaml
 Type: System.String
@@ -160,11 +160,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
 ### Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataFactory
 
@@ -172,11 +172,9 @@ Ez a parancsmag a következő általános paramétereket támogatja:-debug,-Erro
 
 ### Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataFlow
 
-## MEGJEGYZI
-Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, Data, gyárak
+## MEGJEGYZÉSEK
+Kulcsszavak: azure, azurerm, arm, erőforrás, kezelés, vezető, adatok, faktorok
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Set-AzDataFactoryDataFlow](./Set-AzDataFactoryDataFlow.md)
 
-[Remove-AzDataFactoryDataFlow](./Remove-AzDataFactoryDataFlow.md)
