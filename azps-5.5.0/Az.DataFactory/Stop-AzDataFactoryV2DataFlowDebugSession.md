@@ -1,55 +1,74 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.DataFactoryV2.dll-Help.xml
 Module Name: Az.DataFactory
-online version: https://docs.microsoft.com/en-us/powershell/module/az.datafactory/set-azdatafactoryv2dataflow
+online version: https://docs.microsoft.com/en-us/powershell/module/az.datafactory/stop-azdatafactoryv2dataflowdebugsession
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Set-AzDataFactoryV2DataFlow.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Set-AzDataFactoryV2DataFlow.md
-ms.openlocfilehash: 44439d49fc89f00abaef904e80112d076121890f
-ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Stop-AzDataFactoryV2DataFlowDebugSession.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Stop-AzDataFactoryV2DataFlowDebugSession.md
+ms.openlocfilehash: 63e78c0068d17986f845adaae9dbc5caf22b4b4d
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100407437"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100209823"
 ---
-# Set-AzDataFactoryV2DataFlow
+# Stop-AzDataFactoryV2DataFlowDebugSession
 
 ## SYNOPSIS
-Adatfolyamot hoz létre a Data Factoryban.
+Adatfolyam-hibakeresési munkamenet leállítja az Azure Data Factoryban
 
 ## SZINTAXIS
 
 ### ByFactoryName (alapértelmezett)
 ```
-Set-AzDataFactoryV2DataFlow [-Name] <String> [-DefinitionFile] <String> [-Force] [-ResourceGroupName] <String>
+Stop-AzDataFactoryV2DataFlowDebugSession [-SessionId] <String> [-PassThru] [-ResourceGroupName] <String>
  [-DataFactoryName] <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
+### ByFactoryObject
+```
+Stop-AzDataFactoryV2DataFlowDebugSession [-SessionId] <String> [-PassThru] [-DataFactory] <PSDataFactory>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
 ### ByResourceId
 ```
-Set-AzDataFactoryV2DataFlow [-DefinitionFile] <String> [-Force] [-ResourceId] <String>
+Stop-AzDataFactoryV2DataFlowDebugSession [-SessionId] <String> [-PassThru] [-ResourceId] <String>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## LEÍRÁS
-A Set-AzDataFactoryV2DataFlow parancsmag adatfolyamot hoz létre, vagy frissíti a meglévő adatfolyamot az Azure Data Factoryban.
+Ez a parancs leállítja a hibakeresési munkamenetet, ha nem, akkor a rendszer automatikusan kikapcsolja a munkamenetet a hibakeresési munkamenet Time To Live beállításának megfelelően.
 
 ## PÉLDÁK
 
-### 1. példa: Adatfolyam létrehozása
+### 1. példa
 ```powershell
-PS C:\> Set-AzDataFactoryV2DataFlow -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "TaxiDemo1" -DefinitionFile "C:\\samples\\WikiSample\\TaxiDemo1.json"
+PS C:\WINDOWS\system32> Stop-AzDataFactoryV2DataFlowDebugSession -ResourceGroupName adf -DataFactoryName WikiADF -SessionId fd76cd0d-8b37-4dc0-a370-3f9d43ac686d
 
-DataFlowName           DataFactoryName ResourceGroupName                                                    Properties
-------------           --------------- -----------------                                                    ----------
-TaxiDemo1                      WikiADF               adf Microsoft.Azure.Management.DataFactory.Models.MappingDataFlow
+Confirm
+Are you sure you want to stop data flow debug session 'fd76cd0d-8b37-4dc0-a370-3f9d43ac686d' in data factory 'WikiADF'?
+[Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
 ```
-
-Ezzel a paranccsal a WikiADF nevű adatüzemben létrehozza a TaxiDemo1 nevű adatfolyamot.
-A parancs az adatfolyamot a fájlon TaxiDemo1.jsadatok alapján.
+Leállítja az "fd76cd0d-8b37-4dc0-a370-3f9d43ac686d" adatfolyam-hibakeresési munkamenetet a "WikiADF" adat factoryban
 
 ## PARAMETERS
+
+### -DataFactory
+A data factory objektum.
+
+```yaml
+Type: Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataFactory
+Parameter Sets: ByFactoryObject
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
 
 ### -DataFactoryName
 Az adatüzem neve.
@@ -81,23 +100,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DefinitionFile
-A JSON fájl elérési útja.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: File
-
-Required: True
-Position: 3
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Force
-Ne kérjen megerősítést.
+### -PassThru
+Ha a megadott érték igaz értéket ad meg, akkor a művelet sikeres lesz. Ez a paraméter nem kötelező.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -108,21 +112,6 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Name
-Az adatfolyam neve.
-
-```yaml
-Type: System.String
-Parameter Sets: ByFactoryName
-Aliases: DataFlowName
-
-Required: True
-Position: 2
-Default value: None
-Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -151,6 +140,21 @@ Aliases:
 
 Required: True
 Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -SessionId
+Az adatfolyam hibakeresési munkamenet azonosítója.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -194,13 +198,23 @@ Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, 
 
 ### System.String
 
+### Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataFactory
+
 ## KIMENETEK
 
-### Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataFlow
+### System.Void
+
+### System.Boolean
 
 ## MEGJEGYZÉSEK
 Kulcsszavak: azure, azurerm, arm, erőforrás, kezelés, vezető, adatok, faktorok
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
+[Start-AzDataFactoryV2DataFlowDebugSession](./Start-AzDataFactoryV2DataFlowDebugSession.md)
 
+[Get-AzDataFactoryV2DataFlowDebugSession](./Get-AzDataFactoryV2DataFlowDebugSession.md)
+
+[Add-AzDataFactoryV2DataFlowDebugSessionPackage](./Add-AzDataFactoryV2DataFlowDebugSessionPackage.md)
+
+[Invoke-AzDataFactoryV2DataFlowDebugSessionCommand](./Invoke-AzDataFactoryV2DataFlowDebugSessionCommand.md)

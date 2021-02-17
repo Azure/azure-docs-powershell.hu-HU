@@ -6,62 +6,62 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.notificati
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubsNamespace.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubsNamespace.md
-ms.openlocfilehash: dbb475402ef4068f893cd7d444b5357bf1707578
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 5c5517faa5dbd65cc6a76a02209cb2b8c429300a
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93669904"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399872"
 ---
 # Get-AzNotificationHubsNamespace
 
-## Áttekintés
-Információt kap az értesítési hub névteréről.
+## SYNOPSIS
+Információkat kap egy értesítési központ névterről.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 Get-AzNotificationHubsNamespace [[-ResourceGroup] <String>] [[-Namespace] <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-**A Get-AzNotificationHubsNamespace** parancsmag információt kap az értesítési hub névteréről.
-Ez a parancsmag lehetőséget nyújt arra, hogy az összes névtérre vonatkozóan információt kapjanak, és hogy a megadott erőforráscsoporthoz rendelt névterekre vonatkozóan milyen információkra van szükség. vagy egy adott névtérről szóló információk visszaadására.
-A névterek olyan logikai tárolók, amelyek megkönnyítik az értesítési hubok rendszerezését és kezelését.
-Legalább egy értesítési hub-névtérnek kell lennie: minden értesítési hubot egy névtérhez kell rendelni.
-Egyetlen névtérben több hub jelenhet meg, ami azt jelenti, hogy csak egy névtérre van szüksége a szervezetében.
-Több névtér is használható azonban a hubok jobb rendszerezéséhez, vagy ha konkrét személyekre engedélyt szeretne adni a hubok kijelölt részhalmazának kezeléséhez.
-A **Get-AzNotificationHubsNamespace** parancsmag a névtérre vonatkozó alapvető információkat ad eredményül.
-Ha a névtérhez társított engedélyezési szabályokról szeretne információt kapni, használja a Get-AzNotificationHubsNamespaceAuthorizationRulest.
+## LEÍRÁS
+**A Get-AzNotificationHubsNamespace** parancsmag információkat kap az értesítési központ névtereiről.
+Ez a parancsmag lehetőséget nyújt arra, hogy információt kap az összes névtérről, valamint egy adott erőforráscsoporthoz rendelt névterek adatairól; vagy adott névtérről ad vissza információkat.
+A névterek logikai tárolók, amelyek segítenek az értesítési központok rendszerezésében és kezelésében.
+Legalább egy értesítési központ névterének meg kell lennie osztva: az összes értesítési központot hozzá kell rendelni egy névtérhez.
+Egy névtér több központi központban is elterjedhet, ami azt jelenti, hogy a szervezetben lehet, hogy csak egy névterre van szüksége.
+Több névteret is adhat azonban, hogy jobban rendszerezze a központokat, vagy adott személyeknek engedélyt adjon a központok kijelölt alcsoportja kezeléséhez.
+A **Get-AzNotificationHubsNamespace** parancsmag alapvető információkat ad vissza a névtérről.
+A névtérhez társított engedélyezési szabályokról a Get-AzNotificationHubsNamespaceAuthorizationRules használatával tud információt kapni.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: információk kérése az összes értesítési hub-névtérről
+### 1. példa: Információk lekérte az értesítési központ összes névterét
 ```
 PS C:\>Get-AzNotificationHubsNamespace
 ```
 
-Ez a parancs információt ad az összes értesítési hub-névtérről.
+Ez a parancs az értesítési központ összes névterének adatait adja vissza.
 
-### 2. példa: információk beszerzése egyetlen értesítési központi névtérről
+### 2. példa: Információ lekérte egyetlen értesítési központ névterét
 ```
 PS C:\>Get-AzNotificationHubsNamespace -Namespace "ContosoNamespace"
 ```
 
-Ez a parancs egyetlen értesítési hub-névtérről kap információt: ContosoNamespace.
+Ez a parancs információt kap egyetlen értesítési központ névterére: ContosoNamespace.
 
-### 3. példa: információk kérése egy adott névtérhez rendelt minden értesítési hubhoz
+### 3. példa: Információ az adott névtérhez rendelt összes értesítési központról
 ```
 PS C:\>Get-AzNotificationHubsNamespace -ResourceGroup "ContosoNotificationsGroup"
 ```
 
-Ez a parancs információt kap az erőforráscsoport ContosoNotificationsGroup társított összes értesítési hub-névtérről.
+Ez a parancs információkat kap a ContosoNotificationsGroup erőforráscsoporthoz rendelt összes értesítési központ névterével kapcsolatban.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -77,7 +77,7 @@ Accept wildcard characters: False
 
 ### -Namespace
 A névtér egyedi nevét adja meg.
-A névterek lehetőséget nyújtanak az értesítési hubok csoportosítására és kategorizálására.
+A névterek lehetőséget nyújtanak az értesítési központok csoportosítására és kategorizálására.
 
 ```yaml
 Type: System.String
@@ -92,8 +92,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroup
-Azt az erőforráscsoportot adja meg, amelyhez a névtér van társítva.
-Az erőforráscsoportok elemek (például névterek, értesítési hubok és engedélyezési szabályok) rendszerezése olyan módon, hogy egyszerűen csak a Készletkezelés és az Azure felügyeletet segítse elő.
+Azt az erőforráscsoportot adja meg, amelyhez a névteret hozzárendelték.
+Az erőforráscsoportok a készletkezelést és az Azure felügyeletét segítő módon rendszerezhetik az elemeket, például a névtereket, az értesítési központokat és az engedélyezési szabályokat.
 
 ```yaml
 Type: System.String
@@ -108,23 +108,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. NotificationHubs. models. NamespaceAttributes
+### Microsoft.Azure.Commands.NotificationHubs.Models.NamespaceAttributes
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Get-AzNotificationHubsNamespaceAuthorizationRules](./Get-AzNotificationHubsNamespaceAuthorizationRules.md)
 
-[Új – AzNotificationHubsNamespace](./New-AzNotificationHubsNamespace.md)
+[New-AzNotificationHubsNamespace](./New-AzNotificationHubsNamespace.md)
 
 [Remove-AzNotificationHubsNamespace](./Remove-AzNotificationHubsNamespace.md)
 

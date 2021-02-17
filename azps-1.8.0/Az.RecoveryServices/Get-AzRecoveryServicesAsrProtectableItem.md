@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.recoveryse
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesAsrProtectableItem.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesAsrProtectableItem.md
-ms.openlocfilehash: 4ea8bcb0e27c9ca44cc30f36005bdcccdbd20d61
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 31dc0a5e7fb9bba20aea6fb6395ec59ba54d0e2c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93669732"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399838"
 ---
 # Get-AzRecoveryServicesAsrProtectableItem
 
-## Áttekintés
-A védelemmel ellátott elemek beolvasása az ASR-védelmi tárolóban
+## SYNOPSIS
+Szerezze be a védett elemeket egy ASR védelmi tárolóban.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### ByObject (alapértelmezett)
 ```
@@ -37,17 +37,17 @@ Get-AzRecoveryServicesAsrProtectableItem -FriendlyName <String> -ProtectionConta
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-A **Get-AzRecoveryServicesAsrProtectableItem** parancsmag az Azure webhely-helyreállítási védelmi tárolóban található védelemmel ellátott elemeket kapja meg.
+## LEÍRÁS
+A **Get-AzRecoveryServicesAsrProtectableItem** parancsmag egy Azure-webhely-helyreállítási védelmi tárolóban kapja meg a védett elemeket.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1
+### 1. példa
 ```
 PS C:\> $ProtectableItems = Get-AzRecoveryServicesAsrProtectableItem -ProtectionContainer $Container
 ```
 
-A megadott ASR-védelmi tároló minden védett elemének beolvasása
+Beveszi a megadott ASR védelmi tárolóban lévő összes védett elemet.
 
 ### 2. példa
 ```
@@ -70,7 +70,7 @@ ReplicationProtectedItemId    :
 SupportedReplicationProviders : {InMage, InMageAzureV2}
 ```
 
-A védelemmel ellátott elemek beszerzése meghatározott ASR-védelmi tárolóban és az adott felhasználóbarát névvel
+Szerezze be a védett elemeket a megadott ASR védelmi tárolóban, és a megadott rövid névvel.
 
 ### 3. példa
 ```
@@ -93,12 +93,12 @@ ReplicationProtectedItemId    :
 SupportedReplicationProviders : {InMage, InMageAzureV2}
 ```
 
-A megadott ASR-védelmi tároló minden védett elemének beolvasása
+Beveszi a megadott ASR védelmi tárolóban lévő összes védett elemet.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 
 ```yaml
@@ -113,8 +113,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Típusú megjelenített
-Az ASR-védelemmel ellátott elem rövid nevét adja meg.
+### -FriendlyName
+Az ASR által védett elem rövid nevét adja meg.
 
 ```yaml
 Type: System.String
@@ -128,8 +128,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (név)
-Az ASR-védelemmel ellátott elem nevét adja meg.
+### -Name
+Az ASR által védett elem nevét adja meg.
 
 ```yaml
 Type: System.String
@@ -144,7 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProtectionContainer
-Az Azure site Recovery Protection Container objektumát adja meg.
+Az Azure Site Recovery Protection Container objektum megadása.
 
 ```yaml
 Type: Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectionContainer
@@ -159,20 +159,18 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. Azure. Command. RecoveryServices. SiteRecovery. ASRProtectionContainer
+### Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectionContainer
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. RecoveryServices. SiteRecovery. ASRProtectableItem
+### Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectableItem
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Get-AzRecoveryServicesAsrProtectionEntity](./Get-AzRecoveryServicesAsrProtectionEntity.md)
 
-[Set-AzRecoveryServicesAsrProtectionEntity](./Set-AzRecoveryServicesAsrProtectionEntity.md)

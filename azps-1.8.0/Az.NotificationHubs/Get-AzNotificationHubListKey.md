@@ -6,49 +6,49 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.notificati
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubListKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubListKey.md
-ms.openlocfilehash: 6b9aa676e00d137612908955e88558b4cefb0eb8
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 7ce6c3c08c1794e2bed794186203a5c6c0d1fdea
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93669909"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399889"
 ---
 # Get-AzNotificationHubListKey
 
-## Áttekintés
-Az értesítési hub engedélyezési szabályához társított elsődleges és másodlagos kapcsolati karakterláncokat kapja meg.
+## SYNOPSIS
+Egy értesítési központ engedélyezési szabályához társított elsődleges és másodlagos kapcsolati karakterláncokat kapja meg.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 Get-AzNotificationHubListKey [-ResourceGroup] <String> [-Namespace] <String> [-NotificationHub] <String>
  [-AuthorizationRule] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-A **Get-AzNotificationHubListKey** parancsmag az értesítési hub megosztott elérésű aláírás-engedélyezési szabályának elsődleges és másodlagos kapcsolati karakterláncát számítja ki.
-Az engedélyezési szabályok a jogosultságokat kezelik a hub számára.
+## LEÍRÁS
+A **Get-AzNotificationHubListKey** parancsmag egy értesítési központ Megosztott hozzáférés-aláírás (SAS) engedélyezési szabályának elsődleges és másodlagos kapcsolati karakterláncát adja vissza.
+Az engedélyezési szabályok kezelik a felhasználói jogokat a központban.
 Minden szabály tartalmaz egy elsődleges és egy másodlagos kapcsolati karakterláncot.
-Ezek a kapcsolati karakterláncok (URI-k) a következőket végezzék el:
-- A felhasználók rámutatnak egy erőforrásra.
-- Lekérdezési paramétereket tartalmazó jogkivonat felvétele
-Az alábbi paraméterek közül az aláírás a felhasználó hitelesítésére szolgál, és megadja a megadott szintű hozzáférést.
+Az alábbi kapcsolati karakterláncok (URI-k) az alábbi műveleteket hajtják végre:
+- Mutasson a felhasználóknak egy erőforrásra.
+- Lekérdezésparamétereket tartalmazó jogkivonatot is tartalmazhat.
+A paraméterek egyike, az aláírás a felhasználó hitelesítésére és a megadott szintű hozzáférés elérésére használható.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: az elsődleges és másodlagos kapcsolati karakterláncok beszerzése egy engedélyezési szabályhoz
+### 1. példa: Az engedélyezési szabály elsődleges és másodlagos kapcsolati karakterláncának le kérése
 ```
 PS C:\>Get-AzNotificationHubListKey -Namespace "ContosoNamespace" -NotificationHub "ContosoInternalHub" -ResourceGroup "ContosoNotificationsGroup" -AuthorizationRule "ListenRule"
 ```
 
-Ez a parancs beolvassa az elsődleges és másodlagos kapcsolati karakterláncot az engedélyezési szabály ListenRule, amely az ContosoInternalHub értesítési központhoz van rendelve.
-A parancsnak tartalmaznia kell a hub névteret és az erőforrás csoportot.
+Ez a parancs a ContosoInternalHub értesítési központhoz rendelt szabály, a ListenRule engedélyezési szabály elsődleges és másodlagos kapcsolati karakterláncát kapja meg.
+A parancsnak tartalmaznia kell a központi névteret és az erőforráscsoportot.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -AuthorizationRule
-A megosztott hozzáférés-aláírások (SAS) hitelesítési szabályának nevét adja meg.
-Ezek a szabályok határozzák meg, hogy milyen típusú hozzáférést kell biztosítani a felhasználóknak az értesítési központhoz.
+A megosztott hozzáférésű aláírás (SAS) hitelesítési szabály nevét adja meg.
+Ezek a szabályok határozzák meg, hogy a felhasználók milyen típusú hozzáféréssel férnek hozzá az értesítési központhoz.
 
 ```yaml
 Type: System.String
@@ -63,7 +63,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -78,8 +78,8 @@ Accept wildcard characters: False
 ```
 
 ### -Namespace
-Azt a névteret adja meg, amelyhez az értesítési hub hozzá van rendelve.
-A névterek lehetőséget nyújtanak az értesítési hubok csoportosítására és kategorizálására.
+Azt a névteret adja meg, amelyhez az értesítési központ hozzá van rendelve.
+A névterek lehetőséget nyújtanak az értesítési központok csoportosítására és kategorizálására.
 
 ```yaml
 Type: System.String
@@ -94,8 +94,8 @@ Accept wildcard characters: False
 ```
 
 ### -NotificationHub
-Megadja azt az értesítési központot, amely a parancsmag engedélyezési szabályát rendeli hozzá.
-Az értesítési hubok az ügyfelek által használt platformtól függetlenül több ügyfélnek küldenek leküldéses értesítéseket.
+Azt az értesítési központot adja meg, amelyhez ez a parancsmag engedélyezési szabályt rendel.
+Az értesítési központokkal leküldéses értesítéseket lehet küldeni több ügyfélnek attól függetlenül, hogy milyen platformon használják őket.
 
 ```yaml
 Type: System.String
@@ -110,8 +110,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroup
-Azt az erőforráscsoport-csoportot adja meg, amelyhez az értesítési hub hozzá van rendelve.
-Az erőforráscsoportok elemek (például névterek, értesítési hubok és engedélyezési szabályok) rendszerezése olyan módon, hogy egyszerűen csak a Készletkezelés és az Azure felügyeletet segítse elő.
+Azt az erőforráscsoportot adja meg, amelyhez az értesítési központ hozzá van rendelve.
+Az erőforráscsoportok a készletkezelést és az Azure felügyeletét segítő módon rendszerezhetik az elemeket, például a névtereket, az értesítési központokat és az engedélyezési szabályokat.
 
 ```yaml
 Type: System.String
@@ -126,20 +126,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. Management. NotificationHubs. models. ResourceListKeys
+### Microsoft.Azure.Management.NotificationHubs.Models.ResourceListKeys
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Get-AzNotificationHubAuthorizationRules](./Get-AzNotificationHubAuthorizationRules.md)
 
 

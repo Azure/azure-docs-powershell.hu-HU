@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.recoveryse
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesBackupJob.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesBackupJob.md
-ms.openlocfilehash: 21498e13490b22b58621e2100dcc885442db7607
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 5dab5eaca48152dc573caf75f5d80737802bfcdf
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93669706"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399821"
 ---
 # Get-AzRecoveryServicesBackupJob
 
-## Áttekintés
+## SYNOPSIS
 Biztonsági mentési feladatokat kap.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 Get-AzRecoveryServicesBackupJob [[-Status] <JobStatus>] [[-Operation] <JobOperation>] [[-From] <DateTime>]
@@ -26,13 +26,13 @@ Get-AzRecoveryServicesBackupJob [[-Status] <JobStatus>] [[-Operation] <JobOperat
  [-VaultId <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-A **Get-AzRecoveryServicesBackupJob** parancsmag Azure biztonságimásolat-készítési feladatokat kap egy adott boltozathoz.
-Állítsa be a boltozat környezetét az Set-AzRecoveryServicesVaultContext parancsmag használatával, mielőtt az aktuális parancsmagot használja.
+## LEÍRÁS
+A **Get-AzRecoveryServicesBackupServicesBackupService** parancsmag azure biztonsági mentési feladatokat kap egy adott tárolóhoz.
+Az aktuális parancsmag használata előtt állítsa be a tároló környezetét a Set-AzRecoveryServicesVaultContext parancsmag használatával.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: minden folyamatban lévő feladat beolvasása
+### 1. példa: Az összes folyamatban lévő feladat lekérte
 ```
 PS C:\>$Joblist = Get-AzRecoveryservicesBackupJob -Status Inprogress
 PS C:\> $Joblist[0]
@@ -41,20 +41,20 @@ WorkloadName     Operation            Status               StartTime            
 V2VM             Backup               InProgress           4/23/2016 5:00:30 PM      1/1/2001 12:00:00
 ```
 
-Az első parancs a folyamatban lévő munka állapotát tömbként kapja, majd a $Joblist változóban tárolja.
-A második parancs a $Joblist tömb első elemét jeleníti meg.
+Az első parancs egy folyamatban lévő feladat állapotát tömbként kapja meg, majd a folyamatban lévő $Joblist tárolja.
+A második parancs a tömb első elemét $Joblist jeleníti meg.
 
-### 2. példa: az összes sikertelen feladat beolvasása az elmúlt 7 napban
+### 2. példa: Az összes sikertelen feladat be szerezze az elmúlt 7 napban
 ```
 PS C:\>Get-AzRecoveryServicesBackupJob -From (Get-Date).AddDays(-7).ToUniversalTime() -Status Failed
 ```
 
-Ez a parancs a boltozat utolsó hetében sikertelen feladatokat kap.
-A *from* paraméter egy, az UTC által megadott időpontban hét napot ad meg.
-A parancs nem adja meg *a paraméter értékét* .
-Ennek megfelelően az aktuális idő alapértelmezett értékét használja.
+Ez a parancs sikertelen feladatokat kap a tároló utolsó hetében.
+A *From* paraméter az UTC-ben megadott múltbeli hét napot ad meg.
+A parancs nem ad meg értéket a *To paraméternek.*
+Ezért az aktuális idő alapértelmezett értékét használja.
 
-### 3. példa: folyamatban lévő munka beszerzése és várakozás a befejezésre
+### 3. példa: Folyamatban lévő feladat elvégzése és várakozás a befejezésre
 ```
 PS C:\> 
 $Jobs = Get-AzRecoveryServicesBackupJob -Status InProgress
@@ -72,13 +72,13 @@ $Job = $Jobs[0]
     Done!
 ```
 
-Ez a parancsfájl az első olyan feladatot kérdezi le, amely jelenleg folyamatban van addig, amíg a projekt be nem fejeződik.
+Ez a parancsprogram lekérdezi az első folyamatban lévő feladatot, amíg a feladat be nem fejeződik.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -BackupManagementType
-A biztonságimásolat-kezelés típusát adja meg.
-Jelenleg csak a AzureVM és a AzureStorage támogatott.
+A biztonsági mentés kezelési típusát adja meg.
+Jelenleg csak az AzureVM, az AzureStorage támogatott.
 
 ```yaml
 Type: System.Nullable`1[Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.BackupManagementType]
@@ -94,7 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -109,10 +109,10 @@ Accept wildcard characters: False
 ```
 
 ### -From
-A parancsmag által beolvasott feladatok időtartományának kezdetét **datetime** -objektumként adja meg.
-Ha **datetime** típusú objektumot szeretne beolvasni, használja az Get-Date parancsmagot.
-A **datetime** -objektumokkal kapcsolatos további tudnivalókért írja be a következőt: `Get-Help Get-Date` .
-A dátumok esetében az UTC formátumot használhatja.
+A parancsmag által begyakorolt feladatok időtartományának **kezdését adja** meg DateTime-objektumként.
+**DateTime-objektum** beszerzéséhez használja a Get-Date parancsmagot.
+A DateTime-objektumokról a **következőt** írja be: `Get-Help Get-Date` .
+Dátumokhoz használja az UTC formátumot.
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -Job
-A beolvasott biztonságimásolat-feladat nevét adja meg.
+A lekért biztonsági másolati feladat nevét adja meg.
 
 ```yaml
 Type: Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.JobBase
@@ -142,9 +142,9 @@ Accept wildcard characters: False
 ```
 
 ### -JobId
-Annak a projektnek az AZONOSÍTÓját adja meg, amely a parancsmagot kapja.
-Az azonosító egy **AzureRmRecoveryServicesBackupJob** objektum InstanceId tulajdonsága.
-**AzureRmRecoveryServicesBackupJob** -objektum beszerzéséhez használja a Get-AzRecoveryServicesBackupJob.
+A parancsmag által lekért feladat azonosítója.
+Az azonosító egy **AzureRmRecoveryServicesBackupServicesBackupService objektum InstanceId tulajdonsága.**
+**AzureRmRecoveryServicesBackupServices Object** beszerzéséhez használja a Get-AzRecoveryServicesBackupService-t.
 
 ```yaml
 Type: System.String
@@ -158,16 +158,16 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Művelet
-A parancsmag által kapott feladatok működését adja meg.
-A paraméter elfogadható értékei a következők:
-- Hát
+### -Operation
+A parancsmag által lekért feladatok műveletét adja meg.
+A paraméter elfogadható értékei a következőek:
+- Biztonsági másolat
 - ConfigureBackup
 - DeleteBackupData
 - Regisztráció
-- Visszaállítása
-- Védtelen
-- Regisztrációját
+- Visszaállítás
+- Védelem feloldása
+- Regisztrációt nem lehet
 
 ```yaml
 Type: System.Nullable`1[Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.JobOperation]
@@ -183,13 +183,13 @@ Accept wildcard characters: False
 ```
 
 ### -Állapot
-A parancsmag által kapott feladatok állapotát adja meg.
-A paraméter elfogadható értékei a következők:
-- Előrehaladás
+Megadja a parancsmag által begyabatolt feladatok állapotát.
+A paraméter elfogadható értékei a következőek:
+- InProgress
 - Sikertelen
-- Lemondott
-- Értekezletének lemondása
-- Kész
+- Megszakítva
+- Lemondás
+- Befejezve
 - CompletedWithWarnings
 
 ```yaml
@@ -206,10 +206,10 @@ Accept wildcard characters: False
 ```
 
 ### -To
-Annak a projektnek az időtartományának a végét adja meg **datetime** -objektumként, amely a parancsmagot kapja.
-Az alapértelmezett érték az aktuális rendszer idő.
-Ha ezt a paramétert adja meg, a *from* paramétert is meg kell adnia.
-A dátumok esetében az UTC formátumot használhatja.
+A parancsmag által lekért feladatok időtartományának **DateTime-objektumként** való végét adja meg.
+Az alapértelmezett érték a rendszer aktuális ideje.
+Ha ezt a paramétert adja meg, a From paramétert *is meg kell adnia.*
+Dátumokhoz használja az UTC formátumot.
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -224,7 +224,7 @@ Accept wildcard characters: False
 ```
 
 ### -VaultId
-A helyreállítási szolgáltatások boltozatának azonosítója
+ARM helyreállítási szolgáltatások tárolójának azonosítója.
 
 ```yaml
 Type: System.String
@@ -239,24 +239,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. RecoveryServices. backup. parancsmagok. models. JobBase
+### Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.JobBase
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Get-AzRecoveryServicesBackupJobDetails](./Get-AzRecoveryServicesBackupJobDetails.md)
 
-[Stop-AzRecoveryServicesBackupJob](./Stop-AzRecoveryServicesBackupJob.md)
+[Stop-AzRecoveryServicesBackupService](./Stop-AzRecoveryServicesBackupJob.md)
 
-[Várjon-AzRecoveryServicesBackupJob](./Wait-AzRecoveryServicesBackupJob.md)
+[Wait-AzRecoveryServicesBackupService](./Wait-AzRecoveryServicesBackupJob.md)
 
 
