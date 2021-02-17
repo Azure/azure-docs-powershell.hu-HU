@@ -6,55 +6,55 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleEmail.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleEmail.md
-ms.openlocfilehash: cfdd18a02a5e0507e86a37dee1e1662bb5094f37
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 063eccb7d42fdee26c642a866c2bce398c87662e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93835054"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403051"
 ---
 # New-AzAlertRuleEmail
 
-## Áttekintés
-E-mail-művelet létrehozása egy figyelmeztetési szabályhoz.
+## SYNOPSIS
+E-mail műveletet hoz létre egy riasztási szabályhoz.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 New-AzAlertRuleEmail [[-CustomEmail] <String[]>] [-SendToServiceOwner]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-A **New-AzAlertRuleEmail** parancsmag e-mail-műveleteket hoz létre egy figyelmeztetési szabályhoz.
+## LEÍRÁS
+A **New-AzAlertRuleEmail** parancsmag létrehoz egy e-mail műveletet egy riasztási szabályhoz.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: figyelmeztetési szabály létrehozása e-mail-művelet a szolgáltatás tulajdonosainak
+### 1. példa: Értesítési szabály e-mail-művelet létrehozása szolgáltatástulajdonosoknak
 ```
 PS C:\>New-AzAlertRuleEmail -SendToServiceOwners
 ```
 
-Ez a parancs figyelmeztetési szabályt hoz létre a szolgáltatás tulajdonosainak küldött e-mail-műveletről, ha riasztási szabály van kirúgva.
+Ez a parancs egy riasztási szabály e-mail-műveletet hoz létre, és elküldi azt a szolgáltatástulajdonosoknak, ha riasztási szabály van beszabályzva.
 
-### 2. példa: figyelmeztetési szabály létrehozása e-mail-művelet a nem szolgáltató tulajdonosok számára
+### 2. példa: Értesítési szabály e-mail-művelet létrehozása nem szolgáltatástulajdonosoknak
 ```
 PS C:\>New-AzAlertRuleEmail -CustomEmails pattif@contoso.com,davidchew@contoso.net
 ```
 
-Ez a parancs figyelmeztetési szabályt hoz létre a megadott e-mail-címekhez, de a szolgáltatás tulajdonosainak nem.
+Ez a parancs egy riasztási szabály e-mail-műveletet hoz létre a megadott e-mail-címekhez, de nem a szolgáltatástulajdonosokhoz.
 
-### 3. példa: figyelmeztetési szabály létrehozása e-mail-művelet a szolgáltatás tulajdonosai és a nem szolgáltató tulajdonosok számára
+### 3. példa: Értesítési szabály e-mail-művelet létrehozása szolgáltatástulajdonosoknak és nem szolgáltatástulajdonosoknak
 ```
 PS C:\>New-AzAlertRuleEmail -CustomEmails pattif@contoso.net -SendToServiceOwners
 ```
 
-Ez a parancs figyelmeztetési szabályt hoz létre a megadott címhez és a szolgáltatás tulajdonosainak szóló e-mail-művelethez.
+Ez a parancs egy riasztási szabály e-mail-műveletet hoz létre a megadott címhez és a szolgáltatástulajdonosokhoz.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -CustomEmail
-A pontosvesszővel tagolt e-mail-címek listáját adja meg.
+Vesszővel elválasztott e-mail-címek listáját adja meg.
 
 ```yaml
 Type: System.String[]
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 ```
 
 ### -SendToServiceOwner
-Jelzi, hogy a művelet elküld egy e-mailt a szolgáltatás tulajdonosainak, amikor a szabály tüzeket hoz meg.
+Azt jelzi, hogy ez a művelet e-mailt küld a szolgáltatástulajdonosoknak, amikor a szabály ki van tűzve.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -99,28 +99,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### System. string []
+### System.String[]
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameter
 
 ## KIMENETEK
 
-### Microsoft. Azure. Management. monitor. Management. models. RuleEmailAction
+### Microsoft.Azure.Management.Monitor.Management.Models.RuleEmailAction
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Add-AzLogAlertRule](./Add-AzLogAlertRule.md)
 
 [Add-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
 
 [Add-AzWebtestAlertRule](./Add-AzWebtestAlertRule.md)
 
-[Új – AzAlertRuleWebhook](./New-AzAlertRuleWebhook.md)
+[New-AzAlertRuleWebhook](./New-AzAlertRuleWebhook.md)
 
 

@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Set-AzActivityLogAlert.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Set-AzActivityLogAlert.md
-ms.openlocfilehash: 0813f91a3d82a40bc5b8d02c0a1e3f9579e0067a
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 6c7b867add359edec8379f20e630c9aca5fed00e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93670787"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100402881"
 ---
 # Set-AzActivityLogAlert
 
-## Áttekintés
-Új vagy meglévő tevékenység-naplózási riasztást hoz létre.
+## SYNOPSIS
+Létrehoz egy újat, vagy beállítja a meglévő tevékenységnapló-riasztást.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### SetByNameAndResourceGroup
 ```
@@ -51,15 +51,15 @@ Set-AzActivityLogAlert [-Scope <System.Collections.Generic.List`1[System.String]
  [<CommonParameters>]
 ```
 
-## Leírás
-A **set-AzActivityLogAlert** parancsmag új vagy meglévő tevékenység-naplózási riasztást hoz létre.
-Címkék, feltételek és műveletek esetén az objektumokat előre kell létrehozni, és a hívásban paraméterként kell átadni, mint vesszővel elválasztva (lásd az alábbi példát).
-Ez a parancsmag végrehajtja a ShouldProcess mintát, azaz a felhasználó megerősítését kérheti az erőforrás tényleges létrehozása/módosítása előtt.
-**Megjegyzés** : Ez a parancsmag és a hozzá kapcsolódóak a megszűnt (november 2017) **bővítményt** cserélik le a AzLogAlertRule.
+## LEÍRÁS
+A **Set-AzActivityLogAlert** parancsmag létrehoz egy újat, vagy beállít egy meglévő tevékenységnapló-riasztást.
+Címkék, feltételek és műveletek esetén az objektumokat előre létre kell hoznunk, és paraméterekként kell átesni a hívásban vesszővel elválasztva (lásd az alábbi példát).
+Ez a parancsmag implementálja a ShouldProcess mintát, azaz az erőforrás létrehozása/módosítása előtt megerősítést kérhet a felhasználótól.
+**MEGJEGYZÉS:** Ez a parancsmag és a hozzá kapcsolódó parancsmag felváltja az elavult (2017. novemberi) **Add-AzLogAlertRule bővítményt.**
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: műveletnapló-értesítés létrehozása
+### 1. példa: Tevékenységnapló-értesítés létrehozása
 ```
 PS C:\>$location = 'Global'
 PS C:\>$alertName = 'myAlert'
@@ -72,10 +72,10 @@ PS C:\>$actionGrp1 = New-AzActionGroup -ActionGroupId 'actiongr1' -WebhookProper
 PS C:\>Set-AzActivityLogAlert -Location $location -Name $alertName -ResourceGroupName $resourceGroupName -Scope 'scope1','scope2' -Action $actionGrp1 -Condition $condition1, $condition2
 ```
 
-Az első négy parancs a levél feltételeit és a műveletek csoportját hozza létre.
-A végleges parancs a feltétel és a művelet csoporttal hoz létre egy tevékenység-naplózási riasztást.
+Az első négy parancs levél feltételt és műveletcsoportot hoz létre.
+Az utolsó parancs létrehoz egy tevékenységnapló-riasztást a feltétel és a műveletcsoport használatával.
 
-### 2. példa: tevékenység naplójának létrehozása letiltva
+### 2. példa: Letiltott tevékenységnapló-értesítés létrehozása
 ```
 PS C:\>$location = 'Global'
 PS C:\>$alertName = 'myAlert'
@@ -88,10 +88,10 @@ PS C:\>$actionGrp1 = New-AzActionGroup -ActionGroupId 'actiongr1' -WebhookProper
 PS C:\>Set-AzActivityLogAlert -Location $location -Name $alertName -ResourceGroupName $resourceGroupName -Scope 'scope1','scope2' -Action $actionGrp1 -Condition $condition1, $condition2 -DisableAlert
 ```
 
-Az első négy parancs a levél feltételeit és a műveletek csoportját hozza létre.
-A végleges parancs tevékenység-naplózási értesítést hoz létre a feltétel és a művelet csoport segítségével, de a riasztást letiltja.
+Az első négy parancs levél feltételt és műveletcsoportot hoz létre.
+Az utolsó parancs létrehoz egy tevékenységnapló-riasztást a feltétel és a műveletcsoport használatával, de letiltja a riasztást.
 
-### 3. példa: műveletnapló beállítása a pipe vagy a InputObject paraméter értéke alapján
+### 3. példa: Tevékenységnapló-riasztás beállítása a pipa vagy az InputObject paraméter értéke alapján
 ```
 PS C:\>Get-AzActivityLogAlert -Name $alertName -ResourceGroupName $resourceGroupName | Set-AzActivityLogAlert
 PS C:\>$alert = Get-AzActivityLogAlert -Name $alertName -ResourceGroupName $resourceGroupName
@@ -100,19 +100,19 @@ PS C:\>$alert.Enabled = $false
 PS C:\>Set-AzActivityLogAlert -InputObject $alert
 ```
 
-Az első parancs hasonlít egy NOP, a riasztást ugyanazokkal az értékekkel adja meg, amelyekben már megtalálható a többi parancs a riasztási szabály lekérése után, megváltoztathatja a leírást, és letilthatja, majd a InputObject paraméterrel megmaradhatja ezeket a módosításokat.
+Az első parancs a nop-hoz hasonlóan beállítja a riasztást ugyanazokkal az értékekkel, amelyek már tartalmazták a többi parancsot is, lekéri a riasztási szabályt, módosítja és letiltja a leírást, majd az InputObject paraméter használatával megőrzi ezeket a módosításokat.
 
-### 4. példa: műveletnapló beállítása a ResourceId érték alapján a pipe-ról
+### 4. példa: Tevékenységnapló-riasztás beállítása a pipa ResourceId értéke alapján
 ```
 PS C:\>Find-AzResource -ResourceGroupEquals "myResourceGroup" -ResourceNameEquals "myLogAlert" | Set-AzActivityLogAlert -DisableAlert
 ```
 
-Ha az adott naplózási riasztási szabály létezik: Ez a parancs letiltja azt.
+Ha a megadott naplóriasztás szabály létezik, ez a parancs letiltja azt.
 
-## PARAMÉTEREK
+## PARAMETERS
 
-### -Műveletek
-A műveletnapló riasztási csoportjának listája.
+### -Action
+A tevékenységnapló-riasztáshoz szükséges műveletcsoportok listája.
 
 ```yaml
 Type: System.Collections.Generic.List`1[Microsoft.Azure.Management.Monitor.Management.Models.ActivityLogAlertActionGroup]
@@ -151,8 +151,8 @@ Accept wildcard characters: False
 ```
 
 ### -Feltétel
-A tevékenység naplójának riasztási feltételeinek listája.
-**Megjegyzés** : a feltételek listájában legalább egy olyan mezőnek kell lennie, amely egyenlő "Category"-val. Ha ez a feltétel nem jelenik meg, a backend válaszol a 400 (BadRequest) értékre.
+A tevékenységnapló-riasztás feltételeinek listája.
+**MEGJEGYZÉS:** A feltételek listájában legalább egynek "Kategória" értékű mezőnek kell lennie. A backend válaszol a 400 (BadRequest) feltétellel, ha ez a feltétel nem áll be.
 
 ```yaml
 Type: System.Collections.Generic.List`1[Microsoft.Azure.Management.Monitor.Management.Models.ActivityLogAlertLeafCondition]
@@ -191,7 +191,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -206,7 +206,7 @@ Accept wildcard characters: False
 ```
 
 ### -Leírás
-Az értesítési erőforrás leírása.
+A riasztási erőforrás leírása.
 
 ```yaml
 Type: System.String
@@ -233,7 +233,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisableAlert
-Lehetővé teszi, hogy a felhasználó letiltotta a tevékenység naplójának riasztását. Ha nem adja meg, akkor a rendszer engedélyezi a riasztások létrehozását.
+Lehetővé teszi a felhasználónak, hogy letiltotta a tevékenységnapló értesítését. Ha nincs megadva, a riasztások engedélyezve vannak.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -248,7 +248,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-A hívás InputObject (címkék) tulajdonságát adja meg a szükséges név és az erőforrás csoport nevének kinyeréséhez.
+Beállítja a hívás InputObject tags tulajdonságát a szükséges név és az erőforráscsoport nevének tulajdonságainak kibontása érdekében.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
@@ -262,8 +262,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Hely
-Az a hely, ahol a műveletnapló figyelmeztetése megtalálható.
+### -Location
+Az a hely, ahol a tevékenységnapló-riasztás létezik.
 
 ```yaml
 Type: System.String
@@ -289,8 +289,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name (név)
-A műveletnapló riasztásának neve.
+### -Name
+A tevékenységnapló-riasztás neve.
 
 ```yaml
 Type: System.String
@@ -305,7 +305,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Annak az erőforráscsoportnek a neve, amelyben az értesítési erőforrás létezik.
+Annak az erőforráscsoportnak a neve, amelyben a riasztási erőforrás fog létezni.
 
 ```yaml
 Type: System.String
@@ -320,7 +320,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-A hívás ResourceId-címkék tulajdonságát adja meg a szükséges név, az erőforráscsoport nevének kinyeréséhez.
+Beállítja a hívás ResourceId tags tulajdonságát a szükséges név, az erőforráscsoport nevének tulajdonságainak kibontása érdekében.
 
 ```yaml
 Type: System.String
@@ -334,8 +334,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Scope (hatókör)
-A tevékenység naplójának riasztására vonatkozó hatókörök listája.
+### -Scope
+A tevékenységnapló-riasztás hatókörének listája.
 
 ```yaml
 Type: System.Collections.Generic.List`1[System.String]
@@ -373,8 +373,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Címke
-A tevékenység naplója riasztási erőforrás címkék tulajdonságát állítja be.
+### -Tag
+Beállítja a tevékenységnapló riasztási erőforrásának címketulajdonságát.
 
 ```yaml
 Type: System.Collections.Generic.Dictionary`2[System.String,System.String]
@@ -400,8 +400,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -416,7 +416,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut. A parancsmag nem fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik. A parancsmag nem fut.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -431,27 +431,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
-### System. Collections. Generic. list ' 1 [[System. string, System. Private. CoreLib, Version = 4.0.0.0, Culture = semleges, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Collections.Generic.List'1[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### System. Collections. Generic. list ' 1 [[Microsoft. Azure. Management. monitor. Management. models. ActivityLogAlertLeafCondition, Microsoft. Azure. PowerShell. parancsmagok. monitor, Version = 1.0.0.0, Culture = semleges, PublicKeyToken = null]]
+### System.Collections.Generic.List'1[[Microsoft.Azure.Management.Monitor.Management.Models.ActivityLogAlertLeafCondition, Microsoft.Azure.PowerShell.Cmdlets.Monitor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 
-### System. Collections. Generic. list ' 1 [[Microsoft. Azure. Management. monitor. Management. models. ActivityLogAlertActionGroup, Microsoft. Azure. PowerShell. parancsmagok. monitor, Version = 1.0.0.0, Culture = semleges, PublicKeyToken = null]]
+### System.Collections.Generic.List'1[[Microsoft.Azure.Management.Monitor.Management.Models.ActivityLogAlertActionGroup, Microsoft.Azure.PowerShell.Cmdlets.Monitor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 
-### System. Collections. Generic. Dictionary ' 2 [[System. string, System. Private. CoreLib, Version = 4.0.0.0, Culture = semleges, PublicKeyToken = 7cec85d7bea7798e], [System. string, System. Private. CoreLib, Version = 4.0.0.0, Culture = semleges, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Collections.Generic.Dictionary'2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### Microsoft. Azure. commands. OutputClasses. PSActivityLogAlertResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
 
 ## KIMENETEK
 
-### Microsoft. Azure. commands. OutputClasses. PSActivityLogAlertResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
@@ -463,6 +463,4 @@ Ez a parancsmag a következő általános paramétereket támogatja:-debug,-Erro
 
 [Remove-AzActivityLogAlert](./Remove-AzActivityLogAlert.md)
 
-[Új – AzActionGroup](./New-AzActionGroup.md)
-
-[Új – AzActivityLogAlertCondition](./Get-AzActivityLogAlertCondition.md)
+[New-AzActionGroup](./New-AzActionGroup.md)
