@@ -5,50 +5,50 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.kusto/get-
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Kusto/Kusto/help/Get-AzKustoCluster.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Kusto/Kusto/help/Get-AzKustoCluster.md
-ms.openlocfilehash: a68604e9701a6ae2c251edf3f2a0935df5ffa94f
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: c5c7cdffc8b329fdff426f48f60869ca6821f32d
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93666110"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401351"
 ---
-# <span data-ttu-id="33975-101">Get-AzKustoCluster</span><span class="sxs-lookup"><span data-stu-id="33975-101">Get-AzKustoCluster</span></span>
+# <span data-ttu-id="c5fec-101">Get-AzKustoCluster</span><span class="sxs-lookup"><span data-stu-id="c5fec-101">Get-AzKustoCluster</span></span>
 
-## <span data-ttu-id="33975-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="33975-102">SYNOPSIS</span></span>
-<span data-ttu-id="33975-103">Megtekintheti egy erőforráscsoport összes Kusto-szektorcsoportját, vagy egy bizonyos Kusto-fürtöt.</span><span class="sxs-lookup"><span data-stu-id="33975-103">List all Kusto clusters in a resource group or get a specific Kusto cluster.</span></span>
+## <span data-ttu-id="c5fec-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="c5fec-102">SYNOPSIS</span></span>
+<span data-ttu-id="c5fec-103">List all Kusto clusters in a resource group or get a specific Kusto cluster.</span><span class="sxs-lookup"><span data-stu-id="c5fec-103">List all Kusto clusters in a resource group or get a specific Kusto cluster.</span></span>
 
-## <span data-ttu-id="33975-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="33975-104">SYNTAX</span></span>
+## <span data-ttu-id="c5fec-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="c5fec-104">SYNTAX</span></span>
 
-### <span data-ttu-id="33975-105">ByClusterOrResourceGroupOrSubscription (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="33975-105">ByClusterOrResourceGroupOrSubscription (Default)</span></span>
+### <span data-ttu-id="c5fec-105">ByClusterOrResourceGroupOrSubscription (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="c5fec-105">ByClusterOrResourceGroupOrSubscription (Default)</span></span>
 ```
 Get-AzKustoCluster -ResourceGroupName <String> [-Name <String>] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="33975-106">ByResourceId</span><span class="sxs-lookup"><span data-stu-id="33975-106">ByResourceId</span></span>
+### <span data-ttu-id="c5fec-106">ByResourceId</span><span class="sxs-lookup"><span data-stu-id="c5fec-106">ByResourceId</span></span>
 ```
 Get-AzKustoCluster -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="33975-107">Leírás</span><span class="sxs-lookup"><span data-stu-id="33975-107">DESCRIPTION</span></span>
-<span data-ttu-id="33975-108">Megtekintheti egy erőforráscsoport összes Kusto-szektorcsoportját, vagy egy bizonyos Kusto-fürtöt.</span><span class="sxs-lookup"><span data-stu-id="33975-108">List all Kusto clusters in a resource group or get a specific Kusto cluster.</span></span>
+## <span data-ttu-id="c5fec-107">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="c5fec-107">DESCRIPTION</span></span>
+<span data-ttu-id="c5fec-108">List all Kusto clusters in a resource group or get a specific Kusto cluster.</span><span class="sxs-lookup"><span data-stu-id="c5fec-108">List all Kusto clusters in a resource group or get a specific Kusto cluster.</span></span>
 
-## <span data-ttu-id="33975-109">Példák</span><span class="sxs-lookup"><span data-stu-id="33975-109">EXAMPLES</span></span>
+## <span data-ttu-id="c5fec-109">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="c5fec-109">EXAMPLES</span></span>
 
-### <span data-ttu-id="33975-110">Példa 1 – egy erőforráscsoport összes Kusto listája</span><span class="sxs-lookup"><span data-stu-id="33975-110">Example 1 - List all Kusto clusters in a resource group</span></span>
+### <span data-ttu-id="c5fec-110">1. példa : Egy erőforráscsoport összes Kusto-fürtének felsorolása</span><span class="sxs-lookup"><span data-stu-id="c5fec-110">Example 1 - List all Kusto clusters in a resource group</span></span>
 
-<span data-ttu-id="33975-111">Írja be a következőt: Microsoft. Kusto/Clusters ID:/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster1 ResourceGroup: testrg név: mykustocluster1 hely: Közép-amerikai kapacitás: 3 SKU: D13_v2 ProvisioningState: sikeres állapot: futó címke: {} URI: https://mykustocluster1.centralus.kusto.windows.net DataIngestionUri: https://ingest-mykustocluster1.centralus.kusto.windows.net</span><span class="sxs-lookup"><span data-stu-id="33975-111">Type              : Microsoft.Kusto/Clusters Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster1 ResourceGroup     : testrg Name              : mykustocluster1 Location          : Central US Capacity          : 3 Sku               : D13_v2 ProvisioningState : Succeeded State             : Running Tag               : {} Uri               : https://mykustocluster1.centralus.kusto.windows.net DataIngestionUri  : https://ingest-mykustocluster1.centralus.kusto.windows.net</span></span>
+<span data-ttu-id="c5fec-111">Típus: Microsoft.Kusto/Clusters Id : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster1 ResourceGroup: testrg Name: mykustocluster1 Location: Central US Capacity: 3 Termékváltozat: D13_v2 ProvisioningState: Sikeres állam: Running Tag : {} Uri : `https://mykustocluster1.centralus.kusto.windows.net` DataIngestionUri : `https://ingest-mykustocluster1.centralus.kusto.windows.net`</span><span class="sxs-lookup"><span data-stu-id="c5fec-111">Type              : Microsoft.Kusto/Clusters Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster1 ResourceGroup     : testrg Name              : mykustocluster1 Location          : Central US Capacity          : 3 Sku               : D13_v2 ProvisioningState : Succeeded State             : Running Tag               : {} Uri               : `https://mykustocluster1.centralus.kusto.windows.net` DataIngestionUri  : `https://ingest-mykustocluster1.centralus.kusto.windows.net`</span></span>
 
-<span data-ttu-id="33975-112">Írja be a következőt: Microsoft. Kusto/Clusters ID:/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster2 ResourceGroup: testrg név: mykustocluster2 hely: Közép-amerikai kapacitás: 5 SKU: D13_v2 ProvisioningState: sikeres állapot: futó címke: {} URI: https://mykustocluster2.centralus.kusto.windows.net DataIngestionUri: https://ingest-mykustocluster2.centralus.kusto.windows.net</span><span class="sxs-lookup"><span data-stu-id="33975-112">Type              : Microsoft.Kusto/Clusters Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster2 ResourceGroup     : testrg Name              : mykustocluster2 Location          : Central US Capacity          : 5 Sku               : D13_v2 ProvisioningState : Succeeded State             : Running Tag               : {} Uri               : https://mykustocluster2.centralus.kusto.windows.net DataIngestionUri  : https://ingest-mykustocluster2.centralus.kusto.windows.net</span></span>
+<span data-ttu-id="c5fec-112">Típus: Microsoft.Kusto/Clusters Id : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster2 ResourceGroup: testrg Name: mykustocluster2 Location: Central US Capacity : 5 Termékváltozat: D13_v2 ProvisioningState: Sikeres állam: Running Tag : {} Uri : `https://mykustocluster2.centralus.kusto.windows.net` DataIngestionUri : `https://ingest-mykustocluster2.centralus.kusto.windows.net`</span><span class="sxs-lookup"><span data-stu-id="c5fec-112">Type              : Microsoft.Kusto/Clusters Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster2 ResourceGroup     : testrg Name              : mykustocluster2 Location          : Central US Capacity          : 5 Sku               : D13_v2 ProvisioningState : Succeeded State             : Running Tag               : {} Uri               : `https://mykustocluster2.centralus.kusto.windows.net` DataIngestionUri  : `https://ingest-mykustocluster2.centralus.kusto.windows.net`</span></span>
 
 
 ```
 PS C:\> Get-AzKustoCluster -ResourceGroupName testrg
 ```
 
-<span data-ttu-id="33975-113">A fenti parancs felsorolja az összes Kusto-szektorcsoportot az "testrg" erőforráscsoport csoportjában.</span><span class="sxs-lookup"><span data-stu-id="33975-113">The above command lists all Kusto clusters in the resource group "testrg".</span></span>
+<span data-ttu-id="c5fec-113">A fenti parancs felsorolja a "testrg" erőforráscsoport összes Kusto-fürtöt.</span><span class="sxs-lookup"><span data-stu-id="c5fec-113">The above command lists all Kusto clusters in the resource group "testrg".</span></span>
 
-### <span data-ttu-id="33975-114">2 példa – adott Kusto-fürt beszerzése név alapján</span><span class="sxs-lookup"><span data-stu-id="33975-114">Example 2 - Get a specific Kusto cluster by name</span></span>
+### <span data-ttu-id="c5fec-114">2. példa : Adott Kusto-fürt lekérte név szerint</span><span class="sxs-lookup"><span data-stu-id="c5fec-114">Example 2 - Get a specific Kusto cluster by name</span></span>
 
 ```
 PS C:\> Get-AzKustoCluster -ResourceGroupName testrg -Name mykustocluster
@@ -67,9 +67,9 @@ Uri               : https://mykustocluster.centralus.kusto.windows.net
 DataIngestionUri  : https://ingest-mykustocluster.centralus.kusto.windows.net
 ```
 
-<span data-ttu-id="33975-115">A fenti parancs az "testrg" erőforráscsoport "mykustocluster" nevű Kusto-fürtöt számítja ki.</span><span class="sxs-lookup"><span data-stu-id="33975-115">The above command returns the Kusto cluster named "mykustocluster" in the resource group "testrg".</span></span>
+<span data-ttu-id="c5fec-115">A fenti parancs a "testrg" erőforráscsoportban a "mykustocluster" nevű Kusto-fürtöt adja vissza.</span><span class="sxs-lookup"><span data-stu-id="c5fec-115">The above command returns the Kusto cluster named "mykustocluster" in the resource group "testrg".</span></span>
 
-### <span data-ttu-id="33975-116">3 példa – adott Kusto-fürt beszerzése erőforrás-azonosítóval</span><span class="sxs-lookup"><span data-stu-id="33975-116">Example 3 - Get a specific Kusto cluster by resource id</span></span>
+### <span data-ttu-id="c5fec-116">3. példa: Adott Kusto-fürt lekérte erőforrás-azonosító szerint</span><span class="sxs-lookup"><span data-stu-id="c5fec-116">Example 3 - Get a specific Kusto cluster by resource id</span></span>
 
 ```
 PS C:\> Get-AzKustoCluster -ResourceId /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/clusters/mykustocluster
@@ -87,12 +87,12 @@ Uri               : https://mykustocluster.centralus.kusto.windows.net
 DataIngestionUri  : https://ingest-mykustocluster.centralus.kusto.windows.net
 ```
 
-<span data-ttu-id="33975-117">A fenti parancs az "testrg" erőforráscsoport "mykustocluster" nevű Kusto-fürtöt számítja ki.</span><span class="sxs-lookup"><span data-stu-id="33975-117">The above command returns the Kusto cluster named "mykustocluster" in the resource group "testrg".</span></span>
+<span data-ttu-id="c5fec-117">A fenti parancs a "testrg" erőforráscsoportban a "mykustocluster" nevű Kusto-fürtöt adja vissza.</span><span class="sxs-lookup"><span data-stu-id="c5fec-117">The above command returns the Kusto cluster named "mykustocluster" in the resource group "testrg".</span></span>
 
-## <span data-ttu-id="33975-118">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="33975-118">PARAMETERS</span></span>
+## <span data-ttu-id="c5fec-118">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="c5fec-118">PARAMETERS</span></span>
 
-### <span data-ttu-id="33975-119">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="33975-119">-DefaultProfile</span></span>
-<span data-ttu-id="33975-120">Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="33975-120">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+### <span data-ttu-id="c5fec-119">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="c5fec-119">-DefaultProfile</span></span>
+<span data-ttu-id="c5fec-120">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="c5fec-120">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -106,8 +106,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="33975-121">-Name (név)</span><span class="sxs-lookup"><span data-stu-id="33975-121">-Name</span></span>
-<span data-ttu-id="33975-122">Egy adott fürt neve.</span><span class="sxs-lookup"><span data-stu-id="33975-122">Name of a specific cluster.</span></span>
+### <span data-ttu-id="c5fec-121">-Name</span><span class="sxs-lookup"><span data-stu-id="c5fec-121">-Name</span></span>
+<span data-ttu-id="c5fec-122">Egy adott fürt neve.</span><span class="sxs-lookup"><span data-stu-id="c5fec-122">Name of a specific cluster.</span></span>
 
 ```yaml
 Type: System.String
@@ -121,8 +121,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="33975-123">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="33975-123">-ResourceGroupName</span></span>
-<span data-ttu-id="33975-124">Annak az erőforráscsoportnek a neve, amelyben a felhasználó a fürtöt szeretné beolvasni.</span><span class="sxs-lookup"><span data-stu-id="33975-124">Name of resource group under which the user wants to retrieve the cluster.</span></span>
+### <span data-ttu-id="c5fec-123">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="c5fec-123">-ResourceGroupName</span></span>
+<span data-ttu-id="c5fec-124">Annak az erőforráscsoportnak a neve, amely alatt a felhasználó le szeretné kéri a fürtöt.</span><span class="sxs-lookup"><span data-stu-id="c5fec-124">Name of resource group under which the user wants to retrieve the cluster.</span></span>
 
 ```yaml
 Type: System.String
@@ -136,8 +136,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="33975-125">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="33975-125">-ResourceId</span></span>
-<span data-ttu-id="33975-126">Kusto a cluster ResourceID.</span><span class="sxs-lookup"><span data-stu-id="33975-126">Kusto cluster ResourceID.</span></span>
+### <span data-ttu-id="c5fec-125">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="c5fec-125">-ResourceId</span></span>
+<span data-ttu-id="c5fec-126">Kusto cluster ResourceID.</span><span class="sxs-lookup"><span data-stu-id="c5fec-126">Kusto cluster ResourceID.</span></span>
 
 ```yaml
 Type: System.String
@@ -151,17 +151,17 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="33975-127">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="33975-127">CommonParameters</span></span>
-<span data-ttu-id="33975-128">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="33975-128">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="33975-129">További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="33975-129">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="c5fec-127">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="c5fec-127">CommonParameters</span></span>
+<span data-ttu-id="c5fec-128">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="c5fec-128">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="c5fec-129">További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="c5fec-129">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="33975-130">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="33975-130">INPUTS</span></span>
+## <span data-ttu-id="c5fec-130">INPUTS</span><span class="sxs-lookup"><span data-stu-id="c5fec-130">INPUTS</span></span>
 
-### <span data-ttu-id="33975-131">System. String</span><span class="sxs-lookup"><span data-stu-id="33975-131">System.String</span></span>
+### <span data-ttu-id="c5fec-131">System.String</span><span class="sxs-lookup"><span data-stu-id="c5fec-131">System.String</span></span>
 
-## <span data-ttu-id="33975-132">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="33975-132">OUTPUTS</span></span>
+## <span data-ttu-id="c5fec-132">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="c5fec-132">OUTPUTS</span></span>
 
-### <span data-ttu-id="33975-133">Microsoft. Azure. Command. Kusto. models. PSKustoCluster</span><span class="sxs-lookup"><span data-stu-id="33975-133">Microsoft.Azure.Commands.Kusto.Models.PSKustoCluster</span></span>
+### <span data-ttu-id="c5fec-133">Microsoft.Azure.Commands.Kusto.Models.PSKustoCluster</span><span class="sxs-lookup"><span data-stu-id="c5fec-133">Microsoft.Azure.Commands.Kusto.Models.PSKustoCluster</span></span>
 
-## <span data-ttu-id="33975-134">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="33975-134">NOTES</span></span>
+## <span data-ttu-id="c5fec-134">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="c5fec-134">NOTES</span></span>
 
-## <span data-ttu-id="33975-135">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="33975-135">RELATED LINKS</span></span>
+## <span data-ttu-id="c5fec-135">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="c5fec-135">RELATED LINKS</span></span>
