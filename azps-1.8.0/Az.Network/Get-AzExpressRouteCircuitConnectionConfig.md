@@ -6,45 +6,45 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitConnectionConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitConnectionConfig.md
-ms.openlocfilehash: 70badaebf0b6b8a35fd96cc20a54aab1ff316bef
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 0adba1dfe453852b0797f40d6cd4d188db87169f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93670601"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401997"
 ---
-# <span data-ttu-id="1fe26-101">Get-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="1fe26-101">Get-AzExpressRouteCircuitConnectionConfig</span></span>
+# <span data-ttu-id="52282-101">Get-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="52282-101">Get-AzExpressRouteCircuitConnectionConfig</span></span>
 
-## <span data-ttu-id="1fe26-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="1fe26-102">SYNOPSIS</span></span>
-<span data-ttu-id="1fe26-103">ExpressRoute-áramköri kapcsolati konfigurációt kap, amely a ExpressRouteCircuit privát kinézetéhez van társítva.</span><span class="sxs-lookup"><span data-stu-id="1fe26-103">Gets an ExpressRoute circuit connection configuration associated with Private Peering of ExpressRouteCircuit.</span></span>
+## <span data-ttu-id="52282-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="52282-102">SYNOPSIS</span></span>
+<span data-ttu-id="52282-103">ExpressRoute-kapcsolati konfigurációt kap, amely az ExpressRouteCircuit privát társviszony-létesítésében van társítva.</span><span class="sxs-lookup"><span data-stu-id="52282-103">Gets an ExpressRoute circuit connection configuration associated with Private Peering of ExpressRouteCircuit.</span></span>
 
-## <span data-ttu-id="1fe26-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="1fe26-104">SYNTAX</span></span>
+## <span data-ttu-id="52282-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="52282-104">SYNTAX</span></span>
 
 ```
 Get-AzExpressRouteCircuitConnectionConfig [[-Name] <String>] [-ExpressRouteCircuit] <PSExpressRouteCircuit>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="1fe26-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="1fe26-105">DESCRIPTION</span></span>
-<span data-ttu-id="1fe26-106">A **Get-AzExpressRouteCircuitConnectionConfig** parancsmag kikeresi a magánjellegű kapcsolattal rendelkező ExpressRoute-áramkörhöz társított áramköri kapcsolat konfigurációját.</span><span class="sxs-lookup"><span data-stu-id="1fe26-106">The **Get-AzExpressRouteCircuitConnectionConfig** cmdlet retrieves the configuration of a circuit connection associated with Private Peering for an ExpressRoute circuit.</span></span>
+## <span data-ttu-id="52282-105">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="52282-105">DESCRIPTION</span></span>
+<span data-ttu-id="52282-106">A **Get-AzExpressRouteCircuitConnectionConfig** parancsmag beolvassa egy ExpressRoute-kapcsolat magánjellegű társviszony-létesítéshez társított kapcsolati kapcsolatának konfigurációját.</span><span class="sxs-lookup"><span data-stu-id="52282-106">The **Get-AzExpressRouteCircuitConnectionConfig** cmdlet retrieves the configuration of a circuit connection associated with Private Peering for an ExpressRoute circuit.</span></span>
 
-## <span data-ttu-id="1fe26-107">Példák</span><span class="sxs-lookup"><span data-stu-id="1fe26-107">EXAMPLES</span></span>
+## <span data-ttu-id="52282-107">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="52282-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="1fe26-108">Példa 1: ExpressRoute-áramkör áramkör-kapcsolati konfigurációjának megjelenítése</span><span class="sxs-lookup"><span data-stu-id="1fe26-108">Example 1: Display the circuit connection configuration for an ExpressRoute circuit</span></span>
+### <span data-ttu-id="52282-108">1. példa: ExpressRoute-kapcsolat kapcsolatkonfigurációjának megjelenítése</span><span class="sxs-lookup"><span data-stu-id="52282-108">Example 1: Display the circuit connection configuration for an ExpressRoute circuit</span></span>
 ```
 $circuit_init = Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg
 Get-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName -ExpressRouteCircuit $circuit_init
 ```
 
-### <span data-ttu-id="1fe26-109">2. példa: ExpressRoute-áramkörrel társított áramköri kapcsolati erőforrás csővezetékekkel való használata</span><span class="sxs-lookup"><span data-stu-id="1fe26-109">Example 2: Get circuit connection resource associated with an ExpressRoute Circuit using piping</span></span>
+### <span data-ttu-id="52282-109">2. példa: Az ExpressRoute-áramkörhöz társított kapcsolati erőforrás lekérte a kapcsolatcsoportot egy pipával</span><span class="sxs-lookup"><span data-stu-id="52282-109">Example 2: Get circuit connection resource associated with an ExpressRoute Circuit using piping</span></span>
 ```
 Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg|Get-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName
 ```
 
-## <span data-ttu-id="1fe26-110">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="1fe26-110">PARAMETERS</span></span>
+## <span data-ttu-id="52282-110">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="52282-110">PARAMETERS</span></span>
 
-### <span data-ttu-id="1fe26-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="1fe26-111">-DefaultProfile</span></span>
-<span data-ttu-id="1fe26-112">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="1fe26-112">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="52282-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="52282-111">-DefaultProfile</span></span>
+<span data-ttu-id="52282-112">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="52282-112">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -58,8 +58,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1fe26-113">-ExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="1fe26-113">-ExpressRouteCircuit</span></span>
-<span data-ttu-id="1fe26-114">Az áramköri kapcsolat konfigurációját tartalmazó ExpressRoute Circuit objektum.</span><span class="sxs-lookup"><span data-stu-id="1fe26-114">The ExpressRoute circuit object containing the circuit connection configuration.</span></span>
+### <span data-ttu-id="52282-113">-ExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="52282-113">-ExpressRouteCircuit</span></span>
+<span data-ttu-id="52282-114">Az ExpressRoute-áramkör objektuma, amely az áramkör-kapcsolat konfigurációját tartalmazza.</span><span class="sxs-lookup"><span data-stu-id="52282-114">The ExpressRoute circuit object containing the circuit connection configuration.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit
@@ -73,8 +73,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1fe26-115">-Name (név)</span><span class="sxs-lookup"><span data-stu-id="1fe26-115">-Name</span></span>
-<span data-ttu-id="1fe26-116">A lekérdezni kívánt áramkör-kapcsolat konfigurációjának neve.</span><span class="sxs-lookup"><span data-stu-id="1fe26-116">The name of the circuit connection configuration to be retrieved.</span></span>
+### <span data-ttu-id="52282-115">-Name</span><span class="sxs-lookup"><span data-stu-id="52282-115">-Name</span></span>
+<span data-ttu-id="52282-116">A lekérni szükséges kapcsolati kapcsolat konfigurációjának neve.</span><span class="sxs-lookup"><span data-stu-id="52282-116">The name of the circuit connection configuration to be retrieved.</span></span>
 
 ```yaml
 Type: System.String
@@ -88,27 +88,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1fe26-117">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="1fe26-117">CommonParameters</span></span>
-<span data-ttu-id="1fe26-118">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="1fe26-118">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="1fe26-119">További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="1fe26-119">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="52282-117">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="52282-117">CommonParameters</span></span>
+<span data-ttu-id="52282-118">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="52282-118">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="52282-119">További információt a [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="52282-119">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="1fe26-120">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="1fe26-120">INPUTS</span></span>
+## <span data-ttu-id="52282-120">INPUTS</span><span class="sxs-lookup"><span data-stu-id="52282-120">INPUTS</span></span>
 
-### <span data-ttu-id="1fe26-121">Microsoft. Azure. commands. Network. models. PSExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="1fe26-121">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit</span></span>
+### <span data-ttu-id="52282-121">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="52282-121">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit</span></span>
 
-## <span data-ttu-id="1fe26-122">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="1fe26-122">OUTPUTS</span></span>
+## <span data-ttu-id="52282-122">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="52282-122">OUTPUTS</span></span>
 
-### <span data-ttu-id="1fe26-123">Microsoft. Azure. commands. Network. models. PSExpressRouteCircuitConnection</span><span class="sxs-lookup"><span data-stu-id="1fe26-123">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuitConnection</span></span>
+### <span data-ttu-id="52282-123">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuitConnection</span><span class="sxs-lookup"><span data-stu-id="52282-123">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuitConnection</span></span>
 
-## <span data-ttu-id="1fe26-124">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="1fe26-124">NOTES</span></span>
+## <span data-ttu-id="52282-124">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="52282-124">NOTES</span></span>
 
-## <span data-ttu-id="1fe26-125">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="1fe26-125">RELATED LINKS</span></span>
+## <span data-ttu-id="52282-125">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="52282-125">RELATED LINKS</span></span>
 
-[<span data-ttu-id="1fe26-126">Get-AzExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="1fe26-126">Get-AzExpressRouteCircuit</span></span>](Get-AzExpressRouteCircuit.md)
+[<span data-ttu-id="52282-126">Get-AzExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="52282-126">Get-AzExpressRouteCircuit</span></span>](Get-AzExpressRouteCircuit.md)
 
-[<span data-ttu-id="1fe26-127">Add-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="1fe26-127">Add-AzExpressRouteCircuitConnectionConfig</span></span>](Add-AzExpressRouteCircuitConnectionConfig.md)
+[<span data-ttu-id="52282-127">Add-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="52282-127">Add-AzExpressRouteCircuitConnectionConfig</span></span>](Add-AzExpressRouteCircuitConnectionConfig.md)
 
-[<span data-ttu-id="1fe26-128">Remove-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="1fe26-128">Remove-AzExpressRouteCircuitConnectionConfig</span></span>](Remove-AzExpressRouteCircuitConnectionConfig.md)
+[<span data-ttu-id="52282-128">Remove-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="52282-128">Remove-AzExpressRouteCircuitConnectionConfig</span></span>](Remove-AzExpressRouteCircuitConnectionConfig.md)
 
-[<span data-ttu-id="1fe26-129">Set-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="1fe26-129">Set-AzExpressRouteCircuitConnectionConfig</span></span>](Set-AzExpressRouteCircuitConnectionConfig.md)
 
-[<span data-ttu-id="1fe26-130">Új – AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="1fe26-130">New-AzExpressRouteCircuitConnectionConfig</span></span>](New-AzExpressRouteCircuitConnectionConfig.md)
+
+
