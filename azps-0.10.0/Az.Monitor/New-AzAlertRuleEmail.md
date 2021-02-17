@@ -6,55 +6,55 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Monitor/Monitor/help/New-AzAlertRuleEmail.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Monitor/Monitor/help/New-AzAlertRuleEmail.md
-ms.openlocfilehash: 3738e0d66c7dfb1a1aed56d5cfe8e1679e4e34e1
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: aa1570a1c8a2fc6101976c7cc6dc670e268f1c97
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93842002"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399379"
 ---
-# <span data-ttu-id="ffcd7-101">New-AzAlertRuleEmail</span><span class="sxs-lookup"><span data-stu-id="ffcd7-101">New-AzAlertRuleEmail</span></span>
+# <span data-ttu-id="1916a-101">New-AzAlertRuleEmail</span><span class="sxs-lookup"><span data-stu-id="1916a-101">New-AzAlertRuleEmail</span></span>
 
-## <span data-ttu-id="ffcd7-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="ffcd7-102">SYNOPSIS</span></span>
-<span data-ttu-id="ffcd7-103">E-mail-művelet létrehozása egy figyelmeztetési szabályhoz.</span><span class="sxs-lookup"><span data-stu-id="ffcd7-103">Creates an email action for an alert rule.</span></span>
+## <span data-ttu-id="1916a-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="1916a-102">SYNOPSIS</span></span>
+<span data-ttu-id="1916a-103">E-mail műveletet hoz létre egy riasztási szabályhoz.</span><span class="sxs-lookup"><span data-stu-id="1916a-103">Creates an email action for an alert rule.</span></span>
 
-## <span data-ttu-id="ffcd7-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="ffcd7-104">SYNTAX</span></span>
+## <span data-ttu-id="1916a-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="1916a-104">SYNTAX</span></span>
 
 ```
 New-AzAlertRuleEmail [[-CustomEmail] <String[]>] [-SendToServiceOwner]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="ffcd7-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="ffcd7-105">DESCRIPTION</span></span>
-<span data-ttu-id="ffcd7-106">A **New-AzAlertRuleEmail** parancsmag e-mail-műveleteket hoz létre egy figyelmeztetési szabályhoz.</span><span class="sxs-lookup"><span data-stu-id="ffcd7-106">The **New-AzAlertRuleEmail** cmdlet creates an e-mail action for an alert rule.</span></span>
+## <span data-ttu-id="1916a-105">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="1916a-105">DESCRIPTION</span></span>
+<span data-ttu-id="1916a-106">A **New-AzAlertRuleEmail** parancsmag létrehoz egy e-mail műveletet egy riasztási szabályhoz.</span><span class="sxs-lookup"><span data-stu-id="1916a-106">The **New-AzAlertRuleEmail** cmdlet creates an e-mail action for an alert rule.</span></span>
 
-## <span data-ttu-id="ffcd7-107">Példák</span><span class="sxs-lookup"><span data-stu-id="ffcd7-107">EXAMPLES</span></span>
+## <span data-ttu-id="1916a-107">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="1916a-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="ffcd7-108">Példa 1: figyelmeztetési szabály létrehozása e-mail-művelet a szolgáltatás tulajdonosainak</span><span class="sxs-lookup"><span data-stu-id="ffcd7-108">Example 1: Create an alert rule email action for service owners</span></span>
+### <span data-ttu-id="1916a-108">1. példa: Értesítési szabály e-mail-művelet létrehozása szolgáltatástulajdonosoknak</span><span class="sxs-lookup"><span data-stu-id="1916a-108">Example 1: Create an alert rule email action for service owners</span></span>
 ```
 PS C:\>New-AzAlertRuleEmail -SendToServiceOwners
 ```
 
-<span data-ttu-id="ffcd7-109">Ez a parancs figyelmeztetési szabályt hoz létre a szolgáltatás tulajdonosainak küldött e-mail-műveletről, ha riasztási szabály van kirúgva.</span><span class="sxs-lookup"><span data-stu-id="ffcd7-109">This command creates an alert rule email action to send for its service owners when an alert rule is fired.</span></span>
+<span data-ttu-id="1916a-109">Ez a parancs egy riasztási szabály e-mail-műveletet hoz létre, és elküldi azt a szolgáltatástulajdonosoknak, ha riasztási szabály van beszabályzva.</span><span class="sxs-lookup"><span data-stu-id="1916a-109">This command creates an alert rule email action to send for its service owners when an alert rule is fired.</span></span>
 
-### <span data-ttu-id="ffcd7-110">2. példa: figyelmeztetési szabály létrehozása e-mail-művelet a nem szolgáltató tulajdonosok számára</span><span class="sxs-lookup"><span data-stu-id="ffcd7-110">Example 2: Create an alert rule email action for non-service owners</span></span>
+### <span data-ttu-id="1916a-110">2. példa: Értesítési szabály e-mail-művelet létrehozása nem szolgáltatástulajdonosoknak</span><span class="sxs-lookup"><span data-stu-id="1916a-110">Example 2: Create an alert rule email action for non-service owners</span></span>
 ```
 PS C:\>New-AzAlertRuleEmail -CustomEmail pattif@contoso.com,davidchew@contoso.net
 ```
 
-<span data-ttu-id="ffcd7-111">Ez a parancs figyelmeztetési szabályt hoz létre a megadott e-mail-címekhez, de a szolgáltatás tulajdonosainak nem.</span><span class="sxs-lookup"><span data-stu-id="ffcd7-111">This command creates an alert rule email action for the specified email addresses, but not for the service owners.</span></span>
+<span data-ttu-id="1916a-111">Ez a parancs egy riasztási szabály e-mail-műveletet hoz létre a megadott e-mail-címekhez, de nem a szolgáltatástulajdonosokhoz.</span><span class="sxs-lookup"><span data-stu-id="1916a-111">This command creates an alert rule email action for the specified email addresses, but not for the service owners.</span></span>
 
-### <span data-ttu-id="ffcd7-112">3. példa: figyelmeztetési szabály létrehozása e-mail-művelet a szolgáltatás tulajdonosai és a nem szolgáltató tulajdonosok számára</span><span class="sxs-lookup"><span data-stu-id="ffcd7-112">Example 3: Create an alert rule email action for service owners and non-service owners</span></span>
+### <span data-ttu-id="1916a-112">3. példa: Értesítési szabály e-mail-művelet létrehozása szolgáltatástulajdonosoknak és nem szolgáltatástulajdonosoknak</span><span class="sxs-lookup"><span data-stu-id="1916a-112">Example 3: Create an alert rule email action for service owners and non-service owners</span></span>
 ```
 PS C:\>New-AzAlertRuleEmail -CustomEmail pattif@contoso.net -SendToServiceOwners
 ```
 
-<span data-ttu-id="ffcd7-113">Ez a parancs figyelmeztetési szabályt hoz létre a megadott címhez és a szolgáltatás tulajdonosainak szóló e-mail-művelethez.</span><span class="sxs-lookup"><span data-stu-id="ffcd7-113">This command creates an alert rule email action for the specified address and for its service owners.</span></span>
+<span data-ttu-id="1916a-113">Ez a parancs egy riasztási szabály e-mail-műveletet hoz létre a megadott címhez és a szolgáltatástulajdonosokhoz.</span><span class="sxs-lookup"><span data-stu-id="1916a-113">This command creates an alert rule email action for the specified address and for its service owners.</span></span>
 
-## <span data-ttu-id="ffcd7-114">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="ffcd7-114">PARAMETERS</span></span>
+## <span data-ttu-id="1916a-114">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="1916a-114">PARAMETERS</span></span>
 
-### <span data-ttu-id="ffcd7-115">-CustomEmail</span><span class="sxs-lookup"><span data-stu-id="ffcd7-115">-CustomEmail</span></span>
-<span data-ttu-id="ffcd7-116">A pontosvesszővel tagolt e-mail-címek listáját adja meg.</span><span class="sxs-lookup"><span data-stu-id="ffcd7-116">Specifies a list of comma-separated e-mail addresses.</span></span>
+### <span data-ttu-id="1916a-115">-CustomEmail</span><span class="sxs-lookup"><span data-stu-id="1916a-115">-CustomEmail</span></span>
+<span data-ttu-id="1916a-116">Vesszővel elválasztott e-mail-címek listáját adja meg.</span><span class="sxs-lookup"><span data-stu-id="1916a-116">Specifies a list of comma-separated e-mail addresses.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -68,8 +68,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ffcd7-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="ffcd7-117">-DefaultProfile</span></span>
-<span data-ttu-id="ffcd7-118">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés</span><span class="sxs-lookup"><span data-stu-id="ffcd7-118">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="1916a-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="1916a-117">-DefaultProfile</span></span>
+<span data-ttu-id="1916a-118">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés</span><span class="sxs-lookup"><span data-stu-id="1916a-118">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -83,8 +83,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ffcd7-119">-SendToServiceOwner</span><span class="sxs-lookup"><span data-stu-id="ffcd7-119">-SendToServiceOwner</span></span>
-<span data-ttu-id="ffcd7-120">Jelzi, hogy a művelet elküld egy e-mailt a szolgáltatás tulajdonosainak, amikor a szabály tüzeket hoz meg.</span><span class="sxs-lookup"><span data-stu-id="ffcd7-120">Indicates that this operation sends an e-mail to the service owners when the rule fires.</span></span>
+### <span data-ttu-id="1916a-119">-SendToServiceOwner</span><span class="sxs-lookup"><span data-stu-id="1916a-119">-SendToServiceOwner</span></span>
+<span data-ttu-id="1916a-120">Azt jelzi, hogy ez a művelet e-mailt küld a szolgáltatástulajdonosoknak, amikor a szabály ki van tűzve.</span><span class="sxs-lookup"><span data-stu-id="1916a-120">Indicates that this operation sends an e-mail to the service owners when the rule fires.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -98,29 +98,28 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ffcd7-121">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="ffcd7-121">CommonParameters</span></span>
-<span data-ttu-id="ffcd7-122">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="ffcd7-122">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="ffcd7-123">További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="ffcd7-123">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="1916a-121">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="1916a-121">CommonParameters</span></span>
+<span data-ttu-id="1916a-122">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="1916a-122">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="1916a-123">További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="1916a-123">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="ffcd7-124">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="ffcd7-124">INPUTS</span></span>
+## <span data-ttu-id="1916a-124">INPUTS</span><span class="sxs-lookup"><span data-stu-id="1916a-124">INPUTS</span></span>
 
-### <span data-ttu-id="ffcd7-125">System. string []</span><span class="sxs-lookup"><span data-stu-id="ffcd7-125">System.String[]</span></span>
+### <span data-ttu-id="1916a-125">System.String[]</span><span class="sxs-lookup"><span data-stu-id="1916a-125">System.String[]</span></span>
 
-### <span data-ttu-id="ffcd7-126">System. Management. Automation. SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="ffcd7-126">System.Management.Automation.SwitchParameter</span></span>
+### <span data-ttu-id="1916a-126">System.Management.Automation.SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="1916a-126">System.Management.Automation.SwitchParameter</span></span>
 
-## <span data-ttu-id="ffcd7-127">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="ffcd7-127">OUTPUTS</span></span>
+## <span data-ttu-id="1916a-127">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="1916a-127">OUTPUTS</span></span>
 
-### <span data-ttu-id="ffcd7-128">Microsoft. Azure. Management. monitor. Management. models. RuleEmailAction</span><span class="sxs-lookup"><span data-stu-id="ffcd7-128">Microsoft.Azure.Management.Monitor.Management.Models.RuleEmailAction</span></span>
+### <span data-ttu-id="1916a-128">Microsoft.Azure.Management.Monitor.Management.Models.RuleEmailAction</span><span class="sxs-lookup"><span data-stu-id="1916a-128">Microsoft.Azure.Management.Monitor.Management.Models.RuleEmailAction</span></span>
 
-## <span data-ttu-id="ffcd7-129">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="ffcd7-129">NOTES</span></span>
+## <span data-ttu-id="1916a-129">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="1916a-129">NOTES</span></span>
 
-## <span data-ttu-id="ffcd7-130">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="ffcd7-130">RELATED LINKS</span></span>
+## <span data-ttu-id="1916a-130">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="1916a-130">RELATED LINKS</span></span>
 
-[<span data-ttu-id="ffcd7-131">Add-AzLogAlertRule</span><span class="sxs-lookup"><span data-stu-id="ffcd7-131">Add-AzLogAlertRule</span></span>](./Add-AzLogAlertRule.md)
 
-[<span data-ttu-id="ffcd7-132">Add-AzMetricAlertRule</span><span class="sxs-lookup"><span data-stu-id="ffcd7-132">Add-AzMetricAlertRule</span></span>](./Add-AzMetricAlertRule.md)
+[<span data-ttu-id="1916a-131">Add-AzMetricAlertRule</span><span class="sxs-lookup"><span data-stu-id="1916a-131">Add-AzMetricAlertRule</span></span>](./Add-AzMetricAlertRule.md)
 
-[<span data-ttu-id="ffcd7-133">Add-AzWebtestAlertRule</span><span class="sxs-lookup"><span data-stu-id="ffcd7-133">Add-AzWebtestAlertRule</span></span>](./Add-AzWebtestAlertRule.md)
+[<span data-ttu-id="1916a-132">Add-AzWebtestAlertRule</span><span class="sxs-lookup"><span data-stu-id="1916a-132">Add-AzWebtestAlertRule</span></span>](./Add-AzWebtestAlertRule.md)
 
-[<span data-ttu-id="ffcd7-134">Új – AzAlertRuleWebhook</span><span class="sxs-lookup"><span data-stu-id="ffcd7-134">New-AzAlertRuleWebhook</span></span>](./New-AzAlertRuleWebhook.md)
+[<span data-ttu-id="1916a-133">New-AzAlertRuleWebhook</span><span class="sxs-lookup"><span data-stu-id="1916a-133">New-AzAlertRuleWebhook</span></span>](./New-AzAlertRuleWebhook.md)
 
 
