@@ -6,97 +6,97 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADUser.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADUser.md
-ms.openlocfilehash: 910df03db722636e91e95ff1c6aad7898b333740
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 1ba85aa3a692f0e74fc695aacd5ffdff5dd07877
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93838181"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413013"
 ---
-# <span data-ttu-id="6ab87-101">Get-AzADUser</span><span class="sxs-lookup"><span data-stu-id="6ab87-101">Get-AzADUser</span></span>
+# <span data-ttu-id="477a7-101">Get-AzADUser</span><span class="sxs-lookup"><span data-stu-id="477a7-101">Get-AzADUser</span></span>
 
-## <span data-ttu-id="6ab87-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="6ab87-102">SYNOPSIS</span></span>
-<span data-ttu-id="6ab87-103">Szűri az Active Directory felhasználóit.</span><span class="sxs-lookup"><span data-stu-id="6ab87-103">Filters active directory users.</span></span>
+## <span data-ttu-id="477a7-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="477a7-102">SYNOPSIS</span></span>
+<span data-ttu-id="477a7-103">Szűri az active directory-felhasználókat.</span><span class="sxs-lookup"><span data-stu-id="477a7-103">Filters active directory users.</span></span>
 
-## <span data-ttu-id="6ab87-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="6ab87-104">SYNTAX</span></span>
+## <span data-ttu-id="477a7-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="477a7-104">SYNTAX</span></span>
 
-### <span data-ttu-id="6ab87-105">EmptyParameterSet (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="6ab87-105">EmptyParameterSet (Default)</span></span>
+### <span data-ttu-id="477a7-105">EmptyParameterSet (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="477a7-105">EmptyParameterSet (Default)</span></span>
 ```
 Get-AzADUser [-UserPrincipalName <String>] [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount]
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="6ab87-106">SearchStringParameterSet</span><span class="sxs-lookup"><span data-stu-id="6ab87-106">SearchStringParameterSet</span></span>
+### <span data-ttu-id="477a7-106">SearchStringParameterSet</span><span class="sxs-lookup"><span data-stu-id="477a7-106">SearchStringParameterSet</span></span>
 ```
 Get-AzADUser -StartsWith <String> [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount]
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="6ab87-107">DisplayNameParameterSet</span><span class="sxs-lookup"><span data-stu-id="6ab87-107">DisplayNameParameterSet</span></span>
+### <span data-ttu-id="477a7-107">DisplayNameParameterSet</span><span class="sxs-lookup"><span data-stu-id="477a7-107">DisplayNameParameterSet</span></span>
 ```
 Get-AzADUser -DisplayName <String> [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount]
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="6ab87-108">ObjectIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="6ab87-108">ObjectIdParameterSet</span></span>
+### <span data-ttu-id="477a7-108">ObjectIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="477a7-108">ObjectIdParameterSet</span></span>
 ```
 Get-AzADUser -ObjectId <String> [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount]
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="6ab87-109">UPNParameterSet</span><span class="sxs-lookup"><span data-stu-id="6ab87-109">UPNParameterSet</span></span>
+### <span data-ttu-id="477a7-109">UPNParameterSet</span><span class="sxs-lookup"><span data-stu-id="477a7-109">UPNParameterSet</span></span>
 ```
 Get-AzADUser -UserPrincipalName <String> [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount]
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="6ab87-110">MailParameterSet</span><span class="sxs-lookup"><span data-stu-id="6ab87-110">MailParameterSet</span></span>
+### <span data-ttu-id="477a7-110">MailParameterSet</span><span class="sxs-lookup"><span data-stu-id="477a7-110">MailParameterSet</span></span>
 ```
 Get-AzADUser -Mail <String> [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount] [-Skip <UInt64>]
  [-First <UInt64>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="6ab87-111">Leírás</span><span class="sxs-lookup"><span data-stu-id="6ab87-111">DESCRIPTION</span></span>
-<span data-ttu-id="6ab87-112">Szűri az Active Directory felhasználóit.</span><span class="sxs-lookup"><span data-stu-id="6ab87-112">Filters active directory users.</span></span>
+## <span data-ttu-id="477a7-111">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="477a7-111">DESCRIPTION</span></span>
+<span data-ttu-id="477a7-112">Szűri az active directory-felhasználókat.</span><span class="sxs-lookup"><span data-stu-id="477a7-112">Filters active directory users.</span></span>
 
-## <span data-ttu-id="6ab87-113">Példák</span><span class="sxs-lookup"><span data-stu-id="6ab87-113">EXAMPLES</span></span>
+## <span data-ttu-id="477a7-113">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="477a7-113">EXAMPLES</span></span>
 
-### <span data-ttu-id="6ab87-114">Példa 1 – minden felhasználó listázása</span><span class="sxs-lookup"><span data-stu-id="6ab87-114">Example 1 - List all users</span></span>
+### <span data-ttu-id="477a7-114">1. példa – Az összes felhasználó felsorolása</span><span class="sxs-lookup"><span data-stu-id="477a7-114">Example 1 - List all users</span></span>
 
 ```
 PS C:\> Get-AzADUser
 ```
 
-<span data-ttu-id="6ab87-115">Felsorolja a bérlői fiók összes felhasználóját.</span><span class="sxs-lookup"><span data-stu-id="6ab87-115">Lists all AD users in a tenant.</span></span>
+<span data-ttu-id="477a7-115">Egy bérlő összes AD-felhasználóját felsorolja.</span><span class="sxs-lookup"><span data-stu-id="477a7-115">Lists all AD users in a tenant.</span></span>
 
-### <span data-ttu-id="6ab87-116">Példa 2 – a lapozófájlt használó összes felhasználó listázása</span><span class="sxs-lookup"><span data-stu-id="6ab87-116">Example 2 - List all users using paging</span></span>
+### <span data-ttu-id="477a7-116">2. példa: Az összes felhasználó felsorolása lapozás használatával</span><span class="sxs-lookup"><span data-stu-id="477a7-116">Example 2 - List all users using paging</span></span>
 
 ```
 PS C:\> Get-AzADUser -First 100
 ```
 
-<span data-ttu-id="6ab87-117">Felsorolja az első 100 AD-felhasználókat a bérlői fiókban.</span><span class="sxs-lookup"><span data-stu-id="6ab87-117">Lists the first 100 AD users in a tenant.</span></span>
+<span data-ttu-id="477a7-117">A bérlői webhely első 100 AD-felhasználóját sorolja fel.</span><span class="sxs-lookup"><span data-stu-id="477a7-117">Lists the first 100 AD users in a tenant.</span></span>
 
-### <span data-ttu-id="6ab87-118">Példa 3 – az AD-felhasználó beolvasása a felhasználó egyszerű nevében</span><span class="sxs-lookup"><span data-stu-id="6ab87-118">Example 3 - Get AD user by user principal name</span></span>
+### <span data-ttu-id="477a7-118">3. példa: Az AD-felhasználó lekérte egyszerű felhasználónév alapján</span><span class="sxs-lookup"><span data-stu-id="477a7-118">Example 3 - Get AD user by user principal name</span></span>
 
 ```
 PS C:\> Get-AzADUser -UserPrincipalName foo@domain.com
 ```
 
-<span data-ttu-id="6ab87-119">Beolvassa a felhasználó egyszerű felhasználónevét " foo@domain.com ".</span><span class="sxs-lookup"><span data-stu-id="6ab87-119">Gets the AD user with user principal name "foo@domain.com".</span></span>
+<span data-ttu-id="477a7-119">Az AD-felhasználót a következő felhasználónévvel kapja meg: " foo@domain.com ".</span><span class="sxs-lookup"><span data-stu-id="477a7-119">Gets the AD user with user principal name "foo@domain.com".</span></span>
 
-### <span data-ttu-id="6ab87-120">Példa 4 – keresés karakterlánc szerinti felsorolás</span><span class="sxs-lookup"><span data-stu-id="6ab87-120">Example 4 - List by search string</span></span>
+### <span data-ttu-id="477a7-120">4. példa – Lista keresési karakterlánc alapján</span><span class="sxs-lookup"><span data-stu-id="477a7-120">Example 4 - List by search string</span></span>
 
 ```
 PS C:\> Get-AzADUser -SearchString Joe
 ```
 
-<span data-ttu-id="6ab87-121">Felsorolja azokat az AD-felhasználókat, akiknek a megjelenítendő neve "Joe"-val kezdődik.</span><span class="sxs-lookup"><span data-stu-id="6ab87-121">Lists all AD users whose display name starts with "Joe".</span></span>
+<span data-ttu-id="477a7-121">Azokat az AD-felhasználókat sorolja fel, akiknek a megjelenítendő neve "József" névvel kezdődik.</span><span class="sxs-lookup"><span data-stu-id="477a7-121">Lists all AD users whose display name starts with "Joe".</span></span>
 
-## <span data-ttu-id="6ab87-122">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="6ab87-122">PARAMETERS</span></span>
+## <span data-ttu-id="477a7-122">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="477a7-122">PARAMETERS</span></span>
 
-### <span data-ttu-id="6ab87-123">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="6ab87-123">-DefaultProfile</span></span>
-<span data-ttu-id="6ab87-124">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés</span><span class="sxs-lookup"><span data-stu-id="6ab87-124">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="477a7-123">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="477a7-123">-DefaultProfile</span></span>
+<span data-ttu-id="477a7-124">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés</span><span class="sxs-lookup"><span data-stu-id="477a7-124">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -110,8 +110,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="6ab87-125">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="6ab87-125">-DisplayName</span></span>
-<span data-ttu-id="6ab87-126">A felhasználó megjelenítendő neve.</span><span class="sxs-lookup"><span data-stu-id="6ab87-126">The display name of the user.</span></span>
+### <span data-ttu-id="477a7-125">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="477a7-125">-DisplayName</span></span>
+<span data-ttu-id="477a7-126">A felhasználó megjelenítendő neve.</span><span class="sxs-lookup"><span data-stu-id="477a7-126">The display name of the user.</span></span>
 
 ```yaml
 Type: System.String
@@ -125,8 +125,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="6ab87-127">-Mail</span><span class="sxs-lookup"><span data-stu-id="6ab87-127">-Mail</span></span>
-<span data-ttu-id="6ab87-128">A felhasználó e-mail-címe.</span><span class="sxs-lookup"><span data-stu-id="6ab87-128">The user mail.</span></span>
+### <span data-ttu-id="477a7-127">-Mail</span><span class="sxs-lookup"><span data-stu-id="477a7-127">-Mail</span></span>
+<span data-ttu-id="477a7-128">A felhasználói e-mail.</span><span class="sxs-lookup"><span data-stu-id="477a7-128">The user mail.</span></span>
 
 ```yaml
 Type: System.String
@@ -140,8 +140,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="6ab87-129">-ObjectId</span><span class="sxs-lookup"><span data-stu-id="6ab87-129">-ObjectId</span></span>
-<span data-ttu-id="6ab87-130">A felhasználó objektum-azonosítója.</span><span class="sxs-lookup"><span data-stu-id="6ab87-130">Object id of the user.</span></span>
+### <span data-ttu-id="477a7-129">-ObjectId</span><span class="sxs-lookup"><span data-stu-id="477a7-129">-ObjectId</span></span>
+<span data-ttu-id="477a7-130">A felhasználó objektumazonosítója.</span><span class="sxs-lookup"><span data-stu-id="477a7-130">Object id of the user.</span></span>
 
 ```yaml
 Type: System.String
@@ -155,8 +155,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="6ab87-131">-StartsWith</span><span class="sxs-lookup"><span data-stu-id="6ab87-131">-StartsWith</span></span>
-<span data-ttu-id="6ab87-132">A megadott karakterlánccal kezdődő felhasználók megkeresésére szolgál.</span><span class="sxs-lookup"><span data-stu-id="6ab87-132">Used to find users that begin with the provided string.</span></span>
+### <span data-ttu-id="477a7-131">-StartsWith</span><span class="sxs-lookup"><span data-stu-id="477a7-131">-StartsWith</span></span>
+<span data-ttu-id="477a7-132">Segítségével megkeresheti a megadott karakterláncot használó felhasználókat.</span><span class="sxs-lookup"><span data-stu-id="477a7-132">Used to find users that begin with the provided string.</span></span>
 
 ```yaml
 Type: System.String
@@ -170,8 +170,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="6ab87-133">-UserPrincipalName</span><span class="sxs-lookup"><span data-stu-id="6ab87-133">-UserPrincipalName</span></span>
-<span data-ttu-id="6ab87-134">A felhasználó egyszerű felhasználóneve.</span><span class="sxs-lookup"><span data-stu-id="6ab87-134">UPN of the user.</span></span>
+### <span data-ttu-id="477a7-133">-UserPrincipalName</span><span class="sxs-lookup"><span data-stu-id="477a7-133">-UserPrincipalName</span></span>
+<span data-ttu-id="477a7-134">A felhasználó upn-ját.</span><span class="sxs-lookup"><span data-stu-id="477a7-134">UPN of the user.</span></span>
 
 ```yaml
 Type: System.String
@@ -197,8 +197,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="6ab87-135">-IncludeTotalCount</span><span class="sxs-lookup"><span data-stu-id="6ab87-135">-IncludeTotalCount</span></span>
-<span data-ttu-id="6ab87-136">Az adathalmaz objektumainak számát jelzi.</span><span class="sxs-lookup"><span data-stu-id="6ab87-136">Reports the number of objects in the data set.</span></span> <span data-ttu-id="6ab87-137">Ez a paraméter jelenleg nem tesz semmit.</span><span class="sxs-lookup"><span data-stu-id="6ab87-137">Currently, this parameter does nothing.</span></span>
+### <span data-ttu-id="477a7-135">-IncludeTotalCount</span><span class="sxs-lookup"><span data-stu-id="477a7-135">-IncludeTotalCount</span></span>
+<span data-ttu-id="477a7-136">Az adatkészletben lévő objektumok számát jelenti.</span><span class="sxs-lookup"><span data-stu-id="477a7-136">Reports the number of objects in the data set.</span></span> <span data-ttu-id="477a7-137">Ez a paraméter jelenleg nem tesz semmit.</span><span class="sxs-lookup"><span data-stu-id="477a7-137">Currently, this parameter does nothing.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -212,8 +212,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="6ab87-138">-Skip (kihagyás)</span><span class="sxs-lookup"><span data-stu-id="6ab87-138">-Skip</span></span>
-<span data-ttu-id="6ab87-139">Figyelmen kívül hagyja az első N objektumokat, és a fennmaradó objektumokat kapja.</span><span class="sxs-lookup"><span data-stu-id="6ab87-139">Ignores the first N objects and then gets the remaining objects.</span></span>
+### <span data-ttu-id="477a7-138">-Skip</span><span class="sxs-lookup"><span data-stu-id="477a7-138">-Skip</span></span>
+<span data-ttu-id="477a7-139">Figyelmen kívül hagyja az első N objektumot, majd beveszi a fennmaradó objektumokat.</span><span class="sxs-lookup"><span data-stu-id="477a7-139">Ignores the first N objects and then gets the remaining objects.</span></span>
 
 ```yaml
 Type: System.UInt64
@@ -227,8 +227,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="6ab87-140">– Első</span><span class="sxs-lookup"><span data-stu-id="6ab87-140">-First</span></span>
-<span data-ttu-id="6ab87-141">A visszaadni kívánt objektumok maximális száma.</span><span class="sxs-lookup"><span data-stu-id="6ab87-141">The maximum number of objects to return.</span></span>
+### <span data-ttu-id="477a7-140">-First</span><span class="sxs-lookup"><span data-stu-id="477a7-140">-First</span></span>
+<span data-ttu-id="477a7-141">A vissza nem térhet objektumok maximális száma.</span><span class="sxs-lookup"><span data-stu-id="477a7-141">The maximum number of objects to return.</span></span>
 
 ```yaml
 Type: System.UInt64
@@ -242,24 +242,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="6ab87-142">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="6ab87-142">CommonParameters</span></span>
-<span data-ttu-id="6ab87-143">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="6ab87-143">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="6ab87-144">További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="6ab87-144">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="477a7-142">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="477a7-142">CommonParameters</span></span>
+<span data-ttu-id="477a7-143">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="477a7-143">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="477a7-144">További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="477a7-144">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="6ab87-145">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="6ab87-145">INPUTS</span></span>
+## <span data-ttu-id="477a7-145">INPUTS</span><span class="sxs-lookup"><span data-stu-id="477a7-145">INPUTS</span></span>
 
-### <span data-ttu-id="6ab87-146">System. String</span><span class="sxs-lookup"><span data-stu-id="6ab87-146">System.String</span></span>
+### <span data-ttu-id="477a7-146">System.String</span><span class="sxs-lookup"><span data-stu-id="477a7-146">System.String</span></span>
 
-## <span data-ttu-id="6ab87-147">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="6ab87-147">OUTPUTS</span></span>
+## <span data-ttu-id="477a7-147">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="477a7-147">OUTPUTS</span></span>
 
-### <span data-ttu-id="6ab87-148">Microsoft. Azure. Command. ActiveDirectory. PSADUser</span><span class="sxs-lookup"><span data-stu-id="6ab87-148">Microsoft.Azure.Commands.ActiveDirectory.PSADUser</span></span>
+### <span data-ttu-id="477a7-148">Microsoft.Azure.Commands.ActiveDirectory.PSADUser</span><span class="sxs-lookup"><span data-stu-id="477a7-148">Microsoft.Azure.Commands.ActiveDirectory.PSADUser</span></span>
 
-## <span data-ttu-id="6ab87-149">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="6ab87-149">NOTES</span></span>
+## <span data-ttu-id="477a7-149">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="477a7-149">NOTES</span></span>
 
-## <span data-ttu-id="6ab87-150">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="6ab87-150">RELATED LINKS</span></span>
+## <span data-ttu-id="477a7-150">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="477a7-150">RELATED LINKS</span></span>
 
-[<span data-ttu-id="6ab87-151">Új – AzADUser</span><span class="sxs-lookup"><span data-stu-id="6ab87-151">New-AzADUser</span></span>](./New-AzADUser.md)
+[<span data-ttu-id="477a7-151">New-AzADUser</span><span class="sxs-lookup"><span data-stu-id="477a7-151">New-AzADUser</span></span>](./New-AzADUser.md)
 
-[<span data-ttu-id="6ab87-152">Set-AzADUser</span><span class="sxs-lookup"><span data-stu-id="6ab87-152">Set-AzADUser</span></span>](./Set-AzADUser.md)
 
-[<span data-ttu-id="6ab87-153">Remove-AzADUser</span><span class="sxs-lookup"><span data-stu-id="6ab87-153">Remove-AzADUser</span></span>](./Remove-AzADUser.md)
+[<span data-ttu-id="477a7-152">Remove-AzADUser</span><span class="sxs-lookup"><span data-stu-id="477a7-152">Remove-AzADUser</span></span>](./Remove-AzADUser.md)
 
