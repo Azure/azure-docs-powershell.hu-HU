@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Resize-AzVirtualNetworkGateway.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Resize-AzVirtualNetworkGateway.md
-ms.openlocfilehash: dd48af6a0f20cafea5911adb629a83323faa94a6
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 31ec0453b0ce64c27d1bb37d4bf6c0f100a8c760
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100151475"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405142"
 ---
 # Resize-AzVirtualNetworkGateway
 
@@ -42,7 +42,7 @@ PS C:\> Resize-AzVirtualNetworkGateway -VirtualNetworkGateway $Gateway -GatewayS
 ```
 
 Ez a példa módosítja a ContosoVirtualGateway nevű virtuális hálózati átjáró méretét.
-Az első parancs létrehoz egy objektumhivatkozást a ContosoVirtualGatewayre; Ezt az objektumhivatkozást egy $Gateway.
+Az első parancs a ContosoVirtualGateway objektumhivatkozását hozza létre; Ezt az objektumhivatkozást egy $Gateway.
 A második parancs ezután az **Resize-AzVirtualNetworkGateway** parancsmagot használva alapszintűre állíthatja az *ÁtjáróKku* tulajdonságot.
 
 ## PARAMETERS
@@ -63,7 +63,7 @@ Accept wildcard characters: False
 ```
 
 ### -GatewaySku
-Az átjárók termékváltozatának új típusát adja meg.
+Az átjárók termékváltozatának új típusát határozza meg.
 A paraméter elfogadható értékei a következőek:
 - Alapszintű
 - Normál
@@ -108,7 +108,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
 ## INPUTS
 
@@ -137,4 +137,3 @@ Alapszintű/Standard/HighPerformance SKUs-ból nem lehet átméretezni az új Vp
 
 [Get-AzVpnClientPackage](./Get-AzVpnClientPackage.md)
 
-[Set-AzVirtualNetworkGatewayVpnClientConfig](./Set-AzVirtualNetworkGatewayVpnClientConfig.md)

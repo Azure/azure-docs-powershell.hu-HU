@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.operationa
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/OperationalInsights/OperationalInsights/help/New-AzOperationalInsightsWorkspace.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/OperationalInsights/OperationalInsights/help/New-AzOperationalInsightsWorkspace.md
-ms.openlocfilehash: feac2aa9c5dd92c0d76090c6fc28353d56f9647c
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 8515bf4085fcd03d87aa15c3da649fe318b94966
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94184033"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405006"
 ---
 # New-AzOperationalInsightsWorkspace
 
-## Áttekintés
+## SYNOPSIS
 Munkaterületet hoz létre.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 New-AzOperationalInsightsWorkspace [-ResourceGroupName] <String> [-Name] <String> [-Location] <String>
@@ -27,33 +27,33 @@ New-AzOperationalInsightsWorkspace [-ResourceGroupName] <String> [-Name] <String
  [[-PublicNetworkAccessForQuery] <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Leírás
-A **New-AzOperationalInsightsWorkspace** parancsmag létrehoz egy munkaterületet a megadott erőforráscsoport és-hely között.
+## LEÍRÁS
+A **New-AzOperationalInsightsWorkspace** parancsmag munkaterületet hoz létre a megadott erőforráscsoportban és helyen.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: munkaterület létrehozása név szerint
+### 1. példa: Munkaterület létrehozása név szerint
 ```
 PS C:\>New-AzOperationalInsightsWorkspace -ResourceGroupName "ContosoResourceGroup" -Name "MyWorkspace" -Location "East US" -Sku "Standard"
 ```
 
-Ez a parancs létrehoz egy MyWorkspace nevű szabványos SKU-munkaterületet az ContosoResourceGroup nevű erőforráscsoport nevében.
+Ez a parancs létrehoz egy MyWorkspace nevű szabványos termékváltozat-munkaterületet a ContosoResourceGroup nevű erőforráscsoportban.
 
-### 2. példa: munkaterület létrehozása és csatolása meglévő fiókhoz
+### 2. példa: Munkaterület létrehozása és csatolása meglévő fiókhoz
 ```
 PS C:\>$OILinkTargets = Get-AzOperationalInsightsLinkTargets
 
 PS C:\>$OILinkTargets[0] | New-AzOperationalInsightsWorkspace -ResourceGroupName "ContosoResourceGroup" -Name "MyWorkspace" -Sku "Standard"
 ```
 
-Az első parancs az Get-AzOperationalInsightsLinkTargets parancsmagot használja az üzemeltetési statisztika-célok eléréséhez, majd a $OILinkTargets változóban tárolja őket.
-A második parancs átadja az első fiók hivatkozás célját $OILinkTargets a **New-AzOperationalInsightsWorkspace** parancsmagot a pipeline operátor használatával.
-A parancs létrehoz egy MyWorkspace nevű szabványos SKU-munkaterületet, amely a $OILinkTargets első üzemi betekintési fiókjához van kapcsolva.
+Az első parancs a Get-AzOperationalInsightsLinkTargets parancsmag segítségével begyakorlja a Operational Insights-fiók hivatkozási céljait, majd tárolja őket a $OILinkTargets változóban.
+A második parancs a folyamat műveleti $OILinkTargets segítségével átadja az első fiókkapcsolat célhelyét a **New-AzOperationalInsightsWorkspace** parancsmagnak.
+A parancs létrehoz egy MyWorkspace nevű szabványos termékváltozat-munkaterületet, amely a webhely első Operational Insights-$OILinkTargets.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Kényszeríti a parancsot, hogy a felhasználó megerősítésének kérése nélkül fusson.
+A parancs futtatását kényszeríti felhasználói megerősítés kérése nélkül.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -82,8 +82,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Hely
-Azt a helyet adja meg, ahol létrehozhatja a munkaterületet (például kelet-amerikai vagy Nyugat-európai).
+### -Location
+Azt a helyet adja meg, ahol létre kell hoznia a munkaterületet, például Kelet-Egyesült Államok vagy Nyugat-Európa.
 
 ```yaml
 Type: System.String
@@ -97,7 +97,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name (név)
+### -Name
 A munkaterület nevét adja meg.
 
 ```yaml
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -PublicNetworkAccessForIngestion
-A munkaterület lenyelésének eléréséhez szükséges hálózati hozzáférés típusa. Az értéknek "engedélyezve" vagy "Letiltva" kell lennie.
+A munkaterületen való hozzáféréshez szükséges hálózati hozzáférés típusa. Az értéknek "Engedélyezve" vagy "Letiltva" értékűnek kell lennie.
 
 ```yaml
 Type: System.String
@@ -128,7 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -PublicNetworkAccessForQuery
-A munkaterületi lekérdezések eléréséhez használt hálózati hozzáférés típusa. Az értéknek "engedélyezve" vagy "Letiltva" kell lennie.
+A munkaterületi lekérdezés eléréséhez használható hálózati hozzáférés típusa. Az értéknek "Engedélyezve" vagy "Letiltva" értékűnek kell lennie.
 
 ```yaml
 Type: System.String
@@ -144,7 +144,7 @@ Accept wildcard characters: False
 
 ### -ResourceGroupName
 Egy Azure-erőforráscsoport nevét adja meg.
-A munkaterület ebben az erőforráscsoportben jön létre.
+A munkaterület ebben az erőforráscsoportban jön létre.
 
 ```yaml
 Type: System.String
@@ -159,7 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionInDays
-Munkaterület-adatmegőrzés napokban. a 730 napok az összes többi SKU számára megengedett maximális érték.
+A munkaterület adatmegőrzési időszaka napokban. 730 nap az összes többi skus maximálisan engedélyezett
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -173,15 +173,15 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SKU
-A munkaterület szolgáltatási rétegét adja meg. Ha további információra van tekintettel a használati értékre vonatkozóan, kérjük, jelölje be a jelölőnégyzetet https://docs.microsoft.com/en-us/azure/azure-monitor/platform/manage-cost-storage#legacy-pricing-tiers .
-Az érvényes értékek a következők:
+### -Termékváltozat
+A munkaterület szolgáltatási rétegét határozza meg. Ha többet meg kell tudni arról, hogy melyik értéket kell használni, https://docs.microsoft.com/en-us/azure/azure-monitor/platform/manage-cost-storage#legacy-pricing-tiers ellenőrizze.
+Érvényes értékek:
 - ingyenes
 - pergb2018
 - pernode
-- prémium verzió
+- prémium
 - különálló
-- Standard
+- normál
 
 ```yaml
 Type: System.String
@@ -195,8 +195,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Címke
-A munkaterület erőforrás-címkéi.
+### -Tag
+A munkaterület erőforráscímkéi.
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -210,8 +210,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -226,7 +226,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik.
 A parancsmag nem fut.
 
 ```yaml
@@ -242,30 +242,29 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
-### System. null ' 1 [[System. GUID, System. Private. CoreLib, Version = 4.0.0.0, Culture = semleges, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Guid, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### System. Collections. Hashtable
+### System.Collections.Hashtable
 
-### System. null ' 1 [[System. Int32, System. Private. CoreLib, Version = 4.0.0.0, Culture = semleges, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. OperationalInsights. models. PSWorkspace
+### Microsoft.Azure.Commands.OperationalInsights.Models.PSWorkspace
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
-Új árképzési modellt bocsátottak ki. Ha Ön kriptográfiai szolgáltató, amely azt jelzi, hogy a SKU-hoz a "standalone" kifejezést kell használnia. A kulisszák mögött az SKU a pergb2018-ra változik. További információért olvassa el az alábbi témaköröket: https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-usage-and-estimated-costs#new-pricing-model
+Megjelent egy új árazási modell. Ha Ön felhőszolgáltató, ez azt jelenti, hogy a termékváltozathoz "önálló" eszközt kell használnia. A színfalak mögött a termékváltozat gbonként 2018-ra változik. További információért olvassa el az alábbi információkat: https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-usage-and-estimated-costs#new-pricing-model
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Azure hadműveleti parancsmagok](./Az.OperationalInsights.md)
+[Azure Operational Insights-parancsmagok](./Az.OperationalInsights.md)
 
-[Get-AzOperationalInsightsLinkTargets](./Get-AzOperationalInsightsLinkTargets.md)
 
 
