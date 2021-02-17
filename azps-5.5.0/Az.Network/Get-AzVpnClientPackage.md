@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzVpnClientPackage.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzVpnClientPackage.md
-ms.openlocfilehash: 8eba8d26bcac5de16be3e2cda5e8ca80356aea11
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: ec91fecd41138238bc4d89fa81d77bae4730c770
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100159146"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100407607"
 ---
 # Get-AzVpnClientPackage
 
@@ -27,7 +27,7 @@ Get-AzVpnClientPackage -ResourceGroupName <String> -VirtualNetworkGatewayName <S
 
 ## LEÍRÁS
 A **Get-AzVpnClientPackage** parancsmag információkat kap a virtuális hálózati átjárókból elérhető VPN-ügyfélcsomagokkal kapcsolatban.
-Az ügyfélcsomagok olyan konfigurációs adatokat tartalmaznak, amelyek lehetővé teszik az ügyfélszámítógépnek, hogy VPN-kapcsolatot létesítsen egy virtuális Azure-hálózattal; VPN-kapcsolat létrehozásához az ügyfélszámítógépeken telepítve kell lennie a megfelelő konfigurációs csomagnak.
+Az ügyfélcsomagok olyan konfigurációs adatokat tartalmaznak, amelyek lehetővé teszik az ügyfélszámítógépnek, hogy VIRTUÁLIS VPN-kapcsolatot létesítsen egy Azure virtuális hálózattal; VPN-kapcsolat létrehozásához az ügyfélszámítógépeken telepítve kell lennie a megfelelő konfigurációs csomagnak.
 Különböző konfigurációs csomagok érhetők el az ügyfélszámítógép Windows-verziója (például Windows 7 vagy Windows 10) és az ügyfélszámítógép processzor architektúrája (AMD64 vagy x86) alapján.
 A **Get-AzVpnClientPackage** futtatásakor meg kell adnia az architektúra típusát.
 
@@ -107,7 +107,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## INPUTS
 
@@ -123,6 +123,5 @@ Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, 
 
 [Resize-AzVirtualNetworkGateway](./Resize-AzVirtualNetworkGateway.md)
 
-[Set-AzVirtualNetworkGatewayVpnClientConfig](./Set-AzVirtualNetworkGatewayVpnClientConfig.md)
 
 
