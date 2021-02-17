@@ -5,37 +5,37 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementCache.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementCache.md
-ms.openlocfilehash: 757332267d2db2f797bb2f7ca2a39dbb32ee06c7
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: fee978a1500c0fc472ec8015a3e8dbbbdc8015bd
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94011942"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100407760"
 ---
-# <span data-ttu-id="061b4-101">Get-AzApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="061b4-101">Get-AzApiManagementCache</span></span>
+# <span data-ttu-id="a5857-101">Get-AzApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="a5857-101">Get-AzApiManagementCache</span></span>
 
-## <span data-ttu-id="061b4-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="061b4-102">SYNOPSIS</span></span>
-<span data-ttu-id="061b4-103">A gyorsítótár részleteinek beszerzése.</span><span class="sxs-lookup"><span data-stu-id="061b4-103">Get the details of the Cache.</span></span>
+## <span data-ttu-id="a5857-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="a5857-102">SYNOPSIS</span></span>
+<span data-ttu-id="a5857-103">A gyorsítótár részleteinek megtekintése.</span><span class="sxs-lookup"><span data-stu-id="a5857-103">Get the details of the Cache.</span></span>
 
-## <span data-ttu-id="061b4-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="061b4-104">SYNTAX</span></span>
+## <span data-ttu-id="a5857-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="a5857-104">SYNTAX</span></span>
 
-### <span data-ttu-id="061b4-105">ContextParameterSet (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="061b4-105">ContextParameterSet (Default)</span></span>
+### <span data-ttu-id="a5857-105">ContextParameterSet (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="a5857-105">ContextParameterSet (Default)</span></span>
 ```
 Get-AzApiManagementCache -Context <PsApiManagementContext> [-CacheId <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="061b4-106">ResourceIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="061b4-106">ResourceIdParameterSet</span></span>
+### <span data-ttu-id="a5857-106">ResourceIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="a5857-106">ResourceIdParameterSet</span></span>
 ```
 Get-AzApiManagementCache -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="061b4-107">Leírás</span><span class="sxs-lookup"><span data-stu-id="061b4-107">DESCRIPTION</span></span>
-<span data-ttu-id="061b4-108">Ismerje meg az API-kezelési szolgáltatásban konfigurált gyorsítótár adatait.</span><span class="sxs-lookup"><span data-stu-id="061b4-108">Get the details of the Cache configured in Api Management service.</span></span>
+## <span data-ttu-id="a5857-107">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="a5857-107">DESCRIPTION</span></span>
+<span data-ttu-id="a5857-108">Az Api Management szolgáltatásban konfigurált gyorsítótár részleteinek megtekintése.</span><span class="sxs-lookup"><span data-stu-id="a5857-108">Get the details of the Cache configured in Api Management service.</span></span>
 
-## <span data-ttu-id="061b4-109">Példák</span><span class="sxs-lookup"><span data-stu-id="061b4-109">EXAMPLES</span></span>
+## <span data-ttu-id="a5857-109">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="a5857-109">EXAMPLES</span></span>
 
-### <span data-ttu-id="061b4-110">Példa 1: az összes gyorsítótár beolvasása</span><span class="sxs-lookup"><span data-stu-id="061b4-110">Example 1: Get all Caches</span></span>
+### <span data-ttu-id="a5857-110">1. példa: Az összes gyorsítótár lekérte</span><span class="sxs-lookup"><span data-stu-id="a5857-110">Example 1: Get all Caches</span></span>
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementCache -Context $apimContext
@@ -51,9 +51,9 @@ ResourceGroupName : Api-Default-West-US
 ServiceName       : contoso
 ```
 
-<span data-ttu-id="061b4-111">Az API-kezelési szolgáltatásban konfigurált összes gyorsítótár listáját kapja.</span><span class="sxs-lookup"><span data-stu-id="061b4-111">Gets a list of all the Caches configured in the Api Management service.</span></span>
+<span data-ttu-id="a5857-111">Az Api Management szolgáltatásban konfigurált összes gyorsítótár listáját lekérte.</span><span class="sxs-lookup"><span data-stu-id="a5857-111">Gets a list of all the Caches configured in the Api Management service.</span></span>
 
-### <span data-ttu-id="061b4-112">2. példa: az azonosító westus megadott gyorsítótár beolvasása</span><span class="sxs-lookup"><span data-stu-id="061b4-112">Example 2: Get the Cache specified by the Identifier westus</span></span>
+### <span data-ttu-id="a5857-112">2. példa: A westus azonosító által megadott gyorsítótár lekérte</span><span class="sxs-lookup"><span data-stu-id="a5857-112">Example 2: Get the Cache specified by the Identifier westus</span></span>
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementCache -Context $apimContext -cacheId westus
@@ -69,14 +69,14 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-<span data-ttu-id="061b4-113">A westus-ra konfigurált megadott gyorsítótár részleteinek beszerzése</span><span class="sxs-lookup"><span data-stu-id="061b4-113">Get the details of the specified Cache configured for westus</span></span>
+<span data-ttu-id="a5857-113">A westushoz konfigurált gyorsítótár részleteinek megtekintése</span><span class="sxs-lookup"><span data-stu-id="a5857-113">Get the details of the specified Cache configured for westus</span></span>
 
-## <span data-ttu-id="061b4-114">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="061b4-114">PARAMETERS</span></span>
+## <span data-ttu-id="a5857-114">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="a5857-114">PARAMETERS</span></span>
 
-### <span data-ttu-id="061b4-115">-CacheId</span><span class="sxs-lookup"><span data-stu-id="061b4-115">-CacheId</span></span>
-<span data-ttu-id="061b4-116">A gyorsítótár azonosítója.</span><span class="sxs-lookup"><span data-stu-id="061b4-116">Identifier of a cache.</span></span>
-<span data-ttu-id="061b4-117">Ha meg van adva a gyorsítótár megkeresése az azonosítóval, a program megpróbálja megkeresni.</span><span class="sxs-lookup"><span data-stu-id="061b4-117">If specified will try to find cache by the identifier.</span></span>
-<span data-ttu-id="061b4-118">Ez a paraméter nem kötelező.</span><span class="sxs-lookup"><span data-stu-id="061b4-118">This parameter is optional.</span></span>
+### <span data-ttu-id="a5857-115">-CacheId</span><span class="sxs-lookup"><span data-stu-id="a5857-115">-CacheId</span></span>
+<span data-ttu-id="a5857-116">A gyorsítótár azonosítója.</span><span class="sxs-lookup"><span data-stu-id="a5857-116">Identifier of a cache.</span></span>
+<span data-ttu-id="a5857-117">Ha meg van adva, a rendszer megpróbálja megtalálni a gyorsítótárat az azonosító alapján.</span><span class="sxs-lookup"><span data-stu-id="a5857-117">If specified will try to find cache by the identifier.</span></span>
+<span data-ttu-id="a5857-118">Ez a paraméter nem kötelező.</span><span class="sxs-lookup"><span data-stu-id="a5857-118">This parameter is optional.</span></span>
 
 ```yaml
 Type: System.String
@@ -90,9 +90,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="061b4-119">-Környezet</span><span class="sxs-lookup"><span data-stu-id="061b4-119">-Context</span></span>
-<span data-ttu-id="061b4-120">A PsApiManagementContext példánya.</span><span class="sxs-lookup"><span data-stu-id="061b4-120">Instance of PsApiManagementContext.</span></span>
-<span data-ttu-id="061b4-121">Ehhez a paraméterhez szükség van.</span><span class="sxs-lookup"><span data-stu-id="061b4-121">This parameter is required.</span></span>
+### <span data-ttu-id="a5857-119">-Környezet</span><span class="sxs-lookup"><span data-stu-id="a5857-119">-Context</span></span>
+<span data-ttu-id="a5857-120">A PsApiManagementContext példánya.</span><span class="sxs-lookup"><span data-stu-id="a5857-120">Instance of PsApiManagementContext.</span></span>
+<span data-ttu-id="a5857-121">Ezt a paramétert kötelező megadni.</span><span class="sxs-lookup"><span data-stu-id="a5857-121">This parameter is required.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -106,8 +106,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="061b4-122">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="061b4-122">-DefaultProfile</span></span>
-<span data-ttu-id="061b4-123">Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="061b4-123">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+### <span data-ttu-id="a5857-122">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="a5857-122">-DefaultProfile</span></span>
+<span data-ttu-id="a5857-123">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="a5857-123">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -121,8 +121,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="061b4-124">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="061b4-124">-ResourceId</span></span>
-<span data-ttu-id="061b4-125">A gyorsítótár ARM erőforrás-azonosítója.</span><span class="sxs-lookup"><span data-stu-id="061b4-125">Arm Resource Identifier of a cache.</span></span> <span data-ttu-id="061b4-126">Ha meg van adva a gyorsítótár megkeresése az azonosítóval, a program megpróbálja megkeresni.</span><span class="sxs-lookup"><span data-stu-id="061b4-126">If specified will try to find cache by the identifier.</span></span> <span data-ttu-id="061b4-127">Ehhez a paraméterhez szükség van.</span><span class="sxs-lookup"><span data-stu-id="061b4-127">This parameter is required.</span></span>
+### <span data-ttu-id="a5857-124">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="a5857-124">-ResourceId</span></span>
+<span data-ttu-id="a5857-125">Gyorsítótár erőforrás-azonosítójának felkarazása.</span><span class="sxs-lookup"><span data-stu-id="a5857-125">Arm Resource Identifier of a cache.</span></span> <span data-ttu-id="a5857-126">Ha meg van adva, a rendszer megpróbálja megtalálni a gyorsítótárat az azonosító alapján.</span><span class="sxs-lookup"><span data-stu-id="a5857-126">If specified will try to find cache by the identifier.</span></span> <span data-ttu-id="a5857-127">Ezt a paramétert kötelező megadni.</span><span class="sxs-lookup"><span data-stu-id="a5857-127">This parameter is required.</span></span>
 
 ```yaml
 Type: System.String
@@ -136,25 +136,25 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="061b4-128">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="061b4-128">CommonParameters</span></span>
-<span data-ttu-id="061b4-129">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="061b4-129">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="061b4-130">További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="061b4-130">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="a5857-128">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="a5857-128">CommonParameters</span></span>
+<span data-ttu-id="a5857-129">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="a5857-129">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="a5857-130">További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="a5857-130">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="061b4-131">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="061b4-131">INPUTS</span></span>
+## <span data-ttu-id="a5857-131">INPUTS</span><span class="sxs-lookup"><span data-stu-id="a5857-131">INPUTS</span></span>
 
-### <span data-ttu-id="061b4-132">Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementContext</span><span class="sxs-lookup"><span data-stu-id="061b4-132">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span></span>
+### <span data-ttu-id="a5857-132">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span><span class="sxs-lookup"><span data-stu-id="a5857-132">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span></span>
 
-### <span data-ttu-id="061b4-133">System. String</span><span class="sxs-lookup"><span data-stu-id="061b4-133">System.String</span></span>
+### <span data-ttu-id="a5857-133">System.String</span><span class="sxs-lookup"><span data-stu-id="a5857-133">System.String</span></span>
 
-## <span data-ttu-id="061b4-134">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="061b4-134">OUTPUTS</span></span>
+## <span data-ttu-id="a5857-134">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="a5857-134">OUTPUTS</span></span>
 
-### <span data-ttu-id="061b4-135">Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="061b4-135">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache</span></span>
+### <span data-ttu-id="a5857-135">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="a5857-135">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache</span></span>
 
-## <span data-ttu-id="061b4-136">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="061b4-136">NOTES</span></span>
+## <span data-ttu-id="a5857-136">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="a5857-136">NOTES</span></span>
 
-## <span data-ttu-id="061b4-137">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="061b4-137">RELATED LINKS</span></span>
+## <span data-ttu-id="a5857-137">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="a5857-137">RELATED LINKS</span></span>
 
-[<span data-ttu-id="061b4-138">Get-AzApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="061b4-138">Get-AzApiManagementCache</span></span>](./Get-AzApiManagementCache)
+[<span data-ttu-id="a5857-138">New-AzApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="a5857-138">New-AzApiManagementCache</span></span>](./New-AzApiManagementCache.md)
 
-[<span data-ttu-id="061b4-139">Set-AzApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="061b4-139">Set-AzApiManagementCache</span></span>](./Set-AzApiManagementCache.md)
+[<span data-ttu-id="a5857-139">Remove-AzApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="a5857-139">Remove-AzApiManagementCache</span></span>](./Remove-AzApiManagementCache.md)
 
-[<span data-ttu-id="061b4-140">Remove-AzApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="061b4-140">Remove-AzApiManagementCache</span></span>](./Remove-AzApiManagementCache.md)
+[<span data-ttu-id="a5857-140">Update-AzApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="a5857-140">Update-AzApiManagementCache</span></span>](./Update-AzApiManagementCache.md)

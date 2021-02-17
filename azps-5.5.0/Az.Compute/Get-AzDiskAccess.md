@@ -1,0 +1,230 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Compute.dll-Help.xml
+Module Name: Az.Compute
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzDiskAccess.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzDiskAccess.md
+ms.openlocfilehash: 69f83b7c98850ba74476e6d81803e748f48bea6a
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100210087"
+---
+# <span data-ttu-id="dee67-101">Get-AzDiskAccess</span><span class="sxs-lookup"><span data-stu-id="dee67-101">Get-AzDiskAccess</span></span>
+
+## <span data-ttu-id="dee67-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="dee67-102">SYNOPSIS</span></span>
+<span data-ttu-id="dee67-103">A lemezelérések tulajdonságainak lekérte</span><span class="sxs-lookup"><span data-stu-id="dee67-103">Gets the properties of Disk Accesses</span></span>
+
+## <span data-ttu-id="dee67-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="dee67-104">SYNTAX</span></span>
+
+### <span data-ttu-id="dee67-105">DefaultParameterSet (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="dee67-105">DefaultParameterSet (Default)</span></span>
+```
+Get-AzDiskAccess [[-ResourceGroupName] <String>] [[-Name] <String>] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="dee67-106">ResourceIDParameterSet</span><span class="sxs-lookup"><span data-stu-id="dee67-106">ResourceIDParameterSet</span></span>
+```
+Get-AzDiskAccess [-ResourceId] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="dee67-107">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="dee67-107">DESCRIPTION</span></span>
+<span data-ttu-id="dee67-108">A **Get-AzDiskAccess** parancsmag beveszi a lemezelérések tulajdonságait</span><span class="sxs-lookup"><span data-stu-id="dee67-108">The **Get-AzDiskAccess** cmdlet gets the properties of Disk Accesses</span></span>
+
+## <span data-ttu-id="dee67-109">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="dee67-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="dee67-110">1. példa: Alapértelmezett paraméterkészlet használata</span><span class="sxs-lookup"><span data-stu-id="dee67-110">Example 1: Using Default Parameter Set</span></span> 
+```
+PS C:\> Get-AzDiskAccess -ResourceGroupName 'ResourceGroup01' -Name 'DiskAccess01'
+
+PrivateEndpointConnections : {}
+ProvisioningState          : Succeeded
+TimeCreated                : 8/13/2020 7:02:50 PM
+Location                   : northcentralus
+Id                         : /subscriptions/xxxxxxxxxxxxxxxxxxxxxxxxxx/resourceGroups/ResourceGroup01/providers/Microsoft.Compute/diskAccesses/DiskAccess01
+Name                       : DiskAccess01
+Type                       : Microsoft.Compute/diskAccesses
+Tags                       : {}
+```
+
+<span data-ttu-id="dee67-111">Ez a parancs a "ResourceGroup01" erőforráscsoport "DiskAccess01" nevű lemezelérési erőforrásának tulajdonságait kapja meg.</span><span class="sxs-lookup"><span data-stu-id="dee67-111">This command gets the properties of a Disk Access resource named 'DiskAccess01' in the resource group 'ResourceGroup01'.</span></span>
+
+### <span data-ttu-id="dee67-112">2. példa: Get-AzDiskAccess erőforráscsoport szerint</span><span class="sxs-lookup"><span data-stu-id="dee67-112">Example 2: Get-AzDiskAccess by Resource Group</span></span>
+```
+PS C:\> Get-AzDiskAccess -ResourceGroupName 'ResourceGroup01'
+
+PrivateEndpointConnections : {}
+ProvisioningState          : Succeeded
+TimeCreated                : 8/13/2020 7:02:50 PM
+Location                   : northcentralus
+Id                         : /subscriptions/xxxxxxxxxxxxxxxxxxxxxxxxxx/resourceGroups/ResourceGroup01/providers/Microsoft.Compute/diskAccesses/DiskAccess01
+Name                       : DiskAccess01
+Type                       : Microsoft.Compute/diskAccesses
+Tags                       : {}
+
+PrivateEndpointConnections : {}
+ProvisioningState          : Succeeded
+TimeCreated                : 8/13/2020 7:05:19 PM
+Location                   : northcentralus
+Id                         : /subscriptions/xxxxxxxxxxxxxxxxxxxxxxxxxx/resourceGroups/ResourceGroup01/providers/Microsoft.Compute/diskAccesses/DiskAccess02
+Name                       : DiskAccess02
+Type                       : Microsoft.Compute/diskAccesses
+Tags                       : {}
+```
+
+<span data-ttu-id="dee67-113">Ez a parancs az "ResourceGroup01" erőforráscsoport összes lemez-hozzáférésének tulajdonságait beveszi.</span><span class="sxs-lookup"><span data-stu-id="dee67-113">This command gets the properties of all disk accesses in the resource group 'ResourceGroup01'.</span></span>
+
+
+### <span data-ttu-id="dee67-114">3. példa: Az összes lemezelérés elérése</span><span class="sxs-lookup"><span data-stu-id="dee67-114">Example 3: Getting all Disk Access</span></span>
+```
+PS C:\> Get-AzDiskAccess
+
+PrivateEndpointConnections : {}
+ProvisioningState          : Succeeded
+TimeCreated                : 8/13/2020 7:02:50 PM
+Location                   : northcentralus
+Id                         : /subscriptions/xxxxxxxxxxxxxxxxxxxxxxxxxx/resourceGroups/ResourceGroup01/providers/Microsoft.Compute/diskAccesses/DiskAccess01
+Name                       : DiskAccess01
+Type                       : Microsoft.Compute/diskAccesses
+Tags                       : {}
+
+PrivateEndpointConnections : {}
+ProvisioningState          : Succeeded
+TimeCreated                : 8/13/2020 7:05:19 PM
+Location                   : northcentralus
+Id                         : /subscriptions/xxxxxxxxxxxxxxxxxxxxxxxxxx/resourceGroups/ResourceGroup21/providers/Microsoft.Compute/diskAccesses/DiskAccess02
+Name                       : DiskAccess02
+Type                       : Microsoft.Compute/diskAccesses
+Tags                       : {}
+
+PrivateEndpointConnections : {}
+ProvisioningState          : Succeeded
+TimeCreated                : 8/13/2020 7:05:19 PM
+Location                   : northcentralus
+Id                         : /subscriptions/xxxxxxxxxxxxxxxxxxxxxxxxxx/resourceGroups/ResourceGroup08/providers/Microsoft.Compute/diskAccesses/DiskAccess03
+Name                       : DiskAccess03
+Type                       : Microsoft.Compute/diskAccesses
+Tags                       : {}
+```
+
+<span data-ttu-id="dee67-115">Ez a parancs az előfizetés alatt lévő összes lemez-hozzáférés tulajdonságait beveszi.</span><span class="sxs-lookup"><span data-stu-id="dee67-115">This command gets the properties of all disk accesses under the subscription.</span></span>
+
+### <span data-ttu-id="dee67-116">4. példa: Az összes lemezelérés lekérte helyettesítő karakter használatával</span><span class="sxs-lookup"><span data-stu-id="dee67-116">Example 4: Get all Disk Access using Wildcard Character</span></span>
+```
+PS C:\> Get-AzDiskAccess -Name DiskAccessMicrosoft*
+
+PrivateEndpointConnections : {}
+ProvisioningState          : Succeeded
+TimeCreated                : 8/13/2020 7:02:50 PM
+Location                   : northcentralus
+Id                         : /subscriptions/xxxxxxxxxxxxxxxxxxxxxxxxxx/resourceGroups/ResourceGroup01/providers/Microsoft.Compute/diskAccesses/DiskAccessMicrosoftAzure
+Name                       : DiskAccessMicrosoftAzure
+Type                       : Microsoft.Compute/diskAccesses
+Tags                       : {}
+
+PrivateEndpointConnections : {}
+ProvisioningState          : Succeeded
+TimeCreated                : 8/13/2020 7:05:19 PM
+Location                   : northcentralus
+Id                         : /subscriptions/xxxxxxxxxxxxxxxxxxxxxxxxxx/resourceGroups/ResourceGroup01/providers/Microsoft.Compute/diskAccesses/DiskAccessMicrosoftTeams
+Name                       : DiskAccessMicrosoftTeams
+Type                       : Microsoft.Compute/diskAccesses
+Tags                       : {}
+```
+
+<span data-ttu-id="dee67-117">Ez a parancs az előfizetés neve alatt lévő összes lemezelérés tulajdonságait a "DiskAccessMicrosoft" névvel kezdve kapja meg.</span><span class="sxs-lookup"><span data-stu-id="dee67-117">This command gets the properties of all disk accesses under the subscription name starting with 'DiskAccessMicrosoft'.</span></span>
+
+### <span data-ttu-id="dee67-118">5. példa: Lemezelérés a ResourceId használatával.</span><span class="sxs-lookup"><span data-stu-id="dee67-118">Example 5: Get Disk Access using ResourceId.</span></span>
+```
+PS C:\> Get-AzDiskAccess -ResourceId '/subscriptions/xxxxxxxxxxxxxxxxxxxxxxxxxx/resourceGroups/ResourceGroup01/providers/Microsoft.Compute/diskAccesses/DiskAccess01'
+
+PrivateEndpointConnections : {}
+ProvisioningState          : Succeeded
+TimeCreated                : 8/13/2020 7:02:50 PM
+Location                   : northcentralus
+Id                         : /subscriptions/xxxxxxxxxxxxxxxxxxxxxxxxxx/resourceGroups/ResourceGroup01/providers/Microsoft.Compute/diskAccesses/DiskAccess01
+Name                       : DiskAccess01
+Type                       : Microsoft.Compute/diskAccesses
+Tags                       : {}
+```
+
+<span data-ttu-id="dee67-119">Ez a parancs a lemezelérés tulajdonságait kapja meg a megadott ResourceId-val.</span><span class="sxs-lookup"><span data-stu-id="dee67-119">This command gets the properties of a Disk Access with the given ResourceId.</span></span>
+
+
+## <span data-ttu-id="dee67-120">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="dee67-120">PARAMETERS</span></span>
+
+### <span data-ttu-id="dee67-121">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="dee67-121">-DefaultProfile</span></span>
+<span data-ttu-id="dee67-122">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="dee67-122">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="dee67-123">-Name</span><span class="sxs-lookup"><span data-stu-id="dee67-123">-Name</span></span>
+<span data-ttu-id="dee67-124">A lemezelérés nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="dee67-124">Specifies the name of a disk access.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: DefaultParameterSet
+Aliases: diskAccessName
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: True
+```
+
+### <span data-ttu-id="dee67-125">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="dee67-125">-ResourceGroupName</span></span>
+<span data-ttu-id="dee67-126">Egy erőforráscsoport nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="dee67-126">Specifies the name of a resource group.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: DefaultParameterSet
+Aliases:
+
+Required: False
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: True
+```
+
+### <span data-ttu-id="dee67-127">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="dee67-127">-ResourceId</span></span>
+<span data-ttu-id="dee67-128">A lemezelérés erőforrás-azonosítója.</span><span class="sxs-lookup"><span data-stu-id="dee67-128">Resource ID for your disk access.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ResourceIDParameterSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="dee67-129">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="dee67-129">CommonParameters</span></span>
+<span data-ttu-id="dee67-130">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="dee67-130">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="dee67-131">További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="dee67-131">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="dee67-132">INPUTS</span><span class="sxs-lookup"><span data-stu-id="dee67-132">INPUTS</span></span>
+
+### <span data-ttu-id="dee67-133">System.String</span><span class="sxs-lookup"><span data-stu-id="dee67-133">System.String</span></span>
+
+## <span data-ttu-id="dee67-134">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="dee67-134">OUTPUTS</span></span>
+
+### <span data-ttu-id="dee67-135">Microsoft.Azure.Commands.Compute.Automation.Models.PSDiskAccess</span><span class="sxs-lookup"><span data-stu-id="dee67-135">Microsoft.Azure.Commands.Compute.Automation.Models.PSDiskAccess</span></span>
+
+## <span data-ttu-id="dee67-136">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="dee67-136">NOTES</span></span>
+
+## <span data-ttu-id="dee67-137">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="dee67-137">RELATED LINKS</span></span>
