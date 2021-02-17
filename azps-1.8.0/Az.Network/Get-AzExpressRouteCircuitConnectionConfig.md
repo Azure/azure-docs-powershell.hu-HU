@@ -6,45 +6,45 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitConnectionConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitConnectionConfig.md
-ms.openlocfilehash: 70badaebf0b6b8a35fd96cc20a54aab1ff316bef
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 0adba1dfe453852b0797f40d6cd4d188db87169f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93670601"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401997"
 ---
 # Get-AzExpressRouteCircuitConnectionConfig
 
-## Áttekintés
-ExpressRoute-áramköri kapcsolati konfigurációt kap, amely a ExpressRouteCircuit privát kinézetéhez van társítva.
+## SYNOPSIS
+ExpressRoute-kapcsolati konfigurációt kap, amely az ExpressRouteCircuit privát társviszony-létesítésében van társítva.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 Get-AzExpressRouteCircuitConnectionConfig [[-Name] <String>] [-ExpressRouteCircuit] <PSExpressRouteCircuit>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-A **Get-AzExpressRouteCircuitConnectionConfig** parancsmag kikeresi a magánjellegű kapcsolattal rendelkező ExpressRoute-áramkörhöz társított áramköri kapcsolat konfigurációját.
+## LEÍRÁS
+A **Get-AzExpressRouteCircuitConnectionConfig** parancsmag beolvassa egy ExpressRoute-kapcsolat magánjellegű társviszony-létesítéshez társított kapcsolati kapcsolatának konfigurációját.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: ExpressRoute-áramkör áramkör-kapcsolati konfigurációjának megjelenítése
+### 1. példa: ExpressRoute-kapcsolat kapcsolatkonfigurációjának megjelenítése
 ```
 $circuit_init = Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg
 Get-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName -ExpressRouteCircuit $circuit_init
 ```
 
-### 2. példa: ExpressRoute-áramkörrel társított áramköri kapcsolati erőforrás csővezetékekkel való használata
+### 2. példa: Az ExpressRoute-áramkörhöz társított kapcsolati erőforrás lekérte a kapcsolatcsoportot egy pipával
 ```
 Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg|Get-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName
 ```
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -59,7 +59,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpressRouteCircuit
-Az áramköri kapcsolat konfigurációját tartalmazó ExpressRoute Circuit objektum.
+Az ExpressRoute-áramkör objektuma, amely az áramkör-kapcsolat konfigurációját tartalmazza.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit
@@ -73,8 +73,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name (név)
-A lekérdezni kívánt áramkör-kapcsolat konfigurációjának neve.
+### -Name
+A lekérni szükséges kapcsolati kapcsolat konfigurációjának neve.
 
 ```yaml
 Type: System.String
@@ -89,17 +89,17 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. Azure. commands. Network. models. PSExpressRouteCircuit
+### Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit
 
 ## KIMENETEK
 
-### Microsoft. Azure. commands. Network. models. PSExpressRouteCircuitConnection
+### Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuitConnection
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
@@ -109,6 +109,6 @@ Ez a parancsmag a következő általános paramétereket támogatja:-debug,-Erro
 
 [Remove-AzExpressRouteCircuitConnectionConfig](Remove-AzExpressRouteCircuitConnectionConfig.md)
 
-[Set-AzExpressRouteCircuitConnectionConfig](Set-AzExpressRouteCircuitConnectionConfig.md)
 
-[Új – AzExpressRouteCircuitConnectionConfig](New-AzExpressRouteCircuitConnectionConfig.md)
+
+
