@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/s
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Set-AzKeyVaultAccessPolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Set-AzKeyVaultAccessPolicy.md
-ms.openlocfilehash: 4ef8c131e0094928808e6479b2c5ffe40090c5d0
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 5f47237088808fe8966d239f9a0de7c892301db0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94181709"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410718"
 ---
 # Set-AzKeyVaultAccessPolicy
 
-## Áttekintés
-Meglévő engedélyeket ad vagy módosít a felhasználó, az alkalmazás vagy a biztonsági csoport számára a fő boltozattal végzett műveletek elvégzéséhez.
+## SYNOPSIS
+Megadja vagy módosítja egy felhasználó, alkalmazás vagy biztonsági csoport meglévő engedélyét, hogy műveleteket hajtson végre egy kulcstárban.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### ByUserPrincipalName (alapértelmezett)
 ```
@@ -135,26 +135,26 @@ Set-AzKeyVaultAccessPolicy [-ResourceId] <String> [-EnabledForDeployment] [-Enab
  [<CommonParameters>]
 ```
 
-## Leírás
-A **set-AzKeyVaultAccessPolicy** parancsmag meglévő engedélyeket ad vagy módosít egy felhasználó, alkalmazás vagy biztonsági csoport számára, hogy a megadott műveleteket egy fő boltozattal végezze el. Nem módosítja a többi felhasználó, alkalmazás vagy biztonsági csoport engedélyeit a kulcs boltozatán.
-Ha egy biztonsági csoportra vonatkozó engedélyeket állít be, ez a művelet csak a biztonsági csoport felhasználóit érinti.
-Az alábbi könyvtárak mindegyikének meg kell egyeznie az Azure-címtárral: 
-- Annak az Azure-előfizetésnek az alapértelmezett könyvtára, amelyben a kulcs boltozata lakik.
-- Az Azure-címtár, amely az engedélyeket biztosító felhasználó vagy alkalmazás csoportját tartalmazza.
-Példák azokra az esetekre, amikor ezek a feltételek nem teljesülnek, és a parancsmag nem fog működni: 
-- Másik szervezet felhasználóinak engedélyezése a kulcsfájl kezeléséhez.
-Minden szervezetnek saját könyvtára van. 
-- Az Azure-fiók több könyvtárat tartalmaz.
-Ha az alapértelmezett könyvtártól eltérő címtárban regisztrálja az alkalmazást, az alkalmazás nem engedélyezheti a kulcsfájl használatát.
+## LEÍRÁS
+A **Set-AzKeyVaultAccessPolicy** parancsmag megadja vagy módosítja egy felhasználó, alkalmazás vagy biztonsági csoport meglévő engedélyét, hogy végrehajtsa a megadott műveleteket egy kulcstárban. Nem módosítja a többi felhasználó, alkalmazás vagy biztonsági csoport kulcstárra vonatkozó engedélyét.
+Ha egy biztonsági csoport engedélyét ad meg, ez a művelet csak az adott biztonsági csoport felhasználóit érinti.
+A következő címtáraknak mindnek azonos Azure-címtárnak kell lennie:
+- Annak az Azure-előfizetésnek az alapértelmezett címtára, amelyben a kulcstár található.
+- Az Azure-címtár, amely azt a felhasználót vagy alkalmazáscsoportot tartalmazza, amelyhez engedélyeket ad.
+Példák olyan esetekre, amikor ezek a feltételek nem teljesülnek, és ez a parancsmag nem működik:
+- Egy másik szervezetből származó felhasználónak a kulcstár kezeléséhez való hozzáférése.
+Mindegyik szervezetnek saját címtára van.
+- Azure-fiókja több könyvtárral rendelkezik.
+Ha nem az alapértelmezett címtárban regisztrál egy alkalmazást, akkor nem engedélyezheti az alkalmazásnak a kulcstár használatát.
 Az alkalmazásnak az alapértelmezett címtárban kell lennie.
-Fontos tudni, hogy bár az erőforráscsoport beállítása nem kötelező ehhez a parancsmaghoz, a jobb teljesítmény érdekében ezt el kell végeznie.
+Vegye figyelembe, hogy bár az erőforráscsoport megadása nem kötelező ehhez a parancsmaghoz, a jobb teljesítmény érdekében ezt kell megtennie.
 
 > [!NOTE]
-> Ha egy szolgáltató a hozzáférési házirend engedélyeinek megadására használja, a paramétert kell használnia `-BypassObjectIdValidation` .
+> Amikor egyszerű szolgáltatásnév használatával hozzáférési házirend-engedélyeket ad meg, a paramétert kell `-BypassObjectIdValidation` használnia.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: engedélyek megadása egy felhasználó számára egy kulcs boltozatához és az engedélyek módosítása
+### 1. példa: Engedélyek megadása egy felhasználónak egy kulcstárhoz és az engedélyek módosítása
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -UserPrincipalName 'PattiFuller@contoso.com' -PermissionsToKeys create,import,delete,list -PermissionsToSecrets set,delete -PassThru
 
@@ -235,63 +235,64 @@ Access Policies                  :
 Tags                             :
 ```
 
-Az első parancs engedélyeket ad az Azure Active Directory-beli felhasználóknak PattiFuller@contoso.com , hogy a Contoso03Vault nevű fő boltozattal végezze el a megfelelő műveleteket a kulcsok és a titkok területén. A *PassThru* paraméter a parancsmag által visszaadott frissített objektumot adja eredményül.
-A második parancs módosítja az PattiFuller@contoso.com első parancsban megadott engedélyeket, így mostantól a beállítások megadásával és törlésével is lehetővé válik a titok beszerzése. A fő műveletekre vonatkozó engedélyek a parancs után változatlanok maradnak.
-A végleges parancs a meglévő engedélyeket tovább módosítja a PattiFuller@contoso.com legfontosabb műveletekhez tartozó összes engedély eltávolításához. A titkos műveletek engedélyei a parancs után változatlanok maradnak. 
+Az első parancs engedélyeket ad egy felhasználónak az Azure Active Directoryban, hogy műveleteket hajtson végre a kulcsokon és a titkosságon PattiFuller@contoso.com a Contoso03Vault nevű kulcstárban. A *PassThru paraméter* eredménye a frissített objektum, amelyet a parancsmag ad vissza.
+A második parancs módosítja az első parancsban megadott engedélyeket, hogy mostantól a beállításukon és törlésüken kívül titkosságokat is PattiFuller@contoso.com bevessen. A kulcsműveletekkel kapcsolatos engedélyek a parancs után is változatlanok maradnak.
+Az utolsó parancs tovább módosítja a kulcsműveletekkel kapcsolatos összes engedély eltávolítására vonatkozó PattiFuller@contoso.com meglévő engedélyeket. A titkos műveletekre vonatkozó engedélyek a parancs után is változatlanok maradnak.
 
-### 2. példa: az alkalmazásspecifikus szolgáltatók engedélyeinek megadása a titkok olvasásához és írásához
+### 2. példa: Engedélyek megadása egyszerű alkalmazásszolgáltatásnak a titkos kulcsok olvasására és írására
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ServicePrincipalName 'http://payroll.contoso.com' -PermissionsToSecrets Get,Set
 ```
 
-Ez a parancs engedélyeket ad az Contoso03Vault nevű fő Vault-alkalmazás engedélyeinek megadásához. A *ServicePrincipalName* paraméter az alkalmazást adja meg. Az alkalmazást be kell jegyeztetni az Azure Active Directoryban. A *ServicePrincipalName* paraméter értéke csak az alkalmazás egyszerű szolgáltatásnév, vagy az ALKALMAZÁSSPECIFIKUS azonosító GUID értéke lehet.
-Ez a példa megadja az egyszerű szolgáltatásnév nevet http://payroll.contoso.com , és a parancs a titok olvasását és írását biztosítja az alkalmazás engedélyeinek.
+Ez a parancs engedélyeket ad az alkalmazásokhoz a Contoso03Vault nevű kulcstárhoz.
+A *ServicePrincipalName paraméter* megadja az alkalmazást. Az alkalmazásnak regisztrálva kell lennie az Azure Active Directoryban. A *ServicePrincipalName* paraméter értékének vagy az alkalmazás egyszerű szolgáltatásnevének vagy az alkalmazásazonosító GUID azonosítójának kell lennie.
+Ebben a példában az egyszerű szolgáltatásnevet adhatja meg, és a parancs hozzáférési engedélyt ad az alkalmazásnak a titkos kulcsok `http://payroll.contoso.com` olvasására és írására.
 
-### 3. példa: az alkalmazás engedélyeinek megadása az objektum azonosítójával
+### 3. példa: Engedélyek megadása egy alkalmazáshoz az objektumazonosító használatával
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ObjectId 34595082-9346-41b6-8d6b-295a2808b8db -PermissionsToSecrets Get,Set
 ```
 
-A parancs a titok olvasását és írását lehetővé tévő jogosultságokkal ruházza fel az alkalmazást.
-Ez a példa azt adja meg, hogy az alkalmazás az alkalmazás Principal azonosítójával használja az alkalmazást.
+Ez a parancs hozzáférési engedélyt ad az alkalmazásnak a titkos kulcsok olvasására és írására.
+Ebben a példában az alkalmazás az alkalmazás egyszerű szolgáltatásnévének objektumazonosítóját használja.
 
-### 4. példa: engedélyek megadása egyszerű felhasználónévhez
+### 4. példa: Egyszerű felhasználónév engedélyeinek megadása
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -UserPrincipalName 'PattiFuller@contoso.com' -PermissionsToSecrets Get,List,Set
 ```
 
-Ez a parancs a beszerzés, a lista és az engedélyek beállítását adja meg a megadott egyszerű felhasználónévhez a titok eléréséhez.
+Ez a parancs hozzáférési, lista- és beállítási engedélyeket ad a megadott egyszerű felhasználónévhez a titkos információkhoz való hozzáféréshez.
 
-### Példa: 5: a Microsoft. számítási erőforrás-szolgáltatónál a kulcsok beolvasásának engedélyezése.
+### 5. példa: Annak engedélyezése, hogy a Microsoft.Compute erőforrásszolgáltató beolvassa a titkos adatokat egy kulcstárból
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ResourceGroupName 'Group14' -EnabledForDeployment
 ```
 
-Ez a parancs megadja a titoknak azokat az engedélyeit, amelyeket a Microsoft. számítási erőforrás-szolgáltatótól kapott a Contoso03Vault.
+Ez a parancs megadja a Microsoft.Compute erőforrásszolgáltatója által a Contoso03Vault kulcstárból beolvasandó titkos információkhoz szükséges engedélyeket.
 
-### 6. példa: engedélyek megadása egy biztonsági csoporthoz
+### 6. példa: Engedélyek megadása biztonsági csoportnak
 ```powershell
 PS C:\> Get-AzADGroup
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'myownvault' -ObjectId (Get-AzADGroup -SearchString 'group2')[0].Id -PermissionsToKeys get, set -PermissionsToSecrets get, set
 ```
 
-Az első parancs az Get-AzADGroup parancsmagot használja az Active Directory-csoportok beolvasásához. A kimenetben 3 csoport, a **Group1** , az **Group2** és a **Group3** nevű csoport látható. Több csoportnak ugyanazt a nevet kell használnia, de minden esetben egyedi ObjectId kell lennie. Ha egynél több, ugyanazt a nevet tartalmazó csoportot ad eredményül, a kimenetben lévő ObjectId segítségével határozza meg, hogy melyiket szeretné használni.
-Ezután a parancs kimenete Set-AzKeyVaultAccessPolicy segítségével engedélyeket adhat a Group2, a **myownvault** nevű kulcshoz. Ez a példa a "Group2" szövegközi csoportokat ugyanazon a parancssorban sorolja fel.
-Előfordulhat, hogy a visszaadott lista több olyan csoportba tartozik, amely "Group2" névvel rendelkezik.
-Ez a példa a \[ visszatérési listában az első indexet jelölte ki \] .
+Az első parancs a Get-AzADGroup parancsmagot használja az összes Active Directory-csoport be szerezni. A kimenetben 3 visszaadott csoport látható, a **csoport1,** **a csoport2** és a **csoport3.** Több csoportnak lehet ugyanaz a neve, de mindig egyedi ObjectId azonosítóval rendelkezik. Ha több, azonos nevű csoportot ad vissza, a kimenetben az ObjectId érték használatával azonosítsa a használni kívánt csoportot.
+Ezután használhatja a parancs kimenetét a Set-AzKeyVaultAccessPolicy, hogy engedélyeket adjon a group2 kulcstárának **(myownvault) számára.** Az alábbi példa a "group2" nevű csoportokat számba veszi ugyanabban a parancssorban.
+A visszaadott listában több "csoport2" nevű csoport is lehet.
+Ez a példa a visszaadott listában a 0 index által jelzett \[ \] elsőt választja ki.
 
-### 7. példa: hozzáférés biztosítása az Azure Information Protectionhez az ügyfél által felügyelt bérlői kulcshoz (BYOK)
+### 7. példa: Azure Information Protection-hozzáférés megadása az ügyfél által kezelt bérlői kulcshoz (BYOK)
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso04Vault' -ServicePrincipalName 00000012-0000-0000-c000-000000000000 -PermissionsToKeys decrypt,sign,get
 ```
 
-Ez a parancs engedélyezi az Azure Information Protectiont az ügyfél által felügyelt kulcs (a saját kulcs vagy a "BYOK" forgatókönyv) használatához az Azure Information Protection bérlői kulccsal.
-Ha futtatja ezt a parancsot, adja meg a saját kulcs boltozatát, de meg kell adnia a *ServicePrincipalName* paramétert a GUID **00000012-0000-0000 – C000 – 000000000000 értéket** , és meg kell adnia a példában szereplő engedélyeket.
+Ez a parancs engedélyezi az Azure Information Protectionnek, hogy az Azure Information Protection bérlői kulcsként ügyfél által kezelt kulcsot (a saját kulcsát hozza magával, vagy a "BYOK" esetet) használjon.
+A parancs futtatásakor adja meg a saját kulcstárnevét, de meg kell adnia a *ServicePrincipalName* paramétert a GUID **00000012-0000-0000-c000-000000000000000** azonosítóval, és meg kell adnia a példában az engedélyeket.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -ApplicationId
-Jövőbeli használatra.
+Későbbi használatra.
 
 ```yaml
 Type: System.Nullable`1[System.Guid]
@@ -306,8 +307,8 @@ Accept wildcard characters: False
 ```
 
 ### -BypassObjectIdValidation
-Lehetővé teszi az objektumazonosítók megadását anélkül, hogy az az Azure Active Directoryban létezik.
-Csak akkor használja ezt a paramétert, ha hozzáférést szeretne adni a kulcsfájl egy olyan objektum-AZONOSÍTÓhoz, amely egy másik Azure-bérlőtől származó meghatalmazott biztonsági csoportra hivatkozik.
+Lehetővé teszi az objektumazonosítók megadását anélkül, hogy érvényesíte volna az objektum Azure Active Directoryban való létezik-e.
+Ezt a paramétert csak akkor használja, ha hozzáférést szeretne a kulcstárhoz egy olyan objektumazonosítóhoz, amely egy másik Azure-bérlő delegált biztonsági csoportjára hivatkozik.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -322,7 +323,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -337,8 +338,8 @@ Accept wildcard characters: False
 ```
 
 ### -EmailAddress
-Annak a felhasználónak a felhasználói e-mail-címét adja meg, akinek engedélyt szeretne adni.
-Ennek az e-mail-címnek meg kell egyeznie az aktuális előfizetéshez társított címtárban, és egyedinek kell lennie.
+Annak a felhasználónak az e-mail-címét adja meg, akinek engedélyt kell kiadó felhasználónak.
+Ennek az e-mail-címnek az aktuális előfizetéshez társított címtárban kell lennie, és egyedinek kell lennie.
 
 ```yaml
 Type: System.String
@@ -353,7 +354,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForDeployment
-A Microsoft. számítási erőforrás-szolgáltatója kinyerheti a titkokat ebből a kulcsfájlból, ha ez a kulcs boltozata az erőforrás létrehozásakor, például virtuális gép létrehozásakor jelenik meg.
+Lehetővé teszi a Microsoft.Compute erőforrásszolgáltatónak, hogy beolvassa a titkos értékeket ebből a kulcstárból, amikor erre a kulcstárra hivatkozik az erőforrás-létrehozás során, például virtuális gép létrehozásakor.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -368,7 +369,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForDiskEncryption
-Lehetővé teszi, hogy az Azure Disk Encryption szolgáltatás a kulcsok kijavítását és kicsomagolását a kulcsból.
+Lehetővé teszi az Azure lemeztitkosítási szolgáltatásának, hogy titkos adatokat és kulcsokat olvasson le ebből a kulcstárból.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -383,7 +384,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForTemplateDeployment
-Lehetővé teszi az Azure Resource Manager számára, hogy ebből a kulcsfájlból kiírja a titkot, ha ezt a kulcspárt a sablonok központi telepítéséhez hivatkozik.
+Lehetővé teszi az Azure Resource Manager számára, hogy titkos titkos szolgáltatásokat rejtsen ebből a kulcstárból, amikor erre a kulcstárra hivatkozik egy sablon központi telepítésében.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -398,7 +399,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Fő pince objektum
+Key Vault objektum
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultIdentityItem
@@ -413,7 +414,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-Annak az Azure Active Directory-fióknak az objektum-AZONOSÍTÓját adja meg, amelyre engedélyt szeretne adni.
+Annak a felhasználónak vagy szolgáltatásnévnek az objektumazonosítóját adja meg az Azure Active Directoryban, amelynek az engedélyét meg kell adni.
 
 ```yaml
 Type: System.String
@@ -428,8 +429,8 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Egy olyan objektumot ad eredményül, amely a munkaterületet jelképezi.
-Ez a parancsmag alapértelmezés szerint nem hoz létre semmilyen kimenetet.
+Egy objektumot ad vissza, amely azt az elemet tartalmazza, amellyel dolgozik.
+Ez a parancsmag alapértelmezés szerint nem hoz létre kimenetet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -444,13 +445,13 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionsToCertificates
-A felhasználók vagy a szolgáltatók számára megadható tanúsítvány-engedélyek tömbjét adja meg.
+Egy felhasználónak vagy egyszerű szolgáltatásnak adható tanúsítványengedélyek tömbje.
 A paraméter elfogadható értékei:
-- Beszerzése
+- Bej.le
 - Lista
-- Törlése
-- Létrehozása
-- Importálása
+- Törlés
+- Létrehozás
+- Importálás
 - Frissítés
 - Managecontacts
 - Getissuers
@@ -458,10 +459,10 @@ A paraméter elfogadható értékei:
 - Setissuers
 - Deleteissuers
 - Manageissuers
-- Visszaszerez
-- Hát
-- Visszaállítása
-- Véglegesen
+- Helyreállítás
+- Biztonsági másolat
+- Visszaállítás
+- Végleges végleges végleges
 
 ```yaml
 Type: System.String[]
@@ -477,24 +478,24 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionsToKeys
-A felhasználó vagy a szolgáltatás megbízójának megadni kívánt fő műveleti engedélyek tömbjét adja meg.
+Egy felhasználónak vagy egyszerű szolgáltatásnak adható kulcsműveleti engedélyek tömbje.
 A paraméter elfogadható értékei:
 - Visszafejtése
-- Beavatkozik
+- Titkosítás
 - UnwrapKey
 - WrapKey
-- Ellenőrizze
-- Jel
-- Beszerzése
+- Ellenőrzés
+- Aláírás
+- Bej.le
 - Lista
 - Frissítés
-- Létrehozása
-- Importálása
-- Törlése
-- Hát
-- Visszaállítása
-- Visszaszerez
-- Véglegesen
+- Létrehozás
+- Importálás
+- Törlés
+- Biztonsági másolat
+- Visszaállítás
+- Helyreállítás
+- Végleges végleges végleges
 
 ```yaml
 Type: System.String[]
@@ -510,16 +511,16 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionsToSecrets
-A felhasználó vagy a szolgáltatás megbízójának megadni kívánt titkos műveleti engedélyek tömbjét adja meg.
+Egy felhasználónak vagy egyszerű szolgáltatásnak adható titkos műveletekre vonatkozó engedélyek tömbje.
 A paraméter elfogadható értékei:
-- Beszerzése
+- Bej.le
 - Lista
-- Beállítása
-- Törlése
-- Hát
-- Visszaállítása
-- Visszaszerez
-- Véglegesen
+- Beállítás
+- Törlés
+- Biztonsági másolat
+- Visszaállítás
+- Helyreállítás
+- Végleges végleges végleges
 
 ```yaml
 Type: System.String[]
@@ -535,7 +536,7 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionsToStorage
-A felügyelt tárterület-fiók és a SaS-definíciós műveleti engedélyeket adja meg a felhasználó vagy a szolgáltatás megbízójának.
+A felügyelt tárfiókra és a SaS-definíciós műveletre vonatkozó engedélyeket adja meg, amelyek a felhasználónak vagy a szolgáltatásnévnek adhatók.
 
 ```yaml
 Type: System.String[]
@@ -566,7 +567,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Fő pince-erőforrás azonosítója
+Key Vault Resource Id
 
 ```yaml
 Type: System.String
@@ -581,8 +582,8 @@ Accept wildcard characters: False
 ```
 
 ### -ServicePrincipalName
-Annak az alkalmazásnak az egyszerű szolgáltatásnevet adja meg, amelyre engedélyt szeretne adni.
-Adja meg az alkalmazáshoz az AzureActive-címtárban regisztrált alkalmazás-azonosítót (más néven ügyfél-azonosító). A paraméter által megadott szolgáltatásnevet tartalmazó alkalmazásnak regisztrálnia kell a jelenlegi előfizetést tartalmazó Azure-címtárban.
+Annak az alkalmazásnak a egyszerű szolgáltatásnevét adja meg, amelyhez engedélyeket ad.
+Adja meg az alkalmazáshoz az AzureActive Directoryban regisztrált alkalmazásazonosítót ( más néven ügyfélazonosítót). A paraméterként megadott egyszerű szolgáltatásnévvel megadott alkalmazást az aktuális előfizetést tartalmazó Azure-címtárban kell regisztrálni.
 
 ```yaml
 Type: System.String
@@ -597,8 +598,8 @@ Accept wildcard characters: False
 ```
 
 ### -UserPrincipalName
-Annak a felhasználónak az egyszerű felhasználónevét adja meg, akinek engedélyt szeretne adni.
-Ez az egyszerű felhasználónév csak az aktuális előfizetéshez társított címtárban található.
+Annak a felhasználónak a felhasználó egyszerű felhasználónevét adja meg, akinek az engedélyeket ki kell ad.
+Az egyszerű felhasználónévnek az aktuális előfizetéshez társított címtárban kell lennie.
 
 ```yaml
 Type: System.String
@@ -613,8 +614,8 @@ Accept wildcard characters: False
 ```
 
 ### -VaultName
-A kulcsfájl nevét adja meg.
-Ez a parancsmag módosítja a hozzáférési házirendet annak a kulcsfájl számára, amelyet a paraméter határoz meg.
+Egy kulcstár nevét adja meg.
+Ez a parancsmag módosítja a paraméter által megadott kulcstár hozzáférési házirendját.
 
 ```yaml
 Type: System.String
@@ -628,8 +629,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -644,7 +645,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut. A parancsmag nem fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik. A parancsmag nem fut.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -659,19 +660,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. Azure. Command. PSKeyVaultIdentityItem. models.
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultIdentityItem
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. PSKeyVault. models.
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 

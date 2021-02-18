@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.recoveryse
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Start-AzRecoveryServicesAsrApplyRecoveryPoint.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Start-AzRecoveryServicesAsrApplyRecoveryPoint.md
-ms.openlocfilehash: 893298c3349d2d7ceaa998a1f147ce8dd590f101
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: b06501fafbc573e10ac7d5dba3435dbf96342ba0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94013515"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410735"
 ---
 # Start-AzRecoveryServicesAsrApplyRecoveryPoint
 
-## Áttekintés
-A feladatátvételi művelet véglegesítése előtt módosítja a sikertelenül módosított elem helyreállítási pontját.
+## SYNOPSIS
+A feladatátvételi művelet végrehajtása előtt módosít egy helyreállítási pontot egy sikertelenül védett elemhez.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 Start-AzRecoveryServicesAsrApplyRecoveryPoint -RecoveryPoint <ASRRecoveryPoint>
@@ -26,22 +26,22 @@ Start-AzRecoveryServicesAsrApplyRecoveryPoint -RecoveryPoint <ASRRecoveryPoint>
  [<CommonParameters>]
 ```
 
-## Leírás
-A **kezdő AzRecoveryServicesAsrApplyRecoveryPoint** a sikertelenül védett elem helyreállítási pontját a feladatátvételi művelet véglegesítése előtt módosítja.
+## LEÍRÁS
+A **Start-AzRecoveryServicesAsrApplyRecoveryPoint** a feladatátvételi művelet végrehajtása előtt módosítja egy sikertelenül védett elem helyreállítási pontját.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1
+### 1. példa
 ```
 PS C:\> $currentJob = Start-AzRecoveryServicesAsrApplyRecoveryPoint -RecoveryPoint $RecoveryPoint -ReplicationProtectedItem $RPI
 ```
 
-A megadott helyreállítási pont alkalmazása a replikációs védelemmel ellátott elemre, és a művelet nyomon követéséhez használt ASR-feladatot adja eredményül.
+Megkezdi a megadott helyreállítási pont alkalmazását a replikációval védett elemre, és visszaadja a művelet nyomon követéséhez használt ASR-feladatot.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DataEncryptionPrimaryCertFile
-Az elsődleges tanúsítványfájl megadása, ha az adattitkosítást használják.
+Az elsődleges tanúsítványfájl megadása adattitkosítás használata esetén.
 
 ```yaml
 Type: System.String
@@ -56,7 +56,7 @@ Accept wildcard characters: False
 ```
 
 ### -DataEncryptionSecondaryCertFile
-Megadja a másodlagos tanúsítványfájl-fájlt, ha az adattitkosítást használja.
+A másodlagos tanúsítványfájlt adja meg, ha adattitkosítást használ.
 
 ```yaml
 Type: System.String
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 
 ```yaml
@@ -87,7 +87,7 @@ Accept wildcard characters: False
 ```
 
 ### -RecoveryPoint
-Azt a helyreállítási pont objektumot adja meg, amely megfelel az alkalmazni kívánt helyreállítási pontnak.
+Az alkalmazandó helyreállítási pontnak megfelelő helyreállításipont-objektumot adja meg.
 
 ```yaml
 Type: Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRRecoveryPoint
@@ -102,7 +102,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReplicationProtectedItem
-Az ASR replikációs szolgáltatással védett elem objektumát adja meg.
+Az ASR replikációs védelem alatt ható elemobjektumot adja meg.
 
 ```yaml
 Type: Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRReplicationProtectedItem
@@ -116,8 +116,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut. A parancsmag nem fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik. A parancsmag nem fut.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -147,18 +147,18 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. Azure. Command. RecoveryServices. SiteRecovery. ASRReplicationProtectedItem
+### Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRReplicationProtectedItem
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. RecoveryServices. SiteRecovery. ASRJob
+### Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRService
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Azure webhely-helyreállítási parancsmagok](./Az.SiteRecovery.md)
+
