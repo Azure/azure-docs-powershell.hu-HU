@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/get-Az
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlDatabaseAdvancedThreatProtectionSetting.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlDatabaseAdvancedThreatProtectionSetting.md
-ms.openlocfilehash: 8090ee9cf6ec251668dbeadba6b18a7cde4898c4
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 9035f2a03ac04a9bc99248c48675ab3c69b84207
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100144226"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100409613"
 ---
 # Get-AzSqlDatabaseAdvancedThreatProtectionSetting
 
@@ -47,7 +47,7 @@ RetentionInDays              : 0
 ```
 
 Ez a parancs a Database01 nevű adatbázis komplex veszélyforrás-védelmi beállításait kapja meg.
-Az adatbázis a Server01 nevű kiszolgálón található, amely az ResourceGroup11 erőforráscsoporthoz van hozzárendelve.
+Az adatbázis a Server01 nevű kiszolgálón található, amely az Erőforráscsoport11 erőforráscsoporthoz van hozzárendelve.
 
 ## PARAMETERS
 
@@ -143,7 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## INPUTS
 
@@ -157,7 +157,6 @@ Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, 
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Remove-AzSqlDatabaseAdvancedThreatProtectionSetting](./Remove-AzSqlDatabaseAdvancedThreatProtectionSetting.md)
 
 
 

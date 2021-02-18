@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcher.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcher.md
-ms.openlocfilehash: dc8d3a3db0eaa76974e02a62111b022ed81524b0
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: ea4eb4b7c6a8b88d78db809ee85ab0f484a9eba6
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94181085"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410072"
 ---
 # Get-AzNetworkWatcher
 
-## Áttekintés
-A Hálózatfigyelő tulajdonságait kapja meg
+## SYNOPSIS
+A Hálózati figyelő tulajdonságainak lekérte
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### Lista
 ```
@@ -30,12 +30,12 @@ Get-AzNetworkWatcher [-Name <String>] [-ResourceGroupName <String>] [-DefaultPro
 Get-AzNetworkWatcher -Location <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
+## LEÍRÁS
 A Get-AzNetworkWatcher parancsmag egy vagy több Azure Network Watcher-erőforrást kap.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: hálózati figyelő beszerzése
+### 1. példa: Hálózati figyelő lekérte
 ```
 Get-AzNetworkWatcher -Name NetworkWatcher_westcentralus -ResourceGroup NetworkWatcherRG
 
@@ -47,9 +47,9 @@ Tags              :
 ProvisioningState : Succeeded
 ```
 
-A NetworkWatcher_westcentralus nevű Hálózatfigyelőt kapja az erőforráscsoport NetworkWatcherRG.
+A NetworkWatcherRG erőforráscsoportban NetworkWatcher_westcentralus hálózatfigyelő nevét.
 
-### 2. példa: szűrést használó hálózati figyelők listázása
+### 2. példa: Hálózati figyelőlista szűrés használatával
 ```
 Get-AzNetworkWatcher -Name NetworkWatcher*
 
@@ -68,12 +68,12 @@ Tags              :
 ProvisioningState : Succeeded
 ```
 
-A "NetworkWatcher" kezdetű hálózati figyelők beolvasása
+A "NetworkWatcher" kezdetnek megfelelő hálózati figyelőket kapja meg
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -87,8 +87,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Hely
-A Hálózatfigyelő helye.
+### -Location
+A hálózati figyelő helye.
 
 ```yaml
 Type: System.String
@@ -102,8 +102,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (név)
-A Hálózatfigyelő neve.
+### -Name
+A hálózati figyelő neve.
 
 ```yaml
 Type: System.String
@@ -118,7 +118,7 @@ Accept wildcard characters: True
 ```
 
 ### -ResourceGroupName
-Az erőforrás csoport neve.
+Az erőforráscsoport neve.
 
 ```yaml
 Type: System.String
@@ -133,22 +133,22 @@ Accept wildcard characters: True
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
 ### Nincs
 
 ## KIMENETEK
 
-### Microsoft. Azure. commands. Network. models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-## MEGJEGYZI
-Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, hálózat, Hálózatfigyelő 
+## MEGJEGYZÉSEK
+Kulcsszavak: azure, azurerm, arm, resource, management, manager, network, networking, networking, network watcher 
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Új – AzNetworkWatcher](./New-AzNetworkWatcher.md)
+[New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
 
 [Get-AzNetworkWatcher](./Get-AzNetworkWatcher.md)
 
@@ -162,9 +162,9 @@ Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, há
 
 [Start-AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
 
-[Új – AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
+[New-AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
 
-[Új – AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
+[New-AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
 
 [Get-AzNetworkWatcherPacketCapture](./Get-AzNetworkWatcherPacketCapture.md)
 
@@ -172,11 +172,11 @@ Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, há
 
 [Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
-[Új – AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
+[New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
 
-[Teszt-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
+[Test-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
 
-[Teszt-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
+[Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
 
 [Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
@@ -188,7 +188,7 @@ Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, há
 
 [Remove-AzNetworkWatcherConnectionMonitor](./Remove-AzNetworkWatcherConnectionMonitor.md)
 
-[Új – AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
+[New-AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
 
 [Get-AzNetworkWatcherTroubleshootingResult](./Get-AzNetworkWatcherTroubleshootingResult.md)
 
@@ -200,4 +200,4 @@ Kulcsszavak: Azure, azurerm, ARM, erőforrás, kezelés, vezető, hálózat, há
 
 [Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)

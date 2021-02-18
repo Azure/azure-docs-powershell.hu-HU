@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ad
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Add-AzExpressRouteCircuitConnectionConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Add-AzExpressRouteCircuitConnectionConfig.md
-ms.openlocfilehash: a3b5b20eac34076dd6a5490a5d9cf1a5e2c49684
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: bc08305d7aa604dd9c7540573ffb5a199e85b287
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93837683"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100409766"
 ---
 # Add-AzExpressRouteCircuitConnectionConfig
 
-## Áttekintés
-Áramkör-kapcsolati konfigurációt ad az Express Route-áramkör privát kinézetéhez. 
+## SYNOPSIS
+Kapcsolati konfigurációt ad az Express Route Circuit magánjellegű társviszony-létesítéshez. 
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### SetByResource (alapértelmezett)
 ```
@@ -34,12 +34,12 @@ Add-AzExpressRouteCircuitConnectionConfig [-Name] <String> [-ExpressRouteCircuit
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Leírás
-Az **Add-AzExpressRouteCircuitConnectionConfig** parancsmag egy áramkör-kapcsolati konfigurációt ad egy ExpressRoute-áramkör személyes kinézetéhez. Ez a beállítás lehetővé teszi a két útvonal közötti átirányítást régiónként vagy előfizetésben. Felhívjuk a figyelmét arra, hogy a **AzExpressRouteCircuitPeeringConfig** futtatása után az Set-AzExpressRouteCircuit parancsmagot kell hívnia a konfiguráció aktiválásához.
+## LEÍRÁS
+Az **Add-AzExpressRouteCircuitConnectionConfig** parancsmag kapcsolatkonfigurációt ad az ExpressRoute-kapcsolati kapcsolat privát társviszonyhoz. Ez lehetővé teszi két Express Route Circuits régiók vagy előfizetések közötti társviszony-létesítését. Vegye figyelembe, hogy az **Add-AzExpressRouteCircuitPeeringConfig** futtatása után a Set-AzExpressRouteCircuit parancsmagot kell felhívnia a konfiguráció aktiválásához.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: áramkör-kapcsolati erőforrás hozzáadása meglévő ExpressRoute-áramkörhöz
+### 1. példa: Kapcsolati erőforrás hozzáadása meglévő ExpressRoute-áramkörhöz
 ```
 $circuit_init = Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg
 $circuit_peer = Get-AzExpressRouteCircuit -Name $peeringCircuitName -ResourceGroupName $rg
@@ -48,17 +48,17 @@ Add-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName -ExpressR
 Set-AzExpressRouteCircuit -ExpressRouteCircuit $circuit_init
 ```
 
-### 2. példa: áramkör-kapcsolati konfiguráció hozzáadása meglévő ExpressRoute-áramkörhöz csővezeték használatával
+### 2. példa: Kapcsolati kapcsolat beállítása a Piping használatával egy meglévő ExpressRoute-áramkörhöz
 ```
 $circuit_peer = Get-AzExpressRouteCircuit -Name $peeringCircuitName -ResourceGroupName $rg
 $addressSpace = '60.0.0.0/29'
 Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg|Add-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName -PeerExpressRouteCircuitPeering $circuit_peer.Peerings[0].Id -AddressPrefix $addressSpace -AuthorizationKey $circuit_peer.Authorizations[0].AuthorizationKey |Set-AzExpressRouteCircuit
 ```
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -AddressPrefix
-Az VxLan-alagutak létrehozása az Express Route-áramkörök között minimális/29 ügyféli címtartomány segítségével
+Legalább /29 ügyfélcímterület az Express Route Circuits VxLan-alagutak létrehozásához
 
 ```yaml
 Type: System.String
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 ```
 
 ### -AuthorizationKey
-Meghatalmazási kulcs egy másik előfizetésben a társközi Express útvonal-áramkörhöz. A társközi áramkör engedélyezését meglévő parancsok segítségével lehet létrehozni.
+Engedélyezési kulcs társi Express Route Circuit-hez egy másik előfizetésben. A társ áramkörön az engedélyezés meglévő parancsokkal is létre lehet hozva.
 
 ```yaml
 Type: System.String
@@ -88,7 +88,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -103,7 +103,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpressRouteCircuit
-A ExpressRoute-áramkör módosul. Ez az Azure objektum a **Get-AzExpressRouteCircuit** parancsmag által visszaadott érték.
+A módosítva van az ExpressRoute-áramkör. Ez a **Get-AzExpressRouteCircuit** parancsmag által visszaadott Azure-objektum.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit
@@ -117,8 +117,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name (név)
-A hozzáadni kívánt áramkör-kapcsolati erőforrás neve.
+### -Name
+A hozzáadni szükséges kapcsolatcsoport-kapcsolaterőforrás neve.
 
 ```yaml
 Type: System.String
@@ -133,7 +133,7 @@ Accept wildcard characters: False
 ```
 
 ### -PeerExpressRouteCircuitPeering
-Az erőforrás-azonosító a távoli áramkörről, amely az aktuális áramkörrel van kiválasztva.
+A távoli kapcsolatcsoport magánjellegű társviszony-létesítésének erőforrás-azonosítója, amelynek társviszonya az aktuális áramkörrel fog.
 
 ```yaml
 Type: System.String
@@ -147,8 +147,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -163,7 +163,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut. A parancsmag nem fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik. A parancsmag nem fut.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -178,19 +178,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. Azure. commands. Network. models. PSExpressRouteCircuit
+### Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. commands. Network. models. PSExpressRouteCircuit
+### Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
@@ -200,9 +200,9 @@ Ez a parancsmag a következő általános paramétereket támogatja:-debug,-Erro
 
 [Remove-AzExpressRouteCircuitConnectionConfig](Remove-AzExpressRouteCircuitConnectionConfig.md)
 
-[Set-AzExpressRouteCircuitConnectionConfig](Set-AzExpressRouteCircuitConnectionConfig.md)
 
-[Új – AzExpressRouteCircuitConnectionConfig](New-AzExpressRouteCircuitConnectionConfig.md)
+
+
 
 [Set-AzExpressRouteCircuit](Set-AzExpressRouteCircuit.md)
 

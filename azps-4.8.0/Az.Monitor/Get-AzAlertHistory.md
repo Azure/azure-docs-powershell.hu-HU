@@ -6,31 +6,31 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertHistory.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertHistory.md
-ms.openlocfilehash: 5d4b3be80602377a7eae378939e4bb10221de324
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 42f407235238cec0b7e298bce344e71c075cecfd
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94025642"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405839"
 ---
 # Get-AzAlertHistory
 
-## Áttekintés
-Megkapja az értesítések előzményeit.
+## SYNOPSIS
+A riasztások előzményeinek lekérte.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 Get-AzAlertHistory [-ResourceId <String>] [-StartTime <DateTime>] [-EndTime <DateTime>] [-Status <String>]
  [-Caller <String>] [-DetailedOutput] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Leírás
-A **Get-AzAlertHistory** parancsmag a bekapcsolt üzenetek, a letiltott, a kiégett és a megoldott üzenetek előzményeit kapja meg.
+## LEÍRÁS
+A **Get-AzAlertHistory** parancsmag beszerződik a riasztások előzményeinek engedélyezett, letiltott, megoldott, megoldott stb.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: az értesítési előzmények beszerzése
+### 1. példa: A riasztási előzmények lekérte
 ```
 PS C:\>Get-AzAlertHistory -StartTime 2015-02-11T11:00:00 -EndTime 2015-02-11T12:00:00 -DetailedOutput
 Authorization        : 
@@ -170,9 +170,9 @@ SubscriptionId       : b93fb07a-6f93-30be-bf3e-4f0deca15f4f
 SubStatus            :
 ```
 
-Ez a parancs a jelenlegi előfizetés megadott időkeretének figyelmeztetési előzményeit kapja meg.
+Ez a parancs az aktuális előfizetéshez megadott időkeret riasztási előzményeit kapja meg.
 
-### 2. példa: adott erőforrás riasztási előzményeinek beolvasása
+### 2. példa: Riasztási előzmények lekérte egy adott erőforráshoz
 ```
 PS C:\>Get-AzAlertHistory -StartTime 2015-02-11T11:00:00 -EndTime 2015-02-11T12:00:00 -ResourceId "/subscriptions/b93fb07a-6f93-30be-bf3e-4f0deca15f4f/resourceGroups/Default-Web-EastUS/providers/microsoft.insights/alertrules/checkrule3-4b135401-a30c-4224-ae21-fa53a5bd253d" -DetailedOutput
 
@@ -268,12 +268,12 @@ SubscriptionId       : b93fb07a-6f93-30be-bf3e-4f0deca15f4f
 SubStatus            :
 ```
 
-Ez a parancs a megadott erőforráshoz kapcsolódó figyelmeztetési szabályhoz kapcsolódó eseményeket kapja meg.
+Ez a parancs egy adott erőforráshoz tartozó riasztási szabályhoz kapcsolódó eseményeket kapja meg.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -Hívó
-A hívót adja meg.
+A hívót határozza meg.
 
 ```yaml
 Type: System.String
@@ -288,7 +288,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -317,9 +317,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -A befejezési időpont
-A lekérdezés befejezési időpontját adja meg helyi időben.
-Az alapértelmezett időpont az aktuális idő.
+### -EndTime
+A lekérdezés helyi idő szerint megadott záró idejét adja meg.
+Az alapértelmezett érték az aktuális időpont.
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -334,7 +334,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Megadja, hogy a szabály melyik erőforrás-AZONOSÍTÓval van társítva.
+Azt az erőforrás-azonosítót adja meg, amelyhez a szabály társítva van.
 
 ```yaml
 Type: System.String
@@ -348,9 +348,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Kezdő időpont
-A lekérdezés kezdési időpontját adja meg helyi időben.
-Az alapértelmezett időpont az aktuális helyi idő, egy óra mínusz.
+### -StartTime
+A lekérdezés kezdési idejét adja meg helyi idő szerint.
+Az alapértelmezett érték az aktuális helyi idő mínusz egy óra.
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -365,7 +365,7 @@ Accept wildcard characters: False
 ```
 
 ### -Állapot
-Az állapotot adja meg.
+Az állapot megadása.
 
 ```yaml
 Type: System.String
@@ -380,25 +380,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
-### System. null ' 1 [[System. DateTime, System. Private. CoreLib, Version = 4.0.0.0, Culture = semleges, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.DateTime, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameter
 
 ## KIMENETEK
 
-### Microsoft. Azure. commands. OutputClasses. PSEventData
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSEventData
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Add-AzLogAlertRule](./Add-AzLogAlertRule.md)
 
 [Add-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
 

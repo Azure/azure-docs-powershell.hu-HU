@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.accounts/a
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Add-AzEnvironment.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Add-AzEnvironment.md
-ms.openlocfilehash: ba5a398e21543bc4b19c09309884ceb11fed3197
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 2db2e90dc1292bdfe67907e5a180b08a09a54718
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94183769"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406009"
 ---
 # Add-AzEnvironment
 
-## Áttekintés
-Végpontokat és metaadatokat ad az Azure Resource Manager egy példányához.
+## SYNOPSIS
+Végpontokat és metaadatokat ad hozzá az Azure Resource Manager egy példányához.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### Név (alapértelmezett)
 ```
@@ -51,19 +51,19 @@ Add-AzEnvironment [-Name] <String> [[-StorageEndpoint] <String>] [-ARMEndpoint] 
  [<CommonParameters>]
 ```
 
-### Feltárási
+### Feltárás
 ```
 Add-AzEnvironment -AutoDiscover [-Uri <Uri>] [-Scope {Process | CurrentUser}]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Leírás
-Az Add-AzEnvironment parancsmag végpontokat és metaadatokat ad hozzá az Azure Resource Manager parancsmagok számára az Azure Resource Manager új példányához való csatlakozáshoz.
-A beépített környezetek AzureCloud és AzureChinaCloud az Azure Resource Manager meglévő nyilvános példányainak megcélzására.
+## LEÍRÁS
+A Add-AzEnvironment parancsmag végpontokat és metaadatokat ad hozzá, hogy az Azure Resource Manager-parancsmagok az Azure Resource Manager új példányához csatlakozzon.
+Az AzureCloud és az AzureChinaCloud beépített környezetek az Azure Resource Manager meglévő nyilvános példányait célják meg.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: új környezet létrehozása és módosítása
+### 1. példa: Új környezet létrehozása és módosítása
 ```
 PS C:\> Add-AzEnvironment -Name TestEnvironment `
         -ActiveDirectoryEndpoint TestADEndpoint `
@@ -113,9 +113,9 @@ ExtendedProperties                                : {}
 BatchEndpointResourceId                           :
 ```
 
-Ebben a példában egy új Azure-környezetet hozunk létre a minta végpontokkal az Add-AzEnvironment használatával, és a ActiveDirectoryEndpoint és a GraphEndpoint attribútum értékét az-as parancsmag set-AzEnvironment segítségével változtatjuk meg.
+Ebben a példában egy új Azure-környezetet hozunk létre minta végpontokkal az Add-AzEnvironment használatával, majd a Set-AzEnvironment parancsmag használatával módosítjuk a létrehozott környezet ActiveDirectoryEndpoint és GraphEndpoint attribútumainak értékét.
 
-### 2. példa: új környezet létrehozása URI-kapcsolaton keresztül
+### 2. példa: Új környezet felfedezése az Uri-n keresztül
 ```
 <#
 Uri https://configuredmetadata.net returns an array of environment metadata. The following example contains a payload for the AzureCloud default environment.
@@ -162,12 +162,12 @@ Name            Resource Manager Url ActiveDirectory Authority
 TestEnvironment TestRMEndpoint       TestADEndpoint/
 ```
 
-Ebben a példában egy új Azure-környezetet keresünk az https://configuredmetadata.net URI azonosítóból.
+Ebben a példában egy új Azure-környezetet fedezünk fel az `https://configuredmetadata.net` Uri környezetből.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -ActiveDirectoryEndpoint
-Az Azure Active Directory-hitelesítéshez az alapszintű szervezetet adja meg.
+Az Azure Active Directory-hitelesítés alapszolgáltatóját határozza meg.
 
 ```yaml
 Type: System.String
@@ -182,7 +182,7 @@ Accept wildcard characters: False
 ```
 
 ### -ActiveDirectoryServiceEndpointResourceId
-Az Azure Resource Manager vagy a Service Management (RDFE) végpontokra vonatkozó kérelmeket hitelesítő tokenek közönségét adja meg.
+Megadja az Azure Resource Manager- vagy RDFE-végpontokra vonatkozó kérelmeket hitelesítésseló jogkivonatok célközönségét.
 
 ```yaml
 Type: System.String
@@ -197,7 +197,7 @@ Accept wildcard characters: False
 ```
 
 ### -AdTenant
-Az alapértelmezett Active Directory-bérlőt adja meg.
+Az alapértelmezett Active Directory-bérlő.
 
 ```yaml
 Type: System.String
@@ -226,8 +226,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### – Automatikus észlelés
-Az alapértelmezett vagy konfigurált végponton keresztüli környezetek felfedezése.
+### -AutoDiscover
+Környezeteket fedez fel alapértelmezett vagy konfigurált végponton keresztül.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -242,7 +242,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureAnalysisServicesEndpointResourceId
-Az Azure Analysis Services-erőforrás erőforrás-azonosítója.
+Az Azure Analysis Services erőforrás erőforrás-azonosítója.
 
 ```yaml
 Type: System.String
@@ -257,7 +257,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureAnalysisServicesEndpointSuffix
-Az Azure log Analytics API-val való kommunikáció során használandó végpont.
+Az Azure Log Analytics API-val való kommunikáció során használt végpont.
 
 ```yaml
 Type: System.String
@@ -272,7 +272,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureAttestationServiceEndpointResourceId
-Annak az Azure tanúsítvány-szolgáltatásnak az erőforrás-azonosítója, amely a kért jogkivonat címzettje.
+Az Azure Attestation szolgáltatás erőforrás-azonosítója, amely a kért jogkivonat címzettje.
 
 ```yaml
 Type: System.String
@@ -287,7 +287,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureAttestationServiceEndpointSuffix
-Az Azure tanúsítási szolgáltatás DNS-utótagja.
+Az Azure Attestation szolgáltatás DNS-utótagja.
 
 ```yaml
 Type: System.String
@@ -302,7 +302,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureDataLakeAnalyticsCatalogAndJobEndpointSuffix
-Azure Data Lake – az Azure Data Lake Analytics munka-és katalógus-szolgáltatások DNS-utótagja
+Az Azure Data Lake Analytics-feladat- és katalógusszolgáltatások DNS-utótagja
 
 ```yaml
 Type: System.String
@@ -332,7 +332,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureKeyVaultDnsSuffix
-Az Azure Key Vault szolgáltatás DNS-utótagja. Példa a vault-int.azure-int.net
+Az Azure Key Vault szolgáltatás DNS-utótagja. Példa erre: vault-int.azure-int.net
 
 ```yaml
 Type: System.String
@@ -347,7 +347,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureKeyVaultServiceEndpointResourceId
-Az Azure Key Vault-adatszolgáltatások erőforrás-azonosítója, amely a kért jogkivonat címzettje.
+Az Azure Key Vault adatszolgáltatásának erőforrás-azonosítója, amely a kért jogkivonat címzettje.
 
 ```yaml
 Type: System.String
@@ -362,7 +362,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureOperationalInsightsEndpoint
-Az Azure log Analytics API-val való kommunikáció során használandó végpont.
+Az Azure Log Analytics API-val való kommunikáció során használt végpont.
 
 ```yaml
 Type: System.String
@@ -377,7 +377,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureOperationalInsightsEndpointResourceId
-Az Azure log Analytics API-t hitelesítő tokenek közönsége.
+Az Azure Log Analytics API-val hitelesítő tokenek célközönsége.
 
 ```yaml
 Type: System.String
@@ -392,7 +392,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureSynapseAnalyticsEndpointResourceId
-Az Azure szinapszis-Analytics erőforrás-azonosítója, amely a kért jogkivonat címzettje.
+Az Azure Synapse Analytics erőforrás-azonosítója, amely a kért jogkivonat címzettje.
 
 ```yaml
 Type: System.String
@@ -407,7 +407,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureSynapseAnalyticsEndpointSuffix
-Az Azure szinapszis-Analytics DNS-utótagja.
+Az Azure Synapse Analytics DNS-utótagja.
 
 ```yaml
 Type: System.String
@@ -422,7 +422,7 @@ Accept wildcard characters: False
 ```
 
 ### -BatchEndpointResourceId
-Annak az Azure-kötegnek az erőforrás-azonosítója, amely a kért jogkivonat címzettje
+A kért jogkivonat címzettjeként megadott Azure Batch szolgáltatás erőforrás-azonosítója
 
 ```yaml
 Type: System.String
@@ -437,7 +437,7 @@ Accept wildcard characters: False
 ```
 
 ### -DataLakeAudience
-Az AD Data Lake Services végponttal hitelesítő tokenek közönsége.
+Az AD Data Lake services Végponttal hitelesítő tokenek célközönsége.
 
 ```yaml
 Type: System.String
@@ -452,7 +452,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -467,7 +467,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableAdfsAuthentication
-Azt jelzi, hogy engedélyezve van az Active Directory összevonási szolgáltatások helyi hitelesítése.
+Azt jelzi, hogy az Active Directory összevonási szolgáltatások (ADFS) a helyeken való hitelesítés engedélyezett.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -482,7 +482,7 @@ Accept wildcard characters: False
 ```
 
 ### -GalleryEndpoint
-A központi telepítő sablonok Azure Resource Manager-gyűjteményének végpontját adja meg.
+Az Azure Resource Manager üzembe helyezési sablonjainak végpontját határozza meg.
 
 ```yaml
 Type: System.String
@@ -497,7 +497,7 @@ Accept wildcard characters: False
 ```
 
 ### -GraphAudience
-Az AD gráf végpontját hitelesítő tokenek közönsége.
+Az AD Graph-végponttal hitelesítő tokenek célközönsége.
 
 ```yaml
 Type: System.String
@@ -512,7 +512,7 @@ Accept wildcard characters: False
 ```
 
 ### -GraphEndpoint
-A Graph (Active Directory metadata) kérések URL-címét adja meg.
+A Graph(Active Directory metaadat-) kérések URL-címét adja meg.
 
 ```yaml
 Type: System.String
@@ -527,7 +527,7 @@ Accept wildcard characters: False
 ```
 
 ### -ManagementPortalUrl
-A felügyeleti portál URL-címét adja meg.
+Az felügyeleti portál URL-címét adja meg.
 
 ```yaml
 Type: System.String
@@ -541,8 +541,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name (név)
-A hozzáadni kívánt környezet nevét adja meg.
+### -Name
+A hozzáadni megfelelő környezet nevét adja meg.
 
 ```yaml
 Type: System.String
@@ -557,7 +557,7 @@ Accept wildcard characters: False
 ```
 
 ### -PublishSettingsFileUrl
-Azt az URL-címet adja meg, amelyből a. publishsettings fájlokat le lehet tölteni.
+Azt az URL-címet adja meg, amelyből a .publishsettings fájlok letölthetők.
 
 ```yaml
 Type: System.String
@@ -572,7 +572,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceManagerEndpoint
-Az Azure Resource Manager-kérések URL-címét adja meg.
+Az Azure Resource Manager-kérelmek URL-címe.
 
 ```yaml
 Type: System.String
@@ -586,8 +586,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Scope (hatókör)
-Meghatározza a környezeti változások hatókörét, például hogy a módosítások csak az aktuális folyamatra vagy a felhasználó által indított összes munkamenetre érvényesek-e.
+### -Scope
+Meghatározza a környezetváltozások hatókörét, például hogy a módosítások csak az aktuális folyamatra vagy a felhasználó által indított összes munkamenetre vonatkoznak-e.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Profile.Common.ContextModificationScope
@@ -603,7 +603,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceEndpoint
-A Service Management (RDFE) kérések végpontját adja meg.
+Az RDFE-kérelmek végpontját adja meg.
 
 ```yaml
 Type: System.String
@@ -618,7 +618,7 @@ Accept wildcard characters: False
 ```
 
 ### -SqlDatabaseDnsSuffix
-Az Azure SQL-adatbázis kiszolgálóihoz tartozó tartománynév-utótagot adja meg.
+Az Azure SQL-adatbáziskiszolgálók tartománynév-utótagját adja meg.
 
 ```yaml
 Type: System.String
@@ -633,7 +633,7 @@ Accept wildcard characters: False
 ```
 
 ### -StorageEndpoint
-A tárterület (blob, táblázat, várólista és fájl) elérési végpontját adja meg.
+A tárterület-hozzáférés (blob, tábla, várólista és fájl) végpontját adja meg.
 
 ```yaml
 Type: System.String
@@ -648,7 +648,7 @@ Accept wildcard characters: False
 ```
 
 ### -TrafficManagerDnsSuffix
-Az Azure Traffic Manager Services szolgáltatáshoz tartozó tartománynév-utótagot adja meg.
+Az Azure Traffic Manager-szolgáltatások tartománynév-utótagját adja meg.
 
 ```yaml
 Type: System.String
@@ -662,8 +662,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -URI
-Az internetes erőforrás URI-ja a beolvasási környezetekhez.
+### -Uri
+Megadja a környezetek lehívását lehetővé tő internetes erőforrás URI azonosítóját.
 
 ```yaml
 Type: System.Uri
@@ -677,8 +677,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -693,7 +693,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut. A parancsmag nem fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik. A parancsmag nem fut.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -708,19 +708,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameter
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. profil. models. PSAzureEnvironment
+### Microsoft.Azure.Commands.Profile.Models.PSAzureEnvironment
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 

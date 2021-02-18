@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Set-AzDiagnosticSetting.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Set-AzDiagnosticSetting.md
-ms.openlocfilehash: 554a754d8d7e6000556b2141807d2b6fe86cc230
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: a1ccbf6ee912c26bc4ecbe3b58a9db12dac112e6
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93845086"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100409715"
 ---
 # Set-AzDiagnosticSetting
 
-## Áttekintés
-Az erőforrás naplók és metrikák beállításainak beállítása.
+## SYNOPSIS
+Beállítja az erőforrás napló- és metrikákra vonatkozó beállításait.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### OldSetDiagnosticSetting (alapértelmezett)
 ```
@@ -37,28 +37,28 @@ Set-AzDiagnosticSetting -InputObject <PSServiceDiagnosticSettings> [-DefaultProf
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Leírás
-A **set-AzDiagnosticSetting** parancsmag engedélyezi vagy letiltja az adott erőforráshoz tartozó minden gabona-és naplózási kategóriát.
-A naplókat és a metrikákat a program a megadott tárterület-fiókban tárolja.
-Ez a parancsmag végrehajtja a ShouldProcess mintát, azaz a felhasználó megerősítését kérheti az erőforrás tényleges létrehozása, módosítása vagy eltávolítása előtt.
+## LEÍRÁS
+A **Set-AzDiagnosticSetting** parancsmag engedélyezi vagy letiltja az adott erőforrás minden egyes szemcsés és naplókategóriáját.
+A naplókat és a metrikákat a megadott tárfiók tárolja.
+Ez a parancsmag implementálja a ShouldProcess mintát, azaz megerősítést kérhet a felhasználótól, mielőtt ténylegesen létrehozza, módosítja vagy eltávolítja az erőforrást.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: egy erőforrás összes metrikájának és naplójának engedélyezése
+### 1. példa: Az erőforráshoz szükséges összes mérőszám és napló engedélyezése
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $True
 ```
 
-Ez a parancs a Resource01 minden elérhető metrikáját és naplóját engedélyezi.
+Ez a parancs engedélyezi az Összes elérhető metrikát és naplót az Resource01-hez.
 
-### 2. példa: az összes metrikák és naplók letiltása
+### 2. példa: Az összes mérőszám és napló letiltása
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $False
 ```
 
-Ez a parancs letiltja az erőforrás-Resource01 elérhető összes metrikát és naplót.
+Ez a parancs letiltja az erőforrás Erőforrás01 erőforrás összes rendelkezésre álló mérőszámát és naplóját.
 
-### 3. példa: több metrikák kategória engedélyezése/letiltása
+### 3. példa: Több metrikakategória engedélyezése/letiltása
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $False -MetricCategory MetricCategory1,MetricCategory2
 StorageAccountId   : <storageAccountId>
@@ -84,10 +84,10 @@ Logs
    Category : Category4
 ```
 
-Ez a parancs letiltja a Category1 és a Category2 metrikák kategóriáit.
-A többi kategória változatlan marad.
+Ez a parancs letiltja a Kategória1 és a Kategória2 nevű metrikák kategóriáit.
+Az összes többi kategória változatlan marad.
 
-### Példa 4: több naplózási kategória engedélyezése/letiltása
+### 4. példa: Több naplókategória engedélyezése/letiltása
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $True -Category Category1,Category2
 StorageAccountId   : <storageAccountId>
@@ -113,29 +113,29 @@ Logs
    Category : Category4
 ```
 
-Ez a parancs lehetővé teszi a Category1 és a Category2.
-A többi mérőszám és naplók kategória változatlan marad.
+Ez a parancs engedélyezi a Kategória1 és a Kategória2 kategóriát.
+Az összes többi metrika és naplókategória változatlan marad.
 
-### 4. példa: időgabona és több kategória engedélyezése
+### 4. példa: Időszemét és több kategória engedélyezése
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $True -Category Category1,Category2 -Timegrain PT1M
 ```
 
-Ez a parancs csak a Category1, az Category2 és a Time Grain PT1M teszi lehetővé.
-Minden más időgabona és kategória sem változik.
+Ez a parancs csak Kategória1, Kategória2 és idő grain PT1M-et tesz lehetővé.
+Minden más idő és kategória változatlan marad.
 
-### Példa 5: csővezeték használata
+### 5. példa: Folyamat használata
 ```
 PS C:\>Get-AzDiagnosticSetting -ResourceId "Resource01" | Set-AzDiagnosticSetting -Enabled $True -Category Category1,Category2
 ```
 
-Ez a parancs a PowerShell-futószalagot használja a diagnosztikai beállítások megadásához (nincs módosítás).
+Ez a parancs a PowerShell-folyamat segítségével beállít egy diagnosztikai beállítást (módosítás nélkül).
 
-## PARAMÉTEREK
+## PARAMETERS
 
-### -Category (kategória)
-Az engedélyezni vagy letiltani kívánt naplózási kategóriák listáját adja meg az *engedélyezett* érték szerint.
-Ha nincs megadva kategória, ez a parancs minden támogatott kategórián működik. 
+### -Category
+Az engedélyezett vagy letiltható naplókategóriák listája az Engedélyezett *értéknek megfelelően.*
+Ha nincs megadva kategória, ez a parancs az összes támogatott kategórián működik.
 
 ```yaml
 Type: System.Collections.Generic.List`1[System.String]
@@ -150,7 +150,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -165,8 +165,8 @@ Accept wildcard characters: False
 ```
 
 ### -Engedélyezve
-Azt jelzi, hogy engedélyezi-e a diagnosztika használatát.
-Adja meg $True a diagnosztika engedélyezéséhez, vagy $False a diagnosztika letiltásához.
+Azt jelzi, hogy engedélyezni kell-e a diagnosztika funkcióját.
+Adja $True a diagnosztika engedélyezéséhez szükséges beállításokat, $False a diagnosztika letiltásához szükséges beállításokat.
 
 ```yaml
 Type: System.Boolean
@@ -181,7 +181,7 @@ Accept wildcard characters: False
 ```
 
 ### -EventHubAuthorizationRuleId
-Az esemény központi engedélyezési szabály azonosítója
+Az eseményközpont engedélyezési szabályazonosítója
 
 ```yaml
 Type: System.String
@@ -196,7 +196,7 @@ Accept wildcard characters: False
 ```
 
 ### -EventHubName
-Az esemény központi neve
+Az eseményközpont neve
 
 ```yaml
 Type: System.String
@@ -211,9 +211,9 @@ Accept wildcard characters: False
 ```
 
 ### -ExportToResourceSpecific
-Jelző, amely azt jelzi, hogy az Exportálás a LA értékre egy erőforrás-specifikus táblának kell lennie, más néven dedikált vagy rögzített séma tábla, szemben a **AzureDiagnostics** nevű **alapértelmezett** dinamikus séma-táblázattal.
+Flag indicating that the export to LA must be done to a resource specific table, a.k.a. dedikált vagy rögzített sématáblát,  szemben az **AzureDiagnostics** nevű alapértelmezett dinamikus sématáblával.
 
-Ez az argumentum csak akkor érvényes, ha a **workspaceId** argumentum is meg van adva.
+Ez az argumentum csak akkor hatékony, ha az **argumentum -workspaceId** is meg van adva.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -228,7 +228,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-A bemeneti objektum (a csővezetékről lehetséges) Ekkor a program Kinyeri a nevet és a resourceId az objektumból.
+A bemeneti objektum (a folyamatból lehetséges).) A név és az erőforrásazonosító ki lesz bontva ebből az objektumból.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSServiceDiagnosticSettings
@@ -243,7 +243,8 @@ Accept wildcard characters: False
 ```
 
 ### -MetricCategory
-A metrikus kategóriák listája. Ha nincs megadva kategória, ez a parancs minden támogatott kategórián működik. 
+A metrikus kategóriák listája.
+Ha nincs megadva kategória, ez a parancs az összes támogatott kategórián működik.
 
 ```yaml
 Type: System.Collections.Generic.List`1[System.String]
@@ -257,8 +258,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name (név)
-A diagnosztikai beállítás neve. Az alapértelmezett érték a **szolgáltatás**.
+### -Name
+A diagnosztikai beállítás neve. Az alapértelmezett érték a **szolgáltatás.**
 
 ```yaml
 Type: System.String
@@ -273,7 +274,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Az erőforrás AZONOSÍTÓját adja meg.
+Az erőforrás azonosítója.
 
 ```yaml
 Type: System.String
@@ -303,7 +304,7 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionInDays
-A napok szerinti adatmegőrzési házirendet adja meg.
+Az adatmegőrzési házirendet napokban adja meg.
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -318,7 +319,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceBusRuleId
-A Service Bus szabály azonosítója.
+A szolgáltatásbusz szabályazonosítója.
 
 ```yaml
 Type: System.String
@@ -333,7 +334,7 @@ Accept wildcard characters: False
 ```
 
 ### -StorageAccountId
-Annak a tárolási fióknak az AZONOSÍTÓját adja meg, amelybe az adatot menteni szeretné.
+Annak a tárfióknak az azonosítója, amelybe menteni kell az adatokat.
 
 ```yaml
 Type: System.String
@@ -348,8 +349,8 @@ Accept wildcard characters: False
 ```
 
 ### -Timegrain
-A metrikák engedélyezéséhez vagy letiltásához szükséges időmennyiséget adja meg az *engedélyezett* értéknek megfelelően.
-Ha nem ad meg időgabonát, ez a parancs minden rendelkezésre álló időgabona esetén működik.
+Az Engedélyezett értéknek megfelelően meghatározza a metrikák engedélyezésére vagy letiltására vonatkozó *időértékeket.*
+Ha nem ad meg időszemetet, ez a parancs az összes rendelkezésre álló időszeméten működik.
 
 ```yaml
 Type: System.Collections.Generic.List`1[System.String]
@@ -364,7 +365,7 @@ Accept wildcard characters: False
 ```
 
 ### -WorkspaceId
-A munkaterület azonosítója
+A Naplóelemzés munkaterület erőforrás-azonosítója, amelybe naplókat/metrikákat kell küldeni
 
 ```yaml
 Type: System.String
@@ -378,8 +379,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -394,7 +395,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut. A parancsmag nem fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik. A parancsmag nem fut.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -409,27 +410,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. Azure. commands. OutputClasses. PSServiceDiagnosticSettings
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSServiceDiagnosticSettings
 
-### System. String
+### System.String
 
-### System. Boolean
+### System.Boolean
 
-### System. Collections. Generic. list ' 1 [[System. string, System. Private. CoreLib, Version = 4.0.0.0, Culture = semleges, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Collections.Generic.List'1[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### System. null ' 1 [[System. Boolean, System. Private. CoreLib, Version = 4.0.0.0, Culture = semleges, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### System. null ' 1 [[System. Int32, System. Private. CoreLib, Version = 4.0.0.0, Culture = semleges, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
 ## KIMENETEK
 
-### Microsoft. Azure. commands. OutputClasses. PSServiceDiagnosticSettings
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSServiceDiagnosticSettings
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 

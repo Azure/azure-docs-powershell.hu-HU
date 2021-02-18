@@ -6,32 +6,32 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/get-az
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlServerAdvancedThreatProtectionSetting.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlServerAdvancedThreatProtectionSetting.md
-ms.openlocfilehash: 94963c8c5d61c91e2d53cdf7b12cc333acc566a3
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: a9d2d82ae9b35b79701d071fa7598cf40b185cd5
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94181356"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100409817"
 ---
 # Get-AzSqlServerAdvancedThreatProtectionSetting
 
-## Áttekintés
-A kiszolgáló speciális veszélyforrások elleni védelemre vonatkozó beállításait kapja meg.
+## SYNOPSIS
+A kiszolgáló komplex veszélyforrások elleni védelemre vonatkozó speciális beállításait kapja meg.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 Get-AzSqlServerAdvancedThreatProtectionSetting -ServerName <String> [-ResourceGroupName] <String>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Leírás
-A **Get-AzSqlServerAdvancedThreatProtectionSetting** parancsmag az Azure SQL Server speciális veszélyforrások elleni védelmét biztosító beállításait kapja meg.
-A parancsmag használatához adja meg a *ResourceGroupName* és a *kiszolgálónév* paramétert annak a kiszolgálónak a meghatározásához, amelynek a parancsmagja a beállításokat kapja.
+## LEÍRÁS
+A **Get-AzSqlServerAdvancedThreatProtectionSetting** parancsmag megkapja egy Azure SQL-kiszolgáló komplex veszélyforrás-védelmi beállításait.
+A parancsmagot úgy használhatja, hogy megadja a *ResourceGroupName* és *a ServerName* paramétert annak a kiszolgálónak a azonosításához, amelynek a parancsmagja megkapja a beállításokat.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: a speciális veszélyforrások elleni védelem beállításainak beszerzése egy kiszolgálón
+### 1. példa: A komplex veszélyforrások elleni védelem speciális beállításainak lekérte
 ```
 PS C:\>Get-AzSqlServerAdvancedThreatProtectionSetting -ResourceGroupName "ResourceGroup11" -ServerName "Server01"
 ResourceGroupName            : ResourceGroup11
@@ -44,13 +44,13 @@ ExcludedDetectionTypes       : {}
 RetentionInDays              : 0
 ```
 
-Ez a parancs a Server01 nevű kiszolgáló speciális veszélyforrásokkal kapcsolatos védelmi beállításait kapja meg.
-A kiszolgáló az erőforráscsoport ResourceGroup11 van társítva.
+Ez a parancs a Kiszolgáló01 nevű kiszolgáló komplex veszélyforrás-védelmi beállításait kapja meg.
+A kiszolgáló hozzá van rendelve az Erőforráscsoport11 erőforráscsoporthoz.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Annak az erőforráscsoport-csoportnak a neve, amelyhez a kiszolgáló tartozik.
+Annak az erőforráscsoportnak a nevét adja meg, amelyhez a kiszolgáló tartozik.
 
 ```yaml
 Type: System.String
@@ -79,7 +79,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Kiszolgálónév
+### -ServerName
 A kiszolgáló nevét adja meg.
 
 ```yaml
@@ -94,8 +94,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -110,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik.
 A parancsmag nem fut.
 
 ```yaml
@@ -126,21 +126,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. SQL. ThreatDetection. Model. ServerAdvancedThreatProtectionSettingsModel
+### Microsoft.Azure.Commands.Sql.ThreatDetection.Model.ServerAdvancedThreatProtectionSettingsModel
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Remove-AzSqlDatabaseAdvancedThreatProtectionSetting](./Remove-AzSqlDatabaseAdvancedThreatProtectionSetting.md)
 
 [SQL-adatbázis dokumentációja](https://docs.microsoft.com/azure/sql-database/)
 

@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/di
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Disable-AzActivityLogAlert.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Disable-AzActivityLogAlert.md
-ms.openlocfilehash: 3ed174a27d718f677311322a8ed5e89d0f8e8614
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 4ce3bc8c0efd5acd4e39d61c083c82bff960066e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94015009"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100409222"
 ---
 # Disable-AzActivityLogAlert
 
-## Áttekintés
-Letiltja a műveletnapló riasztását, és beállítja annak címkéit.
+## SYNOPSIS
+Letilt egy tevékenységnapló-riasztást, és beállítja a címkéit.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### DisableByNameAndResourceGroup
 ```
@@ -38,39 +38,39 @@ Disable-AzActivityLogAlert -ResourceId <String> [-DefaultProfile <IAzureContextC
  [<CommonParameters>]
 ```
 
-## Leírás
-A **disable-AzActivityLogAlert** parancsmag letiltja és aktivitási naplót jelenít meg, és lehetővé teszi a címkék beállítását.
-Ez a parancsmag végrehajtja a ShouldProcess mintát, azaz a felhasználó megerősítését kérheti az erőforrás tényleges javításának megkezdése előtt.
+## LEÍRÁS
+A **Disable-AzActivityLogAlert** parancsmag letiltja a tevékenységek naplóját, és lehetővé teszi a címkék beállítását.
+Ez a parancsmag implementálja a ShouldProcess mintát, azaz megerősítést kérhet a felhasználótól, mielőtt ténylegesen javítja az erőforrást.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: tevékenység-naplózási riasztás letiltása
+### 1. példa: Tevékenységnapló-riasztás letiltása
 ```
 PS C:\>Disable-AzActivityLogAlert -Name "alert1" -ResourceGroupName "Default-ActivityLogsAlerts"
 ```
 
-Ez a parancs letiltja a alert1 nevű műveletnapló riasztást az erőforráscsoport default-ActivityLogsAlerts.
-Ez a parancs megváltoztatja a alert1 nevű műveletnapló-riasztás címkék tulajdonságát, és letiltja azt.
+Ez a parancs letiltja a Tevékenységnapló riasztás1 nevű riasztását a Default-ActivityLogsAlerts erőforráscsoportban.
+Ez a parancs módosítja a riasztás1 nevű tevékenységnapló-riasztás címketulajdonságát, és letiltja azt.
 
-### 2. példa: tevékenység-naplózási riasztás letiltása PSActivityLogAlertResource-objektum használatával bemenetként
+### 2. példa: Tevékenységnapló-riasztás letiltása a PSActivityLogAlertResource objektum használatával bevitelként
 ```
 PS C:\>$obj = Get-AzActivityLogAlert -ResourceGroup "Default-activityLogAlerts" -Name "alert1"
 PS C:\>Disable-AzActivityLogAlert -InputObject $obj
 ```
 
-Ez a parancs letiltja a alert1 nevű műveletnapló riasztást. Ehhez a PSActivityLogAlertResource objektumot használja bemeneti argumentumként.
+Ez a parancs letiltja az 1. tevékenységnapló-riasztást. Ehhez bemeneti argumentumként egy PSActivityLogAlertResource objektumot használ.
 
-### 3. példa: a ActivityLogAlert letiltása a ResourceId paraméterrel
+### 3. példa: A ActivityLogAlert letiltása az ResourceId paraméter használatával
 ```
 PS C:\>Get-AzResource -ResourceGroupName "myResourceGroup" -Name "myLogAlert" | Disable-AzActivityLogAlert
 ```
 
-Ez a parancs letiltja a ActivityLogAlert a ResourceId paraméterrel a pipe-ról.
+Ez a parancs letiltja a ActivityLogAlert paramétert a pipe ResourceId paraméterével.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-A hívás InputObject tulajdonságát állítja be a kötelező név, az erőforráscsoport neve és a választható címke tulajdonságai kinyeréséhez.
+Beállítja a hívás InputObject tags tulajdonságát, hogy kinyerje a kötelező nevet, az erőforráscsoport nevét és a választható címketulajdonságokat.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
@@ -99,8 +99,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name (név)
-A műveletnapló riasztásának neve.
+### -Name
+A tevékenységnapló-riasztás neve.
 
 ```yaml
 Type: System.String
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Annak az erőforráscsoportnek a neve, amelyben az értesítési erőforrás létezik.
+Annak az erőforráscsoportnak a neve, amelyben a riasztási erőforrás létezni fog.
 
 ```yaml
 Type: System.String
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-A hívás ResourceId-címkék tulajdonságát adja meg a szükséges név, az erőforráscsoport nevének kinyeréséhez.
+Beállítja a hívás ResourceId tags tulajdonságát a szükséges név, az erőforráscsoport nevének tulajdonságainak kibontása érdekében.
 
 ```yaml
 Type: System.String
@@ -144,8 +144,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -160,7 +160,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut. A parancsmag nem fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik. A parancsmag nem fut.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -175,19 +175,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
-### Microsoft. Azure. commands. OutputClasses. PSActivityLogAlertResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
 
 ## KIMENETEK
 
-### Microsoft. Azure. commands. OutputClasses. PSActivityLogAlertResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
@@ -197,8 +197,8 @@ Ez a parancsmag a következő általános paramétereket támogatja:-debug,-Erro
 
 [Remove-AzActivityLogAlert](./Remove-AzActivityLogAlert.md)
 
-[Új – AzActionGroup](./New-AzActionGroup.md)
+[New-AzActionGroup](./New-AzActionGroup.md)
 
-[Új – AzActivityLogAlertCondition](./Get-AzActivityLogAlertCondition.md)
+
 
 [Enable-AzActivityLogAlert](./Enable-AzActivityLogAlert.md)

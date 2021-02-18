@@ -1,17 +1,17 @@
 ---
 title: Az Azure Az PowerShell-moduljának bemutatása
 description: Bemutatkozik az Azure-ral való interakcióhoz javasolt új Az PowerShell-modul, amely az AzureRM PowerShell-modult váltja le.
-ms.date: 12/1/2020
+ms.date: 02/12/2021
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 9021a1d8fdc73aedb87b17631f8e67cb8ef79166
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: b52b6995fb50a6ce502d42e7df588ca72340a1e7
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100012665"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100409477"
 ---
 # <a name="introducing-the-azure-az-powershell-module"></a>Az Azure Az PowerShell-moduljának bemutatása
 
@@ -78,7 +78,9 @@ Ha a szkriptjei még mindig az AzureRM modulon alapulnak, számos erőforrás á
 
 Az Azure legfrissebb PowerShell-modulja az Az. A hibákat vagy a funkciókéréseket közvetlenül a [GitHub-adattárban](https://github.com/Azure/azure-powershell) rögzítheti, vagy a Microsoft ügyfélszolgálatán keresztül is jelentheti, ha rendelkezik támogatási szerződéssel. A funkciókérések az Az legújabb verziójában lesznek implementálva. A kritikus hibák javítása az Az utolsó két verziójában lesz implementálva.
 
-Az AzureRM modul nem bővül újabb parancsmagokkal vagy funkciókkal. Az AzureRM modul hivatalos karbantartása és kritikus hibáinak javítása azonban 2021 februárjáig nem szűnik meg.
+Mivel az az PowerShell-modulok már rendelkeznek a AzureRM PowerShell-modulok képességeivel, és így tovább, a AzureRM PowerShell-modulokat a 2024. február 29-én kivonják.
+
+A szolgáltatás megszakadásának elkerülése érdekében frissítse a AzureRM PowerShell-modulokat használó [parancsfájlokat](https://aka.ms/azpsmigrate) az az PowerShell-modulok 2024. február 29-én való használatára. A parancsfájlok automatikus frissítéséhez kövesse a gyors [üzembe helyezési útmutatót](/powershell/azure/quickstart-migrate-azurerm-to-az-automatically).
 
 ## <a name="data-collection"></a>Adatgyűjtés
 

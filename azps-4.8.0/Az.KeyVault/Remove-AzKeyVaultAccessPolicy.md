@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/r
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultAccessPolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultAccessPolicy.md
-ms.openlocfilehash: e084894c26cee1a619f418437986593fe86876bb
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: e19565aa8ae249acf61fce67f0a2b54e20143758
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94025303"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410157"
 ---
 # Remove-AzKeyVaultAccessPolicy
 
-## Áttekintés
-Egy felhasználó vagy alkalmazás összes engedélyének eltávolítása egy kulcs-boltozatról.
+## SYNOPSIS
+Eltávolítja egy felhasználó vagy alkalmazás összes engedélyét egy kulcstárból.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### ByUserPrincipalName (alapértelmezett)
 ```
@@ -115,14 +115,14 @@ Remove-AzKeyVaultAccessPolicy [-ResourceId] <String> [-EnabledForDeployment] [-E
  [<CommonParameters>]
 ```
 
-## Leírás
-A **Remove-AzKeyVaultAccessPolicy** parancsmag eltávolítja a felhasználók vagy alkalmazások összes engedélyét, illetve a fő tárolók minden felhasználóját és alkalmazást.
-Az Azure-előfizetés fő tárolóját tartalmazó Azure-előfizetés tulajdonosa még akkor is adhat hozzá engedélyeket a kulcs boltozatához, ha eltávolítja az összes engedélyt.
-Fontos tudni, hogy bár az erőforráscsoport beállítása nem kötelező ehhez a parancsmaghoz, a jobb teljesítmény érdekében ezt el kell végeznie.
+## LEÍRÁS
+A **Remove-AzKeyVaultAccessPolicy** parancsmag eltávolítja egy felhasználó vagy alkalmazás, illetve az összes felhasználó és alkalmazás összes engedélyét egy kulcstárból.
+Még ha az összes engedélyt eltávolítja is, a kulcstárat tartalmazó Azure-előfizetés tulajdonosa adhat hozzá engedélyeket a kulcstárhoz.
+Vegye figyelembe, hogy bár az erőforráscsoport megadása nem kötelező ehhez a parancsmaghoz, a jobb teljesítmény érdekében ezt kell megtennie.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: felhasználó engedélyeinek eltávolítása
+### 1. példa: Felhasználó engedélyeinek eltávolítása
 ```powershell
 PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -UserPrincipalName 'PattiFuller@contoso.com' -PassThru
 
@@ -158,35 +158,35 @@ Network Rule Set                 :
 Tags                             :
 ```
 
-Ez a parancs eltávolítja az összes olyan engedélyt, amelyet a felhasználó a PattiFuller@contoso.com Contoso03Vault nevű kulcs-boltíven tartalmaz.  Ha-PassThru van megadva, a program a parancssori objektumot adja vissza.
+Ez a parancs eltávolítja a felhasználó összes olyan engedélyét, amely a PattiFuller@contoso.com Contoso03Vault nevű kulcstárban található.  Ha a -PassThru érték meg van adva, a KeyVault objektum lesz az eredmény.
 
-### 2. példa: az alkalmazások engedélyeinek eltávolítása
+### 2. példa: Alkalmazás engedélyeinek eltávolítása
 ```powershell
 PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ServicePrincipalName 'http://payroll.contoso.com'
 ```
 
-Ez a parancs eltávolítja az összes olyan engedélyt, amelyet az alkalmazás a Contoso03Vault nevű kulcs boltozaton tartalmaz.
-Ez a példa azonosítja az alkalmazást az Azure Active Directory szolgáltatásban regisztrált egyszerű szolgáltatásnév használatával http://payroll.contoso.com .
+Ez a parancs eltávolítja az összes engedélyt, amely egy alkalmazás a Contoso03Vault nevű kulcstárban található.
+Ez a példa azonosítja az alkalmazást az Azure Active Directoryban regisztrált egyszerű szolgáltatásnév használatával. `http://payroll.contoso.com`
 
-### 3. példa: az alkalmazás engedélyeinek eltávolítása az objektum-azonosító használatával
+### 3. példa: Alkalmazás engedélyeinek eltávolítása az objektumazonosító használatával
 ```powershell
 PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ObjectID 34595082-9346-41b6-8d6b-295a2808b8db
 ```
 
-Ez a parancs eltávolítja az összes olyan engedélyt, amelyet az alkalmazás a Contoso03Vault nevű kulcs boltozaton tartalmaz.
-Ez a példa azonosítja az alkalmazást a szolgáltatás megbízójának objektum-azonosítója alapján.
+Ez a parancs eltávolítja az összes engedélyt, amely egy alkalmazásnak a Contoso03Vault nevű kulcstárban található.
+Ez a példa azonosítja az alkalmazást a szolgáltatásnév objektumazonosítója alapján.
 
-### 4. példa: engedélyek eltávolítása a Microsofthoz. számítási erőforrás-szolgáltató
+### 4. példa: A Microsoft.Compute erőforrásszolgáltató engedélyeinek eltávolítása
 ```powershell
 PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ResourceGroupName 'Group14' -EnabledForDeployment
 ```
 
-Ez a parancs eltávolítja az engedélyt a Microsoft számára. az erőforrás-szolgáltató kiszámításához a Contoso03Vault titkait kell beszereznie.
+Ez a parancs eltávolítja a Microsoft.Compute erőforrás-szolgáltató engedélyét a Contoso03Vault-adattitkok kiszabadítására.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -ApplicationId
-Annak az alkalmazásnak az AZONOSÍTÓját adja meg, amelynek az engedélyeit el kell távolítani
+Annak az alkalmazásnak az azonosítóját adja meg, amelynek az engedélyét el kell távolítani.
 
 ```yaml
 Type: System.Nullable`1[System.Guid]
@@ -201,7 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -216,7 +216,7 @@ Accept wildcard characters: False
 ```
 
 ### -EmailAddress
-Annak a felhasználónak a felhasználói e-mail-címét adja meg, akinek az elérését el szeretné távolítani.
+Annak a felhasználónak az e-mail-címét adja meg, akinek a hozzáférését el szeretné távolítani.
 
 ```yaml
 Type: System.String
@@ -231,7 +231,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForDeployment
-Ha meg van adva, azzal letiltja a titkot ebből a kulcsfájlból a Microsofttól. kiszámítja az erőforrás-szolgáltatót, ha az erőforrás létrehozásakor hivatkozik.
+Ha meg van adva, a Microsoft.Compute erőforrásszolgáltató letiltja a titkos titkos adatok beolvasását ebből a kulcstárból, amikor az erőforrás-létrehozás során hivatkozik rá.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -246,7 +246,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForDiskEncryption
-Ha meg van adva, akkor az Azure Disk Encryption segítségével letilthatja a titkos kulcsok e kulcsból való lekérését.
+Ha meg van adva, az Azure Lemeztitkosítás letiltja az ebben a kulcstárban lévő titkos adatok beolvasását.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -261,7 +261,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForTemplateDeployment
-Ha meg van adva, akkor a sablonok esetén az Azure Resource Manager letiltja a titkok e kulcsból való lekérését.
+Ha meg van adva, az Azure Resource Manager letiltja a kulcsok lekérését ebből a kulcstárból, amikor sablonokban hivatkoznak rá.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -276,7 +276,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-A Key Vault objektum.
+Key Vault objektum.
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
@@ -291,7 +291,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-Annak az Azure Active Directory-fióknak az objektum-AZONOSÍTÓját adja meg, amelynek az engedélyeit el szeretné távolítani.
+Annak a felhasználónak vagy szolgáltatásnévnek az objektumazonosítóját adja meg az Azure Active Directoryban, amelynek engedélyét el szeretné távolítani.
 
 ```yaml
 Type: System.String
@@ -306,8 +306,8 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Egy olyan objektumot ad eredményül, amely a munkaterületet jelképezi.
-Ez a parancsmag alapértelmezés szerint nem hoz létre semmilyen kimenetet.
+Egy objektumot ad vissza, amely azt az elemet tartalmazza, amellyel dolgozik.
+Ez a parancsmag alapértelmezés szerint nem hoz létre kimenetet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -322,8 +322,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Annak a kulcsfájl-csoportnak a nevét adja meg, amelynek a hozzáférési házirendjét módosították.
-Ha nem adja meg, ez a parancsmag az aktuális előfizetésben keresi a fő boltozatot.
+Annak a kulcstárnak a nevét adja meg, amelynek a hozzáférési házirendje módosul.
+Ha nincs megadva, ez a parancsmag megkeresi a kulcstárat az aktuális előfizetésben.
 
 ```yaml
 Type: System.String
@@ -338,7 +338,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-A főkészlet erőforrás-azonosítója.
+KeyVault-erőforrás azonosítója.
 
 ```yaml
 Type: System.String
@@ -353,8 +353,8 @@ Accept wildcard characters: False
 ```
 
 ### -ServicePrincipalName
-Annak az alkalmazásnak az egyszerű szolgáltatásnevet adja meg, akinek az engedélyeit el szeretné távolítani.
-Adja meg az Azure Active Directory alkalmazásban regisztrált alkalmazás-azonosítót (más néven ügyfél-azonosítót).
+Annak az alkalmazásnak az egyszerű szolgáltatásnevét adja meg, amelynek az engedélyét el szeretné távolítani.
+Adja meg az alkalmazáshoz az Azure Active Directoryban regisztrált alkalmazásazonosítót ( más néven ügyfélazonosítót).
 
 ```yaml
 Type: System.String
@@ -369,7 +369,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserPrincipalName
-Annak a felhasználónak az egyszerű felhasználónevét adja meg, akinek az elérését el szeretné távolítani.
+Annak a felhasználónak a felhasználó egyszerű felhasználónevét adja meg, akinek a hozzáférését el szeretné távolítani.
 
 ```yaml
 Type: System.String
@@ -384,8 +384,8 @@ Accept wildcard characters: False
 ```
 
 ### -VaultName
-A fő pince nevét adja meg.
-Ez a parancsmag eltávolítja az engedélyeket a kulcsfájl számára, amelyet a paraméter határoz meg.
+A kulcstár nevét adja meg.
+Ez a parancsmag eltávolítja a paraméter által megadott kulcstár engedélyét.
 
 ```yaml
 Type: System.String
@@ -399,8 +399,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -415,7 +415,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik.
 A parancsmag nem fut.
 
 ```yaml
@@ -431,19 +431,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. Azure. Command. PSKeyVault. models.
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. PSKeyVault. models.
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 

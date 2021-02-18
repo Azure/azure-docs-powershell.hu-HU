@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementApiRelease.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementApiRelease.md
-ms.openlocfilehash: 19395960d3a0026b7a14c4ca8232c18d511af989
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: bb27324c2c8524f36d9f3362dee8968fbfb0cc8c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93668127"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100409783"
 ---
 # Get-AzApiManagementApiRelease
 
-## Áttekintés
-Az API-kiadás beszerzése.
+## SYNOPSIS
+Szerezze be az API-kiadást.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### ContextParameterSet (alapértelmezett)
 ```
@@ -31,12 +31,12 @@ Get-AzApiManagementApiRelease -ResourceId <String> [-DefaultProfile <IAzureConte
  [<CommonParameters>]
 ```
 
-## Leírás
-A **Get-AzApiManagementApiRelease** parancsmag egy vagy több kiadást kap az Azure API Management API-hoz.
+## LEÍRÁS
+A **Get-AzApiManagementApiRelease** parancsmag az Azure API Felügyeleti API egy vagy több kiadását kapja meg.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: az API minden kiadásának lekérése
+### 1. példa: Az API összes kiadásának lekérte
 ```powershell
 PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementApiRelease -Context $ApiMgmtContext -ApiId 5adf6fbf0faadf3ad8558065
@@ -50,9 +50,9 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-Ez a parancs az API összes kiadását megkapja `echo-api` a megadott környezetben.
+Ez a parancs az API összes kiadását beveszi `echo-api` a megadott környezetben.
 
-### 2. példa: az adott API-kiadás kiadási adatainak beszerzése
+### 2. példa: Az adott API-kiadás kibocsátási információinak lekérte
 ```powershell
 PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementApiRelease -Context $ApiMgmtContext -ApiId 5adf6fbf0faadf3ad8558065 -ReleaseId 5afccaf6b89fd067426d402e
@@ -68,13 +68,13 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-A parancs Kinyeri a megadott releaseId adott API-val kapcsolatos információkat.
+Ez a parancs egy adott API kibocsátási adatait kapja meg a megadott releaseId értékekkel.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -ApiId
-A keresni kívánt API-azonosító.
-Ha meg van adva az API-t, az azonosítóval is próbálkozhat.
+Keresend meg az API-azonosítót.
+Ha meg van adva, az API-t az azonosító próbálja meg lehozni.
 
 ```yaml
 Type: System.String
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 
 ### -Környezet
 A PsApiManagementContext példánya.
-Ehhez a paraméterhez szükség van.
+Ezt a paramétert kötelező megadni.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -105,7 +105,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az Azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -120,7 +120,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReleaseId
-A kiadás azonosítója.
+A Kiadás azonosítója.
 
 ```yaml
 Type: System.String
@@ -135,7 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Az API-kiadás kar erőforrás-azonosítója. Ha meg van adva az API-kiadás keresése az azonosítóval. Ehhez a paraméterhez szükség van.
+Api-kiadás Arm Resource Identifier azonosítója. Ha meg van adva, az api-kiadást az azonosító alapján próbálja megtalálni. Ezt a paramétert kötelező megadni.
 
 ```yaml
 Type: System.String
@@ -150,24 +150,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementApiRelease
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiRelease
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Új – AzApiManagementApiRelease](./Get-AzApiManagementApiRelease.md)
+[New-AzApiManagementApiRelease](./Get-AzApiManagementApiRelease.md)
 
 [Remove-AzApiManagementApiRelease](./Remove-AzApiManagementApiRelease.md)
 
-[Set-AzApiManagementApiRelease](./Set-AzApiManagementApiRelease.md)
+[Update-AzApiManagementApiRelease](./Update-AzApiManagementApiRelease.md)
