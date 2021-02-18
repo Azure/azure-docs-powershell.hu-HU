@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/s
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Set-AzKeyVaultAccessPolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Set-AzKeyVaultAccessPolicy.md
-ms.openlocfilehash: 4ef8c131e0094928808e6479b2c5ffe40090c5d0
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 5f47237088808fe8966d239f9a0de7c892301db0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94181709"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410718"
 ---
-# <span data-ttu-id="51fd7-101">Set-AzKeyVaultAccessPolicy</span><span class="sxs-lookup"><span data-stu-id="51fd7-101">Set-AzKeyVaultAccessPolicy</span></span>
+# <span data-ttu-id="aa69b-101">Set-AzKeyVaultAccessPolicy</span><span class="sxs-lookup"><span data-stu-id="aa69b-101">Set-AzKeyVaultAccessPolicy</span></span>
 
-## <span data-ttu-id="51fd7-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="51fd7-102">SYNOPSIS</span></span>
-<span data-ttu-id="51fd7-103">Meglévő engedélyeket ad vagy módosít a felhasználó, az alkalmazás vagy a biztonsági csoport számára a fő boltozattal végzett műveletek elvégzéséhez.</span><span class="sxs-lookup"><span data-stu-id="51fd7-103">Grants or modifies existing permissions for a user, application, or security group to perform operations with a key vault.</span></span>
+## <span data-ttu-id="aa69b-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="aa69b-102">SYNOPSIS</span></span>
+<span data-ttu-id="aa69b-103">Megadja vagy módosítja egy felhasználó, alkalmazás vagy biztonsági csoport meglévő engedélyét, hogy műveleteket hajtson végre egy kulcstárban.</span><span class="sxs-lookup"><span data-stu-id="aa69b-103">Grants or modifies existing permissions for a user, application, or security group to perform operations with a key vault.</span></span>
 
-## <span data-ttu-id="51fd7-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="51fd7-104">SYNTAX</span></span>
+## <span data-ttu-id="aa69b-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="aa69b-104">SYNTAX</span></span>
 
-### <span data-ttu-id="51fd7-105">ByUserPrincipalName (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="51fd7-105">ByUserPrincipalName (Default)</span></span>
+### <span data-ttu-id="aa69b-105">ByUserPrincipalName (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="aa69b-105">ByUserPrincipalName (Default)</span></span>
 ```
 Set-AzKeyVaultAccessPolicy [-VaultName] <String> [[-ResourceGroupName] <String>] -UserPrincipalName <String>
  [-PermissionsToKeys <String[]>] [-PermissionsToSecrets <String[]>] [-PermissionsToCertificates <String[]>]
@@ -28,7 +28,7 @@ Set-AzKeyVaultAccessPolicy [-VaultName] <String> [[-ResourceGroupName] <String>]
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="51fd7-106">ByObjectId</span><span class="sxs-lookup"><span data-stu-id="51fd7-106">ByObjectId</span></span>
+### <span data-ttu-id="aa69b-106">ByObjectId</span><span class="sxs-lookup"><span data-stu-id="aa69b-106">ByObjectId</span></span>
 ```
 Set-AzKeyVaultAccessPolicy [-VaultName] <String> [[-ResourceGroupName] <String>] -ObjectId <String>
  [-ApplicationId <Guid>] [-PermissionsToKeys <String[]>] [-PermissionsToSecrets <String[]>]
@@ -36,7 +36,7 @@ Set-AzKeyVaultAccessPolicy [-VaultName] <String> [[-ResourceGroupName] <String>]
  [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="51fd7-107">ByServicePrincipalName</span><span class="sxs-lookup"><span data-stu-id="51fd7-107">ByServicePrincipalName</span></span>
+### <span data-ttu-id="aa69b-107">ByServicePrincipalName</span><span class="sxs-lookup"><span data-stu-id="aa69b-107">ByServicePrincipalName</span></span>
 ```
 Set-AzKeyVaultAccessPolicy [-VaultName] <String> [[-ResourceGroupName] <String>] -ServicePrincipalName <String>
  [-PermissionsToKeys <String[]>] [-PermissionsToSecrets <String[]>] [-PermissionsToCertificates <String[]>]
@@ -44,7 +44,7 @@ Set-AzKeyVaultAccessPolicy [-VaultName] <String> [[-ResourceGroupName] <String>]
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="51fd7-108">ByEmailAddress</span><span class="sxs-lookup"><span data-stu-id="51fd7-108">ByEmailAddress</span></span>
+### <span data-ttu-id="aa69b-108">ByEmailAddress</span><span class="sxs-lookup"><span data-stu-id="aa69b-108">ByEmailAddress</span></span>
 ```
 Set-AzKeyVaultAccessPolicy [-VaultName] <String> [[-ResourceGroupName] <String>] -EmailAddress <String>
  [-PermissionsToKeys <String[]>] [-PermissionsToSecrets <String[]>] [-PermissionsToCertificates <String[]>]
@@ -52,14 +52,14 @@ Set-AzKeyVaultAccessPolicy [-VaultName] <String> [[-ResourceGroupName] <String>]
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="51fd7-109">ForVault</span><span class="sxs-lookup"><span data-stu-id="51fd7-109">ForVault</span></span>
+### <span data-ttu-id="aa69b-109">ForVault</span><span class="sxs-lookup"><span data-stu-id="aa69b-109">ForVault</span></span>
 ```
 Set-AzKeyVaultAccessPolicy [-VaultName] <String> [[-ResourceGroupName] <String>] [-EnabledForDeployment]
  [-EnabledForTemplateDeployment] [-EnabledForDiskEncryption] [-PassThru]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="51fd7-110">InputObjectByObjectId</span><span class="sxs-lookup"><span data-stu-id="51fd7-110">InputObjectByObjectId</span></span>
+### <span data-ttu-id="aa69b-110">InputObjectByObjectId</span><span class="sxs-lookup"><span data-stu-id="aa69b-110">InputObjectByObjectId</span></span>
 ```
 Set-AzKeyVaultAccessPolicy [-InputObject] <PSKeyVaultIdentityItem> -ObjectId <String> [-ApplicationId <Guid>]
  [-PermissionsToKeys <String[]>] [-PermissionsToSecrets <String[]>] [-PermissionsToCertificates <String[]>]
@@ -67,7 +67,7 @@ Set-AzKeyVaultAccessPolicy [-InputObject] <PSKeyVaultIdentityItem> -ObjectId <St
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="51fd7-111">InputObjectByServicePrincipalName</span><span class="sxs-lookup"><span data-stu-id="51fd7-111">InputObjectByServicePrincipalName</span></span>
+### <span data-ttu-id="aa69b-111">InputObjectByServicePrincipalName</span><span class="sxs-lookup"><span data-stu-id="aa69b-111">InputObjectByServicePrincipalName</span></span>
 ```
 Set-AzKeyVaultAccessPolicy [-InputObject] <PSKeyVaultIdentityItem> -ServicePrincipalName <String>
  [-PermissionsToKeys <String[]>] [-PermissionsToSecrets <String[]>] [-PermissionsToCertificates <String[]>]
@@ -75,7 +75,7 @@ Set-AzKeyVaultAccessPolicy [-InputObject] <PSKeyVaultIdentityItem> -ServicePrinc
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="51fd7-112">InputObjectByUserPrincipalName</span><span class="sxs-lookup"><span data-stu-id="51fd7-112">InputObjectByUserPrincipalName</span></span>
+### <span data-ttu-id="aa69b-112">InputObjectByUserPrincipalName</span><span class="sxs-lookup"><span data-stu-id="aa69b-112">InputObjectByUserPrincipalName</span></span>
 ```
 Set-AzKeyVaultAccessPolicy [-InputObject] <PSKeyVaultIdentityItem> -UserPrincipalName <String>
  [-PermissionsToKeys <String[]>] [-PermissionsToSecrets <String[]>] [-PermissionsToCertificates <String[]>]
@@ -83,7 +83,7 @@ Set-AzKeyVaultAccessPolicy [-InputObject] <PSKeyVaultIdentityItem> -UserPrincipa
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="51fd7-113">InputObjectByEmailAddress</span><span class="sxs-lookup"><span data-stu-id="51fd7-113">InputObjectByEmailAddress</span></span>
+### <span data-ttu-id="aa69b-113">InputObjectByEmailAddress</span><span class="sxs-lookup"><span data-stu-id="aa69b-113">InputObjectByEmailAddress</span></span>
 ```
 Set-AzKeyVaultAccessPolicy [-InputObject] <PSKeyVaultIdentityItem> -EmailAddress <String>
  [-PermissionsToKeys <String[]>] [-PermissionsToSecrets <String[]>] [-PermissionsToCertificates <String[]>]
@@ -91,14 +91,14 @@ Set-AzKeyVaultAccessPolicy [-InputObject] <PSKeyVaultIdentityItem> -EmailAddress
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="51fd7-114">InputObjectForVault</span><span class="sxs-lookup"><span data-stu-id="51fd7-114">InputObjectForVault</span></span>
+### <span data-ttu-id="aa69b-114">InputObjectForVault</span><span class="sxs-lookup"><span data-stu-id="aa69b-114">InputObjectForVault</span></span>
 ```
 Set-AzKeyVaultAccessPolicy [-InputObject] <PSKeyVaultIdentityItem> [-EnabledForDeployment]
  [-EnabledForTemplateDeployment] [-EnabledForDiskEncryption] [-PassThru]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="51fd7-115">ResourceIdByObjectId</span><span class="sxs-lookup"><span data-stu-id="51fd7-115">ResourceIdByObjectId</span></span>
+### <span data-ttu-id="aa69b-115">ResourceIdByObjectId</span><span class="sxs-lookup"><span data-stu-id="aa69b-115">ResourceIdByObjectId</span></span>
 ```
 Set-AzKeyVaultAccessPolicy [-ResourceId] <String> -ObjectId <String> [-ApplicationId <Guid>]
  [-PermissionsToKeys <String[]>] [-PermissionsToSecrets <String[]>] [-PermissionsToCertificates <String[]>]
@@ -106,7 +106,7 @@ Set-AzKeyVaultAccessPolicy [-ResourceId] <String> -ObjectId <String> [-Applicati
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="51fd7-116">ResourceIdByServicePrincipalName</span><span class="sxs-lookup"><span data-stu-id="51fd7-116">ResourceIdByServicePrincipalName</span></span>
+### <span data-ttu-id="aa69b-116">ResourceIdByServicePrincipalName</span><span class="sxs-lookup"><span data-stu-id="aa69b-116">ResourceIdByServicePrincipalName</span></span>
 ```
 Set-AzKeyVaultAccessPolicy [-ResourceId] <String> -ServicePrincipalName <String>
  [-PermissionsToKeys <String[]>] [-PermissionsToSecrets <String[]>] [-PermissionsToCertificates <String[]>]
@@ -114,47 +114,47 @@ Set-AzKeyVaultAccessPolicy [-ResourceId] <String> -ServicePrincipalName <String>
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="51fd7-117">ResourceIdByUserPrincipalName</span><span class="sxs-lookup"><span data-stu-id="51fd7-117">ResourceIdByUserPrincipalName</span></span>
+### <span data-ttu-id="aa69b-117">ResourceIdByUserPrincipalName</span><span class="sxs-lookup"><span data-stu-id="aa69b-117">ResourceIdByUserPrincipalName</span></span>
 ```
 Set-AzKeyVaultAccessPolicy [-ResourceId] <String> -UserPrincipalName <String> [-PermissionsToKeys <String[]>]
  [-PermissionsToSecrets <String[]>] [-PermissionsToCertificates <String[]>] [-PermissionsToStorage <String[]>]
  [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="51fd7-118">ResourceIdByEmailAddress</span><span class="sxs-lookup"><span data-stu-id="51fd7-118">ResourceIdByEmailAddress</span></span>
+### <span data-ttu-id="aa69b-118">ResourceIdByEmailAddress</span><span class="sxs-lookup"><span data-stu-id="aa69b-118">ResourceIdByEmailAddress</span></span>
 ```
 Set-AzKeyVaultAccessPolicy [-ResourceId] <String> -EmailAddress <String> [-PermissionsToKeys <String[]>]
  [-PermissionsToSecrets <String[]>] [-PermissionsToCertificates <String[]>] [-PermissionsToStorage <String[]>]
  [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="51fd7-119">ResourceIdForVault</span><span class="sxs-lookup"><span data-stu-id="51fd7-119">ResourceIdForVault</span></span>
+### <span data-ttu-id="aa69b-119">ResourceIdForVault</span><span class="sxs-lookup"><span data-stu-id="aa69b-119">ResourceIdForVault</span></span>
 ```
 Set-AzKeyVaultAccessPolicy [-ResourceId] <String> [-EnabledForDeployment] [-EnabledForTemplateDeployment]
  [-EnabledForDiskEncryption] [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="51fd7-120">Leírás</span><span class="sxs-lookup"><span data-stu-id="51fd7-120">DESCRIPTION</span></span>
-<span data-ttu-id="51fd7-121">A **set-AzKeyVaultAccessPolicy** parancsmag meglévő engedélyeket ad vagy módosít egy felhasználó, alkalmazás vagy biztonsági csoport számára, hogy a megadott műveleteket egy fő boltozattal végezze el.</span><span class="sxs-lookup"><span data-stu-id="51fd7-121">The **Set-AzKeyVaultAccessPolicy** cmdlet grants or modifies existing permissions for a user, application, or security group to perform the specified operations with a key vault.</span></span> <span data-ttu-id="51fd7-122">Nem módosítja a többi felhasználó, alkalmazás vagy biztonsági csoport engedélyeit a kulcs boltozatán.</span><span class="sxs-lookup"><span data-stu-id="51fd7-122">It does not modify the permissions that other users, applications, or security groups have on the key vault.</span></span>
-<span data-ttu-id="51fd7-123">Ha egy biztonsági csoportra vonatkozó engedélyeket állít be, ez a művelet csak a biztonsági csoport felhasználóit érinti.</span><span class="sxs-lookup"><span data-stu-id="51fd7-123">If you are setting permissions for a security group, this operation affects only users in that security group.</span></span>
-<span data-ttu-id="51fd7-124">Az alábbi könyvtárak mindegyikének meg kell egyeznie az Azure-címtárral:</span><span class="sxs-lookup"><span data-stu-id="51fd7-124">The following directories must all be the same Azure directory:</span></span> 
-- <span data-ttu-id="51fd7-125">Annak az Azure-előfizetésnek az alapértelmezett könyvtára, amelyben a kulcs boltozata lakik.</span><span class="sxs-lookup"><span data-stu-id="51fd7-125">The default directory of the Azure subscription in which the key vault resides.</span></span>
-- <span data-ttu-id="51fd7-126">Az Azure-címtár, amely az engedélyeket biztosító felhasználó vagy alkalmazás csoportját tartalmazza.</span><span class="sxs-lookup"><span data-stu-id="51fd7-126">The Azure directory that contains the user or application group that you are granting permissions to.</span></span>
-<span data-ttu-id="51fd7-127">Példák azokra az esetekre, amikor ezek a feltételek nem teljesülnek, és a parancsmag nem fog működni:</span><span class="sxs-lookup"><span data-stu-id="51fd7-127">Examples of scenarios when these conditions are not met and this cmdlet will not work are:</span></span> 
-- <span data-ttu-id="51fd7-128">Másik szervezet felhasználóinak engedélyezése a kulcsfájl kezeléséhez.</span><span class="sxs-lookup"><span data-stu-id="51fd7-128">Authorizing a user from a different organization to manage your key vault.</span></span>
-<span data-ttu-id="51fd7-129">Minden szervezetnek saját könyvtára van.</span><span class="sxs-lookup"><span data-stu-id="51fd7-129">Each organization has its own directory.</span></span> 
-- <span data-ttu-id="51fd7-130">Az Azure-fiók több könyvtárat tartalmaz.</span><span class="sxs-lookup"><span data-stu-id="51fd7-130">Your Azure account has multiple directories.</span></span>
-<span data-ttu-id="51fd7-131">Ha az alapértelmezett könyvtártól eltérő címtárban regisztrálja az alkalmazást, az alkalmazás nem engedélyezheti a kulcsfájl használatát.</span><span class="sxs-lookup"><span data-stu-id="51fd7-131">If you register an application in a directory other than the default directory, you cannot authorize that application to use your key vault.</span></span>
-<span data-ttu-id="51fd7-132">Az alkalmazásnak az alapértelmezett címtárban kell lennie.</span><span class="sxs-lookup"><span data-stu-id="51fd7-132">The application must be in the default directory.</span></span>
-<span data-ttu-id="51fd7-133">Fontos tudni, hogy bár az erőforráscsoport beállítása nem kötelező ehhez a parancsmaghoz, a jobb teljesítmény érdekében ezt el kell végeznie.</span><span class="sxs-lookup"><span data-stu-id="51fd7-133">Note that although specifying the resource group is optional for this cmdlet, you should do so for better performance.</span></span>
+## <span data-ttu-id="aa69b-120">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="aa69b-120">DESCRIPTION</span></span>
+<span data-ttu-id="aa69b-121">A **Set-AzKeyVaultAccessPolicy** parancsmag megadja vagy módosítja egy felhasználó, alkalmazás vagy biztonsági csoport meglévő engedélyét, hogy végrehajtsa a megadott műveleteket egy kulcstárban.</span><span class="sxs-lookup"><span data-stu-id="aa69b-121">The **Set-AzKeyVaultAccessPolicy** cmdlet grants or modifies existing permissions for a user, application, or security group to perform the specified operations with a key vault.</span></span> <span data-ttu-id="aa69b-122">Nem módosítja a többi felhasználó, alkalmazás vagy biztonsági csoport kulcstárra vonatkozó engedélyét.</span><span class="sxs-lookup"><span data-stu-id="aa69b-122">It does not modify the permissions that other users, applications, or security groups have on the key vault.</span></span>
+<span data-ttu-id="aa69b-123">Ha egy biztonsági csoport engedélyét ad meg, ez a művelet csak az adott biztonsági csoport felhasználóit érinti.</span><span class="sxs-lookup"><span data-stu-id="aa69b-123">If you are setting permissions for a security group, this operation affects only users in that security group.</span></span>
+<span data-ttu-id="aa69b-124">A következő címtáraknak mindnek azonos Azure-címtárnak kell lennie:</span><span class="sxs-lookup"><span data-stu-id="aa69b-124">The following directories must all be the same Azure directory:</span></span>
+- <span data-ttu-id="aa69b-125">Annak az Azure-előfizetésnek az alapértelmezett címtára, amelyben a kulcstár található.</span><span class="sxs-lookup"><span data-stu-id="aa69b-125">The default directory of the Azure subscription in which the key vault resides.</span></span>
+- <span data-ttu-id="aa69b-126">Az Azure-címtár, amely azt a felhasználót vagy alkalmazáscsoportot tartalmazza, amelyhez engedélyeket ad.</span><span class="sxs-lookup"><span data-stu-id="aa69b-126">The Azure directory that contains the user or application group that you are granting permissions to.</span></span>
+<span data-ttu-id="aa69b-127">Példák olyan esetekre, amikor ezek a feltételek nem teljesülnek, és ez a parancsmag nem működik:</span><span class="sxs-lookup"><span data-stu-id="aa69b-127">Examples of scenarios when these conditions are not met and this cmdlet will not work are:</span></span>
+- <span data-ttu-id="aa69b-128">Egy másik szervezetből származó felhasználónak a kulcstár kezeléséhez való hozzáférése.</span><span class="sxs-lookup"><span data-stu-id="aa69b-128">Authorizing a user from a different organization to manage your key vault.</span></span>
+<span data-ttu-id="aa69b-129">Mindegyik szervezetnek saját címtára van.</span><span class="sxs-lookup"><span data-stu-id="aa69b-129">Each organization has its own directory.</span></span>
+- <span data-ttu-id="aa69b-130">Azure-fiókja több könyvtárral rendelkezik.</span><span class="sxs-lookup"><span data-stu-id="aa69b-130">Your Azure account has multiple directories.</span></span>
+<span data-ttu-id="aa69b-131">Ha nem az alapértelmezett címtárban regisztrál egy alkalmazást, akkor nem engedélyezheti az alkalmazásnak a kulcstár használatát.</span><span class="sxs-lookup"><span data-stu-id="aa69b-131">If you register an application in a directory other than the default directory, you cannot authorize that application to use your key vault.</span></span>
+<span data-ttu-id="aa69b-132">Az alkalmazásnak az alapértelmezett címtárban kell lennie.</span><span class="sxs-lookup"><span data-stu-id="aa69b-132">The application must be in the default directory.</span></span>
+<span data-ttu-id="aa69b-133">Vegye figyelembe, hogy bár az erőforráscsoport megadása nem kötelező ehhez a parancsmaghoz, a jobb teljesítmény érdekében ezt kell megtennie.</span><span class="sxs-lookup"><span data-stu-id="aa69b-133">Note that although specifying the resource group is optional for this cmdlet, you should do so for better performance.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="51fd7-134">Ha egy szolgáltató a hozzáférési házirend engedélyeinek megadására használja, a paramétert kell használnia `-BypassObjectIdValidation` .</span><span class="sxs-lookup"><span data-stu-id="51fd7-134">When using a service principal to grant access policy permissions, you must use the `-BypassObjectIdValidation` parameter.</span></span>
+> <span data-ttu-id="aa69b-134">Amikor egyszerű szolgáltatásnév használatával hozzáférési házirend-engedélyeket ad meg, a paramétert kell `-BypassObjectIdValidation` használnia.</span><span class="sxs-lookup"><span data-stu-id="aa69b-134">When using a service principal to grant access policy permissions, you must use the `-BypassObjectIdValidation` parameter.</span></span>
 
-## <span data-ttu-id="51fd7-135">Példák</span><span class="sxs-lookup"><span data-stu-id="51fd7-135">EXAMPLES</span></span>
+## <span data-ttu-id="aa69b-135">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="aa69b-135">EXAMPLES</span></span>
 
-### <span data-ttu-id="51fd7-136">1. példa: engedélyek megadása egy felhasználó számára egy kulcs boltozatához és az engedélyek módosítása</span><span class="sxs-lookup"><span data-stu-id="51fd7-136">Example 1: Grant permissions to a user for a key vault and modify the permissions</span></span>
+### <span data-ttu-id="aa69b-136">1. példa: Engedélyek megadása egy felhasználónak egy kulcstárhoz és az engedélyek módosítása</span><span class="sxs-lookup"><span data-stu-id="aa69b-136">Example 1: Grant permissions to a user for a key vault and modify the permissions</span></span>
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -UserPrincipalName 'PattiFuller@contoso.com' -PermissionsToKeys create,import,delete,list -PermissionsToSecrets set,delete -PassThru
 
@@ -235,63 +235,64 @@ Access Policies                  :
 Tags                             :
 ```
 
-<span data-ttu-id="51fd7-137">Az első parancs engedélyeket ad az Azure Active Directory-beli felhasználóknak PattiFuller@contoso.com , hogy a Contoso03Vault nevű fő boltozattal végezze el a megfelelő műveleteket a kulcsok és a titkok területén.</span><span class="sxs-lookup"><span data-stu-id="51fd7-137">The first command grants permissions for a user in your Azure Active Directory, PattiFuller@contoso.com, to perform operations on keys and secrets with a key vault named Contoso03Vault.</span></span> <span data-ttu-id="51fd7-138">A *PassThru* paraméter a parancsmag által visszaadott frissített objektumot adja eredményül.</span><span class="sxs-lookup"><span data-stu-id="51fd7-138">The *PassThru* parameter results in the updated object being returned by the cmdlet.</span></span>
-<span data-ttu-id="51fd7-139">A második parancs módosítja az PattiFuller@contoso.com első parancsban megadott engedélyeket, így mostantól a beállítások megadásával és törlésével is lehetővé válik a titok beszerzése.</span><span class="sxs-lookup"><span data-stu-id="51fd7-139">The second command modifies the permissions that were granted to PattiFuller@contoso.com in the first command, to now allow getting secrets in addition to setting and deleting them.</span></span> <span data-ttu-id="51fd7-140">A fő műveletekre vonatkozó engedélyek a parancs után változatlanok maradnak.</span><span class="sxs-lookup"><span data-stu-id="51fd7-140">The permissions to key operations remain unchanged after this command.</span></span>
-<span data-ttu-id="51fd7-141">A végleges parancs a meglévő engedélyeket tovább módosítja a PattiFuller@contoso.com legfontosabb műveletekhez tartozó összes engedély eltávolításához.</span><span class="sxs-lookup"><span data-stu-id="51fd7-141">The final command further modifies the existing permissions for PattiFuller@contoso.com to remove all permissions to key operations.</span></span> <span data-ttu-id="51fd7-142">A titkos műveletek engedélyei a parancs után változatlanok maradnak.</span><span class="sxs-lookup"><span data-stu-id="51fd7-142">The permissions to secret operations remain unchanged after this command.</span></span> 
+<span data-ttu-id="aa69b-137">Az első parancs engedélyeket ad egy felhasználónak az Azure Active Directoryban, hogy műveleteket hajtson végre a kulcsokon és a titkosságon PattiFuller@contoso.com a Contoso03Vault nevű kulcstárban.</span><span class="sxs-lookup"><span data-stu-id="aa69b-137">The first command grants permissions for a user in your Azure Active Directory, PattiFuller@contoso.com, to perform operations on keys and secrets with a key vault named Contoso03Vault.</span></span> <span data-ttu-id="aa69b-138">A *PassThru paraméter* eredménye a frissített objektum, amelyet a parancsmag ad vissza.</span><span class="sxs-lookup"><span data-stu-id="aa69b-138">The *PassThru* parameter results in the updated object being returned by the cmdlet.</span></span>
+<span data-ttu-id="aa69b-139">A második parancs módosítja az első parancsban megadott engedélyeket, hogy mostantól a beállításukon és törlésüken kívül titkosságokat is PattiFuller@contoso.com bevessen.</span><span class="sxs-lookup"><span data-stu-id="aa69b-139">The second command modifies the permissions that were granted to PattiFuller@contoso.com in the first command, to now allow getting secrets in addition to setting and deleting them.</span></span> <span data-ttu-id="aa69b-140">A kulcsműveletekkel kapcsolatos engedélyek a parancs után is változatlanok maradnak.</span><span class="sxs-lookup"><span data-stu-id="aa69b-140">The permissions to key operations remain unchanged after this command.</span></span>
+<span data-ttu-id="aa69b-141">Az utolsó parancs tovább módosítja a kulcsműveletekkel kapcsolatos összes engedély eltávolítására vonatkozó PattiFuller@contoso.com meglévő engedélyeket.</span><span class="sxs-lookup"><span data-stu-id="aa69b-141">The final command further modifies the existing permissions for PattiFuller@contoso.com to remove all permissions to key operations.</span></span> <span data-ttu-id="aa69b-142">A titkos műveletekre vonatkozó engedélyek a parancs után is változatlanok maradnak.</span><span class="sxs-lookup"><span data-stu-id="aa69b-142">The permissions to secret operations remain unchanged after this command.</span></span>
 
-### <span data-ttu-id="51fd7-143">2. példa: az alkalmazásspecifikus szolgáltatók engedélyeinek megadása a titkok olvasásához és írásához</span><span class="sxs-lookup"><span data-stu-id="51fd7-143">Example 2: Grant permissions for an application service principal to read and write secrets</span></span>
+### <span data-ttu-id="aa69b-143">2. példa: Engedélyek megadása egyszerű alkalmazásszolgáltatásnak a titkos kulcsok olvasására és írására</span><span class="sxs-lookup"><span data-stu-id="aa69b-143">Example 2: Grant permissions for an application service principal to read and write secrets</span></span>
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ServicePrincipalName 'http://payroll.contoso.com' -PermissionsToSecrets Get,Set
 ```
 
-<span data-ttu-id="51fd7-144">Ez a parancs engedélyeket ad az Contoso03Vault nevű fő Vault-alkalmazás engedélyeinek megadásához.</span><span class="sxs-lookup"><span data-stu-id="51fd7-144">This command grants permissions for an application for a key vault named Contoso03Vault.</span></span> <span data-ttu-id="51fd7-145">A *ServicePrincipalName* paraméter az alkalmazást adja meg.</span><span class="sxs-lookup"><span data-stu-id="51fd7-145">The *ServicePrincipalName* parameter specifies the application.</span></span> <span data-ttu-id="51fd7-146">Az alkalmazást be kell jegyeztetni az Azure Active Directoryban.</span><span class="sxs-lookup"><span data-stu-id="51fd7-146">The application must be registered in your Azure Active Directory.</span></span> <span data-ttu-id="51fd7-147">A *ServicePrincipalName* paraméter értéke csak az alkalmazás egyszerű szolgáltatásnév, vagy az ALKALMAZÁSSPECIFIKUS azonosító GUID értéke lehet.</span><span class="sxs-lookup"><span data-stu-id="51fd7-147">The value of the *ServicePrincipalName* parameter must be either the service principal name of the application or the application ID GUID.</span></span>
-<span data-ttu-id="51fd7-148">Ez a példa megadja az egyszerű szolgáltatásnév nevet http://payroll.contoso.com , és a parancs a titok olvasását és írását biztosítja az alkalmazás engedélyeinek.</span><span class="sxs-lookup"><span data-stu-id="51fd7-148">This example specifies the service principal name http://payroll.contoso.com, and the command grants the application permissions to read and write secrets.</span></span>
+<span data-ttu-id="aa69b-144">Ez a parancs engedélyeket ad az alkalmazásokhoz a Contoso03Vault nevű kulcstárhoz.</span><span class="sxs-lookup"><span data-stu-id="aa69b-144">This command grants permissions for an application for a key vault named Contoso03Vault.</span></span>
+<span data-ttu-id="aa69b-145">A *ServicePrincipalName paraméter* megadja az alkalmazást.</span><span class="sxs-lookup"><span data-stu-id="aa69b-145">The *ServicePrincipalName* parameter specifies the application.</span></span> <span data-ttu-id="aa69b-146">Az alkalmazásnak regisztrálva kell lennie az Azure Active Directoryban.</span><span class="sxs-lookup"><span data-stu-id="aa69b-146">The application must be registered in your Azure Active Directory.</span></span> <span data-ttu-id="aa69b-147">A *ServicePrincipalName* paraméter értékének vagy az alkalmazás egyszerű szolgáltatásnevének vagy az alkalmazásazonosító GUID azonosítójának kell lennie.</span><span class="sxs-lookup"><span data-stu-id="aa69b-147">The value of the *ServicePrincipalName* parameter must be either the service principal name of the application or the application ID GUID.</span></span>
+<span data-ttu-id="aa69b-148">Ebben a példában az egyszerű szolgáltatásnevet adhatja meg, és a parancs hozzáférési engedélyt ad az alkalmazásnak a titkos kulcsok `http://payroll.contoso.com` olvasására és írására.</span><span class="sxs-lookup"><span data-stu-id="aa69b-148">This example specifies the service principal name `http://payroll.contoso.com`, and the command grants the application permissions to read and write secrets.</span></span>
 
-### <span data-ttu-id="51fd7-149">3. példa: az alkalmazás engedélyeinek megadása az objektum azonosítójával</span><span class="sxs-lookup"><span data-stu-id="51fd7-149">Example 3: Grant permissions for an application using its object ID</span></span>
+### <span data-ttu-id="aa69b-149">3. példa: Engedélyek megadása egy alkalmazáshoz az objektumazonosító használatával</span><span class="sxs-lookup"><span data-stu-id="aa69b-149">Example 3: Grant permissions for an application using its object ID</span></span>
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ObjectId 34595082-9346-41b6-8d6b-295a2808b8db -PermissionsToSecrets Get,Set
 ```
 
-<span data-ttu-id="51fd7-150">A parancs a titok olvasását és írását lehetővé tévő jogosultságokkal ruházza fel az alkalmazást.</span><span class="sxs-lookup"><span data-stu-id="51fd7-150">This command grants the application permissions to read and write secrets.</span></span>
-<span data-ttu-id="51fd7-151">Ez a példa azt adja meg, hogy az alkalmazás az alkalmazás Principal azonosítójával használja az alkalmazást.</span><span class="sxs-lookup"><span data-stu-id="51fd7-151">This example specifies the application using the object ID of the service principal of the application.</span></span>
+<span data-ttu-id="aa69b-150">Ez a parancs hozzáférési engedélyt ad az alkalmazásnak a titkos kulcsok olvasására és írására.</span><span class="sxs-lookup"><span data-stu-id="aa69b-150">This command grants the application permissions to read and write secrets.</span></span>
+<span data-ttu-id="aa69b-151">Ebben a példában az alkalmazás az alkalmazás egyszerű szolgáltatásnévének objektumazonosítóját használja.</span><span class="sxs-lookup"><span data-stu-id="aa69b-151">This example specifies the application using the object ID of the service principal of the application.</span></span>
 
-### <span data-ttu-id="51fd7-152">4. példa: engedélyek megadása egyszerű felhasználónévhez</span><span class="sxs-lookup"><span data-stu-id="51fd7-152">Example 4: Grant permissions for a user principal name</span></span>
+### <span data-ttu-id="aa69b-152">4. példa: Egyszerű felhasználónév engedélyeinek megadása</span><span class="sxs-lookup"><span data-stu-id="aa69b-152">Example 4: Grant permissions for a user principal name</span></span>
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -UserPrincipalName 'PattiFuller@contoso.com' -PermissionsToSecrets Get,List,Set
 ```
 
-<span data-ttu-id="51fd7-153">Ez a parancs a beszerzés, a lista és az engedélyek beállítását adja meg a megadott egyszerű felhasználónévhez a titok eléréséhez.</span><span class="sxs-lookup"><span data-stu-id="51fd7-153">This command grants get, list, and set permissions for the specified user principal name for access to secrets.</span></span>
+<span data-ttu-id="aa69b-153">Ez a parancs hozzáférési, lista- és beállítási engedélyeket ad a megadott egyszerű felhasználónévhez a titkos információkhoz való hozzáféréshez.</span><span class="sxs-lookup"><span data-stu-id="aa69b-153">This command grants get, list, and set permissions for the specified user principal name for access to secrets.</span></span>
 
-### <span data-ttu-id="51fd7-154">Példa: 5: a Microsoft. számítási erőforrás-szolgáltatónál a kulcsok beolvasásának engedélyezése.</span><span class="sxs-lookup"><span data-stu-id="51fd7-154">Example 5: Enable secrets to be retrieved from a key vault by the Microsoft.Compute resource provider</span></span>
+### <span data-ttu-id="aa69b-154">5. példa: Annak engedélyezése, hogy a Microsoft.Compute erőforrásszolgáltató beolvassa a titkos adatokat egy kulcstárból</span><span class="sxs-lookup"><span data-stu-id="aa69b-154">Example 5: Enable secrets to be retrieved from a key vault by the Microsoft.Compute resource provider</span></span>
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ResourceGroupName 'Group14' -EnabledForDeployment
 ```
 
-<span data-ttu-id="51fd7-155">Ez a parancs megadja a titoknak azokat az engedélyeit, amelyeket a Microsoft. számítási erőforrás-szolgáltatótól kapott a Contoso03Vault.</span><span class="sxs-lookup"><span data-stu-id="51fd7-155">This command grants the permissions for secrets to be retrieved from the Contoso03Vault key vault by the Microsoft.Compute resource provider.</span></span>
+<span data-ttu-id="aa69b-155">Ez a parancs megadja a Microsoft.Compute erőforrásszolgáltatója által a Contoso03Vault kulcstárból beolvasandó titkos információkhoz szükséges engedélyeket.</span><span class="sxs-lookup"><span data-stu-id="aa69b-155">This command grants the permissions for secrets to be retrieved from the Contoso03Vault key vault by the Microsoft.Compute resource provider.</span></span>
 
-### <span data-ttu-id="51fd7-156">6. példa: engedélyek megadása egy biztonsági csoporthoz</span><span class="sxs-lookup"><span data-stu-id="51fd7-156">Example 6: Grant permissions to a security group</span></span>
+### <span data-ttu-id="aa69b-156">6. példa: Engedélyek megadása biztonsági csoportnak</span><span class="sxs-lookup"><span data-stu-id="aa69b-156">Example 6: Grant permissions to a security group</span></span>
 ```powershell
 PS C:\> Get-AzADGroup
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'myownvault' -ObjectId (Get-AzADGroup -SearchString 'group2')[0].Id -PermissionsToKeys get, set -PermissionsToSecrets get, set
 ```
 
-<span data-ttu-id="51fd7-157">Az első parancs az Get-AzADGroup parancsmagot használja az Active Directory-csoportok beolvasásához.</span><span class="sxs-lookup"><span data-stu-id="51fd7-157">The first command uses the Get-AzADGroup cmdlet to get all Active Directory groups.</span></span> <span data-ttu-id="51fd7-158">A kimenetben 3 csoport, a **Group1** , az **Group2** és a **Group3** nevű csoport látható.</span><span class="sxs-lookup"><span data-stu-id="51fd7-158">From the output, you see 3 groups returned, named **group1** , **group2** , and **group3**.</span></span> <span data-ttu-id="51fd7-159">Több csoportnak ugyanazt a nevet kell használnia, de minden esetben egyedi ObjectId kell lennie.</span><span class="sxs-lookup"><span data-stu-id="51fd7-159">Multiple groups can have the same name but always have a unique ObjectId.</span></span> <span data-ttu-id="51fd7-160">Ha egynél több, ugyanazt a nevet tartalmazó csoportot ad eredményül, a kimenetben lévő ObjectId segítségével határozza meg, hogy melyiket szeretné használni.</span><span class="sxs-lookup"><span data-stu-id="51fd7-160">When more than one group that has the same name is returned, use the ObjectId in the output to identify the one you want to use.</span></span>
-<span data-ttu-id="51fd7-161">Ezután a parancs kimenete Set-AzKeyVaultAccessPolicy segítségével engedélyeket adhat a Group2, a **myownvault** nevű kulcshoz.</span><span class="sxs-lookup"><span data-stu-id="51fd7-161">You then use the output of this command with Set-AzKeyVaultAccessPolicy to grant permissions to group2 for your key vault, named **myownvault**.</span></span> <span data-ttu-id="51fd7-162">Ez a példa a "Group2" szövegközi csoportokat ugyanazon a parancssorban sorolja fel.</span><span class="sxs-lookup"><span data-stu-id="51fd7-162">This example enumerates the groups named 'group2' inline in the same command line.</span></span>
-<span data-ttu-id="51fd7-163">Előfordulhat, hogy a visszaadott lista több olyan csoportba tartozik, amely "Group2" névvel rendelkezik.</span><span class="sxs-lookup"><span data-stu-id="51fd7-163">There may be multiple groups in the returned list that are named 'group2'.</span></span>
-<span data-ttu-id="51fd7-164">Ez a példa a \[ visszatérési listában az első indexet jelölte ki \] .</span><span class="sxs-lookup"><span data-stu-id="51fd7-164">This example picks the first one, indicated by index \[0\] in the returned list.</span></span>
+<span data-ttu-id="aa69b-157">Az első parancs a Get-AzADGroup parancsmagot használja az összes Active Directory-csoport be szerezni.</span><span class="sxs-lookup"><span data-stu-id="aa69b-157">The first command uses the Get-AzADGroup cmdlet to get all Active Directory groups.</span></span> <span data-ttu-id="aa69b-158">A kimenetben 3 visszaadott csoport látható, a **csoport1,** **a csoport2** és a **csoport3.**</span><span class="sxs-lookup"><span data-stu-id="aa69b-158">From the output, you see 3 groups returned, named **group1**, **group2**, and **group3**.</span></span> <span data-ttu-id="aa69b-159">Több csoportnak lehet ugyanaz a neve, de mindig egyedi ObjectId azonosítóval rendelkezik.</span><span class="sxs-lookup"><span data-stu-id="aa69b-159">Multiple groups can have the same name but always have a unique ObjectId.</span></span> <span data-ttu-id="aa69b-160">Ha több, azonos nevű csoportot ad vissza, a kimenetben az ObjectId érték használatával azonosítsa a használni kívánt csoportot.</span><span class="sxs-lookup"><span data-stu-id="aa69b-160">When more than one group that has the same name is returned, use the ObjectId in the output to identify the one you want to use.</span></span>
+<span data-ttu-id="aa69b-161">Ezután használhatja a parancs kimenetét a Set-AzKeyVaultAccessPolicy, hogy engedélyeket adjon a group2 kulcstárának **(myownvault) számára.**</span><span class="sxs-lookup"><span data-stu-id="aa69b-161">You then use the output of this command with Set-AzKeyVaultAccessPolicy to grant permissions to group2 for your key vault, named **myownvault**.</span></span> <span data-ttu-id="aa69b-162">Az alábbi példa a "group2" nevű csoportokat számba veszi ugyanabban a parancssorban.</span><span class="sxs-lookup"><span data-stu-id="aa69b-162">This example enumerates the groups named 'group2' inline in the same command line.</span></span>
+<span data-ttu-id="aa69b-163">A visszaadott listában több "csoport2" nevű csoport is lehet.</span><span class="sxs-lookup"><span data-stu-id="aa69b-163">There may be multiple groups in the returned list that are named 'group2'.</span></span>
+<span data-ttu-id="aa69b-164">Ez a példa a visszaadott listában a 0 index által jelzett \[ \] elsőt választja ki.</span><span class="sxs-lookup"><span data-stu-id="aa69b-164">This example picks the first one, indicated by index \[0\] in the returned list.</span></span>
 
-### <span data-ttu-id="51fd7-165">7. példa: hozzáférés biztosítása az Azure Information Protectionhez az ügyfél által felügyelt bérlői kulcshoz (BYOK)</span><span class="sxs-lookup"><span data-stu-id="51fd7-165">Example 7: Grant Azure Information Protection access to the customer-managed tenant key (BYOK)</span></span>
+### <span data-ttu-id="aa69b-165">7. példa: Azure Information Protection-hozzáférés megadása az ügyfél által kezelt bérlői kulcshoz (BYOK)</span><span class="sxs-lookup"><span data-stu-id="aa69b-165">Example 7: Grant Azure Information Protection access to the customer-managed tenant key (BYOK)</span></span>
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso04Vault' -ServicePrincipalName 00000012-0000-0000-c000-000000000000 -PermissionsToKeys decrypt,sign,get
 ```
 
-<span data-ttu-id="51fd7-166">Ez a parancs engedélyezi az Azure Information Protectiont az ügyfél által felügyelt kulcs (a saját kulcs vagy a "BYOK" forgatókönyv) használatához az Azure Information Protection bérlői kulccsal.</span><span class="sxs-lookup"><span data-stu-id="51fd7-166">This command authorizes Azure Information Protection to use a customer-managed key (the bring your own key, or "BYOK" scenario) as the Azure Information Protection tenant key.</span></span>
-<span data-ttu-id="51fd7-167">Ha futtatja ezt a parancsot, adja meg a saját kulcs boltozatát, de meg kell adnia a *ServicePrincipalName* paramétert a GUID **00000012-0000-0000 – C000 – 000000000000 értéket** , és meg kell adnia a példában szereplő engedélyeket.</span><span class="sxs-lookup"><span data-stu-id="51fd7-167">When you run this command, specify your own key vault name but you must specify the *ServicePrincipalName* parameter with the GUID **00000012-0000-0000-c000-000000000000** and specify the permissions in the example.</span></span>
+<span data-ttu-id="aa69b-166">Ez a parancs engedélyezi az Azure Information Protectionnek, hogy az Azure Information Protection bérlői kulcsként ügyfél által kezelt kulcsot (a saját kulcsát hozza magával, vagy a "BYOK" esetet) használjon.</span><span class="sxs-lookup"><span data-stu-id="aa69b-166">This command authorizes Azure Information Protection to use a customer-managed key (the bring your own key, or "BYOK" scenario) as the Azure Information Protection tenant key.</span></span>
+<span data-ttu-id="aa69b-167">A parancs futtatásakor adja meg a saját kulcstárnevét, de meg kell adnia a *ServicePrincipalName* paramétert a GUID **00000012-0000-0000-c000-000000000000000** azonosítóval, és meg kell adnia a példában az engedélyeket.</span><span class="sxs-lookup"><span data-stu-id="aa69b-167">When you run this command, specify your own key vault name but you must specify the *ServicePrincipalName* parameter with the GUID **00000012-0000-0000-c000-000000000000** and specify the permissions in the example.</span></span>
 
-## <span data-ttu-id="51fd7-168">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="51fd7-168">PARAMETERS</span></span>
+## <span data-ttu-id="aa69b-168">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="aa69b-168">PARAMETERS</span></span>
 
-### <span data-ttu-id="51fd7-169">-ApplicationId</span><span class="sxs-lookup"><span data-stu-id="51fd7-169">-ApplicationId</span></span>
-<span data-ttu-id="51fd7-170">Jövőbeli használatra.</span><span class="sxs-lookup"><span data-stu-id="51fd7-170">For future use.</span></span>
+### <span data-ttu-id="aa69b-169">-ApplicationId</span><span class="sxs-lookup"><span data-stu-id="aa69b-169">-ApplicationId</span></span>
+<span data-ttu-id="aa69b-170">Későbbi használatra.</span><span class="sxs-lookup"><span data-stu-id="aa69b-170">For future use.</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.Guid]
@@ -305,9 +306,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="51fd7-171">-BypassObjectIdValidation</span><span class="sxs-lookup"><span data-stu-id="51fd7-171">-BypassObjectIdValidation</span></span>
-<span data-ttu-id="51fd7-172">Lehetővé teszi az objektumazonosítók megadását anélkül, hogy az az Azure Active Directoryban létezik.</span><span class="sxs-lookup"><span data-stu-id="51fd7-172">Enables you to specify an object ID without validating that the object exists in Azure Active Directory.</span></span>
-<span data-ttu-id="51fd7-173">Csak akkor használja ezt a paramétert, ha hozzáférést szeretne adni a kulcsfájl egy olyan objektum-AZONOSÍTÓhoz, amely egy másik Azure-bérlőtől származó meghatalmazott biztonsági csoportra hivatkozik.</span><span class="sxs-lookup"><span data-stu-id="51fd7-173">Use this parameter only if you want to grant access to your key vault to an object ID that refers to a delegated security group from another Azure tenant.</span></span>
+### <span data-ttu-id="aa69b-171">-BypassObjectIdValidation</span><span class="sxs-lookup"><span data-stu-id="aa69b-171">-BypassObjectIdValidation</span></span>
+<span data-ttu-id="aa69b-172">Lehetővé teszi az objektumazonosítók megadását anélkül, hogy érvényesíte volna az objektum Azure Active Directoryban való létezik-e.</span><span class="sxs-lookup"><span data-stu-id="aa69b-172">Enables you to specify an object ID without validating that the object exists in Azure Active Directory.</span></span>
+<span data-ttu-id="aa69b-173">Ezt a paramétert csak akkor használja, ha hozzáférést szeretne a kulcstárhoz egy olyan objektumazonosítóhoz, amely egy másik Azure-bérlő delegált biztonsági csoportjára hivatkozik.</span><span class="sxs-lookup"><span data-stu-id="aa69b-173">Use this parameter only if you want to grant access to your key vault to an object ID that refers to a delegated security group from another Azure tenant.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -321,8 +322,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="51fd7-174">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="51fd7-174">-DefaultProfile</span></span>
-<span data-ttu-id="51fd7-175">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés</span><span class="sxs-lookup"><span data-stu-id="51fd7-175">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="aa69b-174">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="aa69b-174">-DefaultProfile</span></span>
+<span data-ttu-id="aa69b-175">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés</span><span class="sxs-lookup"><span data-stu-id="aa69b-175">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -336,9 +337,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="51fd7-176">-EmailAddress</span><span class="sxs-lookup"><span data-stu-id="51fd7-176">-EmailAddress</span></span>
-<span data-ttu-id="51fd7-177">Annak a felhasználónak a felhasználói e-mail-címét adja meg, akinek engedélyt szeretne adni.</span><span class="sxs-lookup"><span data-stu-id="51fd7-177">Specifies the user email address of the user to whom to grant permissions.</span></span>
-<span data-ttu-id="51fd7-178">Ennek az e-mail-címnek meg kell egyeznie az aktuális előfizetéshez társított címtárban, és egyedinek kell lennie.</span><span class="sxs-lookup"><span data-stu-id="51fd7-178">This email address must exist in the directory associated with the current subscription and be unique.</span></span>
+### <span data-ttu-id="aa69b-176">-EmailAddress</span><span class="sxs-lookup"><span data-stu-id="aa69b-176">-EmailAddress</span></span>
+<span data-ttu-id="aa69b-177">Annak a felhasználónak az e-mail-címét adja meg, akinek engedélyt kell kiadó felhasználónak.</span><span class="sxs-lookup"><span data-stu-id="aa69b-177">Specifies the user email address of the user to whom to grant permissions.</span></span>
+<span data-ttu-id="aa69b-178">Ennek az e-mail-címnek az aktuális előfizetéshez társított címtárban kell lennie, és egyedinek kell lennie.</span><span class="sxs-lookup"><span data-stu-id="aa69b-178">This email address must exist in the directory associated with the current subscription and be unique.</span></span>
 
 ```yaml
 Type: System.String
@@ -352,8 +353,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="51fd7-179">-EnabledForDeployment</span><span class="sxs-lookup"><span data-stu-id="51fd7-179">-EnabledForDeployment</span></span>
-<span data-ttu-id="51fd7-180">A Microsoft. számítási erőforrás-szolgáltatója kinyerheti a titkokat ebből a kulcsfájlból, ha ez a kulcs boltozata az erőforrás létrehozásakor, például virtuális gép létrehozásakor jelenik meg.</span><span class="sxs-lookup"><span data-stu-id="51fd7-180">Enables the Microsoft.Compute resource provider to retrieve secrets from this key vault when this key vault is referenced in resource creation, for example when creating a virtual machine.</span></span>
+### <span data-ttu-id="aa69b-179">-EnabledForDeployment</span><span class="sxs-lookup"><span data-stu-id="aa69b-179">-EnabledForDeployment</span></span>
+<span data-ttu-id="aa69b-180">Lehetővé teszi a Microsoft.Compute erőforrásszolgáltatónak, hogy beolvassa a titkos értékeket ebből a kulcstárból, amikor erre a kulcstárra hivatkozik az erőforrás-létrehozás során, például virtuális gép létrehozásakor.</span><span class="sxs-lookup"><span data-stu-id="aa69b-180">Enables the Microsoft.Compute resource provider to retrieve secrets from this key vault when this key vault is referenced in resource creation, for example when creating a virtual machine.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -367,8 +368,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="51fd7-181">-EnabledForDiskEncryption</span><span class="sxs-lookup"><span data-stu-id="51fd7-181">-EnabledForDiskEncryption</span></span>
-<span data-ttu-id="51fd7-182">Lehetővé teszi, hogy az Azure Disk Encryption szolgáltatás a kulcsok kijavítását és kicsomagolását a kulcsból.</span><span class="sxs-lookup"><span data-stu-id="51fd7-182">Enables the Azure disk encryption service to get secrets and unwrap keys from this key vault.</span></span>
+### <span data-ttu-id="aa69b-181">-EnabledForDiskEncryption</span><span class="sxs-lookup"><span data-stu-id="aa69b-181">-EnabledForDiskEncryption</span></span>
+<span data-ttu-id="aa69b-182">Lehetővé teszi az Azure lemeztitkosítási szolgáltatásának, hogy titkos adatokat és kulcsokat olvasson le ebből a kulcstárból.</span><span class="sxs-lookup"><span data-stu-id="aa69b-182">Enables the Azure disk encryption service to get secrets and unwrap keys from this key vault.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -382,8 +383,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="51fd7-183">-EnabledForTemplateDeployment</span><span class="sxs-lookup"><span data-stu-id="51fd7-183">-EnabledForTemplateDeployment</span></span>
-<span data-ttu-id="51fd7-184">Lehetővé teszi az Azure Resource Manager számára, hogy ebből a kulcsfájlból kiírja a titkot, ha ezt a kulcspárt a sablonok központi telepítéséhez hivatkozik.</span><span class="sxs-lookup"><span data-stu-id="51fd7-184">Enables Azure Resource Manager to get secrets from this key vault when this key vault is referenced in a template deployment.</span></span>
+### <span data-ttu-id="aa69b-183">-EnabledForTemplateDeployment</span><span class="sxs-lookup"><span data-stu-id="aa69b-183">-EnabledForTemplateDeployment</span></span>
+<span data-ttu-id="aa69b-184">Lehetővé teszi az Azure Resource Manager számára, hogy titkos titkos szolgáltatásokat rejtsen ebből a kulcstárból, amikor erre a kulcstárra hivatkozik egy sablon központi telepítésében.</span><span class="sxs-lookup"><span data-stu-id="aa69b-184">Enables Azure Resource Manager to get secrets from this key vault when this key vault is referenced in a template deployment.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -397,8 +398,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="51fd7-185">-InputObject</span><span class="sxs-lookup"><span data-stu-id="51fd7-185">-InputObject</span></span>
-<span data-ttu-id="51fd7-186">Fő pince objektum</span><span class="sxs-lookup"><span data-stu-id="51fd7-186">Key Vault Object</span></span>
+### <span data-ttu-id="aa69b-185">-InputObject</span><span class="sxs-lookup"><span data-stu-id="aa69b-185">-InputObject</span></span>
+<span data-ttu-id="aa69b-186">Key Vault objektum</span><span class="sxs-lookup"><span data-stu-id="aa69b-186">Key Vault Object</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultIdentityItem
@@ -412,8 +413,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="51fd7-187">-ObjectId</span><span class="sxs-lookup"><span data-stu-id="51fd7-187">-ObjectId</span></span>
-<span data-ttu-id="51fd7-188">Annak az Azure Active Directory-fióknak az objektum-AZONOSÍTÓját adja meg, amelyre engedélyt szeretne adni.</span><span class="sxs-lookup"><span data-stu-id="51fd7-188">Specifies the object ID of the user or service principal in Azure Active Directory for which to grant permissions.</span></span>
+### <span data-ttu-id="aa69b-187">-ObjectId</span><span class="sxs-lookup"><span data-stu-id="aa69b-187">-ObjectId</span></span>
+<span data-ttu-id="aa69b-188">Annak a felhasználónak vagy szolgáltatásnévnek az objektumazonosítóját adja meg az Azure Active Directoryban, amelynek az engedélyét meg kell adni.</span><span class="sxs-lookup"><span data-stu-id="aa69b-188">Specifies the object ID of the user or service principal in Azure Active Directory for which to grant permissions.</span></span>
 
 ```yaml
 Type: System.String
@@ -427,9 +428,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="51fd7-189">-PassThru</span><span class="sxs-lookup"><span data-stu-id="51fd7-189">-PassThru</span></span>
-<span data-ttu-id="51fd7-190">Egy olyan objektumot ad eredményül, amely a munkaterületet jelképezi.</span><span class="sxs-lookup"><span data-stu-id="51fd7-190">Returns an object representing the item with which you are working.</span></span>
-<span data-ttu-id="51fd7-191">Ez a parancsmag alapértelmezés szerint nem hoz létre semmilyen kimenetet.</span><span class="sxs-lookup"><span data-stu-id="51fd7-191">By default, this cmdlet does not generate any output.</span></span>
+### <span data-ttu-id="aa69b-189">-PassThru</span><span class="sxs-lookup"><span data-stu-id="aa69b-189">-PassThru</span></span>
+<span data-ttu-id="aa69b-190">Egy objektumot ad vissza, amely azt az elemet tartalmazza, amellyel dolgozik.</span><span class="sxs-lookup"><span data-stu-id="aa69b-190">Returns an object representing the item with which you are working.</span></span>
+<span data-ttu-id="aa69b-191">Ez a parancsmag alapértelmezés szerint nem hoz létre kimenetet.</span><span class="sxs-lookup"><span data-stu-id="aa69b-191">By default, this cmdlet does not generate any output.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -443,25 +444,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="51fd7-192">-PermissionsToCertificates</span><span class="sxs-lookup"><span data-stu-id="51fd7-192">-PermissionsToCertificates</span></span>
-<span data-ttu-id="51fd7-193">A felhasználók vagy a szolgáltatók számára megadható tanúsítvány-engedélyek tömbjét adja meg.</span><span class="sxs-lookup"><span data-stu-id="51fd7-193">Specifies an array of certificate permissions to grant to a user or service principal.</span></span>
-<span data-ttu-id="51fd7-194">A paraméter elfogadható értékei:</span><span class="sxs-lookup"><span data-stu-id="51fd7-194">The acceptable values for this parameter:</span></span>
-- <span data-ttu-id="51fd7-195">Beszerzése</span><span class="sxs-lookup"><span data-stu-id="51fd7-195">Get</span></span>
-- <span data-ttu-id="51fd7-196">Lista</span><span class="sxs-lookup"><span data-stu-id="51fd7-196">List</span></span>
-- <span data-ttu-id="51fd7-197">Törlése</span><span class="sxs-lookup"><span data-stu-id="51fd7-197">Delete</span></span>
-- <span data-ttu-id="51fd7-198">Létrehozása</span><span class="sxs-lookup"><span data-stu-id="51fd7-198">Create</span></span>
-- <span data-ttu-id="51fd7-199">Importálása</span><span class="sxs-lookup"><span data-stu-id="51fd7-199">Import</span></span>
-- <span data-ttu-id="51fd7-200">Frissítés</span><span class="sxs-lookup"><span data-stu-id="51fd7-200">Update</span></span>
-- <span data-ttu-id="51fd7-201">Managecontacts</span><span class="sxs-lookup"><span data-stu-id="51fd7-201">Managecontacts</span></span>
-- <span data-ttu-id="51fd7-202">Getissuers</span><span class="sxs-lookup"><span data-stu-id="51fd7-202">Getissuers</span></span>
-- <span data-ttu-id="51fd7-203">Listissuers</span><span class="sxs-lookup"><span data-stu-id="51fd7-203">Listissuers</span></span>
-- <span data-ttu-id="51fd7-204">Setissuers</span><span class="sxs-lookup"><span data-stu-id="51fd7-204">Setissuers</span></span>
-- <span data-ttu-id="51fd7-205">Deleteissuers</span><span class="sxs-lookup"><span data-stu-id="51fd7-205">Deleteissuers</span></span>
-- <span data-ttu-id="51fd7-206">Manageissuers</span><span class="sxs-lookup"><span data-stu-id="51fd7-206">Manageissuers</span></span>
-- <span data-ttu-id="51fd7-207">Visszaszerez</span><span class="sxs-lookup"><span data-stu-id="51fd7-207">Recover</span></span>
-- <span data-ttu-id="51fd7-208">Hát</span><span class="sxs-lookup"><span data-stu-id="51fd7-208">Backup</span></span>
-- <span data-ttu-id="51fd7-209">Visszaállítása</span><span class="sxs-lookup"><span data-stu-id="51fd7-209">Restore</span></span>
-- <span data-ttu-id="51fd7-210">Véglegesen</span><span class="sxs-lookup"><span data-stu-id="51fd7-210">Purge</span></span>
+### <span data-ttu-id="aa69b-192">-PermissionsToCertificates</span><span class="sxs-lookup"><span data-stu-id="aa69b-192">-PermissionsToCertificates</span></span>
+<span data-ttu-id="aa69b-193">Egy felhasználónak vagy egyszerű szolgáltatásnak adható tanúsítványengedélyek tömbje.</span><span class="sxs-lookup"><span data-stu-id="aa69b-193">Specifies an array of certificate permissions to grant to a user or service principal.</span></span>
+<span data-ttu-id="aa69b-194">A paraméter elfogadható értékei:</span><span class="sxs-lookup"><span data-stu-id="aa69b-194">The acceptable values for this parameter:</span></span>
+- <span data-ttu-id="aa69b-195">Bej.le</span><span class="sxs-lookup"><span data-stu-id="aa69b-195">Get</span></span>
+- <span data-ttu-id="aa69b-196">Lista</span><span class="sxs-lookup"><span data-stu-id="aa69b-196">List</span></span>
+- <span data-ttu-id="aa69b-197">Törlés</span><span class="sxs-lookup"><span data-stu-id="aa69b-197">Delete</span></span>
+- <span data-ttu-id="aa69b-198">Létrehozás</span><span class="sxs-lookup"><span data-stu-id="aa69b-198">Create</span></span>
+- <span data-ttu-id="aa69b-199">Importálás</span><span class="sxs-lookup"><span data-stu-id="aa69b-199">Import</span></span>
+- <span data-ttu-id="aa69b-200">Frissítés</span><span class="sxs-lookup"><span data-stu-id="aa69b-200">Update</span></span>
+- <span data-ttu-id="aa69b-201">Managecontacts</span><span class="sxs-lookup"><span data-stu-id="aa69b-201">Managecontacts</span></span>
+- <span data-ttu-id="aa69b-202">Getissuers</span><span class="sxs-lookup"><span data-stu-id="aa69b-202">Getissuers</span></span>
+- <span data-ttu-id="aa69b-203">Listissuers</span><span class="sxs-lookup"><span data-stu-id="aa69b-203">Listissuers</span></span>
+- <span data-ttu-id="aa69b-204">Setissuers</span><span class="sxs-lookup"><span data-stu-id="aa69b-204">Setissuers</span></span>
+- <span data-ttu-id="aa69b-205">Deleteissuers</span><span class="sxs-lookup"><span data-stu-id="aa69b-205">Deleteissuers</span></span>
+- <span data-ttu-id="aa69b-206">Manageissuers</span><span class="sxs-lookup"><span data-stu-id="aa69b-206">Manageissuers</span></span>
+- <span data-ttu-id="aa69b-207">Helyreállítás</span><span class="sxs-lookup"><span data-stu-id="aa69b-207">Recover</span></span>
+- <span data-ttu-id="aa69b-208">Biztonsági másolat</span><span class="sxs-lookup"><span data-stu-id="aa69b-208">Backup</span></span>
+- <span data-ttu-id="aa69b-209">Visszaállítás</span><span class="sxs-lookup"><span data-stu-id="aa69b-209">Restore</span></span>
+- <span data-ttu-id="aa69b-210">Végleges végleges végleges</span><span class="sxs-lookup"><span data-stu-id="aa69b-210">Purge</span></span>
 
 ```yaml
 Type: System.String[]
@@ -476,25 +477,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="51fd7-211">-PermissionsToKeys</span><span class="sxs-lookup"><span data-stu-id="51fd7-211">-PermissionsToKeys</span></span>
-<span data-ttu-id="51fd7-212">A felhasználó vagy a szolgáltatás megbízójának megadni kívánt fő műveleti engedélyek tömbjét adja meg.</span><span class="sxs-lookup"><span data-stu-id="51fd7-212">Specifies an array of key operation permissions to grant to a user or service principal.</span></span>
-<span data-ttu-id="51fd7-213">A paraméter elfogadható értékei:</span><span class="sxs-lookup"><span data-stu-id="51fd7-213">The acceptable values for this parameter:</span></span>
-- <span data-ttu-id="51fd7-214">Visszafejtése</span><span class="sxs-lookup"><span data-stu-id="51fd7-214">Decrypt</span></span>
-- <span data-ttu-id="51fd7-215">Beavatkozik</span><span class="sxs-lookup"><span data-stu-id="51fd7-215">Encrypt</span></span>
-- <span data-ttu-id="51fd7-216">UnwrapKey</span><span class="sxs-lookup"><span data-stu-id="51fd7-216">UnwrapKey</span></span>
-- <span data-ttu-id="51fd7-217">WrapKey</span><span class="sxs-lookup"><span data-stu-id="51fd7-217">WrapKey</span></span>
-- <span data-ttu-id="51fd7-218">Ellenőrizze</span><span class="sxs-lookup"><span data-stu-id="51fd7-218">Verify</span></span>
-- <span data-ttu-id="51fd7-219">Jel</span><span class="sxs-lookup"><span data-stu-id="51fd7-219">Sign</span></span>
-- <span data-ttu-id="51fd7-220">Beszerzése</span><span class="sxs-lookup"><span data-stu-id="51fd7-220">Get</span></span>
-- <span data-ttu-id="51fd7-221">Lista</span><span class="sxs-lookup"><span data-stu-id="51fd7-221">List</span></span>
-- <span data-ttu-id="51fd7-222">Frissítés</span><span class="sxs-lookup"><span data-stu-id="51fd7-222">Update</span></span>
-- <span data-ttu-id="51fd7-223">Létrehozása</span><span class="sxs-lookup"><span data-stu-id="51fd7-223">Create</span></span>
-- <span data-ttu-id="51fd7-224">Importálása</span><span class="sxs-lookup"><span data-stu-id="51fd7-224">Import</span></span>
-- <span data-ttu-id="51fd7-225">Törlése</span><span class="sxs-lookup"><span data-stu-id="51fd7-225">Delete</span></span>
-- <span data-ttu-id="51fd7-226">Hát</span><span class="sxs-lookup"><span data-stu-id="51fd7-226">Backup</span></span>
-- <span data-ttu-id="51fd7-227">Visszaállítása</span><span class="sxs-lookup"><span data-stu-id="51fd7-227">Restore</span></span>
-- <span data-ttu-id="51fd7-228">Visszaszerez</span><span class="sxs-lookup"><span data-stu-id="51fd7-228">Recover</span></span>
-- <span data-ttu-id="51fd7-229">Véglegesen</span><span class="sxs-lookup"><span data-stu-id="51fd7-229">Purge</span></span>
+### <span data-ttu-id="aa69b-211">-PermissionsToKeys</span><span class="sxs-lookup"><span data-stu-id="aa69b-211">-PermissionsToKeys</span></span>
+<span data-ttu-id="aa69b-212">Egy felhasználónak vagy egyszerű szolgáltatásnak adható kulcsműveleti engedélyek tömbje.</span><span class="sxs-lookup"><span data-stu-id="aa69b-212">Specifies an array of key operation permissions to grant to a user or service principal.</span></span>
+<span data-ttu-id="aa69b-213">A paraméter elfogadható értékei:</span><span class="sxs-lookup"><span data-stu-id="aa69b-213">The acceptable values for this parameter:</span></span>
+- <span data-ttu-id="aa69b-214">Visszafejtése</span><span class="sxs-lookup"><span data-stu-id="aa69b-214">Decrypt</span></span>
+- <span data-ttu-id="aa69b-215">Titkosítás</span><span class="sxs-lookup"><span data-stu-id="aa69b-215">Encrypt</span></span>
+- <span data-ttu-id="aa69b-216">UnwrapKey</span><span class="sxs-lookup"><span data-stu-id="aa69b-216">UnwrapKey</span></span>
+- <span data-ttu-id="aa69b-217">WrapKey</span><span class="sxs-lookup"><span data-stu-id="aa69b-217">WrapKey</span></span>
+- <span data-ttu-id="aa69b-218">Ellenőrzés</span><span class="sxs-lookup"><span data-stu-id="aa69b-218">Verify</span></span>
+- <span data-ttu-id="aa69b-219">Aláírás</span><span class="sxs-lookup"><span data-stu-id="aa69b-219">Sign</span></span>
+- <span data-ttu-id="aa69b-220">Bej.le</span><span class="sxs-lookup"><span data-stu-id="aa69b-220">Get</span></span>
+- <span data-ttu-id="aa69b-221">Lista</span><span class="sxs-lookup"><span data-stu-id="aa69b-221">List</span></span>
+- <span data-ttu-id="aa69b-222">Frissítés</span><span class="sxs-lookup"><span data-stu-id="aa69b-222">Update</span></span>
+- <span data-ttu-id="aa69b-223">Létrehozás</span><span class="sxs-lookup"><span data-stu-id="aa69b-223">Create</span></span>
+- <span data-ttu-id="aa69b-224">Importálás</span><span class="sxs-lookup"><span data-stu-id="aa69b-224">Import</span></span>
+- <span data-ttu-id="aa69b-225">Törlés</span><span class="sxs-lookup"><span data-stu-id="aa69b-225">Delete</span></span>
+- <span data-ttu-id="aa69b-226">Biztonsági másolat</span><span class="sxs-lookup"><span data-stu-id="aa69b-226">Backup</span></span>
+- <span data-ttu-id="aa69b-227">Visszaállítás</span><span class="sxs-lookup"><span data-stu-id="aa69b-227">Restore</span></span>
+- <span data-ttu-id="aa69b-228">Helyreállítás</span><span class="sxs-lookup"><span data-stu-id="aa69b-228">Recover</span></span>
+- <span data-ttu-id="aa69b-229">Végleges végleges végleges</span><span class="sxs-lookup"><span data-stu-id="aa69b-229">Purge</span></span>
 
 ```yaml
 Type: System.String[]
@@ -509,17 +510,17 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="51fd7-230">-PermissionsToSecrets</span><span class="sxs-lookup"><span data-stu-id="51fd7-230">-PermissionsToSecrets</span></span>
-<span data-ttu-id="51fd7-231">A felhasználó vagy a szolgáltatás megbízójának megadni kívánt titkos műveleti engedélyek tömbjét adja meg.</span><span class="sxs-lookup"><span data-stu-id="51fd7-231">Specifies an array of secret operation permissions to grant to a user or service principal.</span></span>
-<span data-ttu-id="51fd7-232">A paraméter elfogadható értékei:</span><span class="sxs-lookup"><span data-stu-id="51fd7-232">The acceptable values for this parameter:</span></span>
-- <span data-ttu-id="51fd7-233">Beszerzése</span><span class="sxs-lookup"><span data-stu-id="51fd7-233">Get</span></span>
-- <span data-ttu-id="51fd7-234">Lista</span><span class="sxs-lookup"><span data-stu-id="51fd7-234">List</span></span>
-- <span data-ttu-id="51fd7-235">Beállítása</span><span class="sxs-lookup"><span data-stu-id="51fd7-235">Set</span></span>
-- <span data-ttu-id="51fd7-236">Törlése</span><span class="sxs-lookup"><span data-stu-id="51fd7-236">Delete</span></span>
-- <span data-ttu-id="51fd7-237">Hát</span><span class="sxs-lookup"><span data-stu-id="51fd7-237">Backup</span></span>
-- <span data-ttu-id="51fd7-238">Visszaállítása</span><span class="sxs-lookup"><span data-stu-id="51fd7-238">Restore</span></span>
-- <span data-ttu-id="51fd7-239">Visszaszerez</span><span class="sxs-lookup"><span data-stu-id="51fd7-239">Recover</span></span>
-- <span data-ttu-id="51fd7-240">Véglegesen</span><span class="sxs-lookup"><span data-stu-id="51fd7-240">Purge</span></span>
+### <span data-ttu-id="aa69b-230">-PermissionsToSecrets</span><span class="sxs-lookup"><span data-stu-id="aa69b-230">-PermissionsToSecrets</span></span>
+<span data-ttu-id="aa69b-231">Egy felhasználónak vagy egyszerű szolgáltatásnak adható titkos műveletekre vonatkozó engedélyek tömbje.</span><span class="sxs-lookup"><span data-stu-id="aa69b-231">Specifies an array of secret operation permissions to grant to a user or service principal.</span></span>
+<span data-ttu-id="aa69b-232">A paraméter elfogadható értékei:</span><span class="sxs-lookup"><span data-stu-id="aa69b-232">The acceptable values for this parameter:</span></span>
+- <span data-ttu-id="aa69b-233">Bej.le</span><span class="sxs-lookup"><span data-stu-id="aa69b-233">Get</span></span>
+- <span data-ttu-id="aa69b-234">Lista</span><span class="sxs-lookup"><span data-stu-id="aa69b-234">List</span></span>
+- <span data-ttu-id="aa69b-235">Beállítás</span><span class="sxs-lookup"><span data-stu-id="aa69b-235">Set</span></span>
+- <span data-ttu-id="aa69b-236">Törlés</span><span class="sxs-lookup"><span data-stu-id="aa69b-236">Delete</span></span>
+- <span data-ttu-id="aa69b-237">Biztonsági másolat</span><span class="sxs-lookup"><span data-stu-id="aa69b-237">Backup</span></span>
+- <span data-ttu-id="aa69b-238">Visszaállítás</span><span class="sxs-lookup"><span data-stu-id="aa69b-238">Restore</span></span>
+- <span data-ttu-id="aa69b-239">Helyreállítás</span><span class="sxs-lookup"><span data-stu-id="aa69b-239">Recover</span></span>
+- <span data-ttu-id="aa69b-240">Végleges végleges végleges</span><span class="sxs-lookup"><span data-stu-id="aa69b-240">Purge</span></span>
 
 ```yaml
 Type: System.String[]
@@ -534,8 +535,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="51fd7-241">-PermissionsToStorage</span><span class="sxs-lookup"><span data-stu-id="51fd7-241">-PermissionsToStorage</span></span>
-<span data-ttu-id="51fd7-242">A felügyelt tárterület-fiók és a SaS-definíciós műveleti engedélyeket adja meg a felhasználó vagy a szolgáltatás megbízójának.</span><span class="sxs-lookup"><span data-stu-id="51fd7-242">Specifies managed storage account and SaS-definition operation permissions to grant to a user or service principal.</span></span>
+### <span data-ttu-id="aa69b-241">-PermissionsToStorage</span><span class="sxs-lookup"><span data-stu-id="aa69b-241">-PermissionsToStorage</span></span>
+<span data-ttu-id="aa69b-242">A felügyelt tárfiókra és a SaS-definíciós műveletre vonatkozó engedélyeket adja meg, amelyek a felhasználónak vagy a szolgáltatásnévnek adhatók.</span><span class="sxs-lookup"><span data-stu-id="aa69b-242">Specifies managed storage account and SaS-definition operation permissions to grant to a user or service principal.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -550,8 +551,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="51fd7-243">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="51fd7-243">-ResourceGroupName</span></span>
-<span data-ttu-id="51fd7-244">Egy erőforráscsoport nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="51fd7-244">Specifies the name of a resource group.</span></span>
+### <span data-ttu-id="aa69b-243">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="aa69b-243">-ResourceGroupName</span></span>
+<span data-ttu-id="aa69b-244">Egy erőforráscsoport nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="aa69b-244">Specifies the name of a resource group.</span></span>
 
 ```yaml
 Type: System.String
@@ -565,8 +566,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="51fd7-245">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="51fd7-245">-ResourceId</span></span>
-<span data-ttu-id="51fd7-246">Fő pince-erőforrás azonosítója</span><span class="sxs-lookup"><span data-stu-id="51fd7-246">Key Vault Resource Id</span></span>
+### <span data-ttu-id="aa69b-245">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="aa69b-245">-ResourceId</span></span>
+<span data-ttu-id="aa69b-246">Key Vault Resource Id</span><span class="sxs-lookup"><span data-stu-id="aa69b-246">Key Vault Resource Id</span></span>
 
 ```yaml
 Type: System.String
@@ -580,9 +581,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="51fd7-247">-ServicePrincipalName</span><span class="sxs-lookup"><span data-stu-id="51fd7-247">-ServicePrincipalName</span></span>
-<span data-ttu-id="51fd7-248">Annak az alkalmazásnak az egyszerű szolgáltatásnevet adja meg, amelyre engedélyt szeretne adni.</span><span class="sxs-lookup"><span data-stu-id="51fd7-248">Specifies the service principal name of the application to which to grant permissions.</span></span>
-<span data-ttu-id="51fd7-249">Adja meg az alkalmazáshoz az AzureActive-címtárban regisztrált alkalmazás-azonosítót (más néven ügyfél-azonosító).</span><span class="sxs-lookup"><span data-stu-id="51fd7-249">Specify the application ID, also known as client ID, registered for the application in AzureActive Directory.</span></span> <span data-ttu-id="51fd7-250">A paraméter által megadott szolgáltatásnevet tartalmazó alkalmazásnak regisztrálnia kell a jelenlegi előfizetést tartalmazó Azure-címtárban.</span><span class="sxs-lookup"><span data-stu-id="51fd7-250">The application with the service principal name that this parameter specifies must be registered in the Azure directory that contains your current subscription.</span></span>
+### <span data-ttu-id="aa69b-247">-ServicePrincipalName</span><span class="sxs-lookup"><span data-stu-id="aa69b-247">-ServicePrincipalName</span></span>
+<span data-ttu-id="aa69b-248">Annak az alkalmazásnak a egyszerű szolgáltatásnevét adja meg, amelyhez engedélyeket ad.</span><span class="sxs-lookup"><span data-stu-id="aa69b-248">Specifies the service principal name of the application to which to grant permissions.</span></span>
+<span data-ttu-id="aa69b-249">Adja meg az alkalmazáshoz az AzureActive Directoryban regisztrált alkalmazásazonosítót ( más néven ügyfélazonosítót).</span><span class="sxs-lookup"><span data-stu-id="aa69b-249">Specify the application ID, also known as client ID, registered for the application in AzureActive Directory.</span></span> <span data-ttu-id="aa69b-250">A paraméterként megadott egyszerű szolgáltatásnévvel megadott alkalmazást az aktuális előfizetést tartalmazó Azure-címtárban kell regisztrálni.</span><span class="sxs-lookup"><span data-stu-id="aa69b-250">The application with the service principal name that this parameter specifies must be registered in the Azure directory that contains your current subscription.</span></span>
 
 ```yaml
 Type: System.String
@@ -596,9 +597,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="51fd7-251">-UserPrincipalName</span><span class="sxs-lookup"><span data-stu-id="51fd7-251">-UserPrincipalName</span></span>
-<span data-ttu-id="51fd7-252">Annak a felhasználónak az egyszerű felhasználónevét adja meg, akinek engedélyt szeretne adni.</span><span class="sxs-lookup"><span data-stu-id="51fd7-252">Specifies the user principal name of the user to whom to grant permissions.</span></span>
-<span data-ttu-id="51fd7-253">Ez az egyszerű felhasználónév csak az aktuális előfizetéshez társított címtárban található.</span><span class="sxs-lookup"><span data-stu-id="51fd7-253">This user principal name must exist in the directory associated with the current subscription.</span></span>
+### <span data-ttu-id="aa69b-251">-UserPrincipalName</span><span class="sxs-lookup"><span data-stu-id="aa69b-251">-UserPrincipalName</span></span>
+<span data-ttu-id="aa69b-252">Annak a felhasználónak a felhasználó egyszerű felhasználónevét adja meg, akinek az engedélyeket ki kell ad.</span><span class="sxs-lookup"><span data-stu-id="aa69b-252">Specifies the user principal name of the user to whom to grant permissions.</span></span>
+<span data-ttu-id="aa69b-253">Az egyszerű felhasználónévnek az aktuális előfizetéshez társított címtárban kell lennie.</span><span class="sxs-lookup"><span data-stu-id="aa69b-253">This user principal name must exist in the directory associated with the current subscription.</span></span>
 
 ```yaml
 Type: System.String
@@ -612,9 +613,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="51fd7-254">-VaultName</span><span class="sxs-lookup"><span data-stu-id="51fd7-254">-VaultName</span></span>
-<span data-ttu-id="51fd7-255">A kulcsfájl nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="51fd7-255">Specifies the name of a key vault.</span></span>
-<span data-ttu-id="51fd7-256">Ez a parancsmag módosítja a hozzáférési házirendet annak a kulcsfájl számára, amelyet a paraméter határoz meg.</span><span class="sxs-lookup"><span data-stu-id="51fd7-256">This cmdlet modifies the access policy for the key vault that this parameter specifies.</span></span>
+### <span data-ttu-id="aa69b-254">-VaultName</span><span class="sxs-lookup"><span data-stu-id="aa69b-254">-VaultName</span></span>
+<span data-ttu-id="aa69b-255">Egy kulcstár nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="aa69b-255">Specifies the name of a key vault.</span></span>
+<span data-ttu-id="aa69b-256">Ez a parancsmag módosítja a paraméter által megadott kulcstár hozzáférési házirendját.</span><span class="sxs-lookup"><span data-stu-id="aa69b-256">This cmdlet modifies the access policy for the key vault that this parameter specifies.</span></span>
 
 ```yaml
 Type: System.String
@@ -628,8 +629,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="51fd7-257">– Megerősítés</span><span class="sxs-lookup"><span data-stu-id="51fd7-257">-Confirm</span></span>
-<span data-ttu-id="51fd7-258">A parancsmag futtatása előtt kéri a megerősítést.</span><span class="sxs-lookup"><span data-stu-id="51fd7-258">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="aa69b-257">-Confirm</span><span class="sxs-lookup"><span data-stu-id="aa69b-257">-Confirm</span></span>
+<span data-ttu-id="aa69b-258">A parancsmag futtatása előtt a rendszer megerősítést kér.</span><span class="sxs-lookup"><span data-stu-id="aa69b-258">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -643,8 +644,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="51fd7-259">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="51fd7-259">-WhatIf</span></span>
-<span data-ttu-id="51fd7-260">Annak megjelenítése, hogy mi történik, ha a parancsmag fut.</span><span class="sxs-lookup"><span data-stu-id="51fd7-260">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="51fd7-261">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="51fd7-261">The cmdlet is not run.</span></span>
+### <span data-ttu-id="aa69b-259">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="aa69b-259">-WhatIf</span></span>
+<span data-ttu-id="aa69b-260">A parancsmag futtatásakor a program megjeleníti, hogy mi történik.</span><span class="sxs-lookup"><span data-stu-id="aa69b-260">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="aa69b-261">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="aa69b-261">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -658,24 +659,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="51fd7-262">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="51fd7-262">CommonParameters</span></span>
-<span data-ttu-id="51fd7-263">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="51fd7-263">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="51fd7-264">További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="51fd7-264">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="aa69b-262">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="aa69b-262">CommonParameters</span></span>
+<span data-ttu-id="aa69b-263">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="aa69b-263">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="aa69b-264">További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="aa69b-264">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="51fd7-265">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="51fd7-265">INPUTS</span></span>
+## <span data-ttu-id="aa69b-265">INPUTS</span><span class="sxs-lookup"><span data-stu-id="aa69b-265">INPUTS</span></span>
 
-### <span data-ttu-id="51fd7-266">Microsoft. Azure. Command. PSKeyVaultIdentityItem. models.</span><span class="sxs-lookup"><span data-stu-id="51fd7-266">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultIdentityItem</span></span>
+### <span data-ttu-id="aa69b-266">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultIdentityItem</span><span class="sxs-lookup"><span data-stu-id="aa69b-266">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultIdentityItem</span></span>
 
-### <span data-ttu-id="51fd7-267">System. String</span><span class="sxs-lookup"><span data-stu-id="51fd7-267">System.String</span></span>
+### <span data-ttu-id="aa69b-267">System.String</span><span class="sxs-lookup"><span data-stu-id="aa69b-267">System.String</span></span>
 
-## <span data-ttu-id="51fd7-268">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="51fd7-268">OUTPUTS</span></span>
+## <span data-ttu-id="aa69b-268">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="aa69b-268">OUTPUTS</span></span>
 
-### <span data-ttu-id="51fd7-269">Microsoft. Azure. Command. PSKeyVault. models.</span><span class="sxs-lookup"><span data-stu-id="51fd7-269">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault</span></span>
+### <span data-ttu-id="aa69b-269">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault</span><span class="sxs-lookup"><span data-stu-id="aa69b-269">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault</span></span>
 
-## <span data-ttu-id="51fd7-270">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="51fd7-270">NOTES</span></span>
+## <span data-ttu-id="aa69b-270">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="aa69b-270">NOTES</span></span>
 
-## <span data-ttu-id="51fd7-271">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="51fd7-271">RELATED LINKS</span></span>
+## <span data-ttu-id="aa69b-271">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="aa69b-271">RELATED LINKS</span></span>
 
-[<span data-ttu-id="51fd7-272">Get-AzKeyVault</span><span class="sxs-lookup"><span data-stu-id="51fd7-272">Get-AzKeyVault</span></span>](./Get-AzKeyVault.md)
+[<span data-ttu-id="aa69b-272">Get-AzKeyVault</span><span class="sxs-lookup"><span data-stu-id="aa69b-272">Get-AzKeyVault</span></span>](./Get-AzKeyVault.md)
 
-[<span data-ttu-id="51fd7-273">Remove-AzKeyVaultAccessPolicy</span><span class="sxs-lookup"><span data-stu-id="51fd7-273">Remove-AzKeyVaultAccessPolicy</span></span>](./Remove-AzKeyVaultAccessPolicy.md)
+[<span data-ttu-id="aa69b-273">Remove-AzKeyVaultAccessPolicy</span><span class="sxs-lookup"><span data-stu-id="aa69b-273">Remove-AzKeyVaultAccessPolicy</span></span>](./Remove-AzKeyVaultAccessPolicy.md)
 

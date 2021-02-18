@@ -6,40 +6,40 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteServiceProvider.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteServiceProvider.md
-ms.openlocfilehash: afa217565dc90bed1f047bc18b9407141b98dd0c
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 4017d9eba94f82b235b5016145ee0692ff56892c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93837589"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410769"
 ---
-# <span data-ttu-id="49aa7-101">Get-AzExpressRouteServiceProvider</span><span class="sxs-lookup"><span data-stu-id="49aa7-101">Get-AzExpressRouteServiceProvider</span></span>
+# <span data-ttu-id="67851-101">Get-AzExpressRouteServiceProvider</span><span class="sxs-lookup"><span data-stu-id="67851-101">Get-AzExpressRouteServiceProvider</span></span>
 
-## <span data-ttu-id="49aa7-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="49aa7-102">SYNOPSIS</span></span>
-<span data-ttu-id="49aa7-103">Beolvassa a List ExpressRoute szolgáltatókat és attribútumaikat.</span><span class="sxs-lookup"><span data-stu-id="49aa7-103">Gets a list ExpressRoute service providers and their attributes.</span></span>
+## <span data-ttu-id="67851-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="67851-102">SYNOPSIS</span></span>
+<span data-ttu-id="67851-103">Listát kap az ExpressRoute-szolgáltatókról és jellemzőikről.</span><span class="sxs-lookup"><span data-stu-id="67851-103">Gets a list ExpressRoute service providers and their attributes.</span></span>
 
-## <span data-ttu-id="49aa7-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="49aa7-104">SYNTAX</span></span>
+## <span data-ttu-id="67851-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="67851-104">SYNTAX</span></span>
 
 ```
 Get-AzExpressRouteServiceProvider [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="49aa7-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="49aa7-105">DESCRIPTION</span></span>
-<span data-ttu-id="49aa7-106">A **Get-AzExpressRouteServiceProvider** parancsmag kikeresi a ExpressRoute-szolgáltatókat és a hozzájuk tartozó attribútumokat.</span><span class="sxs-lookup"><span data-stu-id="49aa7-106">The **Get-AzExpressRouteServiceProvider** cmdlet retrieves a list ExpressRoute service providers and their attributes.</span></span> <span data-ttu-id="49aa7-107">Az attribútum a hely és a sávszélesség beállítását is tartalmazza.</span><span class="sxs-lookup"><span data-stu-id="49aa7-107">Attribute include location and bandwidth options.</span></span>
+## <span data-ttu-id="67851-105">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="67851-105">DESCRIPTION</span></span>
+<span data-ttu-id="67851-106">A **Get-AzExpressRouteServiceProvider** parancsmag beolvassa az ExpressRoute-szolgáltatók listáját és attribútumát.</span><span class="sxs-lookup"><span data-stu-id="67851-106">The **Get-AzExpressRouteServiceProvider** cmdlet retrieves a list ExpressRoute service providers and their attributes.</span></span> <span data-ttu-id="67851-107">Az attribútum tartalmazza a hely- és sávszélesség-beállításokat.</span><span class="sxs-lookup"><span data-stu-id="67851-107">Attribute include location and bandwidth options.</span></span>
 
-## <span data-ttu-id="49aa7-108">Példák</span><span class="sxs-lookup"><span data-stu-id="49aa7-108">EXAMPLES</span></span>
+## <span data-ttu-id="67851-108">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="67851-108">EXAMPLES</span></span>
 
-### <span data-ttu-id="49aa7-109">Példa 1: szolgáltató listája a "Silicon Valley" helyekkel</span><span class="sxs-lookup"><span data-stu-id="49aa7-109">Example 1: Get a list of service provider with locations in "Silicon Valley"</span></span>
+### <span data-ttu-id="67851-109">1. példa: A "Silicon Valley" helyen található szolgáltatólista lekérte</span><span class="sxs-lookup"><span data-stu-id="67851-109">Example 1: Get a list of service provider with locations in "Silicon Valley"</span></span>
 ```
 Get-AzExpressRouteServiceProvider |
    Where-Object PeeringLocations -Contains "Silicon Valley" |
    Select-Object Name
 ```
 
-## <span data-ttu-id="49aa7-110">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="49aa7-110">PARAMETERS</span></span>
+## <span data-ttu-id="67851-110">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="67851-110">PARAMETERS</span></span>
 
-### <span data-ttu-id="49aa7-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="49aa7-111">-DefaultProfile</span></span>
-<span data-ttu-id="49aa7-112">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="49aa7-112">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="67851-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="67851-111">-DefaultProfile</span></span>
+<span data-ttu-id="67851-112">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="67851-112">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -53,25 +53,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="49aa7-113">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="49aa7-113">CommonParameters</span></span>
-<span data-ttu-id="49aa7-114">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="49aa7-114">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="49aa7-115">További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="49aa7-115">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="67851-113">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="67851-113">CommonParameters</span></span>
+<span data-ttu-id="67851-114">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="67851-114">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="67851-115">További információt a [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="67851-115">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="49aa7-116">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="49aa7-116">INPUTS</span></span>
+## <span data-ttu-id="67851-116">INPUTS</span><span class="sxs-lookup"><span data-stu-id="67851-116">INPUTS</span></span>
 
-### <span data-ttu-id="49aa7-117">Nincs</span><span class="sxs-lookup"><span data-stu-id="49aa7-117">None</span></span>
+### <span data-ttu-id="67851-117">Nincs</span><span class="sxs-lookup"><span data-stu-id="67851-117">None</span></span>
 
-## <span data-ttu-id="49aa7-118">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="49aa7-118">OUTPUTS</span></span>
+## <span data-ttu-id="67851-118">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="67851-118">OUTPUTS</span></span>
 
-### <span data-ttu-id="49aa7-119">Microsoft. Azure. commands. Network. models. PSExpressRouteServiceProvider</span><span class="sxs-lookup"><span data-stu-id="49aa7-119">Microsoft.Azure.Commands.Network.Models.PSExpressRouteServiceProvider</span></span>
+### <span data-ttu-id="67851-119">Microsoft.Azure.Commands.Network.Models.PSExpressRouteServiceProvider</span><span class="sxs-lookup"><span data-stu-id="67851-119">Microsoft.Azure.Commands.Network.Models.PSExpressRouteServiceProvider</span></span>
 
-## <span data-ttu-id="49aa7-120">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="49aa7-120">NOTES</span></span>
+## <span data-ttu-id="67851-120">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="67851-120">NOTES</span></span>
 
-## <span data-ttu-id="49aa7-121">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="49aa7-121">RELATED LINKS</span></span>
+## <span data-ttu-id="67851-121">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="67851-121">RELATED LINKS</span></span>
 
-[<span data-ttu-id="49aa7-122">Get-AzExpressRouteCircuitARPTable</span><span class="sxs-lookup"><span data-stu-id="49aa7-122">Get-AzExpressRouteCircuitARPTable</span></span>](Get-AzExpressRouteCircuitARPTable.md)
+[<span data-ttu-id="67851-122">Get-AzExpressRouteCircuitARPTable</span><span class="sxs-lookup"><span data-stu-id="67851-122">Get-AzExpressRouteCircuitARPTable</span></span>](Get-AzExpressRouteCircuitARPTable.md)
 
-[<span data-ttu-id="49aa7-123">Get-AzExpressRouteCircuitRouteTable</span><span class="sxs-lookup"><span data-stu-id="49aa7-123">Get-AzExpressRouteCircuitRouteTable</span></span>](Get-AzExpressRouteCircuitRouteTable.md)
+[<span data-ttu-id="67851-123">Get-AzExpressRouteCircuitRouteTable</span><span class="sxs-lookup"><span data-stu-id="67851-123">Get-AzExpressRouteCircuitRouteTable</span></span>](Get-AzExpressRouteCircuitRouteTable.md)
 
-[<span data-ttu-id="49aa7-124">Get-AzExpressRouteCircuitRouteTableSummary</span><span class="sxs-lookup"><span data-stu-id="49aa7-124">Get-AzExpressRouteCircuitRouteTableSummary</span></span>](Get-AzExpressRouteCircuitRouteTableSummary.md)
+[<span data-ttu-id="67851-124">Get-AzExpressRouteCircuitRouteTableSummary</span><span class="sxs-lookup"><span data-stu-id="67851-124">Get-AzExpressRouteCircuitRouteTableSummary</span></span>](Get-AzExpressRouteCircuitRouteTableSummary.md)
 
-[<span data-ttu-id="49aa7-125">Get-AzExpressRouteCircuitStats</span><span class="sxs-lookup"><span data-stu-id="49aa7-125">Get-AzExpressRouteCircuitStats</span></span>](Get-AzExpressRouteCircuitStats.md)
+[<span data-ttu-id="67851-125">Get-AzExpressRouteCircuitStat</span><span class="sxs-lookup"><span data-stu-id="67851-125">Get-AzExpressRouteCircuitStat</span></span>](Get-AzExpressRouteCircuitStat.md)
