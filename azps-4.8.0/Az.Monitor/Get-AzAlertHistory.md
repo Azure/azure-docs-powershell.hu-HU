@@ -6,31 +6,31 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertHistory.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertHistory.md
-ms.openlocfilehash: 5d4b3be80602377a7eae378939e4bb10221de324
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 42f407235238cec0b7e298bce344e71c075cecfd
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94025642"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405839"
 ---
-# <span data-ttu-id="b5b83-101">Get-AzAlertHistory</span><span class="sxs-lookup"><span data-stu-id="b5b83-101">Get-AzAlertHistory</span></span>
+# <span data-ttu-id="4a870-101">Get-AzAlertHistory</span><span class="sxs-lookup"><span data-stu-id="4a870-101">Get-AzAlertHistory</span></span>
 
-## <span data-ttu-id="b5b83-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="b5b83-102">SYNOPSIS</span></span>
-<span data-ttu-id="b5b83-103">Megkapja az értesítések előzményeit.</span><span class="sxs-lookup"><span data-stu-id="b5b83-103">Gets the history of alerts.</span></span>
+## <span data-ttu-id="4a870-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="4a870-102">SYNOPSIS</span></span>
+<span data-ttu-id="4a870-103">A riasztások előzményeinek lekérte.</span><span class="sxs-lookup"><span data-stu-id="4a870-103">Gets the history of alerts.</span></span>
 
-## <span data-ttu-id="b5b83-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="b5b83-104">SYNTAX</span></span>
+## <span data-ttu-id="4a870-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="4a870-104">SYNTAX</span></span>
 
 ```
 Get-AzAlertHistory [-ResourceId <String>] [-StartTime <DateTime>] [-EndTime <DateTime>] [-Status <String>]
  [-Caller <String>] [-DetailedOutput] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="b5b83-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="b5b83-105">DESCRIPTION</span></span>
-<span data-ttu-id="b5b83-106">A **Get-AzAlertHistory** parancsmag a bekapcsolt üzenetek, a letiltott, a kiégett és a megoldott üzenetek előzményeit kapja meg.</span><span class="sxs-lookup"><span data-stu-id="b5b83-106">The **Get-AzAlertHistory** cmdlet gets the history of alerts as they are enabled, disabled, fired, resolved, and so on.</span></span>
+## <span data-ttu-id="4a870-105">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="4a870-105">DESCRIPTION</span></span>
+<span data-ttu-id="4a870-106">A **Get-AzAlertHistory** parancsmag beszerződik a riasztások előzményeinek engedélyezett, letiltott, megoldott, megoldott stb.</span><span class="sxs-lookup"><span data-stu-id="4a870-106">The **Get-AzAlertHistory** cmdlet gets the history of alerts as they are enabled, disabled, fired, resolved, and so on.</span></span>
 
-## <span data-ttu-id="b5b83-107">Példák</span><span class="sxs-lookup"><span data-stu-id="b5b83-107">EXAMPLES</span></span>
+## <span data-ttu-id="4a870-107">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="4a870-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="b5b83-108">Példa 1: az értesítési előzmények beszerzése</span><span class="sxs-lookup"><span data-stu-id="b5b83-108">Example 1: Get the alert history</span></span>
+### <span data-ttu-id="4a870-108">1. példa: A riasztási előzmények lekérte</span><span class="sxs-lookup"><span data-stu-id="4a870-108">Example 1: Get the alert history</span></span>
 ```
 PS C:\>Get-AzAlertHistory -StartTime 2015-02-11T11:00:00 -EndTime 2015-02-11T12:00:00 -DetailedOutput
 Authorization        : 
@@ -170,9 +170,9 @@ SubscriptionId       : b93fb07a-6f93-30be-bf3e-4f0deca15f4f
 SubStatus            :
 ```
 
-<span data-ttu-id="b5b83-109">Ez a parancs a jelenlegi előfizetés megadott időkeretének figyelmeztetési előzményeit kapja meg.</span><span class="sxs-lookup"><span data-stu-id="b5b83-109">This command gets the alert history for the specified time frame for the current subscription.</span></span>
+<span data-ttu-id="4a870-109">Ez a parancs az aktuális előfizetéshez megadott időkeret riasztási előzményeit kapja meg.</span><span class="sxs-lookup"><span data-stu-id="4a870-109">This command gets the alert history for the specified time frame for the current subscription.</span></span>
 
-### <span data-ttu-id="b5b83-110">2. példa: adott erőforrás riasztási előzményeinek beolvasása</span><span class="sxs-lookup"><span data-stu-id="b5b83-110">Example 2: Get alert history for a specified resource</span></span>
+### <span data-ttu-id="4a870-110">2. példa: Riasztási előzmények lekérte egy adott erőforráshoz</span><span class="sxs-lookup"><span data-stu-id="4a870-110">Example 2: Get alert history for a specified resource</span></span>
 ```
 PS C:\>Get-AzAlertHistory -StartTime 2015-02-11T11:00:00 -EndTime 2015-02-11T12:00:00 -ResourceId "/subscriptions/b93fb07a-6f93-30be-bf3e-4f0deca15f4f/resourceGroups/Default-Web-EastUS/providers/microsoft.insights/alertrules/checkrule3-4b135401-a30c-4224-ae21-fa53a5bd253d" -DetailedOutput
 
@@ -268,12 +268,12 @@ SubscriptionId       : b93fb07a-6f93-30be-bf3e-4f0deca15f4f
 SubStatus            :
 ```
 
-<span data-ttu-id="b5b83-111">Ez a parancs a megadott erőforráshoz kapcsolódó figyelmeztetési szabályhoz kapcsolódó eseményeket kapja meg.</span><span class="sxs-lookup"><span data-stu-id="b5b83-111">This command gets the alert rule-related events for a specified resource.</span></span>
+<span data-ttu-id="4a870-111">Ez a parancs egy adott erőforráshoz tartozó riasztási szabályhoz kapcsolódó eseményeket kapja meg.</span><span class="sxs-lookup"><span data-stu-id="4a870-111">This command gets the alert rule-related events for a specified resource.</span></span>
 
-## <span data-ttu-id="b5b83-112">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="b5b83-112">PARAMETERS</span></span>
+## <span data-ttu-id="4a870-112">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="4a870-112">PARAMETERS</span></span>
 
-### <span data-ttu-id="b5b83-113">-Hívó</span><span class="sxs-lookup"><span data-stu-id="b5b83-113">-Caller</span></span>
-<span data-ttu-id="b5b83-114">A hívót adja meg.</span><span class="sxs-lookup"><span data-stu-id="b5b83-114">Specifies the caller.</span></span>
+### <span data-ttu-id="4a870-113">-Hívó</span><span class="sxs-lookup"><span data-stu-id="4a870-113">-Caller</span></span>
+<span data-ttu-id="4a870-114">A hívót határozza meg.</span><span class="sxs-lookup"><span data-stu-id="4a870-114">Specifies the caller.</span></span>
 
 ```yaml
 Type: System.String
@@ -287,8 +287,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b5b83-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="b5b83-115">-DefaultProfile</span></span>
-<span data-ttu-id="b5b83-116">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés</span><span class="sxs-lookup"><span data-stu-id="b5b83-116">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="4a870-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="4a870-115">-DefaultProfile</span></span>
+<span data-ttu-id="4a870-116">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés</span><span class="sxs-lookup"><span data-stu-id="4a870-116">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -302,8 +302,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b5b83-117">-DetailedOutput</span><span class="sxs-lookup"><span data-stu-id="b5b83-117">-DetailedOutput</span></span>
-<span data-ttu-id="b5b83-118">A kimenet minden részletét megjeleníti.</span><span class="sxs-lookup"><span data-stu-id="b5b83-118">Displays full details in the output.</span></span>
+### <span data-ttu-id="4a870-117">-DetailedOutput</span><span class="sxs-lookup"><span data-stu-id="4a870-117">-DetailedOutput</span></span>
+<span data-ttu-id="4a870-118">A kimenet minden részletét megjeleníti.</span><span class="sxs-lookup"><span data-stu-id="4a870-118">Displays full details in the output.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -317,9 +317,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b5b83-119">-A befejezési időpont</span><span class="sxs-lookup"><span data-stu-id="b5b83-119">-EndTime</span></span>
-<span data-ttu-id="b5b83-120">A lekérdezés befejezési időpontját adja meg helyi időben.</span><span class="sxs-lookup"><span data-stu-id="b5b83-120">Specifies the end time of the query in local time.</span></span>
-<span data-ttu-id="b5b83-121">Az alapértelmezett időpont az aktuális idő.</span><span class="sxs-lookup"><span data-stu-id="b5b83-121">The default is the current time.</span></span>
+### <span data-ttu-id="4a870-119">-EndTime</span><span class="sxs-lookup"><span data-stu-id="4a870-119">-EndTime</span></span>
+<span data-ttu-id="4a870-120">A lekérdezés helyi idő szerint megadott záró idejét adja meg.</span><span class="sxs-lookup"><span data-stu-id="4a870-120">Specifies the end time of the query in local time.</span></span>
+<span data-ttu-id="4a870-121">Az alapértelmezett érték az aktuális időpont.</span><span class="sxs-lookup"><span data-stu-id="4a870-121">The default is the current time.</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -333,8 +333,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b5b83-122">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="b5b83-122">-ResourceId</span></span>
-<span data-ttu-id="b5b83-123">Megadja, hogy a szabály melyik erőforrás-AZONOSÍTÓval van társítva.</span><span class="sxs-lookup"><span data-stu-id="b5b83-123">Specifies the resource ID the rule is associated with.</span></span>
+### <span data-ttu-id="4a870-122">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="4a870-122">-ResourceId</span></span>
+<span data-ttu-id="4a870-123">Azt az erőforrás-azonosítót adja meg, amelyhez a szabály társítva van.</span><span class="sxs-lookup"><span data-stu-id="4a870-123">Specifies the resource ID the rule is associated with.</span></span>
 
 ```yaml
 Type: System.String
@@ -348,9 +348,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b5b83-124">-Kezdő időpont</span><span class="sxs-lookup"><span data-stu-id="b5b83-124">-StartTime</span></span>
-<span data-ttu-id="b5b83-125">A lekérdezés kezdési időpontját adja meg helyi időben.</span><span class="sxs-lookup"><span data-stu-id="b5b83-125">Specifies the start time of the query in local time.</span></span>
-<span data-ttu-id="b5b83-126">Az alapértelmezett időpont az aktuális helyi idő, egy óra mínusz.</span><span class="sxs-lookup"><span data-stu-id="b5b83-126">The default is the current local time minus one hour.</span></span>
+### <span data-ttu-id="4a870-124">-StartTime</span><span class="sxs-lookup"><span data-stu-id="4a870-124">-StartTime</span></span>
+<span data-ttu-id="4a870-125">A lekérdezés kezdési idejét adja meg helyi idő szerint.</span><span class="sxs-lookup"><span data-stu-id="4a870-125">Specifies the start time of the query in local time.</span></span>
+<span data-ttu-id="4a870-126">Az alapértelmezett érték az aktuális helyi idő mínusz egy óra.</span><span class="sxs-lookup"><span data-stu-id="4a870-126">The default is the current local time minus one hour.</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -364,8 +364,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b5b83-127">-Állapot</span><span class="sxs-lookup"><span data-stu-id="b5b83-127">-Status</span></span>
-<span data-ttu-id="b5b83-128">Az állapotot adja meg.</span><span class="sxs-lookup"><span data-stu-id="b5b83-128">Specifies the status.</span></span>
+### <span data-ttu-id="4a870-127">-Állapot</span><span class="sxs-lookup"><span data-stu-id="4a870-127">-Status</span></span>
+<span data-ttu-id="4a870-128">Az állapot megadása.</span><span class="sxs-lookup"><span data-stu-id="4a870-128">Specifies the status.</span></span>
 
 ```yaml
 Type: System.String
@@ -379,33 +379,32 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b5b83-129">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="b5b83-129">CommonParameters</span></span>
-<span data-ttu-id="b5b83-130">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="b5b83-130">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="b5b83-131">További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="b5b83-131">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="4a870-129">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="4a870-129">CommonParameters</span></span>
+<span data-ttu-id="4a870-130">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="4a870-130">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="4a870-131">További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="4a870-131">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="b5b83-132">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="b5b83-132">INPUTS</span></span>
+## <span data-ttu-id="4a870-132">INPUTS</span><span class="sxs-lookup"><span data-stu-id="4a870-132">INPUTS</span></span>
 
-### <span data-ttu-id="b5b83-133">System. String</span><span class="sxs-lookup"><span data-stu-id="b5b83-133">System.String</span></span>
+### <span data-ttu-id="4a870-133">System.String</span><span class="sxs-lookup"><span data-stu-id="4a870-133">System.String</span></span>
 
-### <span data-ttu-id="b5b83-134">System. null ' 1 [[System. DateTime, System. Private. CoreLib, Version = 4.0.0.0, Culture = semleges, PublicKeyToken = 7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="b5b83-134">System.Nullable\`1[[System.DateTime, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
+### <span data-ttu-id="4a870-134">System.Nullable'1[[System.DateTime, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="4a870-134">System.Nullable\`1[[System.DateTime, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
 
-### <span data-ttu-id="b5b83-135">System. Management. Automation. SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="b5b83-135">System.Management.Automation.SwitchParameter</span></span>
+### <span data-ttu-id="4a870-135">System.Management.Automation.SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="4a870-135">System.Management.Automation.SwitchParameter</span></span>
 
-## <span data-ttu-id="b5b83-136">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="b5b83-136">OUTPUTS</span></span>
+## <span data-ttu-id="4a870-136">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="4a870-136">OUTPUTS</span></span>
 
-### <span data-ttu-id="b5b83-137">Microsoft. Azure. commands. OutputClasses. PSEventData</span><span class="sxs-lookup"><span data-stu-id="b5b83-137">Microsoft.Azure.Commands.Insights.OutputClasses.PSEventData</span></span>
+### <span data-ttu-id="4a870-137">Microsoft.Azure.Commands.Insights.OutputClasses.PSEventData</span><span class="sxs-lookup"><span data-stu-id="4a870-137">Microsoft.Azure.Commands.Insights.OutputClasses.PSEventData</span></span>
 
-## <span data-ttu-id="b5b83-138">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="b5b83-138">NOTES</span></span>
+## <span data-ttu-id="4a870-138">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="4a870-138">NOTES</span></span>
 
-## <span data-ttu-id="b5b83-139">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="b5b83-139">RELATED LINKS</span></span>
+## <span data-ttu-id="4a870-139">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="4a870-139">RELATED LINKS</span></span>
 
-[<span data-ttu-id="b5b83-140">Add-AzLogAlertRule</span><span class="sxs-lookup"><span data-stu-id="b5b83-140">Add-AzLogAlertRule</span></span>](./Add-AzLogAlertRule.md)
 
-[<span data-ttu-id="b5b83-141">Add-AzMetricAlertRule</span><span class="sxs-lookup"><span data-stu-id="b5b83-141">Add-AzMetricAlertRule</span></span>](./Add-AzMetricAlertRule.md)
+[<span data-ttu-id="4a870-140">Add-AzMetricAlertRule</span><span class="sxs-lookup"><span data-stu-id="4a870-140">Add-AzMetricAlertRule</span></span>](./Add-AzMetricAlertRule.md)
 
-[<span data-ttu-id="b5b83-142">Add-AzWebtestAlertRule</span><span class="sxs-lookup"><span data-stu-id="b5b83-142">Add-AzWebtestAlertRule</span></span>](./Add-AzWebtestAlertRule.md)
+[<span data-ttu-id="4a870-141">Add-AzWebtestAlertRule</span><span class="sxs-lookup"><span data-stu-id="4a870-141">Add-AzWebtestAlertRule</span></span>](./Add-AzWebtestAlertRule.md)
 
-[<span data-ttu-id="b5b83-143">Get-AzAlertRule</span><span class="sxs-lookup"><span data-stu-id="b5b83-143">Get-AzAlertRule</span></span>](./Get-AzAlertRule.md)
+[<span data-ttu-id="4a870-142">Get-AzAlertRule</span><span class="sxs-lookup"><span data-stu-id="4a870-142">Get-AzAlertRule</span></span>](./Get-AzAlertRule.md)
 
-[<span data-ttu-id="b5b83-144">Remove-AzAlertRule</span><span class="sxs-lookup"><span data-stu-id="b5b83-144">Remove-AzAlertRule</span></span>](./Remove-AzAlertRule.md)
+[<span data-ttu-id="4a870-143">Remove-AzAlertRule</span><span class="sxs-lookup"><span data-stu-id="4a870-143">Remove-AzAlertRule</span></span>](./Remove-AzAlertRule.md)
 
 

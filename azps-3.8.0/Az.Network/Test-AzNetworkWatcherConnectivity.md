@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/te
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Test-AzNetworkWatcherConnectivity.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Test-AzNetworkWatcherConnectivity.md
-ms.openlocfilehash: b6c33809c1b738db47407ec65352adfcfb001957
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 2fb702a0382e13b3ca5af2a5cad95b72ba2e63d2
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94011096"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100408797"
 ---
-# <span data-ttu-id="11f28-101">Test-AzNetworkWatcherConnectivity</span><span class="sxs-lookup"><span data-stu-id="11f28-101">Test-AzNetworkWatcherConnectivity</span></span>
+# <span data-ttu-id="f1986-101">Test-AzNetworkWatcherConnectivity</span><span class="sxs-lookup"><span data-stu-id="f1986-101">Test-AzNetworkWatcherConnectivity</span></span>
 
-## <span data-ttu-id="11f28-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="11f28-102">SYNOPSIS</span></span>
-<span data-ttu-id="11f28-103">A megadott forrású VM és rendeltetési hely kapcsolati adatait adja eredményül.</span><span class="sxs-lookup"><span data-stu-id="11f28-103">Returns connectivity information for a specified source VM and a destination.</span></span>
+## <span data-ttu-id="f1986-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="f1986-102">SYNOPSIS</span></span>
+<span data-ttu-id="f1986-103">Visszaadja egy adott forrás virtuális gép és egy célhely csatlakozási adatait.</span><span class="sxs-lookup"><span data-stu-id="f1986-103">Returns connectivity information for a specified source VM and a destination.</span></span>
 
-## <span data-ttu-id="11f28-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="11f28-104">SYNTAX</span></span>
+## <span data-ttu-id="f1986-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="f1986-104">SYNTAX</span></span>
 
-### <span data-ttu-id="11f28-105">SetByResource (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="11f28-105">SetByResource (Default)</span></span>
+### <span data-ttu-id="f1986-105">SetByResource (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="f1986-105">SetByResource (Default)</span></span>
 ```
 Test-AzNetworkWatcherConnectivity -NetworkWatcher <PSNetworkWatcher> -SourceId <String> [-SourcePort <Int32>]
  [-DestinationId <String>] [-DestinationAddress <String>] [-DestinationPort <Int32>]
@@ -27,7 +27,7 @@ Test-AzNetworkWatcherConnectivity -NetworkWatcher <PSNetworkWatcher> -SourceId <
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="11f28-106">SetByName</span><span class="sxs-lookup"><span data-stu-id="11f28-106">SetByName</span></span>
+### <span data-ttu-id="f1986-106">SetByName</span><span class="sxs-lookup"><span data-stu-id="f1986-106">SetByName</span></span>
 ```
 Test-AzNetworkWatcherConnectivity -NetworkWatcherName <String> -ResourceGroupName <String> -SourceId <String>
  [-SourcePort <Int32>] [-DestinationId <String>] [-DestinationAddress <String>] [-DestinationPort <Int32>]
@@ -35,7 +35,7 @@ Test-AzNetworkWatcherConnectivity -NetworkWatcherName <String> -ResourceGroupNam
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="11f28-107">SetByLocation</span><span class="sxs-lookup"><span data-stu-id="11f28-107">SetByLocation</span></span>
+### <span data-ttu-id="f1986-107">SetByLocation</span><span class="sxs-lookup"><span data-stu-id="f1986-107">SetByLocation</span></span>
 ```
 Test-AzNetworkWatcherConnectivity -Location <String> -SourceId <String> [-SourcePort <Int32>]
  [-DestinationId <String>] [-DestinationAddress <String>] [-DestinationPort <Int32>]
@@ -43,12 +43,12 @@ Test-AzNetworkWatcherConnectivity -Location <String> -SourceId <String> [-Source
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="11f28-108">Leírás</span><span class="sxs-lookup"><span data-stu-id="11f28-108">DESCRIPTION</span></span>
-<span data-ttu-id="11f28-109">A Test-AzNetworkWatcherConnectivity parancsmag a megadott forrású VM és a célhely kapcsolati adatait adja eredményül.</span><span class="sxs-lookup"><span data-stu-id="11f28-109">The Test-AzNetworkWatcherConnectivity cmdlet returns connectivity information for a specified source VM and a destination.</span></span> <span data-ttu-id="11f28-110">Ha a forrás és a cél közötti kapcsolat nem hozható létre, a parancsmag részleteket ad meg a problémáról.</span><span class="sxs-lookup"><span data-stu-id="11f28-110">If connectivity between the source and destination cannot be established, the cmdlet returns details about the issue.</span></span>
+## <span data-ttu-id="f1986-108">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="f1986-108">DESCRIPTION</span></span>
+<span data-ttu-id="f1986-109">A Test-AzNetworkWatcherConnectivity parancsmag kapcsolódási adatokat ad vissza egy adott forrás VM-hez és egy célhelyhez.</span><span class="sxs-lookup"><span data-stu-id="f1986-109">The Test-AzNetworkWatcherConnectivity cmdlet returns connectivity information for a specified source VM and a destination.</span></span> <span data-ttu-id="f1986-110">Ha nem lehet kapcsolatot létrehozni a forrás és a cél között, a parancsmag részletes információkat ad a problémáról.</span><span class="sxs-lookup"><span data-stu-id="f1986-110">If connectivity between the source and destination cannot be established, the cmdlet returns details about the issue.</span></span>
 
-## <span data-ttu-id="11f28-111">Példák</span><span class="sxs-lookup"><span data-stu-id="11f28-111">EXAMPLES</span></span>
+## <span data-ttu-id="f1986-111">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="f1986-111">EXAMPLES</span></span>
 
-### <span data-ttu-id="11f28-112">1. példa: a Hálózatfigyelő-kapcsolat tesztelése VM-ről egy webhelyre</span><span class="sxs-lookup"><span data-stu-id="11f28-112">Example 1: Test Network Watcher Connectivity from a VM to a website</span></span>
+### <span data-ttu-id="f1986-112">1. példa: Hálózati figyelő csatlakoztatásának tesztelése virtuális gépről egy webhelyre</span><span class="sxs-lookup"><span data-stu-id="f1986-112">Example 1: Test Network Watcher Connectivity from a VM to a website</span></span>
 ```
 Test-AzNetworkWatcherConnectivity -NetworkWatcherName NetworkWatcher -ResourceGroupName NetworkWatcherRG -SourceId "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/ContosoRG/providers/Microsoft.Compute/virtualMachines/MultiTierApp0" -DestinationAddress "bing.com" -DestinationPort 80
 
@@ -81,12 +81,12 @@ Hops             : [
                    ]
 ```
 
-<span data-ttu-id="11f28-113">Ebben a példában a VM-től az Azure-www.bing.com való kapcsolatot teszteljük.</span><span class="sxs-lookup"><span data-stu-id="11f28-113">In this example we test connectivity from a VM in Azure to www.bing.com.</span></span>
+<span data-ttu-id="f1986-113">Ebben a példában teszteljük az Azure virtuális gép és a www.bing.com.</span><span class="sxs-lookup"><span data-stu-id="f1986-113">In this example we test connectivity from a VM in Azure to www.bing.com.</span></span>
 
-## <span data-ttu-id="11f28-114">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="11f28-114">PARAMETERS</span></span>
+## <span data-ttu-id="f1986-114">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="f1986-114">PARAMETERS</span></span>
 
-### <span data-ttu-id="11f28-115">-AsJob</span><span class="sxs-lookup"><span data-stu-id="11f28-115">-AsJob</span></span>
-<span data-ttu-id="11f28-116">A parancsmag futtatása a háttérben</span><span class="sxs-lookup"><span data-stu-id="11f28-116">Run cmdlet in the background</span></span>
+### <span data-ttu-id="f1986-115">-AsJob</span><span class="sxs-lookup"><span data-stu-id="f1986-115">-AsJob</span></span>
+<span data-ttu-id="f1986-116">Parancsmag futtatása a háttérben</span><span class="sxs-lookup"><span data-stu-id="f1986-116">Run cmdlet in the background</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -100,8 +100,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="11f28-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="11f28-117">-DefaultProfile</span></span>
-<span data-ttu-id="11f28-118">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="11f28-118">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="f1986-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="f1986-117">-DefaultProfile</span></span>
+<span data-ttu-id="f1986-118">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="f1986-118">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -115,8 +115,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="11f28-119">-DestinationAddress</span><span class="sxs-lookup"><span data-stu-id="11f28-119">-DestinationAddress</span></span>
-<span data-ttu-id="11f28-120">Annak az erőforrásnak az IP-címe vagy URI-azonosítója, amelyhez csatlakozási kísérletet tesz.</span><span class="sxs-lookup"><span data-stu-id="11f28-120">The IP address or URI the resource to which a connection attempt will be made.</span></span>
+### <span data-ttu-id="f1986-119">-DestinationAddress</span><span class="sxs-lookup"><span data-stu-id="f1986-119">-DestinationAddress</span></span>
+<span data-ttu-id="f1986-120">Az az IP-cím vagy URI-cím, amelyhez csatlakozási kísérletet fog tenni.</span><span class="sxs-lookup"><span data-stu-id="f1986-120">The IP address or URI the resource to which a connection attempt will be made.</span></span>
 
 ```yaml
 Type: System.String
@@ -130,8 +130,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="11f28-121">-DestinationId</span><span class="sxs-lookup"><span data-stu-id="11f28-121">-DestinationId</span></span>
-<span data-ttu-id="11f28-122">Annak az erőforrásnak az azonosítója, amelyhez csatlakozási kísérletet fog tenni.</span><span class="sxs-lookup"><span data-stu-id="11f28-122">The ID of the resource to which a connection attempt will be made.</span></span>
+### <span data-ttu-id="f1986-121">-DestinationId</span><span class="sxs-lookup"><span data-stu-id="f1986-121">-DestinationId</span></span>
+<span data-ttu-id="f1986-122">Annak az erőforrásnak az azonosítója, amelyhez csatlakozási kísérlet készül.</span><span class="sxs-lookup"><span data-stu-id="f1986-122">The ID of the resource to which a connection attempt will be made.</span></span>
 
 ```yaml
 Type: System.String
@@ -145,8 +145,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="11f28-123">-DestinationPort</span><span class="sxs-lookup"><span data-stu-id="11f28-123">-DestinationPort</span></span>
-<span data-ttu-id="11f28-124">Annak a portnak a végrehajtása, amelyen ellenőrizni fogja a kapcsolatot.</span><span class="sxs-lookup"><span data-stu-id="11f28-124">Port on which check connectivity will be performed.</span></span>
+### <span data-ttu-id="f1986-123">-DestinationPort</span><span class="sxs-lookup"><span data-stu-id="f1986-123">-DestinationPort</span></span>
+<span data-ttu-id="f1986-124">Port, amelyen a kapcsolat ellenőrzése történik.</span><span class="sxs-lookup"><span data-stu-id="f1986-124">Port on which check connectivity will be performed.</span></span>
 
 ```yaml
 Type: System.Int32
@@ -160,8 +160,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="11f28-125">-Hely</span><span class="sxs-lookup"><span data-stu-id="11f28-125">-Location</span></span>
-<span data-ttu-id="11f28-126">A Hálózatfigyelő helye.</span><span class="sxs-lookup"><span data-stu-id="11f28-126">Location of the network watcher.</span></span>
+### <span data-ttu-id="f1986-125">-Location</span><span class="sxs-lookup"><span data-stu-id="f1986-125">-Location</span></span>
+<span data-ttu-id="f1986-126">A hálózati figyelő helye.</span><span class="sxs-lookup"><span data-stu-id="f1986-126">Location of the network watcher.</span></span>
 
 ```yaml
 Type: System.String
@@ -175,8 +175,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="11f28-127">-NetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="11f28-127">-NetworkWatcher</span></span>
-<span data-ttu-id="11f28-128">A Hálózatfigyelő erőforrás.</span><span class="sxs-lookup"><span data-stu-id="11f28-128">The network watcher resource.</span></span>
+### <span data-ttu-id="f1986-127">-NetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="f1986-127">-NetworkWatcher</span></span>
+<span data-ttu-id="f1986-128">A hálózati figyelő erőforrás.</span><span class="sxs-lookup"><span data-stu-id="f1986-128">The network watcher resource.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -190,8 +190,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="11f28-129">-NetworkWatcherName</span><span class="sxs-lookup"><span data-stu-id="11f28-129">-NetworkWatcherName</span></span>
-<span data-ttu-id="11f28-130">A Network Watcher neve.</span><span class="sxs-lookup"><span data-stu-id="11f28-130">The name of network watcher.</span></span>
+### <span data-ttu-id="f1986-129">-NetworkWatcherName</span><span class="sxs-lookup"><span data-stu-id="f1986-129">-NetworkWatcherName</span></span>
+<span data-ttu-id="f1986-130">A hálózati figyelő neve.</span><span class="sxs-lookup"><span data-stu-id="f1986-130">The name of network watcher.</span></span>
 
 ```yaml
 Type: System.String
@@ -205,8 +205,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="11f28-131">-ProtocolConfiguration</span><span class="sxs-lookup"><span data-stu-id="11f28-131">-ProtocolConfiguration</span></span>
-<span data-ttu-id="11f28-132">Annak a protokollnak a konfigurációja, amelyen a kapcsolat ellenőrzése történik.</span><span class="sxs-lookup"><span data-stu-id="11f28-132">Protocol configuration on which check connectivity will be performed.</span></span>
+### <span data-ttu-id="f1986-131">-ProtocolConfiguration</span><span class="sxs-lookup"><span data-stu-id="f1986-131">-ProtocolConfiguration</span></span>
+<span data-ttu-id="f1986-132">Protokollkonfiguráció, amelyen a kapcsolat ellenőrzése történik.</span><span class="sxs-lookup"><span data-stu-id="f1986-132">Protocol configuration on which check connectivity will be performed.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcherProtocolConfiguration
@@ -220,8 +220,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="11f28-133">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="11f28-133">-ResourceGroupName</span></span>
-<span data-ttu-id="11f28-134">A Network Watcher erőforráscsoport neve.</span><span class="sxs-lookup"><span data-stu-id="11f28-134">The name of the network watcher resource group.</span></span>
+### <span data-ttu-id="f1986-133">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="f1986-133">-ResourceGroupName</span></span>
+<span data-ttu-id="f1986-134">A hálózatfigyelő erőforráscsoport neve.</span><span class="sxs-lookup"><span data-stu-id="f1986-134">The name of the network watcher resource group.</span></span>
 
 ```yaml
 Type: System.String
@@ -235,8 +235,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="11f28-135">-SourceId forrásazonosító</span><span class="sxs-lookup"><span data-stu-id="11f28-135">-SourceId</span></span>
-<span data-ttu-id="11f28-136">Annak az erőforrásnak az azonosítója, amelyből a kapcsolódási ellenőrzést kezdeményezni kívánja.</span><span class="sxs-lookup"><span data-stu-id="11f28-136">The ID of the resource from which a connectivity check will be initiated.</span></span>
+### <span data-ttu-id="f1986-135">-SourceId</span><span class="sxs-lookup"><span data-stu-id="f1986-135">-SourceId</span></span>
+<span data-ttu-id="f1986-136">Annak az erőforrásnak az azonosítója, amelyből a kapcsolatellenőrzést kezdeményezni fogja.</span><span class="sxs-lookup"><span data-stu-id="f1986-136">The ID of the resource from which a connectivity check will be initiated.</span></span>
 
 ```yaml
 Type: System.String
@@ -250,8 +250,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="11f28-137">-SourcePort</span><span class="sxs-lookup"><span data-stu-id="11f28-137">-SourcePort</span></span>
-<span data-ttu-id="11f28-138">Annak a forrásnak a portja, amelyből a kapcsolódási ellenőrzést végrehajtja.</span><span class="sxs-lookup"><span data-stu-id="11f28-138">The source port from which a connectivity check will be performed.</span></span>
+### <span data-ttu-id="f1986-137">-SourcePort</span><span class="sxs-lookup"><span data-stu-id="f1986-137">-SourcePort</span></span>
+<span data-ttu-id="f1986-138">Az a forrásport, amelyről a kapcsolat ellenőrzése történik.</span><span class="sxs-lookup"><span data-stu-id="f1986-138">The source port from which a connectivity check will be performed.</span></span>
 
 ```yaml
 Type: System.Int32
@@ -265,66 +265,66 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="11f28-139">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="11f28-139">CommonParameters</span></span>
-<span data-ttu-id="11f28-140">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="11f28-140">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="11f28-141">További információ: about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="11f28-141">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="f1986-139">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="f1986-139">CommonParameters</span></span>
+<span data-ttu-id="f1986-140">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="f1986-140">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="f1986-141">További információt a about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="f1986-141">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="11f28-142">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="11f28-142">INPUTS</span></span>
+## <span data-ttu-id="f1986-142">INPUTS</span><span class="sxs-lookup"><span data-stu-id="f1986-142">INPUTS</span></span>
 
-### <span data-ttu-id="11f28-143">Microsoft. Azure. commands. Network. models. PSNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="11f28-143">Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher</span></span>
+### <span data-ttu-id="f1986-143">Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher</span><span class="sxs-lookup"><span data-stu-id="f1986-143">Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher</span></span>
 
-### <span data-ttu-id="11f28-144">System. String</span><span class="sxs-lookup"><span data-stu-id="11f28-144">System.String</span></span>
+### <span data-ttu-id="f1986-144">System.String</span><span class="sxs-lookup"><span data-stu-id="f1986-144">System.String</span></span>
 
-### <span data-ttu-id="11f28-145">System. Int32</span><span class="sxs-lookup"><span data-stu-id="11f28-145">System.Int32</span></span>
+### <span data-ttu-id="f1986-145">System.Int32</span><span class="sxs-lookup"><span data-stu-id="f1986-145">System.Int32</span></span>
 
-## <span data-ttu-id="11f28-146">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="11f28-146">OUTPUTS</span></span>
+## <span data-ttu-id="f1986-146">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="f1986-146">OUTPUTS</span></span>
 
-### <span data-ttu-id="11f28-147">Microsoft. Azure. commands. Network. models. PSConnectivityInformation</span><span class="sxs-lookup"><span data-stu-id="11f28-147">Microsoft.Azure.Commands.Network.Models.PSConnectivityInformation</span></span>
+### <span data-ttu-id="f1986-147">Microsoft.Azure.Commands.Network.Models.PSConnectivityInformation</span><span class="sxs-lookup"><span data-stu-id="f1986-147">Microsoft.Azure.Commands.Network.Models.PSConnectivityInformation</span></span>
 
-## <span data-ttu-id="11f28-148">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="11f28-148">NOTES</span></span>
-<span data-ttu-id="11f28-149">Kulcsszavak: Azure, azurerm, ARM, erőforrás, kapcsolat, kezelés, vezető, hálózat, hálózat, hálózati figyelő</span><span class="sxs-lookup"><span data-stu-id="11f28-149">Keywords: azure, azurerm, arm, resource, connectivity, management, manager, network, networking, network watcher</span></span>
+## <span data-ttu-id="f1986-148">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="f1986-148">NOTES</span></span>
+<span data-ttu-id="f1986-149">Kulcsszavak: azure, azurerm, arm, erőforrás, kapcsolat, kezelés, vezető, hálózat, hálózatkezelés, hálózati figyelő</span><span class="sxs-lookup"><span data-stu-id="f1986-149">Keywords: azure, azurerm, arm, resource, connectivity, management, manager, network, networking, network watcher</span></span>
 
-## <span data-ttu-id="11f28-150">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="11f28-150">RELATED LINKS</span></span>
+## <span data-ttu-id="f1986-150">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="f1986-150">RELATED LINKS</span></span>
 
-<span data-ttu-id="11f28-151">[Új – AzNetworkWatcher](./New-AzNetworkWatcher.md) 
+<span data-ttu-id="f1986-151">[New-AzNetworkWatcher](./New-AzNetworkWatcher.md) 
  [Get-AzNetworkWatcher](./Get-AzNetworkWatcher.md) 
- [Remove-AzNetworkWatcher](./Remove-AzNetworkWatcher.md)</span><span class="sxs-lookup"><span data-stu-id="11f28-151">[New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
+ [Remove-AzNetworkWatcher](./Remove-AzNetworkWatcher.md)</span><span class="sxs-lookup"><span data-stu-id="f1986-151">[New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
 [Get-AzNetworkWatcher](./Get-AzNetworkWatcher.md)
 [Remove-AzNetworkWatcher](./Remove-AzNetworkWatcher.md)</span></span>
 
-<span data-ttu-id="11f28-152">[Get-AzNetworkWatcherNextHop](./Get-AzNetworkWatcherNextHop.md) 
+<span data-ttu-id="f1986-152">[Get-AzNetworkWatcherNextHop](./Get-AzNetworkWatcherNextHop.md) 
  [Get-AzNetworkWatcherSecurityGroupView](./Get-AzNetworkWatcherSecurityGroupView.md) 
  [Get-AzNetworkWatcherTopology](./Get-AzNetworkWatcherTopology.md) 
- [Get-AzNetworkWatcherTroubleshootingResult](./Get-AzNetworkWatcherTroubleshootingResult.md)</span><span class="sxs-lookup"><span data-stu-id="11f28-152">[Get-AzNetworkWatcherNextHop](./Get-AzNetworkWatcherNextHop.md)
+ [Get-AzNetworkWatcherTroubleshootingResult](./Get-AzNetworkWatcherTroubleshootingResult.md)</span><span class="sxs-lookup"><span data-stu-id="f1986-152">[Get-AzNetworkWatcherNextHop](./Get-AzNetworkWatcherNextHop.md)
 [Get-AzNetworkWatcherSecurityGroupView](./Get-AzNetworkWatcherSecurityGroupView.md)
 [Get-AzNetworkWatcherTopology](./Get-AzNetworkWatcherTopology.md)
 [Get-AzNetworkWatcherTroubleshootingResult](./Get-AzNetworkWatcherTroubleshootingResult.md)</span></span>
 
-<span data-ttu-id="11f28-153">[Új – AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md) 
- [Új – AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md) 
+<span data-ttu-id="f1986-153">[New-AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md) 
+ [New-AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md) 
  [Get-AzNetworkWatcherPacketCapture](./Get-AzNetworkWatcherPacketCapture.md) 
  [Remove-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md) 
- [Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)</span><span class="sxs-lookup"><span data-stu-id="11f28-153">[New-AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
+ [Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)</span><span class="sxs-lookup"><span data-stu-id="f1986-153">[New-AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
 [New-AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
 [Get-AzNetworkWatcherPacketCapture](./Get-AzNetworkWatcherPacketCapture.md)
 [Remove-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md)
 [Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)</span></span>
 
 
-<span data-ttu-id="11f28-154">[Start-AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md) 
- [Új – AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md) 
- [Teszt-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md) 
- [Teszt-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md) 
+<span data-ttu-id="f1986-154">[Start-AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md) 
+ [New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md) 
+ [Test-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md) 
+ [Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md) 
  [Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md) 
  [Start-AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md) 
  [Set-AzNetworkWatcherConnectionMonitor](./Set-AzNetworkWatcherConnectionMonitor.md) 
  [Set-AzNetworkWatcherConfigFlowLog](./Set-AzNetworkWatcherConfigFlowLog.md) 
  [Remove-AzNetworkWatcherConnectionMonitor](./Remove-AzNetworkWatcherConnectionMonitor.md) 
- [Új – AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md) 
+ [New-AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md) 
  [Get-AzNetworkWatcherReachabilityReport](./Get-AzNetworkWatcherReachabilityReport.md) 
  [Get-AzNetworkWatcherReachabilityProvidersList](./Get-AzNetworkWatcherReachabilityProvidersList.md) 
  [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md) 
- [Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport) 
- [Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)</span><span class="sxs-lookup"><span data-stu-id="11f28-154">[Start-AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
+ [Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md) 
+ [Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)</span><span class="sxs-lookup"><span data-stu-id="f1986-154">[Start-AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
 [New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
 [Test-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
 [Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
@@ -337,5 +337,5 @@ Accept wildcard characters: False
 [Get-AzNetworkWatcherReachabilityReport](./Get-AzNetworkWatcherReachabilityReport.md)
 [Get-AzNetworkWatcherReachabilityProvidersList](./Get-AzNetworkWatcherReachabilityProvidersList.md)
 [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
-[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)</span></span>
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)</span></span>
