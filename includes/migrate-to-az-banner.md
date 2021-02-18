@@ -1,12 +1,14 @@
 ---
 ms.topic: include
-ms.date: 09/03/2020
-ms.openlocfilehash: 7d25bfbc7b7efbb2a96209f6e485c07c2be2bd57
-ms.sourcegitcommit: 6071038ed955107220a01156550a541bf68d0266
-ms.translationtype: HT
+ms.date: 02/12/2021
+ms.openlocfilehash: 78920c064b776c4b2bc219a6d02810d34d64ae4f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "89497870"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100515162"
 ---
 > [!IMPORTANT]
-> Ön az Azure PowerShell elavult verziójának weboldalát nyitotta meg. Az AzureRM PowerShell-modul minden verziója elavult, de a támogatásuk még nem szűnt meg. Mostantól az Az PowerShell-modul használatát javasoljuk az Azure-ral folytatott interakciókhoz. Az Az PowerShell-modul használatának megkezdéséhez lásd [_az Azure PowerShell telepítését_](https://docs.microsoft.com/powershell/azure/install-az-ps) ismertető szakaszt. Az Az PowerShell-modulra történő migrálás részleteiről lásd: [_Az Azure PowerShell migrálása az AzureRM modulból az Az modulba_](https://aka.ms/azpsmigrate).
+> Mivel az Az PowerShell-modulok már rendelkeznek az AzureRM PowerShell-modulok és más funkciók minden képességéhez, 2024. február 29-én kivezetjük az AzureRM PowerShell-modulokat.
+
+> A szolgáltatáskimaradás elkerülése [](https://aka.ms/azpsmigrate) érdekében 2024. február 29-ig frissítse az AzureRM PowerShell-modulokat használó parancsfájlokat az Az PowerShell-modulok használatára. A parancsfájlok automatikus frissítéséhez kövesse a [gyors útmutatót.](/powershell/azure/quickstart-migrate-azurerm-to-az-automatically)
