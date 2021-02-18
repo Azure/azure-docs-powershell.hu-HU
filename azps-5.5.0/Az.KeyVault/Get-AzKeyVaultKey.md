@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/g
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultKey.md
-ms.openlocfilehash: 842e571794fbf257473843ab824c1e6497f5c4a6
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: c01c000ff1171fdf63bd4bdd4c1548d7e61116f6
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100159603"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415733"
 ---
 # Get-AzKeyVaultKey
 
@@ -305,7 +305,7 @@ Purge Disabled : False
 Tags           :
 ```
 
-Ez a parancs a Contoso nevű kulcstárban található összes olyan kulcsot lekérte, amelyek a "teszt" kezdetűvel kezdődnek.
+Ez a parancs a Contoso nevű kulcstár "teszt" kezdetű összes kulcsát megkapja.
 
 ### 8. példa: Nyilvános kulcs letöltése .pem fájlként
 
@@ -545,5 +545,4 @@ Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, 
 
 [Undo-AzKeyVaultKeyRemoval](./Undo-AzKeyVaultKeyRemoval.md)
 
-[Set-AzKeyVaultKeyAttribute](./Set-AzKeyVaultKeyAttribute.md)
 
