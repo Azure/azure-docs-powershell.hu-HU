@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/get-az
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlDatabaseAdvancedThreatProtectionSettings.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlDatabaseAdvancedThreatProtectionSettings.md
-ms.openlocfilehash: 186ff32138bba0556b05e9674f1711e9425a20c9
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 85a45c1a5f7c4d88adaf4e9b9da35b415b7a2093
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93839265"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405805"
 ---
-# <span data-ttu-id="efa97-101">Get-AzSqlDatabaseAdvancedThreatProtectionSettings</span><span class="sxs-lookup"><span data-stu-id="efa97-101">Get-AzSqlDatabaseAdvancedThreatProtectionSettings</span></span>
+# <span data-ttu-id="be27d-101">Get-AzSqlDatabaseAdvancedThreatProtectionSettings</span><span class="sxs-lookup"><span data-stu-id="be27d-101">Get-AzSqlDatabaseAdvancedThreatProtectionSettings</span></span>
 
-## <span data-ttu-id="efa97-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="efa97-102">SYNOPSIS</span></span>
-<span data-ttu-id="efa97-103">Megkapja az adatbázis speciális veszélyforrások elleni védelemhez szükséges beállításait.</span><span class="sxs-lookup"><span data-stu-id="efa97-103">Gets the advanced threat protection settings for a database.</span></span>
+## <span data-ttu-id="be27d-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="be27d-102">SYNOPSIS</span></span>
+<span data-ttu-id="be27d-103">A komplex veszélyforrások elleni védelem speciális beállításainak lekérdezése egy adatbázishoz.</span><span class="sxs-lookup"><span data-stu-id="be27d-103">Gets the advanced threat protection settings for a database.</span></span>
 
-## <span data-ttu-id="efa97-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="efa97-104">SYNTAX</span></span>
+## <span data-ttu-id="be27d-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="be27d-104">SYNTAX</span></span>
 
 ```
 Get-AzSqlDatabaseAdvancedThreatProtectionSettings [-ServerName] <String> [-DatabaseName] <String>
@@ -26,13 +26,13 @@ Get-AzSqlDatabaseAdvancedThreatProtectionSettings [-ServerName] <String> [-Datab
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="efa97-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="efa97-105">DESCRIPTION</span></span>
-<span data-ttu-id="efa97-106">A **Get-AzSqlDatabaseAdvancedThreatProtectionSettings** parancsmag az Azure SQL-adatbázisok speciális veszélyforrások elleni védelmét biztosító beállításait kapja meg.</span><span class="sxs-lookup"><span data-stu-id="efa97-106">The **Get-AzSqlDatabaseAdvancedThreatProtectionSettings** cmdlet gets the advanced threat protection settings of an Azure SQL database.</span></span>
-<span data-ttu-id="efa97-107">A parancsmag használatához adja meg a *ResourceGroupName* , a *kiszolgálónév* és a *databasename* paramétert annak az adatbázisnak a meghatározásához, amelyhez a parancsmag a beállításokat kapja.</span><span class="sxs-lookup"><span data-stu-id="efa97-107">To use this cmdlet, specify the *ResourceGroupName* , *ServerName* , and *DatabaseName* parameters to identify the database for which this cmdlet gets the settings.</span></span>
+## <span data-ttu-id="be27d-105">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="be27d-105">DESCRIPTION</span></span>
+<span data-ttu-id="be27d-106">A **Get-AzSqlDatabaseAdvancedThreatProtectionSettings** parancsmag megkapja egy Azure SQL-adatbázis komplex veszélyforrás-védelmi beállításait.</span><span class="sxs-lookup"><span data-stu-id="be27d-106">The **Get-AzSqlDatabaseAdvancedThreatProtectionSettings** cmdlet gets the advanced threat protection settings of an Azure SQL database.</span></span>
+<span data-ttu-id="be27d-107">A parancsmagot úgy használhatja, hogy megadja a *ResourceGroupName,* *a ServerName* és a *DatabaseName* paramétert annak az adatbázisnak a azonosításához, amelyhez ez a parancsmag a beállításokat kapja.</span><span class="sxs-lookup"><span data-stu-id="be27d-107">To use this cmdlet, specify the *ResourceGroupName*, *ServerName*, and *DatabaseName* parameters to identify the database for which this cmdlet gets the settings.</span></span>
 
-## <span data-ttu-id="efa97-108">Példák</span><span class="sxs-lookup"><span data-stu-id="efa97-108">EXAMPLES</span></span>
+## <span data-ttu-id="be27d-108">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="be27d-108">EXAMPLES</span></span>
 
-### <span data-ttu-id="efa97-109">Példa 1: az adatbázis speciális veszélyforrásokkal kapcsolatos védelmi beállításainak beszerzése</span><span class="sxs-lookup"><span data-stu-id="efa97-109">Example 1: Get the advanced threat protection settings for a database</span></span>
+### <span data-ttu-id="be27d-109">1. példa: A komplex veszélyforrások elleni védelem speciális beállításainak lekérte</span><span class="sxs-lookup"><span data-stu-id="be27d-109">Example 1: Get the advanced threat protection settings for a database</span></span>
 ```
 PS C:\>Get-AzSqlDatabaseAdvancedThreatProtectionSettings -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -DatabaseName "Database01"
 DatabaseName                 : Database01
@@ -46,13 +46,13 @@ ExcludedDetectionTypes       : {}
 RetentionInDays              : 0
 ```
 
-<span data-ttu-id="efa97-110">Ez a parancs a Database01 nevű adatbázis speciális fenyegetések elleni védelmét szolgáló beállításait kapja meg.</span><span class="sxs-lookup"><span data-stu-id="efa97-110">This command gets the advanced threat protection settings for a database named Database01.</span></span>
-<span data-ttu-id="efa97-111">Az adatbázis a Server01 nevű kiszolgálón található, amelyet az erőforráscsoport ResourceGroup11 társítanak.</span><span class="sxs-lookup"><span data-stu-id="efa97-111">The database is located on the server named Server01, which is assigned to the resource group ResourceGroup11.</span></span>
+<span data-ttu-id="be27d-110">Ez a parancs a Database01 nevű adatbázis komplex veszélyforrás-védelmi beállításait kapja meg.</span><span class="sxs-lookup"><span data-stu-id="be27d-110">This command gets the advanced threat protection settings for a database named Database01.</span></span>
+<span data-ttu-id="be27d-111">Az adatbázis a Server01 nevű kiszolgálón található, amely az ResourceGroup11 erőforráscsoporthoz van hozzárendelve.</span><span class="sxs-lookup"><span data-stu-id="be27d-111">The database is located on the server named Server01, which is assigned to the resource group ResourceGroup11.</span></span>
 
-## <span data-ttu-id="efa97-112">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="efa97-112">PARAMETERS</span></span>
+## <span data-ttu-id="be27d-112">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="be27d-112">PARAMETERS</span></span>
 
-### <span data-ttu-id="efa97-113">-DatabaseName</span><span class="sxs-lookup"><span data-stu-id="efa97-113">-DatabaseName</span></span>
-<span data-ttu-id="efa97-114">Az adatbázis nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="efa97-114">Specifies the name of a database.</span></span>
+### <span data-ttu-id="be27d-113">-DatabaseName</span><span class="sxs-lookup"><span data-stu-id="be27d-113">-DatabaseName</span></span>
+<span data-ttu-id="be27d-114">Egy adatbázis nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="be27d-114">Specifies the name of a database.</span></span>
 
 ```yaml
 Type: System.String
@@ -66,8 +66,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="efa97-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="efa97-115">-DefaultProfile</span></span>
-<span data-ttu-id="efa97-116">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés</span><span class="sxs-lookup"><span data-stu-id="efa97-116">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="be27d-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="be27d-115">-DefaultProfile</span></span>
+<span data-ttu-id="be27d-116">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés</span><span class="sxs-lookup"><span data-stu-id="be27d-116">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -81,8 +81,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="efa97-117">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="efa97-117">-ResourceGroupName</span></span>
-<span data-ttu-id="efa97-118">Annak az erőforráscsoport-csoportnak a neve, amelyhez a kiszolgálót hozzárendelték.</span><span class="sxs-lookup"><span data-stu-id="efa97-118">Specifies the name of the resource group to which the server is assigned.</span></span>
+### <span data-ttu-id="be27d-117">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="be27d-117">-ResourceGroupName</span></span>
+<span data-ttu-id="be27d-118">Annak az erőforráscsoportnak a neve, amelyhez a kiszolgáló hozzá van rendelve.</span><span class="sxs-lookup"><span data-stu-id="be27d-118">Specifies the name of the resource group to which the server is assigned.</span></span>
 
 ```yaml
 Type: System.String
@@ -96,8 +96,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="efa97-119">-Kiszolgálónév</span><span class="sxs-lookup"><span data-stu-id="efa97-119">-ServerName</span></span>
-<span data-ttu-id="efa97-120">A kiszolgáló nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="efa97-120">Specifies the name of a server.</span></span>
+### <span data-ttu-id="be27d-119">-ServerName</span><span class="sxs-lookup"><span data-stu-id="be27d-119">-ServerName</span></span>
+<span data-ttu-id="be27d-120">A kiszolgáló nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="be27d-120">Specifies the name of a server.</span></span>
 
 ```yaml
 Type: System.String
@@ -111,8 +111,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="efa97-121">– Megerősítés</span><span class="sxs-lookup"><span data-stu-id="efa97-121">-Confirm</span></span>
-<span data-ttu-id="efa97-122">A parancsmag futtatása előtt kéri a megerősítést.</span><span class="sxs-lookup"><span data-stu-id="efa97-122">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="be27d-121">-Confirm</span><span class="sxs-lookup"><span data-stu-id="be27d-121">-Confirm</span></span>
+<span data-ttu-id="be27d-122">A parancsmag futtatása előtt a rendszer megerősítést kér.</span><span class="sxs-lookup"><span data-stu-id="be27d-122">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -126,9 +126,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="efa97-123">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="efa97-123">-WhatIf</span></span>
-<span data-ttu-id="efa97-124">Annak megjelenítése, hogy mi történik, ha a parancsmag fut.</span><span class="sxs-lookup"><span data-stu-id="efa97-124">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="efa97-125">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="efa97-125">The cmdlet is not run.</span></span>
+### <span data-ttu-id="be27d-123">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="be27d-123">-WhatIf</span></span>
+<span data-ttu-id="be27d-124">A parancsmag futtatásakor a program megjeleníti, hogy mi történik.</span><span class="sxs-lookup"><span data-stu-id="be27d-124">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="be27d-125">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="be27d-125">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -142,22 +142,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="efa97-126">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="efa97-126">CommonParameters</span></span>
-<span data-ttu-id="efa97-127">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="efa97-127">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="efa97-128">További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="efa97-128">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="be27d-126">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="be27d-126">CommonParameters</span></span>
+<span data-ttu-id="be27d-127">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="be27d-127">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="be27d-128">További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="be27d-128">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="efa97-129">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="efa97-129">INPUTS</span></span>
+## <span data-ttu-id="be27d-129">INPUTS</span><span class="sxs-lookup"><span data-stu-id="be27d-129">INPUTS</span></span>
 
-### <span data-ttu-id="efa97-130">System. String</span><span class="sxs-lookup"><span data-stu-id="efa97-130">System.String</span></span>
+### <span data-ttu-id="be27d-130">System.String</span><span class="sxs-lookup"><span data-stu-id="be27d-130">System.String</span></span>
 
-## <span data-ttu-id="efa97-131">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="efa97-131">OUTPUTS</span></span>
+## <span data-ttu-id="be27d-131">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="be27d-131">OUTPUTS</span></span>
 
-### <span data-ttu-id="efa97-132">Microsoft. Azure. Command. SQL. ThreatDetection. Model. DatabaseAdvancedThreatProtectionSettingsModel</span><span class="sxs-lookup"><span data-stu-id="efa97-132">Microsoft.Azure.Commands.Sql.ThreatDetection.Model.DatabaseAdvancedThreatProtectionSettingsModel</span></span>
+### <span data-ttu-id="be27d-132">Microsoft.Azure.Commands.Sql.ThreatDetection.Model.DatabaseAdvancedThreatProtectionSettingsModel</span><span class="sxs-lookup"><span data-stu-id="be27d-132">Microsoft.Azure.Commands.Sql.ThreatDetection.Model.DatabaseAdvancedThreatProtectionSettingsModel</span></span>
 
-## <span data-ttu-id="efa97-133">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="efa97-133">NOTES</span></span>
+## <span data-ttu-id="be27d-133">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="be27d-133">NOTES</span></span>
 
-## <span data-ttu-id="efa97-134">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="efa97-134">RELATED LINKS</span></span>
+## <span data-ttu-id="be27d-134">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="be27d-134">RELATED LINKS</span></span>
 
-[<span data-ttu-id="efa97-135">Remove-AzSqlDatabaseAdvancedThreatProtectionSettings</span><span class="sxs-lookup"><span data-stu-id="efa97-135">Remove-AzSqlDatabaseAdvancedThreatProtectionSettings</span></span>](./Remove-AzSqlDatabaseAdvancedThreatProtectionSettings.md)
 
 
 
