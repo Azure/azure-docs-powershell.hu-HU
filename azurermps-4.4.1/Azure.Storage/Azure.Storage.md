@@ -6,202 +6,201 @@ Help Version: ''
 Locale: en-US
 content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/Storage/Commands.Storage/help/Azure.Storage.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/Storage/Commands.Storage/help/Azure.Storage.md
-gitcommit: https://github.com/Azure/azure-powershell/blob/89262bc4144696c69376c3fb654c881de55b6450
-ms.openlocfilehash: 7579023c82863b943080553d2c741244b9ae9c0f
-ms.sourcegitcommit: 43f4bdf2a59dd82fd881512aa9761bf72eb5703c
+ms.openlocfilehash: 864398d8af8ac05d7bfad93c195bf0ecb2c5ba1a
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "93490511"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410378"
 ---
-# Azure. Storage modul
+# Azure.Storage modul
 ## Leírás
-Ez a témakör az Azure Storage parancsmagokkal kapcsolatos súgótémaköröket jeleníti meg.
+Ez a témakör az Azure Storage parancsmagok súgótémakörét mutatja be.
 
-## Azure. Storage parancsmagok
+## Azure.Storage-parancsmagok
 ### [Get-AzureStorageBlob](Get-AzureStorageBlob.md)
-A tárolóban lévő Blobs listák.
+Egy tárolóban lévő blobokat sorol fel.
 
 ### [Get-AzureStorageBlobContent](Get-AzureStorageBlobContent.md)
-Tárhely blobjának letöltése.
+Letölt egy tár blobját.
 
 ### [Get-AzureStorageBlobCopyState](Get-AzureStorageBlobCopyState.md)
-Az Azure Storage blob másolati állapotát kapja meg.
+Egy Azure Storage blob másolási állapotát kapja meg.
 
 ### [Get-AzureStorageContainer](Get-AzureStorageContainer.md)
-Felsorolja a tároló tárolókat.
+Felsorolja a tárolókat.
 
 ### [Get-AzureStorageContainerStoredAccessPolicy](Get-AzureStorageContainerStoredAccessPolicy.md)
-Beolvassa a tárolt hozzáférés házirendjének vagy házirendjeinek egy Azure Storage tárolót.
+Egy Azure-tároló tárolt hozzáférési házirendet vagy házirendeket kap.
 
 ### [Get-AzureStorageCORSRule](Get-AzureStorageCORSRule.md)
-Beolvassa a tárolási CORS vonatkozó szabályokat.
+CORS-szabályokat kap egy társzolgáltatás-típushoz.
 
 ### [Get-AzureStorageFile](Get-AzureStorageFile.md)
-Az elérési utakhoz tartozó könyvtárak és fájlok felsorolása.
+Az elérési úthoz szükséges könyvtárakat és fájlokat sorolja fel.
 
 ### [Get-AzureStorageFileContent](Get-AzureStorageFileContent.md)
-Letölti a fájl tartalmát.
+Letölti egy fájl tartalmát.
 
 ### [Get-AzureStorageFileCopyState](Get-AzureStorageFileCopyState.md)
 A másolási művelet állapotát kapja meg.
 
 ### [Get-AzureStorageQueue](Get-AzureStorageQueue.md)
-A tárolási várólisták listája.
+A tárterület-várólisták listája.
 
 ### [Get-AzureStorageQueueStoredAccessPolicy](Get-AzureStorageQueueStoredAccessPolicy.md)
-Beolvassa a tárolt hozzáférési házirendet vagy házirendet egy Azure-tárterület várólistájához.
+Egy Azure-tárterület-várólistán tárolt hozzáférési házirendet vagy házirendeket kap.
 
 ### [Get-AzureStorageServiceLoggingProperty](Get-AzureStorageServiceLoggingProperty.md)
-Az Azure Storage Services naplózási tulajdonságait kapja.
+Naplózási tulajdonságokat kap az Azure Storage-szolgáltatásokhoz.
 
 ### [Get-AzureStorageServiceMetricsProperty](Get-AzureStorageServiceMetricsProperty.md)
-Az Azure Storage szolgáltatás metrikájának tulajdonságai
+Az Azure Storage szolgáltatás metrikák tulajdonságait használja.
 
 ### [Get-AzureStorageShare](Get-AzureStorageShare.md)
-Megkapja a fájlmegosztás listáját.
+Lekérte a fájlmegosztások listáját.
 
 ### [Get-AzureStorageShareStoredAccessPolicy](Get-AzureStorageShareStoredAccessPolicy.md)
-Tárolhatja a tárolt elérési házirendeket egy tárterület-megosztáshoz.
+Tárterület-megosztáshoz tárolt hozzáférési házirendeket kap.
 
 ### [Get-AzureStorageTable](Get-AzureStorageTable.md)
-A tárolási táblák listája.
+A tárolótáblák listája.
 
 ### [Get-AzureStorageTableStoredAccessPolicy](Get-AzureStorageTableStoredAccessPolicy.md)
-Beolvassa a tárolt hozzáférési házirendet vagy házirendet egy Azure Storage table.
+Egy Azure-tárolótáblához tárolt hozzáférési házirendet vagy házirendeket kap.
 
-### [Új – AzureStorageAccountSASToken](New-AzureStorageAccountSASToken.md)
-Ügyfél szintű SAS-tokent hoz létre.
+### [New-AzureStorageAccountSASToken](New-AzureStorageAccountSASToken.md)
+Létrehoz egy fiókszintű SAS-jogkivonatot.
 
-### [Új – AzureStorageBlobSASToken](New-AzureStorageBlobSASToken.md)
-Egy, az Azure Storage blob-hoz generált SAS-tokent hoz létre.
+### [New-AzureStorageBlobSASToken](New-AzureStorageBlobSASToken.md)
+Sas-jogkivonatot hoz létre egy Azure-tár blobhoz.
 
-### [Új – AzureStorageContainer](New-AzureStorageContainer.md)
-Azure-tároló tárolót hoz létre.
+### [New-AzureStorageContainer](New-AzureStorageContainer.md)
+Létrehoz egy Azure-tárolót.
 
-### [Új – AzureStorageContainerSASToken](New-AzureStorageContainerSASToken.md)
-Létrehoz egy SAS-jogkivonatot az Azure Storage tárolóhoz.
+### [New-AzureStorageContainerSASToken](New-AzureStorageContainerSASToken.md)
+Sas-jogkivonatot hoz létre egy Azure-tárolóhoz.
 
-### [Új – AzureStorageContainerStoredAccessPolicy](New-AzureStorageContainerStoredAccessPolicy.md)
-Tárol egy tárolt hozzáférési házirendet egy Azure tároló tárolóhoz.
+### [New-AzureStorageContainerStoredAccessPolicy](New-AzureStorageContainerStoredAccessPolicy.md)
+Tárolt hozzáférési házirendet hoz létre egy Azure-tárolóhoz.
 
-### [Új – AzureStorageContext](New-AzureStorageContext.md)
-Azure-tárterületet hoz létre.
+### [New-AzureStorageContext](New-AzureStorageContext.md)
+Azure-tárterület környezetét hozza létre.
 
-### [Új – AzureStorageDirectory](New-AzureStorageDirectory.md)
-Könyvtárat hoz létre.
+### [New-AzureStorageDirectory](New-AzureStorageDirectory.md)
+Címtárat hoz létre.
 
-### [Új – AzureStorageFileSASToken](New-AzureStorageFileSASToken.md)
-Megosztott hozzáférés-aláírási tokent hoz létre egy tárterülethez.
+### [New-AzureStorageFileSASToken](New-AzureStorageFileSASToken.md)
+Megosztott hozzáférés aláírási jogkivonatot hoz létre egy tárfájlhoz.
 
-### [Új – AzureStorageQueue](New-AzureStorageQueue.md)
-Tárolási várólistát hoz létre.
+### [New-AzureStorageQueue](New-AzureStorageQueue.md)
+Tárterület-várólistát hoz létre.
 
-### [Új – AzureStorageQueueSASToken](New-AzureStorageQueueSASToken.md)
-Egy Access-aláírási tokent hoz létre egy Azure-tárterület várólistájához.
+### [New-AzureStorageQueueSASToken](New-AzureStorageQueueSASToken.md)
+Megosztott hozzáférés aláírási jogkivonatot hoz létre egy Azure-társorhoz.
 
-### [Új – AzureStorageQueueStoredAccessPolicy](New-AzureStorageQueueStoredAccessPolicy.md)
-Tárolt hozzáférés-házirendet hoz létre az Azure tárterület-várólistához.
+### [New-AzureStorageQueueStoredAccessPolicy](New-AzureStorageQueueStoredAccessPolicy.md)
+Tárolt hozzáférési házirendet hoz létre egy Azure-tárterület-várólistához.
 
-### [Új – AzureStorageShare](New-AzureStorageShare.md)
-Létrehozza a fájl megosztását.
+### [New-AzureStorageShare](New-AzureStorageShare.md)
+Fájlmegosztást hoz létre.
 
-### [Új – AzureStorageShareSASToken](New-AzureStorageShareSASToken.md)
-Megosztott hozzáférés-aláírási jogkivonat létrehozása az Azure tárhely-megosztásához.
+### [New-AzureStorageShareSASToken](New-AzureStorageShareSASToken.md)
+Megosztott hozzáférés-aláírás jogkivonat létrehozása Azure Storage-megosztáshoz.
 
-### [Új – AzureStorageShareStoredAccessPolicy](New-AzureStorageShareStoredAccessPolicy.md)
-Tárolt hozzáférési házirendet hoz létre egy tárterület-megosztásban.
+### [New-AzureStorageShareStoredAccessPolicy](New-AzureStorageShareStoredAccessPolicy.md)
+Tárterület-megosztáson tárolt hozzáférési házirendet hoz létre.
 
-### [Új – AzureStorageTable](New-AzureStorageTable.md)
-Tároló táblát hoz létre.
+### [New-AzureStorageTable](New-AzureStorageTable.md)
+Tárolótáblát hoz létre.
 
-### [Új – AzureStorageTableSASToken](New-AzureStorageTableSASToken.md)
-Létrehoz egy SAS-jogkivonatot az Azure Storage-táblájához.
+### [New-AzureStorageTableSASToken](New-AzureStorageTableSASToken.md)
+Egy Azure Storage-táblához létrehoz egy SAS-jogkivonatot.
 
-### [Új – AzureStorageTableStoredAccessPolicy](New-AzureStorageTableStoredAccessPolicy.md)
-Egy, az Azure Storage-táblájához tárolt hozzáférési házirendet hoz létre.
+### [New-AzureStorageTableStoredAccessPolicy](New-AzureStorageTableStoredAccessPolicy.md)
+Tárolt hozzáférési házirendet hoz létre egy Azure-tárolótáblához.
 
 ### [Remove-AzureStorageBlob](Remove-AzureStorageBlob.md)
 Eltávolítja a megadott tárterület-blobot.
 
 ### [Remove-AzureStorageContainer](Remove-AzureStorageContainer.md)
-Eltávolítja a megadott tárterület-tárolót.
+A megadott tároló eltávolítása.
 
 ### [Remove-AzureStorageContainerStoredAccessPolicy](Remove-AzureStorageContainerStoredAccessPolicy.md)
-Egy tárolt hozzáférés-házirend eltávolítása az Azure Storage tárolóból.
+Eltávolít egy tárolt hozzáférési házirendet egy Azure-tárolóból.
 
 ### [Remove-AzureStorageCORSRule](Remove-AzureStorageCORSRule.md)
-Eltávolítja a CORS a tárterület-szolgáltatáshoz.
+Eltávolítja egy társzolgáltatás CORS-ját.
 
 ### [Remove-AzureStorageDirectory](Remove-AzureStorageDirectory.md)
-Címtár törlése
+Címtár törlése.
 
 ### [Remove-AzureStorageFile](Remove-AzureStorageFile.md)
-Töröl egy fájlt.
+Fájl törlése.
 
 ### [Remove-AzureStorageQueue](Remove-AzureStorageQueue.md)
-Tároló-várólista eltávolítása.
+Eltávolít egy tárterület-várólistát.
 
 ### [Remove-AzureStorageQueueStoredAccessPolicy](Remove-AzureStorageQueueStoredAccessPolicy.md)
-Egy tárolt Access-házirend eltávolítása egy Azure-tárterület-várólistából.
+Eltávolít egy tárolt hozzáférési házirendet egy Azure-tárterület-várólistáról.
 
 ### [Remove-AzureStorageShare](Remove-AzureStorageShare.md)
-Fájl megosztásának törlése
+Fájlmegosztás törlése.
 
 ### [Remove-AzureStorageShareStoredAccessPolicy](Remove-AzureStorageShareStoredAccessPolicy.md)
-Egy tárolt Access-házirend eltávolítása a tárterület-megosztásból.
+Egy tárolt hozzáférési házirend eltávolítása egy tárterület-megosztásból.
 
 ### [Remove-AzureStorageTable](Remove-AzureStorageTable.md)
-Tároló tábla eltávolítása.
+Eltávolít egy tárolótáblát.
 
 ### [Remove-AzureStorageTableStoredAccessPolicy](Remove-AzureStorageTableStoredAccessPolicy.md)
-A tárolt Access-házirendek eltávolítása az Azure Storage-táblájából.
+Eltávolít egy tárolt hozzáférési házirendet egy Azure-tárolótáblából.
 
 ### [Set-AzureStorageBlobContent](Set-AzureStorageBlobContent.md)
-Egy helyi fájlt tölt fel egy Azure Storage blob-webhelyre.
+Feltölt egy helyi fájlt egy Azure Storage blobba.
 
 ### [Set-AzureStorageContainerAcl](Set-AzureStorageContainerAcl.md)
-A nyilvános hozzáférés engedélyének megadása tároló tárolóhoz.
+A nyilvános hozzáférési engedélyt egy tárolóra állítja.
 
 ### [Set-AzureStorageContainerStoredAccessPolicy](Set-AzureStorageContainerStoredAccessPolicy.md)
-Egy, az Azure-tároló tárolójának tárolt hozzáférési házirendjét állítja be.
+Tárolt hozzáférési házirendet állít be egy Azure-tárolóhoz.
 
 ### [Set-AzureStorageCORSRule](Set-AzureStorageCORSRule.md)
-A CORS szabályait állítja be.
+Beállítja egy társzolgáltatástípus CORS-szabályait.
 
 ### [Set-AzureStorageFileContent](Set-AzureStorageFileContent.md)
-Feltölti a fájl tartalmát.
+Feltölti egy fájl tartalmát.
 
 ### [Set-AzureStorageQueueStoredAccessPolicy](Set-AzureStorageQueueStoredAccessPolicy.md)
-Tárol egy tárolt hozzáférés-házirendet egy Azure Storage Queue-hoz.
+Tárolt hozzáférési házirendet állít be egy Azure-tárterület-várólistához.
 
 ### [Set-AzureStorageServiceLoggingProperty](Set-AzureStorageServiceLoggingProperty.md)
-Az Azure Storage Services naplózásának módosítása.
+Módosítja az Azure Storage-szolgáltatások naplózását.
 
 ### [Set-AzureStorageServiceMetricsProperty](Set-AzureStorageServiceMetricsProperty.md)
-Módosítja az Azure Storage szolgáltatás metrikák tulajdonságát.
+Módosítja az Azure Storage szolgáltatás metrikák tulajdonságait.
 
 ### [Set-AzureStorageShareQuota](Set-AzureStorageShareQuota.md)
-A megosztás tárterület-kapacitását adja meg.
+Beállítja egy megosztás tárterület-kapacitását.
 
 ### [Set-AzureStorageShareStoredAccessPolicy](Set-AzureStorageShareStoredAccessPolicy.md)
-A tárolt hozzáférési házirendet frissíti egy tárterület-megosztáson.
+Tárterület-megosztáson tárolt hozzáférési házirend frissítése.
 
 ### [Set-AzureStorageTableStoredAccessPolicy](Set-AzureStorageTableStoredAccessPolicy.md)
-Egy Azure Storage Table tárolt hozzáférés házirendjének beállítása.
+Beállítja egy Azure-tártábla tárolt hozzáférési házirendét.
 
 ### [Start-AzureStorageBlobCopy](Start-AzureStorageBlobCopy.md)
-Elindítja a blob másolását.
+Blob másolása kezd.
 
 ### [Start-AzureStorageBlobIncrementalCopy](Start-AzureStorageBlobIncrementalCopy.md)
-Egy növekményes másolási művelet elindítása egy blob-pillanatképből a megadott rendeltetési lapra blob-ra.
+Növekményes másolási művelet indítása lap blob-pillanatfelvételből a megadott céllap blobba.
 
 ### [Start-AzureStorageFileCopy](Start-AzureStorageFileCopy.md)
-Elindítja a forrásfájl másolását.
+Megkezdi a forrásfájl másolását.
 
 ### [Stop-AzureStorageBlobCopy](Stop-AzureStorageBlobCopy.md)
-Leállít egy másolási műveletet.
+A másolási művelet leállítja.
 
 ### [Stop-AzureStorageFileCopy](Stop-AzureStorageFileCopy.md)
-Leállít egy másolási műveletet a megadott célfájlba.
+A másolási művelet leállítja a megadott célfájlba való másolást.
 
