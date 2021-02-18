@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/new-az
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlSyncMember.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlSyncMember.md
-ms.openlocfilehash: 503f7be9d4d7f595ac8d337568038d7e7e724d1f
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 5846435df4921e425e12e908539849fda0bd2472
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93839400"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405737"
 ---
 # New-AzSqlSyncMember
 
-## Áttekintés
-Azure SQL-adatbázis szinkronizálási tagját hozza létre.
+## SYNOPSIS
+Létrehoz egy Azure SQL Database Sync- tagot.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### AzureSqlDatabase (alapértelmezett)
 ```
@@ -43,12 +43,12 @@ New-AzSqlSyncMember -Name <String> -MemberDatabaseType <String> -SqlServerDataba
  [-Confirm] [<CommonParameters>]
 ```
 
-## Leírás
-A **New-AzSqlSyncMember** parancsmag egy Azure SQL adatbázis-szinkronizálási tagot hoz létre.
+## LEÍRÁS
+A **New-AzSqlSyncMember** parancsmag létrehoz egy Azure SQL Database Sync- tagot.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1: szinkronizálási tag létrehozása Azure SQL-adatbázishoz.
+### 1. példa: Szinkronizálási tag létrehozása Azure SQL-adatbázishoz.
 ```
 PS C:\> $credential = Get-Credential
 PS C:\> New-AzSqlSyncMember -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -SyncGroupName "SyncGroup01" -Name "SyncMember01" -SyncDirection "OneWayMemberToHub"
@@ -70,9 +70,9 @@ MemberDatabasePassword      :
 SyncState                   : UnProvisioned
 ```
 
-Ez a parancs létrehoz egy szinkronizálási tagot egy Azure SQL-adatbázishoz.
+Ez a parancs szinkronizálási adatokat hoz létre egy Azure SQL-adatbázishoz.
 
-### 2. példa: szinkronizálási tag létrehozása helyszíni SQL Server-adatbázishoz
+### 2. példa: Szinkronizálási tag létrehozása helyszíni SQL Server-adatbázishoz
 ```
 PS C:\> $credential = Get-Credential
 PS C:\> New-AzSqlSyncMember -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -SyncGroupName "SyncGroup01" -Name "SyncMember01" -SyncDirection "OneWayMemberToHub"
@@ -95,9 +95,9 @@ MemberDatabasePassword      :
 SyncState                   : UnProvisioned
 ```
 
-A parancs létrehoz egy szinkronizálási tagot egy helyszíni SQL-adatbázishoz.
+Ez a parancs szinkronizálási adatokat hoz létre egy helyszíni SQL-adatbázishoz.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DatabaseName
 Az Azure SQL-adatbázis neve.
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -MemberDatabaseCredential
-Az Azure SQL-adatbázis hitelesítő adatai (Felhasználónév és jelszó).
+Az Azure SQL-adatbázis hitelesítő adatai (felhasználóneve és jelszava).
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -MemberDatabaseName
-A tag adatbázis Azure SQL-adatbázisának neve.
+A tagadatbázis Azure SQL-adatbázisának neve.
 
 ```yaml
 Type: System.String
@@ -160,7 +160,7 @@ Accept wildcard characters: False
 ```
 
 ### -MemberDatabaseType
-A tag adatbázisának adatbázis-típusa.
+A tagadatbázis adatbázistípusa.
 
 ```yaml
 Type: System.String
@@ -176,7 +176,7 @@ Accept wildcard characters: False
 ```
 
 ### -MemberServerName
-A tag-adatbázis Azure SQL Server-neve.
+A tagadatbázis Azure SQL Server-neve.
 
 ```yaml
 Type: System.String
@@ -190,7 +190,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (név)
+### -Name
 A szinkronizálási tag neve.
 
 ```yaml
@@ -220,7 +220,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Kiszolgálónév
+### -ServerName
 Az Azure SQL Server neve.
 
 ```yaml
@@ -236,7 +236,7 @@ Accept wildcard characters: False
 ```
 
 ### -SqlServerDatabaseId
-A Szinkronizáló ügynök által összekapcsolt SQL Server-adatbázis azonosítója.
+A szinkronizálási ügynök által csatlakoztatott SQL Server-adatbázis azonosítója.
 
 ```yaml
 Type: System.String
@@ -251,7 +251,7 @@ Accept wildcard characters: False
 ```
 
 ### -SyncAgentName
-A Szinkronizáló ügynök neve.
+A szinkronizálási ügynök neve.
 
 ```yaml
 Type: System.String
@@ -266,7 +266,7 @@ Accept wildcard characters: False
 ```
 
 ### -SyncAgentResourceGroupName
-Annak az erőforráscsoportnek a neve, amelyben a Szinkronizáló ügynök található.
+Annak az erőforráscsoportnak a neve, amely alatt a szinkronizálási ügynök van.
 
 ```yaml
 Type: System.String
@@ -281,7 +281,7 @@ Accept wildcard characters: False
 ```
 
 ### -SyncAgentResourceID
-A Szinkronizáló ügynök erőforrás-azonosítója.
+A szinkronizálási ügynök erőforrás-azonosítója.
 
 ```yaml
 Type: System.String
@@ -296,7 +296,7 @@ Accept wildcard characters: False
 ```
 
 ### -SyncAgentServerName
-Annak az Azure SQL Server-kiszolgálónak a neve, amelyben a Szinkronizáló ügynök található.
+Annak az Azure SQL Servernek a neve, ahol a szinkronizálási ügynök található.
 
 ```yaml
 Type: System.String
@@ -311,7 +311,7 @@ Accept wildcard characters: False
 ```
 
 ### -SyncDirection
-Ennek a szinkronizálási tagnak a szinkronizálási iránya.
+A szinkronizálási tag szinkronizálási iránya.
 
 ```yaml
 Type: System.String
@@ -341,8 +341,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -357,7 +357,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik.
 A parancsmag nem fut.
 
 ```yaml
@@ -373,23 +373,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információt a [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. SQL. DataSync. Model. AzureSqlSyncMemberModel
+### Microsoft.Azure.Commands.Sql.DataSync.Model.AzureSqlSyncMemberModel
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
 [Get-AzSqlSyncMember](./Get-AzSqlSyncMember.md)
 
-[Set-AzSqlSyncMember](./Set-AzSqlSyncMember.md)
 
 [Remove-AzSqlSyncMember](./Remove-AzSqlSyncMember.md)
 

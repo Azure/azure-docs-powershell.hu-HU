@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzADUser.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzADUser.md
-ms.openlocfilehash: 2dc9a0d3d41ca1bccb131e92cf514fd2f814943b
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 8799450cc73784b45804ea1fa26785716a895bed
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93838899"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405635"
 ---
 # Remove-AzADUser
 
-## Áttekintés
-Active Directory-felhasználó törlése
+## SYNOPSIS
+Egy Active Directory-felhasználó törlése.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### UPNOrObjectIdParameterSet (alapértelmezett)
 ```
@@ -50,39 +50,39 @@ Remove-AzADUser -InputObject <PSADUser> [-PassThru] [-Force] [-DefaultProfile <I
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Leírás
-Egy Active Directory-felhasználó törlése (munkahelyi/iskolai fiók is ismert a szervezeti azonosító néven ismert).
+## LEÍRÁS
+Töröl egy Active Directory-felhasználót (munkahelyi/iskolai fiókot, más néven szervezeti azonosítót).
 
-## Példák
+## PÉLDÁK
 
-### Példa 1 – felhasználó eltávolítása a felhasználó egyszerű nevével
+### 1. példa: Felhasználó eltávolítása egyszerű felhasználónév alapján
 
 ```
 PS C:\> Remove-AzADUser -UserPrincipalName foo@domain.com
 ```
 
-A felhasználó eltávolítása a "" "nevű felhasználó nevéből foo@domain.com a bérlői webhelyről.
+Eltávolítja a bérlői fiókból a foo@domain.com "" nevű felhasználónevet.
 
-### 2. példa – egy felhasználó objektum-azonosítóval való eltávolítása
+### 2. példa: Felhasználó eltávolítása objektumazonosító alapján
 
 ```
 PS C:\> Remove-AzADUser -ObjectId 7a9582cf-88c4-4319-842b-7a5d60967a69
 ```
 
-Eltávolítja az "7a9582cf-88c4-4319-842b-7a5d60967a69" azonosítójú felhasználót a bérlői webhelyről.
+Eltávolítja a bérlői webhelyről a (7a9582cf-88c4-4319-842b-7a5d60967a69) azonosítójú felhasználót.
 
-### 3 példa – felhasználó eltávolítása csővezetékről
+### 3. példa: Felhasználó eltávolítása pipázás használatával
 
 ```
 PS C:\> Get-AzADUser -ObjectId 7a9582cf-88c4-4319-842b-7a5d60967a69 | Remove-AzADUser
 ```
 
-A felhasználót a "7a9582cf-88c4-4319-842b-7a5d60967a69" azonosítójú objektummal, a Remove-AzADUser parancsmagot tartalmazó csövekkel pedig eltávolítja a felhasználót a bérlői fiókból.
+A (7a9582cf-88c4-4319-842b-7a5d60967a69) azonosítójú felhasználót és a Remove-AzADUser-parancsmagot a felhasználó bérlői webhelyről való eltávolításához bevezető vezetékeket használ.
 
-## PARAMÉTEREK
+## PARAMETERS
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -97,7 +97,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-A törlendő felhasználó megjelenítendő neve.
+A törölendő felhasználó megjelenítendő neve.
 
 ```yaml
 Type: System.String
@@ -112,7 +112,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Ha meg van adva, nem kér megerősítést a felhasználó törléséhez.
+Ha meg van adva, akkor nem kér megerősítést a felhasználó törléséhez.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-A törlendő felhasználói objektum.
+A törölni fog egy felhasználói objektumot.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADUser
@@ -142,7 +142,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-A törlendő felhasználó objektum-azonosítója.
+A törölt felhasználó objektumazonosítója.
 
 ```yaml
 Type: System.String
@@ -157,7 +157,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Ez a beállítás akkor igaz, ha a parancs sikeres.
+Ha megadja ezt a parancsot, az igaz értéket ad vissza, ha a parancs sikeres volt.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -172,7 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -UPNOrObjectId
-A törölni kívánt felhasználó egyszerű felhasználónevét vagy objectId.
+A törölnie kell a felhasználó egyszerű felhasználónevét vagy objectId azonosítóját.
 
 ```yaml
 Type: System.String
@@ -187,7 +187,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserPrincipalName
-A törlendő felhasználó egyszerű felhasználóneve.
+A törölt felhasználó egyszerű felhasználóneve.
 
 ```yaml
 Type: System.String
@@ -201,8 +201,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -217,7 +217,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik.
 A parancsmag nem fut.
 
 ```yaml
@@ -233,25 +233,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### System. String
+### System.String
 
-### Microsoft. Azure. Command. ActiveDirectory. PSADUser
+### Microsoft.Azure.Commands.ActiveDirectory.PSADUser
 
 ## KIMENETEK
 
-### System. Boolean
+### System.Boolean
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
-[Új – AzADUser](./New-AzADUser.md)
+[New-AzADUser](./New-AzADUser.md)
 
 [Get-AzADUser](./Get-AzADUser.md)
 
-[Set-AzADUser](./Set-AzADUser.md)
 

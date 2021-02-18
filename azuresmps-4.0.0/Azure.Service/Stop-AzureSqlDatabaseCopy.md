@@ -3,19 +3,19 @@ external help file: Microsoft.WindowsAzure.Commands.SqlDatabase.dll-Help.xml
 ms.assetid: CB601E21-424D-4B09-85E5-A4B2A5068267
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: 2b7674cb5b7abc489dc6aa6d3746f499b9686312
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 7716587787515221a6e016436a6e3d030c1ab0eb
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94016403"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405618"
 ---
 # Stop-AzureSqlDatabaseCopy
 
-## Áttekintés
-Folytonos másolási kapcsolat megszüntetése
+## SYNOPSIS
+Folyamatos másolási kapcsolatot szüntet meg.
 
-## SZINTAXISA
+## SZINTAXIS
 
 ### ByInputObject
 ```
@@ -23,7 +23,7 @@ Stop-AzureSqlDatabaseCopy -ServerName <String> -DatabaseCopy <DatabaseCopy> [-Fo
  [-Profile <AzureSMProfile>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### ByDatabase
+### Adatbázis-adatbázis
 ```
 Stop-AzureSqlDatabaseCopy -ServerName <String> -Database <Database> [-PartnerServer <String>]
  [-PartnerDatabase <String>] [-ForcedTermination] [-Force] [-Profile <AzureSMProfile>] [-WhatIf] [-Confirm]
@@ -37,45 +37,45 @@ Stop-AzureSqlDatabaseCopy -ServerName <String> -DatabaseName <String> [-PartnerS
  [<CommonParameters>]
 ```
 
-## Leírás
-A **stop-AzureSqlDatabaseCopy** parancsmag folytonos másolási kapcsolatot szüntet meg.
-Ez a parancsmag leállítja a forrásadatbázis és a másodlagos vagy a cél adatbázis közötti adatmozgást, majd a másodlagos adatbázis állapotát különálló online adatbázisként módosítja.
+## LEÍRÁS
+A **Stop-AzureSqlDatabaseCopy** parancsmag megszakítja a folyamatos másolási kapcsolatot.
+Ez a parancsmag leállítja az adatmozgást a forrásadatbázis és a másodlagos vagy céladatbázis között, majd a másodlagos adatbázis állapotát önálló online adatbázisként módosítja.
 
-A folyamatos másolási viszonyok, a megszüntetési vagy a tervezett megszűnések, valamint a kényszer megszűnése két módon végezhető el a lehetséges adatvesztéssel.
-A forrás adatbázist tároló kiszolgálón futtathatja ezt a parancsmagot a megszüntetés vagy a kényszeres lemondási mód használatával.
-A másodlagos adatbázist tároló kiszolgálón kényszerített befejezési módot kell használnia.
+A folyamatos másolási kapcsolatot, a megszüntetést vagy a tervezett megszüntetést és a kényszeres megszüntetést kétféleképpen lehet megszüntetni lehetséges adatvesztéssel.
+A forrásadatbázist tartalmazó kiszolgálón futtathatja ezt a parancsmagot megszüntetés vagy kényszerített megszüntetés módban.
+A másodlagos adatbázist tartalmazó kiszolgálón kényszerített megszüntetést kell használnia.
 
-A tervezett megszüntetés csak akkor várja a másodlagos adatbázisba, ha a forrástartományban futtatott összes tranzakciót futtatta a forrás adatbázisból.
-A kényszeres megszűnés nem várja meg az esetleges függőben lévő lekötött tranzakciók replikálását, és a másodlagos adatbázis esetleges adatvesztését is okozhatja.
+A tervezett megszüntetés addig vár, amíg a forrásadatbázisban lekötött tranzakciók a parancsmag futtatásakor a másodlagos adatbázisba replikálódnak.
+A kényszerített megszüntetés nem várja meg a lekötött tranzakciók replikációját, és a másodlagos adatbázisban adatvesztést okozhat.
 
-Amíg a replikációs állapot FÜGGŐben van, csak a kényszer megszűnése lehet sikeres a folyamatos másolási kapcsolat befejezése.
-Ha a replikációs állapot FÜGGŐben van, a záró érték nem használható.
+A replikáció állapota függőben van, de csak a kényszerített megszüntetés képes megszüntetni a folyamatos másolási kapcsolatot.
+Ha a replikáció állapota FÜGGŐBEN van, a nem kényszerített megszüntetés nem támogatott.
 
-## Példák
+## PÉLDÁK
 
-### 1. példa: folyamatos másolati kapcsolat megszüntetése
+### 1. példa: Folyamatos másolási kapcsolat megszüntetése
 ```
 PS C:\>Stop-AzureSqlDatabaseCopy -ServerName "lpqd0zbr8y" -DatabaseName "Orders" -PartnerServer "bk0b8kf658"
 ```
 
-Ez a parancs a lpqd0zbr8y nevű kiszolgálón a rendelések nevű adatbázis folyamatos másolati kapcsolatát zárja le.
-A bk0b8kf658 nevű kiszolgáló a másodlagos adatbázist tárolja.
+Ez a parancs megszünteti az Orders (Rendelések) nevű adatbázis folyamatos másolási kapcsolatát az lpqd0zbr8y nevű kiszolgálón.
+A bk0b8kf658 nevű kiszolgáló tárolja a másodlagos adatbázist.
 
-### 2. példa: folyamatos másolati kapcsolat megszüntetése
+### 2. példa: Folytonos másolási kapcsolat megszüntetése
 ```
 PS C:\>$DatabaseCopy = Get-AzureSqlDatabaseCopy -ServerName "lpqd0zbr8y" -DatabaseName "Orders"
 PS C:\> $DatabaseCopy | Stop-AzureSqlDatabaseCopy -ServerName "lpqd0zbr8y" -ForcedTermination
 ```
 
-Az első parancs a lpqd0zbr8y nevű kiszolgálón a rendelések nevű adatbázis adatbázis-másolási kapcsolatát kapja.
+Az első parancs az Orders (Rendelések) nevű adatbázis adatbázis-másolási kapcsolatát kapja meg az lpqd0zbr8y nevű kiszolgálón.
 
-A második parancs a másodlagos adatbázist tároló kiszolgálóról folyamatosan megszünteti a folyamatos másolási viszonyt.
+A második parancs a másodlagos adatbázist tartalmazó kiszolgáló folyamatos másolási kapcsolatát szünteti meg.
 
-## PARAMÉTEREK
+## PARAMETERS
 
-### -Database (adatbázis)
-Egy olyan objektumot ad meg, amely a Source Azure SQL-adatbázist jelöli.
-Ez a parancsmag lezárja az adatbázis folytonos másolati kapcsolatát, amelyet a paraméter határoz meg.
+### -Database
+A forrás Azure SQL-adatbázist képviselő objektumot ad meg.
+Ez a parancsmag megszakítja a paraméterként megadott adatbázis folyamatos másolási kapcsolatát.
 
 ```yaml
 Type: Database
@@ -90,9 +90,9 @@ Accept wildcard characters: False
 ```
 
 ### -DatabaseCopy
-Egy adatbázist jelképező objektumot ad meg.
-Ez a parancsmag lezárja az adatbázis folytonos másolati kapcsolatát, amelyet a paraméter határoz meg.
-Ez a paraméter elfogadja a csővezeték-bevitelt.
+Egy adatbázist képviselő objektumot ad meg.
+Ez a parancsmag megszakítja a paraméterként megadott adatbázis folyamatos másolási kapcsolatát.
+Ez a paraméter elfogadja a folyamatbemenetet.
 
 ```yaml
 Type: DatabaseCopy
@@ -107,8 +107,8 @@ Accept wildcard characters: False
 ```
 
 ### -DatabaseName
-Az adatbázis nevét adja meg.
-Ez a parancsmag lezárja az adatbázis folytonos másolati kapcsolatát, amelyet a paraméter határoz meg.
+Egy adatbázis nevét adja meg.
+Ez a parancsmag megszakítja a paraméterként megadott adatbázis folyamatos másolási kapcsolatát.
 
 ```yaml
 Type: String
@@ -123,7 +123,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Kényszeríti a parancsot, hogy a felhasználó megerősítésének kérése nélkül fusson.
+A parancs futtatását kényszeríti felhasználói megerősítés kérése nélkül.
 
 ```yaml
 Type: SwitchParameter
@@ -138,10 +138,10 @@ Accept wildcard characters: False
 ```
 
 ### -ForcedTermination
-Jelzi, hogy ez a parancsmag a folyamatos másolási viszony kényszeres megszüntetését okozta.
-A kényszeres megszűnés az adatvesztéssel járhat.
-Ha a parancsmagot egy olyan kiszolgálón szeretné futtatni, amelyen a céladatbázis található, ezt a paramétert kell megadnia.
-Ha a parancsmagot a forrás adatbázist tároló kiszolgálón szeretné futtatni, ha a másodlagos adatbázis nem érhető el, akkor ezt a paramétert kell megadnia.
+Azt jelzi, hogy ez a parancsmag a folyamatos másolási kapcsolat kényszerített megszűnését okozza.
+A kényszerített megszüntetés adatvesztést okozhat.
+Ha a parancsmagot a céladatbázist tároló kiszolgálón futtatni, meg kell adnia ezt a paramétert.
+Ha ezt a parancsmagot a forrásadatbázist tartalmazó kiszolgálón futtatni, ha a másodlagos adatbázis nem érhető el, meg kell adnia ezt a paramétert.
 
 ```yaml
 Type: SwitchParameter
@@ -157,7 +157,7 @@ Accept wildcard characters: False
 
 ### -PartnerDatabase
 A másodlagos adatbázis nevét adja meg.
-Ha megad egy nevet, a forrás-adatbázis nevének egyeznie kell.
+Ha megad egy nevet, annak meg kell egyeznie a forrásadatbázis nevével.
 
 ```yaml
 Type: String
@@ -172,7 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -PartnerServer
-A célként megadott adatbázist tároló kiszolgáló neve.
+A céladatbázist tároló kiszolgáló neve.
 
 ```yaml
 Type: String
@@ -187,8 +187,8 @@ Accept wildcard characters: False
 ```
 
 ### -Profil
-Azt az Azure-profilt adja meg, amelyből a parancsmag olvasható.
-Ha nem ad meg profilt, a parancsmag a helyi alapértelmezett profilból olvassa be a szöveget.
+Azt az Azure-profilt adja meg, amelyből a parancsmag olvas.
+Ha nem ad meg profilt, ez a parancsmag a helyi alapértelmezett profilból olvassa be.
 
 ```yaml
 Type: AzureSMProfile
@@ -202,8 +202,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Kiszolgálónév
-Annak a kiszolgálónak a nevét adja meg, amelyen a forrás adatbázis található.
+### -ServerName
+Annak a kiszolgálónak a nevét adja meg, amelyen a forrásadatbázis található.
 
 ```yaml
 Type: String
@@ -217,8 +217,8 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: SwitchParameter
@@ -233,7 +233,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik.
 A parancsmag nem fut.
 
 ```yaml
@@ -249,37 +249,37 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. WindowsAzure. Command. SqlDatabase. Model. DatabaseCopy
+### Microsoft.WindowsAzure.Commands.SqlDatabase.Model.DatabaseCopy
 
-### Microsoft. WindowsAzure. Command. SqlDatabase. Services. Server. Database
+### Microsoft.WindowsAzure.Commands.SqlDatabase.Services.Server.Database
 
 ## KIMENETEK
 
 ### Nincs
 
-## MEGJEGYZI
-* Hitelesítés: Ez a parancsmag tanúsítvány-alapú hitelesítést követel meg. Példa arra, hogy hogyan állíthatja be a jelenlegi előfizetést a tanúsítványalapú hitelesítéssel, ha a **New-AzureSqlDatabaseServerContext** parancsmagot használja.
-* Korlátozások: a másodlagos adatbázist tároló kiszolgálón csak a kényszeres megszüntetés támogatott.
-* A megszüntetés hatása a volt másodlagos adatbázisra: a megszüntetést követően a másodlagos adatbázis független adatbázis lesz. Ha a másodlagos adatbázison már elkészült a kivetés, az adatbázis befejezését követően teljes hozzáférésre nyitva kell lennie. Ha a forrásadatbázis egy írható-olvasható adatbázis, a volt másodlagos adatbázis is írható-olvasható adatbázis lesz.
+## MEGJEGYZÉSEK
+* Hitelesítés: Ez a parancsmag tanúsítványalapú hitelesítést igényel. Ha például tanúsítványalapú hitelesítéssel állíthatja be az aktuális előfizetést, tekintse meg a **New-AzureSqlDatabaseServerContext** parancsmagot.
+* Korlátozások: A másodlagos adatbázist tartalmazó kiszolgálón csak a kényszerített megszüntetés támogatott.
+* A megszűnés hatása a korábbi másodlagos adatbázisra: A megszüntetés után a másodlagos adatbázis független adatbázissá válik. Ha már befejeződött a másodlagos adatbázis létrehozása, az adatbázis megszüntetése után az adatbázis teljes hozzáférésre van megnyitva. Ha a forrásadatbázis írási és írási adatbázis, a korábbi másodlagos adatbázis is írási és írási adatbázissá válik.
 
-  Ha a kivetés jelenleg folyamatban van, a vetés megszakad, és a volt másodlagos adatbázis nem lesz látható a másodlagos adatbázist tároló kiszolgálón.
+  Ha a bevetés folyamatban van, a rendszer megszakítja a bevetést, és a korábbi másodlagos adatbázis soha nem lesz látható a másodlagos adatbázist tartalmazó kiszolgálón.
 
-* A forrásadatok csak olvasható módra állíthatók be. Ez biztosítja, hogy a forrás-és másodlagos adatbázisokat a befejezés után szinkronizálja a program, és gondoskodjon arról, hogy a lemondáskor ne történjen semmilyen tranzakció véglegesítése. A Befejezés befejezése után állítsa vissza a forrást olvasási és írási módra. A korábbi másodlagos adatbázist tetszés szerint is megadhatja olvasási és írási módra.
-* Monitoring: Ha ellenőrizni szeretné a műveletek állapotát a folyamatos másolási kapcsolat forrásában és céljában, használja a **Get-AzureSqlDatabaseOperation** parancsmagot.
+* A forrásadatbázist írási módra állíthatja. Ez garantálja, hogy a rendszer a megszűnés után szinkronizálja a forrás- és a másodlagos adatbázisokat, és biztosítja, hogy a megszüntetés során ne legyen tranzakciók lekötöttek. A megszüntetés befejeződése után állítsa vissza a forrást írási és olvasási módba. Ha szükséges, a korábbi másodlagos adatbázist írási-olvasási módra is beállíthatja.
+* Figyelés: Ha a folyamatos másolási kapcsolat forrásán és célszámán is ellenőriznie kell a műveletek állapotát, használja a **Get-AzureSqlDatabaseOperation** parancsmagot.
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 
 [Azure SQL-adatbázis](https://azure.microsoft.com/en-us/services/sql-database/)
 
-[Azure SQL-adatbázisok műveletei](https://msdn.microsoft.com/en-us/library/azure/dn505719.aspx)
+[Műveletek az Azure SQL-adatbázisokban](https://msdn.microsoft.com/en-us/library/azure/dn505719.aspx)
 
-[Adatbázis-példány leállítása](https://msdn.microsoft.com/en-us/library/dn509573.aspx)
+[Adatbázis-másolás vége](https://msdn.microsoft.com/en-us/library/dn509573.aspx)
 
-[Azure SQL-adatbázis-parancsmagok](./Azure.SQLDatabase.md)
+
 
 [Get-AzureSqlDatabaseCopy](./Get-AzureSqlDatabaseCopy.md)
 
