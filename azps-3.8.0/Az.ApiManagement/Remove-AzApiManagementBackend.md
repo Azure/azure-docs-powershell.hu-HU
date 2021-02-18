@@ -5,41 +5,41 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementBackend.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementBackend.md
-ms.openlocfilehash: d1a353e9534cbfd2530bb67f5eeda92fbb6d72ff
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 073b32936be1e1614e495ca680a250498742ba66
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94013011"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100414594"
 ---
-# <span data-ttu-id="190e4-101">Remove-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="190e4-101">Remove-AzApiManagementBackend</span></span>
+# <span data-ttu-id="70bc5-101">Remove-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="70bc5-101">Remove-AzApiManagementBackend</span></span>
 
-## <span data-ttu-id="190e4-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="190e4-102">SYNOPSIS</span></span>
-<span data-ttu-id="190e4-103">A backend eltávolítása.</span><span class="sxs-lookup"><span data-stu-id="190e4-103">Removes a Backend.</span></span>
+## <span data-ttu-id="70bc5-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="70bc5-102">SYNOPSIS</span></span>
+<span data-ttu-id="70bc5-103">A Háttér eltávolítása gombra.</span><span class="sxs-lookup"><span data-stu-id="70bc5-103">Removes a Backend.</span></span>
 
-## <span data-ttu-id="190e4-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="190e4-104">SYNTAX</span></span>
+## <span data-ttu-id="70bc5-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="70bc5-104">SYNTAX</span></span>
 
 ```
 Remove-AzApiManagementBackend -Context <PsApiManagementContext> -BackendId <String> [-PassThru]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="190e4-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="190e4-105">DESCRIPTION</span></span>
-<span data-ttu-id="190e4-106">Eltávolítja az azonosító által az API-menedzsment által megadott hátteret.</span><span class="sxs-lookup"><span data-stu-id="190e4-106">Removes a backend specified by the Identifier from the Api Management.</span></span>
+## <span data-ttu-id="70bc5-105">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="70bc5-105">DESCRIPTION</span></span>
+<span data-ttu-id="70bc5-106">Eltávolítja az Azonosító által megadott háttért az Api-kezelésből.</span><span class="sxs-lookup"><span data-stu-id="70bc5-106">Removes a backend specified by the Identifier from the Api Management.</span></span>
 
-## <span data-ttu-id="190e4-107">Példák</span><span class="sxs-lookup"><span data-stu-id="190e4-107">EXAMPLES</span></span>
+## <span data-ttu-id="70bc5-107">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="70bc5-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="190e4-108">1. példa: a backend 123 eltávolítása</span><span class="sxs-lookup"><span data-stu-id="190e4-108">Example 1: Remove the Backend 123</span></span>
+### <span data-ttu-id="70bc5-108">1. példa: A Backend 123 eltávolítása</span><span class="sxs-lookup"><span data-stu-id="70bc5-108">Example 1: Remove the Backend 123</span></span>
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Remove-AzApiManagementBackend -Context $apimContext -BackendId 123 -PassThru
 ```
 
-## <span data-ttu-id="190e4-109">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="190e4-109">PARAMETERS</span></span>
+## <span data-ttu-id="70bc5-109">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="70bc5-109">PARAMETERS</span></span>
 
-### <span data-ttu-id="190e4-110">-BackendId</span><span class="sxs-lookup"><span data-stu-id="190e4-110">-BackendId</span></span>
-<span data-ttu-id="190e4-111">A meglévő backend-azonosító.</span><span class="sxs-lookup"><span data-stu-id="190e4-111">Identifier of existing backend.</span></span>
-<span data-ttu-id="190e4-112">Ehhez a paraméterhez szükség van.</span><span class="sxs-lookup"><span data-stu-id="190e4-112">This parameter is required.</span></span>
+### <span data-ttu-id="70bc5-110">-BackendId</span><span class="sxs-lookup"><span data-stu-id="70bc5-110">-BackendId</span></span>
+<span data-ttu-id="70bc5-111">A meglévő háttéren lévő azonosító.</span><span class="sxs-lookup"><span data-stu-id="70bc5-111">Identifier of existing backend.</span></span>
+<span data-ttu-id="70bc5-112">Ezt a paramétert kötelező megadni.</span><span class="sxs-lookup"><span data-stu-id="70bc5-112">This parameter is required.</span></span>
 
 ```yaml
 Type: System.String
@@ -53,9 +53,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="190e4-113">-Környezet</span><span class="sxs-lookup"><span data-stu-id="190e4-113">-Context</span></span>
-<span data-ttu-id="190e4-114">A PsApiManagementContext példánya.</span><span class="sxs-lookup"><span data-stu-id="190e4-114">Instance of PsApiManagementContext.</span></span>
-<span data-ttu-id="190e4-115">Ehhez a paraméterhez szükség van.</span><span class="sxs-lookup"><span data-stu-id="190e4-115">This parameter is required.</span></span>
+### <span data-ttu-id="70bc5-113">-Környezet</span><span class="sxs-lookup"><span data-stu-id="70bc5-113">-Context</span></span>
+<span data-ttu-id="70bc5-114">A PsApiManagementContext példánya.</span><span class="sxs-lookup"><span data-stu-id="70bc5-114">Instance of PsApiManagementContext.</span></span>
+<span data-ttu-id="70bc5-115">Ezt a paramétert kötelező megadni.</span><span class="sxs-lookup"><span data-stu-id="70bc5-115">This parameter is required.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -69,8 +69,8 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="190e4-116">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="190e4-116">-DefaultProfile</span></span>
-<span data-ttu-id="190e4-117">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="190e4-117">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="70bc5-116">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="70bc5-116">-DefaultProfile</span></span>
+<span data-ttu-id="70bc5-117">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="70bc5-117">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -84,10 +84,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="190e4-118">-PassThru</span><span class="sxs-lookup"><span data-stu-id="190e4-118">-PassThru</span></span>
-<span data-ttu-id="190e4-119">Ha a megadott művelet sikeres, akkor a True Write True értékre vált.</span><span class="sxs-lookup"><span data-stu-id="190e4-119">If specified will write true in case operation succeeds.</span></span>
-<span data-ttu-id="190e4-120">Ez a paraméter nem kötelező.</span><span class="sxs-lookup"><span data-stu-id="190e4-120">This parameter is optional.</span></span>
-<span data-ttu-id="190e4-121">Az alapértelmezett érték a hamis.</span><span class="sxs-lookup"><span data-stu-id="190e4-121">Default value is false.</span></span>
+### <span data-ttu-id="70bc5-118">-PassThru</span><span class="sxs-lookup"><span data-stu-id="70bc5-118">-PassThru</span></span>
+<span data-ttu-id="70bc5-119">Ha a megadott érték igaz értéket ad meg, akkor a művelet sikeres lesz.</span><span class="sxs-lookup"><span data-stu-id="70bc5-119">If specified will write true in case operation succeeds.</span></span>
+<span data-ttu-id="70bc5-120">Ez a paraméter nem kötelező.</span><span class="sxs-lookup"><span data-stu-id="70bc5-120">This parameter is optional.</span></span>
+<span data-ttu-id="70bc5-121">Az alapértelmezett érték hamis.</span><span class="sxs-lookup"><span data-stu-id="70bc5-121">Default value is false.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -101,8 +101,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="190e4-122">– Megerősítés</span><span class="sxs-lookup"><span data-stu-id="190e4-122">-Confirm</span></span>
-<span data-ttu-id="190e4-123">A parancsmag futtatása előtt kéri a megerősítést.</span><span class="sxs-lookup"><span data-stu-id="190e4-123">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="70bc5-122">-Confirm</span><span class="sxs-lookup"><span data-stu-id="70bc5-122">-Confirm</span></span>
+<span data-ttu-id="70bc5-123">A parancsmag futtatása előtt a rendszer megerősítést kér.</span><span class="sxs-lookup"><span data-stu-id="70bc5-123">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -116,8 +116,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="190e4-124">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="190e4-124">-WhatIf</span></span>
-<span data-ttu-id="190e4-125">Annak megjelenítése, hogy mi történik, ha a parancsmag fut.</span><span class="sxs-lookup"><span data-stu-id="190e4-125">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="190e4-126">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="190e4-126">The cmdlet is not run.</span></span>
+### <span data-ttu-id="70bc5-124">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="70bc5-124">-WhatIf</span></span>
+<span data-ttu-id="70bc5-125">A parancsmag futtatásakor a program megjeleníti, hogy mi történik.</span><span class="sxs-lookup"><span data-stu-id="70bc5-125">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="70bc5-126">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="70bc5-126">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -131,31 +131,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="190e4-127">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="190e4-127">CommonParameters</span></span>
-<span data-ttu-id="190e4-128">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="190e4-128">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="190e4-129">További információt a [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)című témakörben talál.</span><span class="sxs-lookup"><span data-stu-id="190e4-129">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="70bc5-127">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="70bc5-127">CommonParameters</span></span>
+<span data-ttu-id="70bc5-128">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="70bc5-128">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="70bc5-129">További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="70bc5-129">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="190e4-130">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="190e4-130">INPUTS</span></span>
+## <span data-ttu-id="70bc5-130">INPUTS</span><span class="sxs-lookup"><span data-stu-id="70bc5-130">INPUTS</span></span>
 
-### <span data-ttu-id="190e4-131">Microsoft. Azure. Command. ApiManagement. ServiceManagement. models. PsApiManagementContext</span><span class="sxs-lookup"><span data-stu-id="190e4-131">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span></span>
+### <span data-ttu-id="70bc5-131">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span><span class="sxs-lookup"><span data-stu-id="70bc5-131">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span></span>
 
-### <span data-ttu-id="190e4-132">System. String</span><span class="sxs-lookup"><span data-stu-id="190e4-132">System.String</span></span>
+### <span data-ttu-id="70bc5-132">System.String</span><span class="sxs-lookup"><span data-stu-id="70bc5-132">System.String</span></span>
 
-### <span data-ttu-id="190e4-133">System. Management. Automation. SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="190e4-133">System.Management.Automation.SwitchParameter</span></span>
+### <span data-ttu-id="70bc5-133">System.Management.Automation.SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="70bc5-133">System.Management.Automation.SwitchParameter</span></span>
 
-## <span data-ttu-id="190e4-134">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="190e4-134">OUTPUTS</span></span>
+## <span data-ttu-id="70bc5-134">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="70bc5-134">OUTPUTS</span></span>
 
-### <span data-ttu-id="190e4-135">System. Boolean</span><span class="sxs-lookup"><span data-stu-id="190e4-135">System.Boolean</span></span>
+### <span data-ttu-id="70bc5-135">System.Boolean</span><span class="sxs-lookup"><span data-stu-id="70bc5-135">System.Boolean</span></span>
 
-## <span data-ttu-id="190e4-136">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="190e4-136">NOTES</span></span>
+## <span data-ttu-id="70bc5-136">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="70bc5-136">NOTES</span></span>
 
-## <span data-ttu-id="190e4-137">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="190e4-137">RELATED LINKS</span></span>
+## <span data-ttu-id="70bc5-137">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="70bc5-137">RELATED LINKS</span></span>
 
-[<span data-ttu-id="190e4-138">Get-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="190e4-138">Get-AzApiManagementBackend</span></span>](./Get-AzApiManagementBackend)
+[<span data-ttu-id="70bc5-138">Get-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="70bc5-138">Get-AzApiManagementBackend</span></span>](./Get-AzApiManagementBackend.md)
 
-[<span data-ttu-id="190e4-139">Új – AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="190e4-139">New-AzApiManagementBackend</span></span>](./New-AzApiManagementBackend.md)
+[<span data-ttu-id="70bc5-139">New-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="70bc5-139">New-AzApiManagementBackend</span></span>](./New-AzApiManagementBackend.md)
 
-[<span data-ttu-id="190e4-140">Új – AzApiManagementBackendCredential</span><span class="sxs-lookup"><span data-stu-id="190e4-140">New-AzApiManagementBackendCredential</span></span>](./New-AzApiManagementBackendCredential.md)
+[<span data-ttu-id="70bc5-140">New-AzApiManagementBackendCredential</span><span class="sxs-lookup"><span data-stu-id="70bc5-140">New-AzApiManagementBackendCredential</span></span>](./New-AzApiManagementBackendCredential.md)
 
-[<span data-ttu-id="190e4-141">Új – AzApiManagementBackendProxy</span><span class="sxs-lookup"><span data-stu-id="190e4-141">New-AzApiManagementBackendProxy</span></span>](./New-AzApiManagementBackendProxy.md)
+[<span data-ttu-id="70bc5-141">New-AzApiManagementBackendProxy</span><span class="sxs-lookup"><span data-stu-id="70bc5-141">New-AzApiManagementBackendProxy</span></span>](./New-AzApiManagementBackendProxy.md)
 
-[<span data-ttu-id="190e4-142">Set-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="190e4-142">Set-AzApiManagementBackend</span></span>](./Set-AzApiManagementBackend.md)
+[<span data-ttu-id="70bc5-142">Set-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="70bc5-142">Set-AzApiManagementBackend</span></span>](./Set-AzApiManagementBackend.md)
