@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.servicefab
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceFabric/ServiceFabric/help/Update-AzServiceFabricDurability.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceFabric/ServiceFabric/help/Update-AzServiceFabricDurability.md
-ms.openlocfilehash: 283ca228ba44d2ec87cd926d23e0217eb67434eb
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 8aec0babd295e6208cd0b1b055880fcd71164592
+ms.sourcegitcommit: 608289d079b819df2b8d1a2f7935cc500367a312
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93669100"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101684875"
 ---
-# <span data-ttu-id="3b6cb-101">Update-AzServiceFabricDurability</span><span class="sxs-lookup"><span data-stu-id="3b6cb-101">Update-AzServiceFabricDurability</span></span>
+# <span data-ttu-id="67450-101">Update-AzServiceFabricDurability</span><span class="sxs-lookup"><span data-stu-id="67450-101">Update-AzServiceFabricDurability</span></span>
 
-## <span data-ttu-id="3b6cb-102">Áttekintés</span><span class="sxs-lookup"><span data-stu-id="3b6cb-102">SYNOPSIS</span></span>
-<span data-ttu-id="3b6cb-103">Módosítsa a VmSku tartóssági rétegét vagy egy csomópont típusát.</span><span class="sxs-lookup"><span data-stu-id="3b6cb-103">Update the durability tier or VmSku of a node type in the cluster.</span></span>
+## <span data-ttu-id="67450-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="67450-102">SYNOPSIS</span></span>
+<span data-ttu-id="67450-103">Frissítse a fürt egyik csomóponttípusának 10.10-es szintjéhez vagy VmSku-jának frissítéséhez.</span><span class="sxs-lookup"><span data-stu-id="67450-103">Update the durability tier or VmSku of a node type in the cluster.</span></span> <span data-ttu-id="67450-104">Emellett frissíti a service fabric VM-bővítményben lévő tárolási réteget is a társított virtuálisgép-méretkészleten.</span><span class="sxs-lookup"><span data-stu-id="67450-104">It will also update the durability tier in the Service Fabric VM extension on the associated Virtual Machine Scale Set.</span></span>
 
-## <span data-ttu-id="3b6cb-104">SZINTAXISA</span><span class="sxs-lookup"><span data-stu-id="3b6cb-104">SYNTAX</span></span>
+## <span data-ttu-id="67450-105">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="67450-105">SYNTAX</span></span>
 
 ```
 Update-AzServiceFabricDurability [-ResourceGroupName] <String> [-Name] <String> -NodeType <String>
@@ -25,22 +25,22 @@ Update-AzServiceFabricDurability [-ResourceGroupName] <String> [-Name] <String> 
  [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="3b6cb-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="3b6cb-105">DESCRIPTION</span></span>
-<span data-ttu-id="3b6cb-106">A **AzServiceFabricDurability** frissítse a fürt tartósságát vagy SKU-ának frissítését.</span><span class="sxs-lookup"><span data-stu-id="3b6cb-106">Use **Update-AzServiceFabricDurability** to update durability or SKU of the cluster.</span></span>
+## <span data-ttu-id="67450-106">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="67450-106">DESCRIPTION</span></span>
+<span data-ttu-id="67450-107">Az **Update-AzServiceFabricDurability** segítségével frissítheti a fürt minőségének vagy termékváltozatának frissítését.</span><span class="sxs-lookup"><span data-stu-id="67450-107">Use **Update-AzServiceFabricDurability** to update durability or SKU of the cluster.</span></span>
 
-## <span data-ttu-id="3b6cb-107">Példák</span><span class="sxs-lookup"><span data-stu-id="3b6cb-107">EXAMPLES</span></span>
+## <span data-ttu-id="67450-108">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="67450-108">EXAMPLES</span></span>
 
-### <span data-ttu-id="3b6cb-108">Példa 1</span><span class="sxs-lookup"><span data-stu-id="3b6cb-108">Example 1</span></span>
+### <span data-ttu-id="67450-109">1. példa</span><span class="sxs-lookup"><span data-stu-id="67450-109">Example 1</span></span>
 ```
 PS c:> Update-AzServiceFabricDurability -ResourceGroupName 'Group1' -Name 'Contoso01SFCluster' -DurabilityLevel Silver -NodeType nt1
 ```
 
-<span data-ttu-id="3b6cb-109">Ez a parancs a "NT1" NodeType tartóssági rétegét ezüst értékre módosítja.</span><span class="sxs-lookup"><span data-stu-id="3b6cb-109">This command changes durability tier of the NodeType 'nt1' to silver.</span></span>
+<span data-ttu-id="67450-110">Ez a parancs ezüstre módosítja az "nt1" NodeType-réteget.</span><span class="sxs-lookup"><span data-stu-id="67450-110">This command changes durability tier of the NodeType 'nt1' to silver.</span></span>
 
-## <span data-ttu-id="3b6cb-110">PARAMÉTEREK</span><span class="sxs-lookup"><span data-stu-id="3b6cb-110">PARAMETERS</span></span>
+## <span data-ttu-id="67450-111">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="67450-111">PARAMETERS</span></span>
 
-### <span data-ttu-id="3b6cb-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="3b6cb-111">-DefaultProfile</span></span>
-<span data-ttu-id="3b6cb-112">Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="3b6cb-112">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="67450-112">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="67450-112">-DefaultProfile</span></span>
+<span data-ttu-id="67450-113">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="67450-113">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -54,8 +54,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3b6cb-113">-DurabilityLevel</span><span class="sxs-lookup"><span data-stu-id="3b6cb-113">-DurabilityLevel</span></span>
-<span data-ttu-id="3b6cb-114">Adja meg a tartóssági szintet.</span><span class="sxs-lookup"><span data-stu-id="3b6cb-114">Specify durability level.</span></span>
+### <span data-ttu-id="67450-114">–10.</span><span class="sxs-lookup"><span data-stu-id="67450-114">-DurabilityLevel</span></span>
+<span data-ttu-id="67450-115">Adja meg a megőrzési szintet.</span><span class="sxs-lookup"><span data-stu-id="67450-115">Specify durability level.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ServiceFabric.Models.DurabilityLevel
@@ -70,8 +70,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3b6cb-115">-Name (név)</span><span class="sxs-lookup"><span data-stu-id="3b6cb-115">-Name</span></span>
-<span data-ttu-id="3b6cb-116">Adja meg a fürt nevét.</span><span class="sxs-lookup"><span data-stu-id="3b6cb-116">Specify the name of the cluster.</span></span>
+### <span data-ttu-id="67450-116">-Name</span><span class="sxs-lookup"><span data-stu-id="67450-116">-Name</span></span>
+<span data-ttu-id="67450-117">Adja meg a fürt nevét.</span><span class="sxs-lookup"><span data-stu-id="67450-117">Specify the name of the cluster.</span></span>
 
 ```yaml
 Type: System.String
@@ -85,8 +85,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3b6cb-117">-NodeType</span><span class="sxs-lookup"><span data-stu-id="3b6cb-117">-NodeType</span></span>
-<span data-ttu-id="3b6cb-118">Adja meg a Service Fabric csomópont típusa nevet.</span><span class="sxs-lookup"><span data-stu-id="3b6cb-118">Specify Service Fabric node type name.</span></span>
+### <span data-ttu-id="67450-118">-NodeType</span><span class="sxs-lookup"><span data-stu-id="67450-118">-NodeType</span></span>
+<span data-ttu-id="67450-119">Adja meg a Service Fabric csomóponttípus nevét.</span><span class="sxs-lookup"><span data-stu-id="67450-119">Specify Service Fabric node type name.</span></span>
 
 ```yaml
 Type: System.String
@@ -100,8 +100,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3b6cb-119">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="3b6cb-119">-ResourceGroupName</span></span>
-<span data-ttu-id="3b6cb-120">Az erőforráscsoport nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="3b6cb-120">Specifies the name of the resource group.</span></span>
+### <span data-ttu-id="67450-120">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="67450-120">-ResourceGroupName</span></span>
+<span data-ttu-id="67450-121">Az erőforráscsoport nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="67450-121">Specifies the name of the resource group.</span></span>
 
 ```yaml
 Type: System.String
@@ -115,8 +115,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3b6cb-121">-SKU</span><span class="sxs-lookup"><span data-stu-id="3b6cb-121">-Sku</span></span>
-<span data-ttu-id="3b6cb-122">Adja meg a csomópont típusának SKU-ot.</span><span class="sxs-lookup"><span data-stu-id="3b6cb-122">Specify the SKU of the node type.</span></span>
+### <span data-ttu-id="67450-122">-Termékváltozat</span><span class="sxs-lookup"><span data-stu-id="67450-122">-Sku</span></span>
+<span data-ttu-id="67450-123">Adja meg a csomóponttípus termékváltozatát.</span><span class="sxs-lookup"><span data-stu-id="67450-123">Specify the SKU of the node type.</span></span>
 
 ```yaml
 Type: System.String
@@ -130,8 +130,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3b6cb-123">– Megerősítés</span><span class="sxs-lookup"><span data-stu-id="3b6cb-123">-Confirm</span></span>
-<span data-ttu-id="3b6cb-124">A parancsmag futtatása előtt kéri a megerősítést.</span><span class="sxs-lookup"><span data-stu-id="3b6cb-124">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="67450-124">-Confirm</span><span class="sxs-lookup"><span data-stu-id="67450-124">-Confirm</span></span>
+<span data-ttu-id="67450-125">A parancsmag futtatása előtt a rendszer megerősítést kér.</span><span class="sxs-lookup"><span data-stu-id="67450-125">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -145,8 +145,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3b6cb-125">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="3b6cb-125">-WhatIf</span></span>
-<span data-ttu-id="3b6cb-126">Annak megjelenítése, hogy mi történik, ha a parancsmag fut.</span><span class="sxs-lookup"><span data-stu-id="3b6cb-126">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="3b6cb-127">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="3b6cb-127">The cmdlet is not run.</span></span>
+### <span data-ttu-id="67450-126">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="67450-126">-WhatIf</span></span>
+<span data-ttu-id="67450-127">A parancsmag futtatásakor a program megjeleníti, hogy mi történik.</span><span class="sxs-lookup"><span data-stu-id="67450-127">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="67450-128">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="67450-128">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -160,19 +160,19 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3b6cb-128">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="3b6cb-128">CommonParameters</span></span>
-<span data-ttu-id="3b6cb-129">Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction</span><span class="sxs-lookup"><span data-stu-id="3b6cb-129">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="3b6cb-130">További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="3b6cb-130">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="67450-129">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="67450-129">CommonParameters</span></span>
+<span data-ttu-id="67450-130">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="67450-130">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="67450-131">További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="67450-131">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="3b6cb-131">BEMENETEK</span><span class="sxs-lookup"><span data-stu-id="3b6cb-131">INPUTS</span></span>
+## <span data-ttu-id="67450-132">INPUTS</span><span class="sxs-lookup"><span data-stu-id="67450-132">INPUTS</span></span>
 
-### <span data-ttu-id="3b6cb-132">System. String</span><span class="sxs-lookup"><span data-stu-id="3b6cb-132">System.String</span></span>
+### <span data-ttu-id="67450-133">System.String</span><span class="sxs-lookup"><span data-stu-id="67450-133">System.String</span></span>
 
-### <span data-ttu-id="3b6cb-133">Microsoft. Azure. Command. ServiceFabric. models. DurabilityLevel</span><span class="sxs-lookup"><span data-stu-id="3b6cb-133">Microsoft.Azure.Commands.ServiceFabric.Models.DurabilityLevel</span></span>
+### <span data-ttu-id="67450-134">Microsoft.Azure.Commands.ServiceFabric.Models.Fogaraslevel</span><span class="sxs-lookup"><span data-stu-id="67450-134">Microsoft.Azure.Commands.ServiceFabric.Models.DurabilityLevel</span></span>
 
-## <span data-ttu-id="3b6cb-134">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="3b6cb-134">OUTPUTS</span></span>
+## <span data-ttu-id="67450-135">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="67450-135">OUTPUTS</span></span>
 
-### <span data-ttu-id="3b6cb-135">Microsoft. Azure. Command. ServiceFabric. models. PSCluster</span><span class="sxs-lookup"><span data-stu-id="3b6cb-135">Microsoft.Azure.Commands.ServiceFabric.Models.PSCluster</span></span>
+### <span data-ttu-id="67450-136">Microsoft.Azure.Commands.ServiceFabric.Models.PSCluster</span><span class="sxs-lookup"><span data-stu-id="67450-136">Microsoft.Azure.Commands.ServiceFabric.Models.PSCluster</span></span>
 
-## <span data-ttu-id="3b6cb-136">MEGJEGYZI</span><span class="sxs-lookup"><span data-stu-id="3b6cb-136">NOTES</span></span>
+## <span data-ttu-id="67450-137">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="67450-137">NOTES</span></span>
 
-## <span data-ttu-id="3b6cb-137">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="3b6cb-137">RELATED LINKS</span></span>
+## <span data-ttu-id="67450-138">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="67450-138">RELATED LINKS</span></span>
