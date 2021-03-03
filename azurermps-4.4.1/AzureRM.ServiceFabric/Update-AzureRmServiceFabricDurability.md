@@ -5,21 +5,21 @@ online version: ''
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/ServiceFabric/Commands.ServiceFabric/help/Update-AzureRmServiceFabricDurability.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/ServiceFabric/Commands.ServiceFabric/help/Update-AzureRmServiceFabricDurability.md
-ms.openlocfilehash: 1c62c637324f19088dfffcfb4c8defae0a056b4c
-ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.openlocfilehash: b056e5328c24270df6a95e33b079e7b907f29fa3
+ms.sourcegitcommit: 608289d079b819df2b8d1a2f7935cc500367a312
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "93494662"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685019"
 ---
 # Update-AzureRmServiceFabricDurability
 
-## Áttekintés
-Módosítsa a VmSku tartóssági rétegét vagy egy csomópont típusát.
+## SYNOPSIS
+Frissítse a fürt egyik csomóponttípusának 10.10-es szintjéhez vagy VmSku-jának frissítéséhez. Emellett frissíti a service fabric VM-bővítményben lévő tárolási réteget is a társított virtuálisgép-méretkészleten.
 
 [!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
-## SZINTAXISA
+## SZINTAXIS
 
 ```
 Update-AzureRmServiceFabricDurability [-ResourceGroupName] <String> [-Name] <String> -NodeType <String>
@@ -27,22 +27,22 @@ Update-AzureRmServiceFabricDurability [-ResourceGroupName] <String> [-Name] <Str
  [-Confirm] [<CommonParameters>]
 ```
 
-## Leírás
-A **AzureRmServiceFabricDurability** frissítse a fürt tartósságát vagy SKU-ának frissítését.
+## LEÍRÁS
+Az **Update-AzureRmServiceFabricDurability** segítségével frissítheti a fürt minőségének vagy termékváltozatának frissítését.
 
-## Példák
+## PÉLDÁK
 
-### Példa 1
+### 1. példa
 ```
 PS c:> Update-AzureRmServiceFabricDurability -ResourceGroupName 'Group1' -Name 'Contoso01SFCluster' -DurabilityLevel Silver -NodeType nt1
 ```
 
-Ez a parancs a "NT1" NodeType tartóssági rétegét ezüst értékre módosítja.
+Ez a parancs ezüstre módosítja az "nt1" NodeType-réteget.
 
-## PARAMÉTEREK
+## PARAMETERS
 
-### -DurabilityLevel
-Adja meg a tartóssági szintet.
+### –10.
+Adja meg a megőrzési szintet.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ServiceFabric.Models.DurabilityLevel
@@ -57,7 +57,7 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name (név)
+### -Name
 Adja meg a fürt nevét.
 
 ```yaml
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 ```
 
 ### -NodeType
-Adja meg a Service Fabric csomópont típusa nevet.
+Adja meg a Service Fabric csomóponttípus nevét.
 
 ```yaml
 Type: System.String
@@ -102,8 +102,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SKU
-Adja meg a csomópont típusának SKU-ot.
+### -Termékváltozat
+Adja meg a csomóponttípus termékváltozatát.
 
 ```yaml
 Type: System.String
@@ -117,8 +117,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### – Megerősítés
-A parancsmag futtatása előtt kéri a megerősítést.
+### -Confirm
+A parancsmag futtatása előtt a rendszer megerősítést kér.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -133,7 +133,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Annak megjelenítése, hogy mi történik, ha a parancsmag fut. A parancsmag nem fut.
+A parancsmag futtatásakor a program megjeleníti, hogy mi történik. A parancsmag nem fut.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -148,7 +148,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Az azuretal való kommunikációhoz használt hitelesítő adatok, fiók, bérlői fiók és előfizetés.
+Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
@@ -163,18 +163,18 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Ez a parancsmag a következő általános paramétereket támogatja:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-,-PipelineVariable-WarningAction További információ: about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## BEMENETEK
+## INPUTS
 
-### Microsoft. Azure. Command. ServiceFabric. models. DurabilityLevel
-System. String
+### Microsoft.Azure.Commands.ServiceFabric.Models.Fogaraslevel
+System.String
 
 ## KIMENETEK
 
-### Microsoft. Azure. Command. ServiceFabric. models. PsCluster
+### Microsoft.Azure.Commands.ServiceFabric.Models.PsCluster
 
-## MEGJEGYZI
+## MEGJEGYZÉSEK
 
 ## KAPCSOLÓDÓ HIVATKOZÁSOK
 

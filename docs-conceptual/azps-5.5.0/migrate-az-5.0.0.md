@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 10/27/2020
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 35d562db72e37a630fce8530d715e783412add2e
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: edfbe14ae3a42bb0b385fe9d6b5fa681a1aa2101
+ms.sourcegitcommit: 608289d079b819df2b8d1a2f7935cc500367a312
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100012699"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101684928"
 ---
 # <a name="migration-guide-for-az-500"></a>Migrálási útmutató az Az 5.0.0-s verziójához
 
@@ -239,7 +239,7 @@ A helyreállítható törlési beállítás frissítésének lehetősége az Az.
 
 ### <a name="get-azkeyvaultsecret"></a>Get-AzKeyVaultSecret
 
-Az `Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultSecret` típus `SecretValueText` tulajdonsága el lett távolítva. A `SecretValueText` tulajdonság lecserélve a `SecretValue` tulajdonságra.
+Az `Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultSecret` típus `SecretValueText` tulajdonsága el lett távolítva. Alkalmazza a `-AsPlainText` parancsot az egyszerű szöveges titok beszerzésére, vagy `$secret.SecretValue` írja be a típust a `SecureString` szkriptbe.
 
 #### <a name="before"></a>Előtte
 
@@ -251,13 +251,7 @@ $secretInPlainText = $secret.SecretValueText
 #### <a name="after"></a>Utána
 
 ```powershell
-# PowerShell 7 or newer
-$secret = Get-AzKeyVaultSecret -VaultName myVault -Name mySecret
-$secretInPlainText = ConvertFrom-SecureString -SecureString $secret.SecretValue -AsPlainText
-
-# Prior to PowerShell 7, or Windows PowerShell
-$secret = Get-AzKeyVaultSecret -VaultName myVault -Name mySecret
-$secretInPlainText = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR([System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secret.SecretValue))
+$secretInPlainText = Get-AzKeyVaultSecret -VaultName myVault -Name mySecret -AsPlainText
 ```
 
 ## <a name="azmanagedservices"></a>Az.ManagedServices
