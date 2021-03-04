@@ -1,0 +1,218 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.LogicApp.dll-Help.xml
+Module Name: Az.LogicApp
+ms.assetid: 2B5FC268-4888-4AEB-B125-7263CF2E4DCD
+online version: https://docs.microsoft.com/powershell/module/az.logicapp/new-azintegrationaccountpartner
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/LogicApp/LogicApp/help/New-AzIntegrationAccountPartner.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/LogicApp/LogicApp/help/New-AzIntegrationAccountPartner.md
+ms.openlocfilehash: 7b07a07dc99efa7f0f3fdb150c902b86b374181e
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101921954"
+---
+# <span data-ttu-id="9679f-101">New-AzIntegrationAccountPartner</span><span class="sxs-lookup"><span data-stu-id="9679f-101">New-AzIntegrationAccountPartner</span></span>
+
+## <span data-ttu-id="9679f-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="9679f-102">SYNOPSIS</span></span>
+<span data-ttu-id="9679f-103">Létrehoz egy integrációs partnert.</span><span class="sxs-lookup"><span data-stu-id="9679f-103">Creates an integration account partner.</span></span>
+
+## <span data-ttu-id="9679f-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="9679f-104">SYNTAX</span></span>
+
+```
+New-AzIntegrationAccountPartner -ResourceGroupName <String> -Name <String> -PartnerName <String>
+ [-PartnerType <String>] -BusinessIdentities <Object> [-Metadata <Object>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="9679f-105">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="9679f-105">DESCRIPTION</span></span>
+<span data-ttu-id="9679f-106">A **New-AzIntegrationAccountPartner** parancsmag létrehoz egy integrációs partnert.</span><span class="sxs-lookup"><span data-stu-id="9679f-106">The **New-AzIntegrationAccountPartner** cmdlet creates an integration account partner.</span></span>
+<span data-ttu-id="9679f-107">Ez a parancsmag egy objektumot ad vissza, amely az integrációs fiók partnerét képviseli.</span><span class="sxs-lookup"><span data-stu-id="9679f-107">This cmdlet returns an object that represents the integration account partner.</span></span>
+<span data-ttu-id="9679f-108">Adja meg az integrációs fiók nevét, az erőforráscsoport nevét, a partner nevét és a partner identitását.</span><span class="sxs-lookup"><span data-stu-id="9679f-108">Specify the integration account name, resource group name, partner name, and partner identities.</span></span>
+<span data-ttu-id="9679f-109">A parancssorban megadott paraméterfájlértékek elsőbbséget élveznek a sablon paraméterértékeivel a sablon paraméterobjektumában.</span><span class="sxs-lookup"><span data-stu-id="9679f-109">Template parameter file values that you specify at the command line take precedence over template parameter values in a template parameter object.</span></span>
+<span data-ttu-id="9679f-110">Ez a modul támogatja a dinamikus paramétereket.</span><span class="sxs-lookup"><span data-stu-id="9679f-110">This module supports dynamic parameters.</span></span>
+<span data-ttu-id="9679f-111">Ha dinamikus paramétert használ, írja be a parancsba.</span><span class="sxs-lookup"><span data-stu-id="9679f-111">To use a dynamic parameter, type it in the command.</span></span>
+<span data-ttu-id="9679f-112">A dinamikus paraméterek nevének felfedezéséhez írjon be egy kötőjelet (-) a parancsmag neve után, majd a Tab billentyű többszöri lenyomása után lépkedhet a rendelkezésre álló paraméterek között.</span><span class="sxs-lookup"><span data-stu-id="9679f-112">To discover the names of dynamic parameters, type a hyphen (-) after the cmdlet name, and then press the Tab key repeatedly to cycle through the available parameters.</span></span>
+<span data-ttu-id="9679f-113">Ha kihagy egy kötelező sablonparamétert, a parancsmag rákérdez az értékre.</span><span class="sxs-lookup"><span data-stu-id="9679f-113">If you omit a required template parameter, the cmdlet prompts you for the value.</span></span>
+
+## <span data-ttu-id="9679f-114">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="9679f-114">EXAMPLES</span></span>
+
+### <span data-ttu-id="9679f-115">1. példa: Integrációs fiók partner létrehozása</span><span class="sxs-lookup"><span data-stu-id="9679f-115">Example 1: Create an integration account partner</span></span>
+```
+PS C:\>New-AzIntegrationAccountPartner -ResourceGroupName "ResourceGroup11" -Name "IntegrationAccount31" -PartnerName "IntegrationAccountPartner22" -PartnerType "B2B" -BusinessIdentities $BusinessIdentities
+Id                 : /subscriptions/<SubscriptionId>/resourceGroups/ResourceGroup11/providers/Microsoft.Logic/integrationAccounts/IntegrationAccount31/partners/IntegrationAccountPartner1
+Name               : IntegrationAccountPartner1
+Type               : Microsoft.Logic/integrationAccounts/partners
+PartnerType        : B2B
+CreatedTime        : 3/26/2016 7:29:30 PM
+ChangedTime        : 3/26/2016 7:29:30 PM
+BusinessIdentities : [{"Qualifier":"ZZ","Value":"AA"},{"Qualifier":"XX","Value":"GG"}]
+Metadata           :
+```
+
+<span data-ttu-id="9679f-116">Ez a parancs létrehozza az IntegrationAccountPartner22 nevű integrációs partnert a megadott erőforráscsoportban.</span><span class="sxs-lookup"><span data-stu-id="9679f-116">This command creates the integration account partner named IntegrationAccountPartner22 in the specified resource group.</span></span>
+
+## <span data-ttu-id="9679f-117">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="9679f-117">PARAMETERS</span></span>
+
+### <span data-ttu-id="9679f-118">-BusinessIdentities</span><span class="sxs-lookup"><span data-stu-id="9679f-118">-BusinessIdentities</span></span>
+<span data-ttu-id="9679f-119">Megadja az integrációs fiók partnerének üzleti identitását.</span><span class="sxs-lookup"><span data-stu-id="9679f-119">Specifies business identities for the integration account partner.</span></span>
+<span data-ttu-id="9679f-120">Adjon meg egy kivonattáblát.</span><span class="sxs-lookup"><span data-stu-id="9679f-120">Specify a hash table.</span></span>
+
+```yaml
+Type: System.Object
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9679f-121">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="9679f-121">-DefaultProfile</span></span>
+<span data-ttu-id="9679f-122">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés</span><span class="sxs-lookup"><span data-stu-id="9679f-122">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9679f-123">-Metadata</span><span class="sxs-lookup"><span data-stu-id="9679f-123">-Metadata</span></span>
+<span data-ttu-id="9679f-124">A partner metaadat-objektumát adja meg.</span><span class="sxs-lookup"><span data-stu-id="9679f-124">Specifies a metadata object for the partner.</span></span>
+
+```yaml
+Type: System.Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9679f-125">-Name</span><span class="sxs-lookup"><span data-stu-id="9679f-125">-Name</span></span>
+<span data-ttu-id="9679f-126">Egy integrációs fiók nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="9679f-126">Specifies the name of an integration account.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: IntegrationAccountName, ResourceName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9679f-127">-PartnerName</span><span class="sxs-lookup"><span data-stu-id="9679f-127">-PartnerName</span></span>
+<span data-ttu-id="9679f-128">Megadja az integrációs fiók partnerének nevét.</span><span class="sxs-lookup"><span data-stu-id="9679f-128">Specifies a name for the integration account partner.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9679f-129">-PartnerType</span><span class="sxs-lookup"><span data-stu-id="9679f-129">-PartnerType</span></span>
+<span data-ttu-id="9679f-130">Az integrációs fiók típusát határozza meg.</span><span class="sxs-lookup"><span data-stu-id="9679f-130">Specifies the type of the integration account.</span></span>
+<span data-ttu-id="9679f-131">Ez a paraméter a B2B típust támogatja.</span><span class="sxs-lookup"><span data-stu-id="9679f-131">This parameter supports the type B2B.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+Accepted values: B2B
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9679f-132">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="9679f-132">-ResourceGroupName</span></span>
+<span data-ttu-id="9679f-133">Egy erőforráscsoport nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="9679f-133">Specifies the name of a resource group.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9679f-134">-Confirm</span><span class="sxs-lookup"><span data-stu-id="9679f-134">-Confirm</span></span>
+<span data-ttu-id="9679f-135">A parancsmag futtatása előtt a rendszer megerősítést kér.</span><span class="sxs-lookup"><span data-stu-id="9679f-135">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9679f-136">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="9679f-136">-WhatIf</span></span>
+<span data-ttu-id="9679f-137">A parancsmag futtatásakor a program megjeleníti, hogy mi történik.</span><span class="sxs-lookup"><span data-stu-id="9679f-137">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="9679f-138">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="9679f-138">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9679f-139">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="9679f-139">CommonParameters</span></span>
+<span data-ttu-id="9679f-140">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="9679f-140">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="9679f-141">További információt a about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="9679f-141">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="9679f-142">INPUTS</span><span class="sxs-lookup"><span data-stu-id="9679f-142">INPUTS</span></span>
+
+### <span data-ttu-id="9679f-143">System.String</span><span class="sxs-lookup"><span data-stu-id="9679f-143">System.String</span></span>
+
+## <span data-ttu-id="9679f-144">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="9679f-144">OUTPUTS</span></span>
+
+### <span data-ttu-id="9679f-145">Microsoft.Azure.Management.Logic.Models.IntegrationAccountPartner</span><span class="sxs-lookup"><span data-stu-id="9679f-145">Microsoft.Azure.Management.Logic.Models.IntegrationAccountPartner</span></span>
+
+## <span data-ttu-id="9679f-146">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="9679f-146">NOTES</span></span>
+
+## <span data-ttu-id="9679f-147">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="9679f-147">RELATED LINKS</span></span>
+
+[<span data-ttu-id="9679f-148">Get-AzIntegrationAccountPartner</span><span class="sxs-lookup"><span data-stu-id="9679f-148">Get-AzIntegrationAccountPartner</span></span>](./Get-AzIntegrationAccountPartner.md)
+
+[<span data-ttu-id="9679f-149">Remove-AzIntegrationAccountPartner</span><span class="sxs-lookup"><span data-stu-id="9679f-149">Remove-AzIntegrationAccountPartner</span></span>](./Remove-AzIntegrationAccountPartner.md)
+
+[<span data-ttu-id="9679f-150">Set-AzIntegrationAccountPartner</span><span class="sxs-lookup"><span data-stu-id="9679f-150">Set-AzIntegrationAccountPartner</span></span>](./Set-AzIntegrationAccountPartner.md)
+
+
