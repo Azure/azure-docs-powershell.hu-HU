@@ -1,0 +1,452 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Monitor.dll-Help.xml
+Module Name: Az.Monitor
+ms.assetid: EAFB9C98-000C-4EAC-A32D-6B0F1939AA2F
+online version: https://docs.microsoft.com/powershell/module/az.monitor/get-azmetric
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzMetric.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzMetric.md
+ms.openlocfilehash: bb2301fceef993e131472e497e2c89e7ef6ecbf2
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101932593"
+---
+# <span data-ttu-id="20262-101">Get-AzMetric</span><span class="sxs-lookup"><span data-stu-id="20262-101">Get-AzMetric</span></span>
+
+## <span data-ttu-id="20262-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="20262-102">SYNOPSIS</span></span>
+<span data-ttu-id="20262-103">Egy erőforrás metrikus értékeit kapja.</span><span class="sxs-lookup"><span data-stu-id="20262-103">Gets the metric values of a resource.</span></span>
+
+## <span data-ttu-id="20262-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="20262-104">SYNTAX</span></span>
+
+### <span data-ttu-id="20262-105">GetWithDefaultParameters (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="20262-105">GetWithDefaultParameters (Default)</span></span>
+```
+Get-AzMetric [-ResourceId] <String> [-TimeGrain <TimeSpan>] [-StartTime <DateTime>] [-EndTime <DateTime>]
+ [[-MetricName] <String[]>] [-DetailedOutput] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="20262-106">GetWithFullParameters</span><span class="sxs-lookup"><span data-stu-id="20262-106">GetWithFullParameters</span></span>
+```
+Get-AzMetric [-ResourceId] <String> [-TimeGrain <TimeSpan>] [-AggregationType <AggregationType>]
+ [-StartTime <DateTime>] [-EndTime <DateTime>] [-Top <Int32>] [-OrderBy <String>] [-MetricNamespace <String>]
+ [-ResultType <ResultType>] [-MetricFilter <String>] [-MetricName] <String[]> [-DetailedOutput]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="20262-107">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="20262-107">DESCRIPTION</span></span>
+<span data-ttu-id="20262-108">A **Get-AzMetric** parancsmag egy adott erőforrás metrikus értékeit kapja meg.</span><span class="sxs-lookup"><span data-stu-id="20262-108">The **Get-AzMetric** cmdlet gets the metric values for a specified resource.</span></span>
+
+## <span data-ttu-id="20262-109">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="20262-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="20262-110">1. példa: Mérőszám az összesített kimenettel</span><span class="sxs-lookup"><span data-stu-id="20262-110">Example 1: Get a metric with summarized output</span></span>
+```
+PS C:\>Get-AzMetric -ResourceId "/subscriptions/e3f5b07d-3c39-4b0f-bf3b-40fdeba10f2a/resourceGroups/Default-Web-EastUS/providers/microsoft.web/sites/website3" -TimeGrain 00:01:00
+DimensionName  : 
+DimensionValue : 
+Name           : AverageResponseTime
+EndTime        : 3/20/2015 6:40:46 PM
+MetricValues   : {Microsoft.Azure.Insights.Models.MetricValue, Microsoft.Azure.Insights.Models.MetricValue, 
+                 Microsoft.Azure.Insights.Models.MetricValue, Microsoft.Azure.Insights.Models.MetricValue...} 
+Properties     : {}
+ResourceId     : /subscriptions/e3f5b07d-3c39-4b0f-bf3b-40fdeba10f2a/resourceGroups/Default-Web-EastUS/providers/microsoft.web/sites/website3
+StartTime      : 3/20/2015 5:40:00 PM
+TimeGrain      : 00:01:00
+Unit           : Seconds
+DimensionName  : 
+DimensionValue : 
+Name           : AverageMemoryWorkingSet
+EndTime        : 3/20/2015 6:40:46 PM
+MetricValues   : {Microsoft.Azure.Insights.Models.MetricValue, Microsoft.Azure.Insights.Models.MetricValue, 
+                 Microsoft.Azure.Insights.Models.MetricValue, Microsoft.Azure.Insights.Models.MetricValue...} 
+Properties     : {}
+ResourceId     : /subscriptions/e3f5b07d-3c39-4b0f-bf3b-40fdeba10f2a/resourceGroups/Default-Web-EastUS/providers/microsoft.web/sites/website3
+StartTime      : 3/20/2015 5:40:00 PM
+TimeGrain      : 00:01:00
+Unit           : Bytes
+```
+
+<span data-ttu-id="20262-111">Ez a parancs a webhely3 webhely metrikus értékeit kapja 1 perces időszemétben.</span><span class="sxs-lookup"><span data-stu-id="20262-111">This command gets the metric values for website3 with a time grain of 1 minute.</span></span>
+
+### <span data-ttu-id="20262-112">2. példa: Részletes kimenetet mutató mutató lekérte</span><span class="sxs-lookup"><span data-stu-id="20262-112">Example 2: Get a metric with detailed output</span></span>
+```
+PS C:\>Get-AzMetric -ResourceId "/subscriptions/e3f5b07d-3c39-4b0f-bf3b-40fdeba10f2a/resourceGroups/Default-Web-EastUS/providers/microsoft.web/sites/website3" -TimeGrain 00:01:00 -DetailedOutput
+MetricValues   : 
+                     Average    : 0
+                     Count      : 1
+                     Last       : 
+                     Maximum    : 
+                     Minimum    : 
+                     Properties : 
+                     Timestamp  : 3/20/2015 6:37:00 PM
+                     Total      : 0
+                     Average    : 0.106
+                     Count      : 1
+                     Last       : 
+                     Maximum    : 
+                     Minimum    : 
+                     Properties : 
+                     Timestamp  : 3/20/2015 6:39:00 PM
+                     Total      : 0.106
+                     Average    : 0.064
+                     Count      : 1
+                     Last       : 
+                     Maximum    : 
+                     Minimum    : 
+                     Properties : 
+                     Timestamp  : 3/20/2015 6:41:00 PM
+                     Total      : 0.064
+Properties     : 
+DimensionName  : 
+DimensionValue : 
+Name           : AverageResponseTime
+EndTime        : 3/20/2015 6:43:33 PM
+ResourceId     : /subscriptions/e3f5b07d-3c39-4b0f-bf3b-40fdeba10f2a/resourceGroups/Default-Web-EastUS/providers/microsoft.web/sites/website3
+StartTime      : 3/20/2015 5:43:00 PM
+TimeGrain      : 00:01:00
+Unit           : Seconds
+```
+
+<span data-ttu-id="20262-113">Ez a parancs a webhely3 webhely metrikus értékeit kapja 1 perces időszemétben.</span><span class="sxs-lookup"><span data-stu-id="20262-113">This command gets the metric values for website3 with a time grain of 1 minute.</span></span>
+<span data-ttu-id="20262-114">A kimenet részletes.</span><span class="sxs-lookup"><span data-stu-id="20262-114">The output is detailed.</span></span>
+
+### <span data-ttu-id="20262-115">3. példa: Részletes kimenet lekérte egy adott mutatóhoz</span><span class="sxs-lookup"><span data-stu-id="20262-115">Example 3: Get detailed output for a specified metric</span></span>
+```
+PS C:\>Get-AzMetric -ResourceId "/subscriptions/e3f5b07d-3c39-4b0f-bf3b-40fdeba10f2a/resourceGroups/Default-Web-EastUS/providers/microsoft.web/sites/website3" -MetricName "Requests" -TimeGrain 00:01:00 -DetailedOutput
+MetricValues   : 
+                     Average    : 1
+                     Count      : 1
+                     Last       : 
+                     Maximum    : 
+                     Minimum    : 
+                     Properties : 
+                     Timestamp  : 3/20/2015 6:39:00 PM
+                     Total      : 1
+                     Average    : 1
+                     Count      : 1
+                     Last       : 
+                     Maximum    : 
+                     Minimum    : 
+                     Properties : 
+                     Timestamp  : 3/20/2015 6:41:00 PM
+                     Total      : 1
+                     Average    : 0
+                     Count      : 1
+                     Last       : 
+                     Maximum    : 
+                     Minimum    : 
+                     Properties : 
+                     Timestamp  : 3/20/2015 6:43:00 PM
+                     Total      : 0
+                     Average    : 1
+                     Count      : 1
+                     Last       : 
+                     Maximum    : 
+                     Minimum    : 
+                     Properties : 
+                     Timestamp  : 3/20/2015 6:44:00 PM
+                     Total      : 1
+                     Average    : 0
+                     Count      : 1
+                     Last       : 
+                     Maximum    : 
+                     Minimum    : 
+                     Properties : 
+                     Timestamp  : 3/20/2015 6:45:00 PM
+                     Total      : 0
+Properties     : 
+DimensionName  : 
+DimensionValue : 
+Name           : Requests
+EndTime        : 3/20/2015 6:47:56 PM
+ResourceId     : /subscriptions/e3f5b07d-3c39-4b0f-bf3b-40fdeba10f2a/resourceGroups/Default-Web-EastUS/providers/microsoft.web/sites/website3
+StartTime      : 3/20/2015 5:47:00 PM
+TimeGrain      : 00:01:00
+Unit           : Count
+```
+
+<span data-ttu-id="20262-116">Ez a parancs részletes kimenetet kap a Kérelmek mutatóhoz.</span><span class="sxs-lookup"><span data-stu-id="20262-116">This command gets detailed output for the Requests metric.</span></span>
+
+### <span data-ttu-id="20262-117">4. példa: Adott dimenziószűrővel megadott metrika összesített kimenetének leselkedése</span><span class="sxs-lookup"><span data-stu-id="20262-117">Example 4: Get summarized output for a specified metric with specified dimension filter</span></span>
+```
+PS C:\> $dimFilter = @((New-AzMetricFilter -Dimension City -Operator eq -Value "Seattle","Toronto"), (New-AzMetricFilter -Dimension AuthenticationType -Operator eq -Value User))
+
+PS C:\> Get-AzMetric -ResourceId <resourceId> -MetricName PageViews -TimeGrain PT5M -MetricFilter $dimFilter -StartTime 2018-02-01T12:00:00Z -EndTime 2018-02-01T12:10:00Z -AggregationType -Average
+ResourceId  : [ResourceId]
+MetricNamespace : Microsoft.Insights/ApplicationInsights
+Metric Name :
+                    LocalizedValue  : Page Views
+                    Value       : PageViews
+Unit        : Seconds
+Timeseries  :
+            City            : Seattle
+            AuthenticationType  : User
+
+                    Timestamp   : 2018-02-01 12:00:00 PM
+                    Average     : 3518
+
+                    Timestamp   : 2018-02-01 12:05:00 PM
+                    Average     : 1984
+
+            City            : Toronto
+            AuthenticationType  : User
+
+                    Timestamp   : 2018-02-01 12:00:00 PM
+                    Average     : 894
+
+                    Timestamp   : 2018-02-01 12:05:00 PM
+                    Average     : 967
+```
+
+<span data-ttu-id="20262-118">Ez a parancs összegzi a PageViews mutató kimenetét a megadott dimenziószűrővel és összegzési típussal.</span><span class="sxs-lookup"><span data-stu-id="20262-118">This command gets summarized output for the PageViews metric with specified dimension filter and aggregation type.</span></span>
+
+## <span data-ttu-id="20262-119">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="20262-119">PARAMETERS</span></span>
+
+### <span data-ttu-id="20262-120">-AggregationType</span><span class="sxs-lookup"><span data-stu-id="20262-120">-AggregationType</span></span>
+<span data-ttu-id="20262-121">A lekérdezés összegzési típusa</span><span class="sxs-lookup"><span data-stu-id="20262-121">The aggregation type of the query</span></span>
+
+```yaml
+Type: System.Nullable`1[Microsoft.Azure.Management.Monitor.Models.AggregationType]
+Parameter Sets: GetWithFullParameters
+Aliases:
+Accepted values: None, Average, Count, Minimum, Maximum, Total
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="20262-122">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="20262-122">-DefaultProfile</span></span>
+<span data-ttu-id="20262-123">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="20262-123">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="20262-124">-DetailedOutput</span><span class="sxs-lookup"><span data-stu-id="20262-124">-DetailedOutput</span></span>
+<span data-ttu-id="20262-125">Azt jelzi, hogy ez a parancsmag részletes kimenetet jelenít meg.</span><span class="sxs-lookup"><span data-stu-id="20262-125">Indicates that this cmdlet displays detailed output.</span></span>
+<span data-ttu-id="20262-126">Alapértelmezés szerint a kimenet összegzi a kimenetet.</span><span class="sxs-lookup"><span data-stu-id="20262-126">By default, output is summarized.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="20262-127">-EndTime</span><span class="sxs-lookup"><span data-stu-id="20262-127">-EndTime</span></span>
+<span data-ttu-id="20262-128">A lekérdezés helyi idő szerint megadott záró idejét adja meg.</span><span class="sxs-lookup"><span data-stu-id="20262-128">Specifies the end time of the query in local time.</span></span>
+<span data-ttu-id="20262-129">Az alapértelmezett érték az aktuális időpont.</span><span class="sxs-lookup"><span data-stu-id="20262-129">The default is the current time.</span></span>
+
+```yaml
+Type: System.DateTime
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="20262-130">-MetricFilter</span><span class="sxs-lookup"><span data-stu-id="20262-130">-MetricFilter</span></span>
+<span data-ttu-id="20262-131">A metrikus dimenziószűrőt adja meg a lekérdezési metrikákhoz.</span><span class="sxs-lookup"><span data-stu-id="20262-131">Specifies the metric dimension filter to query metrics for.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: GetWithFullParameters
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="20262-132">-MetricName</span><span class="sxs-lookup"><span data-stu-id="20262-132">-MetricName</span></span>
+<span data-ttu-id="20262-133">A metrikák neveinek tömbje.</span><span class="sxs-lookup"><span data-stu-id="20262-133">Specifies an array of names of metrics.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: GetWithDefaultParameters
+Aliases: MetricNames
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+```yaml
+Type: System.String[]
+Parameter Sets: GetWithFullParameters
+Aliases: MetricNames
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="20262-134">-MetricNamespace</span><span class="sxs-lookup"><span data-stu-id="20262-134">-MetricNamespace</span></span>
+<span data-ttu-id="20262-135">A lekérdezési metrikák névterét adja meg.</span><span class="sxs-lookup"><span data-stu-id="20262-135">Specifies the metric namespace to query metrics for.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: GetWithFullParameters
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="20262-136">-OrderBy</span><span class="sxs-lookup"><span data-stu-id="20262-136">-OrderBy</span></span>
+<span data-ttu-id="20262-137">Az eredmények rendezési irányát és a rendezés irányát adja meg (például: összeg asc).</span><span class="sxs-lookup"><span data-stu-id="20262-137">Specifies the aggregation to use for sorting results and the direction of the sort (Example: sum asc).</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: GetWithFullParameters
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="20262-138">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="20262-138">-ResourceId</span></span>
+<span data-ttu-id="20262-139">A metrika erőforrás-azonosítóját adja meg.</span><span class="sxs-lookup"><span data-stu-id="20262-139">Specifies the resource ID of the metric.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="20262-140">-ResultType</span><span class="sxs-lookup"><span data-stu-id="20262-140">-ResultType</span></span>
+<span data-ttu-id="20262-141">A visszaadott eredmény típusát (metaadatok vagy adatok) adja meg.</span><span class="sxs-lookup"><span data-stu-id="20262-141">Specifies the result type to be returned (metadata or data).</span></span>
+
+```yaml
+Type: System.Nullable`1[Microsoft.Azure.Management.Monitor.Models.ResultType]
+Parameter Sets: GetWithFullParameters
+Aliases:
+Accepted values: Data, Metadata
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="20262-142">-StartTime</span><span class="sxs-lookup"><span data-stu-id="20262-142">-StartTime</span></span>
+<span data-ttu-id="20262-143">A lekérdezés kezdési idejét adja meg helyi idő szerint.</span><span class="sxs-lookup"><span data-stu-id="20262-143">Specifies the start time of the query in local time.</span></span>
+<span data-ttu-id="20262-144">Az alapértelmezett érték az aktuális helyi idő mínusz egy óra.</span><span class="sxs-lookup"><span data-stu-id="20262-144">The default is the current local time minus one hour.</span></span>
+
+```yaml
+Type: System.DateTime
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="20262-145">-TimeGrain</span><span class="sxs-lookup"><span data-stu-id="20262-145">-TimeGrain</span></span>
+<span data-ttu-id="20262-146">A metrika időszemétét **időSpan** objektumként adja meg az óó:pp:mm formátumban.</span><span class="sxs-lookup"><span data-stu-id="20262-146">Specifies the time grain of the metric as a **TimeSpan** object in the format hh:mm:ss.</span></span>
+
+```yaml
+Type: System.TimeSpan
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="20262-147">-Top</span><span class="sxs-lookup"><span data-stu-id="20262-147">-Top</span></span>
+<span data-ttu-id="20262-148">A beolvasható rekordok maximális számát (default:10) adja meg a $filter.</span><span class="sxs-lookup"><span data-stu-id="20262-148">Specifies the maximum number of records to retrieve (default:10), to be specified with $filter.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: GetWithFullParameters
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="20262-149">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="20262-149">CommonParameters</span></span>
+<span data-ttu-id="20262-150">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="20262-150">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="20262-151">További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="20262-151">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="20262-152">INPUTS</span><span class="sxs-lookup"><span data-stu-id="20262-152">INPUTS</span></span>
+
+### <span data-ttu-id="20262-153">System.String</span><span class="sxs-lookup"><span data-stu-id="20262-153">System.String</span></span>
+
+### <span data-ttu-id="20262-154">System.TimeSpan</span><span class="sxs-lookup"><span data-stu-id="20262-154">System.TimeSpan</span></span>
+
+### <span data-ttu-id="20262-155">System.Nullable'1[[Microsoft.Azure.Management.Monitor.Models.AggregationType, Microsoft.Azure.Management.Monitor, Version=0.21.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35]]</span><span class="sxs-lookup"><span data-stu-id="20262-155">System.Nullable\`1[[Microsoft.Azure.Management.Monitor.Models.AggregationType, Microsoft.Azure.Management.Monitor, Version=0.21.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35]]</span></span>
+
+### <span data-ttu-id="20262-156">System.DateTime</span><span class="sxs-lookup"><span data-stu-id="20262-156">System.DateTime</span></span>
+
+### <span data-ttu-id="20262-157">System.Nullable'1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="20262-157">System.Nullable\`1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
+
+### <span data-ttu-id="20262-158">System.Nullable'1[[Microsoft.Azure.Management.Monitor.Models.ResultType, Microsoft.Azure.Management.Monitor, Version=0.21.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35]]</span><span class="sxs-lookup"><span data-stu-id="20262-158">System.Nullable\`1[[Microsoft.Azure.Management.Monitor.Models.ResultType, Microsoft.Azure.Management.Monitor, Version=0.21.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35]]</span></span>
+
+### <span data-ttu-id="20262-159">System.String[]</span><span class="sxs-lookup"><span data-stu-id="20262-159">System.String[]</span></span>
+
+### <span data-ttu-id="20262-160">System.Management.Automation.SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="20262-160">System.Management.Automation.SwitchParameter</span></span>
+
+## <span data-ttu-id="20262-161">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="20262-161">OUTPUTS</span></span>
+
+### <span data-ttu-id="20262-162">Microsoft.Azure.Commands.Insights.OutputClasses.PSMetric</span><span class="sxs-lookup"><span data-stu-id="20262-162">Microsoft.Azure.Commands.Insights.OutputClasses.PSMetric</span></span>
+
+## <span data-ttu-id="20262-163">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="20262-163">NOTES</span></span>
+
+<span data-ttu-id="20262-164">A támogatott metrikákról további információt a következő oldalon talál: https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported</span><span class="sxs-lookup"><span data-stu-id="20262-164">More information about the supported metrics may be found at: https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported</span></span>
+
+## <span data-ttu-id="20262-165">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="20262-165">RELATED LINKS</span></span>
+
+<span data-ttu-id="20262-166">[Get-AzMetricDefinition](./Get-AzMetricDefinition.md) 
+ [New-AzMetricFilter](./New-AzMetricFilter.md)</span><span class="sxs-lookup"><span data-stu-id="20262-166">[Get-AzMetricDefinition](./Get-AzMetricDefinition.md)
+[New-AzMetricFilter](./New-AzMetricFilter.md)</span></span>
+
+
