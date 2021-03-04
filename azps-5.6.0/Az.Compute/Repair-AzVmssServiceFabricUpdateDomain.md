@@ -1,0 +1,222 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Compute.dll-Help.xml
+Module Name: Az.Compute
+online version: https://docs.microsoft.com/powershell/module/az.compute/repair-azvmssservicefabricupdatedomain
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Repair-AzVmssServiceFabricUpdateDomain.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Repair-AzVmssServiceFabricUpdateDomain.md
+ms.openlocfilehash: e0edd9ad095f6f7887e0e3f4951828844d2521c6
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101920609"
+---
+# <span data-ttu-id="03343-101">Repair-AzVmssServiceFabricUpdateDomain</span><span class="sxs-lookup"><span data-stu-id="03343-101">Repair-AzVmssServiceFabricUpdateDomain</span></span>
+
+## <span data-ttu-id="03343-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="03343-102">SYNOPSIS</span></span>
+<span data-ttu-id="03343-103">Manuális platformfrissítési tartomány walk to update virtual machines in a service fabric virtual machine scale set.</span><span class="sxs-lookup"><span data-stu-id="03343-103">Manual platform update domain walk to update virtual machines in a service fabric virtual machine scale set.</span></span>
+
+## <span data-ttu-id="03343-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="03343-104">SYNTAX</span></span>
+
+### <span data-ttu-id="03343-105">DefaultParameter (alapértelmezett)</span><span class="sxs-lookup"><span data-stu-id="03343-105">DefaultParameter (Default)</span></span>
+```
+Repair-AzVmssServiceFabricUpdateDomain [-ResourceGroupName] <String> [-VMScaleSetName] <String>
+ [-PlatformUpdateDomain] <Int32> [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="03343-106">ResourceIdParameter</span><span class="sxs-lookup"><span data-stu-id="03343-106">ResourceIdParameter</span></span>
+```
+Repair-AzVmssServiceFabricUpdateDomain [-PlatformUpdateDomain] <Int32> [-ResourceId] <String> [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="03343-107">ObjectParameter</span><span class="sxs-lookup"><span data-stu-id="03343-107">ObjectParameter</span></span>
+```
+Repair-AzVmssServiceFabricUpdateDomain [-PlatformUpdateDomain] <Int32>
+ [-VirtualMachineScaleSet] <PSVirtualMachineScaleSet> [-AsJob] [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="03343-108">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="03343-108">DESCRIPTION</span></span>
+<span data-ttu-id="03343-109">Kényszerítheti a manuális platformfrissítési tartománylépést a virtuális gépek frissítésére egy szolgáltatáshálózat virtuális gépméret-készletében.</span><span class="sxs-lookup"><span data-stu-id="03343-109">Force manual platform update domain walk to update virtual machines in a service fabric virtual machine scale set.</span></span>
+
+## <span data-ttu-id="03343-110">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="03343-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="03343-111">1. példa</span><span class="sxs-lookup"><span data-stu-id="03343-111">Example 1</span></span>
+```
+PS C:\> Repair-AzVmssServiceFabricUpdateDomain -ResourceGroupName $rgname -VMScaleSetName $vmssName -PlatformUpdateDomain 0
+```
+
+<span data-ttu-id="03343-112">Ez a parancs kényszeríti a szolgáltatáshálózati háló frissítését az UD 0-on az erőforráscsoport neve és a méretkészlet neve által megadott virtuális számítógép-méretarányhoz.</span><span class="sxs-lookup"><span data-stu-id="03343-112">This command forces service fabric update walk on UD 0 for the virtual machine scale set specified by resource group name and scale set name.</span></span>
+
+### <span data-ttu-id="03343-113">2. példa</span><span class="sxs-lookup"><span data-stu-id="03343-113">Example 2</span></span>
+```
+PS C:\> $vmss = Get-AzVmss -ResourceGroupName $rgname -VMScaleSetName $vmssName
+PS C:\> Repair-AzVmssServiceFabricUpdateDomain -VirtualMachineScaleSet $vmss -PlatformUpdateDomain 1
+```
+
+<span data-ttu-id="03343-114">Ez a parancs kényszeríti a szolgáltatáshálózati háló frissítését az UD 1-en a virtuális gép méretarány-beállítási objektuma által megadott virtuális gép méretarányához.</span><span class="sxs-lookup"><span data-stu-id="03343-114">This command forces service fabric update walk on UD 1 for the virtual machine scale set specified by VM scale set object.</span></span>
+
+### <span data-ttu-id="03343-115">3. példa</span><span class="sxs-lookup"><span data-stu-id="03343-115">Example 3</span></span>
+```
+PS C:\> Repair-AzVmssServiceFabricUpdateDomain -ResourceId $resourceId  -PlatformUpdateDomain 2;
+```
+
+<span data-ttu-id="03343-116">Ez a parancs kényszeríti a service fabric update walk on UD 2 for the virtual machine scale set by resource id.</span><span class="sxs-lookup"><span data-stu-id="03343-116">This command forces service fabric update walk on UD 2 for the virtual machine scale set specified by resource id.</span></span>
+
+## <span data-ttu-id="03343-117">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="03343-117">PARAMETERS</span></span>
+
+### <span data-ttu-id="03343-118">-AsJob</span><span class="sxs-lookup"><span data-stu-id="03343-118">-AsJob</span></span>
+<span data-ttu-id="03343-119">Parancsmag futtatása a háttérben</span><span class="sxs-lookup"><span data-stu-id="03343-119">Run cmdlet in the background</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="03343-120">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="03343-120">-DefaultProfile</span></span>
+<span data-ttu-id="03343-121">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés.</span><span class="sxs-lookup"><span data-stu-id="03343-121">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="03343-122">-PlatformUpdateDomain</span><span class="sxs-lookup"><span data-stu-id="03343-122">-PlatformUpdateDomain</span></span>
+<span data-ttu-id="03343-123">Az a platformfrissítési tartomány, amelyhez manuális helyreállítási jár.</span><span class="sxs-lookup"><span data-stu-id="03343-123">The platform update domain for which a manual recovery walk is requested.</span></span>
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="03343-124">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="03343-124">-ResourceGroupName</span></span>
+<span data-ttu-id="03343-125">Az erőforráscsoport neve.</span><span class="sxs-lookup"><span data-stu-id="03343-125">The name of the resource group.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: DefaultParameter
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="03343-126">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="03343-126">-ResourceId</span></span>
+<span data-ttu-id="03343-127">A virtuális gép méretaránykészletének erőforrás-azonosítója.</span><span class="sxs-lookup"><span data-stu-id="03343-127">The resource id for the virtual machine scale set.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ResourceIdParameter
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="03343-128">-VirtualMachineScaleSet</span><span class="sxs-lookup"><span data-stu-id="03343-128">-VirtualMachineScaleSet</span></span>
+<span data-ttu-id="03343-129">Local virtual machine scale set object</span><span class="sxs-lookup"><span data-stu-id="03343-129">Local virtual machine scale set object</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Compute.Automation.Models.PSVirtualMachineScaleSet
+Parameter Sets: ObjectParameter
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="03343-130">-VMScaleSetName</span><span class="sxs-lookup"><span data-stu-id="03343-130">-VMScaleSetName</span></span>
+<span data-ttu-id="03343-131">A virtuális gép méretaránykészletének neve</span><span class="sxs-lookup"><span data-stu-id="03343-131">The name of the virtual machine scale set</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: DefaultParameter
+Aliases: Name
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="03343-132">-Confirm</span><span class="sxs-lookup"><span data-stu-id="03343-132">-Confirm</span></span>
+<span data-ttu-id="03343-133">A parancsmag futtatása előtt a rendszer megerősítést kér.</span><span class="sxs-lookup"><span data-stu-id="03343-133">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="03343-134">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="03343-134">-WhatIf</span></span>
+<span data-ttu-id="03343-135">A parancsmag futtatásakor a program megjeleníti, hogy mi történik.</span><span class="sxs-lookup"><span data-stu-id="03343-135">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="03343-136">A parancsmag nem fut.</span><span class="sxs-lookup"><span data-stu-id="03343-136">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="03343-137">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="03343-137">CommonParameters</span></span>
+<span data-ttu-id="03343-138">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="03343-138">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="03343-139">További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="03343-139">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="03343-140">INPUTS</span><span class="sxs-lookup"><span data-stu-id="03343-140">INPUTS</span></span>
+
+### <span data-ttu-id="03343-141">System.String</span><span class="sxs-lookup"><span data-stu-id="03343-141">System.String</span></span>
+
+### <span data-ttu-id="03343-142">Microsoft.Azure.Commands.Compute.Automation.Models.PSVirtualMachineScaleSet</span><span class="sxs-lookup"><span data-stu-id="03343-142">Microsoft.Azure.Commands.Compute.Automation.Models.PSVirtualMachineScaleSet</span></span>
+
+## <span data-ttu-id="03343-143">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="03343-143">OUTPUTS</span></span>
+
+### <span data-ttu-id="03343-144">Microsoft.Azure.Commands.Compute.Automation.Models.PSRecoverySzolgáltatásokatResponse</span><span class="sxs-lookup"><span data-stu-id="03343-144">Microsoft.Azure.Commands.Compute.Automation.Models.PSRecoveryWalkResponse</span></span>
+
+## <span data-ttu-id="03343-145">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="03343-145">NOTES</span></span>
+
+## <span data-ttu-id="03343-146">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="03343-146">RELATED LINKS</span></span>
