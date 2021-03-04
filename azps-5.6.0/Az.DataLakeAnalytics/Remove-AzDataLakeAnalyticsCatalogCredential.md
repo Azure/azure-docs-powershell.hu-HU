@@ -1,0 +1,213 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.DataLakeAnalytics.dll-Help.xml
+Module Name: Az.DataLakeAnalytics
+ms.assetid: C6BB6E4D-6009-4796-866B-17115FDFA06D
+online version: https://docs.microsoft.com/powershell/module/az.datalakeanalytics/remove-azdatalakeanalyticscatalogcredential
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataLakeAnalytics/DataLakeAnalytics/help/Remove-AzDataLakeAnalyticsCatalogCredential.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataLakeAnalytics/DataLakeAnalytics/help/Remove-AzDataLakeAnalyticsCatalogCredential.md
+ms.openlocfilehash: f14448e7b7606f37f5ffdee8c944d48a557c1f0c
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101942809"
+---
+# <span data-ttu-id="dce06-101">Remove-AzDataLakeAnalyticsCatalogCredential</span><span class="sxs-lookup"><span data-stu-id="dce06-101">Remove-AzDataLakeAnalyticsCatalogCredential</span></span>
+
+## <span data-ttu-id="dce06-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="dce06-102">SYNOPSIS</span></span>
+<span data-ttu-id="dce06-103">Törli az Azure Data Lake Analytics hitelesítő adatait.</span><span class="sxs-lookup"><span data-stu-id="dce06-103">Deletes an Azure Data Lake Analytics credential.</span></span>
+
+## <span data-ttu-id="dce06-104">SZINTAXIS</span><span class="sxs-lookup"><span data-stu-id="dce06-104">SYNTAX</span></span>
+
+```
+Remove-AzDataLakeAnalyticsCatalogCredential [-Account] <String> [-DatabaseName] <String> [-Name] <String>
+ [[-Password] <PSCredential>] [-Recurse] [-PassThru] [-Force] [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="dce06-105">LEÍRÁS</span><span class="sxs-lookup"><span data-stu-id="dce06-105">DESCRIPTION</span></span>
+<span data-ttu-id="dce06-106">A Remove-AzDataLakeAnalyticsCatalogCredential parancsmag törli az Azure Data Lake Analytics katalógusának hitelesítő adatait.</span><span class="sxs-lookup"><span data-stu-id="dce06-106">The Remove-AzDataLakeAnalyticsCatalogCredential cmdlet deletes an Azure Data Lake Analytics catalog credential.</span></span>
+
+## <span data-ttu-id="dce06-107">PÉLDÁK</span><span class="sxs-lookup"><span data-stu-id="dce06-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="dce06-108">1. példa: Hitelesítő adatok eltávolítása</span><span class="sxs-lookup"><span data-stu-id="dce06-108">Example 1: Remove a credential</span></span>
+```
+PS C:\> Remove-AzDataLakeAnalyticsCatalogCredential -AccountName "ContosoAdla" `
+                      -DatabaseName "DatabaseName" `
+                      -Name "CredName"
+```
+
+<span data-ttu-id="dce06-109">Ez a parancs eltávolítja a megadott Data Lake Analytics-katalógus hitelesítő adatait.</span><span class="sxs-lookup"><span data-stu-id="dce06-109">This command removes the specified Data Lake Analytics catalog credential.</span></span>
+
+## <span data-ttu-id="dce06-110">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="dce06-110">PARAMETERS</span></span>
+
+### <span data-ttu-id="dce06-111">-Account</span><span class="sxs-lookup"><span data-stu-id="dce06-111">-Account</span></span>
+<span data-ttu-id="dce06-112">A Data Lake Analytics-fiók nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="dce06-112">Specifies the Data Lake Analytics account name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: AccountName
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="dce06-113">-DatabaseName</span><span class="sxs-lookup"><span data-stu-id="dce06-113">-DatabaseName</span></span>
+<span data-ttu-id="dce06-114">A hitelesítő adatokat tároló adatbázis neve.</span><span class="sxs-lookup"><span data-stu-id="dce06-114">Specifies the name of the database that holds the credential.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="dce06-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="dce06-115">-DefaultProfile</span></span>
+<span data-ttu-id="dce06-116">Az Azure-ral való kommunikációhoz használt hitelesítő adatok, fiók, bérlő és előfizetés</span><span class="sxs-lookup"><span data-stu-id="dce06-116">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="dce06-117">-Force</span><span class="sxs-lookup"><span data-stu-id="dce06-117">-Force</span></span>
+<span data-ttu-id="dce06-118">A parancs futtatását kényszeríti felhasználói megerősítés kérése nélkül.</span><span class="sxs-lookup"><span data-stu-id="dce06-118">Forces the command to run without asking for user confirmation.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="dce06-119">-Name</span><span class="sxs-lookup"><span data-stu-id="dce06-119">-Name</span></span>
+<span data-ttu-id="dce06-120">A hitelesítő adatok nevét adja meg.</span><span class="sxs-lookup"><span data-stu-id="dce06-120">Specifies the name of the credential.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="dce06-121">-PassThru</span><span class="sxs-lookup"><span data-stu-id="dce06-121">-PassThru</span></span>
+<span data-ttu-id="dce06-122">Azt jelzi, hogy a parancsmag nem várja meg, amíg befejeződik a művelet.</span><span class="sxs-lookup"><span data-stu-id="dce06-122">Indicates that this cmdlet does not wait for the operation to complete.</span></span>
+<span data-ttu-id="dce06-123">Egy objektumot ad vissza, amely azt az elemet tartalmazza, amellyel dolgozik.</span><span class="sxs-lookup"><span data-stu-id="dce06-123">Returns an object representing the item with which you are working.</span></span>
+<span data-ttu-id="dce06-124">Ez a parancsmag alapértelmezés szerint nem hoz létre kimenetet.</span><span class="sxs-lookup"><span data-stu-id="dce06-124">By default, this cmdlet does not generate any output.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="dce06-125">-Password</span><span class="sxs-lookup"><span data-stu-id="dce06-125">-Password</span></span>
+<span data-ttu-id="dce06-126">A hitelesítő adatok jelszava.</span><span class="sxs-lookup"><span data-stu-id="dce06-126">The password for the credential.</span></span>
+<span data-ttu-id="dce06-127">Erre akkor van szükség, ha a hívó nem a fiók tulajdonosa.</span><span class="sxs-lookup"><span data-stu-id="dce06-127">This is required if the caller is not the owner of the account.</span></span>
+
+```yaml
+Type: System.Management.Automation.PSCredential
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="dce06-128">-Recurse</span><span class="sxs-lookup"><span data-stu-id="dce06-128">-Recurse</span></span>
+<span data-ttu-id="dce06-129">Azt jelzi, hogy a törlési műveletnek végig kell mennie, és a hitelesítő adatoktól függő összes erőforrást törölnie és el kellejtenie.</span><span class="sxs-lookup"><span data-stu-id="dce06-129">Indicates that this delete operation should go through and also delete and drop all resources dependent on this credential.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="dce06-130">-Confirm</span><span class="sxs-lookup"><span data-stu-id="dce06-130">-Confirm</span></span>
+<span data-ttu-id="dce06-131">A parancsmag futtatása előtt a rendszer megerősítést kér.</span><span class="sxs-lookup"><span data-stu-id="dce06-131">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="dce06-132">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="dce06-132">-WhatIf</span></span>
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="dce06-133">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="dce06-133">CommonParameters</span></span>
+<span data-ttu-id="dce06-134">Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="dce06-134">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="dce06-135">További információt a about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="dce06-135">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="dce06-136">INPUTS</span><span class="sxs-lookup"><span data-stu-id="dce06-136">INPUTS</span></span>
+
+### <span data-ttu-id="dce06-137">System.String</span><span class="sxs-lookup"><span data-stu-id="dce06-137">System.String</span></span>
+
+### <span data-ttu-id="dce06-138">System.Management.Automation.PSCredential</span><span class="sxs-lookup"><span data-stu-id="dce06-138">System.Management.Automation.PSCredential</span></span>
+
+### <span data-ttu-id="dce06-139">System.Management.Automation.SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="dce06-139">System.Management.Automation.SwitchParameter</span></span>
+
+## <span data-ttu-id="dce06-140">KIMENETEK</span><span class="sxs-lookup"><span data-stu-id="dce06-140">OUTPUTS</span></span>
+
+### <span data-ttu-id="dce06-141">System.Boolean</span><span class="sxs-lookup"><span data-stu-id="dce06-141">System.Boolean</span></span>
+
+## <span data-ttu-id="dce06-142">MEGJEGYZÉSEK</span><span class="sxs-lookup"><span data-stu-id="dce06-142">NOTES</span></span>
+
+## <span data-ttu-id="dce06-143">KAPCSOLÓDÓ HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="dce06-143">RELATED LINKS</span></span>
