@@ -1,0 +1,104 @@
+---
+external help file: ''
+Module Name: Az.CostManagement
+online version: https://docs.microsoft.com/powershell/module/az.CostManagement/new-AzCostManagementQueryComparisonExpressionObject
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CostManagement/help/New-AzCostManagementQueryComparisonExpressionObject.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CostManagement/help/New-AzCostManagementQueryComparisonExpressionObject.md
+ms.openlocfilehash: b41c5a30a1425778e69fbfff42cfe7062c6b71b9
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101942689"
+---
+# New-AzCostManagementQueryComparisonExpressionObject
+
+## SYNOPSIS
+Create a in-memory object for QueryComparisonExpression
+
+## SZINTAXIS
+
+```
+New-AzCostManagementQueryComparisonExpressionObject -Name <String> -Operator <OperatorType> -Value <String[]>
+ [<CommonParameters>]
+```
+
+## LEÍRÁS
+Create a in-memory object for QueryComparisonExpression
+
+## PÉLDÁK
+
+### 1. példa: Összehasonlítási kifejezésobjektum létrehozása a költségkezelési exportáláshoz
+```powershell
+PS C:\> New-AzCostManagementQueryComparisonExpressionObject -Name 'ResourceLocation' -Value @('East US', 'West Europe')
+
+Name             Operator Value
+----             -------- -----
+ResourceLocation In       {East US, West Europe}
+```
+
+Ez a parancs egy összehasonlító kifejezésobjektumot hoz létre a költségkezelési exportáláshoz.
+
+## PARAMETERS
+
+### -Name
+Az összehasonlításban használt oszlop neve.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Operátor
+Az összehasonlításhoz használt operátor.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.CostManagement.Support.OperatorType
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Érték
+Az összehasonlításhoz használható értékek tömbje.
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Ez a parancsmag a következő közös paramétereket támogatja: -Hibakeresés, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction és -WarningVariable. További információt a [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
+
+## INPUTS
+
+## KIMENETEK
+
+### Microsoft.Azure.PowerShell.Cmdlets.CostManagement.Models.Api20200601.QueryComparisonExpression
+
+## MEGJEGYZÉSEK
+
+ALIASOK
+
+## KAPCSOLÓDÓ HIVATKOZÁSOK
+
